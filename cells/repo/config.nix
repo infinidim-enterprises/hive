@@ -136,7 +136,7 @@ in {
           imperative = true;
         };
         body.required = false;
-        gpg.required = false;
+        gpg.required = true;
         maximumOfOneCommit = false;
         conventional = {
           types = [
