@@ -212,9 +212,6 @@ in
 
     ci = {
       name = "ci";
-
-      packages = [
-        update-cell-sources
-      ];
+      packages = [update-cell-sources];
     };
   }

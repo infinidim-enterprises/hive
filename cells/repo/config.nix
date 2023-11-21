@@ -1,6 +1,7 @@
 {
   inputs,
   cell,
+  ...
 }: let
   inherit (inputs) nixpkgs std;
   inherit (std.lib.dev) mkNixago;
@@ -109,7 +110,7 @@ in {
   githubsettings = mkNixago std.lib.cfg.githubsettings {
     data = {
       repository = {
-        name = "thehive";
+        name = "hive";
         inherit (import (inputs.self + /flake.nix)) description;
         # homepage = "CONFIGURE-ME";
         topics = "nix, nixos, hive, flake, flakes, nix-flake, nix-flakes, haumea, colmena, std";
