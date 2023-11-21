@@ -9,7 +9,7 @@ repository:
   has_issues: false
   has_projects: false
   has_wiki: false
-  name: thehive
+  name: hive
   private: false
   topics: nix, nixos, hive, flake, flakes, nix-flake, nix-flakes, haumea, colmena,
     std

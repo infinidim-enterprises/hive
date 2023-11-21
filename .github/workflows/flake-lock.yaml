@@ -9,21 +9,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4.1.1
       - name: Install Nix
-        uses: cachix/install-nix-action@v20
+        uses: cachix/install-nix-action@v23
         with:
           nix_path: nixpkgs=channel:nixos-23.05
           extra_nix_config: |
             access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
       - uses: cachix/cachix-action@v12
         with:
-          name: truelecter
+          name: njk
           extraPullNames: cuda-maintainers, mic92, nix-community, nrdxp
           authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
       - name: Configure git
         run: |
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.email "1203212+github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
       - name: Update nvfetcher packages
         run: |
@@ -34,12 +34,12 @@ jobs:
           nix run '.#mainsail.npmDepsHash' > cells/klipper/packages/_deps-hash/mainsail-npm.nix
           git commit -am "deps(sources): Updated deps hash" || true
       - name: Update flake.lock
-        uses: DeterminateSystems/update-flake-lock@v19
+        uses: DeterminateSystems/update-flake-lock@v20
         with:
           commit-msg: "deps(flake-lock): Updated flake.lock"
           pr-title: "[Automated] Update 'flake.lock' and sources"
           branch: "auto/upgrade-dependencies"
-          token: ${{ secrets.PR_WF_ENABLED_TOKEN }}
+          # token: ${{ secrets.PR_WF_ENABLED_TOKEN }}
           pr-labels: |
             dependencies
             automated

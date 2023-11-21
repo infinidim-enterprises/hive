@@ -1,6 +1,6 @@
 
 env:
-  CACHIX_AUTH_TOKEN: ENCRYPTED[b9defe725a79a0699b0f8916ee1e7654a4ef73e0a70ede58b9cc51ec5d8638da982e48e6dd6bfc9c6b3c215fe819c2a5]
+  CACHIX_AUTH_TOKEN: ENCRYPTED[!73390799ffdce091e01d4869cc90fc1538cb6947ad086ac9a3cd1216201c32b46537223c71cc2078334bd2dbb85ebc95!]
   NIX: nix --extra-experimental-features nix-command --extra-experimental-features flakes
   # CIRRUS_SHELL: "/bin/bash"
 
@@ -23,11 +23,11 @@ common_scripts_template: &COMMON_SCRIPTS_TEMPLATE
   - cachix use nix-community
   - cachix use mic92
   - cachix use nrdxp
-  - cachix use truelecter
+  - cachix use njk
   - ./.ci/install-nix.sh > /tmp/store-path-pre-build
 
 common_finishing_script_template: &COMMON_FINISHING_SCRIPTS_TEMPLATE
-  upload_paths_to_cachix_script: .ci/push-paths.sh cachix "--compression-method xz --compression-level 9 --jobs 8" truelecter ""  ""
+  upload_paths_to_cachix_script: .ci/push-paths.sh cachix "--compression-method xz --compression-level 9 --jobs 8" njk ""  ""
 
 macos_task:
   << : *COMMON_TASK_TEMPLATE

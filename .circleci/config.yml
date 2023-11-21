@@ -38,7 +38,7 @@ jobs:
             cachix use nix-community
             cachix use mic92
             cachix use nrdxp
-            cachix use truelecter
+            cachix use njk
             ./.ci/install-nix.sh > /tmp/store-path-pre-build
       - run:
           name: Build system
@@ -48,4 +48,4 @@ jobs:
           name: Push cache
           no_output_timeout: 30m # 10 mins are often not enough
           command: |
-            ./.ci/push-paths.sh cachix "--compression-method xz --compression-level 9 --jobs 8" truelecter ""  ""
+            ./.ci/push-paths.sh cachix "--compression-method xz --compression-level 9 --jobs 8" njk ""  ""
