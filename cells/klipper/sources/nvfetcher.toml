@@ -1,0 +1,69 @@
+[moonraker]
+src.git = "https://github.com/Arksine/moonraker"
+fetch.github = "Arksine/moonraker"
+
+[klipper]
+src.git = "https://github.com/Klipper3d/klipper"
+fetch.github = "Klipper3d/klipper"
+
+[mobileraker-companion]
+src.git = "https://github.com/Clon1998/mobileraker_companion"
+fetch.github = "Clon1998/mobileraker_companion"
+
+[klipper-screen]
+src.git = "https://github.com/jordanruthe/KlipperScreen"
+fetch.github = "jordanruthe/KlipperScreen"
+
+# klipper-screen dependency
+[python-networkmanager]
+src.pypi = "python-networkmanager"
+fetch.pypi = "python-networkmanager"
+
+# camera-streamer dependency
+[camera-streamer]
+src.github = "ayufan/camera-streamer"
+fetch.github = "ayufan/camera-streamer"
+git.fetchSubmodules = true
+
+[libdatachannel0_17]
+src.manual = "v0.17.10"
+fetch.github = "paullouisageneau/libdatachannel"
+
+[libjuice]
+src.manual = "v1.0.4"
+fetch.github = "paullouisageneau/libjuice"
+
+[live555]
+src.manual = "2020.03.06"
+fetch.tarball = "https://download.videolan.org/pub/contrib/live555/live.$ver.tar.gz"
+
+# mainsail
+[mainsail]
+src.git = "https://github.com/mainsail-crew/mainsail"
+src.branch = "develop"
+fetch.github = "mainsail-crew/mainsail"
+
+# Klipper plugins
+[klipper-led_effect]
+src.git = "https://github.com/julianschill/klipper-led_effect"
+fetch.github = "julianschill/klipper-led_effect"
+
+[klipper-happy-hare]
+src.git = "https://github.com/moggieuk/Happy-Hare"
+fetch.github = "moggieuk/Happy-Hare"
+
+[klipper-ercf]
+src.git = "https://github.com/EtteGit/EnragedRabbitProject"
+fetch.github = "EtteGit/EnragedRabbitProject"
+
+[klipper-kamp]
+src.github = "kyleisah/Klipper-Adaptive-Meshing-Purging"
+fetch.github = "kyleisah/Klipper-Adaptive-Meshing-Purging"
+
+[klipper-z-calibration]
+src.github = "protoloft/klipper_z_calibration"
+fetch.github = "protoloft/klipper_z_calibration"
+
+[klipper-klicky-probe]
+src.git = "https://github.com/jlas1/Klicky-Probe"
+fetch.github = "jlas1/Klicky-Probe"

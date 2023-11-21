@@ -1,0 +1,11 @@
+[libcamera]
+src.git = "https://github.com/raspberrypi/libcamera"
+fetch.github = "raspberrypi/libcamera"
+
+[libcamera-apps]
+src.git = "https://github.com/raspberrypi/libcamera-apps"
+fetch.github = "raspberrypi/libcamera-apps"
+
+[mediamtx]
+src.git = "https://github.com/bluenviron/mediamtx"
+fetch.github = "bluenviron/mediamtx"

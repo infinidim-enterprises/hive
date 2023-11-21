@@ -1,0 +1,62 @@
+{
+    "libcamera": {
+        "cargoLocks": null,
+        "date": "2023-11-15",
+        "extract": null,
+        "name": "libcamera",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "raspberrypi",
+            "repo": "libcamera",
+            "rev": "99b177b3e5a50093f664eacd6b09576d17a7e64d",
+            "sha256": "sha256-MP4Z3scFhjh2Z500f9yyXWIbocA1L64yxA3IoPGRlH8=",
+            "type": "github"
+        },
+        "version": "99b177b3e5a50093f664eacd6b09576d17a7e64d"
+    },
+    "libcamera-apps": {
+        "cargoLocks": null,
+        "date": "2023-11-15",
+        "extract": null,
+        "name": "libcamera-apps",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "raspberrypi",
+            "repo": "libcamera-apps",
+            "rev": "dd744cb385e2b455f76f9a48106606fb9a160f21",
+            "sha256": "sha256-tKi+CRKMJzS29AZdbMjs98+BOJbTpQ9zu1hyAhsLweU=",
+            "type": "github"
+        },
+        "version": "dd744cb385e2b455f76f9a48106606fb9a160f21"
+    },
+    "mediamtx": {
+        "cargoLocks": null,
+        "date": "2023-11-17",
+        "extract": null,
+        "name": "mediamtx",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "bluenviron",
+            "repo": "mediamtx",
+            "rev": "dee7176cb02d36ae995da716f1ded5a171a5d7d2",
+            "sha256": "sha256-64b0nOnIENFUGtUW66XN5FnFnBNcxhtUjbcVyex3xxg=",
+            "type": "github"
+        },
+        "version": "dee7176cb02d36ae995da716f1ded5a171a5d7d2"
+    }
+}
