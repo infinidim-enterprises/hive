@@ -21,7 +21,7 @@
     },
     "libcamera-apps": {
         "cargoLocks": null,
-        "date": "2023-11-15",
+        "date": "2023-11-21",
         "extract": null,
         "name": "libcamera-apps",
         "passthru": null,
@@ -33,15 +33,15 @@
             "name": null,
             "owner": "raspberrypi",
             "repo": "libcamera-apps",
-            "rev": "dd744cb385e2b455f76f9a48106606fb9a160f21",
-            "sha256": "sha256-tKi+CRKMJzS29AZdbMjs98+BOJbTpQ9zu1hyAhsLweU=",
+            "rev": "16647b4d36a727d33ecf15b874cfb9838f0796fb",
+            "sha256": "sha256-RLZ933IkdxdTrn5SBs1Gf+jrI9h/qqOURx9rbmUr1LM=",
             "type": "github"
         },
-        "version": "dd744cb385e2b455f76f9a48106606fb9a160f21"
+        "version": "16647b4d36a727d33ecf15b874cfb9838f0796fb"
     },
     "mediamtx": {
         "cargoLocks": null,
-        "date": "2023-11-17",
+        "date": "2023-11-20",
         "extract": null,
         "name": "mediamtx",
         "passthru": null,
@@ -53,10 +53,10 @@
             "name": null,
             "owner": "bluenviron",
             "repo": "mediamtx",
-            "rev": "dee7176cb02d36ae995da716f1ded5a171a5d7d2",
-            "sha256": "sha256-64b0nOnIENFUGtUW66XN5FnFnBNcxhtUjbcVyex3xxg=",
+            "rev": "f335fc67f914e44cb1779fd5544729a5cf3f3be8",
+            "sha256": "sha256-scam3s40dtHasO3POXmfYCkHyWXo2ZxmTWZM9eN5A1Y=",
             "type": "github"
         },
-        "version": "dee7176cb02d36ae995da716f1ded5a171a5d7d2"
+        "version": "f335fc67f914e44cb1779fd5544729a5cf3f3be8"
     }
 }

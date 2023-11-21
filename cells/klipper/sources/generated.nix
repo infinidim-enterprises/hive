@@ -14,15 +14,15 @@
   };
   klipper = {
     pname = "klipper";
-    version = "187cc2f1b89e3870d694f8db6a64b116992106b7";
+    version = "bb4711c5d31e8159945f945c662e6668059a174f";
     src = fetchFromGitHub {
       owner = "Klipper3d";
       repo = "klipper";
-      rev = "187cc2f1b89e3870d694f8db6a64b116992106b7";
+      rev = "bb4711c5d31e8159945f945c662e6668059a174f";
       fetchSubmodules = false;
-      sha256 = "sha256-CmnWgX8MvQs/5jQuAR8+1bKM4VsFXF2pV/jme75WJLY=";
+      sha256 = "sha256-35kLi7AwhzvngLJ05l+0Mj3wH7SVHpykc2qZGAQ0wy8=";
     };
-    date = "2023-11-16";
+    date = "2023-11-20";
   };
   klipper-ercf = {
     pname = "klipper-ercf";
@@ -38,15 +38,15 @@
   };
   klipper-happy-hare = {
     pname = "klipper-happy-hare";
-    version = "c1e3bbc63d6a7676d4d4156ec4fbd7d02dbf5e68";
+    version = "aa23140984acb10fee706bdceeb5871a93a98e73";
     src = fetchFromGitHub {
       owner = "moggieuk";
       repo = "Happy-Hare";
-      rev = "c1e3bbc63d6a7676d4d4156ec4fbd7d02dbf5e68";
+      rev = "aa23140984acb10fee706bdceeb5871a93a98e73";
       fetchSubmodules = false;
-      sha256 = "sha256-n7zC0ZWebOwRdNwS4xRdKJCNGhyyAf6och5THvlOh+8=";
+      sha256 = "sha256-oSyP4a1c6jYoA4xVZ0vvxeSnJImqgjy4MFjvMQAl60E=";
     };
-    date = "2023-11-19";
+    date = "2023-11-21";
   };
   klipper-kamp = {
     pname = "klipper-kamp";
@@ -162,15 +162,15 @@
   };
   moonraker = {
     pname = "moonraker";
-    version = "dddd968f82bf31155e295c170ebcce060d8d2cf9";
+    version = "fb15b2a3de1ac203a8bf2a700b08c649d23cd4a0";
     src = fetchFromGitHub {
       owner = "Arksine";
       repo = "moonraker";
-      rev = "dddd968f82bf31155e295c170ebcce060d8d2cf9";
+      rev = "fb15b2a3de1ac203a8bf2a700b08c649d23cd4a0";
       fetchSubmodules = false;
-      sha256 = "sha256-UqLKpT50+fWJaX3SVh+sE4nfPws02iRo2D8Rj/yNlLw=";
+      sha256 = "sha256-I5ztSQOBtgR5opY6RyTSBXl8zYNVgJ4UobUwO7OFCZ0=";
     };
-    date = "2023-11-15";
+    date = "2023-11-19";
   };
   python-networkmanager = {
     pname = "python-networkmanager";
