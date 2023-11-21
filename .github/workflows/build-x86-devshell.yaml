@@ -1,4 +1,4 @@
-name: Build tl-wsl
+name: Build devshell
 on:
   push:
   workflow_dispatch:
