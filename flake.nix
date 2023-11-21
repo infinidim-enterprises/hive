@@ -85,6 +85,35 @@
     nvfetcher.url = "github:berberman/nvfetcher";
     nvfetcher.inputs.nixpkgs.follows = "nixpkgs";
     nvfetcher.inputs.flake-utils.follows = "flake-utils";
+
+    microvm.url = "github:astro/microvm.nix";
+    arion.url = "github:hercules-ci/arion";
+    arion.inputs.nixpkgs.follows = "latest";
+
+    nur.url = "github:nix-community/NUR";
+    nurl.url = "github:nix-community/nurl";
+  };
+
+  # emacs & friends
+  inputs = {
+    nix-doom-emacs.url = "github:nix-community/nix-doom-emacs";
+
+    # NOTE: https://github.com/nix-community/nix-straight.el/pull/4
+    nix-doom-emacs.inputs.nix-straight.follows = "nix-straight-fix-emacs29";
+    # nix-doom-emacs.inputs.emacs-overlay.follows = "emacs-overlay";
+
+    nix-straight-fix-emacs29.url = "github:nix-community/nix-straight.el?ref=pull/4/head";
+    nix-straight-fix-emacs29.flake = false;
+
+    # emacs-overlay.url = "github:nix-community/emacs-overlay";
+    # emacs-overlay.inputs.nixpkgs.follows = "nixos";
+
+    # emacs-overlay.follows = "nix-doom-emacs/inputs/emacs-overlay";
+    # emacs-overlay.url = "github:nix-community/emacs-overlay/c16be6de78ea878aedd0292aa5d4a1ee0a5da501";
+
+    # LSP for nix
+    nil.url = "github:oxalica/nil";
+    nixd.url = "github:nix-community/nixd";
   };
 
   outputs = {
@@ -98,9 +127,7 @@
     {
       inherit inputs;
 
-      nixpkgsConfig = {
-        allowUnfree = true;
-      };
+      nixpkgsConfig.allowUnfree = true;
 
       systems = [
         "aarch64-darwin"
@@ -146,6 +173,7 @@
         colmenaConfigurations
         homeConfigurations
         nixosConfigurations
+        diskoConfigurations
         darwinConfigurations
       ];
     }
@@ -165,19 +193,17 @@
         ["minecraft-servers" "nixosModules"]
       ];
 
-      homeModules = hive.pick inputs.self [
-        ["home" "homeModules"]
-      ];
+      homeModules = hive.pick inputs.self [["home" "homeModules"]];
     }
     {
       colmenaHive = hive.collect self "colmenaConfigurations";
       nixosConfigurations = hive.collect self "nixosConfigurations";
+      diskoConfigurations = hive.collect self "diskoConfigurations";
       homeConfigurations = hive.collect self "homeConfigurations";
       darwinConfigurations = hive.collect self "darwinConfigurations";
     }
     {
       darwinConfigurations.squadbook = self.darwinConfigurations.darwin-squadbook;
-
       debug = hive.harvest inputs.self ["repo" "debug"];
     };
 }
