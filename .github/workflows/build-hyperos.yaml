@@ -1,6 +1,6 @@
 name: Build hyperos
 on:
-  push:
+  # push:
   workflow_dispatch:
 
 jobs:

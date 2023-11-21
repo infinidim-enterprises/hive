@@ -11,8 +11,9 @@ This repository is home to the nix code that builds my systems.
 [![nas](https://img.shields.io/github/actions/workflow/status/infinidim-enterprises/hive/build-nas.yaml?event=push&logo=nixos&logoColor=white&label=nas)][nas]
 [![rockiosk](https://img.shields.io/github/actions/workflow/status/infinidim-enterprises/hive/build-rockiosk.yaml?event=push&logo=nixos&logoColor=white&label=rockiosk)][rockiosk]
 [![squadbook](https://img.shields.io/cirrus/github/infinidim-enterprises/hive?label=squadbook&logo=nixos&logoColor=white&task=Build%20squadbook)][squadbook]
-[![oracle](https://img.shields.io/circleci/build/github/infinidim-enterprises/hive/master?logo=nixos&logoColor=white&label=oracle)][oracle]
-[![voron](https://img.shields.io/circleci/build/github/infinidim-enterprises/hive/master?logo=nixos&logoColor=white&label=voron)][voron]
+
+<!-- [![oracle](https://img.shields.io/circleci/build/github/cci-eve3ef/hive/master?logo=nixos&logoColor=white&label=oracle&token=fc9316dc8bf54cce1696513462f83e93dd3e77aa)][oracle] -->
+<!-- [![voron](https://img.shields.io/circleci/build/github/cci-eve3ef/hive/master?logo=nixos&logoColor=white&label=voron&token=fc9316dc8bf54cce1696513462f83e93dd3e77aa)][voron] -->
 
 ## Why Nix?
 
@@ -54,5 +55,5 @@ darwin-rebuild switch --flake .
 
 <!-- CircleCI -->
 
-[voron]: https://app.circleci.com/pipelines/github/infinidim-enterprises/hive?branch=master
-[oracle]: https://app.circleci.com/pipelines/github/infinidim-enterprises/hive?branch=master
+[voron]: https://app.circleci.com/pipelines/github/2RXFjC67aDYfzqq8Drhzfg/hive?branch=master
+[oracle]: https://app.circleci.com/pipelines/github/2RXFjC67aDYfzqq8Drhzfg/hive?branch=master

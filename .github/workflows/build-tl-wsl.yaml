@@ -1,6 +1,6 @@
 name: Build tl-wsl
 on:
-  push:
+  # push:
   workflow_dispatch:
 
 jobs:

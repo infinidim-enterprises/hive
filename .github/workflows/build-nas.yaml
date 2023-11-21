@@ -1,6 +1,6 @@
 name: Build nas
 on:
-  push:
+  # push:
   workflow_dispatch:
 
 jobs:
