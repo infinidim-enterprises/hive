@@ -1,0 +1,11 @@
+<pool type='dir'>
+  <name>pName</name>
+  <target>
+    <path>/tmp</path>
+    <permissions>
+      <mode>0711</mode>
+      <owner>0</owner>
+      <group>0</group>
+    </permissions>
+  </target>
+</pool>

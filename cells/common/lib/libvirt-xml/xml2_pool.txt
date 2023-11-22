@@ -1,0 +1,6 @@
+/pool/@type=dir
+/pool/name=pName
+/pool/target/path=/tmp
+/pool/target/permissions/mode=0711
+/pool/target/permissions/owner=0
+/pool/target/permissions/group=0

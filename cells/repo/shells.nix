@@ -3,7 +3,7 @@
   cell,
   ...
 }: let
-  inherit (inputs) nixpkgs std;
+  inherit (inputs) nixpkgs std latest;
   l = nixpkgs.lib // builtins;
 
   inherit
@@ -33,6 +33,15 @@
   ci = pkgWithCategory "ci";
 
   inherit (cell) config;
+
+  # export PATH=${inputs.latest.nixUnstable}/bin:$PATH
+  repl = nixpkgs.writeShellScriptBin "repl" ''
+    if [ -z "$1" ]; then
+       nix repl --argstr host "$HOST" --argstr flakePath "$PRJ_ROOT" ${./_repl.nix}
+    else
+       nix repl --argstr host "$HOST" --argstr flakePath $(readlink -f $1 | sed 's|/flake.nix||') ${./_repl.nix}
+    fi
+  '';
 
   update-cell-sources = nixpkgs.writeScriptBin "update-cell-sources" ''
     function updateCellSources {
@@ -194,6 +203,13 @@ in
           name = "sops-reencrypt";
           help = "Reencrypt sops-encrypted files";
           package = sops-reencrypt;
+        }
+
+        {
+          category = "nix";
+          name = "repl";
+          help = "Start a nix repl with the flake loaded";
+          package = repl;
         }
 
         {

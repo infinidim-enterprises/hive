@@ -3,6 +3,7 @@
 
   # common for deduplication
   inputs = {
+    flake-compat.url = "github:edolstra/flake-compat";
     flake-utils.url = "github:numtide/flake-utils";
     nixpkgs-lib.url = "github:nix-community/nixpkgs.lib";
   };
@@ -17,6 +18,11 @@
     nixago.inputs.flake-utils.follows = "flake-utils";
 
     std.follows = "hive/std";
+
+    # Compatibility
+    std-ext.url = "github:gtrunsec/std-ext";
+    nixos-22-11.url = "github:nixos/nixpkgs/release-22.11";
+    # Compatibility
 
     hive.url = "github:divnix/hive";
     hive.inputs.colmena.follows = "colmena";
@@ -54,6 +60,7 @@
   # nixpkgs & home-manager
   inputs = {
     latest.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-master.url = "github:nixos/nixpkgs";
     k8s.url = "github:nixos/nixpkgs/3005f20ce0aaa58169cdee57c8aa12e5f1b6e1b3";
     nixos.url = "github:nixos/nixpkgs/release-23.05";
     nixpkgs.follows = "nixos";
@@ -120,6 +127,7 @@
     self,
     std,
     nixpkgs,
+    latest,
     hive,
     ...
   } @ inputs:

@@ -6,62 +6,73 @@
   inherit (inputs) haumea;
   defaultNixpkgs = import inputs.nixpkgs {inherit (inputs.nixpkgs) system;};
   defaultAsRoot = _: mod: mod.default or mod;
-in rec {
-  importProfiles = {
-    inputs ? {},
-    src,
-    ...
-  }:
+  importLibs = {src ? ./lib}:
     haumea.lib.load {
-      inherit src inputs;
+      inherit src;
+      inputs = (builtins.removeAttrs inputs ["self"]) // {inherit (inputs.nixpkgs-lib) lib;};
       transformer = haumea.lib.transformers.liftDefault;
     };
+in
+  rec
+  {
+    inherit importLibs;
 
-  importModules = {src}:
-    haumea.lib.load {
-      inherit src;
-      loader = haumea.lib.loaders.path;
-    };
+    importProfiles = {
+      inputs ? {},
+      src,
+      ...
+    }:
+      haumea.lib.load {
+        inherit src inputs;
+        transformer = haumea.lib.transformers.liftDefault;
+      };
 
-  combineModules = {src}: _: {
-    imports = builtins.attrValues (importModules {inherit src;});
-  };
-
-  # TODO: pass nixpkgs as well, implicit bee module
-  importSystemConfigurations = {
-    src,
-    suites,
-    profiles,
-    userProfiles,
-    lib,
-    inputs,
-    overlays ? {},
-    ...
-  }:
-    haumea.lib.load {
-      inherit src;
-      transformer = defaultAsRoot;
-      inputs = {inherit suites profiles userProfiles lib inputs overlays;};
-    };
-
-  importPackages = {
-    nixpkgs ? defaultNixpkgs,
-    sources ? null,
-    extraArguments ? {},
-    packages,
-    ...
-  }: let
-    sources' =
-      if builtins.isPath sources
-      then (nixpkgs.callPackage sources {})
-      else sources;
-    pkgs =
-      nixpkgs.lib.mapAttrs
-      (_: v: nixpkgs.callPackage v (extraArguments // {sources = sources';}))
-      (haumea.lib.load {
-        src = packages;
+    importModules = {src}:
+      haumea.lib.load {
+        inherit src;
         loader = haumea.lib.loaders.path;
-      });
-  in
-    pkgs // {sources = sources';};
-}
+      };
+
+    combineModules = {src}: _: {
+      imports = builtins.attrValues (importModules {inherit src;});
+    };
+
+    # TODO: pass nixpkgs as well, implicit bee module
+    importSystemConfigurations = {
+      src,
+      suites,
+      profiles,
+      userProfiles,
+      lib,
+      inputs,
+      overlays ? {},
+      ...
+    }:
+      haumea.lib.load {
+        inherit src;
+        transformer = defaultAsRoot;
+        inputs = {inherit suites profiles userProfiles lib inputs overlays;};
+      };
+
+    importPackages = {
+      nixpkgs ? defaultNixpkgs,
+      sources ? null,
+      extraArguments ? {},
+      packages,
+      ...
+    }: let
+      sources' =
+        if builtins.isPath sources
+        then (nixpkgs.callPackage sources {})
+        else sources;
+      pkgs =
+        nixpkgs.lib.mapAttrs
+        (_: v: nixpkgs.callPackage v (extraArguments // {sources = sources';}))
+        (haumea.lib.load {
+          src = packages;
+          loader = haumea.lib.loaders.path;
+        });
+    in
+      pkgs // {sources = sources';};
+  }
+  // (importLibs {})

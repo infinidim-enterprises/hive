@@ -3,6 +3,7 @@
     substituters = [
       "https://cache.nixos.org/"
 
+      "https://cachix.org/api/v1/cache/emacs"
       "https://cuda-maintainers.cachix.org"
       "https://mic92.cachix.org"
       "https://nix-community.cachix.org"
