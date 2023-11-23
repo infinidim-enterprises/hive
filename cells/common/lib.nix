@@ -4,12 +4,16 @@
   ...
 }: let
   inherit (inputs) haumea;
+  inherit (inputs.nixpkgs-lib) lib;
+  inherit (builtins) attrValues mapAttrs removeAttrs isPath;
+
   defaultNixpkgs = import inputs.nixpkgs {inherit (inputs.nixpkgs) system;};
   defaultAsRoot = _: mod: mod.default or mod;
+
   importLibs = {src ? ./lib}:
     haumea.lib.load {
       inherit src;
-      inputs = (builtins.removeAttrs inputs ["self"]) // {inherit (inputs.nixpkgs-lib) lib;};
+      inputs = (removeAttrs inputs ["self"]) // {inherit lib;};
       transformer = haumea.lib.transformers.liftDefault;
     };
 in
@@ -34,7 +38,7 @@ in
       };
 
     combineModules = {src}: _: {
-      imports = builtins.attrValues (importModules {inherit src;});
+      imports = attrValues (importModules {inherit src;});
     };
 
     # TODO: pass nixpkgs as well, implicit bee module
@@ -62,11 +66,11 @@ in
       ...
     }: let
       sources' =
-        if builtins.isPath sources
+        if isPath sources
         then (nixpkgs.callPackage sources {})
         else sources;
       pkgs =
-        nixpkgs.lib.mapAttrs
+        mapAttrs
         (_: v: nixpkgs.callPackage v (extraArguments // {sources = sources';}))
         (haumea.lib.load {
           src = packages;

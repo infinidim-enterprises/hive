@@ -3,8 +3,11 @@
   cell,
   ...
 }: let
-  inherit (inputs) nixpkgs std latest;
-  l = nixpkgs.lib // builtins;
+  lib = nixpkgs-lib.lib // builtins;
+
+  inherit (inputs) nixpkgs nixpkgs-lib std latest;
+  inherit (cell) config;
+  inherit ((nixpkgs.appendOverlays [inputs.nur.overlay]).nur.repos.rycee) mozilla-addons-to-nix;
 
   inherit
     (inputs.cells.common.overrides)
@@ -23,6 +26,9 @@
     editorconfig-checker
     mdbook
     gnupg
+    writeShellApplication
+    writeShellScriptBin
+    writeScriptBin
     ;
 
   pkgWithCategory = category: package: {inherit package category;};
@@ -32,10 +38,8 @@
   infra = pkgWithCategory "infra";
   ci = pkgWithCategory "ci";
 
-  inherit (cell) config;
-
   # export PATH=${inputs.latest.nixUnstable}/bin:$PATH
-  repl = nixpkgs.writeShellScriptBin "repl" ''
+  repl = writeShellScriptBin "repl" ''
     if [ -z "$1" ]; then
        nix repl --argstr host "$HOST" --argstr flakePath "$PRJ_ROOT" ${./_repl.nix}
     else
@@ -43,7 +47,21 @@
     fi
   '';
 
-  update-cell-sources = nixpkgs.writeScriptBin "update-cell-sources" ''
+  update-cell-sources = writeShellApplication {
+    name = "update-cell-sources-new";
+    runtimeInputs = with nixpkgs; [
+      nvfetcher
+      coreutils-full
+      findutils
+      bash
+      gnused
+      # remarshall
+      mozilla-addons-to-nix
+    ];
+    text = lib.fileContents ./_update-cell-sources.sh;
+  };
+
+  update-cell-sources-2del = writeScriptBin "update-cell-sources" ''
     function updateCellSources {
       CELL="$1"
       shift
@@ -92,7 +110,7 @@
     exit 0
   '';
 
-  sops-reencrypt = nixpkgs.writeScriptBin "sops-reencrypt" ''
+  sops-reencrypt = writeScriptBin "sops-reencrypt" ''
     for filename in "$@"
     do
         ${sops}/bin/sops --decrypt --in-place $filename
@@ -100,7 +118,7 @@
     done
   '';
 
-  build-on-target = nixpkgs.writeScriptBin "build-on-target" ''
+  build-on-target = writeScriptBin "build-on-target" ''
     set -e -o pipefail
 
     show_usage() {
@@ -154,7 +172,7 @@
     NIX_SSHOPTS=$SSHOPTS nix copy --no-check-sigs --to "$to" --from "ssh://$buildHost" "$drv"
   '';
 in
-  l.mapAttrs (_: std.lib.dev.mkShell) {
+  lib.mapAttrs (_: std.lib.dev.mkShell) {
     default = {
       name = "infra";
 
