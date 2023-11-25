@@ -14,15 +14,15 @@
   };
   klipper = {
     pname = "klipper";
-    version = "bb4711c5d31e8159945f945c662e6668059a174f";
+    version = "ea2f6bc0f544132738c7f052ffcc586fa884a19a";
     src = fetchFromGitHub {
       owner = "Klipper3d";
       repo = "klipper";
-      rev = "bb4711c5d31e8159945f945c662e6668059a174f";
+      rev = "ea2f6bc0f544132738c7f052ffcc586fa884a19a";
       fetchSubmodules = false;
-      sha256 = "sha256-35kLi7AwhzvngLJ05l+0Mj3wH7SVHpykc2qZGAQ0wy8=";
+      sha256 = "sha256-kWUGdzd6SFHCUqtDRDj9mTTVinCuf9ie9mr0pV/5EBM=";
     };
-    date = "2023-11-20";
+    date = "2023-11-22";
   };
   klipper-ercf = {
     pname = "klipper-ercf";
@@ -85,15 +85,15 @@
   };
   klipper-screen = {
     pname = "klipper-screen";
-    version = "6eefe9d46541dfe6cfc9a1b18d7bf56b355ce0e7";
+    version = "b10f6a65ffa87888dc3e0fc9dccd3ce3243f8d04";
     src = fetchFromGitHub {
       owner = "jordanruthe";
       repo = "KlipperScreen";
-      rev = "6eefe9d46541dfe6cfc9a1b18d7bf56b355ce0e7";
+      rev = "b10f6a65ffa87888dc3e0fc9dccd3ce3243f8d04";
       fetchSubmodules = false;
-      sha256 = "sha256-a00PDRENRBecka4xtiSXFHEbgHx0tLC8VkdZpmJ3zsk=";
+      sha256 = "sha256-vbFJ/6SGbI1MJaYHjOVvE4FZ4vmAqMh9TAAL9SFjXH0=";
     };
-    date = "2023-11-18";
+    date = "2023-11-23";
   };
   klipper-z-calibration = {
     pname = "klipper-z-calibration";
@@ -138,15 +138,15 @@
   };
   mainsail = {
     pname = "mainsail";
-    version = "e8755fa3fc751f6f98bf9f91792c63834ec97eea";
+    version = "0ecd8181d883c7cef27ee0d3a52659b00f3224c3";
     src = fetchFromGitHub {
       owner = "mainsail-crew";
       repo = "mainsail";
-      rev = "e8755fa3fc751f6f98bf9f91792c63834ec97eea";
+      rev = "0ecd8181d883c7cef27ee0d3a52659b00f3224c3";
       fetchSubmodules = false;
-      sha256 = "sha256-UeS7PhgQqS7vl1baAxK2qLblWTuUvZL4fo2DwgcS+sU=";
+      sha256 = "sha256-P7gV5mQpC6up09stqo+vFK0vRX6yyWFyhZ5JWkf+llM=";
     };
-    date = "2023-11-18";
+    date = "2023-11-23";
   };
   mobileraker-companion = {
     pname = "mobileraker-companion";
