@@ -1,11 +1,34 @@
+createKeyfile() {
+  local keyfile
+
+  keyfile="${1}"
+
+  echo '[keys]' >"${keyfile}"
+  echo "github = \"${GITHUB_TOKEN}\"" >>"${keyfile}"
+}
+
 updateSources() {
   local src_dir
   local toml
+  local nvfetcher_cmd
+  local tmpdir
+  local keyfile
 
   src_dir=$(dirname "${1}")
   toml="${1}"
 
-  nvfetcher -j 0 -t -o "${src_dir}" -c "${toml}"
+  tmpdir=$(mktemp -d nvfetcher-keyfile.XXXXXXXX --tmpdir)
+  keyfile="${tmpdir}/keyfile.toml"
+
+  nvfetcher_cmd="nvfetcher -j 0 --timing --build-dir ${src_dir} --config ${toml}"
+
+  if [[ -n ${GITHUB_TOKEN} ]]; then
+    createKeyfile "${keyfile}" && nvfetcher_cmd="${nvfetcher_cmd} --keyfile ${keyfile}"
+  fi
+
+  eval "${nvfetcher_cmd}"
+
+  rm -rf "${tmpdir}"
 }
 
 updateSourcesFirefoxAddons() {
@@ -29,7 +52,6 @@ updateSourcesFirefoxAddons() {
   sed -i 's/buildFirefoxXpiAddon /rec /g' "${pkgs_file}"
   sed -i '1d' "${pkgs_file}"
   echo '{ lib, ... }:' >"${final_nix}"
-  # cat "${pkgs_file}" | alejandra --quiet >> "${final_nix}"
   alejandra --quiet <"${pkgs_file}" >>"${final_nix}"
 
   rm -rf "${tmpdir}"
@@ -61,7 +83,7 @@ updateSourcesForCell() {
   shopt -u globstar nullglob
 }
 
-if [[ ${1} == "ALL" ]]; then
+if [[ $# -eq 0 || ${1} == "ALL" ]]; then
   updateSourcesAll
 else
   updateSourcesForCell "${1}"

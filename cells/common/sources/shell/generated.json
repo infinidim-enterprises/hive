@@ -1,0 +1,211 @@
+{
+  "zsh-plugin_aw-watcher-shell": {
+    "cargoLocks": null,
+    "date": "2023-11-19",
+    "extract": null,
+    "name": "zsh-plugin_aw-watcher-shell",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "rev": "7dd9771d5c202b671d1ba111af520a30917639f9",
+      "sha256": "sha256-xDgr/e2wuFsMl6vJsvszgrKuEOO97dds9un3BWvqQIw=",
+      "type": "git",
+      "url": "https://github.com/voobscout/aw-watcher-shell"
+    },
+    "version": "7dd9771d5c202b671d1ba111af520a30917639f9"
+  },
+  "zsh-plugin_clipboard": {
+    "cargoLocks": null,
+    "date": "2023-11-05",
+    "extract": null,
+    "name": "zsh-plugin_clipboard",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "rev": "354a4e493da5736d19d14e7769d98f357eff7323",
+      "sha256": "sha256-GDWxib4k2vwfSZ/R5fyXRx6piOYPzJ1hyzCNOg7QqxU=",
+      "type": "git",
+      "url": "https://github.com/zpm-zsh/clipboard"
+    },
+    "version": "354a4e493da5736d19d14e7769d98f357eff7323"
+  },
+  "zsh-plugin_k": {
+    "cargoLocks": null,
+    "date": "2018-09-09",
+    "extract": null,
+    "name": "zsh-plugin_k",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "rev": "e2bfbaf3b8ca92d6ffc4280211805ce4b8a8c19e",
+      "sha256": "sha256-32rJjBzqS2e6w/L78KMNwQRg4E3sqqdAmb87XEhqbRQ=",
+      "type": "git",
+      "url": "https://github.com/supercrabtree/k"
+    },
+    "version": "e2bfbaf3b8ca92d6ffc4280211805ce4b8a8c19e"
+  },
+  "zsh-plugin_oh-my-zsh": {
+    "cargoLocks": null,
+    "date": "2023-11-29",
+    "extract": null,
+    "name": "zsh-plugin_oh-my-zsh",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "rev": "418046e9583f635b0303e4b8cf31c356b175cec3",
+      "sha256": "sha256-r36vF37J+3rLGg0QzmT4U8Lp5nqRhAs8We0aDtBJKJM=",
+      "type": "git",
+      "url": "https://github.com/robbyrussell/oh-my-zsh"
+    },
+    "version": "418046e9583f635b0303e4b8cf31c356b175cec3"
+  },
+  "zsh-plugin_tipz": {
+    "cargoLocks": null,
+    "date": "2018-05-03",
+    "extract": null,
+    "name": "zsh-plugin_tipz",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "rev": "594eab4642cc6dcfe063ecd51d76478bd84e2878",
+      "sha256": "sha256-oFZJwHYDfK4f53lhcZg6PCw2AgHxFC0CRiqiinKZz8k=",
+      "type": "git",
+      "url": "https://github.com/molovo/tipz"
+    },
+    "version": "594eab4642cc6dcfe063ecd51d76478bd84e2878"
+  },
+  "zsh-plugin_zsh-256color": {
+    "cargoLocks": null,
+    "date": "2022-09-13",
+    "extract": null,
+    "name": "zsh-plugin_zsh-256color",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "rev": "559fee48bb74b75cec8b9887f8f3e046f01d5d8f",
+      "sha256": "sha256-P/pbpDJmsMSZkNi5GjVTDy7R+OxaIVZhb/bEnYQlaLo=",
+      "type": "git",
+      "url": "https://github.com/chrissicool/zsh-256color"
+    },
+    "version": "559fee48bb74b75cec8b9887f8f3e046f01d5d8f"
+  },
+  "zsh-plugin_zsh-autoenv": {
+    "cargoLocks": null,
+    "date": "2018-09-14",
+    "extract": null,
+    "name": "zsh-plugin_zsh-autoenv",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "rev": "e9809c1bd28496e025ca05576f574e08e93e12e8",
+      "sha256": "sha256-SxDRldr9eqRtPQ3IWFKX0Q+vEG8Ry34PNRZ/I16aju0=",
+      "type": "git",
+      "url": "https://github.com/Tarrasch/zsh-autoenv"
+    },
+    "version": "e9809c1bd28496e025ca05576f574e08e93e12e8"
+  },
+  "zsh-plugin_zsh-autopair": {
+    "cargoLocks": null,
+    "date": "2022-10-03",
+    "extract": null,
+    "name": "zsh-plugin_zsh-autopair",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "rev": "396c38a7468458ba29011f2ad4112e4fd35f78e6",
+      "sha256": "sha256-PXHxPxFeoYXYMOC29YQKDdMnqTO0toyA7eJTSCV6PGE=",
+      "type": "git",
+      "url": "https://github.com/hlissner/zsh-autopair"
+    },
+    "version": "396c38a7468458ba29011f2ad4112e4fd35f78e6"
+  },
+  "zsh-plugin_zsh-completions": {
+    "cargoLocks": null,
+    "date": "2023-11-20",
+    "extract": null,
+    "name": "zsh-plugin_zsh-completions",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "rev": "9da7488c1152d786d237b45cbe5546eb90fc5f85",
+      "sha256": "sha256-ko3VTF/OM1yu+DtNR+csGN6nCqm7OZa+fHSBx+tKH/Q=",
+      "type": "git",
+      "url": "https://github.com/zsh-users/zsh-completions"
+    },
+    "version": "9da7488c1152d786d237b45cbe5546eb90fc5f85"
+  },
+  "zsh-plugin_zsh-history-substring-search": {
+    "cargoLocks": null,
+    "date": "2023-11-23",
+    "extract": null,
+    "name": "zsh-plugin_zsh-history-substring-search",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "rev": "8dd05bfcc12b0cd1ee9ea64be725b3d9f713cf64",
+      "sha256": "sha256-houujb1CrRTjhCc+dp3PRHALvres1YylgxXwjjK6VZA=",
+      "type": "git",
+      "url": "https://github.com/zsh-users/zsh-history-substring-search"
+    },
+    "version": "8dd05bfcc12b0cd1ee9ea64be725b3d9f713cf64"
+  },
+  "zsh-plugin_zsh-syntax-highlighting": {
+    "cargoLocks": null,
+    "date": "2023-10-29",
+    "extract": null,
+    "name": "zsh-plugin_zsh-syntax-highlighting",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "rev": "bb27265aeeb0a22fb77f1275118a5edba260ec47",
+      "sha256": "sha256-psIOBZnrANu1Gzce5oc0T1IO2vuIhHIFTyl/wJUGsm0=",
+      "type": "git",
+      "url": "https://github.com/zsh-users/zsh-syntax-highlighting"
+    },
+    "version": "bb27265aeeb0a22fb77f1275118a5edba260ec47"
+  }
+}

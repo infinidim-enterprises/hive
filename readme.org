@@ -1,0 +1,79 @@
+* Nix Configuration
+:PROPERTIES:
+:CUSTOM_ID: nix-configuration
+:END:
+This repository is home to the nix code that builds my systems.
+
+#+begin_html
+  <!-- Disable octoprint for now -->
+#+end_html
+
+#+begin_html
+  <!-- [![octoprint](https://img.shields.io/cirrus/github/infinidim-enterprises/hive?label=octoprint&logo=nixos&logoColor=white&task=Build%20octoprint)][octoprint] -->
+#+end_html
+
+[[https://github.com/infinidim-enterprises/hive/actions/workflows/build-tl-wsl.yaml][[[https://img.shields.io/github/actions/workflow/status/infinidim-enterprises/hive/build-tl-wsl.yaml?event=push&logo=nixos&logoColor=white&label=tl-wsl]]]]
+[[https://github.com/infinidim-enterprises/hive/actions/workflows/build-depsos.yaml][[[https://img.shields.io/github/actions/workflow/status/infinidim-enterprises/hive/build-depsos.yaml?event=push&logo=nixos&logoColor=white&label=depsos]]]]
+[[https://github.com/infinidim-enterprises/hive/actions/workflows/build-hyperos.yaml][[[https://img.shields.io/github/actions/workflow/status/infinidim-enterprises/hive/build-hyperos.yaml?event=push&logo=nixos&logoColor=white&label=hyperos]]]]
+[[https://github.com/infinidim-enterprises/hive/actions/workflows/build-nas.yaml][[[https://img.shields.io/github/actions/workflow/status/infinidim-enterprises/hive/build-nas.yaml?event=push&logo=nixos&logoColor=white&label=nas]]]]
+[[https://github.com/infinidim-enterprises/hive/actions/workflows/build-rockiosk.yaml][[[https://img.shields.io/github/actions/workflow/status/infinidim-enterprises/hive/build-rockiosk.yaml?event=push&logo=nixos&logoColor=white&label=rockiosk]]]]
+[[https://cirrus-ci.com/github/infinidim-enterprises/hive/][[[https://img.shields.io/cirrus/github/infinidim-enterprises/hive?label=squadbook&logo=nixos&logoColor=white&task=Build%20squadbook]]]]
+
+#+begin_html
+  <!-- [![oracle](https://img.shields.io/circleci/build/github/cci-eve3ef/hive/master?logo=nixos&logoColor=white&label=oracle&token=fc9316dc8bf54cce1696513462f83e93dd3e77aa)][oracle] -->
+#+end_html
+
+#+begin_html
+  <!-- [![voron](https://img.shields.io/circleci/build/github/cci-eve3ef/hive/master?logo=nixos&logoColor=white&label=voron&token=fc9316dc8bf54cce1696513462f83e93dd3e77aa)][voron] -->
+#+end_html
+
+** Why Nix?
+:PROPERTIES:
+:CUSTOM_ID: why-nix
+:END:
+Nix allows for easy to manage, collaborative, reproducible deployments.
+This means that once something is setup and configured once, it works
+forever. If someone else shares their configuration, anyone can make use
+of it.
+
+This flake is configured with the use of
+[[https://github.com/divnix/hive][hive]].
+
+** Apply configs
+:PROPERTIES:
+:CUSTOM_ID: apply-configs
+:END:
+*** NixOS hosts
+:PROPERTIES:
+:CUSTOM_ID: nixos-hosts
+:END:
+#+begin_src sh
+colmena build
+colmena apply
+# OR
+colmena apply --on "nixos-$HOST"
+#+end_src
+
+*** Darwin hosts
+:PROPERTIES:
+:CUSTOM_ID: darwin-hosts
+:END:
+#+begin_src sh
+darwin-rebuild switch --flake .
+#+end_src
+
+#+begin_html
+  <!-- [octoprint]: <https://cirrus-ci.com/github/infinidim-enterprises/infra/> -->
+#+end_html
+
+#+begin_html
+  <!-- GitHub Actions -->
+#+end_html
+
+#+begin_html
+  <!-- CirrusCI -->
+#+end_html
+
+#+begin_html
+  <!-- CircleCI -->
+#+end_html

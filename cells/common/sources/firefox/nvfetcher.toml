@@ -1,0 +1,82 @@
+[[addons]]
+slug = "aw-watcher-web"
+
+[[addons]]
+slug = "deepl-translate"
+
+[[addons]]
+slug = "swisscows-search"
+
+[[addons]]
+slug = "org-capture"
+
+[[addons]]
+slug = "passff"
+
+[[addons]]
+slug = "export-tabs-urls-and-titles"
+
+[[addons]]
+slug = "promnesia"
+
+[[addons]]
+slug = "grasp"
+
+[[addons]]
+slug = "browserpass-ce"
+
+[[addons]]
+slug = "bukubrow"
+
+[[addons]]
+slug = "ugetintegration"
+
+[[addons]]
+slug = "reduxdevtools"
+
+[[addons]]
+slug = "russian-spellchecking-dic-3703"
+
+[[addons]]
+slug = "ether-metamask"
+
+[[addons]]
+slug = "absolute-enable-right-click"
+
+[[addons]]
+slug = "canvasblocker"
+
+[[addons]]
+slug = "clearurls"
+
+[[addons]]
+slug = "cookie-autodelete"
+
+[[addons]]
+slug = "decentraleyes"
+
+[[addons]]
+slug = "multi-account-containers"
+
+[[addons]]
+slug = "temporary-containers"
+
+# [[addons]]
+# slug = "https-everywhere"
+[[addons]]
+slug = "privacy-badger17"
+
+[[addons]]
+slug = "ublock-origin"
+
+[[addons]]
+slug = "umatrix"
+
+[[addons]]
+slug = "duckduckgo-for-firefox"
+
+[[addons]]
+slug = "enterprise-policy-generator"
+
+[[addons]]
+slug = "languagetool"

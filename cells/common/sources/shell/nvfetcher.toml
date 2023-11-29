@@ -1,0 +1,46 @@
+# zsh plugins
+# "zdharma/fast-syntax-highlighting"
+#
+[zsh-plugin_aw-watcher-shell]
+src.git = "https://github.com/voobscout/aw-watcher-shell"
+fetch.git = "https://github.com/voobscout/aw-watcher-shell"
+
+[zsh-plugin_zsh-history-substring-search]
+src.git = "https://github.com/zsh-users/zsh-history-substring-search"
+fetch.git = "https://github.com/zsh-users/zsh-history-substring-search"
+
+[zsh-plugin_zsh-completions]
+src.git = "https://github.com/zsh-users/zsh-completions"
+fetch.git = "https://github.com/zsh-users/zsh-completions"
+
+[zsh-plugin_clipboard]
+src.git = "https://github.com/zpm-zsh/clipboard"
+fetch.git = "https://github.com/zpm-zsh/clipboard"
+
+[zsh-plugin_k]
+src.git = "https://github.com/supercrabtree/k"
+fetch.git = "https://github.com/supercrabtree/k"
+
+[zsh-plugin_oh-my-zsh]
+src.git = "https://github.com/robbyrussell/oh-my-zsh"
+fetch.git = "https://github.com/robbyrussell/oh-my-zsh"
+
+[zsh-plugin_zsh-syntax-highlighting]
+src.git = "https://github.com/zsh-users/zsh-syntax-highlighting"
+fetch.git = "https://github.com/zsh-users/zsh-syntax-highlighting"
+
+[zsh-plugin_tipz]
+src.git = "https://github.com/molovo/tipz"
+fetch.git = "https://github.com/molovo/tipz"
+
+[zsh-plugin_zsh-autopair]
+src.git = "https://github.com/hlissner/zsh-autopair"
+fetch.git = "https://github.com/hlissner/zsh-autopair"
+
+[zsh-plugin_zsh-256color]
+src.git = "https://github.com/chrissicool/zsh-256color"
+fetch.git = "https://github.com/chrissicool/zsh-256color"
+
+[zsh-plugin_zsh-autoenv]
+src.git = "https://github.com/Tarrasch/zsh-autoenv"
+fetch.git = "https://github.com/Tarrasch/zsh-autoenv"

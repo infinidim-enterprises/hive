@@ -30,7 +30,7 @@ in {
     kubernetes-helmPlugins
     direnv
     amazon-ecr-credential-helper
-    dive
+    dive # A tool for exploring each layer in a docker image
     act
     #
     
