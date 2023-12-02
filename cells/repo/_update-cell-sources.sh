@@ -58,7 +58,10 @@ updateSourcesFirefoxAddons() {
 }
 
 regularOrFirefox() {
-  local src="${1}"
+  local src
+
+  src="${1}"
+
   if [[ ${src} =~ "firefox" ]]; then
     updateSourcesFirefoxAddons "${src}"
   else
