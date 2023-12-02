@@ -14,15 +14,15 @@
   };
   klipper = {
     pname = "klipper";
-    version = "03f69cd81a129456a66e2deb03bc8b137504c179";
+    version = "38221df83ada0a1a9731b18b0226a02726b1c236";
     src = fetchFromGitHub {
       owner = "Klipper3d";
       repo = "klipper";
-      rev = "03f69cd81a129456a66e2deb03bc8b137504c179";
+      rev = "38221df83ada0a1a9731b18b0226a02726b1c236";
       fetchSubmodules = false;
-      sha256 = "sha256-vCP6X9uIgqqvAhpg0OH8Ak1t/vwV6MYKWOwJHmZTVkg=";
+      sha256 = "sha256-EQfVZk9t1VeOh587s5pYOwnYQnVEbNqYK9rxj7PQEBU=";
     };
-    date = "2023-11-28";
+    date = "2023-11-29";
   };
   klipper-ercf = {
     pname = "klipper-ercf";
@@ -85,15 +85,15 @@
   };
   klipper-screen = {
     pname = "klipper-screen";
-    version = "badc47619ac1b3d9fc686bfa073ac4cfd9cbbcda";
+    version = "f3dd3aa83bd5513077a1dee119ffaab616e035cb";
     src = fetchFromGitHub {
       owner = "jordanruthe";
       repo = "KlipperScreen";
-      rev = "badc47619ac1b3d9fc686bfa073ac4cfd9cbbcda";
+      rev = "f3dd3aa83bd5513077a1dee119ffaab616e035cb";
       fetchSubmodules = false;
-      sha256 = "sha256-t75CDsq4mxI7WUA0qsN2IqTtSOaFVnuqJ6M48aUjWVs=";
+      sha256 = "sha256-DQGfuFYjhNmKbOP/gZ0nuXxurHVUCCG6miwKKNAaFsg=";
     };
-    date = "2023-11-25";
+    date = "2023-11-29";
   };
   klipper-z-calibration = {
     pname = "klipper-z-calibration";
@@ -138,27 +138,27 @@
   };
   mainsail = {
     pname = "mainsail";
-    version = "ad18c1dba7383ae85dbcc066658b7aa515af81e4";
+    version = "0f695db325e82fef58e3b0fc6c140b0ba7d0c464";
     src = fetchFromGitHub {
       owner = "mainsail-crew";
       repo = "mainsail";
-      rev = "ad18c1dba7383ae85dbcc066658b7aa515af81e4";
+      rev = "0f695db325e82fef58e3b0fc6c140b0ba7d0c464";
       fetchSubmodules = false;
-      sha256 = "sha256-uYpTAFCjl6ngEqUHZV1ntcG6FgBN7TMwlPJxTawHo3M=";
+      sha256 = "sha256-2h3PWqG/q0q8P6LqdIiZKikYX42e5aMx5eQD5jBrLIo=";
     };
-    date = "2023-11-28";
+    date = "2023-12-01";
   };
   mobileraker-companion = {
     pname = "mobileraker-companion";
-    version = "81ae9a04fca856969c2330721d2effac9014625a";
+    version = "0f69cae47bd59ae09752c42cd95054d84877aa33";
     src = fetchFromGitHub {
       owner = "Clon1998";
       repo = "mobileraker_companion";
-      rev = "81ae9a04fca856969c2330721d2effac9014625a";
+      rev = "0f69cae47bd59ae09752c42cd95054d84877aa33";
       fetchSubmodules = false;
-      sha256 = "sha256-GbJxzzQAk5qs2OGEKLWWNTjei2M1jV7qSbvQH06KscU=";
+      sha256 = "sha256-1e7BEAGodWCsVNXDOlpsNKKfN0aMv2l/DoWG82O7Fhg=";
     };
-    date = "2023-11-19";
+    date = "2023-11-30";
   };
   moonraker = {
     pname = "moonraker";
