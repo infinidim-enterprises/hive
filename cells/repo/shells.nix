@@ -50,6 +50,7 @@
   update-cell-sources = writeShellApplication {
     name = "update-cell-sources";
     runtimeInputs = with nixpkgs; [
+      alejandra
       nvfetcher
       coreutils-full
       findutils
