@@ -28,7 +28,7 @@ jobs:
           git config user.name "github-actions[bot]"
       - name: Update nvfetcher packages
         run: |
-          nix develop '.#ci' --command bash -c "update-cell-sources ALL"
+          nix develop '.#ci' --command bash -c "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} update-cell-sources ALL"
           git commit -am "deps(sources): Updated cell sources"
       - name: Update deps hashes packages
         run: |
