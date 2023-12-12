@@ -11,6 +11,8 @@
 
   inherit
     (inputs.cells.common.overrides)
+    ssh-to-pgp
+    ssh-to-age
     alejandra
     nixUnstable
     cachix
@@ -18,11 +20,11 @@
     statix
     nvfetcher
     act
+    sops
     ;
 
   inherit
     (nixpkgs)
-    sops
     editorconfig-checker
     mdbook
     gnupg
@@ -143,6 +145,8 @@ in
       ];
 
       packages = [
+        ssh-to-pgp
+        ssh-to-age
         nixUnstable
         gnupg
         update-cell-sources

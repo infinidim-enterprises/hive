@@ -36,7 +36,10 @@ in {
     
     tailscale
     ffmpeg_5-full
+    sops
     ;
 
   nvfetcher = inputs.nvfetcher.packages.default;
+  ssh-to-pgp = inputs.sops-ssh-to-pgp.packages.default;
+  ssh-to-age = inputs.sops-ssh-to-age.packages.default;
 }

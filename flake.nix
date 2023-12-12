@@ -55,6 +55,12 @@
     sops-nix.url = "github:TrueLecter/sops-nix/darwin-upstream";
     sops-nix.inputs.nixpkgs.follows = "nixos";
     sops-nix.inputs.nixpkgs-stable.follows = "nixos";
+
+    sops-ssh-to-pgp.url = "github:Mic92/ssh-to-pgp/1.1.2";
+    sops-ssh-to-pgp.inputs.nixpkgs.follows = "latest";
+
+    sops-ssh-to-age.url = "github:Mic92/ssh-to-age/1.1.6";
+    sops-ssh-to-age.inputs.nixpkgs.follows = "latest";
   };
 
   # nixpkgs & home-manager
