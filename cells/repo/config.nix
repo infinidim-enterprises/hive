@@ -109,8 +109,40 @@ in {
     data = {
       name = "Testing the nixago";
       on = {
-        push = {};
-        workflow_dispatch = "";
+        # push = null;
+        workflow_dispatch = null;
+      };
+      jobs = {
+        build_shell = {
+          runs-on = "ubuntu-latest";
+          steps = [
+            {
+              name = "Checkout repository";
+              uses = "actions/checkout@v4.1.1";
+            }
+            {
+              name = "Install Nix";
+              uses = "cachix/install-nix-action@v23";
+              "with" = {
+                nix_path = "nixpkgs=channel:nixos-23.05";
+                extra_nix_config = "access-tokens = github.com=\${{ secrets.GITHUB_TOKEN }}";
+              };
+            }
+            {
+              uses = "cachix/cachix-action@v12";
+              "with" = {
+                name = "njk";
+                extraPullNames = "cuda-maintainers, mic92, nix-community, nrdxp";
+                authToken = "\${{ secrets.CACHIX_AUTH_TOKEN }}";
+                signingKey = "\${{ secrets.CACHIX_SIGNING_KEY }}";
+              };
+            }
+            {
+              name = "Build shell";
+              run = ''nix develop --command "menu"'';
+            }
+          ];
+        };
       };
     };
 

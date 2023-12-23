@@ -141,7 +141,7 @@ in
         config.editorconfig
         config.githubsettings
         config.lefthook
-        # TODO: config.githubworkflow
+        config.githubworkflow
         # config.mdbook
       ];
 
