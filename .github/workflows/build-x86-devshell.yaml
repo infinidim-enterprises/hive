@@ -1,7 +1,7 @@
 name: Build devshell
 "on":
-  push:
-  workflow_dispatch:
+  push: null
+  workflow_dispatch: null
 
 jobs:
   build_shell:
