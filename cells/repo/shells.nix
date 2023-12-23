@@ -10,7 +10,7 @@
   inherit ((nixpkgs.appendOverlays [inputs.nur.overlay]).nur.repos.rycee) mozilla-addons-to-nix;
 
   inherit
-    (inputs.cells.common.overrides)
+    (nixpkgs.appendOverlays [inputs.cells.common.overlays.latest-overrides])
     ssh-to-pgp
     ssh-to-age
     alejandra
@@ -141,6 +141,7 @@ in
         config.editorconfig
         config.githubsettings
         config.lefthook
+        # TODO: config.githubworkflow
         # config.mdbook
       ];
 

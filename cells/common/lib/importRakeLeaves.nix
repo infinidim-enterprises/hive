@@ -1,5 +1,10 @@
-{lib, ...}:
+{
+  lib,
+  inputs,
+  ...
+}:
 with lib; let
+  inherit (inputs.std-ext.lib.digga) rakeLeaves;
   importRakeLeaves = {
     __functor = _self: path: args:
       mapAttrsRecursive
@@ -10,7 +15,7 @@ with lib; let
       (rakeLeaves path);
 
     doc = ''
-      importRakeLeaves {inherit inputs, cell}
+      importRakeLeaves { inherit inputs, cell, ... }
     '';
   };
 in

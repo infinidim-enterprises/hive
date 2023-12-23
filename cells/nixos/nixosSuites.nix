@@ -2,8 +2,8 @@
   inputs,
   cell,
 }: let
-  inherit (inputs) nixpkgs std haumea;
-  l = nixpkgs.lib // builtins;
+  inherit (inputs) nixpkgs nixpkgs-lib std haumea;
+  lib = nixpkgs-lib.lib // builtins;
   profiles = cell.nixosProfiles;
   users = inputs.cells.home.users.nixos;
 in

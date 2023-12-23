@@ -3,22 +3,22 @@
   cell,
   ...
 }: let
-  inherit (inputs) haumea nixpkgs;
-  l = nixpkgs.lib // builtins;
+  lib = inputs.nixpkgs-lib.lib // builtins;
   hosts = cell.nixosConfigurations;
 
+  inherit (inputs) haumea nixpkgs;
+  inherit (lib) mapAttrs recursiveUpdate filterAttrs;
+
   overrides = {
-    depsos = {
-      deployment.targetPort = 2265;
-    };
+    depsos = {deployment.targetPort = 2265;};
   };
 in
-  l.mapAttrs
+  mapAttrs
   (
     name: value:
       value
       // (
-        l.recursiveUpdate
+        recursiveUpdate
         {
           deployment = {
             targetHost = name;
@@ -33,4 +33,4 @@ in
         )
       )
   )
-  (l.filterAttrs (n: _: n != "octoprint") hosts)
+  (filterAttrs (n: _: n != "octoprint") hosts)

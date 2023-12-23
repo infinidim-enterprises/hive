@@ -1,7 +1,8 @@
 {
   inputs,
   cell,
-}: let
+  ...
+}: final: prev: let
   latest = import inputs.latest {
     inherit (inputs.nixpkgs) system;
     config.allowUnfree = true;
@@ -30,10 +31,12 @@ in {
     kubernetes-helmPlugins
     direnv
     amazon-ecr-credential-helper
-    dive # A tool for exploring each layer in a docker image
-    act
-    #
+    # dive - A tool for exploring each layer in a docker image
     
+    dive
+    # act - Run your GitHub Actions locally
+    
+    act
     tailscale
     ffmpeg_5-full
     sops

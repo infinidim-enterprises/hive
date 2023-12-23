@@ -13,7 +13,10 @@
   importLibs = {src ? ./lib}:
     haumea.lib.load {
       inherit src;
-      inputs = (removeAttrs inputs ["self"]) // {inherit lib;};
+      inputs = {
+        inputs = removeAttrs inputs ["self"];
+        inherit lib;
+      };
       transformer = haumea.lib.transformers.liftDefault;
     };
 in

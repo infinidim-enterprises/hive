@@ -1,4 +1,8 @@
-{lib, ...}: let
+{
+  lib,
+  inputs,
+  ...
+}: let
   disableModulesFrom = {
     __functor = _self: path: let
       inherit
@@ -7,6 +11,9 @@
         removePrefix
         toPath
         attrValues
+        ;
+      inherit
+        (inputs.std-ext.lib.digga)
         flattenTree
         rakeLeaves
         ;

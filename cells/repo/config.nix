@@ -3,10 +3,10 @@
   cell,
   ...
 }: let
-  inherit (inputs) nixpkgs std;
+  inherit (inputs) nixpkgs nixpkgs-lib std;
   inherit (std.lib.dev) mkNixago;
 
-  l = nixpkgs.lib // builtins;
+  l = nixpkgs-lib.lib // builtins;
 in {
   editorconfig = mkNixago std.lib.cfg.editorconfig {
     data = {
@@ -35,7 +35,7 @@ in {
   # Tool Homepage: https://numtide.github.io/treefmt/
   treefmt = mkNixago std.lib.cfg.treefmt {
     packages = [
-      inputs.cells.common.overrides.alejandra
+      (nixpkgs.appendOverlays [inputs.cells.common.overlays.latest-overrides]).alejandra
       inputs.nixpkgs.nodePackages.prettier
       inputs.nixpkgs.nodePackages.prettier-plugin-toml
       inputs.nixpkgs.shfmt
@@ -103,6 +103,20 @@ in {
         };
       };
     };
+  };
+
+  githubworkflow = mkNixago {
+    data = {
+      name = "Testing the nixago";
+      on = {
+        push = {};
+        workflow_dispatch = "";
+      };
+    };
+
+    output = ".github/workflows/build-x86-test-devshell.yaml";
+    format = "yaml";
+    hook.mode = "copy";
   };
 
   # Tool Hompeage: https://github.com/apps/settings
