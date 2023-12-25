@@ -1,9 +1,9 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}: let
+{ config
+, pkgs
+, lib
+, ...
+}:
+let
   klipperCfg = config.services.klipper;
   moonrakerCfg = config.services.moonraker;
   gcodePath = "${moonrakerCfg.stateDir}/gcodes";
@@ -11,8 +11,7 @@
     (pkgs.klipper-firmware.override {
       mcu = "rpi";
       firmwareConfig = ./firmwares/firmware-config-rpi-4;
-    })
-    .overrideAttrs (o: {
+    }).overrideAttrs (o: {
       patches = [
         ./firmwares/rpi-fw.patch
       ];
@@ -28,15 +27,16 @@
         cp -r out/klipper.elf $out
       '';
     });
-in {
-  boot.kernelModules = ["gpiod"];
+in
+{
+  boot.kernelModules = [ "gpiod" ];
 
   users = {
-    groups.klipper = {};
+    groups.klipper = { };
     users.klipper = {
       isSystemUser = true;
       group = "klipper";
-      extraGroups = ["dialout gpio video dma-heap klipper"];
+      extraGroups = [ "dialout gpio video dma-heap klipper" ];
     };
   };
 
@@ -51,17 +51,18 @@ in {
   ];
 
   environment.etc = builtins.listToAttrs (
-    builtins.map (
-      path: {
-        name = "klipper.d/${builtins.baseNameOf path}";
-        value = {
-          inherit (klipperCfg) user group;
+    builtins.map
+      (
+        path: {
+          name = "klipper.d/${builtins.baseNameOf path}";
+          value = {
+            inherit (klipperCfg) user group;
 
-          source = path;
-        };
-      }
-    )
-    (lib.filesystem.listFilesRecursive ./configs/klipper.d)
+            source = path;
+          };
+        }
+      )
+      (lib.filesystem.listFilesRecursive ./configs/klipper.d)
   );
 
   services.klipper = {
@@ -72,7 +73,7 @@ in {
 
     # TODO make function to have list of files to combine
     settings = {
-      "include /etc/klipper.d/*.cfg" = {};
+      "include /etc/klipper.d/*.cfg" = { };
       virtual_sdcard = {
         path = gcodePath;
       };
@@ -84,5 +85,5 @@ in {
     enable = true;
   };
 
-  systemd.services.klipper-mcu.serviceConfig.SupplementaryGroups = ["spi" "gpio"];
+  systemd.services.klipper-mcu.serviceConfig.SupplementaryGroups = [ "spi" "gpio" ];
 }

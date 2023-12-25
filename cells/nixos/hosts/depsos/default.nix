@@ -1,11 +1,12 @@
-{
-  inputs,
-  suites,
-  profiles,
-  ...
-}: let
+{ inputs
+, suites
+, profiles
+, ...
+}:
+let
   system = "x86_64-linux";
-in {
+in
+{
   imports = [
     suites.base
 
@@ -32,11 +33,11 @@ in {
     inherit system;
     config.allowUnfree = true;
     overlays = with inputs.cells.common.overlays;
-    with inputs.cells.k8s.overlays; [
-      common-packages
-      latest-overrides
-      k8s-overrides
-    ];
+      with inputs.cells.k8s.overlays; [
+        common-packages
+        latest-overrides
+        k8s-overrides
+      ];
   };
 
   networking.networkmanager = {
@@ -52,15 +53,17 @@ in {
   };
 
   # we are in tight free space situation
-  nix.settings = let
-    MB = 1024 * 1024;
-  in {
-    min-free = 100 * MB;
-    max-free = 500 * MB;
-  };
+  nix.settings =
+    let
+      MB = 1024 * 1024;
+    in
+    {
+      min-free = 100 * MB;
+      max-free = 500 * MB;
+    };
 
   systemd.services.NetworkManager-wait-online.enable = false;
-  services.openssh.ports = [22 2265];
+  services.openssh.ports = [ 22 2265 ];
 
   system.stateVersion = "22.05";
 }

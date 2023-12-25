@@ -1,9 +1,9 @@
-{
-  pkgs,
-  inputs,
-  lib,
-  ...
-}: let
+{ pkgs
+, inputs
+, lib
+, ...
+}:
+let
   linuxSystem = "aarch64-linux";
 
   darwin-builder = inputs.latest.lib.nixosSystem {
@@ -23,7 +23,8 @@
       }
     ];
   };
-in {
+in
+{
   nix.buildMachines = [
     {
       sshUser = "builder";
@@ -31,7 +32,7 @@ in {
       sshKey = "/etc/nix/builder_ed25519";
       system = linuxSystem;
       maxJobs = 8;
-      supportedFeatures = ["kvm" "benchmark" "big-parallel"];
+      supportedFeatures = [ "kvm" "benchmark" "big-parallel" ];
       speedFactor = 200;
     }
   ];

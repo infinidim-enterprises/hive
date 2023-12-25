@@ -1,9 +1,11 @@
-{
-  inputs,
-  cell,
-}: let
+{ inputs
+, cell
+,
+}:
+let
   inherit (inputs.cells) common;
-in {
+in
+{
   klipper = common.lib.combineModules {
     src = ./modules;
   };

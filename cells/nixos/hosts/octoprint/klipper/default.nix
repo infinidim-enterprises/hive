@@ -1,4 +1,4 @@
-{...}: {
+{ ... }: {
   imports = [
     ./klipper.nix
     ./moonraker.nix

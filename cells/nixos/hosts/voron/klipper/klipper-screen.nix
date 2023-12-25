@@ -1,7 +1,6 @@
-{
-  pkgs,
-  lib,
-  ...
+{ pkgs
+, lib
+, ...
 }: {
   tl.services.klipper-screen = {
     enable = true;
@@ -65,18 +64,20 @@
   };
 
   hardware.deviceTree = {
-    overlays = let
-      overlay = name: {
-        name = name;
-        dtboFile = "${pkgs.device-tree_rpi.overlays}/${name}.dtbo";
-      };
-    in [
-      (overlay "disable-bt")
-      (overlay "vc4-kms-v3d-pi4")
-      (overlay "vc4-kms-dsi-7inch")
-      # replace with vc4-kms-dsi-waveshare-panel when kernel is updated
-      (overlay "rpi-ft5406")
-    ];
+    overlays =
+      let
+        overlay = name: {
+          name = name;
+          dtboFile = "${pkgs.device-tree_rpi.overlays}/${name}.dtbo";
+        };
+      in
+      [
+        (overlay "disable-bt")
+        (overlay "vc4-kms-v3d-pi4")
+        (overlay "vc4-kms-dsi-7inch")
+        # replace with vc4-kms-dsi-waveshare-panel when kernel is updated
+        (overlay "rpi-ft5406")
+      ];
   };
 
   hardware.raspberry-pi."4" = {
@@ -92,7 +93,7 @@
 
     displayManager = {
       startx.enable = true;
-      xserverArgs = ["-keeptty" "-logverbose" "-verbose"];
+      xserverArgs = [ "-keeptty" "-logverbose" "-verbose" ];
     };
 
     excludePackages = with pkgs; [

@@ -1,7 +1,7 @@
-{
-  cell,
-  inputs,
-}: {config, ...}: {
+{ cell
+, inputs
+,
+}: { config, ... }: {
   imports = [
     inputs.cells.secrets.commonProfiles.remote-builders
   ];

@@ -1,4 +1,4 @@
-{inputs, ...}: {
+{ inputs, ... }: {
   imports = [
     inputs.cells.pam-reattach.darwinModules.pam
   ];

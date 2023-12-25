@@ -1,11 +1,12 @@
-{
-  inputs,
-  suites,
-  profiles,
-  ...
-}: let
+{ inputs
+, suites
+, profiles
+, ...
+}:
+let
   system = "aarch64-linux";
-in {
+in
+{
   imports = [
     suites.base
     suites.rpi
@@ -22,7 +23,7 @@ in {
       latest-overrides
       (
         final: prev: {
-          makeModulesClosure = x: prev.makeModulesClosure (x // {allowMissing = true;});
+          makeModulesClosure = x: prev.makeModulesClosure (x // { allowMissing = true; });
         }
       )
     ];
@@ -30,7 +31,7 @@ in {
 
   tl.provision.secrets = {
     unencryptedBase = "/boot/firmware/secrets/";
-    expectedSecrets = ["wifi-envs" "tailscale-key"];
+    expectedSecrets = [ "wifi-envs" "tailscale-key" ];
   };
 
   system.stateVersion = "23.05";

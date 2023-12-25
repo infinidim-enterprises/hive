@@ -1,9 +1,8 @@
-_: {
-  pkgs,
-  lib,
-  modulesPath,
-  ...
-}: {
+_: { pkgs
+   , lib
+   , modulesPath
+   , ...
+   }: {
   imports = [
     "${toString modulesPath}/installer/sd-card/sd-image-aarch64.nix"
   ];
@@ -12,7 +11,7 @@ _: {
     "/boot/firmware" = {
       device = "/dev/disk/by-label/FIRMWARE";
       fsType = "vfat";
-      options = lib.mkForce ["defaults"];
+      options = lib.mkForce [ "defaults" ];
     };
 
     "/" = {

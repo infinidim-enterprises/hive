@@ -1,13 +1,13 @@
-{
-  config,
-  lib,
-  pkgs,
-  modulesPath,
-  ...
+{ config
+, lib
+, pkgs
+, modulesPath
+, ...
 }:
 with lib; let
   cfg = config.tl.k8s.server;
-in {
+in
+{
   options.tl.k8s.server = {
     enable = mkEnableOption "Kubernetes server";
 
@@ -42,7 +42,7 @@ in {
   };
 
   config = mkIf cfg.enable {
-    networking.firewall.allowedTCPPorts = [6443];
+    networking.firewall.allowedTCPPorts = [ 6443 ];
 
     services.k3s = {
       enable = true;
@@ -57,8 +57,8 @@ in {
     };
 
     systemd.services.k3s = {
-      wants = ["containerd.service"];
-      after = ["containerd.service"];
+      wants = [ "containerd.service" ];
+      after = [ "containerd.service" ];
     };
 
     virtualisation.containerd = {

@@ -102,5 +102,5 @@
     nixpkgs-hardenedlinux.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = {self, ...}: {};
+  outputs = { self, ... }: { };
 }

@@ -1,12 +1,13 @@
-{
-  inputs,
-  cell,
-  ...
-}: let
+{ inputs
+, cell
+, ...
+}:
+let
   inherit (inputs) latest nixpkgs;
-in {
+in
+{
   misc = cell.lib.importPackages {
-    nixpkgs = import latest {inherit (nixpkgs) system;};
+    nixpkgs = import latest { inherit (nixpkgs) system; };
     sources = ./sources/misc/generated.nix;
     packages = ./packages;
   };

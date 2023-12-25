@@ -1,7 +1,8 @@
-{
-  inputs,
-  cell,
-}: let
+{ inputs
+, cell
+,
+}:
+let
   inherit (inputs) nixpkgs std haumea;
   l = nixpkgs.lib // builtins;
   suites = with cell.homeProfiles; {
@@ -23,10 +24,11 @@
     develop-gui = [
       dev.vscode
     ];
-    android = [dev.android];
+    android = [ dev.android ];
   };
-in {
-  workstation = {...}: {
+in
+{
+  workstation = { ... }: {
     imports = with suites;
       l.flatten [
         base
@@ -35,8 +37,8 @@ in {
         android
       ];
   };
-  minimal = {...}: {imports = suites.base;};
-  server-dev = {...}: {
+  minimal = { ... }: { imports = suites.base; };
+  server-dev = { ... }: {
     imports = with suites;
       l.flatten [
         develop

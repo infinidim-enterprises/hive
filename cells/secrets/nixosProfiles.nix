@@ -1,7 +1,8 @@
+{ inputs
+, cell
+, ...
+}:
 {
-  inputs,
-  cell,
-}: {
   common = _: {
     imports = [
       inputs.sops-nix.nixosModules.sops
@@ -46,7 +47,7 @@
   };
 
   minecraft-servers = _: {
-    users.groups.minecraft-servers-backup = {};
+    users.groups.minecraft-servers-backup = { };
 
     sops.secrets = {
       minecraft-restic-pw-file = {

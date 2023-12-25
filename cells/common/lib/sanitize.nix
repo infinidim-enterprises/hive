@@ -1,4 +1,5 @@
-{lib, ...}: let
+{ lib, ... }:
+let
   inherit (lib) const filterAttrs;
   inherit (builtins) typeOf getAttr mapAttrs;
 
@@ -11,20 +12,20 @@
         list = map sanitize cfgChunk;
         set =
           mapAttrs
-          (const sanitize)
-          (filterAttrs
-            (name: value:
-              name
-              != "_module"
-              && name != "mutable"
-              && name != "members"
-              && name != "apply"
-              && value != null)
-            cfgChunk);
+            (const sanitize)
+            (filterAttrs
+              (name: value:
+                name
+                != "_module"
+                && name != "mutable"
+                && name != "members"
+                && name != "apply"
+                && value != null)
+              cfgChunk);
       };
     doc = ''
       Sanitize module config for remarshalling, removing nix specific keys
     '';
   };
 in
-  sanitize
+sanitize

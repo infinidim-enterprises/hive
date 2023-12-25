@@ -1,8 +1,7 @@
-_: {
-  config,
-  lib,
-  ...
-}: {
+_: { config
+   , lib
+   , ...
+   }: {
   system.defaults.smb = {
     NetBIOSName = config.networking.hostName;
     ServerDescription = config.networking.hostName;

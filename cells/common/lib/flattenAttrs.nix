@@ -1,8 +1,9 @@
-{lib, ...}: let
+{ lib, ... }:
+let
   flattenAttrs = {
     __functor = _self: attrs:
       with lib;
-        concatLists (collect isList attrs);
+      concatLists (collect isList attrs);
 
     doc = ''
       Concatenates all lists in a nested attrs, ignoring the names and
@@ -14,4 +15,4 @@
     '';
   };
 in
-  flattenAttrs
+flattenAttrs

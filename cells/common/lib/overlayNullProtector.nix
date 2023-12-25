@@ -1,8 +1,9 @@
-{lib, ...}: let
+{ lib, ... }:
+let
   overlayNullProtector = {
     __functor = _self: overlay: final: prev:
       if prev == null || (prev.isFakePkgs or false)
-      then {}
+      then { }
       else overlay final prev;
 
     doc = ''
@@ -13,4 +14,4 @@
     '';
   };
 in
-  overlayNullProtector
+overlayNullProtector

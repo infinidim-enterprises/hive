@@ -1,11 +1,10 @@
-{
-  config,
-  lib,
-  pkgs,
-  modulesPath,
-  ...
+{ config
+, lib
+, pkgs
+, modulesPath
+, ...
 }: {
-  imports = [];
+  imports = [ ];
 
   boot.loader = {
     systemd-boot = {
@@ -19,7 +18,7 @@
       efiSysMountPoint = "/boot";
     }; # efi
     grub = {
-      devices = ["nodev"];
+      devices = [ "nodev" ];
       enable = true;
       efiSupport = true;
       version = 2;
@@ -27,10 +26,10 @@
     }; # grub
   }; # bootloader
 
-  boot.initrd.availableKernelModules = ["ata_piix" "mptspi" "ahci" "sd_mod" "sr_mod"];
-  boot.initrd.kernelModules = [];
-  boot.kernelModules = [];
-  boot.extraModulePackages = [];
+  boot.initrd.availableKernelModules = [ "ata_piix" "mptspi" "ahci" "sd_mod" "sr_mod" ];
+  boot.initrd.kernelModules = [ ];
+  boot.kernelModules = [ ];
+  boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
     device = "/dev/disk/by-label/system";
@@ -62,7 +61,7 @@
     hostName = "depsos";
     # networkmanager.enable = true;
     firewall.enable = false;
-    nameservers = ["1.1.1.1" "8.8.8.8"];
+    nameservers = [ "1.1.1.1" "8.8.8.8" ];
     interfaces.eth0 = {
       ipv4 = {
         addresses = [

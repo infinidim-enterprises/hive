@@ -1,13 +1,13 @@
-{
-  config,
-  lib,
-  pkgs,
-  modulesPath,
-  ...
+{ config
+, lib
+, pkgs
+, modulesPath
+, ...
 }:
 with lib; let
   cfg = config.tl.k8s.agent;
-in {
+in
+{
   options.tl.k8s.agent = {
     enable = mkEnableOption "Kubernetes agent";
 
@@ -45,8 +45,8 @@ in {
     };
 
     systemd.services.k3s = {
-      wants = ["containerd.service"];
-      after = ["containerd.service"];
+      wants = [ "containerd.service" ];
+      after = [ "containerd.service" ];
     };
 
     virtualisation.containerd = {

@@ -1,9 +1,8 @@
-{
-  config,
-  lib,
-  ...
+{ config
+, lib
+, ...
 }: {
-  imports = [];
+  imports = [ ];
 
   boot.loader = {
     systemd-boot = {
@@ -17,7 +16,7 @@
       efiSysMountPoint = "/boot";
     }; # efi
     grub = {
-      devices = ["nodev"];
+      devices = [ "nodev" ];
       enable = true;
       efiSupport = true;
       version = 2;
@@ -25,10 +24,10 @@
     }; # grub
   }; # bootloader
 
-  boot.initrd.availableKernelModules = ["sd_mod" "sr_mod"];
-  boot.initrd.kernelModules = [];
-  boot.kernelModules = [];
-  boot.extraModulePackages = [];
+  boot.initrd.availableKernelModules = [ "sd_mod" "sr_mod" ];
+  boot.initrd.kernelModules = [ ];
+  boot.kernelModules = [ ];
+  boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
     device = "/dev/disk/by-label/nixos";
@@ -45,10 +44,10 @@
     hostName = "hyperos";
     # networkmanager.enable = true;
     firewall.enable = false;
-    nameservers = ["1.1.1.1" "8.8.8.8"];
+    nameservers = [ "1.1.1.1" "8.8.8.8" ];
   };
 
-  swapDevices = [];
+  swapDevices = [ ];
 
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   virtualisation.hypervGuest.enable = true;

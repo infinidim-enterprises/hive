@@ -1,9 +1,9 @@
-_: {
-  config,
-  lib,
-  pkgs,
-  ...
-}: let
+_: { config
+   , lib
+   , pkgs
+   , ...
+   }:
+let
   oh-my-tmux-conf = "oh-my-tmux.conf";
   oh-my-tmux-conf-path = "${config.xdg.configHome}/${oh-my-tmux-conf}";
   oh-tmux-conf-local = "oh-my-tmux-local.conf";
@@ -22,7 +22,7 @@ _: {
 
     version = "5641d3b3f5f9c353c58dfcba4c265df055a05b6b";
 
-    nativeBuildInputs = [pkgs.gnused];
+    nativeBuildInputs = [ pkgs.gnused ];
 
     dontConfigure = true;
     dontBuild = true;
@@ -38,7 +38,8 @@ _: {
       license = licenses.gpl3Only;
     };
   };
-in {
+in
+{
   programs.tmux = {
     enable = true;
 

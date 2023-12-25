@@ -1,9 +1,8 @@
-{
-  inputs,
-  pkgs,
-  suites,
-  profiles,
-  ...
+{ inputs
+, pkgs
+, suites
+, profiles
+, ...
 }: {
   services.transmission = {
     enable = true;

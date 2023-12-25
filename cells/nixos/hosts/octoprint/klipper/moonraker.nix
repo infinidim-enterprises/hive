@@ -1,12 +1,13 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}: let
+{ config
+, pkgs
+, lib
+, ...
+}:
+let
   klipperCfg = config.services.klipper;
   moonrakerCfg = config.services.moonraker;
-in {
+in
+{
   services.moonraker = {
     enable = true;
     address = "0.0.0.0";
@@ -15,24 +16,25 @@ in {
     inherit (klipperCfg) user group;
 
     settings = {
-      "include /etc/moonraker.d/*.cfg" = {};
+      "include /etc/moonraker.d/*.cfg" = { };
     };
   };
 
   security.polkit.enable = true;
 
   environment.etc = builtins.listToAttrs (
-    builtins.map (
-      path: {
-        name = "moonraker.d/${builtins.baseNameOf path}";
-        value = {
-          inherit (klipperCfg) user group;
+    builtins.map
+      (
+        path: {
+          name = "moonraker.d/${builtins.baseNameOf path}";
+          value = {
+            inherit (klipperCfg) user group;
 
-          source = path;
-        };
-      }
-    )
-    (lib.filesystem.listFilesRecursive ./configs/moonraker.d)
+            source = path;
+          };
+        }
+      )
+      (lib.filesystem.listFilesRecursive ./configs/moonraker.d)
   );
 
   systemd.services.moonraker = {

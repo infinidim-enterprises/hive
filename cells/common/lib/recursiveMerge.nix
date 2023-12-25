@@ -1,19 +1,20 @@
-{lib, ...}: let
+{ lib, ... }:
+let
   recursiveMerge = {
     __functor = _self: attrList: with lib; let
       f = attrPath:
         zipAttrsWith (
           n: values:
-            if tail values == []
+            if tail values == [ ]
             then head values
             else if all isList values
             then unique (concatLists values)
             else if all isAttrs values
-            then f (attrPath ++ [n]) values
+            then f (attrPath ++ [ n ]) values
             else last values
         );
     in
-      f [] attrList;
+    f [ ] attrList;
 
     doc = ''
       Merges list of records, concatenates arrays, if two values can't be merged - the latter is preferred
@@ -52,4 +53,4 @@
     '';
   };
 in
-  recursiveMerge
+recursiveMerge

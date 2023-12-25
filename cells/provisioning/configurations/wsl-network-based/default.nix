@@ -1,10 +1,11 @@
-{
-  inputs,
-  suites,
-  ...
-}: let
+{ inputs
+, suites
+, ...
+}:
+let
   system = "x86_64-linux";
-in {
+in
+{
   imports = [
     suites.base
     suites.wsl

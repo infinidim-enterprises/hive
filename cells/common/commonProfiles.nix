@@ -1,9 +1,8 @@
-{
-  inputs,
-  cell,
-  ...
+{ inputs
+, cell
+, ...
 }:
 cell.lib.importProfiles {
   src = ./profiles;
-  inputs = {inherit cell inputs;};
+  inputs = { inherit cell inputs; };
 }

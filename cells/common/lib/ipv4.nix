@@ -1,4 +1,5 @@
-{lib, ...}: let
+{ lib, ... }:
+let
   ip = {
     __functor = _self: a: b: c: d: prefixLength: {
       inherit a b c d prefixLength;
@@ -19,15 +20,16 @@
   };
 
   fromInt = {
-    __functor = _self: addr: prefixLength: let
-      aBlock = a * 16777216;
-      bBlock = b * 65536;
-      cBlock = c * 256;
-      a = addr / 16777216;
-      b = (addr - aBlock) / 65536;
-      c = (addr - aBlock - bBlock) / 256;
-      d = addr - aBlock - bBlock - cBlock;
-    in
+    __functor = _self: addr: prefixLength:
+      let
+        aBlock = a * 16777216;
+        bBlock = b * 65536;
+        cBlock = c * 256;
+        a = addr / 16777216;
+        b = (addr - aBlock) / 65536;
+        c = (addr - aBlock - bBlock) / 256;
+        d = addr - aBlock - bBlock - cBlock;
+      in
       ip a b c d prefixLength;
     doc = ''
       Returns a set of network attributes from an Integer representation, expects prefixLength
@@ -44,11 +46,12 @@
 
   fromCIDR = {
     __functor = _self:
-      with lib; str: let
-        splits1 = splitString "." str;
-        splits2 = flatten (map (x: splitString "/" x) splits1);
-        e = i: lib.toInt (builtins.elemAt splits2 i);
-      in
+      with lib; str:
+        let
+          splits1 = splitString "." str;
+          splits2 = flatten (map (x: splitString "/" x) splits1);
+          e = i: lib.toInt (builtins.elemAt splits2 i);
+        in
         ip (e 0) (e 1) (e 2) (e 3) (e 4);
 
     doc = ''
@@ -61,24 +64,26 @@
   };
 
   network = {
-    __functor = _self: addr: let
-      pfl = addr.prefixLength;
-      pow = n: i:
-        if i == 1
-        then n
-        else if i == 0
-        then 1
-        else n * pow n (i - 1);
+    __functor = _self: addr:
+      let
+        pfl = addr.prefixLength;
+        pow = n: i:
+          if i == 1
+          then n
+          else if i == 0
+          then 1
+          else n * pow n (i - 1);
 
-      shiftAmount = pow 2 (32 - pfl);
-    in
+        shiftAmount = pow 2 (32 - pfl);
+      in
       fromInt ((toInt addr) / shiftAmount * shiftAmount) pfl;
 
     doc = ''
       Returns network address, given a CIDR
     '';
   };
-in {
+in
+{
   inherit
     fromCIDR
     toCIDR

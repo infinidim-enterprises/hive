@@ -1,9 +1,8 @@
-{
-  config,
-  pkgs,
-  lib,
-  self,
-  ...
+{ config
+, pkgs
+, lib
+, self
+, ...
 }: {
   environment.systemPackages = [
     pkgs.dtc
@@ -28,7 +27,7 @@
 
       paths = {
         cam = {
-          runOnInit = builtins.replaceStrings ["\n"] [""] "${pkgs.ffmpeg_5-full}/bin/ffmpeg -vcodec h264 -framerate 25 -video_size 1280x720 -f v4l2
+          runOnInit = builtins.replaceStrings [ "\n" ] [ "" ] "${pkgs.ffmpeg_5-full}/bin/ffmpeg -vcodec h264 -framerate 25 -video_size 1280x720 -f v4l2
             -i /dev/v4l/by-id/usb-046d_HD_Pro_Webcam_C920_89E7787F-video-index0
             -c:v libx264 -preset ultrafast -pix_fmt yuv420p
             -flags low_delay -strict experimental -g 50 -crf 18
@@ -40,15 +39,15 @@
     };
   };
 
-  users.groups.dma-heap = {};
+  users.groups.dma-heap = { };
 
   services.udev.extraRules = ''
     SUBSYSTEM=="dma_heap", GROUP="dma-heap", MODE="0660"
   '';
 
   systemd.services.mediamtx = {
-    after = ["tailscale-tls.service"];
-    partOf = ["tailscale-tls.service"];
+    after = [ "tailscale-tls.service" ];
+    partOf = [ "tailscale-tls.service" ];
 
     serviceConfig.SupplementaryGroups = lib.mkForce "video tailscale-tls dma-heap";
   };

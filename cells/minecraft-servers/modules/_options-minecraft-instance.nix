@@ -1,12 +1,12 @@
-{
-  pkgs,
-  globalOptions,
-}: {
-  name,
-  lib,
-  config,
-  ...
-}: let
+{ pkgs
+, globalOptions
+,
+}: { name
+   , lib
+   , config
+   , ...
+   }:
+let
   l = builtins // lib;
   inherit (lib) types mkOption mkEnableOption;
 
@@ -15,7 +15,8 @@
   mkJvmOptString = icfg: "${mkJvmMxFlag icfg} ${mkJvmMsFlag icfg} ${icfg.jvmOpts}";
 
   instanceName = name;
-in {
+in
+{
   options = rec {
     enable = mkEnableOption "Enable minecraft server instance ${name}";
 
@@ -195,12 +196,12 @@ in {
         inherit pkgs globalOptions;
         instanceConfig = config;
       });
-      default = {enable = false;};
+      default = { enable = false; };
     };
 
     user.extraGroups = mkOption {
       type = types.listOf types.string;
-      default = [];
+      default = [ ];
       description = ''
         Extra groups for minecraft instance user.
       '';
@@ -209,7 +210,7 @@ in {
     customization = {
       remove = mkOption {
         type = types.listOf types.string;
-        default = [];
+        default = [ ];
         description = ''
           List of files to remove before starting server from server package.
           Takes priority over file creation (i.e. if the same file will be specified in <literal>
@@ -222,9 +223,9 @@ in {
 
       create = mkOption {
         type = types.attrsOf (
-          types.submodule (import ./_options-customization-file.nix {inherit pkgs instanceName;})
+          types.submodule (import ./_options-customization-file.nix { inherit pkgs instanceName; })
         );
-        default = {};
+        default = { };
         description = ''
           Set of files to place in overlay on top of server package
         '';

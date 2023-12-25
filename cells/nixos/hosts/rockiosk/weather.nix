@@ -1,7 +1,6 @@
-{
-  config,
-  pkgs,
-  ...
+{ config
+, pkgs
+, ...
 }: {
   services.grafana = {
     enable = true;
@@ -69,15 +68,15 @@
     extraConfig = {
       inputs.openweathermap = {
         app_id = "$OWM_API_KEY";
-        city_id = ["688723" "703448"];
+        city_id = [ "688723" "703448" ];
         lang = "ua";
-        fetch = ["weather" "forecast"];
+        fetch = [ "weather" "forecast" ];
         units = "metric";
         interval = "10m";
       };
 
       outputs.influxdb_v2 = {
-        urls = ["http://127.0.0.1:8086"];
+        urls = [ "http://127.0.0.1:8086" ];
         organization = "weather";
         bucket = "weather";
         token = "$INFLUX_TOKEN";

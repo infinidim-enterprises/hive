@@ -1,7 +1,6 @@
-{
-  lib,
-  pkgs,
-  ...
+{ lib
+, pkgs
+, ...
 }: {
   boot = {
     kernelPackages = pkgs.linuxPackages_rpi4;
@@ -43,7 +42,7 @@
     "/boot/firmware" = {
       device = "/dev/disk/by-label/FIRMWARE";
       fsType = "vfat";
-      options = ["nofail"];
+      options = [ "nofail" ];
     };
     "/" = {
       device = lib.mkForce "/dev/disk/by-label/NIXOS_SD";

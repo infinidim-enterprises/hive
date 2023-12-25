@@ -1,7 +1,6 @@
-{
-  inputs,
-  cell,
-  ...
+{ inputs
+, cell
+, ...
 }: final: prev: {
   mkWaylandApp = t: e: f:
     prev.stdenv.mkDerivation {
@@ -9,7 +8,7 @@
       inherit (t) version;
       unpackPhase = "true";
       doBuild = false;
-      nativeBuildInputs = [prev.buildPackages.makeWrapper];
+      nativeBuildInputs = [ prev.buildPackages.makeWrapper ];
       installPhase = ''
         mkdir -p $out/bin
         ln -s "${prev.lib.getBin t}/bin/${e}" "$out/bin"

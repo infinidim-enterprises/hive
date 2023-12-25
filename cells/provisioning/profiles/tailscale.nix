@@ -1,14 +1,13 @@
-{
-  inputs,
-  common,
-  nixos,
-  cell,
-}: {
-  config,
-  lib,
-  pkgs,
-  ...
-}: {
+{ inputs
+, common
+, nixos
+, cell
+,
+}: { config
+   , lib
+   , pkgs
+   , ...
+   }: {
   imports = [
     cell.nixosModules.provision
   ];

@@ -1,12 +1,12 @@
-{
-  config,
-  lib,
-  modulesPath,
-  ...
+{ config
+, lib
+, modulesPath
+, ...
 }:
 with lib; let
   cfg = config.tl.services.klipper.minimize-system;
-in {
+in
+{
   options.tl.services.klipper.minimize-system = {
     enable = mkEnableOption "Mainsail is the popular web interface for Klipper";
   };

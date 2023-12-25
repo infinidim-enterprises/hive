@@ -1,3 +1,3 @@
 {
-  homebrew.casks = ["autodesk-fusion360" "superslicer" "openscad"];
+  homebrew.casks = [ "autodesk-fusion360" "superslicer" "openscad" ];
 }

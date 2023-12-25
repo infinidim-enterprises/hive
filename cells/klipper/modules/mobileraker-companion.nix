@@ -1,8 +1,7 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
+{ config
+, lib
+, pkgs
+, ...
 }:
 with lib; let
   cfg = config.tl.services.mobileraker-companion;
@@ -11,11 +10,12 @@ with lib; let
     # https://github.com/NixOS/nixpkgs/pull/121613#issuecomment-885241996
     listToValue = l:
       if builtins.length l == 1
-      then generators.mkValueStringDefault {} (head l)
+      then generators.mkValueStringDefault { } (head l)
       else lib.concatMapStrings (s: "\n  ${generators.mkValueStringDefault {} s}") l;
-    mkKeyValue = generators.mkKeyValueDefault {} ":";
+    mkKeyValue = generators.mkKeyValueDefault { } ":";
   };
-in {
+in
+{
   options.tl.services.mobileraker-companion = {
     enable = mkEnableOption "Companion for mobileraker, enabling push notification.";
 
@@ -46,7 +46,7 @@ in {
 
     settings = mkOption {
       type = format.type;
-      default = {};
+      default = { };
       description = lib.mdDoc ''
         Configuration for mobileraker-companion. See the [documentation](https://github.com/Clon1998/mobileraker_companion#companion---config)
         for supported values.
@@ -69,8 +69,8 @@ in {
     systemd.services.mobileraker-companion = {
       description = "Companion for mobileraker, enabling push notification.";
 
-      after = ["moonraker.service"];
-      wantedBy = ["multi-user.target"];
+      after = [ "moonraker.service" ];
+      wantedBy = [ "multi-user.target" ];
 
       serviceConfig = {
         ExecStart = "${cfg.package}/bin/mobileraker-companion --configfile /etc/mobileraker-companion.cfg";
@@ -85,9 +85,9 @@ in {
 
         group = cfg.group;
 
-        extraGroups = ["tty"];
+        extraGroups = [ "tty" ];
       };
-      groups.${cfg.group} = {};
+      groups.${cfg.group} = { };
     };
 
     environment.etc."mobileraker-companion.cfg".source = format.generate "mobileraker-companion.cfg" cfg.settings;

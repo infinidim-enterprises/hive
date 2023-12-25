@@ -39,5 +39,5 @@
     };
   };
 
-  outputs = {self, ...}: {};
+  outputs = { self, ... }: { };
 }

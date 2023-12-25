@@ -1,9 +1,8 @@
-{
-  config,
-  pkgs,
-  ...
+{ config
+, pkgs
+, ...
 }: {
-  disabledModules = ["nixos/services/misc/jellyfin.nix"];
+  disabledModules = [ "nixos/services/misc/jellyfin.nix" ];
 
   services.jellyfin = {
     enable = true;

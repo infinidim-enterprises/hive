@@ -1,11 +1,12 @@
-{
-  inputs,
-  suites,
-  profiles,
-  ...
-}: let
+{ inputs
+, suites
+, profiles
+, ...
+}:
+let
   system = "aarch64-linux";
-in {
+in
+{
   imports = [
     inputs.cells.minecraft-servers.nixosModules.minecraft-servers
     inputs.cells.secrets.nixosProfiles.minecraft-servers

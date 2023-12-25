@@ -1,10 +1,9 @@
-{
-  pkgs,
-  stdenvNoCC,
-  lib,
-  sources,
-  makeWrapper,
-  ...
+{ pkgs
+, stdenvNoCC
+, lib
+, sources
+, makeWrapper
+, ...
 }:
 stdenvNoCC.mkDerivation rec {
   pname = "tfenv";
@@ -14,7 +13,7 @@ stdenvNoCC.mkDerivation rec {
   dontConfigure = true;
   dontBuild = true;
 
-  nativeBuildInputs = [makeWrapper];
+  nativeBuildInputs = [ makeWrapper ];
 
   installPhase = ''
     mkdir -p $out

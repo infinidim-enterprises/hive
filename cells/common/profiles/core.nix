@@ -1,10 +1,9 @@
-{inputs, ...}: {
-  self,
-  config,
-  lib,
-  pkgs,
-  ...
-}: {
+{ inputs, ... }: { self
+                 , config
+                 , lib
+                 , pkgs
+                 , ...
+                 }: {
   environment = {
     # Selection of sysadmin tools that can come in handy
     systemPackages = with pkgs; [
@@ -55,7 +54,7 @@
       nix-cleanup = "nix-collect-garbage -d && sudo nix-collect-garbage -d";
     };
 
-    pathsToLink = ["/share/zsh"];
+    pathsToLink = [ "/share/zsh" ];
 
     variables = {
       # vim as default editor
@@ -72,25 +71,27 @@
   };
 
   nix = {
-    settings = let
-      GB = 1024 * 1024 * 1024;
-    in {
-      # Prevents impurities in builds
-      sandbox = true;
+    settings =
+      let
+        GB = 1024 * 1024 * 1024;
+      in
+      {
+        # Prevents impurities in builds
+        sandbox = true;
 
-      # Give root user and wheel group special Nix privileges.
-      trusted-users = ["root" "@wheel"];
+        # Give root user and wheel group special Nix privileges.
+        trusted-users = [ "root" "@wheel" ];
 
-      keep-outputs = lib.mkDefault true;
-      keep-derivations = lib.mkDefault true;
-      builders-use-substitutes = true;
-      experimental-features = ["flakes" "nix-command"];
-      fallback = true;
-      warn-dirty = false;
+        keep-outputs = lib.mkDefault true;
+        keep-derivations = lib.mkDefault true;
+        builders-use-substitutes = true;
+        experimental-features = [ "flakes" "nix-command" ];
+        fallback = true;
+        warn-dirty = false;
 
-      # Some free space
-      min-free = lib.mkDefault (5 * GB);
-    };
+        # Some free space
+        min-free = lib.mkDefault (5 * GB);
+      };
 
     # Improve nix store disk usage
     gc = {

@@ -59,7 +59,7 @@
     };
 
     includes = [
-      {path = "~/.gitconfig.local";}
+      { path = "~/.gitconfig.local"; }
     ];
 
     aliases = {

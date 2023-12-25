@@ -1,17 +1,16 @@
-{
-  stdenv,
-  sources,
-  cmake,
-  openpam,
-  lib,
-  ...
+{ stdenv
+, sources
+, cmake
+, openpam
+, lib
+, ...
 }:
 stdenv.mkDerivation rec {
   pname = "pam-reattach";
 
   inherit (sources.pam-reattach) version src;
 
-  buildInputs = [openpam];
+  buildInputs = [ openpam ];
 
   nativeBuildInputs = [
     cmake

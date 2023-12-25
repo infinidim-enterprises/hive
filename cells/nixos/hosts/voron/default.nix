@@ -1,11 +1,12 @@
-{
-  inputs,
-  suites,
-  profiles,
-  ...
-}: let
+{ inputs
+, suites
+, profiles
+, ...
+}:
+let
   system = "aarch64-linux";
-in {
+in
+{
   imports = [
     suites.base
 
@@ -36,9 +37,9 @@ in {
           deviceTree =
             prev.deviceTree
             // {
-              applyOverlays = final.callPackage ./dtmerge.nix {};
+              applyOverlays = final.callPackage ./dtmerge.nix { };
             };
-          makeModulesClosure = x: prev.makeModulesClosure (x // {allowMissing = true;});
+          makeModulesClosure = x: prev.makeModulesClosure (x // { allowMissing = true; });
         }
       )
     ];
@@ -52,12 +53,12 @@ in {
   system.stateVersion = "23.05";
 
   users.users.truelecter = {
-    extraGroups = ["video" "gpio"];
+    extraGroups = [ "video" "gpio" ];
   };
 
   nix.settings = {
     keep-outputs = false;
     keep-derivations = false;
-    system-features = [];
+    system-features = [ ];
   };
 }

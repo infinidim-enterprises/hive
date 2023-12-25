@@ -1,11 +1,11 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   services.xserver = {
     enable = true;
     logFile = "/dev/null";
 
     displayManager = {
       startx.enable = true;
-      xserverArgs = ["-keeptty" "-logverbose" "-verbose"];
+      xserverArgs = [ "-keeptty" "-logverbose" "-verbose" ];
       # sessionCommands = ''
       #   ${pkgs.xinput}/bin/xinput set-prop "raspberrypi-ts" "Coordinate Transformation Matrix" -1 0 1 0 -1 1 0 0 1
       # '';

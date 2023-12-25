@@ -1,14 +1,13 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
+{ config
+, pkgs
+, lib
+, ...
 }: {
-  users.groups.wifi.members = ["truelecter"];
+  users.groups.wifi.members = [ "truelecter" ];
 
   networking.wireless = {
     enable = true;
-    interfaces = ["wlp0s20u4"];
+    interfaces = [ "wlp0s20u4" ];
     networks."Xata290" = {
       psk = "@WIFI_PASSWORD@";
       priority = 5;

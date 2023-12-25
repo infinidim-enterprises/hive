@@ -1,26 +1,27 @@
-{
-  lib,
-  inputs,
-  ...
-}: let
+{ lib
+, inputs
+, ...
+}:
+let
   disableModulesFrom = {
-    __functor = _self: path: let
-      inherit
-        (lib // builtins)
-        map
-        removePrefix
-        toPath
-        attrValues
-        ;
-      inherit
-        (inputs.std-ext.lib.digga)
-        flattenTree
-        rakeLeaves
-        ;
-    in
+    __functor = _self: path:
+      let
+        inherit
+          (lib // builtins)
+          map
+          removePrefix
+          toPath
+          attrValues
+          ;
+        inherit
+          (inputs.std-ext.lib.digga)
+          flattenTree
+          rakeLeaves
+          ;
+      in
       map
-      (m: removePrefix ((toPath path) + "/") (toPath m))
-      (attrValues (flattenTree (rakeLeaves path)));
+        (m: removePrefix ((toPath path) + "/") (toPath m))
+        (attrValues (flattenTree (rakeLeaves path)));
 
     doc = ''
       Returns a list of flake modules for disabledModules
@@ -31,4 +32,4 @@
     '';
   };
 in
-  disableModulesFrom
+disableModulesFrom

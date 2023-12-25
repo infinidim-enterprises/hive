@@ -1,11 +1,10 @@
-{
-  inputs,
-  common,
-}: {
-  lib,
-  pkgs,
-  ...
-}: {
+{ inputs
+, common
+,
+}: { lib
+   , pkgs
+   , ...
+   }: {
   # TODO import all darwin modules exported in flake
   imports = [
     common.core
@@ -79,7 +78,7 @@
 
     settings = {
       # Administrative users on Darwin are part of this group.
-      trusted-users = ["@admin"];
+      trusted-users = [ "@admin" ];
     };
 
     configureBuildUsers = true;
@@ -90,11 +89,11 @@
   ];
 
   users = {
-    knownGroups = ["keys"];
+    knownGroups = [ "keys" ];
     groups.keys = {
       name = "keys";
       gid = 30001;
-      members = ["root"];
+      members = [ "root" ];
       description = "Required by sops-nix";
     };
   };

@@ -1,11 +1,8 @@
+{ inputs, common, ... }:
+
+{ lib, pkgs, ... }:
+
 {
-  inputs,
-  common,
-}: {
-  lib,
-  pkgs,
-  ...
-}: {
   imports = [
     common.core
     common.cachix
@@ -16,10 +13,10 @@
     settings = {
       # Improve nix store disk usage
       auto-optimise-store = true;
-      allowed-users = ["root @wheel"];
+      allowed-users = [ "root @wheel" ];
 
       # This is just a representation of the nix default
-      system-features = lib.mkDefault ["nixos-test" "benchmark" "big-parallel" "kvm"];
+      system-features = lib.mkDefault [ "nixos-test" "benchmark" "big-parallel" "kvm" ];
     };
 
     optimise.automatic = true;

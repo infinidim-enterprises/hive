@@ -1,12 +1,13 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}: let
+{ config
+, pkgs
+, lib
+, ...
+}:
+let
   klipperCfg = config.tl.services.klipper;
   moonrakerCfg = config.services.moonraker;
-in {
+in
+{
   services.moonraker = {
     enable = true;
     address = "0.0.0.0";
@@ -23,8 +24,8 @@ in {
         enable_object_processing = true;
       };
 
-      octoprint_compat = {};
-      history = {};
+      octoprint_compat = { };
+      history = { };
 
       machine.validate_service = false;
 

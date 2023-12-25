@@ -1,9 +1,8 @@
-{
-  self,
-  config,
-  lib,
-  pkgs,
-  ...
+{ self
+, config
+, lib
+, pkgs
+, ...
 }: {
   home.file.itermDynamicProfile = {
     source = ./_files/profile.json;

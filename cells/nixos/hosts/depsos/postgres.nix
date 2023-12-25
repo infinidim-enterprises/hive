@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   i18n.supportedLocales = [
     "uk_UA.UTF-8/UTF-8"
     "en_US.UTF-8/UTF-8"

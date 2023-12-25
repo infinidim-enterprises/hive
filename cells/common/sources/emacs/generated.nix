@@ -3,15 +3,15 @@
 {
   acm-terminal = {
     pname = "acm-terminal";
-    version = "7a413efecee5bb0b718708611b185caf5580a801";
+    version = "1851d8fa2a27d3fd8deeeb29cd21c3002b8351ba";
     src = fetchFromGitHub {
       owner = "twlz0ne";
       repo = "acm-terminal";
-      rev = "7a413efecee5bb0b718708611b185caf5580a801";
+      rev = "1851d8fa2a27d3fd8deeeb29cd21c3002b8351ba";
       fetchSubmodules = false;
-      sha256 = "sha256-MrWqTes9iwrRu1zKNh4I5L6oOyRE2Huri8nEQgfvjTQ=";
+      sha256 = "sha256-EYhFrOo0j0JSNTdcZCbyM0iLxaymUXi1u6jZy8lTOaY=";
     };
-    date = "2023-11-20";
+    date = "2023-12-06";
   };
   activity-watch-mode = {
     pname = "activity-watch-mode";
@@ -54,66 +54,66 @@
   };
   color-rg = {
     pname = "color-rg";
-    version = "65818c493f100a78bf55f5a0fe83f29521621b15";
+    version = "ee296163e53f44c92fc8869a60bcfdd68376581a";
     src = fetchgit {
       url = "https://github.com/manateelazycat/color-rg";
-      rev = "65818c493f100a78bf55f5a0fe83f29521621b15";
+      rev = "ee296163e53f44c92fc8869a60bcfdd68376581a";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-SW4KuLbGx54/WsFvwNtqG3Sm8HPFytc+9VUZ5+Geo8U=";
+      sha256 = "sha256-U9fOY7G1eC6xHTIZ4290WcY61+ZFzmNY+AJsraAbSZ8=";
     };
-    date = "2023-11-06";
+    date = "2023-12-12";
   };
   copilot-el = {
     pname = "copilot-el";
-    version = "61ddc2d6aae25b490213c13a14c791c48463bf4a";
+    version = "653fe7b12990b5b7a050971bed4579022ce4b4f8";
     src = fetchgit {
       url = "https://github.com/zerolfx/copilot.el.git";
-      rev = "61ddc2d6aae25b490213c13a14c791c48463bf4a";
+      rev = "653fe7b12990b5b7a050971bed4579022ce4b4f8";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-ijlverhwgOp1TUxdDYr7FoouNyRiRhP4BbIw2xblPJo=";
+      sha256 = "sha256-Tb0UWFBlqELLtKpA6tK1g+B0AqHDBRMVJjGPQQMpw7M=";
     };
-    date = "2023-11-27";
+    date = "2023-12-25";
   };
   doom-emacs = {
     pname = "doom-emacs";
-    version = "a89d4b7df556bb8b309d1c23e0b60404e750f156";
+    version = "03d692f129633e3bf0bd100d91b3ebf3f77db6d1";
     src = fetchgit {
       url = "https://github.com/hlissner/doom-emacs";
-      rev = "a89d4b7df556bb8b309d1c23e0b60404e750f156";
+      rev = "03d692f129633e3bf0bd100d91b3ebf3f77db6d1";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = true;
-      sha256 = "sha256-nONYdoZEJIgB03yYC7eTV3r4XFr3F9ImD4GDj7Xtxvg=";
+      sha256 = "sha256-naCexnEewgyi9UVPZ7djSR4X4zKQvLYT1YVn/baubKs=";
     };
-    date = "2023-12-01";
+    date = "2023-12-08";
   };
   jinx = {
     pname = "jinx";
-    version = "2533991bfe9da75aa6adad73770fe5b196ea0bb1";
+    version = "aa7ab4c4bd330204caf04e9a70dddecb38131a17";
     src = fetchFromGitHub {
       owner = "minad";
       repo = "jinx";
-      rev = "2533991bfe9da75aa6adad73770fe5b196ea0bb1";
+      rev = "aa7ab4c4bd330204caf04e9a70dddecb38131a17";
       fetchSubmodules = false;
-      sha256 = "sha256-5UMX8TdZdlLhCX6U+xrIRigC79T+voj1aF8Av+K5NAM=";
+      sha256 = "sha256-yr3tz5jmKnQwGLnVwU2tGbsQIt3BRVSAeVHIhJ26BWU=";
     };
-    date = "2023-12-01";
+    date = "2023-12-21";
   };
   lsp-bridge = {
     pname = "lsp-bridge";
-    version = "4150b07410f84cc19f9682af74ea1a6632f85d99";
+    version = "1992ae27a196ff26e51646bd20053f818853142b";
     src = fetchFromGitHub {
       owner = "manateelazycat";
       repo = "lsp-bridge";
-      rev = "4150b07410f84cc19f9682af74ea1a6632f85d99";
+      rev = "1992ae27a196ff26e51646bd20053f818853142b";
       fetchSubmodules = false;
-      sha256 = "sha256-6aFXBLnzmjItE1XVwYslgIjrv50EXypW2cifE6MkOsU=";
+      sha256 = "sha256-mpnYq8ylDsTYmmKzdt0D1IJXykwhFZ6ksxIcZM1o90s=";
     };
-    date = "2023-11-30";
+    date = "2023-12-23";
   };
   nix-mode = {
     pname = "nix-mode";
@@ -169,15 +169,15 @@
   };
   spacemacs = {
     pname = "spacemacs";
-    version = "8f7019340ec38c2cd70df37739a0adf77ff1e788";
+    version = "b2511bba47aad1913f0080b6a11f3719dba32368";
     src = fetchgit {
       url = "https://github.com/syl20bnr/spacemacs";
-      rev = "8f7019340ec38c2cd70df37739a0adf77ff1e788";
+      rev = "b2511bba47aad1913f0080b6a11f3719dba32368";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = true;
-      sha256 = "sha256-SjOogJeZp1gN41DoK/1sPnlNhMvDG8ohM6okaAW02sk=";
+      sha256 = "sha256-ypV+jLl6jlX7ANrMpB4aS7uMgpGM9t/Wmp9wUJ97NxA=";
     };
-    date = "2023-11-26";
+    date = "2023-12-20";
   };
 }

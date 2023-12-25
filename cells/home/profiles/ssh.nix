@@ -1,9 +1,11 @@
-{
-  inputs,
-  cell,
-}: _: let
+{ inputs
+, cell
+,
+}: _:
+let
   hostnames = builtins.attrNames inputs.cells.nixos.colmenaConfigurations;
-in {
+in
+{
   home.file = {
     ".ssh/config" = {
       text = ''

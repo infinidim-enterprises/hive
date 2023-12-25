@@ -7,14 +7,14 @@
 
   users = {
     groups = {
-      minecraft-servers = {};
-      minecraft-servers-backup = {};
+      minecraft-servers = { };
+      minecraft-servers-backup = { };
     };
-    users.truelecter.extraGroups = ["minecraft-servers"];
+    users.truelecter.extraGroups = [ "minecraft-servers" ];
   };
 
   services.minecraft-servers = {
     eula = true;
-    users.extraGroups = ["minecraft-servers-backup"];
+    users.extraGroups = [ "minecraft-servers-backup" ];
   };
 }

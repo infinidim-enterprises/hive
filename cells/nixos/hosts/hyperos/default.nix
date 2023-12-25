@@ -1,11 +1,12 @@
-{
-  inputs,
-  suites,
-  profiles,
-  ...
-}: let
+{ inputs
+, suites
+, profiles
+, ...
+}:
+let
   system = "x86_64-linux";
-in {
+in
+{
   imports = [
     suites.base
 
@@ -28,7 +29,7 @@ in {
   };
 
   # boot.zfs.enableUnstable = lib.mkForce true;
-  boot.binfmt.emulatedSystems = ["aarch64-linux"];
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
   systemd.services.NetworkManager-wait-online.enable = false;
 

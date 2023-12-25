@@ -1,4 +1,4 @@
-{...}: {
+{ ... }: {
   services.udev.extraRules = ''
     SUBSYSTEM=="net", ACTION=="add|change", KERNEL=="can*", ATTR{tx_queue_len}="1024"
   '';

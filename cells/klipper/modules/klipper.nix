@@ -1,9 +1,9 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: let
+{ config
+, lib
+, pkgs
+, ...
+}:
+let
   l = builtins // lib;
 
   inherit (l) mkEnableOption types mkOption;
@@ -14,11 +14,12 @@
     # https://github.com/NixOS/nixpkgs/pull/121613#issuecomment-885241996
     listToValue = list:
       if builtins.length list == 1
-      then l.generators.mkValueStringDefault {} (l.head list)
+      then l.generators.mkValueStringDefault { } (l.head list)
       else l.concatMapStrings (s: "\n  ${l.generators.mkValueStringDefault {} s}") list;
-    mkKeyValue = l.generators.mkKeyValueDefault {} ": ";
+    mkKeyValue = l.generators.mkKeyValueDefault { } ": ";
   };
-in {
+in
+{
   ##### interface
   options = {
     tl.services.klipper = {
@@ -33,7 +34,7 @@ in {
 
       extraConfigurationPackages = mkOption {
         type = types.listOf types.package;
-        default = [];
+        default = [ ];
         defaultText = l.literalExpression "[]";
         description = l.mdDoc ''
           List of packages, that contains configurations (such as KAMP).
@@ -100,44 +101,44 @@ in {
 
       firmwares = mkOption {
         description = l.mdDoc "Firmwares klipper should manage";
-        default = {};
+        default = { };
         type =
           types.attrsOf
-          (
-            types.submodule {
-              options = {
-                enable = mkEnableOption (lib.mdDoc ''
-                  building of firmware for manual flashing.
-                '');
+            (
+              types.submodule {
+                options = {
+                  enable = mkEnableOption (lib.mdDoc ''
+                    building of firmware for manual flashing.
+                  '');
 
-                configFile = mkOption {
-                  type = types.path;
-                  description = lib.mdDoc "Path to firmware config which is generated using `klipper-genconf`";
+                  configFile = mkOption {
+                    type = types.path;
+                    description = lib.mdDoc "Path to firmware config which is generated using `klipper-genconf`";
+                  };
+
+                  # flashing = {
+                  #   enable = mkEnableOption (lib.mdDoc ''
+                  #     Building of firmware for manual flashing with Katapult
+                  #   '');
+
+                  #   can = {
+                  #     interface = mkOption {
+                  #       type = types.string;
+                  #       description = lib.mdDoc "CAN interface where this device is located";
+                  #     };
+
+                  #     uuid = mkOption {
+                  #       type = types.string;
+                  #       description = lib.mdDoc "CAN device UUID";
+                  #     };
+                  #   };
+
+                  #   serial = {
+                  #   };
+                  # };
                 };
-
-                # flashing = {
-                #   enable = mkEnableOption (lib.mdDoc ''
-                #     Building of firmware for manual flashing with Katapult
-                #   '');
-
-                #   can = {
-                #     interface = mkOption {
-                #       type = types.string;
-                #       description = lib.mdDoc "CAN interface where this device is located";
-                #     };
-
-                #     uuid = mkOption {
-                #       type = types.string;
-                #       description = lib.mdDoc "CAN device UUID";
-                #     };
-                #   };
-
-                #   serial = {
-                #   };
-                # };
-              };
-            }
-          );
+              }
+            );
       };
 
       host-mcu = {
@@ -193,40 +194,41 @@ in {
       }
     ];
 
-    environment.etc = let
-      pluginsWithConfig = l.filter (p: p ? klipper && p.klipper.config) (cfg.package.plugins ++ cfg.extraConfigurationPackages);
+    environment.etc =
+      let
+        pluginsWithConfig = l.filter (p: p ? klipper && p.klipper.config) (cfg.package.plugins ++ cfg.extraConfigurationPackages);
 
-      enabledFirmwares = l.filterAttrs (n: v: v.enable) cfg.firmwares;
-      enabledFirmwarePackages =
-        l.mapAttrs' (
-          name: fcfg:
-            l.nameValuePair
-            (l.strings.sanitizeDerivationName name)
+        enabledFirmwares = l.filterAttrs (n: v: v.enable) cfg.firmwares;
+        enabledFirmwarePackages =
+          l.mapAttrs'
             (
-              (
-                pkgs.klipper-firmware.override
-                {
-                  mcu = l.strings.sanitizeDerivationName name;
-                  firmwareConfig = fcfg.configFile;
-                }
-              )
-              .overrideAttrs (
-                _:_: {
-                  strictDeps = true;
-                  disallowedReferences = [pkgs.gcc-arm-embedded];
+              name: fcfg:
+                l.nameValuePair
+                  (l.strings.sanitizeDerivationName name)
+                  (
+                    (
+                      pkgs.klipper-firmware.override
+                        {
+                          mcu = l.strings.sanitizeDerivationName name;
+                          firmwareConfig = fcfg.configFile;
+                        }
+                    ).overrideAttrs (
+                      _:_: {
+                        strictDeps = true;
+                        disallowedReferences = [ pkgs.gcc-arm-embedded ];
 
-                  # Exclued .elf from output to not depend on gcc
-                  installPhase = ''
-                    mkdir -p $out
-                    cp ./.config $out/config
-                    cp out/klipper.bin $out/
-                  '';
-                }
-              )
+                        # Exclued .elf from output to not depend on gcc
+                        installPhase = ''
+                          mkdir -p $out
+                          cp ./.config $out/config
+                          cp out/klipper.bin $out/
+                        '';
+                      }
+                    )
+                  )
             )
-        )
-        enabledFirmwares;
-    in
+            enabledFirmwares;
+      in
       {
         "klipper/printer.cfg".source =
           if cfg.settings != null
@@ -235,48 +237,50 @@ in {
       }
       // (
         l.listToAttrs (
-          l.map (p: l.nameValuePair "klipper/plugins/${p.pname}" {source = "${p}/lib/config";}) pluginsWithConfig
+          l.map (p: l.nameValuePair "klipper/plugins/${p.pname}" { source = "${p}/lib/config"; }) pluginsWithConfig
         )
       )
       // (
-        l.mapAttrs' (k: v: l.nameValuePair "klipper/firmwares/${k}" {source = v;}) enabledFirmwarePackages
+        l.mapAttrs' (k: v: l.nameValuePair "klipper/firmwares/${k}" { source = v; }) enabledFirmwarePackages
       );
 
-    systemd.services.klipper = let
-      klippyArgs =
-        "--input-tty=${cfg.inputTTY}"
-        + l.optionalString (cfg.apiSocket != null) " --api-server=${cfg.apiSocket}"
-        + l.optionalString (cfg.logFile != null) " --logfile=${cfg.logFile}";
-      printerConfigPath = "/etc/klipper/printer.cfg";
-    in {
-      description = "Klipper 3D Printer Firmware";
-      wantedBy = ["multi-user.target"];
-      after = ["network.target"];
+    systemd.services.klipper =
+      let
+        klippyArgs =
+          "--input-tty=${cfg.inputTTY}"
+          + l.optionalString (cfg.apiSocket != null) " --api-server=${cfg.apiSocket}"
+          + l.optionalString (cfg.logFile != null) " --logfile=${cfg.logFile}";
+        printerConfigPath = "/etc/klipper/printer.cfg";
+      in
+      {
+        description = "Klipper 3D Printer Firmware";
+        wantedBy = [ "multi-user.target" ];
+        after = [ "network.target" ];
 
-      serviceConfig = {
-        ExecStart = "${cfg.package}/bin/klippy ${klippyArgs} ${printerConfigPath}";
-        RuntimeDirectory = "klipper";
-        StateDirectory = cfg.stateDirectory;
-        WorkingDirectory = "${cfg.package}/lib";
-        Group = cfg.group;
-        User = cfg.user;
+        serviceConfig = {
+          ExecStart = "${cfg.package}/bin/klippy ${klippyArgs} ${printerConfigPath}";
+          RuntimeDirectory = "klipper";
+          StateDirectory = cfg.stateDirectory;
+          WorkingDirectory = "${cfg.package}/lib";
+          Group = cfg.group;
+          User = cfg.user;
 
-        OOMScoreAdjust = "-999";
-        CPUSchedulingPolicy = "rr";
-        CPUSchedulingPriority = 99;
-        IOSchedulingClass = "realtime";
-        IOSchedulingPriority = 0;
-        UMask = "0002";
+          OOMScoreAdjust = "-999";
+          CPUSchedulingPolicy = "rr";
+          CPUSchedulingPriority = 99;
+          IOSchedulingClass = "realtime";
+          IOSchedulingPriority = 0;
+          UMask = "0002";
+        };
       };
-    };
 
     # Based on https://github.com/Klipper3d/klipper/blob/7290c14531211d027b430f36db5645ce496be900/scripts/klipper-mcu-start.sh
     systemd.services.klipper-mcu = l.mkIf cfg.host-mcu.enable {
       description = "Starts the MCU for Klipper.";
 
       # We want to it before klipper starts, as usually MCU socket is used in klipper
-      before = ["klipper.service"];
-      wantedBy = ["multi-user.target"];
+      before = [ "klipper.service" ];
+      wantedBy = [ "multi-user.target" ];
 
       serviceConfig =
         {
@@ -299,13 +303,13 @@ in {
     users = {
       users.${cfg.user} = {
         isSystemUser = true;
-        extraGroups = ["dialout"];
+        extraGroups = [ "dialout" ];
         group = cfg.group;
         createHome = true;
         home = l.mkDefault cfg.stateDirectory;
         homeMode = "755";
       };
-      groups.${cfg.group} = {};
+      groups.${cfg.group} = { };
     };
 
     # environment.systemPackages = [pkgs.klipper-genconf];

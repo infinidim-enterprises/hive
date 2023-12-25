@@ -1,11 +1,11 @@
-{
-  inputs,
-  cell,
-}: {
-  pkgs,
-  lib,
-  ...
-}: let
+{ inputs
+, cell
+,
+}: { pkgs
+   , lib
+   , ...
+   }:
+let
   chromium = pkgs.stdenv.mkDerivation rec {
     name = "Chromium";
     version = "101.0.4904.0";
@@ -15,15 +15,16 @@
       sha256 = "16qk18xydaf69xwz5shdz3p4h4ggrcgcmman3dhd2xbhnksf1cgd";
     };
     sourceRoot = "chrome-mac/Chromium.app";
-    buildInputs = with pkgs; [undmg unzip];
-    phases = ["installPhase"];
+    buildInputs = with pkgs; [ undmg unzip ];
+    phases = [ "installPhase" ];
     installPhase = ''
       mkdir -p "$out/Applications/${name}.app"
       cp -pR * "$out/Applications/${name}.app"
     '';
   };
   vs-exts = inputs.nix-vscode-extensions.extensions.vscode-marketplace;
-in {
+in
+{
   programs.vscode = {
     enable = true;
     package = inputs.cells.common.overrides.vscode;
@@ -84,9 +85,9 @@ in {
     ];
     userSettings =
       lib.recursiveUpdate
-      (builtins.fromJSON (builtins.readFile ./_files/vscode-settings.json))
-      {
-        "python.defaultInterpreterPath" = "${pkgs.python39}/bin/python3";
-      };
+        (builtins.fromJSON (builtins.readFile ./_files/vscode-settings.json))
+        {
+          "python.defaultInterpreterPath" = "${pkgs.python39}/bin/python3";
+        };
   };
 }

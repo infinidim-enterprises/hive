@@ -1,14 +1,13 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
+{ config
+, pkgs
+, lib
+, ...
 }: {
-  users.groups.wifi.members = ["klipper-screen" "truelecter"];
+  users.groups.wifi.members = [ "klipper-screen" "truelecter" ];
 
   networking.wireless = {
     enable = true;
-    interfaces = ["wlan0"];
+    interfaces = [ "wlan0" ];
     networks."Xata290" = {
       psk = "@WIFI_PASSWORD@";
       priority = 5;
@@ -63,7 +62,7 @@
       ];
     };
     enableRedistributableFirmware = lib.mkForce false;
-    firmware = [pkgs.raspberrypiWirelessFirmware];
+    firmware = [ pkgs.raspberrypiWirelessFirmware ];
   };
 
   boot = {

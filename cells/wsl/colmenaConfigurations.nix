@@ -1,19 +1,19 @@
-{
-  inputs,
-  cell,
-}: let
+{ inputs
+, cell
+,
+}:
+let
   inherit (inputs) haumea nixpkgs;
   l = nixpkgs.lib // builtins;
   hosts = cell.nixosConfigurations;
-  overrides = {
-  };
+  overrides = { };
 in
-  l.mapAttrs
+l.mapAttrs
   (
     name: value:
-      value
+    value
       // (
-        l.recursiveUpdate
+      l.recursiveUpdate
         {
           deployment = {
             targetHost = name;
@@ -24,8 +24,8 @@ in
         (
           if overrides ? "${name}"
           then overrides."${name}"
-          else {}
+          else { }
         )
-      )
+    )
   )
   hosts

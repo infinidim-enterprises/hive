@@ -1,7 +1,8 @@
+{ inputs
+, cell
+, ...
+}:
 {
-  inputs,
-  cell,
-}: {
   remote-builders = {
     sops.secrets = {
       remote-builder-pk = {

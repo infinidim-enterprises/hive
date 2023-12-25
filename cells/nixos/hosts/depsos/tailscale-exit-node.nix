@@ -1,7 +1,7 @@
-{...}: {
+{ ... }: {
   networking = {
     nat = {
-      internalInterfaces = ["tailscale0"];
+      internalInterfaces = [ "tailscale0" ];
     };
   };
 }

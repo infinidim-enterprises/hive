@@ -1,13 +1,12 @@
-{
-  inputs,
-  common,
-  nixos,
-}: {
-  lib,
-  pkgs,
-  modulesPath,
-  ...
-}: {
+{ inputs
+, common
+, nixos
+,
+}: { lib
+   , pkgs
+   , modulesPath
+   , ...
+   }: {
   imports = [
     nixos.core
   ];
@@ -23,9 +22,11 @@
     # docker-desktop.enable = true;
   };
 
-  environment.systemPackages = let
-    inherit (pkgs.linuxPackages) usbip;
-  in [
-    usbip
-  ];
+  environment.systemPackages =
+    let
+      inherit (pkgs.linuxPackages) usbip;
+    in
+    [
+      usbip
+    ];
 }

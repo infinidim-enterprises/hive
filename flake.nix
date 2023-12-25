@@ -129,95 +129,95 @@
     nixd.url = "github:nix-community/nixd";
   };
 
-  outputs = {
-    self,
-    std,
-    nixpkgs,
-    latest,
-    hive,
-    ...
-  } @ inputs:
+  outputs =
+    { self
+    , std
+    , nixpkgs
+    , latest
+    , hive
+    , ...
+    } @ inputs:
     std.growOn
-    {
-      inherit inputs;
+      {
+        inherit inputs;
 
-      nixpkgsConfig.allowUnfree = true;
+        nixpkgsConfig.allowUnfree = true;
 
-      systems = [
-        "aarch64-darwin"
-        "aarch64-linux"
-        "x86_64-darwin"
-        "x86_64-linux"
-      ];
+        systems = [
+          "aarch64-darwin"
+          "aarch64-linux"
+          "x86_64-darwin"
+          "x86_64-linux"
+        ];
 
-      cellsFrom = ./cells;
+        cellsFrom = ./cells;
 
-      cellBlocks = with std.blockTypes;
-      with hive.blockTypes; [
-        (nixago "config")
+        cellBlocks = with std.blockTypes;
+          with hive.blockTypes; [
+            (nixago "config")
 
-        # Modules
-        (functions "nixosModules")
-        (functions "darwinModules")
-        (functions "homeModules")
+            # Modules
+            (functions "nixosModules")
+            (functions "darwinModules")
+            (functions "homeModules")
 
-        # Profiles
-        (functions "commonProfiles")
-        (functions "nixosProfiles")
-        (functions "darwinProfiles")
-        (functions "homeProfiles")
-        (functions "userProfiles")
-        (functions "users")
+            # Profiles
+            (functions "commonProfiles")
+            (functions "nixosProfiles")
+            (functions "darwinProfiles")
+            (functions "homeProfiles")
+            (functions "userProfiles")
+            (functions "users")
 
-        # Suites
-        (functions "nixosSuites")
-        (functions "darwinSuites")
-        (functions "homeSuites")
+            # Suites
+            (functions "nixosSuites")
+            (functions "darwinSuites")
+            (functions "homeSuites")
 
-        (devshells "shells")
+            (devshells "shells")
 
-        (functions "lib")
+            (functions "lib")
 
-        (files "files")
-        (installables "packages")
-        (installables "firmwares")
-        (pkgs "overrides")
-        (functions "overlays")
+            (files "files")
+            (installables "packages")
+            (installables "firmwares")
+            (pkgs "overrides")
+            (functions "overlays")
 
-        colmenaConfigurations
-        homeConfigurations
-        nixosConfigurations
-        diskoConfigurations
-        darwinConfigurations
-      ];
-    }
-    # soil
-    {
-      devShells = hive.harvest inputs.self ["repo" "shells"];
-      packages = hive.harvest inputs.self [
-        ["klipper" "packages"]
-        ["common" "packages"]
-        ["pam-reattach" "packages"]
-        ["minecraft-servers" "packages"]
-      ];
+            colmenaConfigurations
+            homeConfigurations
+            nixosConfigurations
+            diskoConfigurations
+            darwinConfigurations
+          ];
+      }
+      # soil
+      {
+        devShells = hive.harvest inputs.self [ "repo" "shells" ];
+        packages = hive.harvest inputs.self [
+          [ "klipper" "packages" ]
+          [ "common" "packages" ]
+          [ "pam-reattach" "packages" ]
+          [ "minecraft-servers" "packages" ]
+        ];
 
-      nixosModules = hive.pick inputs.self [
-        ["klipper" "nixosModules"]
-        ["k8s" "nixosModules"]
-        ["minecraft-servers" "nixosModules"]
-      ];
+        nixosModules = hive.pick inputs.self [
+          [ "klipper" "nixosModules" ]
+          [ "k8s" "nixosModules" ]
+          [ "minecraft-servers" "nixosModules" ]
+        ];
 
-      homeModules = hive.pick inputs.self [["home" "homeModules"]];
-    }
-    {
-      colmenaHive = hive.collect self "colmenaConfigurations";
-      nixosConfigurations = hive.collect self "nixosConfigurations";
-      diskoConfigurations = hive.collect self "diskoConfigurations";
-      homeConfigurations = hive.collect self "homeConfigurations";
-      darwinConfigurations = hive.collect self "darwinConfigurations";
-    }
-    {
-      darwinConfigurations.squadbook = self.darwinConfigurations.darwin-squadbook;
-      debug = hive.harvest inputs.self ["repo" "debug"];
-    };
+        homeModules = hive.pick inputs.self [ [ "home" "homeModules" ] ];
+      }
+      {
+        colmenaHive = hive.collect self "colmenaConfigurations";
+        nixosConfigurations = hive.collect self "nixosConfigurations";
+        diskoConfigurations = hive.collect self "diskoConfigurations";
+        homeConfigurations = hive.collect self "homeConfigurations";
+        darwinConfigurations = hive.collect self "darwinConfigurations";
+      }
+      {
+        darwinConfigurations.squadbook = self.darwinConfigurations.darwin-squadbook;
+        debug = hive.harvest inputs.self [ "repo" "debug" ];
+      };
 }

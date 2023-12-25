@@ -1,9 +1,11 @@
-{
-  inputs,
-  cell,
-}: let
+{ inputs
+, cell
+,
+}:
+let
   inherit (inputs.cells) common;
-in {
+in
+{
   provision = common.lib.combineModules {
     src = ./nixosModules;
   };

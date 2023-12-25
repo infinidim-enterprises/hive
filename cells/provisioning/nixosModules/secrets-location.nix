@@ -1,17 +1,18 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: let
+{ config
+, lib
+, pkgs
+, ...
+}:
+let
   inherit (lib) types;
 
   cfg = config.tl.provision.secrets;
-in {
+in
+{
   options.tl.provision.secrets = {
     secretsPresent = lib.mkOption {
       type = types.bool;
-      default = cfg.unencryptedBase != null && cfg.expectedSecrets != [];
+      default = cfg.unencryptedBase != null && cfg.expectedSecrets != [ ];
       readOnly = true;
       description = "Whether user set a path to the secrets";
     };
@@ -26,7 +27,7 @@ in {
     # TODO: actually use this
     expectedSecrets = lib.mkOption {
       type = types.listOf types.str;
-      default = [];
+      default = [ ];
       example = lib.literalExpression ''["wifi-auth" "tailscale-key"]'';
       description = "Secrets that are expected to be present. May be treated as 'feature-flags'";
     };

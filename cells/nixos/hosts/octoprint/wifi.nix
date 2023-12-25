@@ -1,11 +1,10 @@
-{
-  config,
-  pkgs,
-  ...
+{ config
+, pkgs
+, ...
 }: {
   networking.wireless = {
     enable = true;
-    interfaces = ["wlan0"];
+    interfaces = [ "wlan0" ];
     networks."Xata290" = {
       psk = "@WIFI_PASSWORD@";
       priority = 5;

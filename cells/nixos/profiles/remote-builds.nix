@@ -1,6 +1,6 @@
-{
-  inputs,
-  common,
+{ inputs
+, common
+,
 }: {
   users.users.root = {
     openssh.authorizedKeys.keys = [

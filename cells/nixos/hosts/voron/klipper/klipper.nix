@@ -1,9 +1,9 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}: let
+{ config
+, pkgs
+, lib
+, ...
+}:
+let
   klipperCfg = config.tl.services.klipper;
   moonrakerCfg = config.services.moonraker;
   gcodePath = "${moonrakerCfg.stateDir}/gcodes";
@@ -11,8 +11,7 @@
     (pkgs.klipper-firmware.override {
       mcu = "rpi";
       firmwareConfig = ./firmwares/firmware-config-rpi-4;
-    })
-    .overrideAttrs (o: {
+    }).overrideAttrs (o: {
       patches = [
         ./firmwares/rpi-fw.patch
       ];
@@ -28,25 +27,27 @@
         cp -r out/klipper.elf $out
       '';
     });
-in {
-  boot.kernelModules = ["gpiod"];
+in
+{
+  boot.kernelModules = [ "gpiod" ];
 
   systemd.tmpfiles.rules = [
     "d ${gcodePath} 775 klipper klipper"
   ];
 
   environment.etc = builtins.listToAttrs (
-    builtins.map (
-      p: {
-        name = "klipper/${lib.path.removePrefix ./configs/klipper.d p}";
-        value = {
-          inherit (klipperCfg) user group;
+    builtins.map
+      (
+        p: {
+          name = "klipper/${lib.path.removePrefix ./configs/klipper.d p}";
+          value = {
+            inherit (klipperCfg) user group;
 
-          source = p;
-        };
-      }
-    )
-    (lib.filesystem.listFilesRecursive ./configs/klipper.d)
+            source = p;
+          };
+        }
+      )
+      (lib.filesystem.listFilesRecursive ./configs/klipper.d)
   );
 
   tl.services.klipper = {
@@ -58,7 +59,7 @@ in {
     ];
 
     settings = {
-      "include /etc/klipper/main.cfg" = {};
+      "include /etc/klipper/main.cfg" = { };
       virtual_sdcard = {
         path = gcodePath;
       };

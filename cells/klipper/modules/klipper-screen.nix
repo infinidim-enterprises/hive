@@ -1,21 +1,22 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: let
+{ config
+, lib
+, pkgs
+, ...
+}:
+let
   cfg = config.tl.services.klipper-screen;
   format = pkgs.formats.ini {
     # https://github.com/NixOS/nixpkgs/pull/121613#issuecomment-885241996
     listToValue = l:
       if builtins.length l == 1
-      then lib.generators.mkValueStringDefault {} (lib.head l)
+      then lib.generators.mkValueStringDefault { } (lib.head l)
       else lib.concatMapStrings (s: "\n  ${lib.generators.mkValueStringDefault {} s}") l;
-    mkKeyValue = lib.generators.mkKeyValueDefault {} ":";
+    mkKeyValue = lib.generators.mkKeyValueDefault { } ":";
   };
 
   inherit (lib) mkEnableOption mkOption types;
-in {
+in
+{
   options.tl.services.klipper-screen = {
     enable = mkEnableOption "KlipperScreen, the touchscreen GUI that interfaces with Klipper via Moonraker";
 
@@ -44,7 +45,7 @@ in {
 
     settings = mkOption {
       type = format.type;
-      default = {};
+      default = { };
       description = lib.mdDoc ''
         Configuration for KlipperScreen. See the [documentation](https://klipperscreen.readthedocs.io/en/latest/Configuration/)
         for supported values.
@@ -66,9 +67,9 @@ in {
           users.${cfg.user} = {
             isSystemUser = true;
             group = cfg.group;
-            extraGroups = ["tty" "video"];
+            extraGroups = [ "tty" "video" ];
           };
-          groups.${cfg.group} = {};
+          groups.${cfg.group} = { };
         };
 
         environment.etc."klipper-screen.cfg".source = format.generate "klipper-screen.cfg" cfg.settings;
@@ -82,8 +83,8 @@ in {
           systemd.services.klipper-screen = {
             description = "KlipperScreen, the touchscreen GUI that interfaces with Klipper via Moonraker";
 
-            after = ["moonraker.service"];
-            wantedBy = ["multi-user.target"];
+            after = [ "moonraker.service" ];
+            wantedBy = [ "multi-user.target" ];
 
             path = [
               pkgs.xorg.xorgserver
@@ -97,7 +98,7 @@ in {
 
             serviceConfig = {
               ExecStart = "${pkgs.xorg.xinit}/bin/xinit ${cfg.package}/bin/KlipperScreen --configfile /etc/klipper-screen.cfg -- /etc/X11/xinit/xserverrc";
-              SupplementaryGroups = ["tty" "video"];
+              SupplementaryGroups = [ "tty" "video" ];
               # TODO: Make this work as non-root user as well
               # Group = cfg.group;
               # User = cfg.user;
@@ -120,7 +121,7 @@ in {
             environment = {
               GDK_BACKEND = "wayland";
             };
-            extraArguments = ["-d"];
+            extraArguments = [ "-d" ];
             program = "${cfg.package}/bin/KlipperScreen --configfile /etc/klipper-screen.cfg";
           };
         }

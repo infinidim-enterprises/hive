@@ -1,13 +1,13 @@
-{
-  lib,
-  stdenvNoCC,
-  python3,
-  makeWrapper,
-  unstableGitUpdater,
-  nixosTests,
-  sources,
-  ...
-}: let
+{ lib
+, stdenvNoCC
+, python3
+, makeWrapper
+, unstableGitUpdater
+, nixosTests
+, sources
+, ...
+}:
+let
   pythonEnv = python3.withPackages (packages:
     with packages; [
       tornado
@@ -28,25 +28,25 @@
       libgpiod
     ]);
 in
-  stdenvNoCC.mkDerivation rec {
-    pname = "moonraker";
+stdenvNoCC.mkDerivation rec {
+  pname = "moonraker";
 
-    inherit (sources.moonraker) version src;
+  inherit (sources.moonraker) version src;
 
-    nativeBuildInputs = [makeWrapper];
+  nativeBuildInputs = [ makeWrapper ];
 
-    installPhase = ''
-      mkdir -p $out $out/bin $out/lib
-      cp -r moonraker $out/lib
+  installPhase = ''
+    mkdir -p $out $out/bin $out/lib
+    cp -r moonraker $out/lib
 
-      makeWrapper ${pythonEnv}/bin/python $out/bin/moonraker \
-        --add-flags "$out/lib/moonraker/moonraker.py"
-    '';
+    makeWrapper ${pythonEnv}/bin/python $out/bin/moonraker \
+      --add-flags "$out/lib/moonraker/moonraker.py"
+  '';
 
-    meta = with lib; {
-      description = "API web server for Klipper";
-      homepage = "https://github.com/Arksine/moonraker";
-      license = licenses.gpl3Only;
-      maintainers = with maintainers; [zhaofengli];
-    };
-  }
+  meta = with lib; {
+    description = "API web server for Klipper";
+    homepage = "https://github.com/Arksine/moonraker";
+    license = licenses.gpl3Only;
+    maintainers = with maintainers; [ zhaofengli ];
+  };
+}

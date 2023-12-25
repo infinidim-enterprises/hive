@@ -1,12 +1,13 @@
-{
-  suites,
-  lib,
-  inputs,
-  profiles,
-  ...
-}: let
+{ suites
+, lib
+, inputs
+, profiles
+, ...
+}:
+let
   system = "aarch64-darwin";
-in {
+in
+{
   imports = [
     suites.base
     suites.editors

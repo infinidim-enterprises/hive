@@ -1,8 +1,7 @@
-_: {
-  lib,
-  pkgs,
-  ...
-}: {
+_: { lib
+   , pkgs
+   , ...
+   }: {
   # programs.tmux.shell = lib.mkForce "${pkgs.zsh}/bin/zsh";
 
   programs.direnv = {
@@ -16,7 +15,7 @@ _: {
     history = {
       extended = true;
       ignoreDups = true;
-      ignorePatterns = ["&" "[bf]g" "c" "clear" "history" "exit" "q" "pwd" "* --help"];
+      ignorePatterns = [ "&" "[bf]g" "c" "clear" "history" "exit" "q" "pwd" "* --help" ];
       ignoreSpace = true;
       share = false;
     };

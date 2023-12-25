@@ -1,10 +1,10 @@
-{
-  pkgs,
-  lib,
-  ...
-}: let
+{ pkgs
+, lib
+, ...
+}:
+let
   build-overlay = overlay:
-    pkgs.runCommandCC overlay {nativeBuildInputs = [pkgs.dtc];} ''
+    pkgs.runCommandCC overlay { nativeBuildInputs = [ pkgs.dtc ]; } ''
       mkdir $out
       cd $out
       builddtb() {
@@ -23,11 +23,12 @@
   spi0 = build-overlay "spi0";
   spi4 = build-overlay "spi4";
   spi6 = build-overlay "spi6";
-in {
-  environment.systemPackages = [pkgs.gpio-utils];
+in
+{
+  environment.systemPackages = [ pkgs.gpio-utils ];
 
-  users.groups.gpio = {};
-  users.groups.spi = {};
+  users.groups.gpio = { };
+  users.groups.spi = { };
 
   hardware.raspberry-pi."4" = {
     i2c0.enable = true;

@@ -1,9 +1,9 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: let
+{ config
+, lib
+, pkgs
+, ...
+}:
+let
   inherit (lib) types mkOption;
 
   cfg = config.tl.services.tailscale-autoconnect;
@@ -33,7 +33,8 @@
       sleep 5
     done
   '';
-in {
+in
+{
   options.tl.services.tailscale-autoconnect = {
     enable = lib.mkEnableOption "Tailscale client daemon";
 
@@ -45,7 +46,7 @@ in {
 
     extraUpArgs = mkOption {
       type = types.listOf types.str;
-      default = [];
+      default = [ ];
       defaultText = lib.literalExpression "[]";
       description = "Extra args for tailscale up";
     };
@@ -63,9 +64,9 @@ in {
       description = "Automatic connection to Tailscale";
 
       # make sure tailscale is running before trying to connect to tailscale
-      after = ["network-pre.target" "tailscale.service"];
-      wants = ["network-pre.target" "tailscale.service"];
-      wantedBy = ["multi-user.target"];
+      after = [ "network-pre.target" "tailscale.service" ];
+      wants = [ "network-pre.target" "tailscale.service" ];
+      wantedBy = [ "multi-user.target" ];
 
       serviceConfig.Type = "oneshot";
       script = tailscaleUpScript;

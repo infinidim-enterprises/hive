@@ -1,5 +1,5 @@
-_: {config, ...}: {
-  users.groups.wifi.members = ["nixos" "truelecter"];
+_: { config, ... }: {
+  users.groups.wifi.members = [ "nixos" "truelecter" ];
 
   networking.wireless = {
     enable = config.tl.provision.secrets.secretsPresent;

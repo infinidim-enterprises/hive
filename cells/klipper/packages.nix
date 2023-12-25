@@ -1,12 +1,13 @@
-{
-  inputs,
-  cell,
-}: let
+{ inputs
+, cell
+,
+}:
+let
   inherit (inputs) latest;
   inherit (inputs.cells) common;
 
-  nixpkgs = import latest {inherit (inputs.nixpkgs) system;};
-  sources = nixpkgs.callPackage ./sources/generated.nix {};
+  nixpkgs = import latest { inherit (inputs.nixpkgs) system; };
+  sources = nixpkgs.callPackage ./sources/generated.nix { };
 
   l = builtins // nixpkgs.lib;
 
@@ -30,13 +31,13 @@
       // packages;
   };
 
-  excluded-plugins-from-full = ["sources"];
+  excluded-plugins-from-full = [ "sources" ];
 in
-  packages
-  # TODO: prefix plugins with klipper- if the name does not have this prefix
-  // klipper-plugins
+packages
+# TODO: prefix plugins with klipper- if the name does not have this prefix
+// klipper-plugins
   // {
-    klipper-full-plugins = packages.klipper.override {
-      plugins = l.attrValues (l.filterAttrs (n: _: !builtins.elem n excluded-plugins-from-full) klipper-plugins);
-    };
-  }
+  klipper-full-plugins = packages.klipper.override {
+    plugins = l.attrValues (l.filterAttrs (n: _: !builtins.elem n excluded-plugins-from-full) klipper-plugins);
+  };
+}

@@ -1,7 +1,6 @@
-{
-  k9s,
-  hostPlatform,
-  ...
+{ k9s
+, hostPlatform
+, ...
 }:
 k9s.overrideAttrs (o: rec {
   tags =

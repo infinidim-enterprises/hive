@@ -1,9 +1,8 @@
-{
-  config,
-  lib,
-  pkgs,
-  modulesPath,
-  ...
+{ config
+, lib
+, pkgs
+, modulesPath
+, ...
 }: {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
@@ -11,17 +10,17 @@
 
   boot = {
     initrd = {
-      availableKernelModules = ["xhci_pci" "usb_storage" "sd_mod" "sdhci_acpi"];
-      kernelModules = [];
+      availableKernelModules = [ "xhci_pci" "usb_storage" "sd_mod" "sdhci_acpi" ];
+      kernelModules = [ ];
       includeDefaultModules = true;
     };
 
     consoleLogLevel = 7;
 
-    blacklistedKernelModules = ["dw_i2c_init_driver"];
-    kernelModules = ["kvm-intel"];
-    kernelParams = [];
-    extraModulePackages = [];
+    blacklistedKernelModules = [ "dw_i2c_init_driver" ];
+    kernelModules = [ "kvm-intel" ];
+    kernelParams = [ ];
+    extraModulePackages = [ ];
 
     loader = {
       systemd-boot = {
@@ -44,7 +43,7 @@
     fsType = "vfat";
   };
 
-  swapDevices = [];
+  swapDevices = [ ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
@@ -58,5 +57,5 @@
   hardware.opengl.enable = true;
   hardware.enableRedistributableFirmware = true;
 
-  hardware.firmware = [pkgs.rock-pi-x-firmware];
+  hardware.firmware = [ pkgs.rock-pi-x-firmware ];
 }

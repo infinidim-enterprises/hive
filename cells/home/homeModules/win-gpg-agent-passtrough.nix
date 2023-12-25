@@ -1,9 +1,9 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: let
+{ config
+, lib
+, pkgs
+, ...
+}:
+let
   cfg = config.tl.services.win-gpg-agent;
 
   gpgPkg = config.programs.gpg.package;
@@ -30,7 +30,7 @@
   };
 
   mkSocketOption = name: desc: {
-    enable = lib.mkEnableOption desc // {default = true;};
+    enable = lib.mkEnableOption desc // { default = true; };
 
     windowsRelativePath = lib.mkOption {
       type = lib.types.str;
@@ -45,9 +45,10 @@
     };
   };
 
-  mkSystemdSocketService = name: let
-    sock = cfg.sockets.${name};
-  in
+  mkSystemdSocketService = name:
+    let
+      sock = cfg.sockets.${name};
+    in
     lib.mkIf sock.enable {
       systemd.user.services."win-gpg-agent-${name}" = {
         Unit = {
@@ -55,7 +56,7 @@
         };
 
         Install = {
-          WantedBy = ["default.target"];
+          WantedBy = [ "default.target" ];
         };
 
         Service = {
@@ -103,7 +104,8 @@
         };
       };
     };
-in {
+in
+{
   options.tl.services.win-gpg-agent = {
     enable = lib.mkEnableOption "Enable win-gpg-agent integration";
 

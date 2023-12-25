@@ -1,10 +1,10 @@
-{
-  inputs,
-  suites,
-  profiles,
-  overlays,
-  ...
-}: let
+{ inputs
+, suites
+, profiles
+, overlays
+, ...
+}:
+let
   system = "x86_64-linux";
   pkgs = import inputs.nixos {
     inherit system;
@@ -13,7 +13,8 @@
       overlays.wsl-nvidia-docker
     ];
   };
-in {
+in
+{
   imports = [
     suites.base
     profiles.docker

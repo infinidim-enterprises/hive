@@ -1,11 +1,12 @@
-{
-  lib,
-  config,
-  ...
-}: let
+{ lib
+, config
+, ...
+}:
+let
   l = builtins // lib;
   inherit (lib) types mkOption;
-in {
+in
+{
   options = {
     allow-flight = mkOption {
       type = types.bool;
@@ -665,7 +666,7 @@ in {
     };
     extra-options = mkOption {
       type = types.attrs;
-      default = {};
+      default = { };
       example = l.options.literalExample "{}";
       description = ''
         Extra options to be appended to <literal>server.properties</literal>.

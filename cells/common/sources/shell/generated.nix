@@ -3,16 +3,16 @@
 {
   zsh-plugin_aw-watcher-shell = {
     pname = "zsh-plugin_aw-watcher-shell";
-    version = "7dd9771d5c202b671d1ba111af520a30917639f9";
+    version = "9915c40ba472f3c50c944bcc0e2fa96f982defb9";
     src = fetchgit {
       url = "https://github.com/voobscout/aw-watcher-shell";
-      rev = "7dd9771d5c202b671d1ba111af520a30917639f9";
+      rev = "9915c40ba472f3c50c944bcc0e2fa96f982defb9";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-xDgr/e2wuFsMl6vJsvszgrKuEOO97dds9un3BWvqQIw=";
+      sha256 = "sha256-72aQ5N5L14mwJ8RB50p/swi6wXhPGYRYJ/Q8CUdP4wE=";
     };
-    date = "2023-11-19";
+    date = "2023-12-06";
   };
   zsh-plugin_clipboard = {
     pname = "zsh-plugin_clipboard";
@@ -42,16 +42,16 @@
   };
   zsh-plugin_oh-my-zsh = {
     pname = "zsh-plugin_oh-my-zsh";
-    version = "0a9d82780e20e24b6fafc5b2aaefedb0957986c9";
+    version = "f74add6cb215b55722f9e64273be82d7bae5014e";
     src = fetchgit {
       url = "https://github.com/robbyrussell/oh-my-zsh";
-      rev = "0a9d82780e20e24b6fafc5b2aaefedb0957986c9";
+      rev = "f74add6cb215b55722f9e64273be82d7bae5014e";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-qShatGQ0lJLjDIrzhnUa9amq0i5RHx1vTJ6jW3k22E0=";
+      sha256 = "sha256-b1qKHk2y9zCSFtGKS+yuXdi8FMI8Vd6XgI3zf/UoWa4=";
     };
-    date = "2023-12-01";
+    date = "2023-12-24";
   };
   zsh-plugin_tipz = {
     pname = "zsh-plugin_tipz";
@@ -133,15 +133,15 @@
   };
   zsh-plugin_zsh-syntax-highlighting = {
     pname = "zsh-plugin_zsh-syntax-highlighting";
-    version = "bb27265aeeb0a22fb77f1275118a5edba260ec47";
+    version = "dcc99a86497491dfe41fb8b0d5f506033546a8c0";
     src = fetchgit {
       url = "https://github.com/zsh-users/zsh-syntax-highlighting";
-      rev = "bb27265aeeb0a22fb77f1275118a5edba260ec47";
+      rev = "dcc99a86497491dfe41fb8b0d5f506033546a8c0";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-psIOBZnrANu1Gzce5oc0T1IO2vuIhHIFTyl/wJUGsm0=";
+      sha256 = "sha256-vpgtI/2a1qX8BGcjUzJ3VJezDePdvXCSzQ4Tx22eksc=";
     };
-    date = "2023-10-29";
+    date = "2023-12-18";
   };
 }

@@ -1,9 +1,8 @@
-{
-  stdenvNoCC,
-  lib,
-  sources,
-  unzip,
-  ...
+{ stdenvNoCC
+, lib
+, sources
+, unzip
+, ...
 }:
 stdenvNoCC.mkDerivation rec {
   pname = "rock-pi-x-firmware";
@@ -13,7 +12,7 @@ stdenvNoCC.mkDerivation rec {
   dontConfigure = true;
   dontBuild = true;
 
-  nativeBuildInputs = [unzip];
+  nativeBuildInputs = [ unzip ];
 
   unpackPhase = ''
     mkdir source

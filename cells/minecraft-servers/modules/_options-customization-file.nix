@@ -1,15 +1,16 @@
-{
-  instanceName,
-  pkgs,
-}: {
-  name,
-  config,
-  options,
-  lib,
-  ...
-}: let
+{ instanceName
+, pkgs
+,
+}: { name
+   , config
+   , options
+   , lib
+   , ...
+   }:
+let
   inherit (lib) mkOption types mdDoc mkDefault mkIf mkDerivedConfig;
-in {
+in
+{
   options = {
     enable = mkOption {
       type = types.bool;

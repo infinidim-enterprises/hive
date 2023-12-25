@@ -1,13 +1,13 @@
-{
-  config,
-  lib,
-  pkgs,
-  modulesPath,
-  ...
-}: let
+{ config
+, lib
+, pkgs
+, modulesPath
+, ...
+}:
+let
   inherit (lib) mkEnableOption mkOption types literalExpression mkMerge;
 
-  mkEnabledOption = desc: (mkEnableOption desc) // {default = true;};
+  mkEnabledOption = desc: (mkEnableOption desc) // { default = true; };
   mkBoolIntOpion = default: desc:
     (mkEnableOption desc)
     // {
@@ -20,13 +20,14 @@
 
   l = lib // builtins;
   cfg = config.tl.services.camera-streamer;
-in {
+in
+{
   options.tl.services.camera-streamer = {
     instances = mkOption {
       description = "Set of camera-streamer instance.";
-      default = {};
+      default = { };
 
-      type = types.attrsOf (types.submodule ({name, ...}: {
+      type = types.attrsOf (types.submodule ({ name, ... }: {
         options = {
           enable = mkEnabledOption "Enable this instance of camera-streamer.";
 
@@ -45,7 +46,7 @@ in {
               };
 
               type = mkOption {
-                type = types.enum ["v4l2" "libcamera" "dummy"];
+                type = types.enum [ "v4l2" "libcamera" "dummy" ];
                 default = "v4l2";
                 description = "Select camera type.";
               };
@@ -115,8 +116,8 @@ in {
               };
 
               options = mkOption {
-                type = types.attrsOf (types.oneOf [types.str types.number]);
-                default = {};
+                type = types.attrsOf (types.oneOf [ types.str types.number ]);
+                default = { };
                 example = {
                   brightness = 1;
                   sharpness = 5;
@@ -131,8 +132,8 @@ in {
               hflip = mkBoolIntOpion false "Do horizontal image flip (does not work with all camera).";
 
               isp.options = mkOption {
-                type = types.attrsOf (types.oneOf [types.str types.number]);
-                default = {};
+                type = types.attrsOf (types.oneOf [ types.str types.number ]);
+                default = { };
                 description = "Set the ISP processing options. List all available options with `-camera-list_options`.";
               };
 
@@ -144,8 +145,8 @@ in {
                 };
 
                 options = mkOption {
-                  type = types.attrsOf (types.oneOf [types.str types.number]);
-                  default = {};
+                  type = types.attrsOf (types.oneOf [ types.str types.number ]);
+                  default = { };
                   description = "Set the JPEG compression options. List all available options with `-camera-list_options`.";
                 };
               };
@@ -159,8 +160,8 @@ in {
                 };
 
                 options = mkOption {
-                  type = types.attrsOf (types.oneOf [types.str types.number]);
-                  default = {};
+                  type = types.attrsOf (types.oneOf [ types.str types.number ]);
+                  default = { };
                   description = "Set the JPEG compression options. List all available options with `-camera-list_options`.";
                 };
               };
@@ -174,8 +175,8 @@ in {
                 };
 
                 options = mkOption {
-                  type = types.attrsOf (types.oneOf [types.str types.number]);
-                  default = {};
+                  type = types.attrsOf (types.oneOf [ types.str types.number ]);
+                  default = { };
                   description = "Set the H264 encoding options. List all available options with `-camera-list_options`.";
                 };
               };
@@ -212,7 +213,7 @@ in {
             webrtc = {
               ice_servers = mkOption {
                 type = types.listOf types.str;
-                default = [];
+                default = [ ];
                 description = "Specify ICE servers: [(stun|turn|turns)(:|://)][username:password@]hostname[:port][?transport=udp|tcp|tls)].";
                 apply = l.concatStringsSep ",";
               };
@@ -227,8 +228,8 @@ in {
 
               filter = mkOption {
                 type = types.listOf types.str;
-                default = [];
-                example = ["buffer.cc"];
+                default = [ ];
+                example = [ "buffer.cc" ];
                 description = "Enable debug logging from the given files.";
                 apply = l.concatStringsSep ",";
               };
@@ -237,8 +238,8 @@ in {
             extra = mkOption {
               type = types.listOf types.str;
               description = "Additional options to be passed to this instance.";
-              default = [];
-              example = [""];
+              default = [ ];
+              example = [ "" ];
               # apply = l.concatStringsSep ",";
             };
           };
@@ -262,8 +263,8 @@ in {
             extraConfig = mkOption {
               type =
                 types.submodule
-                (import "${modulesPath}/services/web-servers/nginx/location-options.nix" {inherit config lib;});
-              default = {};
+                  (import "${modulesPath}/services/web-servers/nginx/location-options.nix" { inherit config lib; });
+              default = { };
               description = "Extra configuration for the nginx location host for this instance.";
             };
           };
@@ -272,133 +273,140 @@ in {
     };
   };
 
-  config = let
-    enabledInstances = l.filterAttrs (_: x: x.enable) cfg.instances;
-    nginxInstances = l.filterAttrs (_: x: x.nginx.enable) enabledInstances;
+  config =
+    let
+      enabledInstances = l.filterAttrs (_: x: x.enable) cfg.instances;
+      nginxInstances = l.filterAttrs (_: x: x.nginx.enable) enabledInstances;
 
-    httpPorts = l.mapAttrsToList (_: v: "${v.settings.http.listen}${l.toString v.settings.http.port}") (l.filterAttrs (_: x: x.settings.http.port != 0) enabledInstances);
-    rtspPorts = l.mapAttrsToList (_: v: v.settings.rtsp.port) (l.filterAttrs (_: x: x.settings.rtsp.port != 0) enabledInstances);
-  in {
-    assertions = [
-      {
-        assertion = (l.unique httpPorts) == httpPorts;
-        message = "Your http camera-server instances have overlapping server ports. They must be unique.";
-      }
-      {
-        assertion = (l.unique rtspPorts) == rtspPorts;
-        message = "Your rtsp camera-server instances have overlapping server ports. They must be unique.";
-      }
-      (
-        let
-          allPorts = httpPorts ++ rtspPorts;
-        in {
-          assertion = (l.unique allPorts) == allPorts;
-          message = "Your camera-server instances have some overlapping ports among http and rtsp. They must all be unique.";
-        }
-      )
-      (
-        let
-          hostnamePaths = l.mapAttrsToList (_: v: "${v.nginx.hostName}${v.nginx.path}") nginxInstances;
-        in {
-          assertion = (l.unique hostnamePaths) == hostnamePaths;
-          message = "Your camera-server instances have overlapping nginx reverse-proxy paths.";
-        }
-      )
-    ];
-
-    systemd.services = l.mapAttrs' (name: icfg: let
-      settings = icfg.settings;
-
-      stringifyOptions = f: a: l.mapAttrsToList f (l.filterAttrs (_: v: !(l.isAttrs v || l.isNull v || l.isList v || (l.isString v && v == ""))) a);
-
-      cameraSimpleOptions = stringifyOptions (n: v: "--camera-${n}=${l.toString v}") settings.camera;
-      cameraOptions = l.mapAttrsToList (n: v: "--camera-options=${n}=${l.toString v}") settings.camera.options;
-      cameraISPOptions = l.mapAttrsToList (n: v: "--camera-isp.options=${n}=${l.toString v}") settings.camera.isp.options;
-
-      cameraSnapshotOptions = l.mapAttrsToList (n: v: "--camera-snapshot.options=${n}=${l.toString v}") settings.camera.snapshot.options;
-      cameraSnapshotSimpleOptions = stringifyOptions (n: v: "--camera-snapshot.${n}=${l.toString v}") settings.camera.snapshot;
-
-      cameraStreamOptions = l.mapAttrsToList (n: v: "--camera-stream.options=${n}=${l.toString v}") settings.camera.stream.options;
-      cameraStreamSimpleOptions = stringifyOptions (n: v: "--camera-stream.${n}=${l.toString v}") settings.camera.stream;
-
-      cameraVideoOptions = l.mapAttrsToList (n: v: "--camera-video.options=${n}=${l.toString v}") settings.camera.video.options;
-      cameraVideoSimpleOptions = stringifyOptions (n: v: "--camera-video.${n}=${l.toString v}") settings.camera.video;
-
-      httpOptions = stringifyOptions (n: v: "--http-${n}=${l.toString v}") settings.http;
-      rtspOptions = stringifyOptions (n: v: "--rtsp-${n}=${l.toString v}") settings.rtsp;
-      webrtcOptions = stringifyOptions (n: v: "--webrtc-${n}=${l.toString v}") settings.webrtc;
-      logOptions = stringifyOptions (n: v: "--log-${n}=${l.toString v}") settings.log;
-
-      options = l.concatStringsSep " " (
-        l.flatten [
-          cameraSimpleOptions
-          cameraOptions
-          cameraISPOptions
-
-          cameraSnapshotOptions
-          cameraSnapshotSimpleOptions
-
-          cameraStreamOptions
-          cameraStreamSimpleOptions
-
-          cameraVideoOptions
-          cameraVideoSimpleOptions
-
-          httpOptions
-          rtspOptions
-          webrtcOptions
-          logOptions
-
-          settings.extra
-        ]
-      );
+      httpPorts = l.mapAttrsToList (_: v: "${v.settings.http.listen}${l.toString v.settings.http.port}") (l.filterAttrs (_: x: x.settings.http.port != 0) enabledInstances);
+      rtspPorts = l.mapAttrsToList (_: v: v.settings.rtsp.port) (l.filterAttrs (_: x: x.settings.rtsp.port != 0) enabledInstances);
     in
-      l.nameValuePair "camera-streamer-${name}" {
-        description = "camera-streamer ${name}";
-        wantedBy = ["multi-user.target"];
-        after = ["network.target"];
-
-        serviceConfig = {
-          Restart = "always";
-          TimeoutStopSec = "5";
-          DynamicUser = true;
-          SupplementaryGroups = ["video"];
-          AmbientCapabilities = "CAP_NET_BIND_SERVICE";
-          ExecStart = "${icfg.package}/bin/camera-streamer ${options}";
-        };
-      })
-    enabledInstances;
-
-    services.nginx = {
-      enable = true;
-      upstreams = l.mapAttrs' (name: icfg:
-        l.nameValuePair "camera-streamer-${name}" {
-          servers."${icfg.settings.http.listen}:${l.toString icfg.settings.http.port}" = {};
-        })
-      nginxInstances;
-      virtualHosts =
-        l.foldlAttrs
+    {
+      assertions = [
+        {
+          assertion = (l.unique httpPorts) == httpPorts;
+          message = "Your http camera-server instances have overlapping server ports. They must be unique.";
+        }
+        {
+          assertion = (l.unique rtspPorts) == rtspPorts;
+          message = "Your rtsp camera-server instances have overlapping server ports. They must be unique.";
+        }
         (
-          acc: name: icfg:
-            l.recursiveUpdate
-            acc
-            {
-              "${icfg.nginx.hostName}".locations."${icfg.nginx.path}" =
-                l.recursiveUpdate
-                icfg.nginx.extraConfig
-                {
-                  proxyPass = "http://camera-streamer-${name}/";
-                  proxyWebsockets = true;
-                  extraConfig = ''
-                    postpone_output 0;
-                    proxy_buffering off;
-                    proxy_ignore_headers X-Accel-Buffering;
-                  '';
-                };
-            }
+          let
+            allPorts = httpPorts ++ rtspPorts;
+          in
+          {
+            assertion = (l.unique allPorts) == allPorts;
+            message = "Your camera-server instances have some overlapping ports among http and rtsp. They must all be unique.";
+          }
         )
-        {}
-        nginxInstances;
+        (
+          let
+            hostnamePaths = l.mapAttrsToList (_: v: "${v.nginx.hostName}${v.nginx.path}") nginxInstances;
+          in
+          {
+            assertion = (l.unique hostnamePaths) == hostnamePaths;
+            message = "Your camera-server instances have overlapping nginx reverse-proxy paths.";
+          }
+        )
+      ];
+
+      systemd.services = l.mapAttrs'
+        (name: icfg:
+          let
+            settings = icfg.settings;
+
+            stringifyOptions = f: a: l.mapAttrsToList f (l.filterAttrs (_: v: !(l.isAttrs v || l.isNull v || l.isList v || (l.isString v && v == ""))) a);
+
+            cameraSimpleOptions = stringifyOptions (n: v: "--camera-${n}=${l.toString v}") settings.camera;
+            cameraOptions = l.mapAttrsToList (n: v: "--camera-options=${n}=${l.toString v}") settings.camera.options;
+            cameraISPOptions = l.mapAttrsToList (n: v: "--camera-isp.options=${n}=${l.toString v}") settings.camera.isp.options;
+
+            cameraSnapshotOptions = l.mapAttrsToList (n: v: "--camera-snapshot.options=${n}=${l.toString v}") settings.camera.snapshot.options;
+            cameraSnapshotSimpleOptions = stringifyOptions (n: v: "--camera-snapshot.${n}=${l.toString v}") settings.camera.snapshot;
+
+            cameraStreamOptions = l.mapAttrsToList (n: v: "--camera-stream.options=${n}=${l.toString v}") settings.camera.stream.options;
+            cameraStreamSimpleOptions = stringifyOptions (n: v: "--camera-stream.${n}=${l.toString v}") settings.camera.stream;
+
+            cameraVideoOptions = l.mapAttrsToList (n: v: "--camera-video.options=${n}=${l.toString v}") settings.camera.video.options;
+            cameraVideoSimpleOptions = stringifyOptions (n: v: "--camera-video.${n}=${l.toString v}") settings.camera.video;
+
+            httpOptions = stringifyOptions (n: v: "--http-${n}=${l.toString v}") settings.http;
+            rtspOptions = stringifyOptions (n: v: "--rtsp-${n}=${l.toString v}") settings.rtsp;
+            webrtcOptions = stringifyOptions (n: v: "--webrtc-${n}=${l.toString v}") settings.webrtc;
+            logOptions = stringifyOptions (n: v: "--log-${n}=${l.toString v}") settings.log;
+
+            options = l.concatStringsSep " " (
+              l.flatten [
+                cameraSimpleOptions
+                cameraOptions
+                cameraISPOptions
+
+                cameraSnapshotOptions
+                cameraSnapshotSimpleOptions
+
+                cameraStreamOptions
+                cameraStreamSimpleOptions
+
+                cameraVideoOptions
+                cameraVideoSimpleOptions
+
+                httpOptions
+                rtspOptions
+                webrtcOptions
+                logOptions
+
+                settings.extra
+              ]
+            );
+          in
+          l.nameValuePair "camera-streamer-${name}" {
+            description = "camera-streamer ${name}";
+            wantedBy = [ "multi-user.target" ];
+            after = [ "network.target" ];
+
+            serviceConfig = {
+              Restart = "always";
+              TimeoutStopSec = "5";
+              DynamicUser = true;
+              SupplementaryGroups = [ "video" ];
+              AmbientCapabilities = "CAP_NET_BIND_SERVICE";
+              ExecStart = "${icfg.package}/bin/camera-streamer ${options}";
+            };
+          })
+        enabledInstances;
+
+      services.nginx = {
+        enable = true;
+        upstreams = l.mapAttrs'
+          (name: icfg:
+            l.nameValuePair "camera-streamer-${name}" {
+              servers."${icfg.settings.http.listen}:${l.toString icfg.settings.http.port}" = { };
+            })
+          nginxInstances;
+        virtualHosts =
+          l.foldlAttrs
+            (
+              acc: name: icfg:
+                l.recursiveUpdate
+                  acc
+                  {
+                    "${icfg.nginx.hostName}".locations."${icfg.nginx.path}" =
+                      l.recursiveUpdate
+                        icfg.nginx.extraConfig
+                        {
+                          proxyPass = "http://camera-streamer-${name}/";
+                          proxyWebsockets = true;
+                          extraConfig = ''
+                            postpone_output 0;
+                            proxy_buffering off;
+                            proxy_ignore_headers X-Accel-Buffering;
+                          '';
+                        };
+                  }
+            )
+            { }
+            nginxInstances;
+      };
     };
-  };
 }

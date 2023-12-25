@@ -1,13 +1,14 @@
-{
-  inputs,
-  cell,
-  ...
-}: final: prev: let
+{ inputs
+, cell
+, ...
+}: final: prev:
+let
   latest = import inputs.latest {
     inherit (inputs.nixpkgs) system;
     config.allowUnfree = true;
   };
-in {
+in
+{
   inherit
     (latest)
     android-tools
@@ -32,10 +33,10 @@ in {
     direnv
     amazon-ecr-credential-helper
     # dive - A tool for exploring each layer in a docker image
-    
+
     dive
     # act - Run your GitHub Actions locally
-    
+
     act
     tailscale
     ffmpeg_5-full

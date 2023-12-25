@@ -1,9 +1,11 @@
-{
-  inputs,
-  cell,
-}: let
+{ inputs
+, cell
+,
+}:
+let
   inherit (inputs.cells) common;
-in {
+in
+{
   k8s = common.lib.combineModules {
     src = ./modules;
   };

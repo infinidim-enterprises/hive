@@ -1,6 +1,6 @@
-{
-  inputs,
-  cell,
+{ inputs
+, cell
+,
 }: {
   klipper = _: _: cell.packages;
 }

@@ -1,8 +1,7 @@
-{pkgs, ...}: {
-  environment.systemPackages = with pkgs; [
-    sops
-  ];
+{ pkgs, ... }:
+{
+  environment.systemPackages = with pkgs; [ sops ];
 
   # Common secrets
-  sops.secrets = {};
+  sops.secrets = { };
 }

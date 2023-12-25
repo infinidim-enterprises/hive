@@ -1,8 +1,7 @@
-{
-  lib,
-  stdenvNoCC,
-  sources,
-  ...
+{ lib
+, stdenvNoCC
+, sources
+, ...
 }:
 stdenvNoCC.mkDerivation rec {
   pname = "ercf";

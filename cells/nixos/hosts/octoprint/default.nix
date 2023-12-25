@@ -1,11 +1,12 @@
-{
-  inputs,
-  suites,
-  profiles,
-  ...
-}: let
+{ inputs
+, suites
+, profiles
+, ...
+}:
+let
   system = "aarch64-linux";
-in {
+in
+{
   imports = [
     suites.base
 
@@ -31,8 +32,8 @@ in {
     config.allowUnfree = true;
     overlays = [
       (final: prev: {
-        deviceTree.applyOverlays = prev.callPackage ./apply-overlays-dtmerge.nix {};
-        makeModulesClosure = x: prev.makeModulesClosure (x // {allowMissing = true;});
+        deviceTree.applyOverlays = prev.callPackage ./apply-overlays-dtmerge.nix { };
+        makeModulesClosure = x: prev.makeModulesClosure (x // { allowMissing = true; });
         # linuxPackages_rpi4 = (import inputs.latest {inherit system;}).linuxPackages_rpi4;
       })
       inputs.cells.klipper.overlays.klipper
@@ -49,6 +50,6 @@ in {
   system.stateVersion = "22.05";
 
   users.users.truelecter = {
-    extraGroups = ["video" "gpio"];
+    extraGroups = [ "video" "gpio" ];
   };
 }

@@ -24,10 +24,10 @@
   };
   adguardhome = {
     pname = "adguardhome";
-    version = "v0.107.41";
+    version = "v0.107.43";
     src = fetchurl {
-      url = "https://github.com/AdguardTeam/AdGuardHome/releases/download/v0.107.41/AdGuardHome_linux_amd64.tar.gz";
-      sha256 = "sha256-nhcSAhA/9XvU3evCgMvHHrejP1sbojFw9GKz383Kk/U=";
+      url = "https://github.com/AdguardTeam/AdGuardHome/releases/download/v0.107.43/AdGuardHome_linux_amd64.tar.gz";
+      sha256 = "sha256-Ck4+7HTKVuLykwVEX1rAWWJE+6bT/oIWQ1LTB7Qkls8=";
     };
   };
   age-plugin-trezor = {
@@ -57,15 +57,15 @@
   };
   chatgpt-wrapper = {
     pname = "chatgpt-wrapper";
-    version = "d7ff94fdf96209c2f59d371c08340daf22d7ade9";
+    version = "2fc2ba6ea2d9063d2c9ad315b6e6d9539774ddc9";
     src = fetchFromGitHub {
       owner = "mmabrouk";
       repo = "chatgpt-wrapper";
-      rev = "d7ff94fdf96209c2f59d371c08340daf22d7ade9";
+      rev = "2fc2ba6ea2d9063d2c9ad315b6e6d9539774ddc9";
       fetchSubmodules = false;
-      sha256 = "sha256-1tV/AmQ+wvYF+wrxC7WuJU9SB9JCWccWRL/2tbxIJYs=";
+      sha256 = "sha256-SeybeJ0qjQxfUIcM0uG2TguAzMYbTcIt3CO+wEmFJHY=";
     };
-    date = "2023-11-26";
+    date = "2023-12-23";
   };
   cl-hash-util = {
     pname = "cl-hash-util";
@@ -155,10 +155,10 @@
   };
   drawio = {
     pname = "drawio";
-    version = "22.1.2";
+    version = "22.1.11";
     src = fetchurl {
-      url = "https://github.com/jgraph/drawio-desktop/releases/download/v22.1.2/drawio-x86_64-22.1.2.rpm";
-      sha256 = "sha256-GXqk3adIj/8U1lq94TCBVX4tS44na4AVDj+M87UXws4=";
+      url = "https://github.com/jgraph/drawio-desktop/releases/download/v22.1.11/drawio-x86_64-22.1.11.rpm";
+      sha256 = "sha256-3wh7IXKCMSfqCWhM4SSV2CYTU3vNfKRszcOT59A7pQk=";
     };
   };
   getoptions = {
@@ -234,10 +234,10 @@
   };
   langchain = {
     pname = "langchain";
-    version = "0.0.344";
+    version = "0.0.352";
     src = fetchurl {
-      url = "https://pypi.org/packages/source/l/langchain/langchain-0.0.344.tar.gz";
-      sha256 = "sha256-N6bXLSOu5U/B3+o5NO1jdi9gToZl/gCPt6MMRZH+gI0=";
+      url = "https://pypi.org/packages/source/l/langchain/langchain-0.0.352.tar.gz";
+      sha256 = "sha256-iSjXtj1zr5aB/hsqK5m4Qjjv72HtU33mZhYP0AH0Hv0=";
     };
   };
   listopia = {
@@ -254,10 +254,10 @@
   };
   logseq = {
     pname = "logseq";
-    version = "0.10.0";
+    version = "0.10.2";
     src = fetchurl {
-      url = "https://github.com/logseq/logseq/releases/download/0.10.0/logseq-linux-x64-0.10.0.AppImage";
-      sha256 = "sha256-igZM+kNe1GDPYckXU6fOjyovHe9gwyBWr7Mc3BxAzOA=";
+      url = "https://github.com/logseq/logseq/releases/download/0.10.2/logseq-linux-x64-0.10.2.AppImage";
+      sha256 = "sha256-uKulsz8j21157hVmyIwcXi895nndpvNYKCNd5/YGuGY=";
     };
   };
   lorri = {
@@ -295,16 +295,16 @@
   };
   nix-index = {
     pname = "nix-index";
-    version = "3dbd1454abba9bbc94035813d6367b376e0bfb24";
+    version = "b5fcd082f474d41b11e01aa8f8f3131ae40f8952";
     src = fetchFromGitHub {
       owner = "bennofs";
       repo = "nix-index";
-      rev = "3dbd1454abba9bbc94035813d6367b376e0bfb24";
+      rev = "b5fcd082f474d41b11e01aa8f8f3131ae40f8952";
       fetchSubmodules = false;
-      sha256 = "sha256-optjx/MoJjpxql9cMLI+hEt6AwcpMOUc6ZCfqQ7KYbQ=";
+      sha256 = "sha256-UJenH6w80dGVDTA2aXbstj10x1i+fkEhJbamO0jotiE=";
     };
     cargoSha256 = "0000000000000000000000000000000000000000000000000000";
-    date = "2023-08-24";
+    date = "2023-12-06";
   };
   nix-linter = {
     pname = "nix-linter";
@@ -401,24 +401,24 @@
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "b08671a4f559921ef5decf5a71c53feeffb17859";
+    version = "887c06620289781dca747976034e4b2172e4aed5";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";
     };
-    date = "2023-12-02";
+    date = "2023-12-25";
   };
   promnesia = {
     pname = "promnesia";
-    version = "62839c72363bf39455cf33937e7efc81c0bdf5c1";
+    version = "c926bbf1495b70aeb2b2ccd6783dc7fa194aeddb";
     src = fetchFromGitHub {
       owner = "karlicoss";
       repo = "promnesia";
-      rev = "62839c72363bf39455cf33937e7efc81c0bdf5c1";
+      rev = "c926bbf1495b70aeb2b2ccd6783dc7fa194aeddb";
       fetchSubmodules = false;
-      sha256 = "sha256-YOq1RBJ5+Vi0tytPjLq8l+LSW3sjvNCoPdUIK+crvGw=";
+      sha256 = "sha256-A23EytYIIeeRO5M0Sg/NubhNKo4xbQIo2GJew9sm9F0=";
     };
-    date = "2023-11-28";
+    date = "2023-12-12";
   };
   quicklisp = {
     pname = "quicklisp";
@@ -454,15 +454,15 @@
   };
   rtw89 = {
     pname = "rtw89";
-    version = "71c581e92e529998ebbc43c2bbb5a7b088fb98a1";
+    version = "0692feeda86bd150231950451ade3cc6cf03611e";
     src = fetchFromGitHub {
       owner = "lwfinger";
       repo = "rtw89";
-      rev = "71c581e92e529998ebbc43c2bbb5a7b088fb98a1";
+      rev = "0692feeda86bd150231950451ade3cc6cf03611e";
       fetchSubmodules = false;
-      sha256 = "sha256-bmJ40o2+xlgg5Hue1LhmLhcPYxdtqrexZVjUoOiyS1Y=";
+      sha256 = "sha256-p4njy8wZU2TUuMdGwVej40lPbUeC47qeBJZ7hJ/E7eQ=";
     };
-    date = "2023-12-01";
+    date = "2023-12-12";
   };
   s5cmd = {
     pname = "s5cmd";
@@ -537,29 +537,29 @@
   };
   stumpwm-git = {
     pname = "stumpwm-git";
-    version = "b3a0e2d067da839453ca3a4581e7d5957677cac3";
+    version = "9c7f0c70b8f856ff6ec30e953f7d451b2ae88a76";
     src = fetchFromGitHub {
       owner = "stumpwm";
       repo = "stumpwm";
-      rev = "b3a0e2d067da839453ca3a4581e7d5957677cac3";
+      rev = "9c7f0c70b8f856ff6ec30e953f7d451b2ae88a76";
       fetchSubmodules = false;
-      sha256 = "sha256-sWCr3wm99Hv4LsZ572921wcUnQV40AmWSUVMWnmfeSo=";
+      sha256 = "sha256-n5UfAodJxvSKPvPL/wUfTh45ymZGHmEgzFGIabXsxKY=";
     };
     asd = "stumpwm";
     system = "stumpwm";
-    date = "2023-11-24";
+    date = "2023-12-23";
   };
   tfenv = {
     pname = "tfenv";
-    version = "1ccfddb22005b34eacaf06a9c33f58f14e816ec9";
+    version = "39d8c27ad9862ffdec57989b66fd2720cb72e76c";
     src = fetchFromGitHub {
       owner = "tfutils";
       repo = "tfenv";
-      rev = "1ccfddb22005b34eacaf06a9c33f58f14e816ec9";
+      rev = "39d8c27ad9862ffdec57989b66fd2720cb72e76c";
       fetchSubmodules = false;
-      sha256 = "sha256-UNvLJQB47IRcNZpoUGXTW2g63ApijnIB3oUb7Zu4lUY=";
+      sha256 = "sha256-h5ZHT4u7oAdwuWpUrL35G8bIAMasx6E81h15lTJSHhQ=";
     };
-    date = "2022-10-01";
+    date = "2023-12-19";
   };
   transmissionic = {
     pname = "transmissionic";

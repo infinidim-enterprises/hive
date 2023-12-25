@@ -1,7 +1,6 @@
-{
-  config,
-  pkgs,
-  ...
+{ config
+, pkgs
+, ...
 }: {
   services.minecraft-servers.instances.dawncraft = {
     enable = true;

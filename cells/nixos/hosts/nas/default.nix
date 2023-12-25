@@ -1,11 +1,12 @@
-{
-  suites,
-  profiles,
-  inputs,
-  ...
-}: let
+{ suites
+, profiles
+, inputs
+, ...
+}:
+let
   system = "x86_64-linux";
-in {
+in
+{
   _module.specialArgs = {
     inherit inputs;
   };
@@ -41,7 +42,7 @@ in {
   # Weird bug with NM-wait-online restart on new configuration always fails
   systemd.services.NetworkManager-wait-online.enable = false;
   # boot.zfs.enableUnstable = lib.mkForce true;
-  boot.binfmt.emulatedSystems = ["aarch64-linux"];
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
   powerManagement.cpuFreqGovernor = "performance";
   boot.loader = {
     # systemd-boot.enable = false;
@@ -56,7 +57,7 @@ in {
       efiSysMountPoint = "/boot";
     }; # efi
     grub = {
-      devices = ["nodev"];
+      devices = [ "nodev" ];
       enable = true;
       efiSupport = true;
       version = 2;

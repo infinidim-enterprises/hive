@@ -1,13 +1,14 @@
-{
-  inputs,
-  cells,
-}: {
-  config,
-  pkgs,
-  ...
-}: let
+{ inputs
+, cells
+,
+}: { config
+   , pkgs
+   , ...
+   }:
+let
   overrides = inputs.cells.common.overrides;
-in {
+in
+{
   programs.vscode.userSettings = {
     "[terraform]" = {
       "editor.defaultFormatter" = "hashicorp.terraform";
@@ -26,15 +27,17 @@ in {
   ];
 
   home.file = {
-    ".terraformrc" = let
-      plugin-cache-dir = "${config.xdg.cacheHome}/terraform/plugin-cache";
-    in {
-      onChange = ''
-        mkdir -p ${plugin-cache-dir}
-      '';
-      text = ''
-        plugin_cache_dir = "${plugin-cache-dir}"
-      '';
-    };
+    ".terraformrc" =
+      let
+        plugin-cache-dir = "${config.xdg.cacheHome}/terraform/plugin-cache";
+      in
+      {
+        onChange = ''
+          mkdir -p ${plugin-cache-dir}
+        '';
+        text = ''
+          plugin_cache_dir = "${plugin-cache-dir}"
+        '';
+      };
   };
 }

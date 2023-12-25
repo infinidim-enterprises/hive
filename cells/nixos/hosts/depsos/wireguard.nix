@@ -1,22 +1,21 @@
-{
-  pkgs,
-  config,
-  ...
+{ pkgs
+, config
+, ...
 }: {
   networking = {
     nat = {
       enable = true;
       externalInterface = "eth0";
-      internalInterfaces = ["wg0"];
+      internalInterfaces = [ "wg0" ];
     };
     firewall = {
-      allowedUDPPorts = [25563];
+      allowedUDPPorts = [ 25563 ];
     };
   };
 
   networking.wireguard.interfaces = {
     wg0 = {
-      ips = ["10.7.0.1/24"];
+      ips = [ "10.7.0.1/24" ];
       listenPort = 25563;
 
       postSetup = ''

@@ -1,10 +1,9 @@
-{
-  libcamera,
-  sources,
-  gnutls,
-  libyaml,
-  boost,
-  ...
+{ libcamera
+, sources
+, gnutls
+, libyaml
+, boost
+, ...
 }:
 libcamera.overrideAttrs (o: rec {
   pname = "libcamera-rpi";

@@ -1,8 +1,8 @@
-{
-  inputs,
-  cell,
-  ...
-}: let
+{ inputs
+, cell
+, ...
+}:
+let
   lib = inputs.nixpkgs-lib.lib // builtins;
   hosts = cell.nixosConfigurations;
 
@@ -10,15 +10,15 @@
   inherit (lib) mapAttrs recursiveUpdate filterAttrs;
 
   overrides = {
-    depsos = {deployment.targetPort = 2265;};
+    depsos = { deployment.targetPort = 2265; };
   };
 in
-  mapAttrs
+mapAttrs
   (
     name: value:
-      value
+    value
       // (
-        recursiveUpdate
+      recursiveUpdate
         {
           deployment = {
             targetHost = name;
@@ -29,8 +29,8 @@ in
         (
           if overrides ? "${name}"
           then overrides."${name}"
-          else {}
+          else { }
         )
-      )
+    )
   )
   (filterAttrs (n: _: n != "octoprint") hosts)

@@ -1,12 +1,14 @@
-{
-  inputs,
-  cell,
-}: let
+{ inputs
+, cell
+,
+}:
+let
   k8s = import inputs.k8s {
     inherit (inputs.nixpkgs) system;
     config.allowUnfree = true;
   };
-in {
+in
+{
   inherit
     (k8s)
     containerd

@@ -1,14 +1,14 @@
-{
-  inputs,
-  common,
-}: {lib, ...}: {
+{ inputs
+, common
+,
+}: { lib, ... }: {
   boot = {
-    kernelParams = ["nohibernate"];
+    kernelParams = [ "nohibernate" ];
     zfs = {
       enableUnstable = false;
       forceImportRoot = false;
     };
-    supportedFilesystems = ["zfs"];
+    supportedFilesystems = [ "zfs" ];
   };
 
   services.zfs = {

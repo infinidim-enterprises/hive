@@ -1,9 +1,8 @@
-{
-  config,
-  lib,
-  pkgs,
-  modulesPath,
-  ...
+{ config
+, lib
+, pkgs
+, modulesPath
+, ...
 }: {
   boot = {
     kernelPackages = pkgs.linuxPackages_rpi4;
@@ -30,14 +29,14 @@
       "pcie_brcmstb" # required for the pcie bus to work
       "reset-raspberrypi" # required for vl805 firmware to load
     ];
-    kernelParams = ["console=ttyS0,115200n8" "console=tty1" "video=DSI-1:800x480@60" "cma=128M"];
+    kernelParams = [ "console=ttyS0,115200n8" "console=tty1" "video=DSI-1:800x480@60" "cma=128M" ];
   };
 
   fileSystems = {
     "/boot/firmware" = {
       device = "/dev/disk/by-label/FIRMWARE";
       fsType = "vfat";
-      options = ["nofail"];
+      options = [ "nofail" ];
     };
     "/" = {
       device = lib.mkForce "/dev/disk/by-label/NIXOS_SD";
