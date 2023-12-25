@@ -107,9 +107,9 @@ in {
 
   githubworkflow = mkNixago {
     data = {
-      name = "Testing the nixago";
+      name = "Build devshell [x86_64-linux]";
       on = {
-        # push = null;
+        push = null;
         workflow_dispatch = null;
       };
       jobs = {
@@ -138,7 +138,7 @@ in {
               };
             }
             {
-              name = "Build shell";
+              name = "Build devshell";
               run = ''nix develop --command "menu"'';
             }
           ];
@@ -146,7 +146,7 @@ in {
       };
     };
 
-    output = ".github/workflows/build-x86-test-devshell.yaml";
+    output = ".github/workflows/build-x86-devshell.yaml";
     format = "yaml";
     hook.mode = "copy";
   };
