@@ -52,7 +52,7 @@ updateSourcesFirefoxAddons() {
   sed -i 's/buildFirefoxXpiAddon /rec /g' "${pkgs_file}"
   sed -i '1d' "${pkgs_file}"
   echo '{ lib, ... }:' >"${final_nix}"
-  alejandra --quiet <"${pkgs_file}" >>"${final_nix}"
+  nixpkgs-fmt <"${pkgs_file}" >>"${final_nix}"
 
   rm -rf "${tmpdir}"
 }

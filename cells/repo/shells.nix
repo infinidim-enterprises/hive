@@ -1,19 +1,19 @@
-{
-  inputs,
-  cell,
-  ...
-}: let
+{ inputs
+, cell
+, ...
+}:
+let
   lib = nixpkgs-lib.lib // builtins;
 
   inherit (inputs) nixpkgs nixpkgs-lib std latest;
   inherit (cell) config;
-  inherit ((nixpkgs.appendOverlays [inputs.nur.overlay]).nur.repos.rycee) mozilla-addons-to-nix;
+  inherit ((nixpkgs.appendOverlays [ inputs.nur.overlay ]).nur.repos.rycee) mozilla-addons-to-nix;
 
   inherit
-    (nixpkgs.appendOverlays [inputs.cells.common.overlays.latest-overrides])
+    (nixpkgs.appendOverlays [ inputs.cells.common.overlays.latest-overrides ])
     ssh-to-pgp
     ssh-to-age
-    alejandra
+    # alejandra
     nixUnstable
     cachix
     nix-index
@@ -25,6 +25,7 @@
 
   inherit
     (nixpkgs)
+    nixpkgs-fmt
     editorconfig-checker
     mdbook
     gnupg
@@ -33,7 +34,7 @@
     writeScriptBin
     ;
 
-  pkgWithCategory = category: package: {inherit package category;};
+  pkgWithCategory = category: package: { inherit package category; };
   nix = pkgWithCategory "nix";
   linter = pkgWithCategory "linter";
   docs = pkgWithCategory "docs";
@@ -52,7 +53,8 @@
   update-cell-sources = writeShellApplication {
     name = "update-cell-sources";
     runtimeInputs = with nixpkgs; [
-      alejandra
+      # alejandra
+      nixpkgs-fmt
       nvfetcher
       coreutils-full
       findutils
@@ -126,83 +128,83 @@
     NIX_SSHOPTS=$SSHOPTS nix copy --no-check-sigs --to "$to" --from "ssh://$buildHost" "$drv"
   '';
 in
-  lib.mapAttrs (_: std.lib.dev.mkShell) {
-    default = {
-      name = "infra";
+lib.mapAttrs (_: std.lib.dev.mkShell) {
+  default = {
+    name = "infra";
 
-      imports = [
-        ./_sops.nix
-        std.std.devshellProfiles.default
-      ];
+    imports = [
+      ./_sops.nix
+      std.std.devshellProfiles.default
+    ];
 
-      nixago = [
-        config.conform
-        config.treefmt
-        config.editorconfig
-        config.githubsettings
-        config.lefthook
-        config.githubworkflow
-        # config.mdbook
-      ];
+    nixago = [
+      config.conform
+      config.treefmt
+      config.editorconfig
+      config.githubsettings
+      config.lefthook
+      config.githubworkflow
+      # config.mdbook
+    ];
 
-      packages = [
-        ssh-to-pgp
-        ssh-to-age
-        nixUnstable
-        gnupg
-        update-cell-sources
-      ];
+    packages = [
+      ssh-to-pgp
+      ssh-to-age
+      nixUnstable
+      gnupg
+      update-cell-sources
+    ];
 
-      commands = [
-        (nix nixUnstable)
-        (nix cachix)
-        (nix nix-index)
-        (nix statix)
+    commands = [
+      (nix nixUnstable)
+      (nix cachix)
+      (nix nix-index)
+      (nix statix)
 
-        (ci act)
+      (ci act)
 
-        (infra sops)
-        (infra inputs.colmena.packages.colmena)
-        (infra inputs.home.packages.home-manager)
-        (infra inputs.nixos-generators.packages.nixos-generate)
+      (infra sops)
+      (infra inputs.colmena.packages.colmena)
+      (infra inputs.home.packages.home-manager)
+      (infra inputs.nixos-generators.packages.nixos-generate)
 
-        {
-          category = "infra";
-          name = "update-cell-sources";
-          help = "Update cell package sources with nvfetcher";
-          package = update-cell-sources;
-        }
+      {
+        category = "infra";
+        name = "update-cell-sources";
+        help = "Update cell package sources with nvfetcher";
+        package = update-cell-sources;
+      }
 
-        {
-          category = "infra";
-          name = "sops-reencrypt";
-          help = "Reencrypt sops-encrypted files";
-          package = sops-reencrypt;
-        }
+      {
+        category = "infra";
+        name = "sops-reencrypt";
+        help = "Reencrypt sops-encrypted files";
+        package = sops-reencrypt;
+      }
 
-        {
-          category = "nix";
-          name = "repl";
-          help = "Start a nix repl with the flake loaded";
-          package = repl;
-        }
+      {
+        category = "nix";
+        name = "repl";
+        help = "Start a nix repl with the flake loaded";
+        package = repl;
+      }
 
-        {
-          category = "nix";
-          name = "build-on-target";
-          help = "Helper script to build derivation on remote host";
-          package = build-on-target;
-        }
+      {
+        category = "nix";
+        name = "build-on-target";
+        help = "Helper script to build derivation on remote host";
+        package = build-on-target;
+      }
 
-        (linter editorconfig-checker)
-        (linter alejandra)
+      (linter editorconfig-checker)
+      (linter nixpkgs-fmt)
 
-        (docs mdbook)
-      ];
-    };
+      (docs mdbook)
+    ];
+  };
 
-    ci = {
-      name = "ci";
-      packages = [update-cell-sources];
-    };
-  }
+  ci = {
+    name = "ci";
+    packages = [ update-cell-sources ];
+  };
+}

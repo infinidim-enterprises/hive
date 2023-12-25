@@ -1,13 +1,14 @@
-{
-  inputs,
-  cell,
-  ...
-}: let
+{ inputs
+, cell
+, ...
+}:
+let
   inherit (inputs) nixpkgs nixpkgs-lib std;
   inherit (std.lib.dev) mkNixago;
 
   l = nixpkgs-lib.lib // builtins;
-in {
+in
+{
   editorconfig = mkNixago std.lib.cfg.editorconfig {
     data = {
       root = true;
@@ -35,7 +36,8 @@ in {
   # Tool Homepage: https://numtide.github.io/treefmt/
   treefmt = mkNixago std.lib.cfg.treefmt {
     packages = [
-      (nixpkgs.appendOverlays [inputs.cells.common.overlays.latest-overrides]).alejandra
+      # (nixpkgs.appendOverlays [inputs.cells.common.overlays.latest-overrides]).alejandra
+      inputs.nixpkgs.nixpkgs-fmt
       inputs.nixpkgs.nodePackages.prettier
       inputs.nixpkgs.nodePackages.prettier-plugin-toml
       inputs.nixpkgs.shfmt
@@ -44,15 +46,15 @@ in {
       export NODE_PATH=${inputs.nixpkgs.nodePackages.prettier-plugin-toml}/lib/node_modules:''${NODE_PATH:-}
     '';
     data = {
-      global.excludes = ["cells/*/sources/generated.*" "cells/secrets/*"];
+      global.excludes = [ "cells/*/sources/generated.*" "cells/secrets/*" ];
       formatter = {
         nix = {
-          command = "alejandra";
-          includes = ["*.nix"];
+          command = "nixpkgs-fmt";
+          includes = [ "*.nix" ];
         };
         prettier = {
           command = "prettier";
-          options = ["--plugin" "prettier-plugin-toml" "--write"];
+          options = [ "--plugin" "prettier-plugin-toml" "--write" ];
           includes = [
             "*.css"
             "*.html"
@@ -69,8 +71,8 @@ in {
         };
         shell = {
           command = "shfmt";
-          options = ["-i" "2" "-s" "-w"];
-          includes = ["*.sh"];
+          options = [ "-i" "2" "-s" "-w" ];
+          includes = [ "*.sh" ];
         };
       };
     };
@@ -87,18 +89,18 @@ in {
             run = ''
               [[ "$(head -n 1 {1})" =~ ^WIP(:.*)?$|^wip(:.*)?$|fixup\!.*|squash\!.* ]] ||
               conform enforce --commit-msg-file {1}'';
-            skip = ["merge" "rebase"];
+            skip = [ "merge" "rebase" ];
           };
         };
       };
       pre-commit = {
         skip = [
-          {ref = "update_flake_lock_action";}
+          { ref = "update_flake_lock_action"; }
         ];
         commands = {
           treefmt = {
             run = "treefmt --fail-on-change {staged_files}";
-            skip = ["merge" "rebase"];
+            skip = [ "merge" "rebase" ];
           };
         };
       };
