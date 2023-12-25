@@ -15,7 +15,7 @@ jobs:
         extraPullNames: cuda-maintainers, mic92, nix-community, nrdxp
         name: njk
         signingKey: ${{ secrets.CACHIX_SIGNING_KEY }}
-    - name: Build shell
+    - name: Build devshell
       run: nix develop --command "menu"
 name: Build devshell [x86_64-linux]
 'on':
