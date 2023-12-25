@@ -44,9 +44,10 @@ in
       imports = attrValues (importModules {inherit src;});
     };
 
-    # TODO: pass nixpkgs as well, implicit bee module
+    # TODO: pass nixpkgs as well,  implicit bee module
     importSystemConfigurations = {
       src,
+      skip ? [],
       suites,
       profiles,
       userProfiles,
@@ -54,9 +55,14 @@ in
       inputs,
       overlays ? {},
       ...
-    }:
+    }: let
+      filtered = with builtins;
+        if skip != []
+        then filterSource (path: _: (match ".*(${concatStringsSep "|" skip})" (toString path)) == null) src
+        else src;
+    in
       haumea.lib.load {
-        inherit src;
+        src = filtered;
         transformer = defaultAsRoot;
         inputs = {inherit suites profiles userProfiles lib inputs overlays;};
       };

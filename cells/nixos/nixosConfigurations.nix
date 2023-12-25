@@ -8,6 +8,7 @@
   cells = inputs.cells;
 in
   cells.common.lib.importSystemConfigurations {
+    skip = ["oglaroon"]; # FIXME: remove when oglaroon works!
     src = ./hosts;
 
     inherit inputs lib;
