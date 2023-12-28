@@ -137,15 +137,16 @@ lib.mapAttrs (_: std.lib.dev.mkShell) {
       std.std.devshellProfiles.default
     ];
 
-    nixago = [
-      config.conform
-      config.treefmt
-      config.editorconfig
-      config.githubsettings
-      config.lefthook
-      config.githubworkflow
-      # config.mdbook
-    ];
+    nixago =
+      config.githubworkflows
+      ++ [
+        config.conform
+        config.treefmt
+        config.editorconfig
+        config.githubsettings
+        config.lefthook
+        # config.mdbook
+      ];
 
     packages = [
       ssh-to-pgp
