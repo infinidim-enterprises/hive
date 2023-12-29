@@ -286,5 +286,5 @@ fetch.git = "https://github.com/Ferdi265/numix-solarized-gtk-theme.git"
 
 # Office apps
 [masterpdfeditor]
-src.manual = "5.9.70"
+src.manual = "5.9.81"
 fetch.url = "https://code-industry.net/public/master-pdf-editor-$ver-qt5.x86_64.tar.gz"
