@@ -267,7 +267,7 @@ in
             {
               name = "Update nvfetcher packages";
               run = ''
-                nix develop '.#ci' --command bash -c "GITHUB_TOKEN=''${{ secrets.GITHUB_TOKEN }} update-cell-sources ALL
+                nix develop '.#ci' --command bash -c "GITHUB_TOKEN=''${{ secrets.GITHUB_TOKEN }} update-cell-sources ALL"
                 git commit -am "deps(sources): Updated cell sources"
               '';
             }
