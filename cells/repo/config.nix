@@ -235,7 +235,7 @@ in
 
       flake-lock = mkNixago {
         data = {
-          name = "Update flake.lock";
+          name = "Update flake.lock YAML_test";
           on.workflow_dispatch = null;
           on.schedule = [{ cron = "0 0 * * 6"; }];
           jobs.lockfile.runs-on = "ubuntu-latest";
@@ -262,6 +262,31 @@ in
               run = ''
                 git config user.email "1203212+github-actions[bot]@users.noreply.github.com"
                 git config user.name "github-actions[bot]"
+              '';
+            }
+            {
+              name = "Update nvfetcher packages";
+              run = ''
+                nix develop '.#ci' --command bash -c "GITHUB_TOKEN=''${{ secrets.GITHUB_TOKEN }} update-cell-sources ALL
+                git commit -am "deps(sources): Updated cell sources"
+              '';
+            }
+            {
+              name = "Update deps hashes packages";
+              run = ''
+                nix run '.#mainsail.npmDepsHash' > cells/klipper/packages/_deps-hash/mainsail-npm.nix
+                git commit -am "deps(sources): Updated deps hash" || true
+              '';
+            }
+            {
+              name = "Update flake.lock";
+              uses = "DeterminateSystems/update-flake-lock@v20";
+              "with".commit-msg = "deps(flake-lock): Updated flake.lock";
+              "with".pr-title = "[Automated] Update 'flake.lock' and sources";
+              "with".branch = "auto/upgrade-dependencies";
+              "with".pr-labels = ''
+                dependencies
+                automated
               '';
             }
           ];
