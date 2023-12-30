@@ -114,6 +114,64 @@ in
     };
   };
 
+  circleci = mkNixago {
+    data = {
+      version = "2.1";
+      workflows.version = "2";
+      workflows.workflow.jobs = [
+        {
+          build = {
+            filters.branches.only = [ "master" "auto/upgrade-dependencies" ];
+            matrix.parameters.host = hostsWithArch "aarch64-linux";
+          };
+        }
+      ];
+      orbs.nix = "eld/nix@1.1.1";
+      jobs.build = {
+        machine.image = "ubuntu-2204:2023.07.1";
+        parameters.host.type = "string";
+        resource_class = "arm.large";
+        steps = [
+          {
+            "nix/install".channels = "nixpkgs=https://nixos.org/channels/nixos-23.05";
+            "nix/install".extra-conf = ''
+              experimental-features = flakes nix-command
+            '';
+          }
+          "nix/install-cachix"
+          "checkout"
+          {
+            run.name = "Setup Cachix repos";
+            run.command = ''
+              cachix use nix-community
+              cachix use mic92
+              cachix use nrdxp
+              cachix use njk
+              ./.ci/install-nix.sh > /tmp/store-path-pre-build
+            '';
+          }
+          {
+            run.name = "Build system";
+            run.command = ''
+              nix build ".#nixosConfigurations.<< parameters.host >>.config.system.build.toplevel"
+            '';
+          }
+          {
+            run.name = "Push cache";
+            run.no_output_timeout = "30m";
+            run.command = ''
+              ./.ci/push-paths.sh cachix "--compression-method xz --compression-level 9 --jobs 8" njk ""  ""
+            '';
+          }
+        ];
+      };
+    };
+
+    output = ".circleci/config.yaml";
+    format = "yaml";
+    hook.mode = "copy";
+  };
+
   githubworkflows =
     let
       devshell-x86_64-linux = mkNixago {

@@ -145,6 +145,7 @@ lib.mapAttrs (_: std.lib.dev.mkShell) {
         config.editorconfig
         config.githubsettings
         config.lefthook
+        config.circleci
         # config.mdbook
       ];
 
