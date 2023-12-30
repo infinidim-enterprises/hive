@@ -167,7 +167,7 @@ in
       };
     };
 
-    output = ".circleci/config.yaml";
+    output = ".circleci/config.yml";
     format = "yaml";
     hook.mode = "copy";
   };
