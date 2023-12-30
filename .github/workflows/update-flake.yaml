@@ -45,7 +45,7 @@ jobs:
 
           '
         pr-title: '[Automated] Update ''flake.lock'' and sources'
-name: Update flake.lock YAML_test
+name: Update [flake.lock, nvfetcher sources]
 'on':
   schedule:
   - cron: 0 0 * * 6

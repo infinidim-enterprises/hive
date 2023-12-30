@@ -99,27 +99,17 @@ in
   #
   lefthook = mkNixago std.lib.cfg.lefthook {
     data = {
-      commit-msg = {
-        commands = {
-          conform = {
-            # allow WIP, fixup!/squash! commits locally
-            run = ''
-              [[ "$(head -n 1 {1})" =~ ^WIP(:.*)?$|^wip(:.*)?$|fixup\!.*|squash\!.* ]] ||
-              conform enforce --commit-msg-file {1}'';
-            skip = [ "merge" "rebase" ];
-          };
-        };
+      commit-msg.commands.conform = {
+        # allow WIP, fixup!/squash! commits locally
+        run = ''
+          [[ "$(head -n 1 {1})" =~ ^WIP(:.*)?$|^wip(:.*)?$|fixup\!.*|squash\!.* ]] ||
+          conform enforce --commit-msg-file {1}'';
+        skip = [ "merge" "rebase" ];
       };
       pre-commit = {
-        skip = [
-          { ref = "update_flake_lock_action"; }
-        ];
-        commands = {
-          treefmt = {
-            run = "treefmt --fail-on-change {staged_files}";
-            skip = [ "merge" "rebase" ];
-          };
-        };
+        skip = [{ ref = "update_flake_lock_action"; }];
+        commands.treefmt.run = "treefmt --fail-on-change {staged_files}";
+        commands.treefmt.skip = [ "merge" "rebase" ];
       };
     };
   };
@@ -165,14 +155,14 @@ in
           };
         };
 
-        output = ".github/workflows/build-x86-devshell.yaml";
+        output = ".github/workflows/build-x86_64-devshell.yaml";
         format = "yaml";
         hook.mode = "copy";
       };
 
       workflowHostTemplate = mkNixago {
         data = {
-          name = "Build x86 host";
+          name = "Build x86_64 host";
           on.workflow_call.inputs.configuration = {
             required = true;
             type = "string";
@@ -209,33 +199,33 @@ in
           };
         };
 
-        output = ".github/workflows/build-x86-host_test.yaml";
+        output = ".github/workflows/build-x86_64-host.yaml";
         format = "yaml";
         hook.mode = "copy";
       };
 
       hostTemplate = host: {
         data = {
-          name = "Build ${hostname host}";
+          name = "Build ${hostname host} [x86_64-linux]";
           on.push = null;
           on.workflow_dispatch = null;
           jobs = {
             call-workflow-passing-data = {
-              uses = "./.github/workflows/build-x86-host.yaml";
+              uses = "./.github/workflows/build-x86_64-host.yaml";
               "with".configuration = "${host}";
               secrets = "inherit";
             };
           };
         };
 
-        output = ".github/workflows/build-x86-${hostname host}.yaml";
+        output = ".github/workflows/build-x86_64-${hostname host}.yaml";
         format = "yaml";
         hook.mode = "copy";
       };
 
       flake-lock = mkNixago {
         data = {
-          name = "Update flake.lock YAML_test";
+          name = "Update [flake.lock, nvfetcher sources]";
           on.workflow_dispatch = null;
           on.schedule = [{ cron = "0 0 * * 6"; }];
           jobs.lockfile.runs-on = "ubuntu-latest";
@@ -292,7 +282,7 @@ in
           ];
         };
 
-        output = ".github/workflows/update-flake-lock.yaml";
+        output = ".github/workflows/update-flake.yaml";
         format = "yaml";
         hook.mode = "copy";
       };
@@ -334,10 +324,7 @@ in
       data = {
         inherit (inputs) cells;
         commit = {
-          header = {
-            length = 89;
-            imperative = true;
-          };
+          header = { length = 89; imperative = true; };
           body.required = false;
           gpg.required = true;
           maximumOfOneCommit = false;
