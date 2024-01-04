@@ -1,7 +1,11 @@
 { lib, ... }:
 let
-  inherit (lib) const filterAttrs;
-  inherit (builtins) typeOf getAttr mapAttrs;
+  inherit (lib // builtins)
+    const
+    filterAttrs
+    typeOf
+    getAttr
+    mapAttrs;
 
   sanitize = {
     __functor = _self: cfgChunk:

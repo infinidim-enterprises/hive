@@ -4,6 +4,6 @@
 }: { config, ... }: {
   services.tailscale = {
     enable = true;
-    package = inputs.cells.common.overrides.tailscale;
+    # package = inputs.cells.common.overrides.tailscale;
   };
 }

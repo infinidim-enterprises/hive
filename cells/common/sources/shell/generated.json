@@ -20,7 +20,7 @@
   },
   "zsh-plugin_clipboard": {
     "cargoLocks": null,
-    "date": "2023-11-05",
+    "date": "2024-01-03",
     "extract": null,
     "name": "zsh-plugin_clipboard",
     "passthru": null,
@@ -30,12 +30,12 @@
       "fetchSubmodules": false,
       "leaveDotGit": false,
       "name": null,
-      "rev": "354a4e493da5736d19d14e7769d98f357eff7323",
-      "sha256": "sha256-GDWxib4k2vwfSZ/R5fyXRx6piOYPzJ1hyzCNOg7QqxU=",
+      "rev": "3e996c5b54b16029fefe8b40648371634b1a7510",
+      "sha256": "sha256-BaYYzl6JArfPWASJtzk44scGejwgyT5+W94ugVDCV3I=",
       "type": "git",
       "url": "https://github.com/zpm-zsh/clipboard"
     },
-    "version": "354a4e493da5736d19d14e7769d98f357eff7323"
+    "version": "3e996c5b54b16029fefe8b40648371634b1a7510"
   },
   "zsh-plugin_k": {
     "cargoLocks": null,
@@ -58,7 +58,7 @@
   },
   "zsh-plugin_oh-my-zsh": {
     "cargoLocks": null,
-    "date": "2023-12-24",
+    "date": "2024-01-03",
     "extract": null,
     "name": "zsh-plugin_oh-my-zsh",
     "passthru": null,
@@ -68,12 +68,12 @@
       "fetchSubmodules": false,
       "leaveDotGit": false,
       "name": null,
-      "rev": "f74add6cb215b55722f9e64273be82d7bae5014e",
-      "sha256": "sha256-b1qKHk2y9zCSFtGKS+yuXdi8FMI8Vd6XgI3zf/UoWa4=",
+      "rev": "b5583a321644218702c4ef588934575f46a2159b",
+      "sha256": "sha256-Iv4C5dHfZBVyqgk8oWpT6IXC006iKMwJyWJa2xISbqo=",
       "type": "git",
       "url": "https://github.com/robbyrussell/oh-my-zsh"
     },
-    "version": "f74add6cb215b55722f9e64273be82d7bae5014e"
+    "version": "b5583a321644218702c4ef588934575f46a2159b"
   },
   "zsh-plugin_tipz": {
     "cargoLocks": null,

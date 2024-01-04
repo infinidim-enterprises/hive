@@ -16,16 +16,16 @@
   };
   zsh-plugin_clipboard = {
     pname = "zsh-plugin_clipboard";
-    version = "354a4e493da5736d19d14e7769d98f357eff7323";
+    version = "3e996c5b54b16029fefe8b40648371634b1a7510";
     src = fetchgit {
       url = "https://github.com/zpm-zsh/clipboard";
-      rev = "354a4e493da5736d19d14e7769d98f357eff7323";
+      rev = "3e996c5b54b16029fefe8b40648371634b1a7510";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-GDWxib4k2vwfSZ/R5fyXRx6piOYPzJ1hyzCNOg7QqxU=";
+      sha256 = "sha256-BaYYzl6JArfPWASJtzk44scGejwgyT5+W94ugVDCV3I=";
     };
-    date = "2023-11-05";
+    date = "2024-01-03";
   };
   zsh-plugin_k = {
     pname = "zsh-plugin_k";
@@ -42,16 +42,16 @@
   };
   zsh-plugin_oh-my-zsh = {
     pname = "zsh-plugin_oh-my-zsh";
-    version = "f74add6cb215b55722f9e64273be82d7bae5014e";
+    version = "b5583a321644218702c4ef588934575f46a2159b";
     src = fetchgit {
       url = "https://github.com/robbyrussell/oh-my-zsh";
-      rev = "f74add6cb215b55722f9e64273be82d7bae5014e";
+      rev = "b5583a321644218702c4ef588934575f46a2159b";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-b1qKHk2y9zCSFtGKS+yuXdi8FMI8Vd6XgI3zf/UoWa4=";
+      sha256 = "sha256-Iv4C5dHfZBVyqgk8oWpT6IXC006iKMwJyWJa2xISbqo=";
     };
-    date = "2023-12-24";
+    date = "2024-01-03";
   };
   zsh-plugin_tipz = {
     pname = "zsh-plugin_tipz";

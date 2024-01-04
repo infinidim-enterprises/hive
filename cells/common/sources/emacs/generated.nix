@@ -67,16 +67,16 @@
   };
   copilot-el = {
     pname = "copilot-el";
-    version = "653fe7b12990b5b7a050971bed4579022ce4b4f8";
+    version = "1542d76909636bf8804dd9c770f28818a897cfdc";
     src = fetchgit {
       url = "https://github.com/zerolfx/copilot.el.git";
-      rev = "653fe7b12990b5b7a050971bed4579022ce4b4f8";
+      rev = "1542d76909636bf8804dd9c770f28818a897cfdc";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-Tb0UWFBlqELLtKpA6tK1g+B0AqHDBRMVJjGPQQMpw7M=";
+      sha256 = "sha256-Vt+3OZM89dyLKjFnODWNHLDwrURXAtY5MFugyfEMbho=";
     };
-    date = "2023-12-25";
+    date = "2024-01-02";
   };
   doom-emacs = {
     pname = "doom-emacs";
@@ -93,27 +93,27 @@
   };
   jinx = {
     pname = "jinx";
-    version = "aa7ab4c4bd330204caf04e9a70dddecb38131a17";
+    version = "3e61f60b7c450cfe867178c7f9b77d56dd9142c0";
     src = fetchFromGitHub {
       owner = "minad";
       repo = "jinx";
-      rev = "aa7ab4c4bd330204caf04e9a70dddecb38131a17";
+      rev = "3e61f60b7c450cfe867178c7f9b77d56dd9142c0";
       fetchSubmodules = false;
-      sha256 = "sha256-yr3tz5jmKnQwGLnVwU2tGbsQIt3BRVSAeVHIhJ26BWU=";
+      sha256 = "sha256-Cxw6rCMfiq/3Rp65bN2aAZ+rV8bBsf9YVSVNzksemAI=";
     };
-    date = "2023-12-21";
+    date = "2024-01-02";
   };
   lsp-bridge = {
     pname = "lsp-bridge";
-    version = "1992ae27a196ff26e51646bd20053f818853142b";
+    version = "dfc5c3210ec1d6c421ef38e51e30f568ad4a3a54";
     src = fetchFromGitHub {
       owner = "manateelazycat";
       repo = "lsp-bridge";
-      rev = "1992ae27a196ff26e51646bd20053f818853142b";
+      rev = "dfc5c3210ec1d6c421ef38e51e30f568ad4a3a54";
       fetchSubmodules = false;
-      sha256 = "sha256-mpnYq8ylDsTYmmKzdt0D1IJXykwhFZ6ksxIcZM1o90s=";
+      sha256 = "sha256-QKuOBNRGpN83d+/8rsSTRhtAP1f/oYMNEtkZuBVqlj4=";
     };
-    date = "2023-12-23";
+    date = "2024-01-03";
   };
   nix-mode = {
     pname = "nix-mode";
@@ -169,15 +169,15 @@
   };
   spacemacs = {
     pname = "spacemacs";
-    version = "b2511bba47aad1913f0080b6a11f3719dba32368";
+    version = "3292ba1cdf4963dfa1cd3c4724e6a05bbd2c8e98";
     src = fetchgit {
       url = "https://github.com/syl20bnr/spacemacs";
-      rev = "b2511bba47aad1913f0080b6a11f3719dba32368";
+      rev = "3292ba1cdf4963dfa1cd3c4724e6a05bbd2c8e98";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = true;
-      sha256 = "sha256-ypV+jLl6jlX7ANrMpB4aS7uMgpGM9t/Wmp9wUJ97NxA=";
+      sha256 = "sha256-L9WaxkwXDi1xNIvSr7FObdsF8Q4JjyOMmkT5IJK7dP4=";
     };
-    date = "2023-12-20";
+    date = "2024-01-03";
   };
 }

@@ -57,7 +57,7 @@ let
     doc = ''
       Returns a set of network attributes from a string
       Example:
-        fromString "192.168.192.1/24"
+        fromCIDR "192.168.192.1/24"
       =>
         { a = 192; address = "192.168.192.1"; b = 168; c = 192; d = 1; prefixLength = 24; }
     '';

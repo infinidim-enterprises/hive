@@ -1,0 +1,13 @@
+source "https://rubygems.org"
+
+gem 'lita'
+gem 'solargraph'
+gem 'pry'
+gem 'awesome_print'
+gem 'nio4r'
+gem 'puma'
+gem 'rubocop'
+gem 'yard'
+gem 'rake'
+gem 'rspec'
+gem 'mini_portile2'

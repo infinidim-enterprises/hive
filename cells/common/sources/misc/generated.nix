@@ -155,10 +155,10 @@
   };
   drawio = {
     pname = "drawio";
-    version = "22.1.11";
+    version = "22.1.16";
     src = fetchurl {
-      url = "https://github.com/jgraph/drawio-desktop/releases/download/v22.1.11/drawio-x86_64-22.1.11.rpm";
-      sha256 = "sha256-3wh7IXKCMSfqCWhM4SSV2CYTU3vNfKRszcOT59A7pQk=";
+      url = "https://github.com/jgraph/drawio-desktop/releases/download/v22.1.16/drawio-x86_64-22.1.16.rpm";
+      sha256 = "sha256-HKO6hSRUV2cW1aUMhRz4qPiNRtcjKvzf0lfCSmLFX8A=";
     };
   };
   getoptions = {
@@ -232,12 +232,23 @@
       sha256 = "sha256-sO2s4qy2GIc3ecnObs+RZdtU/vlcIiYvVwD83Z/rrsk=";
     };
   };
+  k9s = {
+    pname = "k9s";
+    version = "v0.30.8";
+    src = fetchFromGitHub {
+      owner = "derailed";
+      repo = "k9s";
+      rev = "v0.30.8";
+      fetchSubmodules = false;
+      sha256 = "sha256-RIk3e/rySYev5n0NLN6ZYHIx3ssfdUXnzBJ2y6Y/n5U=";
+    };
+  };
   langchain = {
     pname = "langchain";
-    version = "0.0.352";
+    version = "0.0.354";
     src = fetchurl {
-      url = "https://pypi.org/packages/source/l/langchain/langchain-0.0.352.tar.gz";
-      sha256 = "sha256-iSjXtj1zr5aB/hsqK5m4Qjjv72HtU33mZhYP0AH0Hv0=";
+      url = "https://pypi.org/packages/source/l/langchain/langchain-0.0.354.tar.gz";
+      sha256 = "sha256-QZxIc1uAPXDA3umF4K/P18iFKLjBzZGMV+sj5T2U6oc=";
     };
   };
   listopia = {
@@ -254,10 +265,10 @@
   };
   logseq = {
     pname = "logseq";
-    version = "0.10.2";
+    version = "0.10.3";
     src = fetchurl {
-      url = "https://github.com/logseq/logseq/releases/download/0.10.2/logseq-linux-x64-0.10.2.AppImage";
-      sha256 = "sha256-uKulsz8j21157hVmyIwcXi895nndpvNYKCNd5/YGuGY=";
+      url = "https://github.com/logseq/logseq/releases/download/0.10.3/logseq-linux-x64-0.10.3.AppImage";
+      sha256 = "sha256-aduFqab5cpoXR3oFOHzsXJwogm1bZ9KgT2Mt6G9kbBA=";
     };
   };
   lorri = {
@@ -287,10 +298,10 @@
   };
   masterpdfeditor = {
     pname = "masterpdfeditor";
-    version = "5.9.70";
+    version = "5.9.81";
     src = fetchurl {
-      url = "https://code-industry.net/public/master-pdf-editor-5.9.70-qt5.x86_64.tar.gz";
-      sha256 = "sha256-26Csx/Z9JF49+tvF4NweVClikMTZ25teFQX6hfbHcjw=";
+      url = "https://code-industry.net/public/master-pdf-editor-5.9.81-qt5.x86_64.tar.gz";
+      sha256 = "sha256-fBAEqATEsKqS0Am137A48oTqI0Nv9wItMD75VAyLrJo=";
     };
   };
   nix-index = {
@@ -375,16 +386,16 @@
   };
   pam_usb = {
     pname = "pam_usb";
-    version = "2eeaaff4caf5c85dd1f4858f5f2b8caedd665455";
+    version = "2c1e20f5bfa7e66d7601092a1a2378a22053b344";
     src = fetchgit {
       url = "https://github.com/mcdope/pam_usb";
-      rev = "2eeaaff4caf5c85dd1f4858f5f2b8caedd665455";
+      rev = "2c1e20f5bfa7e66d7601092a1a2378a22053b344";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-oSZ0+Cphy1+h6qn8IVKiv91+IhqUUOFnr+Ya+G+wPH0=";
+      sha256 = "sha256-7yDxObVfySgHnnLMGDHhxgH6iwVVfq51QJtluKc0EuA=";
     };
-    date = "2023-03-21";
+    date = "2024-01-03";
   };
   paper-store = {
     pname = "paper-store";
@@ -401,12 +412,12 @@
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "887c06620289781dca747976034e4b2172e4aed5";
+    version = "b02dbb03fbc18c2ad19ba41201c2b3b30f7f7eaa";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";
     };
-    date = "2023-12-25";
+    date = "2024-01-03";
   };
   promnesia = {
     pname = "promnesia";
@@ -454,15 +465,15 @@
   };
   rtw89 = {
     pname = "rtw89";
-    version = "0692feeda86bd150231950451ade3cc6cf03611e";
+    version = "e2ca94fc6fdd74b46717d1ec561948e1756f48f0";
     src = fetchFromGitHub {
       owner = "lwfinger";
       repo = "rtw89";
-      rev = "0692feeda86bd150231950451ade3cc6cf03611e";
+      rev = "e2ca94fc6fdd74b46717d1ec561948e1756f48f0";
       fetchSubmodules = false;
-      sha256 = "sha256-p4njy8wZU2TUuMdGwVej40lPbUeC47qeBJZ7hJ/E7eQ=";
+      sha256 = "sha256-Clk0PZXmGoFCE3pR31ZQcZG1GgALR4917Bz+iJihDf0=";
     };
-    date = "2023-12-12";
+    date = "2024-01-03";
   };
   s5cmd = {
     pname = "s5cmd";

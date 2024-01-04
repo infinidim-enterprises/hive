@@ -257,11 +257,11 @@
     "pinned": false,
     "src": {
       "name": null,
-      "sha256": "sha256-3wh7IXKCMSfqCWhM4SSV2CYTU3vNfKRszcOT59A7pQk=",
+      "sha256": "sha256-HKO6hSRUV2cW1aUMhRz4qPiNRtcjKvzf0lfCSmLFX8A=",
       "type": "url",
-      "url": "https://github.com/jgraph/drawio-desktop/releases/download/v22.1.11/drawio-x86_64-22.1.11.rpm"
+      "url": "https://github.com/jgraph/drawio-desktop/releases/download/v22.1.16/drawio-x86_64-22.1.16.rpm"
     },
-    "version": "22.1.11"
+    "version": "22.1.16"
   },
   "getoptions": {
     "cargoLocks": null,
@@ -384,6 +384,26 @@
     },
     "version": "2.6.1"
   },
+  "k9s": {
+    "cargoLocks": null,
+    "date": null,
+    "extract": null,
+    "name": "k9s",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "derailed",
+      "repo": "k9s",
+      "rev": "v0.30.8",
+      "sha256": "sha256-RIk3e/rySYev5n0NLN6ZYHIx3ssfdUXnzBJ2y6Y/n5U=",
+      "type": "github"
+    },
+    "version": "v0.30.8"
+  },
   "langchain": {
     "cargoLocks": null,
     "date": null,
@@ -393,11 +413,11 @@
     "pinned": false,
     "src": {
       "name": null,
-      "sha256": "sha256-iSjXtj1zr5aB/hsqK5m4Qjjv72HtU33mZhYP0AH0Hv0=",
+      "sha256": "sha256-QZxIc1uAPXDA3umF4K/P18iFKLjBzZGMV+sj5T2U6oc=",
       "type": "url",
-      "url": "https://pypi.org/packages/source/l/langchain/langchain-0.0.352.tar.gz"
+      "url": "https://pypi.org/packages/source/l/langchain/langchain-0.0.354.tar.gz"
     },
-    "version": "0.0.352"
+    "version": "0.0.354"
   },
   "listopia": {
     "cargoLocks": null,
@@ -428,11 +448,11 @@
     "pinned": false,
     "src": {
       "name": null,
-      "sha256": "sha256-uKulsz8j21157hVmyIwcXi895nndpvNYKCNd5/YGuGY=",
+      "sha256": "sha256-aduFqab5cpoXR3oFOHzsXJwogm1bZ9KgT2Mt6G9kbBA=",
       "type": "url",
-      "url": "https://github.com/logseq/logseq/releases/download/0.10.2/logseq-linux-x64-0.10.2.AppImage"
+      "url": "https://github.com/logseq/logseq/releases/download/0.10.3/logseq-linux-x64-0.10.3.AppImage"
     },
-    "version": "0.10.2"
+    "version": "0.10.3"
   },
   "lorri": {
     "cargoLocks": null,
@@ -485,11 +505,11 @@
     "pinned": false,
     "src": {
       "name": null,
-      "sha256": "sha256-26Csx/Z9JF49+tvF4NweVClikMTZ25teFQX6hfbHcjw=",
+      "sha256": "sha256-fBAEqATEsKqS0Am137A48oTqI0Nv9wItMD75VAyLrJo=",
       "type": "url",
-      "url": "https://code-industry.net/public/master-pdf-editor-5.9.70-qt5.x86_64.tar.gz"
+      "url": "https://code-industry.net/public/master-pdf-editor-5.9.81-qt5.x86_64.tar.gz"
     },
-    "version": "5.9.70"
+    "version": "5.9.81"
   },
   "nix-index": {
     "cargoLocks": null,
@@ -622,7 +642,7 @@
   },
   "pam_usb": {
     "cargoLocks": null,
-    "date": "2023-03-21",
+    "date": "2024-01-03",
     "extract": null,
     "name": "pam_usb",
     "passthru": null,
@@ -632,12 +652,12 @@
       "fetchSubmodules": false,
       "leaveDotGit": false,
       "name": null,
-      "rev": "2eeaaff4caf5c85dd1f4858f5f2b8caedd665455",
-      "sha256": "sha256-oSZ0+Cphy1+h6qn8IVKiv91+IhqUUOFnr+Ya+G+wPH0=",
+      "rev": "2c1e20f5bfa7e66d7601092a1a2378a22053b344",
+      "sha256": "sha256-7yDxObVfySgHnnLMGDHhxgH6iwVVfq51QJtluKc0EuA=",
       "type": "git",
       "url": "https://github.com/mcdope/pam_usb"
     },
-    "version": "2eeaaff4caf5c85dd1f4858f5f2b8caedd665455"
+    "version": "2c1e20f5bfa7e66d7601092a1a2378a22053b344"
   },
   "paper-store": {
     "cargoLocks": null,
@@ -660,7 +680,7 @@
   },
   "pbkdf2-sha512": {
     "cargoLocks": null,
-    "date": "2023-12-25",
+    "date": "2024-01-03",
     "extract": null,
     "name": "pbkdf2-sha512",
     "passthru": null,
@@ -671,7 +691,7 @@
       "type": "url",
       "url": "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c"
     },
-    "version": "887c06620289781dca747976034e4b2172e4aed5"
+    "version": "b02dbb03fbc18c2ad19ba41201c2b3b30f7f7eaa"
   },
   "promnesia": {
     "cargoLocks": null,
@@ -750,7 +770,7 @@
   },
   "rtw89": {
     "cargoLocks": null,
-    "date": "2023-12-12",
+    "date": "2024-01-03",
     "extract": null,
     "name": "rtw89",
     "passthru": null,
@@ -762,11 +782,11 @@
       "name": null,
       "owner": "lwfinger",
       "repo": "rtw89",
-      "rev": "0692feeda86bd150231950451ade3cc6cf03611e",
-      "sha256": "sha256-p4njy8wZU2TUuMdGwVej40lPbUeC47qeBJZ7hJ/E7eQ=",
+      "rev": "e2ca94fc6fdd74b46717d1ec561948e1756f48f0",
+      "sha256": "sha256-Clk0PZXmGoFCE3pR31ZQcZG1GgALR4917Bz+iJihDf0=",
       "type": "github"
     },
-    "version": "0692feeda86bd150231950451ade3cc6cf03611e"
+    "version": "e2ca94fc6fdd74b46717d1ec561948e1756f48f0"
   },
   "s5cmd": {
     "cargoLocks": null,

@@ -158,10 +158,11 @@ passthru = { vendorSha256 = "0789v1r6my256pncs0105yji28ifchj6ppfiy8gavglgclq3cgv
 ######
 ### kubernetes
 ######
-# [k9s]
-# src.github = "derailed/k9s"
-# src.use_latest_release = true
-# fetch.github = "derailed/k9s"
+[k9s]
+src.github = "derailed/k9s"
+src.use_latest_release = true
+fetch.github = "derailed/k9s"
+
 ### cloud and friends
 # [vultr-cli]
 # src.github = "vultr/vultr-cli"

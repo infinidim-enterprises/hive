@@ -43,7 +43,14 @@ let
   then getFlake path
   else null;
 
-  Cells = Flake.__std.actions.${builtins.currentSystem};
+  OldHive = with stdLib; let
+    path = toPath ((getEnv "PRJ_ROOT") + "/../hive");
+  in
+  if pathExists path
+  then getFlake path
+  else null;
+
+  Cells = Flake.${builtins.currentSystem};
   # TODO: Me = with stdLib; let hostName = readFile /etc/hostname; in hostName;
 in
 {
@@ -55,6 +62,6 @@ in
 
     Lib
     Legacy
+    OldHive
     ;
-}
-  // lib
+} // lib

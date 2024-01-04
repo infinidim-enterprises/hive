@@ -21,7 +21,6 @@
 
     # Compatibility
     std-ext.url = "github:gtrunsec/std-ext";
-    nixos-22-11.url = "github:nixos/nixpkgs/release-22.11";
     # Compatibility
 
     hive.url = "github:divnix/hive";
@@ -40,7 +39,7 @@
     nix-filter.url = "github:numtide/nix-filter";
 
     nixos-generators.url = "github:nix-community/nixos-generators";
-    nixos-generators.inputs.nixpkgs.follows = "nixpkgs";
+    nixos-generators.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
     nixos-hardware.url = "github:nixos/nixos-hardware";
 
@@ -66,6 +65,7 @@
   # nixpkgs & home-manager
   inputs = {
     latest.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixpkgs-master.url = "github:nixos/nixpkgs";
     k8s.url = "github:nixos/nixpkgs/3005f20ce0aaa58169cdee57c8aa12e5f1b6e1b3";
     nixos.url = "github:nixos/nixpkgs/release-23.05";
@@ -83,6 +83,13 @@
     srvos.url = "github:nix-community/srvos";
     srvos.inputs.nixpkgs.follows = "latest";
     srvos.inputs.nixos-23_05.follows = "nixos";
+  };
+
+  # Compat nixpkgs
+  inputs = {
+    nixos-unstable-linux_6_2.url = "github:nixos/nixpkgs/63464b8c2837ec56e1d610f5bd2a9b8e1f532c07";
+    nixos-unstable-linux_6_5.url = "github:nixos/nixpkgs/b644d97bda6dae837d577e28383c10aa51e5e2d2";
+    nixos-22-11.url = "github:nixos/nixpkgs/release-22.11";
   };
 
   # tools

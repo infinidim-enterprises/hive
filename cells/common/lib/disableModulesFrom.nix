@@ -1,5 +1,5 @@
 { lib
-, inputs
+, cell
 , ...
 }:
 let
@@ -14,7 +14,7 @@ let
           attrValues
           ;
         inherit
-          (inputs.std-ext.lib.digga)
+          (cell.lib)
           flattenTree
           rakeLeaves
           ;
