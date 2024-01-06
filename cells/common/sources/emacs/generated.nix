@@ -87,21 +87,21 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = true;
-      sha256 = "sha256-naCexnEewgyi9UVPZ7djSR4X4zKQvLYT1YVn/baubKs=";
+      sha256 = "sha256-o4RopTd7LqYEcCg3QuNS4/I8cymPGzCJ1w4kc/Y8LgA=";
     };
     date = "2023-12-08";
   };
   jinx = {
     pname = "jinx";
-    version = "3e61f60b7c450cfe867178c7f9b77d56dd9142c0";
+    version = "d2caef25a0d7a3eaa55da43c928ec944e0d09450";
     src = fetchFromGitHub {
       owner = "minad";
       repo = "jinx";
-      rev = "3e61f60b7c450cfe867178c7f9b77d56dd9142c0";
+      rev = "d2caef25a0d7a3eaa55da43c928ec944e0d09450";
       fetchSubmodules = false;
-      sha256 = "sha256-Cxw6rCMfiq/3Rp65bN2aAZ+rV8bBsf9YVSVNzksemAI=";
+      sha256 = "sha256-4S3zZMmGJUJKnBlWU+Nh+ClDPTEDEBvlDiGjYDEVro4=";
     };
-    date = "2024-01-02";
+    date = "2024-01-04";
   };
   lsp-bridge = {
     pname = "lsp-bridge";
@@ -169,15 +169,15 @@
   };
   spacemacs = {
     pname = "spacemacs";
-    version = "3292ba1cdf4963dfa1cd3c4724e6a05bbd2c8e98";
+    version = "35cc1a6af9db3e66fb23365c5c6cfe4c84444d61";
     src = fetchgit {
       url = "https://github.com/syl20bnr/spacemacs";
-      rev = "3292ba1cdf4963dfa1cd3c4724e6a05bbd2c8e98";
+      rev = "35cc1a6af9db3e66fb23365c5c6cfe4c84444d61";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = true;
-      sha256 = "sha256-L9WaxkwXDi1xNIvSr7FObdsF8Q4JjyOMmkT5IJK7dP4=";
+      sha256 = "sha256-GMBRv+ODSFlGIkyENWvADc/CnV3hv1ojCIJY9DShjp4=";
     };
-    date = "2024-01-03";
+    date = "2024-01-04";
   };
 }

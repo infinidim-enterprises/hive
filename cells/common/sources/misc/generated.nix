@@ -386,16 +386,16 @@
   };
   pam_usb = {
     pname = "pam_usb";
-    version = "2c1e20f5bfa7e66d7601092a1a2378a22053b344";
+    version = "688b65c3d5f7f81600c37f9fc9a29da9d2cc7abe";
     src = fetchgit {
       url = "https://github.com/mcdope/pam_usb";
-      rev = "2c1e20f5bfa7e66d7601092a1a2378a22053b344";
+      rev = "688b65c3d5f7f81600c37f9fc9a29da9d2cc7abe";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-7yDxObVfySgHnnLMGDHhxgH6iwVVfq51QJtluKc0EuA=";
+      sha256 = "sha256-e5atF4xenj6rC6wYdajCIVe1m2PeA5lDsP1LNgcULKg=";
     };
-    date = "2024-01-03";
+    date = "2024-01-05";
   };
   paper-store = {
     pname = "paper-store";
@@ -412,12 +412,12 @@
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "b02dbb03fbc18c2ad19ba41201c2b3b30f7f7eaa";
+    version = "127579d6f40593f9b9b461b17769c6c2793a053d";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";
     };
-    date = "2024-01-03";
+    date = "2024-01-06";
   };
   promnesia = {
     pname = "promnesia";
@@ -465,15 +465,15 @@
   };
   rtw89 = {
     pname = "rtw89";
-    version = "e2ca94fc6fdd74b46717d1ec561948e1756f48f0";
+    version = "139b1477900f7f13f0c1111c8919a3bf4aeb4a80";
     src = fetchFromGitHub {
       owner = "lwfinger";
       repo = "rtw89";
-      rev = "e2ca94fc6fdd74b46717d1ec561948e1756f48f0";
+      rev = "139b1477900f7f13f0c1111c8919a3bf4aeb4a80";
       fetchSubmodules = false;
-      sha256 = "sha256-Clk0PZXmGoFCE3pR31ZQcZG1GgALR4917Bz+iJihDf0=";
+      sha256 = "sha256-V4ZbNBMc7Gy/E4HLusXhxCLLN1Enb9Ua4XSpS6XB29Q=";
     };
-    date = "2024-01-03";
+    date = "2024-01-04";
   };
   s5cmd = {
     pname = "s5cmd";
