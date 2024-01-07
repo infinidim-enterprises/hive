@@ -19,8 +19,7 @@ let
             (const sanitize)
             (filterAttrs
               (name: value:
-                name
-                != "_module"
+                name != "_module"
                 && name != "mutable"
                 && name != "members"
                 && name != "apply"

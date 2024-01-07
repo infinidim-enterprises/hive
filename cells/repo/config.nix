@@ -403,8 +403,8 @@ in
                 "ci"
                 "flake"
               ]
-              ++ (lib.attrNames inputs.cells.nixos.nixosConfigurations)
-              ++ (lib.attrNames inputs.cells.darwin.darwinConfigurations);
+              ++ (lib.attrNames inputs.cells.nixos.nixosConfigurations);
+            # ++ (lib.attrNames inputs.cells.darwin.darwinConfigurations);
             descriptionLength = 72;
           };
         };

@@ -9,7 +9,8 @@ let
     readDir;
 
   rakeLeaves = {
-    __functor = _self: dirPath:
+    __functor = _self:
+      dirPath:
       let
         seive = file: type:
           (type == "regular" && hasSuffix ".nix" file) || (type == "directory");

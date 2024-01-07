@@ -162,26 +162,6 @@
         "type": "github"
       }
     },
-    "darwin": {
-      "inputs": {
-        "nixpkgs": [
-          "nixos"
-        ]
-      },
-      "locked": {
-        "lastModified": 1700795494,
-        "narHash": "sha256-gzGLZSiOhf155FW7262kdHo2YDeugp3VuIFb4/GGng0=",
-        "owner": "LnL7",
-        "repo": "nix-darwin",
-        "rev": "4b9b83d5a92e8c1fbfd8eb27eda375908c11ec4d",
-        "type": "github"
-      },
-      "original": {
-        "owner": "LnL7",
-        "repo": "nix-darwin",
-        "type": "github"
-      }
-    },
     "devshell": {
       "inputs": {
         "nixpkgs": [
@@ -2600,7 +2580,6 @@
       "inputs": {
         "arion": "arion",
         "colmena": "colmena",
-        "darwin": "darwin",
         "devshell": "devshell",
         "disko": "disko",
         "flake-compat": "flake-compat_2",
@@ -2711,23 +2690,22 @@
     "sops-nix": {
       "inputs": {
         "nixpkgs": [
-          "nixos"
+          "latest"
         ],
         "nixpkgs-stable": [
           "nixos"
         ]
       },
       "locked": {
-        "lastModified": 1698186302,
-        "narHash": "sha256-2e0eQTq8/lC3qzZMiQG41FHO4tREZpFWbvT8SEQMrAU=",
-        "owner": "TrueLecter",
+        "lastModified": 1704596510,
+        "narHash": "sha256-tupdwwg1WeX2hNMOQrvtyafTaTVty0QC/gQp7yaYJic=",
+        "owner": "Mic92",
         "repo": "sops-nix",
-        "rev": "4e50b50aa2c20c2113fca3247064f3a9df456a71",
+        "rev": "f5fbcc0f50e7fc60c4f806fa7a09abccf0826d8a",
         "type": "github"
       },
       "original": {
-        "owner": "TrueLecter",
-        "ref": "darwin-upstream",
+        "owner": "Mic92",
         "repo": "sops-nix",
         "type": "github"
       }

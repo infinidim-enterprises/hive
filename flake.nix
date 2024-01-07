@@ -1,5 +1,8 @@
 {
   description = "The Hive - VoD systems";
+  # Cachix
+  nixConfig.extra-substituters = [ "https://njk.cachix.org" ];
+  nixConfig.extra-trusted-public-keys = [ "njk.cachix.org-1:ON4lemYq096ZfK5MtL1NU3afFk9ILAsEnXdy5lDDgKs=" ];
 
   # common for deduplication
   inputs = {
@@ -51,8 +54,12 @@
     colmena.inputs.nixpkgs.follows = "nixpkgs";
     colmena.inputs.flake-utils.follows = "flake-utils";
 
-    sops-nix.url = "github:TrueLecter/sops-nix/darwin-upstream";
-    sops-nix.inputs.nixpkgs.follows = "nixos";
+    # sops-nix.url = "github:TrueLecter/sops-nix/darwin-upstream";
+    # sops-nix.inputs.nixpkgs.follows = "nixos";
+    # sops-nix.inputs.nixpkgs-stable.follows = "nixos";
+
+    sops-nix.url = "github:Mic92/sops-nix";
+    sops-nix.inputs.nixpkgs.follows = "latest";
     sops-nix.inputs.nixpkgs-stable.follows = "nixos";
 
     sops-ssh-to-pgp.url = "github:Mic92/ssh-to-pgp/1.1.2";
@@ -71,8 +78,8 @@
     nixos.url = "github:nixos/nixpkgs/release-23.05";
     nixpkgs.follows = "nixos";
 
-    darwin.url = "github:LnL7/nix-darwin";
-    darwin.inputs.nixpkgs.follows = "nixos";
+    # darwin.url = "github:LnL7/nix-darwin";
+    # darwin.inputs.nixpkgs.follows = "nixos";
 
     home.url = "github:nix-community/home-manager/release-23.05";
     home.inputs.nixpkgs.follows = "nixos";
@@ -151,9 +158,9 @@
         nixpkgsConfig.allowUnfree = true;
 
         systems = [
-          "aarch64-darwin"
+          # "aarch64-darwin"
           "aarch64-linux"
-          "x86_64-darwin"
+          # "x86_64-darwin"
           "x86_64-linux"
         ];
 
@@ -165,20 +172,20 @@
 
             # Modules
             (functions "nixosModules")
-            (functions "darwinModules")
+            # (functions "darwinModules")
             (functions "homeModules")
 
             # Profiles
             (functions "commonProfiles")
             (functions "nixosProfiles")
-            (functions "darwinProfiles")
+            # (functions "darwinProfiles")
             (functions "homeProfiles")
             (functions "userProfiles")
             (functions "users")
 
             # Suites
             (functions "nixosSuites")
-            (functions "darwinSuites")
+            # (functions "darwinSuites")
             (functions "homeSuites")
 
             (devshells "shells")
@@ -195,23 +202,19 @@
             homeConfigurations
             nixosConfigurations
             diskoConfigurations
-            darwinConfigurations
+            # darwinConfigurations
           ];
       }
+
       # soil
       {
         devShells = hive.harvest inputs.self [ "repo" "shells" ];
         packages = hive.harvest inputs.self [
-          [ "klipper" "packages" ]
           [ "common" "packages" ]
-          [ "pam-reattach" "packages" ]
-          [ "minecraft-servers" "packages" ]
         ];
 
         nixosModules = hive.pick inputs.self [
-          [ "klipper" "nixosModules" ]
           [ "k8s" "nixosModules" ]
-          [ "minecraft-servers" "nixosModules" ]
         ];
 
         homeModules = hive.pick inputs.self [ [ "home" "homeModules" ] ];
@@ -221,10 +224,10 @@
         nixosConfigurations = hive.collect self "nixosConfigurations";
         diskoConfigurations = hive.collect self "diskoConfigurations";
         homeConfigurations = hive.collect self "homeConfigurations";
-        darwinConfigurations = hive.collect self "darwinConfigurations";
+        # darwinConfigurations = hive.collect self "darwinConfigurations";
       }
       {
-        darwinConfigurations.squadbook = self.darwinConfigurations.darwin-squadbook;
+        # darwinConfigurations.squadbook = self.darwinConfigurations.darwin-squadbook;
         debug = hive.harvest inputs.self [ "repo" "debug" ];
       };
 }
