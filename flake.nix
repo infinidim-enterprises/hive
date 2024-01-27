@@ -34,7 +34,6 @@
     hive.url = "github:divnix/hive";
 
     # hive.inputs.std.nixpkgs.follows = "nixpkgs-unstable";
-
     # hive.inputs.std.follows = "std";
 
     hive.inputs.devshell.follows = "devshell";
@@ -42,9 +41,12 @@
     hive.inputs.colmena.follows = "colmena";
     hive.inputs.nixago.follows = "nixago";
     hive.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    # hive.inputs.std.inputs.haumea.follows = "haumea";
+
     # hive.inputs.nixpkgs.follows = "nixpkgs";
 
     haumea.follows = "hive/std/haumea";
+    # haumea.url = "github:nix-community/haumea";
 
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -78,10 +80,11 @@
 
   # nixpkgs & home-manager
   inputs = {
-    latest.url = "github:nixos/nixpkgs/nixos-unstable";
+    # latest.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixpkgs-master.url = "github:nixos/nixpkgs";
     nixos.url = "github:nixos/nixpkgs/release-23.05";
+    latest.follows = "nixpkgs-unstable";
     nixpkgs.follows = "nixos";
 
     home.url = "github:nix-community/home-manager/release-23.05";

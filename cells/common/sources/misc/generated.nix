@@ -45,15 +45,15 @@
   };
   chatgpt-wrapper = {
     pname = "chatgpt-wrapper";
-    version = "a87be74ad826bad43f759a21afd9e97a92f8cede";
+    version = "79ec7686d2b015fe44dac01ad250cc328c50d24b";
     src = fetchFromGitHub {
       owner = "llm-workflow-engine";
       repo = "llm-workflow-engine";
-      rev = "a87be74ad826bad43f759a21afd9e97a92f8cede";
+      rev = "79ec7686d2b015fe44dac01ad250cc328c50d24b";
       fetchSubmodules = false;
-      sha256 = "sha256-fMOYBh31Bg3Ioh7nQkh6IPAo/cN5m+EtqPnOWXOcQ50=";
+      sha256 = "sha256-TfeYxwUVutzpdH+9H7sOCc3VUBZhc35zNSZZTP8hWzo=";
     };
-    date = "2024-01-08";
+    date = "2024-01-16";
   };
   cl-hash-util = {
     pname = "cl-hash-util";
@@ -143,10 +143,10 @@
   };
   drawio = {
     pname = "drawio";
-    version = "22.1.18";
+    version = "23.0.2";
     src = fetchurl {
-      url = "https://github.com/jgraph/drawio-desktop/releases/download/v22.1.18/drawio-x86_64-22.1.18.rpm";
-      sha256 = "sha256-G6rOcTW37oIqeyO6hFurNJpPWVog2wEa0SXtWWuBc4c=";
+      url = "https://github.com/jgraph/drawio-desktop/releases/download/v23.0.2/drawio-x86_64-23.0.2.rpm";
+      sha256 = "sha256-nV104DlIzffA6j9wxndjQB0IUi2UhXAcaQ5j+tCL0wQ=";
     };
   };
   git-get = {
@@ -210,13 +210,13 @@
   };
   langchain = {
     pname = "langchain";
-    version = "v0.1.0";
+    version = "v0.1.4";
     src = fetchFromGitHub {
       owner = "langchain-ai";
       repo = "langchain";
-      rev = "v0.1.0";
+      rev = "v0.1.4";
       fetchSubmodules = false;
-      sha256 = "sha256-izaSah1S0INsskdzE9b7Iw4yWBsNmN5fBI6BQgaHgE4=";
+      sha256 = "sha256-DwqWn9qbe8aYQCOgyDufaUmM3RjF75cOP2Y4rCVQBi8=";
     };
   };
   listopia = {
@@ -233,10 +233,10 @@
   };
   logseq = {
     pname = "logseq";
-    version = "0.10.3";
+    version = "0.10.5";
     src = fetchurl {
-      url = "https://github.com/logseq/logseq/releases/download/0.10.3/logseq-linux-x64-0.10.3.AppImage";
-      sha256 = "sha256-aduFqab5cpoXR3oFOHzsXJwogm1bZ9KgT2Mt6G9kbBA=";
+      url = "https://github.com/logseq/logseq/releases/download/0.10.5/logseq-linux-x64-0.10.5.AppImage";
+      sha256 = "sha256-F3YbqgvL04P0nXaIVkJlCq/z8hUE0M0UutkBs2omuBE=";
     };
   };
   masterpdfeditor = {
@@ -309,12 +309,12 @@
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "24384a868af0bfa62170e1f33a419b74e7a09273";
+    version = "714069dba3dc49dc469dba01b4410c045fa628f0";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";
     };
-    date = "2024-01-12";
+    date = "2024-01-27";
   };
   promnesia = {
     pname = "promnesia";

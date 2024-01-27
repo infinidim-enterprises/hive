@@ -918,22 +918,6 @@
         "type": "github"
       }
     },
-    "latest": {
-      "locked": {
-        "lastModified": 1701253981,
-        "narHash": "sha256-ztaDIyZ7HrTAfEEUt9AtTDNoCYxUdSd6NrRHaYOIxtk=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "e92039b55bcd58469325ded85d4f58dd5a4eaf58",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "lib": {
       "locked": {
         "lastModified": 1694306727,
@@ -1487,11 +1471,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1706006310,
-        "narHash": "sha256-nDPz0fj0IFcDhSTlXBU2aixcnGs2Jm4Zcuoj0QtmiXQ=",
+        "lastModified": 1706173671,
+        "narHash": "sha256-lciR7kQUK2FCAYuszyd7zyRRmTaXVeoZsCyK6QFpGdk=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "b43bb235efeab5324c5e486882ef46749188eee2",
+        "rev": "4fddc9be4eaf195d631333908f2a454b03628ee5",
         "type": "github"
       },
       "original": {
@@ -1858,12 +1842,19 @@
         "flake-compat": "flake-compat_2",
         "flake-utils": "flake-utils",
         "gomod2nix": "gomod2nix",
+        "haumea": [
+          "hive",
+          "std",
+          "haumea"
+        ],
         "hive": "hive",
         "home": "home",
         "home-unstable": "home-unstable",
         "impermanence": "impermanence",
         "k8s": "k8s",
-        "latest": "latest",
+        "latest": [
+          "nixpkgs-unstable"
+        ],
         "microvm": "microvm",
         "nil": "nil",
         "nix-doom-emacs": "nix-doom-emacs",

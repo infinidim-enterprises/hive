@@ -1,11 +1,8 @@
-{ inputs
-, cell
-, ...
-}:
+{ inputs, cell, ... }:
 let
-  lib = nixpkgs-lib.lib // builtins;
+  lib = inputs.nixpkgs-lib.lib // builtins;
 
-  inherit (inputs) nixpkgs nixpkgs-lib std latest;
+  inherit (inputs) nixpkgs std;
   inherit (cell) config;
   inherit ((nixpkgs.appendOverlays [ inputs.nur.overlay ]).nur.repos.rycee) mozilla-addons-to-nix;
 
@@ -13,25 +10,28 @@ let
     (nixpkgs.appendOverlays [ inputs.cells.common.overlays.latest-overrides ])
     ssh-to-pgp
     ssh-to-age
-    # alejandra
+    gnupg
+    alejandra
     nixUnstable
+    nixpkgs-fmt
+    editorconfig-checker
     cachix
     nix-index
     statix
     nvfetcher
     act
     sops
-    ;
 
-  # inherit (inputs.nixpkgs-unstable) editorconfig-checker;
+    coreutils-full
+    findutils
+    bash
+    gnused
+    remarshal
+    ;
 
   inherit
     (nixpkgs)
-    # (nixpkgs-unstable)
-    nixpkgs-fmt
-    # editorconfig-checker
     mdbook
-    gnupg
     writeShellApplication
     writeShellScriptBin
     writeScriptBin
@@ -47,15 +47,15 @@ let
   # export PATH=${inputs.latest.nixUnstable}/bin:$PATH
   repl = writeShellScriptBin "repl" ''
     if [ -z "$1" ]; then
-       nix repl --argstr host "$HOST" --argstr flakePath "$PRJ_ROOT" ${./_repl.nix} --show-trace
+       ${nixpkgs.nixUnstable}/bin/nix repl --argstr host "$HOST" --argstr flakePath "$PRJ_ROOT" ${./_repl.nix} --show-trace
     else
-       nix repl --argstr host "$HOST" --argstr flakePath $(readlink -f $1 | sed 's|/flake.nix||') ${./_repl.nix} --show-trace
+       ${nixpkgs.nixUnstable}/bin/nix repl --argstr host "$HOST" --argstr flakePath $(readlink -f $1 | sed 's|/flake.nix||') ${./_repl.nix} --show-trace
     fi
   '';
 
   update-cell-sources = writeShellApplication {
     name = "update-cell-sources";
-    runtimeInputs = with nixpkgs; [
+    runtimeInputs = [
       # alejandra
       nixpkgs-fmt
       nvfetcher
@@ -153,11 +153,7 @@ lib.mapAttrs (_: std.lib.dev.mkShell) {
       ];
 
     packages = [
-      ssh-to-pgp
-      ssh-to-age
-      nixUnstable
       gnupg
-      update-cell-sources
     ];
 
     commands = [
@@ -172,6 +168,8 @@ lib.mapAttrs (_: std.lib.dev.mkShell) {
       (infra inputs.colmena.packages.colmena)
       (infra inputs.home.packages.home-manager)
       (infra inputs.nixos-generators.packages.nixos-generate)
+      (infra ssh-to-pgp)
+      (infra ssh-to-age)
 
       {
         category = "infra";
@@ -201,7 +199,7 @@ lib.mapAttrs (_: std.lib.dev.mkShell) {
         package = build-on-target;
       }
 
-      # (linter editorconfig-checker)
+      (linter editorconfig-checker)
       (linter nixpkgs-fmt)
 
       (docs mdbook)

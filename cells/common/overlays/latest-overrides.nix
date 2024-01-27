@@ -1,7 +1,5 @@
-{ inputs
-, cell
-, ...
-}: final: prev:
+{ inputs, cell, ... }:
+final: prev:
 let
   latest = import inputs.latest {
     inherit (inputs.nixpkgs) system;
@@ -11,6 +9,9 @@ in
 {
   inherit
     (latest)
+    gnupg
+    editorconfig-checker
+
     android-tools
     vscode
     alejandra
@@ -32,12 +33,11 @@ in
     kubernetes-helmPlugins
     direnv
     amazon-ecr-credential-helper
-    # dive - A tool for exploring each layer in a docker image
 
-    dive
-    # act - Run your GitHub Actions locally
 
-    act
+    dive# dive - A tool for exploring each layer in a docker image
+    act# act - Run your GitHub Actions locally
+
     tailscale
     ffmpeg_5-full
     sops

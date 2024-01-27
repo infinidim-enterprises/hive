@@ -97,7 +97,7 @@
     },
     "copilot-el": {
         "cargoLocks": null,
-        "date": "2024-01-12",
+        "date": "2024-01-14",
         "extract": null,
         "name": "copilot-el",
         "passthru": null,
@@ -107,16 +107,16 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "c5d822c98f047376cfd6dd95515a609c30157522",
-            "sha256": "sha256-wAtaGy/s0CgwQlRFdLbjiKUdu35z5cZtupfBsGC3j7M=",
+            "rev": "8f5e45405ead77fcbe85b5c02193f23449d2d518",
+            "sha256": "sha256-t83Uub8d9t24BXutjPuOav+giLVGwjGr8ameFJvFUTw=",
             "type": "git",
             "url": "https://github.com/zerolfx/copilot.el.git"
         },
-        "version": "c5d822c98f047376cfd6dd95515a609c30157522"
+        "version": "8f5e45405ead77fcbe85b5c02193f23449d2d518"
     },
     "doom-emacs": {
         "cargoLocks": null,
-        "date": "2023-12-08",
+        "date": "2024-01-25",
         "extract": null,
         "name": "doom-emacs",
         "passthru": null,
@@ -126,16 +126,16 @@
             "fetchSubmodules": false,
             "leaveDotGit": true,
             "name": null,
-            "rev": "03d692f129633e3bf0bd100d91b3ebf3f77db6d1",
-            "sha256": "sha256-naCexnEewgyi9UVPZ7djSR4X4zKQvLYT1YVn/baubKs=",
+            "rev": "acb5af177b0a57ca4b05d00d5055d109198e2984",
+            "sha256": "sha256-tFG5hYqEI7l7SML4/vmWNvqsqE/+l7/X6hI110pdFT8=",
             "type": "git",
             "url": "https://github.com/hlissner/doom-emacs"
         },
-        "version": "03d692f129633e3bf0bd100d91b3ebf3f77db6d1"
+        "version": "acb5af177b0a57ca4b05d00d5055d109198e2984"
     },
     "jinx": {
         "cargoLocks": null,
-        "date": "2024-01-09",
+        "date": "2024-01-22",
         "extract": null,
         "name": "jinx",
         "passthru": null,
@@ -147,15 +147,15 @@
             "name": null,
             "owner": "minad",
             "repo": "jinx",
-            "rev": "03efb689ca134127c186b8da5a2a91b04889ea2b",
-            "sha256": "sha256-idvz0SeSdDLiULsR0g2Kjxtpn3v8OjLFS1spkqe99Sw=",
+            "rev": "e7934278540b33c394a0aebdd9fa543aa84fc82a",
+            "sha256": "sha256-JJncMGDyVk7ctixqjeKR1HVXiAD//4priKACb8qgWxE=",
             "type": "github"
         },
-        "version": "03efb689ca134127c186b8da5a2a91b04889ea2b"
+        "version": "e7934278540b33c394a0aebdd9fa543aa84fc82a"
     },
     "lsp-bridge": {
         "cargoLocks": null,
-        "date": "2024-01-12",
+        "date": "2024-01-27",
         "extract": null,
         "name": "lsp-bridge",
         "passthru": null,
@@ -167,11 +167,11 @@
             "name": null,
             "owner": "manateelazycat",
             "repo": "lsp-bridge",
-            "rev": "dca340017e6625d1a2a09914b2e4602c84f5f6a3",
-            "sha256": "sha256-uD3O3RYd+aVAc+k0c4/OX+uO4zZ+5b3VmvNLRuUUWZk=",
+            "rev": "378f5614408e49c0c3d5e85e20708fa50b1a0e62",
+            "sha256": "sha256-XQ3hMOoD74vkr9qeo6MSgah3RhGPH8kaEg55j4j3eLM=",
             "type": "github"
         },
-        "version": "dca340017e6625d1a2a09914b2e4602c84f5f6a3"
+        "version": "378f5614408e49c0c3d5e85e20708fa50b1a0e62"
     },
     "nix-mode": {
         "cargoLocks": null,
@@ -254,7 +254,7 @@
     },
     "spacemacs": {
         "cargoLocks": null,
-        "date": "2024-01-07",
+        "date": "2024-01-24",
         "extract": null,
         "name": "spacemacs",
         "passthru": null,
@@ -264,11 +264,11 @@
             "fetchSubmodules": false,
             "leaveDotGit": true,
             "name": null,
-            "rev": "3d84b01172d68f09791210d7de385f596ccf26b7",
-            "sha256": "sha256-4YZvYATrkv36JS5oLdkPllIs9un5CR2fpjhbt4TIFmc=",
+            "rev": "74969c89aafb8d016ab9438f4965cb91f6f98286",
+            "sha256": "sha256-qA2Rv3YnepTnqCvq7CMgC1k2RgoYwjNCXura/qewLVE=",
             "type": "git",
             "url": "https://github.com/syl20bnr/spacemacs"
         },
-        "version": "3d84b01172d68f09791210d7de385f596ccf26b7"
+        "version": "74969c89aafb8d016ab9438f4965cb91f6f98286"
     }
 }

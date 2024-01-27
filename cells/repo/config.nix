@@ -1,12 +1,12 @@
-{ inputs
-, cell
-, ...
-}:
+{ inputs, cell, ... }:
 let
-  inherit (inputs) nixpkgs nixpkgs-lib std;
+  inherit (inputs) std;
   inherit (std.lib.dev) mkNixago;
-
-  lib = nixpkgs-lib.lib // builtins;
+  lib = inputs.nixpkgs-lib.lib // builtins;
+  latest = import inputs.latest {
+    inherit (inputs.nixpkgs) system;
+    config.allowUnfree = true;
+  };
 
   hostsWithArch = arch: with lib;
     flatten (map
@@ -54,13 +54,13 @@ in
   treefmt = mkNixago std.lib.cfg.treefmt {
     packages = [
       # (nixpkgs.appendOverlays [inputs.cells.common.overlays.latest-overrides]).alejandra
-      inputs.nixpkgs.nixpkgs-fmt
-      inputs.nixpkgs.nodePackages.prettier
-      inputs.nixpkgs.nodePackages.prettier-plugin-toml
-      inputs.nixpkgs.shfmt
+      latest.nixpkgs-fmt
+      latest.nodePackages.prettier
+      latest.nodePackages.prettier-plugin-toml
+      latest.shfmt
     ];
-    devshell.startup.prettier-plugin-toml = inputs.nixpkgs.lib.stringsWithDeps.noDepEntry ''
-      export NODE_PATH=${inputs.nixpkgs.nodePackages.prettier-plugin-toml}/lib/node_modules:''${NODE_PATH:-}
+    devshell.startup.prettier-plugin-toml = lib.stringsWithDeps.noDepEntry ''
+      export NODE_PATH=${latest.nodePackages.prettier-plugin-toml}/lib/node_modules:''${NODE_PATH:-}
     '';
     data = {
       global.excludes = [ "cells/*/sources/generated.*" "cells/secrets/*" ];

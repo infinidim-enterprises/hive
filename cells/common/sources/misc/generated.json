@@ -72,7 +72,7 @@
   },
   "chatgpt-wrapper": {
     "cargoLocks": null,
-    "date": "2024-01-08",
+    "date": "2024-01-16",
     "extract": null,
     "name": "chatgpt-wrapper",
     "passthru": null,
@@ -84,11 +84,11 @@
       "name": null,
       "owner": "llm-workflow-engine",
       "repo": "llm-workflow-engine",
-      "rev": "a87be74ad826bad43f759a21afd9e97a92f8cede",
-      "sha256": "sha256-fMOYBh31Bg3Ioh7nQkh6IPAo/cN5m+EtqPnOWXOcQ50=",
+      "rev": "79ec7686d2b015fe44dac01ad250cc328c50d24b",
+      "sha256": "sha256-TfeYxwUVutzpdH+9H7sOCc3VUBZhc35zNSZZTP8hWzo=",
       "type": "github"
     },
-    "version": "a87be74ad826bad43f759a21afd9e97a92f8cede"
+    "version": "79ec7686d2b015fe44dac01ad250cc328c50d24b"
   },
   "cl-hash-util": {
     "cargoLocks": null,
@@ -237,11 +237,11 @@
     "pinned": false,
     "src": {
       "name": null,
-      "sha256": "sha256-G6rOcTW37oIqeyO6hFurNJpPWVog2wEa0SXtWWuBc4c=",
+      "sha256": "sha256-nV104DlIzffA6j9wxndjQB0IUi2UhXAcaQ5j+tCL0wQ=",
       "type": "url",
-      "url": "https://github.com/jgraph/drawio-desktop/releases/download/v22.1.18/drawio-x86_64-22.1.18.rpm"
+      "url": "https://github.com/jgraph/drawio-desktop/releases/download/v23.0.2/drawio-x86_64-23.0.2.rpm"
     },
-    "version": "22.1.18"
+    "version": "23.0.2"
   },
   "git-get": {
     "cargoLocks": null,
@@ -358,11 +358,11 @@
       "name": null,
       "owner": "langchain-ai",
       "repo": "langchain",
-      "rev": "v0.1.0",
-      "sha256": "sha256-izaSah1S0INsskdzE9b7Iw4yWBsNmN5fBI6BQgaHgE4=",
+      "rev": "v0.1.4",
+      "sha256": "sha256-DwqWn9qbe8aYQCOgyDufaUmM3RjF75cOP2Y4rCVQBi8=",
       "type": "github"
     },
-    "version": "v0.1.0"
+    "version": "v0.1.4"
   },
   "listopia": {
     "cargoLocks": null,
@@ -393,11 +393,11 @@
     "pinned": false,
     "src": {
       "name": null,
-      "sha256": "sha256-aduFqab5cpoXR3oFOHzsXJwogm1bZ9KgT2Mt6G9kbBA=",
+      "sha256": "sha256-F3YbqgvL04P0nXaIVkJlCq/z8hUE0M0UutkBs2omuBE=",
       "type": "url",
-      "url": "https://github.com/logseq/logseq/releases/download/0.10.3/logseq-linux-x64-0.10.3.AppImage"
+      "url": "https://github.com/logseq/logseq/releases/download/0.10.5/logseq-linux-x64-0.10.5.AppImage"
     },
-    "version": "0.10.3"
+    "version": "0.10.5"
   },
   "masterpdfeditor": {
     "cargoLocks": null,
@@ -507,7 +507,7 @@
   },
   "pbkdf2-sha512": {
     "cargoLocks": null,
-    "date": "2024-01-12",
+    "date": "2024-01-27",
     "extract": null,
     "name": "pbkdf2-sha512",
     "passthru": null,
@@ -518,7 +518,7 @@
       "type": "url",
       "url": "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c"
     },
-    "version": "24384a868af0bfa62170e1f33a419b74e7a09273"
+    "version": "714069dba3dc49dc469dba01b4410c045fa628f0"
   },
   "promnesia": {
     "cargoLocks": null,
