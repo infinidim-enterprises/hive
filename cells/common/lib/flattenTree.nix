@@ -5,10 +5,14 @@ let
     attrNames
     isAttrs
     isPath
-    foldl'
-    ;
+    isString
+    foldl';
+
   flattenTree = {
-    __functor = _self: tree:
+    __functor = _self:
+
+      tree:
+
       let
         recurse = sum: path: val:
           foldl'
@@ -20,7 +24,10 @@ let
           let
             pathStr = concatStringsSep "." path;
           in
-          if isPath val
+          # NOTE: toPath and filterSource return a string
+          if (isPath val || isString val)
+          # ISSUE: https://github.com/NixOS/nix/issues/1750
+          # ISSUE: https://github.com/NixOS/nix/issues/1074
           then (sum // { "${pathStr}" = val; })
           else
             if isAttrs val
@@ -28,6 +35,8 @@ let
             else sum;
       in
       recurse { } [ ] tree;
+
+
     doc = ''
       Synopsis: flattenTree _tree_
 

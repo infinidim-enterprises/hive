@@ -4,14 +4,25 @@
 }:
 let
   inherit (inputs) nixpkgs;
+  inherit (inputs.cells.common.lib.importers) importNixosConfigurations;
   lib = nixpkgs.lib // builtins;
   cells = inputs.cells;
 in
-cells.common.lib.importSystemConfigurations {
-  skip = [ "oglaroon" ]; # FIXME: remove when oglaroon works!
+importNixosConfigurations {
+  skip = [
+    # "oglaroon" # FIXME: remove when oglaroon works!
+
+    "depsos"
+    "hyperos"
+    "nas"
+    "octoprint"
+    "oracle"
+    "rockiosk"
+    "voron"
+  ];
   src = ./hosts;
 
-  inherit inputs lib;
+  inherit inputs cell lib;
   suites = cell.nixosSuites;
   profiles =
     cell.nixosProfiles

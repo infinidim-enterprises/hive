@@ -14,27 +14,40 @@
   # hive
   inputs = {
     devshell.url = "github:numtide/devshell";
-    devshell.inputs.nixpkgs.follows = "nixpkgs";
+    devshell.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
     nixago.url = "github:nix-community/nixago";
-    nixago.inputs.nixpkgs.follows = "nixpkgs";
+    nixago.inputs.nixpkgs.follows = "nixpkgs-unstable";
     nixago.inputs.flake-utils.follows = "flake-utils";
 
     std.follows = "hive/std";
 
-    # Compatibility
-    std-ext.url = "github:gtrunsec/std-ext";
-    # Compatibility
+    # std.url = "github:divnix/std/release/0.24";
+    # std.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    # std.inputs.paisano.follows = "paisano";
+    # std.inputs.devshell.follows = "devshell";
+    # std.inputs.nixago.follows = "nixago";
+
+    paisano.url = "github:paisano-nix/core";
+    paisano.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
     hive.url = "github:divnix/hive";
+
+    # hive.inputs.std.nixpkgs.follows = "nixpkgs-unstable";
+
+    # hive.inputs.std.follows = "std";
+
+    hive.inputs.devshell.follows = "devshell";
+    hive.inputs.paisano.follows = "paisano";
     hive.inputs.colmena.follows = "colmena";
     hive.inputs.nixago.follows = "nixago";
-    hive.inputs.nixpkgs.follows = "nixpkgs";
+    hive.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    # hive.inputs.nixpkgs.follows = "nixpkgs";
 
     haumea.follows = "hive/std/haumea";
 
     disko.url = "github:nix-community/disko";
-    disko.inputs.nixpkgs.follows = "latest";
+    disko.inputs.nixpkgs.follows = "nixpkgs-unstable";
   };
 
   # tools
@@ -46,27 +59,21 @@
 
     nixos-hardware.url = "github:nixos/nixos-hardware";
 
-    nixos-wsl.url = "github:nix-community/NixOS-WSL";
-    nixos-wsl.inputs.nixpkgs.follows = "nixpkgs";
-    nixos-wsl.inputs.flake-utils.follows = "flake-utils";
+    impermanence.url = "github:nix-community/impermanence";
 
     colmena.url = "github:zhaofengli/colmena";
-    colmena.inputs.nixpkgs.follows = "nixpkgs";
+    colmena.inputs.nixpkgs.follows = "nixpkgs-unstable";
     colmena.inputs.flake-utils.follows = "flake-utils";
 
-    # sops-nix.url = "github:TrueLecter/sops-nix/darwin-upstream";
-    # sops-nix.inputs.nixpkgs.follows = "nixos";
-    # sops-nix.inputs.nixpkgs-stable.follows = "nixos";
-
     sops-nix.url = "github:Mic92/sops-nix";
-    sops-nix.inputs.nixpkgs.follows = "latest";
+    sops-nix.inputs.nixpkgs.follows = "nixpkgs-unstable";
     sops-nix.inputs.nixpkgs-stable.follows = "nixos";
 
     sops-ssh-to-pgp.url = "github:Mic92/ssh-to-pgp/1.1.2";
-    sops-ssh-to-pgp.inputs.nixpkgs.follows = "latest";
+    sops-ssh-to-pgp.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
     sops-ssh-to-age.url = "github:Mic92/ssh-to-age/1.1.6";
-    sops-ssh-to-age.inputs.nixpkgs.follows = "latest";
+    sops-ssh-to-age.inputs.nixpkgs.follows = "nixpkgs-unstable";
   };
 
   # nixpkgs & home-manager
@@ -74,12 +81,8 @@
     latest.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixpkgs-master.url = "github:nixos/nixpkgs";
-    k8s.url = "github:nixos/nixpkgs/3005f20ce0aaa58169cdee57c8aa12e5f1b6e1b3";
     nixos.url = "github:nixos/nixpkgs/release-23.05";
     nixpkgs.follows = "nixos";
-
-    # darwin.url = "github:LnL7/nix-darwin";
-    # darwin.inputs.nixpkgs.follows = "nixos";
 
     home.url = "github:nix-community/home-manager/release-23.05";
     home.inputs.nixpkgs.follows = "nixos";
@@ -97,6 +100,7 @@
     nixos-unstable-linux_6_2.url = "github:nixos/nixpkgs/63464b8c2837ec56e1d610f5bd2a9b8e1f532c07";
     nixos-unstable-linux_6_5.url = "github:nixos/nixpkgs/b644d97bda6dae837d577e28383c10aa51e5e2d2";
     nixos-22-11.url = "github:nixos/nixpkgs/release-22.11";
+    k8s.url = "github:nixos/nixpkgs/3005f20ce0aaa58169cdee57c8aa12e5f1b6e1b3";
   };
 
   # tools
@@ -114,11 +118,21 @@
     nvfetcher.inputs.flake-utils.follows = "flake-utils";
 
     microvm.url = "github:astro/microvm.nix";
+
     arion.url = "github:hercules-ci/arion";
     arion.inputs.nixpkgs.follows = "latest";
 
     nur.url = "github:nix-community/NUR";
+
     nurl.url = "github:nix-community/nurl";
+
+    # go tools
+    gomod2nix.url = "github:nix-community/gomod2nix";
+    gomod2nix.inputs.nixpkgs.follows = "nixpkgs-master";
+    gomod2nix.inputs.flake-utils.follows = "flake-utils";
+
+    # Just in case
+    call-flake.url = "github:divnix/call-flake";
   };
 
   # emacs & friends
@@ -157,12 +171,7 @@
 
         nixpkgsConfig.allowUnfree = true;
 
-        systems = [
-          # "aarch64-darwin"
-          "aarch64-linux"
-          # "x86_64-darwin"
-          "x86_64-linux"
-        ];
+        systems = [ "aarch64-linux" "x86_64-linux" ];
 
         cellsFrom = ./cells;
 
@@ -172,20 +181,17 @@
 
             # Modules
             (functions "nixosModules")
-            # (functions "darwinModules")
             (functions "homeModules")
 
             # Profiles
             (functions "commonProfiles")
             (functions "nixosProfiles")
-            # (functions "darwinProfiles")
             (functions "homeProfiles")
             (functions "userProfiles")
             (functions "users")
 
             # Suites
             (functions "nixosSuites")
-            # (functions "darwinSuites")
             (functions "homeSuites")
 
             (devshells "shells")
@@ -202,7 +208,6 @@
             homeConfigurations
             nixosConfigurations
             diskoConfigurations
-            # darwinConfigurations
           ];
       }
 
@@ -215,6 +220,7 @@
 
         nixosModules = hive.pick inputs.self [
           [ "k8s" "nixosModules" ]
+          [ "nixos" "nixosModules" ]
         ];
 
         homeModules = hive.pick inputs.self [ [ "home" "homeModules" ] ];
@@ -224,10 +230,8 @@
         nixosConfigurations = hive.collect self "nixosConfigurations";
         diskoConfigurations = hive.collect self "diskoConfigurations";
         homeConfigurations = hive.collect self "homeConfigurations";
-        # darwinConfigurations = hive.collect self "darwinConfigurations";
       }
       {
-        # darwinConfigurations.squadbook = self.darwinConfigurations.darwin-squadbook;
         debug = hive.harvest inputs.self [ "repo" "debug" ];
       };
 }

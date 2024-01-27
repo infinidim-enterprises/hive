@@ -1,7 +1,4 @@
-{ inputs
-, cell
-, ...
-}:
+{ inputs, cell, ... }:
 let
   inherit (inputs) haumea;
 in

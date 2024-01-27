@@ -43,29 +43,17 @@
     cargoSha256 = "0000000000000000000000000000000000000000000000000000";
     date = "2021-01-01";
   };
-  any-nix-shell = {
-    pname = "any-nix-shell";
-    version = "2537e5c6901ef934f8f44d61bcfe938b0fc9fa71";
-    src = fetchFromGitHub {
-      owner = "haslersn";
-      repo = "any-nix-shell";
-      rev = "2537e5c6901ef934f8f44d61bcfe938b0fc9fa71";
-      fetchSubmodules = false;
-      sha256 = "sha256-j1DE0WTBGLmBLoPmqST9YVj9Jc4Mp8WXQILmPBzRlbM=";
-    };
-    date = "2023-11-08";
-  };
   chatgpt-wrapper = {
     pname = "chatgpt-wrapper";
-    version = "2fc2ba6ea2d9063d2c9ad315b6e6d9539774ddc9";
+    version = "a87be74ad826bad43f759a21afd9e97a92f8cede";
     src = fetchFromGitHub {
-      owner = "mmabrouk";
-      repo = "chatgpt-wrapper";
-      rev = "2fc2ba6ea2d9063d2c9ad315b6e6d9539774ddc9";
+      owner = "llm-workflow-engine";
+      repo = "llm-workflow-engine";
+      rev = "a87be74ad826bad43f759a21afd9e97a92f8cede";
       fetchSubmodules = false;
-      sha256 = "sha256-SeybeJ0qjQxfUIcM0uG2TguAzMYbTcIt3CO+wEmFJHY=";
+      sha256 = "sha256-fMOYBh31Bg3Ioh7nQkh6IPAo/cN5m+EtqPnOWXOcQ50=";
     };
-    date = "2023-12-23";
+    date = "2024-01-08";
   };
   cl-hash-util = {
     pname = "cl-hash-util";
@@ -155,23 +143,11 @@
   };
   drawio = {
     pname = "drawio";
-    version = "22.1.16";
+    version = "22.1.18";
     src = fetchurl {
-      url = "https://github.com/jgraph/drawio-desktop/releases/download/v22.1.16/drawio-x86_64-22.1.16.rpm";
-      sha256 = "sha256-HKO6hSRUV2cW1aUMhRz4qPiNRtcjKvzf0lfCSmLFX8A=";
+      url = "https://github.com/jgraph/drawio-desktop/releases/download/v22.1.18/drawio-x86_64-22.1.18.rpm";
+      sha256 = "sha256-G6rOcTW37oIqeyO6hFurNJpPWVog2wEa0SXtWWuBc4c=";
     };
-  };
-  getoptions = {
-    pname = "getoptions";
-    version = "a6c2df16302a2d0cd4cafb5396ef3421b2c3a1aa";
-    src = fetchFromGitHub {
-      owner = "ko1nksm";
-      repo = "getoptions";
-      rev = "a6c2df16302a2d0cd4cafb5396ef3421b2c3a1aa";
-      fetchSubmodules = false;
-      sha256 = "sha256-MJ4UUDmd+yykvRjgxx8MRZwlLNauDb8Bh8lS0QvkG+U=";
-    };
-    date = "2022-07-03";
   };
   git-get = {
     pname = "git-get";
@@ -232,23 +208,15 @@
       sha256 = "sha256-sO2s4qy2GIc3ecnObs+RZdtU/vlcIiYvVwD83Z/rrsk=";
     };
   };
-  k9s = {
-    pname = "k9s";
-    version = "v0.30.8";
-    src = fetchFromGitHub {
-      owner = "derailed";
-      repo = "k9s";
-      rev = "v0.30.8";
-      fetchSubmodules = false;
-      sha256 = "sha256-RIk3e/rySYev5n0NLN6ZYHIx3ssfdUXnzBJ2y6Y/n5U=";
-    };
-  };
   langchain = {
     pname = "langchain";
-    version = "0.0.354";
-    src = fetchurl {
-      url = "https://pypi.org/packages/source/l/langchain/langchain-0.0.354.tar.gz";
-      sha256 = "sha256-QZxIc1uAPXDA3umF4K/P18iFKLjBzZGMV+sj5T2U6oc=";
+    version = "v0.1.0";
+    src = fetchFromGitHub {
+      owner = "langchain-ai";
+      repo = "langchain";
+      rev = "v0.1.0";
+      fetchSubmodules = false;
+      sha256 = "sha256-izaSah1S0INsskdzE9b7Iw4yWBsNmN5fBI6BQgaHgE4=";
     };
   };
   listopia = {
@@ -271,31 +239,6 @@
       sha256 = "sha256-aduFqab5cpoXR3oFOHzsXJwogm1bZ9KgT2Mt6G9kbBA=";
     };
   };
-  lorri = {
-    pname = "lorri";
-    version = "30bb920dec9f3ca0bd0bc6cd60b78ca2f90c69a9";
-    src = fetchFromGitHub {
-      owner = "nix-community";
-      repo = "lorri";
-      rev = "30bb920dec9f3ca0bd0bc6cd60b78ca2f90c69a9";
-      fetchSubmodules = false;
-      sha256 = "sha256-ciSQGuNOxDnsrlmByrXk0uPNKy4F+1lInq2e1hEq108=";
-    };
-    cargoSha256 = "0000000000000000000000000000000000000000000000000000";
-    date = "2023-10-08";
-  };
-  manix = {
-    pname = "manix";
-    version = "d08e7ca185445b929f097f8bfb1243a8ef3e10e4";
-    src = fetchFromGitHub {
-      owner = "mlvzk";
-      repo = "manix";
-      rev = "d08e7ca185445b929f097f8bfb1243a8ef3e10e4";
-      fetchSubmodules = false;
-      sha256 = "sha256-GqPuYscLhkR5E2HnSFV4R48hCWvtM3C++3zlJhiK/aw=";
-    };
-    date = "2021-04-20";
-  };
   masterpdfeditor = {
     pname = "masterpdfeditor";
     version = "5.9.81";
@@ -303,44 +246,6 @@
       url = "https://code-industry.net/public/master-pdf-editor-5.9.81-qt5.x86_64.tar.gz";
       sha256 = "sha256-fBAEqATEsKqS0Am137A48oTqI0Nv9wItMD75VAyLrJo=";
     };
-  };
-  nix-index = {
-    pname = "nix-index";
-    version = "b5fcd082f474d41b11e01aa8f8f3131ae40f8952";
-    src = fetchFromGitHub {
-      owner = "bennofs";
-      repo = "nix-index";
-      rev = "b5fcd082f474d41b11e01aa8f8f3131ae40f8952";
-      fetchSubmodules = false;
-      sha256 = "sha256-UJenH6w80dGVDTA2aXbstj10x1i+fkEhJbamO0jotiE=";
-    };
-    cargoSha256 = "0000000000000000000000000000000000000000000000000000";
-    date = "2023-12-06";
-  };
-  nix-linter = {
-    pname = "nix-linter";
-    version = "ecdd50750fd3ffaff83c0637474b884a0c38f8b9";
-    src = fetchgit {
-      url = "https://github.com/Synthetica9/nix-linter";
-      rev = "ecdd50750fd3ffaff83c0637474b884a0c38f8b9";
-      fetchSubmodules = false;
-      deepClone = false;
-      leaveDotGit = false;
-      sha256 = "sha256-wWkRak3bQvE5dY/CXqNelK3XIoHOk48m3pQHWJWKpkI=";
-    };
-    date = "2021-07-20";
-  };
-  nix-zsh-completions = {
-    pname = "nix-zsh-completions";
-    version = "a7c8781b5a18026fbc3edb36397931526f243590";
-    src = fetchFromGitHub {
-      owner = "spwhitt";
-      repo = "nix-zsh-completions";
-      rev = "a7c8781b5a18026fbc3edb36397931526f243590";
-      fetchSubmodules = false;
-      sha256 = "sha256-JStpIKU+jU6TkXToTONfdEhLjaASGzC+tRmSJRiqKWU=";
-    };
-    date = "2023-10-09";
   };
   numix-solarized-gtk-theme-git = {
     pname = "numix-solarized-gtk-theme-git";
@@ -376,26 +281,18 @@
       sha256 = "sha256-pOOK6tq/mYiw9npmrNCCedGCILy8QioSkGDCiQu6kaA=";
     };
   };
-  pam_u2f = {
-    pname = "pam_u2f";
-    version = "1.2.1";
-    src = fetchurl {
-      url = "https://developers.yubico.com/pam-u2f/Releases/pam_u2f-1.2.1.tar.gz";
-      sha256 = "sha256-cOdBvKGXtktPvo3R9tV84ritWMp4Y1LFJfPy1EEliUw=";
-    };
-  };
   pam_usb = {
     pname = "pam_usb";
-    version = "2c1e20f5bfa7e66d7601092a1a2378a22053b344";
+    version = "688b65c3d5f7f81600c37f9fc9a29da9d2cc7abe";
     src = fetchgit {
       url = "https://github.com/mcdope/pam_usb";
-      rev = "2c1e20f5bfa7e66d7601092a1a2378a22053b344";
+      rev = "688b65c3d5f7f81600c37f9fc9a29da9d2cc7abe";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-7yDxObVfySgHnnLMGDHhxgH6iwVVfq51QJtluKc0EuA=";
+      sha256 = "sha256-e5atF4xenj6rC6wYdajCIVe1m2PeA5lDsP1LNgcULKg=";
     };
-    date = "2024-01-03";
+    date = "2024-01-05";
   };
   paper-store = {
     pname = "paper-store";
@@ -412,24 +309,24 @@
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "b02dbb03fbc18c2ad19ba41201c2b3b30f7f7eaa";
+    version = "24384a868af0bfa62170e1f33a419b74e7a09273";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";
     };
-    date = "2024-01-03";
+    date = "2024-01-12";
   };
   promnesia = {
     pname = "promnesia";
-    version = "c926bbf1495b70aeb2b2ccd6783dc7fa194aeddb";
+    version = "9868180a9583e81ee68dd271688d5fee54edd779";
     src = fetchFromGitHub {
       owner = "karlicoss";
       repo = "promnesia";
-      rev = "c926bbf1495b70aeb2b2ccd6783dc7fa194aeddb";
+      rev = "9868180a9583e81ee68dd271688d5fee54edd779";
       fetchSubmodules = false;
-      sha256 = "sha256-A23EytYIIeeRO5M0Sg/NubhNKo4xbQIo2GJew9sm9F0=";
+      sha256 = "sha256-rICpVr8QE7kSFgs3xhSyi6Ot9p9WTyQU52THBo2h5Z0=";
     };
-    date = "2023-12-12";
+    date = "2024-01-10";
   };
   quicklisp = {
     pname = "quicklisp";
@@ -438,42 +335,6 @@
       url = "https://beta.quicklisp.org/quicklisp.lisp";
       sha256 = "sha256-SnpcKuvgcWQXBHhUJnOX4kpE0MzglhJ0EenOnM/rLBc=";
     };
-  };
-  rainbowsh = {
-    pname = "rainbowsh";
-    version = "1bcf6e44a0d9694da4d3fa637644e5da5a7250ca";
-    src = fetchFromGitHub {
-      owner = "xr09";
-      repo = "rainbow.sh";
-      rev = "1bcf6e44a0d9694da4d3fa637644e5da5a7250ca";
-      fetchSubmodules = false;
-      sha256 = "sha256-F+Nabc/Fe5ET6lSkdll5YH/mEpKp3OlpaGk+u0rQpPQ=";
-    };
-    date = "2022-08-24";
-  };
-  rtl88x2bu = {
-    pname = "rtl88x2bu";
-    version = "980d7cc06e9fa51f0060972d4a1d947f8be4cb40";
-    src = fetchFromGitHub {
-      owner = "RinCat";
-      repo = "RTL88x2BU-Linux-Driver";
-      rev = "980d7cc06e9fa51f0060972d4a1d947f8be4cb40";
-      fetchSubmodules = false;
-      sha256 = "sha256-8UbyrBkrW0Ma5SOdXDI3nHO+55KV9JT2kVoR8Ft4xtI=";
-    };
-    date = "2023-11-15";
-  };
-  rtw89 = {
-    pname = "rtw89";
-    version = "e2ca94fc6fdd74b46717d1ec561948e1756f48f0";
-    src = fetchFromGitHub {
-      owner = "lwfinger";
-      repo = "rtw89";
-      rev = "e2ca94fc6fdd74b46717d1ec561948e1756f48f0";
-      fetchSubmodules = false;
-      sha256 = "sha256-Clk0PZXmGoFCE3pR31ZQcZG1GgALR4917Bz+iJihDf0=";
-    };
-    date = "2024-01-03";
   };
   s5cmd = {
     pname = "s5cmd";
@@ -486,42 +347,6 @@
       sha256 = "sha256-C6cs7UB+O70Ixuw7EE5LX6B4ND1mVJqth5ZnmNNR3BU=";
     };
     date = "2023-10-12";
-  };
-  shellspec = {
-    pname = "shellspec";
-    version = "f800240b606ed8d60f27ca687400836c0083e76a";
-    src = fetchFromGitHub {
-      owner = "shellspec";
-      repo = "shellspec";
-      rev = "f800240b606ed8d60f27ca687400836c0083e76a";
-      fetchSubmodules = false;
-      sha256 = "sha256-PyZBc7bmycV02nTpoDaA40m4DA1IuDmb/eCd3+RAp0o=";
-    };
-    date = "2022-05-04";
-  };
-  shflags = {
-    pname = "shflags";
-    version = "96694d58ce92065fdd8f8761d930765cb9a8d066";
-    src = fetchFromGitHub {
-      owner = "kward";
-      repo = "shflags";
-      rev = "96694d58ce92065fdd8f8761d930765cb9a8d066";
-      fetchSubmodules = false;
-      sha256 = "sha256-IJJEi8xmIco/IuN9LSf6qMacsG6jHQek9F0dPKEwviI=";
-    };
-    date = "2023-08-24";
-  };
-  spaceship-prompt = {
-    pname = "spaceship-prompt";
-    version = "be826cbe2bb11a0675dd71f548ff1396608da7ea";
-    src = fetchFromGitHub {
-      owner = "spaceship-prompt";
-      repo = "spaceship-prompt";
-      rev = "be826cbe2bb11a0675dd71f548ff1396608da7ea";
-      fetchSubmodules = false;
-      sha256 = "sha256-473Srq7aDe4R9UIVdQiG0P4vXNRPtg0r8Vgc+HIxZMQ=";
-    };
-    date = "2023-10-10";
   };
   stumpwm = {
     pname = "stumpwm";

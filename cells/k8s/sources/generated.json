@@ -1,0 +1,22 @@
+{
+    "k9s": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "k9s",
+        "passthru": null,
+        "pinned": true,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "derailed",
+            "repo": "k9s",
+            "rev": "v0.31.4",
+            "sha256": "sha256-M7syAy8Brnh0g4VXXoXM7UjIJLDpvNLA5nqa8yDcxIM=",
+            "type": "github"
+        },
+        "version": "v0.31.4"
+    }
+}

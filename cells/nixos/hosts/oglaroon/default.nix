@@ -1,7 +1,4 @@
-{ inputs
-, cell
-, ...
-}:
+{ inputs, cell, ... }:
 let
   inherit (builtins) toString baseNameOf;
   system = "x86_64-linux";
@@ -13,36 +10,28 @@ rec {
     pkgs = import inputs.latest {
       inherit (inputs.nixpkgs) system;
       config.allowUnfree = true;
-      # overlays = cell.overlays.desktop;
       overlays = [
         inputs.cells.common.overlays.latest-overrides
+        inputs.cells.common.overlays.sources
       ];
     };
   };
 
   imports =
-    [ ({ config, ... }: (cell.lib.mkHome "vod" config.networking.hostName "zsh")) ]
+    [
+      # ({ config, ... }: (cell.lib.mkHome "vod" config.networking.hostName "zsh"))
+    ]
     ++ cell.nixosSuites.networking
+    ++ cell.nixosSuites.base
     ++ [
       bee.home.nixosModules.home-manager
-      cell.hardwareProfiles.${baseNameOf ./.}
-      cell.nixosProfiles.zfs
+      # cell.hardwareProfiles.${baseNameOf ./.}
+      (import ./_hardwareProfile.nix { inherit inputs cell; })
 
       cell.nixosProfiles.desktop.printer-kyocera
+      cell.nixosSuites.virtualization.vod
+      cell.nixosProfiles.networking.adguardhome
 
-      cell.nixosProfiles.virtualization
-      { boot.kernelModules = [ "kvm-amd" ]; }
-
-      # FIXME: inputs.cells.virtualization.nixosProfiles.docker
-      inputs.cells.bootstrap.nixosProfiles.core.kernel.physical-access-system
-      inputs.cells.networking.nixosProfiles.adguardhome
-      (cell.nixosProfiles.default { boot = "grub-zfs"; })
-      ({ lib, ... }: {
-        boot.kernelParams = lib.mkAfter [
-          # NOTE: This machine has 64 Gigs RAM
-          "zfs.zfs_arc_max=${toString (8 * 1024 * 1024 * 1024)}"
-        ];
-      })
       ({ pkgs, ... }: {
         systemd.network.networks.local-eth.matchConfig.Name = "eno1";
         networking.wireless.enable = false;

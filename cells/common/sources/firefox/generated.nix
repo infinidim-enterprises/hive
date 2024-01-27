@@ -1122,16 +1122,17 @@
   };
   "ublock-origin" = rec {
     pname = "ublock-origin";
-    version = "1.54.0";
+    version = "1.55.0";
     addonId = "uBlock0@raymondhill.net";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4198829/ublock_origin-1.54.0.xpi";
-    sha256 = "9797160908191710ff0858536ba6dc29ecad9923c30b2ad6d3e5e371d759e44d";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4216633/ublock_origin-1.55.0.xpi";
+    sha256 = "a02ca1d32737c3437f97553e5caaead6479a66ac1f8ff3b84a06cfa6bb0c7647";
     meta = with lib;
       {
         homepage = "https://github.com/gorhill/uBlock#ublock-origin";
         description = "Finally, an efficient wide-spectrum content blocker. Easy on CPU and memory.";
         license = licenses.gpl3;
         mozPermissions = [
+          "alarms"
           "dns"
           "menus"
           "privacy"

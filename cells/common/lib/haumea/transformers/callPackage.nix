@@ -23,8 +23,8 @@ let
               in
               nameValuePair name v))
           ]
-        #else pkgs.callPackage (dirOf v1) ({ } // extraArguments);
-        else pkgs.callPackage (dirOf v1);
+        else (pkgs.callPackage (dirOf v1)); # ({ } // extraArguments);
+
     # TODO: doc
     doc = ''
       callPackage { pkgs }

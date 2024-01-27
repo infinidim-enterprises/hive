@@ -1,3 +1,12 @@
+### look-and-feel
+[console-solarized]
+src.git = "https://github.com/adeverteuil/console-solarized"
+fetch.github = "adeverteuil/console-solarized"
+
+[numix-solarized-gtk-theme-git]
+src.git = "https://github.com/Ferdi265/numix-solarized-gtk-theme.git"
+fetch.git = "https://github.com/Ferdi265/numix-solarized-gtk-theme.git"
+
 [transmissionic]
 # Remote for Transmission Daemon
 src.github = "6c65726f79/Transmissionic"
@@ -13,31 +22,25 @@ fetch.github = "tfutils/tfenv"
 src.git = "https://github.com/peak/s5cmd"
 fetch.github = "peak/s5cmd"
 
-####################
-# nvfetcher.toml
 [chatgpt-wrapper]
-src.git = "https://github.com/mmabrouk/chatgpt-wrapper"
-fetch.github = "mmabrouk/chatgpt-wrapper"
+# Power CLI and Workflow manager for LLMs
+src.git = "https://github.com/llm-workflow-engine/llm-workflow-engine"
+fetch.github = "llm-workflow-engine/llm-workflow-engine"
 
 [langchain]
-src.pypi = "langchain"
-fetch.pypi = "langchain"
+# Building applications with LLMs through composability
+src.github = "langchain-ai/langchain"
+src.use_latest_release = true
+fetch.github = "langchain-ai/langchain"
 
 [drawio]
 src.github = "jgraph/drawio-desktop"
 fetch.url = "https://github.com/jgraph/drawio-desktop/releases/download/v$ver/drawio-x86_64-$ver.rpm"
 src.prefix = "v"
 
-# [wezterm-appimage]
-# src.cmd = "date +%m-%d-%Y"
-# fetch.url = "https://github.com/wez/wezterm/releases/download/nightly/WezTerm-nightly-Ubuntu18.04.AppImage"
 [adguardhome]
 src.github = "AdguardTeam/AdGuardHome"
 fetch.url = "https://github.com/AdguardTeam/AdGuardHome/releases/download/$ver/AdGuardHome_linux_amd64.tar.gz"
-
-[spaceship-prompt]
-src.git = "https://github.com/spaceship-prompt/spaceship-prompt"
-fetch.github = "spaceship-prompt/spaceship-prompt"
 
 ### :START: promnesia
 [promnesia]
@@ -67,32 +70,36 @@ src.github = "logseq/logseq"
 fetch.url = "https://github.com/logseq/logseq/releases/download/$ver/logseq-linux-x64-$ver.AppImage"
 
 ###################
-# Pkgs and overlays
-#
-[pam_u2f]
-src.manual = "1.2.1"
-fetch.url = "https://developers.yubico.com/pam-u2f/Releases/pam_u2f-$ver.tar.gz"
+# hardware crypto stuff
+[paper-store]
+# A bash script for cold storing small files on paper.
+# Store your PGP keys, Bitcoin wallet keys, Tox profile keys, etc. on paper.
+src.git = "https://github.com/nurupo/paper-store"
+fetch.git = "https://github.com/nurupo/paper-store"
+
+[pbkdf2-sha512]
+src.git = "https://github.com/NixOS/nixpkgs"
+fetch.url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c"
 
 [pam_usb]
+# pam_usb provides hardware authentication for Linux using ordinary removable media
 src.git = "https://github.com/mcdope/pam_usb"
 fetch.git = "https://github.com/mcdope/pam_usb"
 
 [gpg-hd]
-# src.git = "https://github.com/voobscout/gpg-hd"
-# fetch.github = "voobscout/gpg-hd"
+# Deterministic GPG brainwallet keychain generator
 src.git = "https://github.com/Logicwax/gpg-hd"
 fetch.github = "Logicwax/gpg-hd"
 
 [trezor-agent]
+#  Hardware-based SSH/GPG/age agent
 src.github_tag = "romanz/trezor-agent"
 src.use_latest_tag = true
 # src.manual = "v0.14.5"
 fetch.github = "romanz/trezor-agent"
 
-# NOTE: pypi has an older version!
-# src.pypi = "trezor_agent"
-# fetch.pypi = "trezor_agent"
 [trezor-agent-subkeys]
+# Hardware-based SSH/PGP agent
 src.git = "https://github.com/jrruethe/trezor-agent"
 src.branch = "subkeys"
 fetch.git = "https://github.com/jrruethe/trezor-agent"
@@ -106,37 +113,16 @@ src.git = "https://github.com/romanz/age-plugin-trezor"
 fetch.github = "romanz/age-plugin-trezor"
 passthru = { cargoSha256 = "0000000000000000000000000000000000000000000000000000" }
 
-[manix]
-src.git = "https://github.com/mlvzk/manix"
-fetch.github = "mlvzk/manix"
-
+### MISC
 [dbus-listen]
 src.git = "https://github.com/voobscout/dbus-listen"
 fetch.git = "https://github.com/voobscout/dbus-listen"
 
-# [rofi-themes-extra]
-# src.git = "https://github.com/davatorium/rofi-themes"
-# fetch.git = "https://github.com/davatorium/rofi-themes"
+### GIT stuff
 [git-get]
 src.git = "https://github.com/grdl/git-get"
 fetch.github = "grdl/git-get"
 passthru = { vendorSha256 = "05k6w4knk7fdjm9qm272nlrk47rzjr18g0fp4j57f5ncq26cxr8b" }
-
-[shflags]
-src.git = "https://github.com/kward/shflags"
-fetch.github = "kward/shflags"
-
-[shellspec]
-src.git = "https://github.com/shellspec/shellspec"
-fetch.github = "shellspec/shellspec"
-
-[getoptions]
-src.git = "https://github.com/ko1nksm/getoptions"
-fetch.github = "ko1nksm/getoptions"
-
-[rainbowsh]
-src.git = "https://github.com/xr09/rainbow.sh"
-fetch.github = "xr09/rainbow.sh"
 
 [git-remote-ipfs]
 src.git = "https://github.com/bqv/git-remote-ipfs"
@@ -148,14 +134,6 @@ src.git = "https://github.com/google/git-pull-request-mirror"
 fetch.github = "google/git-pull-request-mirror"
 passthru = { vendorSha256 = "0789v1r6my256pncs0105yji28ifchj6ppfiy8gavglgclq3cgvn" }
 
-######
-### kubernetes
-######
-[k9s]
-src.github = "derailed/k9s"
-src.use_latest_release = true
-fetch.github = "derailed/k9s"
-
 ### cloud and friends
 # [vultr-cli]
 # src.github = "vultr/vultr-cli"
@@ -166,35 +144,6 @@ fetch.github = "derailed/k9s"
 #src.branch ="master"
 #fetch.github = "jnjcc/cl-qrencode"
 ########
-[nix-index]
-src.git = "https://github.com/bennofs/nix-index"
-fetch.github = "bennofs/nix-index"
-passthru = { cargoSha256 = "0000000000000000000000000000000000000000000000000000" }
-
-[nix-linter]
-src.git = "https://github.com/Synthetica9/nix-linter"
-fetch.git = "https://github.com/Synthetica9/nix-linter"
-
-[lorri]
-src.git = "https://github.com/nix-community/lorri"
-src.branch = "canon"
-fetch.github = "nix-community/lorri"
-passthru = { cargoSha256 = "0000000000000000000000000000000000000000000000000000" }
-
-[console-solarized]
-src.git = "https://github.com/adeverteuil/console-solarized"
-fetch.github = "adeverteuil/console-solarized"
-
-[any-nix-shell]
-src.git = "https://github.com/haslersn/any-nix-shell"
-src.branch = "master"
-fetch.github = "haslersn/any-nix-shell"
-
-[nix-zsh-completions]
-src.git = "https://github.com/spwhitt/nix-zsh-completions"
-src.branch = "master"
-fetch.github = "spwhitt/nix-zsh-completions"
-
 # lisp overlays stuff
 [stumpwm-git]
 src.git = "https://github.com/stumpwm/stumpwm"
@@ -243,24 +192,6 @@ fetch.git = "https://git.code.sf.net/p/portableaserve/git"
 src.git = "https://github.com/lhope/cl-syslog"
 fetch.github = "lhope/cl-syslog"
 
-# hardware stuff
-[rtl88x2bu]
-src.git = "https://github.com/RinCat/RTL88x2BU-Linux-Driver"
-fetch.github = "RinCat/RTL88x2BU-Linux-Driver"
-
-[rtw89]
-src.git = "https://github.com/lwfinger/rtw89"
-fetch.github = "lwfinger/rtw89"
-
-# hardware crypto stuff
-[paper-store]
-src.git = "https://github.com/nurupo/paper-store"
-fetch.git = "https://github.com/nurupo/paper-store"
-
-[pbkdf2-sha512]
-src.git = "https://github.com/NixOS/nixpkgs"
-fetch.url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c"
-
 # [age-plugin-yubikey]
 # src.git = "https://github.com/str4d/age-plugin-yubikey"
 # fetch.git = "https://github.com/str4d/age-plugin-yubikey"
@@ -274,10 +205,6 @@ fetch.url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/module
 # src.github = "Ferdi265/numix-solarized-gtk-theme"
 # src.use_latest_release = true
 # fetch.url = "https://github.com/Ferdi265/numix-solarized-gtk-theme/releases/download/20210831/NumixSolarized-20210831.tar.gz"
-[numix-solarized-gtk-theme-git]
-src.git = "https://github.com/Ferdi265/numix-solarized-gtk-theme.git"
-fetch.git = "https://github.com/Ferdi265/numix-solarized-gtk-theme.git"
-
 # Office apps
 [masterpdfeditor]
 src.manual = "5.9.81"

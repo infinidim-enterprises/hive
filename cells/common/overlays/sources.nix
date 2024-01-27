@@ -1,11 +1,5 @@
-{ inputs
-, cell
-, ...
-}: final: prev:
-
-let
-  inherit (prev) callPackage;
-in
+{ inputs, cell, ... }:
+final: prev:
 {
-  sources = callPackage ../sources/misc/generated.nix { };
+  sources = final.callPackage ../sources/misc/generated.nix { };
 }

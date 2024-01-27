@@ -1,0 +1,349 @@
+[
+  {
+    "arguments": {
+      "Dhcp4": {
+        "authoritative": false,
+        "boot-file-name": "",
+        "calculate-tee-times": false,
+        "client-classes": [
+          {
+            "boot-file-name": "/undionly.kpxe.1.0.1",
+            "name": "Legacy_Intel_x86PC",
+            "next-server": "192.168.134.52",
+            "option-data": [],
+            "option-def": [],
+            "server-hostname": "",
+            "test": "option[93].hex == 0x0000"
+          },
+          {
+            "boot-file-name": "/pxelinux.0.4.05",
+            "name": "XClient_iPXE",
+            "next-server": "192.168.134.52",
+            "option-data": [],
+            "option-def": [],
+            "server-hostname": "",
+            "test": "substring(option[77].hex,1,4) == 'PXE'"
+          },
+          {
+            "boot-file-name": "",
+            "name": "Cisco_IP_Phone",
+            "next-server": "0.0.0.0",
+            "option-data": [],
+            "option-def": [],
+            "server-hostname": "",
+            "test": "substring(option[60].hex,0,5) == 'Cisco'"
+          }
+        ],
+        "config-control": {
+          "config-databases": [
+            {
+              "host": "localhost",
+              "name": "kea",
+              "password": "********",
+              "port": 3306,
+              "type": "mysql",
+              "user": "kea"
+            }
+          ],
+          "config-fetch-wait-time": 20
+        },
+        "control-socket": {
+          "socket-name": "/var/run/kea/socket-v4",
+          "socket-type": "unix"
+        },
+        "ddns-generated-prefix": "myhost",
+        "ddns-override-client-update": false,
+        "ddns-override-no-update": false,
+        "ddns-qualifying-suffix": "",
+        "ddns-replace-client-name": "never",
+        "ddns-send-updates": true,
+        "decline-probation-period": 86400,
+        "dhcp-ddns": {
+          "enable-updates": false,
+          "max-queue-size": 1024,
+          "ncr-format": "JSON",
+          "ncr-protocol": "UDP",
+          "sender-ip": "0.0.0.0",
+          "sender-port": 0,
+          "server-ip": "127.0.0.1",
+          "server-port": 53001
+        },
+        "dhcp-queue-control": {
+          "capacity": 500,
+          "enable-queue": false,
+          "queue-type": "kea-ring4"
+        },
+        "dhcp4o6-port": 0,
+        "echo-client-id": true,
+        "expired-leases-processing": {
+          "flush-reclaimed-timer-wait-time": 25,
+          "hold-reclaimed-time": 3600,
+          "max-reclaim-leases": 100,
+          "max-reclaim-time": 250,
+          "reclaim-timer-wait-time": 10,
+          "unwarned-reclaim-cycles": 5
+        },
+        "hooks-libraries": [
+          {
+            "library": "/usr/lib64/kea/hooks/libdhcp_mysql_cb.so"
+          },
+          {
+            "library": "/usr/lib64/kea/hooks/libdhcp_lease_cmds.so"
+          }
+        ],
+        "host-reservation-identifiers": [
+          "hw-address",
+          "duid",
+          "circuit-id",
+          "client-id"
+        ],
+        "hosts-databases": [
+          {
+            "host": "localhost",
+            "name": "kea",
+            "password": "********",
+            "port": 3306,
+            "reconnect-wait-time": 500,
+            "type": "mysql",
+            "user": "kea"
+          }
+        ],
+        "interfaces-config": {
+          "dhcp-socket-type": "udp",
+          "interfaces": ["eth0"],
+          "outbound-interface": "use-routing",
+          "re-detect": true
+        },
+        "lease-database": {
+          "host": "localhost",
+          "lfc-interval": 1800,
+          "name": "kea_leases",
+          "password": "********",
+          "port": 3306,
+          "reconnect-wait-time": 500,
+          "type": "mysql",
+          "user": "kea"
+        },
+        "loggers": [
+          {
+            "name": "kea-dhcp4",
+            "output_options": [
+              {
+                "flush": true,
+                "output": "/var/log/kea/server.log",
+                "pattern": "%d{%j %H:%M:%S.%q} %c %m\n"
+              }
+            ],
+            "severity": "INFO"
+          },
+          {
+            "debuglevel": 99,
+            "name": "kea-dhcp4.options",
+            "output_options": [
+              {
+                "flush": true,
+                "output": "/var/log/kea/options.log",
+                "pattern": "%d{%j %H:%M:%S.%q} %c %m\n"
+              }
+            ],
+            "severity": "DEBUG"
+          },
+          {
+            "debuglevel": 99,
+            "name": "kea-dhcp4.packets",
+            "output_options": [
+              {
+                "flush": true,
+                "output": "/var/log/kea/packets.log",
+                "pattern": "%d{%j %H:%M:%S.%q} %c %m\n"
+              }
+            ],
+            "severity": "DEBUG"
+          },
+          {
+            "name": "kea-dhcp4.leases",
+            "output_options": [
+              {
+                "flush": true,
+                "output": "/var/log/kea/leases.log",
+                "pattern": "%d{%j %H:%M:%S.%q} %c %m\n"
+              }
+            ],
+            "severity": "INFO"
+          }
+        ],
+        "match-client-id": false,
+        "next-server": "0.0.0.0",
+        "option-data": [
+          {
+            "always-send": false,
+            "code": 252,
+            "csv-format": true,
+            "data": "http://wpad/wpad.pac",
+            "space": "dhcp4"
+          },
+          {
+            "always-send": false,
+            "code": 4,
+            "csv-format": true,
+            "data": "192.168.134.52, 192.168.134.13",
+            "name": "time-servers",
+            "space": "dhcp4"
+          },
+          {
+            "always-send": false,
+            "code": 6,
+            "csv-format": true,
+            "data": "192.168.134.53, 192.168.160.53",
+            "name": "domain-name-servers",
+            "space": "dhcp4"
+          },
+          {
+            "always-send": false,
+            "code": 15,
+            "csv-format": true,
+            "data": "kmz.ts",
+            "name": "domain-name",
+            "space": "dhcp4"
+          }
+        ],
+        "option-def": [
+          {
+            "array": false,
+            "code": 252,
+            "encapsulate": "",
+            "name": "autoproxy",
+            "record-types": "",
+            "space": "dhcp4",
+            "type": "string"
+          },
+          {
+            "array": true,
+            "code": 150,
+            "encapsulate": "",
+            "name": "tftp-server-voice",
+            "record-types": "",
+            "space": "dhcp4",
+            "type": "ipv4-address"
+          },
+          {
+            "array": false,
+            "code": 242,
+            "encapsulate": "",
+            "name": "tftp-server-voice-avaya",
+            "record-types": "",
+            "space": "dhcp4",
+            "type": "string"
+          }
+        ],
+        "rebind-timer": 2000,
+        "renew-timer": 1000,
+        "reservation-mode": "all",
+        "sanity-checks": {
+          "lease-checks": "warn"
+        },
+        "server-hostname": "",
+        "server-tag": "dns-core",
+        "shared-networks": [
+          {
+            "name": "test-one_vlan",
+            "option-data": [],
+            "relay": {
+              "ip-addresses": []
+            },
+            "subnet4": [
+              {
+                "4o6-interface": "",
+                "4o6-interface-id": "",
+                "4o6-subnet": "",
+                "id": 22028,
+                "option-data": [
+                  {
+                    "always-send": false,
+                    "code": 150,
+                    "csv-format": true,
+                    "data": "192.168.160.48, 192.168.131.3",
+                    "space": "dhcp4"
+                  },
+                  {
+                    "always-send": false,
+                    "code": 242,
+                    "csv-format": true,
+                    "data": "MCIPADD=192.168.131.133\\, MCPORT=1719",
+                    "space": "dhcp4"
+                  },
+                  {
+                    "always-send": false,
+                    "code": 3,
+                    "csv-format": true,
+                    "data": "192.168.111.65",
+                    "name": "routers",
+                    "space": "dhcp4"
+                  }
+                ],
+                "pools": [
+                  {
+                    "client-class": "Cisco_IP_Phone",
+                    "option-data": [],
+                    "pool": "192.168.111.66-192.168.111.72"
+                  },
+                  {
+                    "option-data": [],
+                    "pool": "192.168.111.73-192.168.111.78"
+                  }
+                ],
+                "relay": {
+                  "ip-addresses": []
+                },
+                "reservations": [],
+                "subnet": "192.168.111.64/28"
+              }
+            ]
+          },
+          {
+            "name": "test-two_vlan",
+            "option-data": [],
+            "relay": {
+              "ip-addresses": []
+            },
+            "subnet4": [
+              {
+                "4o6-interface": "",
+                "4o6-interface-id": "",
+                "4o6-subnet": "",
+                "id": 22170,
+                "option-data": [
+                  {
+                    "always-send": false,
+                    "code": 3,
+                    "csv-format": true,
+                    "data": "192.168.161.121",
+                    "name": "routers",
+                    "space": "dhcp4"
+                  }
+                ],
+                "pools": [
+                  {
+                    "client-class": "KNOWN",
+                    "option-data": [],
+                    "pool": "192.168.161.122-192.168.161.126"
+                  }
+                ],
+                "relay": {
+                  "ip-addresses": []
+                },
+                "reservations": [],
+                "subnet": "192.168.161.120/29"
+              }
+            ]
+          }
+        ],
+        "subnet4": [],
+        "t1-percent": 0.5,
+        "t2-percent": 0.875,
+        "valid-lifetime": 4000
+      }
+    },
+    "result": 0
+  }
+]

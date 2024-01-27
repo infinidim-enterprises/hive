@@ -1,0 +1,274 @@
+{
+    "acm-terminal": {
+        "cargoLocks": null,
+        "date": "2023-12-06",
+        "extract": null,
+        "name": "acm-terminal",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "twlz0ne",
+            "repo": "acm-terminal",
+            "rev": "1851d8fa2a27d3fd8deeeb29cd21c3002b8351ba",
+            "sha256": "sha256-EYhFrOo0j0JSNTdcZCbyM0iLxaymUXi1u6jZy8lTOaY=",
+            "type": "github"
+        },
+        "version": "1851d8fa2a27d3fd8deeeb29cd21c3002b8351ba"
+    },
+    "activity-watch-mode": {
+        "cargoLocks": null,
+        "date": "2023-07-31",
+        "extract": null,
+        "name": "activity-watch-mode",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "63eb19a10e4262c529f1b205ef61d69055350f49",
+            "sha256": "sha256-x6CrLGslawBtixdXDyp1U3i5yY8tkuI75LkHvOyt6YI=",
+            "type": "git",
+            "url": "https://github.com/pauldub/activity-watch-mode"
+        },
+        "version": "63eb19a10e4262c529f1b205ef61d69055350f49"
+    },
+    "all-the-icons": {
+        "cargoLocks": null,
+        "date": "2024-01-08",
+        "extract": null,
+        "name": "all-the-icons",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "ee414384938ccf2ce93c77d717b85dc5538a257d",
+            "sha256": "sha256-Da+luefWlhANKNNLa29pJpCez+O2IOYUNDUlqF0486E=",
+            "type": "git",
+            "url": "https://github.com/domtronn/all-the-icons.el"
+        },
+        "version": "ee414384938ccf2ce93c77d717b85dc5538a257d"
+    },
+    "chemacs": {
+        "cargoLocks": null,
+        "date": "2023-01-20",
+        "extract": null,
+        "name": "chemacs",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "c2d700b784c793cc82131ef86323801b8d6e67bb",
+            "sha256": "sha256-/WtacZPr45lurS0hv+W8UGzsXY3RujkU5oGGGqjqG0Q=",
+            "type": "git",
+            "url": "https://github.com/plexus/chemacs2"
+        },
+        "version": "c2d700b784c793cc82131ef86323801b8d6e67bb"
+    },
+    "color-rg": {
+        "cargoLocks": null,
+        "date": "2023-12-12",
+        "extract": null,
+        "name": "color-rg",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "ee296163e53f44c92fc8869a60bcfdd68376581a",
+            "sha256": "sha256-U9fOY7G1eC6xHTIZ4290WcY61+ZFzmNY+AJsraAbSZ8=",
+            "type": "git",
+            "url": "https://github.com/manateelazycat/color-rg"
+        },
+        "version": "ee296163e53f44c92fc8869a60bcfdd68376581a"
+    },
+    "copilot-el": {
+        "cargoLocks": null,
+        "date": "2024-01-12",
+        "extract": null,
+        "name": "copilot-el",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "c5d822c98f047376cfd6dd95515a609c30157522",
+            "sha256": "sha256-wAtaGy/s0CgwQlRFdLbjiKUdu35z5cZtupfBsGC3j7M=",
+            "type": "git",
+            "url": "https://github.com/zerolfx/copilot.el.git"
+        },
+        "version": "c5d822c98f047376cfd6dd95515a609c30157522"
+    },
+    "doom-emacs": {
+        "cargoLocks": null,
+        "date": "2023-12-08",
+        "extract": null,
+        "name": "doom-emacs",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": true,
+            "name": null,
+            "rev": "03d692f129633e3bf0bd100d91b3ebf3f77db6d1",
+            "sha256": "sha256-naCexnEewgyi9UVPZ7djSR4X4zKQvLYT1YVn/baubKs=",
+            "type": "git",
+            "url": "https://github.com/hlissner/doom-emacs"
+        },
+        "version": "03d692f129633e3bf0bd100d91b3ebf3f77db6d1"
+    },
+    "jinx": {
+        "cargoLocks": null,
+        "date": "2024-01-09",
+        "extract": null,
+        "name": "jinx",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "minad",
+            "repo": "jinx",
+            "rev": "03efb689ca134127c186b8da5a2a91b04889ea2b",
+            "sha256": "sha256-idvz0SeSdDLiULsR0g2Kjxtpn3v8OjLFS1spkqe99Sw=",
+            "type": "github"
+        },
+        "version": "03efb689ca134127c186b8da5a2a91b04889ea2b"
+    },
+    "lsp-bridge": {
+        "cargoLocks": null,
+        "date": "2024-01-12",
+        "extract": null,
+        "name": "lsp-bridge",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "manateelazycat",
+            "repo": "lsp-bridge",
+            "rev": "dca340017e6625d1a2a09914b2e4602c84f5f6a3",
+            "sha256": "sha256-uD3O3RYd+aVAc+k0c4/OX+uO4zZ+5b3VmvNLRuUUWZk=",
+            "type": "github"
+        },
+        "version": "dca340017e6625d1a2a09914b2e4602c84f5f6a3"
+    },
+    "nix-mode": {
+        "cargoLocks": null,
+        "date": "2023-04-21",
+        "extract": null,
+        "name": "nix-mode",
+        "passthru": {
+            "ename": "nix-mode"
+        },
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "719feb7868fb567ecfe5578f6119892c771ac5e5",
+            "sha256": "sha256-W/bxCAn4cvzKGbhILxtTiWJ5Wln2w6g4TPgk+ziCXsQ=",
+            "type": "git",
+            "url": "https://github.com/NixOS/nix-mode"
+        },
+        "version": "719feb7868fb567ecfe5578f6119892c771ac5e5"
+    },
+    "nix-ts-mode": {
+        "cargoLocks": null,
+        "date": "2023-11-08",
+        "extract": null,
+        "name": "nix-ts-mode",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "remi-gelinas",
+            "repo": "nix-ts-mode",
+            "rev": "2dddc6e9ca33be211675afca3896fd661fc38a0c",
+            "sha256": "sha256-MGbkSqdImoIH/TIzMy5WHiS7sEb2NzOH+dqHTUg+9Kg=",
+            "type": "github"
+        },
+        "version": "2dddc6e9ca33be211675afca3896fd661fc38a0c"
+    },
+    "org-pretty-table": {
+        "cargoLocks": null,
+        "date": "2023-03-19",
+        "extract": null,
+        "name": "org-pretty-table",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "38e4354bbf7a8d08294babd067fac697038119b1",
+            "sha256": "sha256-IeHnoB9hpISwuzI+pKiU+5wvGvz9YJrG5amGg6DGgq4=",
+            "type": "git",
+            "url": "https://github.com/Fuco1/org-pretty-table"
+        },
+        "version": "38e4354bbf7a8d08294babd067fac697038119b1"
+    },
+    "org-protocol-capture-html": {
+        "cargoLocks": null,
+        "date": "2022-10-05",
+        "extract": null,
+        "name": "org-protocol-capture-html",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "a912aaefae8abdada2b2479aec0ad53fcf0b57bf",
+            "sha256": "sha256-X+t8E+0Bxtl6YMU0SwA/vRD8kn1lSXd2PcBhIY001Xo=",
+            "type": "git",
+            "url": "https://github.com/alphapapa/org-protocol-capture-html"
+        },
+        "version": "a912aaefae8abdada2b2479aec0ad53fcf0b57bf"
+    },
+    "spacemacs": {
+        "cargoLocks": null,
+        "date": "2024-01-07",
+        "extract": null,
+        "name": "spacemacs",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": true,
+            "name": null,
+            "rev": "3d84b01172d68f09791210d7de385f596ccf26b7",
+            "sha256": "sha256-4YZvYATrkv36JS5oLdkPllIs9un5CR2fpjhbt4TIFmc=",
+            "type": "git",
+            "url": "https://github.com/syl20bnr/spacemacs"
+        },
+        "version": "3d84b01172d68f09791210d7de385f596ccf26b7"
+    }
+}

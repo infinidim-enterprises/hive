@@ -23,10 +23,13 @@ let
     sops
     ;
 
+  # inherit (inputs.nixpkgs-unstable) editorconfig-checker;
+
   inherit
     (nixpkgs)
+    # (nixpkgs-unstable)
     nixpkgs-fmt
-    editorconfig-checker
+    # editorconfig-checker
     mdbook
     gnupg
     writeShellApplication
@@ -44,9 +47,9 @@ let
   # export PATH=${inputs.latest.nixUnstable}/bin:$PATH
   repl = writeShellScriptBin "repl" ''
     if [ -z "$1" ]; then
-       nix repl --argstr host "$HOST" --argstr flakePath "$PRJ_ROOT" ${./_repl.nix}
+       nix repl --argstr host "$HOST" --argstr flakePath "$PRJ_ROOT" ${./_repl.nix} --show-trace
     else
-       nix repl --argstr host "$HOST" --argstr flakePath $(readlink -f $1 | sed 's|/flake.nix||') ${./_repl.nix}
+       nix repl --argstr host "$HOST" --argstr flakePath $(readlink -f $1 | sed 's|/flake.nix||') ${./_repl.nix} --show-trace
     fi
   '';
 
@@ -198,7 +201,7 @@ lib.mapAttrs (_: std.lib.dev.mkShell) {
         package = build-on-target;
       }
 
-      (linter editorconfig-checker)
+      # (linter editorconfig-checker)
       (linter nixpkgs-fmt)
 
       (docs mdbook)

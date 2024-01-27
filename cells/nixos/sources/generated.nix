@@ -9,4 +9,28 @@
       sha256 = "sha256-G5Q0/N02G3eO/+S1ELhOcX4+znWJz67FXsiUTvmDYAM=";
     };
   };
+  rtl88x2bu = {
+    pname = "rtl88x2bu";
+    version = "980d7cc06e9fa51f0060972d4a1d947f8be4cb40";
+    src = fetchFromGitHub {
+      owner = "RinCat";
+      repo = "RTL88x2BU-Linux-Driver";
+      rev = "980d7cc06e9fa51f0060972d4a1d947f8be4cb40";
+      fetchSubmodules = false;
+      sha256 = "sha256-8UbyrBkrW0Ma5SOdXDI3nHO+55KV9JT2kVoR8Ft4xtI=";
+    };
+    date = "2023-11-15";
+  };
+  rtw89 = {
+    pname = "rtw89";
+    version = "6dc9441698a7f2f79ff8f74c6ea3704c0c8feb61";
+    src = fetchFromGitHub {
+      owner = "lwfinger";
+      repo = "rtw89";
+      rev = "6dc9441698a7f2f79ff8f74c6ea3704c0c8feb61";
+      fetchSubmodules = false;
+      sha256 = "sha256-iQF8+ufnqRxy+IttMRG4ZH7XXrvaCxPYuWNU/FwRxdc=";
+    };
+    date = "2024-01-06";
+  };
 }

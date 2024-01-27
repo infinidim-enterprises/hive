@@ -1,12 +1,8 @@
 { inputs, cell, ... }:
 let
-  inherit (inputs.cells) common;
+  inherit (inputs.cells.common.lib.importers) importProfiles;
 in
-common.lib.importProfiles {
-  src = ./profiles;
-
-  inputs = {
-    common = common.commonProfiles;
-    inherit cell inputs;
-  };
+importProfiles {
+  src = ./nixosProfiles;
+  inputs = { inherit cell inputs; };
 }

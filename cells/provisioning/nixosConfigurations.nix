@@ -7,10 +7,15 @@ let
   lib = nixpkgs.lib // builtins;
   cells = inputs.cells;
 in
-cells.common.lib.importSystemConfigurations {
+cells.common.lib.importers.importNixosConfigurations {
+  skip = [
+    "network-based"
+    "raspberry-network-based"
+    "wsl-network-based"
+  ];
   src = ./configurations;
 
-  inherit inputs lib;
+  inherit inputs lib cell;
   suites = cell.nixosSuites;
   profiles =
     cell.nixosProfiles

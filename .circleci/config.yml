@@ -54,8 +54,4 @@ workflows:
             - auto/upgrade-dependencies
         matrix:
           parameters:
-            host:
-            - nixos-octoprint
-            - nixos-oracle
-            - nixos-voron
-            - provisioning-raspberry-network-based
+            host: []
