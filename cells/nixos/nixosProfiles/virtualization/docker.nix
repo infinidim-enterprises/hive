@@ -5,7 +5,7 @@ let
   inherit (lib) any elemAt mkMerge mkIf mkDefault hasAttr splitString;
 
   zpoolName = elemAt (splitString "/" config.fileSystems."/".device) 0;
-  storageDriver = if cell.lib.isZfs then "zfs" else "overlay2";
+  storageDriver = if (cell.lib.isZfs config) then "zfs" else "overlay2";
 in
 
 mkMerge [

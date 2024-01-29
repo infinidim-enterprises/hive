@@ -56,7 +56,7 @@ in
       # (nixpkgs.appendOverlays [inputs.cells.common.overlays.latest-overrides]).alejandra
       latest.nixpkgs-fmt
       latest.nodePackages.prettier
-      # latest.nodePackages.prettier-plugin-toml
+      # FIXME: latest.nodePackages.prettier-plugin-toml
       latest.shfmt
     ];
     # devshell.startup.prettier-plugin-toml = lib.stringsWithDeps.noDepEntry ''
@@ -320,13 +320,13 @@ in
                 git commit -am "deps(sources): Updated cell sources"
               '';
             }
-            {
-              name = "Update deps hashes packages";
-              run = ''
-                nix run '.#mainsail.npmDepsHash' > cells/klipper/packages/_deps-hash/mainsail-npm.nix
-                git commit -am "deps(sources): Updated deps hash" || true
-              '';
-            }
+            # {
+            #   name = "Update deps hashes packages";
+            #   run = ''
+            #     nix run '.#mainsail.npmDepsHash' > cells/klipper/packages/_deps-hash/mainsail-npm.nix
+            #     git commit -am "deps(sources): Updated deps hash" || true
+            #   '';
+            # }
             {
               name = "Update flake.lock";
               uses = "DeterminateSystems/update-flake-lock@v20";
