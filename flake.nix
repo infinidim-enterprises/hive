@@ -16,9 +16,19 @@
     devshell.url = "github:numtide/devshell";
     devshell.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
+    paisano.url = "github:paisano-nix/core";
+    paisano.inputs.nixpkgs.follows = "nixpkgs-unstable";
+
+    colmena.url = "github:zhaofengli/colmena";
+    colmena.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    colmena.inputs.flake-utils.follows = "flake-utils";
+
     nixago.url = "github:nix-community/nixago";
     nixago.inputs.nixpkgs.follows = "nixpkgs-unstable";
     nixago.inputs.flake-utils.follows = "flake-utils";
+
+    disko.url = "github:nix-community/disko";
+    disko.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
     std.follows = "hive/std";
 
@@ -28,8 +38,6 @@
     # std.inputs.devshell.follows = "devshell";
     # std.inputs.nixago.follows = "nixago";
 
-    paisano.url = "github:paisano-nix/core";
-    paisano.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
     hive.url = "github:divnix/hive";
 
@@ -41,15 +49,9 @@
     hive.inputs.colmena.follows = "colmena";
     hive.inputs.nixago.follows = "nixago";
     hive.inputs.nixpkgs.follows = "nixpkgs-unstable";
-    # hive.inputs.std.inputs.haumea.follows = "haumea";
-
-    # hive.inputs.nixpkgs.follows = "nixpkgs";
 
     haumea.follows = "hive/std/haumea";
     # haumea.url = "github:nix-community/haumea";
-
-    disko.url = "github:nix-community/disko";
-    disko.inputs.nixpkgs.follows = "nixpkgs-unstable";
   };
 
   # tools
@@ -62,10 +64,6 @@
     nixos-hardware.url = "github:nixos/nixos-hardware";
 
     impermanence.url = "github:nix-community/impermanence";
-
-    colmena.url = "github:zhaofengli/colmena";
-    colmena.inputs.nixpkgs.follows = "nixpkgs-unstable";
-    colmena.inputs.flake-utils.follows = "flake-utils";
 
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -83,11 +81,11 @@
     # latest.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixpkgs-master.url = "github:nixos/nixpkgs";
-    nixos.url = "github:nixos/nixpkgs/release-23.05";
+    nixos.url = "github:nixos/nixpkgs/release-23.11";
     latest.follows = "nixpkgs-unstable";
     nixpkgs.follows = "nixos";
 
-    home.url = "github:nix-community/home-manager/release-23.05";
+    home.url = "github:nix-community/home-manager/release-23.11";
     home.inputs.nixpkgs.follows = "nixos";
 
     home-unstable.url = "github:nix-community/home-manager";
@@ -117,13 +115,14 @@
     nix-vscode-extensions.inputs.flake-utils.follows = "flake-utils";
 
     nvfetcher.url = "github:berberman/nvfetcher";
-    nvfetcher.inputs.nixpkgs.follows = "nixpkgs";
+    nvfetcher.inputs.nixpkgs.follows = "nixpkgs-unstable";
     nvfetcher.inputs.flake-utils.follows = "flake-utils";
 
     microvm.url = "github:astro/microvm.nix";
+    microvm.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
     arion.url = "github:hercules-ci/arion";
-    arion.inputs.nixpkgs.follows = "latest";
+    arion.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
     nur.url = "github:nix-community/NUR";
 
@@ -156,8 +155,8 @@
     # emacs-overlay.url = "github:nix-community/emacs-overlay/c16be6de78ea878aedd0292aa5d4a1ee0a5da501";
 
     # LSP for nix
-    nil.url = "github:oxalica/nil";
     nixd.url = "github:nix-community/nixd";
+    nixd.inputs.nixpkgs.follows = "nixpkgs-unstable";
   };
 
   outputs =

@@ -309,12 +309,12 @@
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "714069dba3dc49dc469dba01b4410c045fa628f0";
+    version = "3b0201816178b4eebb20ba7996ff5bab223ddcac";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";
     };
-    date = "2024-01-27";
+    date = "2024-01-29";
   };
   promnesia = {
     pname = "promnesia";
@@ -381,8 +381,8 @@
       fetchSubmodules = false;
       sha256 = "sha256-n5UfAodJxvSKPvPL/wUfTh45ymZGHmEgzFGIabXsxKY=";
     };
-    asd = "stumpwm";
     system = "stumpwm";
+    asd = "stumpwm";
     date = "2023-12-23";
   };
   tfenv = {

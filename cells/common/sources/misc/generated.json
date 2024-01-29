@@ -507,7 +507,7 @@
   },
   "pbkdf2-sha512": {
     "cargoLocks": null,
-    "date": "2024-01-27",
+    "date": "2024-01-29",
     "extract": null,
     "name": "pbkdf2-sha512",
     "passthru": null,
@@ -518,7 +518,7 @@
       "type": "url",
       "url": "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c"
     },
-    "version": "714069dba3dc49dc469dba01b4410c045fa628f0"
+    "version": "3b0201816178b4eebb20ba7996ff5bab223ddcac"
   },
   "promnesia": {
     "cargoLocks": null,

@@ -6,10 +6,12 @@ let
   inherit (cell) config;
   inherit ((nixpkgs.appendOverlays [ inputs.nur.overlay ]).nur.repos.rycee) mozilla-addons-to-nix;
 
+  nvfetcher = inputs.nvfetcher.packages.default;
+  ssh-to-pgp = inputs.sops-ssh-to-pgp.packages.default;
+  ssh-to-age = inputs.sops-ssh-to-age.packages.default;
+
   inherit
     (nixpkgs.appendOverlays [ inputs.cells.common.overlays.latest-overrides ])
-    ssh-to-pgp
-    ssh-to-age
     gnupg
     alejandra
     nixUnstable
@@ -18,7 +20,7 @@ let
     cachix
     nix-index
     statix
-    nvfetcher
+
     act
     sops
 

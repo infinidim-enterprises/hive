@@ -23,14 +23,14 @@
   };
   rtw89 = {
     pname = "rtw89";
-    version = "6dc9441698a7f2f79ff8f74c6ea3704c0c8feb61";
+    version = "ebe87ac234a72a63a1b2ede911a874f1b7a6fe43";
     src = fetchFromGitHub {
       owner = "lwfinger";
       repo = "rtw89";
-      rev = "6dc9441698a7f2f79ff8f74c6ea3704c0c8feb61";
+      rev = "ebe87ac234a72a63a1b2ede911a874f1b7a6fe43";
       fetchSubmodules = false;
-      sha256 = "sha256-iQF8+ufnqRxy+IttMRG4ZH7XXrvaCxPYuWNU/FwRxdc=";
+      sha256 = "sha256-TiKoIniZwo33G6PpyrdA41auB2nEMhd/4uCd/bSyDB4=";
     };
-    date = "2024-01-06";
+    date = "2024-01-18";
   };
 }

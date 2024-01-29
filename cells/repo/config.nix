@@ -56,12 +56,12 @@ in
       # (nixpkgs.appendOverlays [inputs.cells.common.overlays.latest-overrides]).alejandra
       latest.nixpkgs-fmt
       latest.nodePackages.prettier
-      latest.nodePackages.prettier-plugin-toml
+      # latest.nodePackages.prettier-plugin-toml
       latest.shfmt
     ];
-    devshell.startup.prettier-plugin-toml = lib.stringsWithDeps.noDepEntry ''
-      export NODE_PATH=${latest.nodePackages.prettier-plugin-toml}/lib/node_modules:''${NODE_PATH:-}
-    '';
+    # devshell.startup.prettier-plugin-toml = lib.stringsWithDeps.noDepEntry ''
+    #   export NODE_PATH=${latest.nodePackages.prettier-plugin-toml}/lib/node_modules:''${NODE_PATH:-}
+    # '';
     data = {
       global.excludes = [ "cells/*/sources/generated.*" "cells/secrets/*" ];
       formatter = {
@@ -71,7 +71,8 @@ in
         };
         prettier = {
           command = "prettier";
-          options = [ "--plugin" "prettier-plugin-toml" "--write" ];
+          options = [ "--write" ];
+          # options = [ "--plugin" "prettier-plugin-toml" "--write" ];
           includes = [
             "*.css"
             "*.html"
@@ -83,7 +84,7 @@ in
             "*.scss"
             "*.ts"
             "*.yaml"
-            "*.toml"
+            # "*.toml"
           ];
         };
         shell = {
@@ -133,7 +134,7 @@ in
         resource_class = "arm.large";
         steps = [
           {
-            "nix/install".channels = "nixpkgs=https://nixos.org/channels/nixos-23.05";
+            "nix/install".channels = "nixpkgs=https://nixos.org/channels/nixos-23.11";
             "nix/install".extra-conf = ''
               experimental-features = flakes nix-command
             '';
@@ -189,14 +190,14 @@ in
                 }
                 {
                   name = "Install Nix";
-                  uses = "cachix/install-nix-action@v23";
+                  uses = "cachix/install-nix-action@v25";
                   "with" = {
-                    nix_path = "nixpkgs=channel:nixos-23.05";
+                    nix_path = "nixpkgs=channel:nixos-23.11";
                     extra_nix_config = "access-tokens = github.com=\${{ secrets.GITHUB_TOKEN }}";
                   };
                 }
                 {
-                  uses = "cachix/cachix-action@v12";
+                  uses = "cachix/cachix-action@v14";
                   "with" = {
                     name = "njk";
                     extraPullNames = "cuda-maintainers, mic92, nix-community, nrdxp";
@@ -238,12 +239,12 @@ in
               }
               {
                 name = "Install Nix";
-                uses = "cachix/install-nix-action@v23";
-                "with".nix_path = "nixpkgs=channel:nixos-23.05";
+                uses = "cachix/install-nix-action@v25";
+                "with".nix_path = "nixpkgs=channel:nixos-23.11";
                 "with".extra_nix_config = "access-tokens = github.com=\${{ secrets.GITHUB_TOKEN }}";
               }
               {
-                uses = "cachix/cachix-action@v12";
+                uses = "cachix/cachix-action@v14";
                 "with".name = "njk";
                 "with".extraPullNames = "cuda-maintainers, mic92, nix-community, nrdxp";
                 "with".authToken = "\${{ secrets.CACHIX_AUTH_TOKEN }}";
@@ -294,12 +295,12 @@ in
             }
             {
               name = "Install Nix";
-              uses = "cachix/install-nix-action@v23";
-              "with".nix_path = "nixpkgs=channel:nixos-23.05";
+              uses = "cachix/install-nix-action@v25";
+              "with".nix_path = "nixpkgs=channel:nixos-23.11";
               "with".extra_nix_config = "access-tokens = github.com=\${{ secrets.GITHUB_TOKEN }}";
             }
             {
-              uses = "cachix/cachix-action@v12";
+              uses = "cachix/cachix-action@v14";
               "with".name = "njk";
               "with".extraPullNames = "cuda-maintainers, mic92, nix-community, nrdxp";
               "with".authToken = "\${{ secrets.CACHIX_AUTH_TOKEN }}";

@@ -5,7 +5,7 @@ let
   GB = 1024 * 1024 * 1024;
   inherit (builtins) attrNames attrValues;
   cachix = {
-    "https://cache.nixos.org/" = "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=";
+    # NOTE: always set from the default module: "https://cache.nixos.org/" = "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=";
     "https://cuda-maintainers.cachix.org" = "cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E=";
     "http://nix-community.cachix.org" = "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=";
     "https://poetry2nix.cachix.org" = "poetry2nix.cachix.org-1:2EWcWDlH12X9H76hfi5KlVtHgOtLa1Xeb7KjTjaV/R8=";

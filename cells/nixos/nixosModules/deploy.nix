@@ -2,22 +2,20 @@
 
 let
   inherit (lib) mkMerge mkIf mkOption mkEnableOption types;
-  moddedUserModule =
-    with lib;
-    let
-      original = fileContents "${modulesPath}/config/users-groups.nix";
-      extraUserOpts = fileContents ./_extraUserOpts.nix;
-      patched = pkgs.runCommandNoCC "patch_users-groups.nix"
-        {
-          buildInputs = with pkgs; [ gnused ];
-        } ''
-        # remove first and last lines
-        sed '1d; $d' input.txt > output.txt
+  # moddedUserModule =
+  #   with lib;
+  #   pkgs.runCommandNoCC "patched_users-groups.nix"
+  #     {
+  #       buildInputs = with pkgs; [ gnused nixpkgs-fmt ];
+  #     } ''
+  #     # remove first and last lines
+  #     sed '1d; $d' ${./_extraUserOpts.nix} > extraUserOpts.nix
 
-        '/userOpts/,/options = {/ s/options = {/&\nname1 = mkOption {};/'
-      '';
-    in
-    "";
+  #     # patch the userOpts
+  #     sed '/userOpts/,/options = {/!b;/options = {/r extraUserOpts.nix' \
+  #     ${modulesPath}/config/users-groups.nix | nixpkgs-fmt > $out
+  #   '';
+
   cfgDeploy = config.deploy;
   lanOptions = {
     options = with types; {
@@ -33,6 +31,7 @@ in
 {
   options.deploy = with types; {
     enable = mkEnableOption "Enable deploy config"; # // { default = true; };
+    extraUserOpts.enable = mkEnableOption "Patched users-groups.nix" // { default = true; };
     params = {
       cpu = mkOption { type = nullOr (enum [ "intel" "amd" ]); default = null; };
       gpu = mkOption { type = nullOr (enum [ "intel" "amd" "nvidia" ]); default = null; };
@@ -52,5 +51,14 @@ in
       lan = mkOption { type = submodule [ lanOptions ]; default = { }; };
     };
   };
-  # config = mkMerge [ (mkIf (cfgDeploy.enable) { }) ];
+
+  # disabledModules = [ "${modulesPath}/config/users-groups.nix" ];
+  # imports = [ moddedUserModule ];
+  config = mkMerge [
+    # (mkIf (cfgDeploy.enable) { })
+    # (mkIf cfgDeploy.extraUserOpts.enable {
+    #   disabledModules = [ "${modulesPath}/config/users-groups.nix" ];
+    #   imports = [ moddedUserModule ];
+    # })
+  ];
 }
