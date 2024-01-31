@@ -1,7 +1,5 @@
-{ inputs
-, cell
-, ...
-}: final: prev: {
+{ inputs, cell, ... }:
+final: prev: {
   masterpdfeditor = prev.masterpdfeditor.overrideAttrs (old: {
     inherit (final.sources.masterpdfeditor) pname version src;
     buildInputs = old.buildInputs ++ [ inputs.nixpkgs.pkcs11helper ];

@@ -1,7 +1,6 @@
-{ inputs
-, cell
-, ...
-}: final: prev: {
+{ inputs, cell, ... }:
+
+final: prev: {
   mkWaylandApp = t: e: f:
     prev.stdenv.mkDerivation {
       pname = t.pname or t.name + "-mkWaylandApp";

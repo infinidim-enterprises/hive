@@ -20,11 +20,11 @@ fetch.github = "minad/jinx"
 src.git = "https://github.com/plexus/chemacs2"
 fetch.git = "https://github.com/plexus/chemacs2"
 
-[spacemacs]
-src.git = "https://github.com/syl20bnr/spacemacs"
-src.branch = "develop"
-fetch.git = "https://github.com/syl20bnr/spacemacs"
-git.leaveDotGit = true
+# [spacemacs]
+# src.git = "https://github.com/syl20bnr/spacemacs"
+# src.branch = "develop"
+# fetch.git = "https://github.com/syl20bnr/spacemacs"
+# git.leaveDotGit = true
 
 [doom-emacs]
 src.git = "https://github.com/hlissner/doom-emacs"

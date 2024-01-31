@@ -151,6 +151,7 @@ lib.mapAttrs (_: std.lib.dev.mkShell) {
         config.githubsettings
         config.lefthook
         config.circleci
+        config.garnix_io
         # config.mdbook
       ];
 

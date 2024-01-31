@@ -30,7 +30,6 @@ let
 
           (flattenTree (rakeLeaves (filterPath { inherit skip src; })));
 
-    # TODO: doc
     doc = ''
       packages
     '';

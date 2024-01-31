@@ -1,10 +1,5 @@
-{ inputs
-, cell
-,
-}:
-let
-  inherit (inputs.cells) common;
-in
-common.lib.importModules {
+{ inputs, cell, ... }:
+
+inputs.cells.common.lib.importers.importModules {
   src = ./homeModules;
 }

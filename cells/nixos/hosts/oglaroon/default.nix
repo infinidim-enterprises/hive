@@ -25,7 +25,6 @@ rec {
     ++ cell.nixosSuites.base
     ++ [
       bee.home.nixosModules.home-manager
-      # cell.hardwareProfiles.${baseNameOf ./.}
       (import ./_hardwareProfile.nix { inherit inputs cell; })
 
       cell.nixosProfiles.desktop.printer-kyocera
@@ -37,7 +36,7 @@ rec {
         networking.wireless.enable = false;
         networking.networkmanager.enable = true;
         services.udev.packages = with pkgs; [ crda ];
-        environment.systemPackages = with pkgs; [ networkmanagerapplet ventoy-full ];
+        environment.systemPackages = with pkgs; [ networkmanagerapplet ];
       })
       {
         deploy.enable = true;
@@ -52,10 +51,7 @@ rec {
         # services.redshift.brightness.night = "0.85";
         # services.redshift.brightness.day = "0.85";
       }
-      ({ lib
-       , config
-       , ...
-       }: {
+      ({ lib, config, ... }: {
         systemd.network.networks.lan = {
           addresses = [{ addressConfig.Address = "10.11.1.125/24"; }];
           networkConfig.Gateway = "10.11.1.1";

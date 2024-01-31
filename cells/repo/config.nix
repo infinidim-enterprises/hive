@@ -115,6 +115,16 @@ in
     };
   };
 
+  garnix_io = mkNixago {
+    data = {
+      builds.include = [ "devShells.x86_64-linux.*" ];
+    };
+
+    output = "garnix.yaml";
+    format = "yaml";
+    hook.mode = "copy";
+  };
+
   circleci = mkNixago {
     data = {
       version = "2.1";

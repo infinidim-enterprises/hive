@@ -1,4 +1,11 @@
 [[addons]]
+# TODO: ugetintegration
+slug = "ugetintegration"
+
+[[addons]]
+slug = "darkreader"
+
+[[addons]]
 slug = "aw-watcher-web"
 
 [[addons]]
@@ -61,8 +68,6 @@ slug = "multi-account-containers"
 [[addons]]
 slug = "temporary-containers"
 
-# [[addons]]
-# slug = "https-everywhere"
 [[addons]]
 slug = "privacy-badger17"
 

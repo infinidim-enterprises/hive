@@ -1,7 +1,6 @@
-{ inputs
-, cell
-, ...
-}: final: prev:
+{ inputs, cell, ... }:
+
+final: prev:
 let
   inherit (prev.python3Packages) callPackage;
 in

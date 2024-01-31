@@ -1,14 +1,13 @@
 # TODO: https://nixos.org/manual/nixpkgs/stable/#lisp
-{ inputs
-, cell
-, ...
-}:
+{ inputs, cell, ... }:
+
 let
   nixpkgs-22-11 = import inputs.nixos-22-11 {
     inherit (inputs.nixpkgs) system;
     config.allowUnfree = true;
   };
 in
+
 final: prev:
 let
   /*

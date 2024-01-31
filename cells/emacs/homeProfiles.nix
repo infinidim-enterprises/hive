@@ -2,5 +2,5 @@
 
 inputs.cells.common.lib.importers.importProfiles {
   src = ./homeProfiles;
-  inputs = { inherit cell inputs; };
+  inputs = { inherit inputs cell; };
 }
