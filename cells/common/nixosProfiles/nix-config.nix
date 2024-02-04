@@ -12,6 +12,7 @@ let
     "https://ibis.cachix.org" = "ibis.cachix.org-1:tKNWCdKmBXJFK1JE/SnA41z7U7XPFOnB7Nw0vLKXaLA=";
     "https://ibis-substrait.cachix.org" = "ibis-substrait.cachix.org-1:9QMhfByEHEl46s4tqVcRiyiOct2bnmZ23BJk4NTgGGI=";
     "https://njk.cachix.org" = "njk.cachix.org-1:ON4lemYq096ZfK5MtL1NU3afFk9ILAsEnXdy5lDDgKs=";
+    "https://cache.garnix.io" = "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g=";
     "https://nrdxp.cachix.org" = "nrdxp.cachix.org-1:Fc5PSqY2Jm1TrWfm88l6cvGWwz3s93c6IOifQWnhNW4=";
     "https://colmena.cachix.org" = "colmena.cachix.org-1:7BzpDnjjH8ki2CT3f6GdOk7QAzPOl+1t3LvTLXqYcSg=";
     "https://microvm.cachix.org" = "microvm.cachix.org-1:oXnBc6hRE3eX5rSYdRyMYXnfzcCxC7yKPTbZXALsqys=";

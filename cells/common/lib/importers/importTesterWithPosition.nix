@@ -28,8 +28,7 @@ let
           (rakeLeaves src);
 
     doc = ''
-      # TODO: importTesterWithPosition
-      ${builtins.trace "position" __curPos.file}
+      ${builtins.trace "self" inputs.self}
     '';
   };
 in

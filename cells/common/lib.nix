@@ -1,16 +1,24 @@
 { inputs, cell, ... }:
 let
-  inherit (inputs) haumea;
-  inherit (inputs.nixpkgs-lib) lib;
-  inherit (builtins) removeAttrs;
+  inherit (inputs.nixpkgs-lib.lib) recursiveUpdate;
 
-  importLibs = { src ? ./lib }:
-    haumea.lib.load {
-      inherit src;
-      inputs = {
-        inputs = removeAttrs inputs [ "self" ];
-        inherit lib cell;
+  importLibs = {
+    __functor = _self:
+      { src ? "${inputs.self}/cells/common/lib" }:
+      inputs.haumea.lib.load {
+        inherit src;
+        inputs = {
+          inherit cell inputs;
+          inherit (inputs.nixpkgs-lib) lib;
+
+          # NOTE: why was it here? inputs = builtins.removeAttrs inputs [ "self" ];
+        };
       };
-    };
+
+    doc = ''
+    '';
+  };
+
+  libs = recursiveUpdate (importLibs { }) { importers = { inherit importLibs; }; };
 in
-{ inherit importLibs; } // (importLibs { })
+libs

@@ -1,8 +1,14 @@
 {
   description = "The Hive - VoD systems";
   # Cachix
-  nixConfig.extra-substituters = [ "https://njk.cachix.org" ];
-  nixConfig.extra-trusted-public-keys = [ "njk.cachix.org-1:ON4lemYq096ZfK5MtL1NU3afFk9ILAsEnXdy5lDDgKs=" ];
+  nixConfig.extra-substituters = [
+    "https://njk.cachix.org"
+    "https://cache.garnix.io"
+  ];
+  nixConfig.extra-trusted-public-keys = [
+    "njk.cachix.org-1:ON4lemYq096ZfK5MtL1NU3afFk9ILAsEnXdy5lDDgKs="
+    "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
+  ];
 
   # common for deduplication
   inputs = {
