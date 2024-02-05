@@ -117,7 +117,10 @@ in
 
   garnix_io = mkNixago {
     data = {
-      builds.include = [ "devShells.x86_64-linux.*" ];
+      builds.include = [
+        "devShells.x86_64-linux.*"
+        "packages.x86_64-linux.*"
+      ];
     };
 
     output = "garnix.yaml";

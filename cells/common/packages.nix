@@ -8,6 +8,7 @@ cell.lib.importers.importPackagesRakeleaves {
 
     "promnesia"
     "HPI"
+    "orgparse"
     "timeslot"
 
     "activitywatch"
@@ -16,8 +17,11 @@ cell.lib.importers.importPackagesRakeleaves {
     "persist-queue"
 
     "chatgpt-wrapper"
+    "langchain"
+
     "git-pr-mirror"
     "gitea-tea"
+
     "huginn"
     "integration-studio"
     "k3d"
@@ -26,14 +30,18 @@ cell.lib.importers.importPackagesRakeleaves {
     "roadrunner"
 
     "zeronsd"
+    "ztncui"
     "git-get"
     "git-remote-ipfs"
 
+    "trezor-agent-recover"
     # FIXME:
     "xxhash2mac"
     "uhk-agent"
     "rtw89"
     "kea-ma"
+    # FIXME: ASAP
+    "make-desktopitem"
   ];
 }
 
