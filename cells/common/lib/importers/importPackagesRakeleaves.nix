@@ -2,8 +2,8 @@
 let
   inherit (cell.lib)
     flattenTree
-    rakeLeaves
     filterPath;
+  inherit (cell.lib.importers) rakeLeaves;
 
   packages = {
     __functor = _self:

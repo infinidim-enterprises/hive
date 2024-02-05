@@ -1,6 +1,6 @@
 { lib, cell, inputs, ... }:
 let
-  inherit (cell.lib) rakeLeaves;
+  inherit (cell.lib.importers) rakeLeaves;
 
   importTesterWithPosition = {
     __functor = _self:

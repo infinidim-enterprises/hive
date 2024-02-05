@@ -159,7 +159,7 @@
       fetchSubmodules = false;
       sha256 = "sha256-dBZNrhg4df7NDECq8B333dY/7OXEyPIByD7YHdV9moo=";
     };
-    vendorSha256 = "05k6w4knk7fdjm9qm272nlrk47rzjr18g0fp4j57f5ncq26cxr8b";
+    vendorHash = "05k6w4knk7fdjm9qm272nlrk47rzjr18g0fp4j57f5ncq26cxr8b";
     date = "2021-08-07";
   };
   git-pull-request-mirror = {
@@ -208,15 +208,28 @@
       sha256 = "sha256-sO2s4qy2GIc3ecnObs+RZdtU/vlcIiYvVwD83Z/rrsk=";
     };
   };
+  ipxe = {
+    pname = "ipxe";
+    version = "0cc0f47443ef9711775a748c2b0fb40e38643733";
+    src = fetchgit {
+      url = "https://github.com/ipxe/ipxe";
+      rev = "0cc0f47443ef9711775a748c2b0fb40e38643733";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sha256 = "sha256-Dmt8bFJAhX6Mxj6dpqhhDdmR1D6bBiN4nm29octlvMw=";
+    };
+    date = "2024-01-31";
+  };
   langchain = {
     pname = "langchain";
-    version = "v0.1.4";
+    version = "v0.1.5";
     src = fetchFromGitHub {
       owner = "langchain-ai";
       repo = "langchain";
-      rev = "v0.1.4";
+      rev = "v0.1.5";
       fetchSubmodules = false;
-      sha256 = "sha256-DwqWn9qbe8aYQCOgyDufaUmM3RjF75cOP2Y4rCVQBi8=";
+      sha256 = "sha256-BpXYbyf3Jhbh0KP1T7WP1HmRNzt5C9DwbpOP1feEahk=";
     };
   };
   listopia = {
@@ -309,12 +322,12 @@
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "3b0201816178b4eebb20ba7996ff5bab223ddcac";
+    version = "768e0cf423e18cb56eb321f7b73609904d8f1611";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";
     };
-    date = "2024-01-29";
+    date = "2024-02-05";
   };
   promnesia = {
     pname = "promnesia";

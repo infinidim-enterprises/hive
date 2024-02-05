@@ -5,7 +5,7 @@
 let
   inherit (inputs.cells) common nixos;
 in
-common.lib.importProfiles {
+common.lib.importers.importProfiles {
   src = ./profiles;
 
   inputs = {

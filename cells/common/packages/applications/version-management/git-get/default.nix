@@ -1,7 +1,7 @@
 { sources, lib, buildGoModule, makeWrapper }:
 
 buildGoModule rec {
-  inherit (sources.git-get) pname version src vendorSha256;
+  inherit (sources.git-get) pname version src vendorHash;
 
   nativeBuildInputs = [ makeWrapper ];
   postInstall = ''

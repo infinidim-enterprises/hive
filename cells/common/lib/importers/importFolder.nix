@@ -1,9 +1,6 @@
-{ lib
-, cell
-, ...
-}:
+{ lib, cell, ... }:
 let
-  inherit (cell.lib) rakeLeaves;
+  inherit (cell.lib.importers) rakeLeaves;
   importFolder = {
     __functor = _self: path:
       with lib;

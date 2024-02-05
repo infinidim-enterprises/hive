@@ -1,10 +1,8 @@
-{ lib
-, cell
-, ...
-}:
-with lib; let
-  inherit (cell.lib) rakeLeaves;
-  importRakeLeaves = {
+{ lib, cell, ... }:
+with lib;
+let
+  inherit (cell.lib.importers) rakeLeaves;
+  importRakeleaves = {
     __functor = _self:
       path: args:
         mapAttrsRecursive
@@ -19,4 +17,4 @@ with lib; let
     '';
   };
 in
-importRakeLeaves
+importRakeleaves

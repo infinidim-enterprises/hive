@@ -11,13 +11,11 @@ let
           map
           removePrefix
           toPath
-          attrValues
-          ;
+          attrValues;
         inherit
           (cell.lib)
-          flattenTree
-          rakeLeaves
-          ;
+          flattenTree;
+        inherit (cell.lib.importers) rakeLeaves;
       in
       map
         (m: removePrefix ((toPath path) + "/") (toPath m))

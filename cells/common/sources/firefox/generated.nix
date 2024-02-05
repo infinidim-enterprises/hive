@@ -356,6 +356,28 @@
         platforms = platforms.all;
       };
   };
+  "darkreader" = rec {
+    pname = "darkreader";
+    version = "4.9.76";
+    addonId = "addon@darkreader.org";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4223104/darkreader-4.9.76.xpi";
+    sha256 = "d3afe139928c3c30bd11347c08a3360fa3417be4667c47f3de19fdc0ab92da9f";
+    meta = with lib;
+      {
+        homepage = "https://darkreader.org/";
+        description = "Dark mode for every website. Take care of your eyes, use dark theme for night and daily browsing.";
+        license = licenses.mit;
+        mozPermissions = [
+          "alarms"
+          "contextMenus"
+          "storage"
+          "tabs"
+          "theme"
+          "<all_urls>"
+        ];
+        platforms = platforms.all;
+      };
+  };
   "decentraleyes" = rec {
     pname = "decentraleyes";
     version = "2.0.18";
@@ -406,10 +428,10 @@
   };
   "duckduckgo-for-firefox" = rec {
     pname = "duckduckgo-for-firefox";
-    version = "2023.12.6";
+    version = "2024.1.19";
     addonId = "jid1-ZAdIEUB7XOzOJw@jetpack";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4205925/duckduckgo_for_firefox-2023.12.6.xpi";
-    sha256 = "48f84600dba95266fda6e7cf28792d7bdfcc9837d259f8fc4df0b5fc3b1a20ce";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4229541/duckduckgo_for_firefox-2024.1.19.xpi";
+    sha256 = "48bc215807024dd1f95774b4844bcfdbc90e989fddfab42d08961866fc0f3191";
     meta = with lib;
       {
         homepage = "https://duckduckgo.com/app";
@@ -446,10 +468,10 @@
   };
   "ether-metamask" = rec {
     pname = "ether-metamask";
-    version = "11.7.2";
+    version = "11.7.3";
     addonId = "webextension@metamask.io";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4211857/ether_metamask-11.7.2.xpi";
-    sha256 = "09cdbc8c55b4042692c9b13f85b84b5304b70cac44f5854d0877a753fb17a6f5";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4225715/ether_metamask-11.7.3.xpi";
+    sha256 = "65f212aa161d972bff93f7a9f9811c2a7bf437bf1af251d6287fa0ae4d9eb4f5";
     meta = with lib;
       {
         description = "Ethereum Browser Extension";
@@ -1156,6 +1178,32 @@
           "https://github.com/uBlockOrigin/*"
           "https://ublockorigin.github.io/*"
           "https://*.reddit.com/r/uBlockOrigin/*"
+        ];
+        platforms = platforms.all;
+      };
+  };
+  "ugetintegration" = rec {
+    pname = "ugetintegration";
+    version = "2.1.3.1";
+    addonId = "uget-integration@slgobinath";
+    url = "https://addons.mozilla.org/firefox/downloads/file/911315/ugetintegration-2.1.3.1.xpi";
+    sha256 = "235f29ca5df79e4e5a338e29ef7cd721bb7873309b56364cc7a4bf4612e1ae85";
+    meta = with lib;
+      {
+        homepage = "https://github.com/ugetdm/uget-integrator";
+        description = "Integrate Mozilla Firefox with uGet download manager.\nPlease note that \"uget-chrome-wrapper\" has been renamed to \"uget-integrator\".\n<a rel=\"nofollow\" href=\"https://prod.outgoing.prod.webservices.mozgcp.net/v1/e231fe36249ab4182cf0474166b098eb0ac98e7813be8faff0618be919e234f3/https%3A//github.com/ugetdm/uget-integrator\">https://github.com/ugetdm/uget-integrator</a>";
+        license = licenses.lgpl3;
+        mozPermissions = [
+          "<all_urls>"
+          "webRequest"
+          "webRequestBlocking"
+          "nativeMessaging"
+          "contextMenus"
+          "downloads"
+          "storage"
+          "cookies"
+          "activeTab"
+          "tabs"
         ];
         platforms = platforms.all;
       };

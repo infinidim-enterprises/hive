@@ -41,7 +41,7 @@
 
     python3Packages.pygments # A generic syntax highlighter
 
-    ix # cli pastebin
+    # ix # NOTE: currently defunct! cli pastebin
     ripgrep # A utility that combines the usability of The Silver Searcher with the raw speed of grep
     silver-searcher # NOTE: candidate for dev profile! - modern search
     ack # needed by hhighlighter

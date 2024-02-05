@@ -42,6 +42,13 @@ src.prefix = "v"
 src.github = "AdguardTeam/AdGuardHome"
 fetch.url = "https://github.com/AdguardTeam/AdGuardHome/releases/download/$ver/AdGuardHome_linux_amd64.tar.gz"
 
+### :START: ipxe
+[ipxe]
+src.git = "https://github.com/ipxe/ipxe"
+fetch.git = "https://github.com/ipxe/ipxe"
+# git.leaveDotGit = true
+### :END: ipxe
+
 ### :START: promnesia
 [promnesia]
 src.git = "https://github.com/karlicoss/promnesia"
@@ -122,7 +129,7 @@ fetch.git = "https://github.com/voobscout/dbus-listen"
 [git-get]
 src.git = "https://github.com/grdl/git-get"
 fetch.github = "grdl/git-get"
-passthru = { vendorSha256 = "05k6w4knk7fdjm9qm272nlrk47rzjr18g0fp4j57f5ncq26cxr8b" }
+passthru = { vendorHash = "05k6w4knk7fdjm9qm272nlrk47rzjr18g0fp4j57f5ncq26cxr8b" }
 
 [git-remote-ipfs]
 src.git = "https://github.com/bqv/git-remote-ipfs"

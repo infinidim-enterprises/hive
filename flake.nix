@@ -222,6 +222,7 @@
       # soil
       {
         devShells = hive.harvest inputs.self [ "repo" "shells" ];
+
         packages = hive.harvest inputs.self [
           [ "common" "packages" ]
         ];
