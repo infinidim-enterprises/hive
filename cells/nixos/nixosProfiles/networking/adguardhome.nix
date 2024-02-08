@@ -123,7 +123,7 @@ mkMerge
           bind_hosts = [ "127.0.0.1" ];
           blocked_hosts = [ "version.bind" "id.server" "hostname.bind" ];
           blocked_response_ttl = 10;
-          blocked_services = [ ];
+          # blocked_services = [ ];
           blocking_ipv4 = "";
           blocking_ipv6 = "";
           blocking_mode = "default";

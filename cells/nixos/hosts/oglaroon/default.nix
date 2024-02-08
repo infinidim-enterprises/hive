@@ -14,6 +14,7 @@ rec {
         sources
         inputs.cells.emacs.overlays.sources
         latest-overrides
+        nixpkgs-master-overrides
         make-desktopitem
         vscode-extensions
         firefox-addons

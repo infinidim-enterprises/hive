@@ -116,7 +116,7 @@ mkMerge [
     services.resolved.dnssec = "false";
     services.resolved.llmnr = "false";
     services.resolved.fallbackDns = [ "8.8.8.8" ];
-    networking.nameservers = with config.services.adguardhome; [ "${host}:${builtins.toString settings.dns.port}" ];
+    networking.nameservers = with config.services.adguardhome; [ "${settings.bind_host}:${builtins.toString settings.dns.port}" ];
     services.resolved.extraConfig = ''
       MulticastDNS=false
     '';
