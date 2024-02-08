@@ -121,7 +121,7 @@ in
         "devShells.x86_64-linux.*"
         "packages.x86_64-linux.*"
         # amend
-        "nixosConfigurations.nixos-oglaroon.config.system.build.toplevel"
+        "nixosConfigurations.*"
       ];
     };
 
