@@ -6,7 +6,6 @@
     common-cpu-amd-pstate
     common-cpu-amd-raphael-igpu
     common-gpu-amd
-    common-gpu-amd
   ];
 
   hardware.cpu.amd.updateMicrocode = true;

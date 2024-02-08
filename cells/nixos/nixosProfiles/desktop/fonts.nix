@@ -8,7 +8,7 @@ mkMerge [
   {
     fonts.fontDir.enable = true;
     fonts.enableGhostscriptFonts = true;
-    fonts.fonts = with pkgs;
+    fonts.packages = with pkgs;
       [
         (nerdfonts.override (_: {
           fonts = [
@@ -31,10 +31,9 @@ mkMerge [
         terminus_font
         material-icons
         weather-icons
-        all-the-icons
+        inputs.cells.emacs.packages.all-the-icons
         material-symbols
-        windows-fonts
-      ];
+      ] ++ [ inputs.cells.common.packages.windows-fonts ];
 
     fonts.fontconfig = {
       enable = true;

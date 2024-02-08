@@ -151,18 +151,18 @@ mkMerge [
 
       # pinentry-curses
 
-      pbkdf2-sha512
+      inputs.cells.common.packages.pbkdf2-sha512
       cryptsetup
       openssl
 
       # TODO: key backup
       ###
-      paper-store
+      inputs.cells.common.packages.paper-store
       # enc_with_passwd
       # gpg_autogenkey
 
       ###
-      gpg-hd # Deterministic ssh-keys from BIP39
+      inputs.cells.common.packages.gpg-hd # Deterministic ssh-keys from BIP39
       paperkey
       qrencode
       zbar

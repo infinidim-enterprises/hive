@@ -1,0 +1,297 @@
+# [vscode-extension-dmn-editor]
+# src.vsmarketplace = "redhat.vscode-extension-dmn-editor"
+# fetch.vsmarketplace = "redhat.vscode-extension-dmn-editor"
+# passthru = { publisher = "redhat", name = "vscode-extension-dmn-editor" }
+
+# [vscode-extension-bpmn-editor]
+# src.vsmarketplace = "redhat.vscode-extension-bpmn-editor"
+# fetch.vsmarketplace = "redhat.vscode-extension-bpmn-editor"
+# passthru = { publisher = "redhat", name = "vscode-extension-bpmn-editor" }
+
+# [copilot]
+# src.vsmarketplace = "GitHub.copilot"
+# fetch.vsmarketplace = "GitHub.copilot"
+# passthru = { name = "copilot", publisher = "Github" }
+
+# [nickel-syntax]
+# src.vsmarketplace = "kubukoz.nickel-syntax"
+# fetch.vsmarketplace = "kubukoz.nickel-syntax"
+# passthru = { name = "kubukoz", publisher = "nickel-syntax" }
+
+# [multi-cursor-case-preserve]
+# src.vsmarketplace = "Cardinal90.multi-cursor-case-preserve"
+# fetch.vsmarketplace = "Cardinal90.multi-cursor-case-preserve"
+# passthru = { name = "multi-cursor-case-preserve", publisher = "Cardinal90" }
+
+# [tokyo-night]
+# src.vsmarketplace = "enkia.tokyo-night"
+# fetch.vsmarketplace = "enkia.tokyo-night"
+# passthru = { name = "tokyo-night", publisher = "enkia" }
+
+# [vscode-emacs-friendly]
+# src.vsmarketplace = "lfs.vscode-emacs-friendly"
+# fetch.vsmarketplace = "lfs.vscode-emacs-friendly"
+# passthru = { name = "vscode-emacs-friendly", publisher = "lfs" }
+
+# [zeek]
+# src.vsmarketplace = "aeppert.bro"
+# fetch.vsmarketplace = "aeppert.bro"
+# passthru = { name = "bro", publisher = "aeppert" }
+
+# [readable-indent]
+# src.vsmarketplace = "cnojima.readable-indent"
+# fetch.vsmarketplace = "cnojima.readable-indent"
+# passthru = { name = "readable-indent", publisher = "cnojima" }
+
+# [indent-rainbow]
+# src.vsmarketplace = "oderwat.indent-rainbow"
+# fetch.vsmarketplace = "oderwat.indent-rainbow"
+# passthru = { name = "indent-rainbow", publisher = "oderwat" }
+
+# [pdf]
+# src.vsmarketplace = "tomoki1207.pdf"
+# fetch.vsmarketplace = "tomoki1207.pdf"
+# passthru = { name = "pdf", publisher = "tomoki1207" }
+
+# [rust]
+# src.vsmarketplace = "rust-lang.rust"
+# fetch.vsmarketplace = "rust-lang.rust"
+# passthru = { name = "rust", publisher = "rust-lang" }
+
+# [rust-analyzer]
+# src.vsmarketplace = "rust-lang.rust-analyzer"
+# fetch.vsmarketplace = "rust-lang.rust-analyzer"
+# passthru = { name = "rust-analyzer", publisher = "rust-lang" }
+
+# [julia]
+# src.vsmarketplace = "julialang.language-julia"
+# fetch.vsmarketplace = "julialang.language-julia"
+# passthru = { name = "language-julia", publisher = "julialang" }
+
+# [julia-color-themes]
+# src.vsmarketplace = "cameronbieganek.julia-color-themes"
+# fetch.vsmarketplace = "cameronbieganek.julia-color-themes"
+# passthru = { name = "julia-color-themes", publisher = "cameronbieganek" }
+
+# [vscode-markdownlint]
+# src.vsmarketplace = "DavidAnson.vscode-markdownlint"
+# fetch.vsmarketplace = "DavidAnson.vscode-markdownlint"
+# passthru = { name = "vscode-markdownlint", publisher = "DavidAnson" }
+
+# [markdown-preview-enhanced]
+# src.vsmarketplace = "shd101wyy.markdown-preview-enhanced"
+# fetch.vsmarketplace = "shd101wyy.markdown-preview-enhanced"
+# passthru = { name = "markdown-preview-enhanced", publisher = "shd101wyy" }
+
+# [direnv]
+# src.vsmarketplace = "mkhl.direnv"
+# fetch.vsmarketplace = "mkhl.direnv"
+# passthru = { name = "direnv", publisher = "mkhl" }
+
+###
+### General
+[activitywatch]
+src.vsmarketplace = "activitywatch.aw-watcher-vscode"
+fetch.vsmarketplace = "activitywatch.aw-watcher-vscode"
+passthru = { publisher = "activitywatch", name = "aw-watcher-vscode"}
+
+[ballerina]
+src.vsmarketplace = "WSO2.ballerina"
+fetch.vsmarketplace = "WSO2.ballerina"
+passthru = { publisher = "WSO2", name = "ballerina"}
+
+#
+[codium]
+src.vsmarketplace = "Codium.codium"
+fetch.vsmarketplace = "Codium.codium"
+passthru = { publisher = "Codium", name = "codium"}
+
+[copilot]
+src.vsmarketplace = "GitHub.copilot"
+fetch.vsmarketplace = "GitHub.copilot"
+passthru = { publisher = "GitHub", name = "copilot"}
+
+[multi-cursor-case-preserve]
+src.vsmarketplace = "Cardinal90.multi-cursor-case-preserve"
+fetch.vsmarketplace = "Cardinal90.multi-cursor-case-preserve"
+passthru = { publisher = "Cardinal90", name = "multi-cursor-case-preserve"}
+
+[tokyo-night]
+src.vsmarketplace = "enkia.tokyo-night"
+fetch.vsmarketplace = "enkia.tokyo-night"
+passthru = { publisher = "enkia", name = "tokyo-night"}
+
+[vscode-emacs-friendly]
+src.vsmarketplace = "lfs.vscode-emacs-friendly"
+fetch.vsmarketplace = "lfs.vscode-emacs-friendly"
+passthru = { publisher = "lfs", name = "vscode-emacs-friendly"}
+
+### crystal-lang
+[crystal-lang]
+src.vsmarketplace = "crystal-lang-tools.crystal-lang"
+fetch.vsmarketplace = "crystal-lang-tools.crystal-lang"
+passthru = { publisher = "crystal-lang-tools", name = "crystal-lang"}
+
+[crystal-spec-vscode]
+src.vsmarketplace = "matthewmcgarvey.crystal-spec-vscode"
+fetch.vsmarketplace = "matthewmcgarvey.crystal-spec-vscode"
+passthru = { publisher = "matthewmcgarvey", name = "crystal-spec-vscode"}
+
+
+### nix and nix-alike
+[nickel-syntax]
+src.vsmarketplace = "kubukoz.nickel-syntax"
+fetch.vsmarketplace = "kubukoz.nickel-syntax"
+passthru = { publisher = "kubukoz", name = "nickel-syntax"}
+
+
+[zeek]
+src.vsmarketplace = "aeppert.bro"
+fetch.vsmarketplace = "aeppert.bro"
+passthru = { publisher = "aeppert", name = "bro"}
+
+[readable-indent]
+src.vsmarketplace = "cnojima.readable-indent"
+fetch.vsmarketplace = "cnojima.readable-indent"
+passthru = { publisher = "cnojima", name = "readable-indent"}
+
+[indent-rainbow]
+src.vsmarketplace = "oderwat.indent-rainbow"
+fetch.vsmarketplace = "oderwat.indent-rainbow"
+passthru = { publisher = "oderwat", name = "indent-rainbow"}
+
+[tabnine-vscode]
+src.vsmarketplace = "TabNine.tabnine-vscode"
+fetch.vsmarketplace = "TabNine.tabnine-vscode"
+passthru = { publisher = "TabNine", name = "tabnine-vscode"}
+
+[pdf]
+src.vsmarketplace = "tomoki1207.pdf"
+fetch.vsmarketplace = "tomoki1207.pdf"
+passthru = { publisher = "tomoki1207", name = "pdf"}
+
+[language-julia]
+src.vsmarketplace = "julialang.language-julia"
+fetch.vsmarketplace = "julialang.language-julia"
+passthru = { publisher = "julialang", name = "language-julia"}
+
+[julia-color-themes]
+src.vsmarketplace = "cameronbieganek.julia-color-themes"
+fetch.vsmarketplace = "cameronbieganek.julia-color-themes"
+passthru = { publisher = "cameronbieganek", name = "julia-color-themes"}
+
+[vscode-markdownlint]
+src.vsmarketplace = "DavidAnson.vscode-markdownlint"
+fetch.vsmarketplace = "DavidAnson.vscode-markdownlint"
+passthru = { publisher = "DavidAnson", name = "vscode-markdownlint"}
+
+[markdown-preview-enhanced]
+src.vsmarketplace = "shd101wyy.markdown-preview-enhanced"
+fetch.vsmarketplace = "shd101wyy.markdown-preview-enhanced"
+passthru = { publisher = "shd101wyy", name = "markdown-preview-enhanced"}
+
+[vscode-docker]
+src.vsmarketplace = "ms-azuretools.vscode-docker"
+fetch.vsmarketplace = "ms-azuretools.vscode-docker"
+passthru = { publisher = "ms-azuretools", name = "vscode-docker"}
+
+[ruby-lsp]
+src.vsmarketplace = "Shopify.ruby-lsp"
+fetch.vsmarketplace ="Shopify.ruby-lsp"
+passthru = { publisher = "Shopify", name = "ruby-lsp"}
+
+# [Ruby]
+# src.vsmarketplace = "rebornix.Ruby"
+# fetch.vsmarketplace ="rebornix.Ruby"
+# passthru = { publisher = "rebornix", name = "Ruby"}
+
+# [vscode-ruby]
+# src.vsmarketplace = "wingrunr21.vscode-ruby"
+# fetch.vsmarketplace = "wingrunr21.vscode-ruby"
+# passthru = { publisher = "wingrunr21", name = "vscode-ruby"}
+
+[solargraph]
+src.vsmarketplace = "castwide.solargraph"
+fetch.vsmarketplace = "castwide.solargraph"
+passthru = { publisher = "castwide", name = "solargraph"}
+
+[rails-snippets]
+src.vsmarketplace = "hridoy.rails-snippets"
+fetch.vsmarketplace = "hridoy.rails-snippets"
+passthru = { publisher = "hridoy", name = "rails-snippets"}
+
+[ruby-rubocop]
+src.vsmarketplace = "misogi.ruby-rubocop"
+fetch.vsmarketplace ="misogi.ruby-rubocop"
+passthru = { publisher = "misogi", name = "ruby-rubocop"}
+
+[ruby]
+src.vsmarketplace = "groksrc.ruby"
+fetch.vsmarketplace = "groksrc.ruby"
+passthru = { publisher = "groksrc", name = "ruby"}
+
+[haml]
+src.vsmarketplace = "vayan.haml"
+fetch.vsmarketplace = "vayan.haml"
+passthru = { publisher = "vayan", name = "haml"}
+
+[simple-ruby-erb]
+src.vsmarketplace = "vortizhe.simple-ruby-erb"
+fetch.vsmarketplace = "vortizhe.simple-ruby-erb"
+passthru = { publisher = "vortizhe", name = "simple-ruby-erb"}
+
+[ruby-linter]
+src.vsmarketplace = "hoovercj.ruby-linter"
+fetch.vsmarketplace = "hoovercj.ruby-linter"
+passthru = { publisher = "hoovercj", name = "ruby-linter"}
+
+[ruby-symbols]
+src.vsmarketplace = "miguel-savignano.ruby-symbols"
+fetch.vsmarketplace = "miguel-savignano.ruby-symbols"
+passthru = { publisher = "miguel-savignano", name = "ruby-symbols"}
+
+[emacs-mcx]
+src.vsmarketplace = "tuttieee.emacs-mcx"
+fetch.vsmarketplace = "tuttieee.emacs-mcx"
+passthru = { publisher = "tuttieee", name = "emacs-mcx"}
+
+[vscode-emacs-tab]
+src.vsmarketplace = "garaemon.vscode-emacs-tab"
+fetch.vsmarketplace = "garaemon.vscode-emacs-tab"
+passthru = { publisher = "garaemon", name = "vscode-emacs-tab"}
+
+[remote-ssh-edit]
+src.vsmarketplace = "ms-vscode-remote.remote-ssh-edit"
+fetch.vsmarketplace = "ms-vscode-remote.remote-ssh-edit"
+passthru = { publisher = "ms-vscode-remote", name = "remote-ssh-edit"}
+
+#######
+[cucumberautocomplete]
+src.vsmarketplace = "alexkrechik.cucumberautocomplete"
+fetch.vsmarketplace = "alexkrechik.cucumberautocomplete"
+passthru = { publisher = "alexkrechik", name = "cucumberautocomplete"}
+
+[gherkintablealign]
+src.vsmarketplace = "AlanCole.gherkintablealign"
+fetch.vsmarketplace = "AlanCole.gherkintablealign"
+passthru = { publisher = "AlanCole", name = "gherkintablealign"}
+
+[vscode-direnv]
+src.vsmarketplace = "cab404.vscode-direnv"
+fetch.vsmarketplace = "cab404.vscode-direnv"
+passthru = { publisher = "cab404", name = "vscode-direnv"}
+
+[nix-extension-pack]
+src.vsmarketplace = "pinage404.nix-extension-pack"
+fetch.vsmarketplace = "pinage404.nix-extension-pack"
+passthru = { publisher = "pinage404", name = "nix-extension-pack"}
+
+[nix-ide]
+src.vsmarketplace = "jnoortheen.nix-ide"
+fetch.vsmarketplace = "jnoortheen.nix-ide"
+passthru = { publisher = "jnoortheen", name = "nix-ide"}
+
+# [even-better-toml]
+# src.vsmarketplace = "tamasfe.even-better-toml"
+# fetch.vsmarketplace = "tamasfe.even-better-toml"
+# passthru = { publisher = "tamasfe", name = "even-better-toml"}

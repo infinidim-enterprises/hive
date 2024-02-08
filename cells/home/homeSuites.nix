@@ -1,21 +1,37 @@
 { inputs, cell, ... }:
 
-{
-  cli = [
+rec {
+  # TODO: MAYBE remove and rework default, base
+  base = default;
+  default =
+    [{ disabledModules = inputs.cells.common.lib.disableModulesFrom ./homeModules; }] ++
+    cli;
+
+  cli = with cell.homeProfiles; [
     # TODO: programs.atuin
+    shell.zsh
+    shell.screen
+    shell.cli-tools
+    look-and-feel.starship-prompt
   ];
 
-  desktop = [
-    # TODO: flameshot | https://mipmip.github.io/home-manager-option-search/?query=flameshot
+  desktop = with cell.homeProfiles; [
+    # emacs
+    terminals.tilix
+    terminals.kitty
+    conky
+    xdg
+    qt
   ];
 
-  office = [
-    /*
-      onlyoffice-bin_latest
-
-      foliate # epub reader
-      okular # KDE thing, maybe? pdf reader
-
-    */
+  office = with cell.homeProfiles.office; [
+    pdf
+    viewers
+    printing
+    graphics
+    libreoffice
+    onlyoffice
   ];
+
+  developer.default = [ cell.homeProfiles.developer.git ];
 }

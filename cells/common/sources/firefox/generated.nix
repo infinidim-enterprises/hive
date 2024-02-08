@@ -1208,32 +1208,6 @@
         platforms = platforms.all;
       };
   };
-  "ugetintegration" = rec {
-    pname = "ugetintegration";
-    version = "2.1.3.1";
-    addonId = "uget-integration@slgobinath";
-    url = "https://addons.mozilla.org/firefox/downloads/file/911315/ugetintegration-2.1.3.1.xpi";
-    sha256 = "235f29ca5df79e4e5a338e29ef7cd721bb7873309b56364cc7a4bf4612e1ae85";
-    meta = with lib;
-      {
-        homepage = "https://github.com/ugetdm/uget-integrator";
-        description = "Integrate Mozilla Firefox with uGet download manager.\nPlease note that \"uget-chrome-wrapper\" has been renamed to \"uget-integrator\".\n<a rel=\"nofollow\" href=\"https://prod.outgoing.prod.webservices.mozgcp.net/v1/e231fe36249ab4182cf0474166b098eb0ac98e7813be8faff0618be919e234f3/https%3A//github.com/ugetdm/uget-integrator\">https://github.com/ugetdm/uget-integrator</a>";
-        license = licenses.lgpl3;
-        mozPermissions = [
-          "<all_urls>"
-          "webRequest"
-          "webRequestBlocking"
-          "nativeMessaging"
-          "contextMenus"
-          "downloads"
-          "storage"
-          "cookies"
-          "activeTab"
-          "tabs"
-        ];
-        platforms = platforms.all;
-      };
-  };
   "umatrix" = rec {
     pname = "umatrix";
     version = "1.4.4";

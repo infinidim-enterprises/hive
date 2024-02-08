@@ -24,10 +24,10 @@
   };
   adguardhome = {
     pname = "adguardhome";
-    version = "v0.107.43";
+    version = "v0.107.44";
     src = fetchurl {
-      url = "https://github.com/AdguardTeam/AdGuardHome/releases/download/v0.107.43/AdGuardHome_linux_amd64.tar.gz";
-      sha256 = "sha256-Ck4+7HTKVuLykwVEX1rAWWJE+6bT/oIWQ1LTB7Qkls8=";
+      url = "https://github.com/AdguardTeam/AdGuardHome/releases/download/v0.107.44/AdGuardHome_linux_amd64.tar.gz";
+      sha256 = "sha256-vRn5PEeoqJNjnk7ygWHhYXCHZ8iYzBBHH/P++8NaOnY=";
     };
   };
   age-plugin-trezor = {
@@ -45,15 +45,15 @@
   };
   chatgpt-wrapper = {
     pname = "chatgpt-wrapper";
-    version = "79ec7686d2b015fe44dac01ad250cc328c50d24b";
+    version = "61a0ca3345f904ab9a97a632524b522af0be3290";
     src = fetchFromGitHub {
       owner = "llm-workflow-engine";
       repo = "llm-workflow-engine";
-      rev = "79ec7686d2b015fe44dac01ad250cc328c50d24b";
+      rev = "61a0ca3345f904ab9a97a632524b522af0be3290";
       fetchSubmodules = false;
-      sha256 = "sha256-TfeYxwUVutzpdH+9H7sOCc3VUBZhc35zNSZZTP8hWzo=";
+      sha256 = "sha256-37qhOPWzxlLgumV22kaAQI+XEKzE19EP7fkdPCxqjFA=";
     };
-    date = "2024-01-16";
+    date = "2024-02-07";
   };
   cl-hash-util = {
     pname = "cl-hash-util";
@@ -210,16 +210,16 @@
   };
   ipxe = {
     pname = "ipxe";
-    version = "0cc0f47443ef9711775a748c2b0fb40e38643733";
+    version = "e7ae51b0d75d9b9925748743b91405c99e5c7fec";
     src = fetchgit {
       url = "https://github.com/ipxe/ipxe";
-      rev = "0cc0f47443ef9711775a748c2b0fb40e38643733";
+      rev = "e7ae51b0d75d9b9925748743b91405c99e5c7fec";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-Dmt8bFJAhX6Mxj6dpqhhDdmR1D6bBiN4nm29octlvMw=";
+      sha256 = "sha256-3jGUGn10JD2R2Afu4302G2NwPOyF6dosGmQELlQFX7c=";
     };
-    date = "2024-01-31";
+    date = "2024-02-07";
   };
   langchain = {
     pname = "langchain";
@@ -246,18 +246,18 @@
   };
   logseq = {
     pname = "logseq";
-    version = "0.10.5";
+    version = "0.10.6";
     src = fetchurl {
-      url = "https://github.com/logseq/logseq/releases/download/0.10.5/logseq-linux-x64-0.10.5.AppImage";
-      sha256 = "sha256-F3YbqgvL04P0nXaIVkJlCq/z8hUE0M0UutkBs2omuBE=";
+      url = "https://github.com/logseq/logseq/releases/download/0.10.6/logseq-linux-x64-0.10.6.AppImage";
+      sha256 = "sha256-OUQh+6HRnzxw8Nn/OkU+DkjPKWKpMN0xchD1vPU3KV8=";
     };
   };
   masterpdfeditor = {
     pname = "masterpdfeditor";
-    version = "5.9.81";
+    version = "5.9.82";
     src = fetchurl {
-      url = "https://code-industry.net/public/master-pdf-editor-5.9.81-qt5.x86_64.tar.gz";
-      sha256 = "sha256-fBAEqATEsKqS0Am137A48oTqI0Nv9wItMD75VAyLrJo=";
+      url = "https://code-industry.net/public/master-pdf-editor-5.9.82-qt5.x86_64.tar.gz";
+      sha256 = "sha256-CbrhhQJ0iiXz8hUJEi+/xb2ZGbunuPuIIgmCRgJhNVU=";
     };
   };
   numix-solarized-gtk-theme-git = {
@@ -322,12 +322,12 @@
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "768e0cf423e18cb56eb321f7b73609904d8f1611";
+    version = "0302e47841653952b496fbe1a8be6fb2ebb1c8c4";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";
     };
-    date = "2024-02-05";
+    date = "2024-02-08";
   };
   promnesia = {
     pname = "promnesia";

@@ -80,6 +80,9 @@
 
     sops-ssh-to-age.url = "github:Mic92/ssh-to-age/1.1.6";
     sops-ssh-to-age.inputs.nixpkgs.follows = "nixpkgs-unstable";
+
+    devos-ext-lib.url = "github:divnix/devos-ext-lib/?ref=refs/pull/8/head";
+    devos-ext-lib.inputs.nixpkgs.follows = "nixpkgs-unstable";
   };
 
   # nixpkgs & home-manager
@@ -107,6 +110,7 @@
     nixos-unstable-linux_6_2.url = "github:nixos/nixpkgs/63464b8c2837ec56e1d610f5bd2a9b8e1f532c07";
     nixos-unstable-linux_6_5.url = "github:nixos/nixpkgs/b644d97bda6dae837d577e28383c10aa51e5e2d2";
     nixos-22-11.url = "github:nixos/nixpkgs/release-22.11";
+    nixpkgs-22-11.follows = "nixos-22-11"; # TODO: rework stumpwm-git!
     k8s.url = "github:nixos/nixpkgs/3005f20ce0aaa58169cdee57c8aa12e5f1b6e1b3";
   };
 

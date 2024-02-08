@@ -29,35 +29,11 @@ creation_rules:
       - pgp:
           - *vod
           - *oglaroon
-          # - *server-nas
-          # - *octoprint
-          # - *hyperos
-          # - *depsos
-          # - *oracle
-          # - *tl-wsl
-          # - *voron
-          # - *rockiosk
-
-  - path_regex: cells/secrets/sops/k3s.yaml
-    key_groups:
-      - pgp:
-          - *vod
-          - *oglaroon
-
-  - path_regex: cells/secrets/sops/external-ips.yaml
-    key_groups:
-      - pgp:
-          - *vod
-          # - *depsos
 
   - path_regex: cells/secrets/sops/wifi.yaml
     key_groups:
       - pgp:
           - *vod
-          # - *squadbook
-          # - *octoprint
-          # - *voron
-          # - *rockiosk
 
   - path_regex: cells/secrets/sops/ssh.*$
     key_groups:

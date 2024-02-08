@@ -5,6 +5,7 @@ let
   nixpkgs-22-11 = import inputs.nixos-22-11 {
     inherit (inputs.nixpkgs) system;
     config.allowUnfree = true;
+    overlays = [ cell.overlays.sources ];
   };
 in
 

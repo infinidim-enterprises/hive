@@ -214,5 +214,5 @@ fetch.github = "lhope/cl-syslog"
 # fetch.url = "https://github.com/Ferdi265/numix-solarized-gtk-theme/releases/download/20210831/NumixSolarized-20210831.tar.gz"
 # Office apps
 [masterpdfeditor]
-src.manual = "5.9.81"
+src.manual = "5.9.82"
 fetch.url = "https://code-industry.net/public/master-pdf-editor-$ver-qt5.x86_64.tar.gz"

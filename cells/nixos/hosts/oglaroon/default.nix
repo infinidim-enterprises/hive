@@ -10,17 +10,22 @@ rec {
     pkgs = import inputs.latest {
       inherit (inputs.nixpkgs) system;
       config.allowUnfree = true;
-      overlays = [
-        inputs.cells.common.overlays.latest-overrides
-        inputs.cells.common.overlays.sources
+      overlays = with inputs.cells.common.overlays; [
+        sources
+        inputs.cells.emacs.overlays.sources
+        latest-overrides
+        make-desktopitem
+        vscode-extensions
+        firefox-addons
+        masterpdfeditor
+        numix-solarized-gtk-theme
+        stumpwm
       ];
     };
   };
 
   imports =
-    [
-      # ({ config, ... }: (cell.lib.mkHome "vod" config.networking.hostName "zsh"))
-    ]
+    [ ({ config, ... }: (cell.lib.mkHome "vod" config.networking.hostName "zsh")) ]
     ++ cell.nixosSuites.networking
     ++ cell.nixosSuites.base
     ++ [

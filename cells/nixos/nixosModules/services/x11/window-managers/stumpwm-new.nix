@@ -9,7 +9,7 @@ let
 
   fontPkg = pkgs.symlinkJoin {
     name = "hmLocalFontsDir";
-    paths = config.fonts.fonts;
+    paths = config.fonts.packages;
   };
 
   fontsDir = pkgs.runCommandNoCC "fonts-dir" { } ''

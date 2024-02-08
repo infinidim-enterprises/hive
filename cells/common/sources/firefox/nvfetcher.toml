@@ -36,9 +36,6 @@ slug = "browserpass-ce"
 slug = "bukubrow"
 
 [[addons]]
-slug = "ugetintegration"
-
-[[addons]]
 slug = "reduxdevtools"
 
 [[addons]]

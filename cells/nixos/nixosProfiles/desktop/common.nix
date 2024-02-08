@@ -9,7 +9,7 @@
 
   imports = [
     # inputs.cells.bootstrap.nixosProfiles.core.kernel.binfmt
-    cell.nixosProfiles.fonts
+    cell.nixosProfiles.desktop.fonts
     # cell.nixosProfiles.desktop.printer-kyocera
   ];
 

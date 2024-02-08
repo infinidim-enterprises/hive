@@ -1,5 +1,5 @@
 { inputs, cell, ... }:
-
+# FIXME: remove this profile, as there's one in homeProfiles!
 { pkgs, lib, config, ... }:
 lib.mkMerge [
   (lib.mkIf (config ? home-manager) {
@@ -22,7 +22,11 @@ lib.mkMerge [
           lockPref("security.identityblock.show_extended_validation", true);
           lockPref("extensions.autoDisableScopes", 0)
         '';
-
+        /*
+          FIXME: firefox-esr DOES support sideloading addons
+          NOTE: https://blog.mozilla.org/addons/2020/03/10/support-for-extension-sideloading-has-ended
+          NOTE: https://github.com/NixOS/nixpkgs/issues/273509
+          NOTE: https://github.com/NixOS/nixpkgs/pull/269817
         programs.firefox.extensions = with pkgs.firefox-addons; [
           # ether-metamask
           russian-spellchecking-dic-3703.value
@@ -51,7 +55,7 @@ lib.mkMerge [
           # ublock-origin
           # umatrix
         ];
-
+        */
         programs.firefox.profiles.default = {
           id = 0;
           name = "default";

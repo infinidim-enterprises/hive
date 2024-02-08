@@ -10,37 +10,42 @@ in
   inherit
     (latest)
     gnupg
+    sops
+
+    direnv
     editorconfig-checker
+
+    flameshot
 
     android-tools
     vscode
+
     alejandra
     rnix-lsp
     nil
-    terraform
-    terraform-ls
-    kubelogin-oidc
-    minikube
-    kubernetes-helm
     nixpkgs-fmt
     statix
     nixUnstable
     cachix
     nix-index
-    _1password
+
+    terraform
+    terraform-ls
+
+    kubelogin-oidc
+    minikube
+    kubernetes-helm
     wrapHelm
     kubectl
     kubernetes-helmPlugins
-    direnv
-    amazon-ecr-credential-helper
 
+    amazon-ecr-credential-helper
 
     dive# dive - A tool for exploring each layer in a docker image
     act# act - Run your GitHub Actions locally
 
     tailscale
     ffmpeg_5-full
-    sops
     ;
 
   nvfetcher = inputs.nvfetcher.packages.default;

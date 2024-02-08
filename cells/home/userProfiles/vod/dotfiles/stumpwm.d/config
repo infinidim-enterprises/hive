@@ -1,0 +1,46 @@
+;; -*-lisp-*-
+(require :anaphora)
+(require :cl-hash-util)
+(require :cl-strings)
+
+(defpackage vod
+  (:use :cl :cl-strings :stumpwm :alexandria :anaphora)
+  (:import-from :cl-hash-util :hash :hash-get :hash-keys)
+  (:shadowing-import-from :cl-strings :starts-with :ends-with :repeat))
+
+(in-package :vod)
+
+(defvar *config-path* (uiop:subpathname* (user-homedir-pathname) ".config/stumpwm/"))
+(load (uiop:subpathname* *config-path* "preload.lisp"))
+
+(awhen (probe-file (uiop:subpathname* *config-path* "local.lisp"))
+       (load it))
+
+(load-conf "macro")
+(load-conf "utils")
+(load-conf "clean")
+(load-conf "defaults")
+(load-conf "debug")
+(load-conf "menu")
+(load-conf "menu-defs")
+(load-conf "app-menu")
+(load-conf "emacs-sly")
+(load-conf "window")
+(load-conf "applications")
+(load-conf "session")
+(load-conf "keymap")
+(load-conf "look-and-feel")
+
+(when stumpwm:*INITIALIZING*
+  (load-conf "autostart"))
+
+(require :dbus)
+(defun register-with-session-manager ()
+  (dbus:with-open-bus (dbus:bus (dbus:session-server-addresses))
+    (dbus:with-introspected-object (session-manager dbus:bus "/org/gnome/SessionManager" "org.gnome.SessionManager")
+      (session-manager "org.gnome.SessionManager" "RegisterClient"
+                       "stumpwm" (sb-ext:posix-getenv "DESKTOP_AUTOSTART_ID") '() '() -1))))
+
+;; TODO: Move that part into stumpwm nixos module!
+;; (anaphora:awhen (sb-ext:posix-getenv "DESKTOP_AUTOSTART_ID")
+;;                 (register-with-session-manager))

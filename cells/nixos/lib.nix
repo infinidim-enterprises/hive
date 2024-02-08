@@ -25,46 +25,51 @@ in
             # NOTE: compatibility layer for old, digga based config
             inherit inputs;
             inherit (inputs) self;
-            suites = cell.homeSuites;
-            profiles = cell.homeProfiles;
+            suites = inputs.cells.home.homeSuites;
+            profiles = inputs.cells.home.homeProfiles // {
+              # TODO: refactor and remove compatibility layer!
+              inherit (inputs.cells.emacs.homeProfiles) emacs;
+            };
           };
 
           home-manager.users.${username} = { osConfig, ... }: {
             inherit (cell.lib.mkHomeConfig host username) imports;
             programs.${shell}.enable = osConfig.programs.${shell}.enable;
+            home.homeDirectory = "/home/${username}";
             home.stateVersion = osConfig.bee.pkgs.lib.trivial.release;
           };
         })
       ]
       ++ optionals (shell == "zsh") [{ programs.zsh.enableCompletion = true; }]
-      ++ optionals (hasAttrByPath [ username ] cell.userProfiles) [ cell.userProfiles.${username} ];
+      ++ optionals (hasAttrByPath [ username ] inputs.cells.home.userProfiles)
+        [ inputs.cells.home.userProfiles.${username} ];
   };
 
   mkHomeConfig = host: username: {
-    bee = cell.nixosConfigurations.${host}.bee;
-    home = {
-      inherit username;
-      homeDirectory = "/home/${username}";
-      stateVersion = cell.nixosConfigurations.${host}.bee.pkgs.lib.trivial.release;
-    };
+    # bee = cell.nixosConfigurations.${host}.bee;
+    # home = {
+    #   inherit username;
+    #   homeDirectory = "/home/${username}";
+    #   stateVersion = cell.nixosConfigurations.${host}.bee.pkgs.lib.trivial.release;
+    # };
     imports =
       let
         hostSpecific = optionals
           (hasAttrByPath
             [ "hostSpecific" host ]
-            cell.homeSuites)
-          cell.homeSuites.hostSpecific.${host};
+            inputs.cells.home.homeSuites)
+          inputs.cells.home.homeSuites.hostSpecific.${host};
         userSpecific = optionals
           (hasAttrByPath
             [ "userSpecific" username ]
-            cell.homeSuites)
-          cell.homeSuites.userSpecific.${username};
+            inputs.cells.home.homeSuites)
+          inputs.cells.home.homeSuites.userSpecific.${username};
       in
       hostSpecific ++
       userSpecific ++
-      cell.homeSuites.default ++
-      [{ disabledModules = disableModulesFrom ./homeModules; }] ++
-      (with cell.homeModules; [
+      inputs.cells.home.homeSuites.default ++
+      # [{ disabledModules = disableModulesFrom ./homeModules; }] ++
+      (with inputs.cells.home.homeModules; [
         services.trezor-agent
         services.emacs
         programs.firefox
@@ -73,7 +78,7 @@ in
         programs.activitywatch
       ]) ++
       [
-        # "${inputs.home-activitywatch}/modules/services/activitywatch.nix"
+        # TODO: "${inputs.home-activitywatch}/modules/services/activitywatch.nix"
       ];
   };
 }

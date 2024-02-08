@@ -4,40 +4,19 @@ let
   inherit (cell.lib) filterPath;
   inherit (cell.lib.haumea.transformers) raiseDefault;
 
-  # TODO: pass nixpkgs as well,  implicit bee module
-  importSystemConfigurations = {
+  importNixosConfigurations = {
     __functor = _self:
-      { src
-      , skip ? [ ]
-      , suites
-      , profiles
-      , userProfiles
-      , lib
-      , inputs
-      , cell
-      , overlays ? { }
-      , ...
-      }:
+      { src, skip ? [ ], inputs, cell, ... }:
 
       haumea.lib.load {
         src = filterPath { inherit skip src; };
         transformer = [ raiseDefault ];
-        inputs = {
-          inherit
-            suites
-            profiles
-            userProfiles
-            lib
-            inputs
-            cell
-            overlays;
-        };
+        inputs = { inherit inputs cell; };
       };
 
-    # TODO: doc
     doc = ''
-      importSystemConfigurations
+      importNixosConfigurations { skip = [ "hostX" ]; src = ./hosts; inherit inputs cell; }
     '';
   };
 in
-importSystemConfigurations
+importNixosConfigurations

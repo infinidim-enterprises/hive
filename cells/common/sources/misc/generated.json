@@ -42,11 +42,11 @@
     "pinned": false,
     "src": {
       "name": null,
-      "sha256": "sha256-Ck4+7HTKVuLykwVEX1rAWWJE+6bT/oIWQ1LTB7Qkls8=",
+      "sha256": "sha256-vRn5PEeoqJNjnk7ygWHhYXCHZ8iYzBBHH/P++8NaOnY=",
       "type": "url",
-      "url": "https://github.com/AdguardTeam/AdGuardHome/releases/download/v0.107.43/AdGuardHome_linux_amd64.tar.gz"
+      "url": "https://github.com/AdguardTeam/AdGuardHome/releases/download/v0.107.44/AdGuardHome_linux_amd64.tar.gz"
     },
-    "version": "v0.107.43"
+    "version": "v0.107.44"
   },
   "age-plugin-trezor": {
     "cargoLocks": null,
@@ -72,7 +72,7 @@
   },
   "chatgpt-wrapper": {
     "cargoLocks": null,
-    "date": "2024-01-16",
+    "date": "2024-02-07",
     "extract": null,
     "name": "chatgpt-wrapper",
     "passthru": null,
@@ -84,11 +84,11 @@
       "name": null,
       "owner": "llm-workflow-engine",
       "repo": "llm-workflow-engine",
-      "rev": "79ec7686d2b015fe44dac01ad250cc328c50d24b",
-      "sha256": "sha256-TfeYxwUVutzpdH+9H7sOCc3VUBZhc35zNSZZTP8hWzo=",
+      "rev": "61a0ca3345f904ab9a97a632524b522af0be3290",
+      "sha256": "sha256-37qhOPWzxlLgumV22kaAQI+XEKzE19EP7fkdPCxqjFA=",
       "type": "github"
     },
-    "version": "79ec7686d2b015fe44dac01ad250cc328c50d24b"
+    "version": "61a0ca3345f904ab9a97a632524b522af0be3290"
   },
   "cl-hash-util": {
     "cargoLocks": null,
@@ -346,7 +346,7 @@
   },
   "ipxe": {
     "cargoLocks": null,
-    "date": "2024-01-31",
+    "date": "2024-02-07",
     "extract": null,
     "name": "ipxe",
     "passthru": null,
@@ -356,12 +356,12 @@
       "fetchSubmodules": false,
       "leaveDotGit": false,
       "name": null,
-      "rev": "0cc0f47443ef9711775a748c2b0fb40e38643733",
-      "sha256": "sha256-Dmt8bFJAhX6Mxj6dpqhhDdmR1D6bBiN4nm29octlvMw=",
+      "rev": "e7ae51b0d75d9b9925748743b91405c99e5c7fec",
+      "sha256": "sha256-3jGUGn10JD2R2Afu4302G2NwPOyF6dosGmQELlQFX7c=",
       "type": "git",
       "url": "https://github.com/ipxe/ipxe"
     },
-    "version": "0cc0f47443ef9711775a748c2b0fb40e38643733"
+    "version": "e7ae51b0d75d9b9925748743b91405c99e5c7fec"
   },
   "langchain": {
     "cargoLocks": null,
@@ -412,11 +412,11 @@
     "pinned": false,
     "src": {
       "name": null,
-      "sha256": "sha256-F3YbqgvL04P0nXaIVkJlCq/z8hUE0M0UutkBs2omuBE=",
+      "sha256": "sha256-OUQh+6HRnzxw8Nn/OkU+DkjPKWKpMN0xchD1vPU3KV8=",
       "type": "url",
-      "url": "https://github.com/logseq/logseq/releases/download/0.10.5/logseq-linux-x64-0.10.5.AppImage"
+      "url": "https://github.com/logseq/logseq/releases/download/0.10.6/logseq-linux-x64-0.10.6.AppImage"
     },
-    "version": "0.10.5"
+    "version": "0.10.6"
   },
   "masterpdfeditor": {
     "cargoLocks": null,
@@ -427,11 +427,11 @@
     "pinned": false,
     "src": {
       "name": null,
-      "sha256": "sha256-fBAEqATEsKqS0Am137A48oTqI0Nv9wItMD75VAyLrJo=",
+      "sha256": "sha256-CbrhhQJ0iiXz8hUJEi+/xb2ZGbunuPuIIgmCRgJhNVU=",
       "type": "url",
-      "url": "https://code-industry.net/public/master-pdf-editor-5.9.81-qt5.x86_64.tar.gz"
+      "url": "https://code-industry.net/public/master-pdf-editor-5.9.82-qt5.x86_64.tar.gz"
     },
-    "version": "5.9.81"
+    "version": "5.9.82"
   },
   "numix-solarized-gtk-theme-git": {
     "cargoLocks": null,
@@ -526,7 +526,7 @@
   },
   "pbkdf2-sha512": {
     "cargoLocks": null,
-    "date": "2024-02-05",
+    "date": "2024-02-08",
     "extract": null,
     "name": "pbkdf2-sha512",
     "passthru": null,
@@ -537,7 +537,7 @@
       "type": "url",
       "url": "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c"
     },
-    "version": "768e0cf423e18cb56eb321f7b73609904d8f1611"
+    "version": "0302e47841653952b496fbe1a8be6fb2ebb1c8c4"
   },
   "promnesia": {
     "cargoLocks": null,
