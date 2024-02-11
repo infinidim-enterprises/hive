@@ -37,6 +37,8 @@
     disko.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
     std.follows = "hive/std";
+    std.inputs.microvm.follows = "microvm";
+    std.inputs.arion.follows = "arion";
 
     # std.url = "github:divnix/std/release/0.24";
     # std.inputs.nixpkgs.follows = "nixpkgs-unstable";

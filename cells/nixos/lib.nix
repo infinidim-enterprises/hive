@@ -1,6 +1,6 @@
 { inputs, cell, ... }:
 let
-  inherit (inputs.nixpkgs-lib.lib // builtins) optionals hasAttrByPath filterAttrs;
+  inherit (inputs.nixpkgs-lib.lib // builtins) optionals optional hasAttrByPath filterAttrs;
   inherit (inputs.cells.common.lib) disableModulesFrom;
   # nixpkgs = inputs.nixpkgs.appendOverlays cell.overlays.desktop;
 
@@ -14,7 +14,7 @@ in
     imports =
       [
         cell.nixosModules.hm-system-defaults
-
+        (inputs.cells.home.userProfiles.extraGroupsMod username)
         ({ pkgs, lib, config, ... }: {
           programs.${shell}.enable = true;
           users.users.${username}.shell = pkgs.${shell};
@@ -23,11 +23,11 @@ in
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = {
             # NOTE: compatibility layer for old, digga based config
+            # TODO: refactor and remove compatibility layer!
             inherit inputs;
             inherit (inputs) self;
             suites = inputs.cells.home.homeSuites;
             profiles = inputs.cells.home.homeProfiles // {
-              # TODO: refactor and remove compatibility layer!
               inherit (inputs.cells.emacs.homeProfiles) emacs;
             };
           };
@@ -40,18 +40,12 @@ in
           };
         })
       ]
-      ++ optionals (shell == "zsh") [{ programs.zsh.enableCompletion = true; }]
-      ++ optionals (hasAttrByPath [ username ] inputs.cells.home.userProfiles)
-        [ inputs.cells.home.userProfiles.${username} ];
+      ++ optional (shell == "zsh") { programs.zsh.enableCompletion = true; }
+      ++ optional (hasAttrByPath [ username ] inputs.cells.home.userProfiles)
+        inputs.cells.home.userProfiles.${username};
   };
 
   mkHomeConfig = host: username: {
-    # bee = cell.nixosConfigurations.${host}.bee;
-    # home = {
-    #   inherit username;
-    #   homeDirectory = "/home/${username}";
-    #   stateVersion = cell.nixosConfigurations.${host}.bee.pkgs.lib.trivial.release;
-    # };
     imports =
       let
         hostSpecific = optionals
@@ -68,7 +62,6 @@ in
       hostSpecific ++
       userSpecific ++
       inputs.cells.home.homeSuites.default ++
-      # [{ disabledModules = disableModulesFrom ./homeModules; }] ++
       (with inputs.cells.home.homeModules; [
         services.trezor-agent
         services.emacs

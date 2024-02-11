@@ -46,7 +46,6 @@ let
   infra = pkgWithCategory "infra";
   ci = pkgWithCategory "ci";
 
-  # export PATH=${inputs.latest.nixUnstable}/bin:$PATH
   repl = writeShellScriptBin "repl" ''
     if [ -z "$1" ]; then
        ${nixpkgs.nixUnstable}/bin/nix repl --argstr host "$HOST" --argstr flakePath "$PRJ_ROOT" ${./_repl.nix} --show-trace
@@ -145,6 +144,7 @@ lib.mapAttrs (_: std.lib.dev.mkShell) {
     nixago =
       config.githubworkflows
       ++ [
+        config.just
         config.conform
         config.treefmt
         config.editorconfig
@@ -169,7 +169,7 @@ lib.mapAttrs (_: std.lib.dev.mkShell) {
 
       (infra sops)
       (infra inputs.colmena.packages.colmena)
-      (infra inputs.home.packages.home-manager)
+      # (infra inputs.home.packages.home-manager)
       (infra inputs.nixos-generators.packages.nixos-generate)
       (infra ssh-to-pgp)
       (infra ssh-to-age)
@@ -195,14 +195,14 @@ lib.mapAttrs (_: std.lib.dev.mkShell) {
         package = repl;
       }
 
-      {
-        category = "nix";
-        name = "build-on-target";
-        help = "Helper script to build derivation on remote host";
-        package = build-on-target;
-      }
+      # {
+      #   category = "nix";
+      #   name = "build-on-target";
+      #   help = "Helper script to build derivation on remote host";
+      #   package = build-on-target;
+      # }
 
-      (linter editorconfig-checker)
+      # (linter editorconfig-checker)
       (linter nixpkgs-fmt)
 
       (docs mdbook)

@@ -26,6 +26,10 @@ let
 
 in
 {
+  just = mkNixago std.lib.cfg.just {
+    data.tasks = import ./justfile.nix { inherit inputs cell; };
+  };
+
   editorconfig = mkNixago std.lib.cfg.editorconfig {
     data = {
       root = true;
@@ -68,6 +72,7 @@ in
         nix = {
           command = "nixpkgs-fmt";
           includes = [ "*.nix" ];
+          excludes = [ "generated.nix" ];
         };
         prettier = {
           command = "prettier";
@@ -85,6 +90,10 @@ in
             "*.ts"
             "*.yaml"
             # "*.toml"
+          ];
+          excludes = [
+            "test/*"
+            "generated.json"
           ];
         };
         shell = {
@@ -120,7 +129,6 @@ in
       builds.include = [
         "devShells.x86_64-linux.*"
         "packages.x86_64-linux.*"
-        # amend
         "nixosConfigurations.*"
       ];
     };

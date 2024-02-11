@@ -34,7 +34,7 @@ rec {
       (import ./_hardwareProfile.nix { inherit inputs cell; })
 
       cell.nixosProfiles.desktop.printer-kyocera
-      cell.nixosSuites.virtualization.vod
+      cell.nixosSuites.virtualization
       cell.nixosProfiles.networking.adguardhome
 
       ({ pkgs, ... }: {
