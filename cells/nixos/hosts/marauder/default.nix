@@ -28,14 +28,9 @@ rec {
   imports =
     cell.nixosSuites.base
     ++ cell.nixosSuites.networking
-    ++ cell.nixosSuites.virtualization
-    ++ [ (cell.lib.mkHome "vod" "zsh") ]
     ++ [
       bee.home.nixosModules.home-manager
       (import ./_hardwareProfile.nix { inherit inputs cell; })
-
-      cell.nixosProfiles.desktop.printer-kyocera
-      cell.nixosProfiles.networking.adguardhome
 
       ({ pkgs, ... }: {
         systemd.network.networks.local-eth.matchConfig.Name = "eno1";

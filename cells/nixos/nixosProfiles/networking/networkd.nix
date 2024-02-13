@@ -151,7 +151,7 @@ mkMerge [
   })
 
   (mkIf config.networking.wireless.enable {
-    services.udev.packages = with pkgs; [ crda ];
+    services.udev.packages = with pkgs; optional (versionOlder "4.16" config.boot.kernelPackages.kernel.version) [ crda ];
     # FIXME: networks.lan.
 
     systemd.network.networks.wifi-generic = {

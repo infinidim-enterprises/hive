@@ -212,7 +212,9 @@ in
           in
           {
             options.services.xserver.windowManager.stumpwm-new.confDir = with lib.types; lib.mkOption {
-              default = let tPath = "${self}/users/${name}/dotfiles/stumpwm.d"; in if builtins.pathExists tPath then tPath else null;
+              default = null;
+              # let tPath = "${self}/users/${name}/dotfiles/stumpwm.d";
+              # in if builtins.pathExists tPath then tPath else null;
               type = nullOr (oneOf [ path string ]);
               apply = v: if v != null then builtins.toPath v else null;
               description = "Path to stumpwm config dir";

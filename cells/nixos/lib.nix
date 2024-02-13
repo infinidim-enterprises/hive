@@ -10,13 +10,16 @@ in
 {
   inherit isZfs;
 
-  mkHome = username: host: shell: {
+  mkHome = username: shell: {
     imports =
       [
         cell.nixosModules.hm-system-defaults
         (inputs.cells.home.userProfiles.extraGroupsMod username)
-        ({ pkgs, lib, config, ... }: {
-          programs.${shell}.enable = true;
+        ({ pkgs, ... }: {
+          programs.${shell} = {
+            enable = true;
+            enableCompletion = true;
+          };
           users.users.${username}.shell = pkgs.${shell};
 
           home-manager.useGlobalPkgs = true;
@@ -27,51 +30,34 @@ in
             inherit inputs;
             inherit (inputs) self;
             suites = inputs.cells.home.homeSuites;
-            profiles = inputs.cells.home.homeProfiles // {
-              inherit (inputs.cells.emacs.homeProfiles) emacs;
-            };
+            profiles =
+              inputs.cells.home.homeProfiles //
+              { inherit (inputs.cells.emacs.homeProfiles) emacs; };
           };
 
-          home-manager.users.${username} = { osConfig, ... }: {
-            inherit (cell.lib.mkHomeConfig host username) imports;
-            programs.${shell}.enable = osConfig.programs.${shell}.enable;
-            home.homeDirectory = "/home/${username}";
-            home.stateVersion = osConfig.bee.pkgs.lib.trivial.release;
-          };
+          home-manager.users.${username} = { osConfig, ... }:
+            {
+              programs.${shell}.enable = osConfig.programs.${shell}.enable;
+              home.homeDirectory = osConfig.users.users.${username}.home;
+              home.stateVersion = osConfig.bee.pkgs.lib.trivial.release;
+              imports =
+                inputs.cells.home.homeSuites.default ++
+                (with inputs.cells.home.homeModules; [
+                  services.trezor-agent
+                  services.emacs
+                  programs.firefox
+                  programs.promnesia
+                  programs.chemacs
+                  programs.activitywatch
+                ]) ++
+                [
+                  # TODO: "${inputs.home-activitywatch}/modules/services/activitywatch.nix"
+                ];
+
+            };
         })
       ]
-      ++ optional (shell == "zsh") { programs.zsh.enableCompletion = true; }
       ++ optional (hasAttrByPath [ username ] inputs.cells.home.userProfiles)
         inputs.cells.home.userProfiles.${username};
-  };
-
-  mkHomeConfig = host: username: {
-    imports =
-      let
-        hostSpecific = optionals
-          (hasAttrByPath
-            [ "hostSpecific" host ]
-            inputs.cells.home.homeSuites)
-          inputs.cells.home.homeSuites.hostSpecific.${host};
-        userSpecific = optionals
-          (hasAttrByPath
-            [ "userSpecific" username ]
-            inputs.cells.home.homeSuites)
-          inputs.cells.home.homeSuites.userSpecific.${username};
-      in
-      hostSpecific ++
-      userSpecific ++
-      inputs.cells.home.homeSuites.default ++
-      (with inputs.cells.home.homeModules; [
-        services.trezor-agent
-        services.emacs
-        programs.firefox
-        programs.promnesia
-        programs.chemacs
-        programs.activitywatch
-      ]) ++
-      [
-        # TODO: "${inputs.home-activitywatch}/modules/services/activitywatch.nix"
-      ];
   };
 }

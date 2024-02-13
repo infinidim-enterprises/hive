@@ -198,6 +198,43 @@ in
 
   githubworkflows =
     let
+      common_steps = [
+        {
+          name = "Checkout repository";
+          uses = "actions/checkout@v4.1.1";
+        }
+        {
+          name = "Install Nix";
+          uses = "cachix/install-nix-action@v25";
+          "with" = {
+            nix_path = "nixpkgs=channel:nixos-23.11";
+            extra_nix_config = "access-tokens = github.com=\${{ secrets.GITHUB_TOKEN }}";
+          };
+        }
+        {
+          uses = "cachix/cachix-action@v14";
+          "with" = {
+            name = "njk";
+            extraPullNames = "cuda-maintainers, mic92, nix-community, nrdxp";
+            authToken = "\${{ secrets.CACHIX_AUTH_TOKEN }}";
+            signingKey = "\${{ secrets.CACHIX_SIGNING_KEY }}";
+          };
+        }
+        {
+          name = "Free Disk Space";
+          uses = "jlumbroso/free-disk-space@main";
+          "with" = {
+            tool-cache = true;
+            android = true;
+            dotnet = true;
+            haskell = true;
+            large-packages = true;
+            docker-images = true;
+            swap-storage = true;
+          };
+        }
+      ];
+
       devshell-x86_64-linux = mkNixago {
         data = {
           name = "Build devshell [x86_64-linux]";
@@ -206,28 +243,7 @@ in
           jobs = {
             build_shell = {
               runs-on = "ubuntu-latest";
-              steps = [
-                {
-                  name = "Checkout repository";
-                  uses = "actions/checkout@v4.1.1";
-                }
-                {
-                  name = "Install Nix";
-                  uses = "cachix/install-nix-action@v25";
-                  "with" = {
-                    nix_path = "nixpkgs=channel:nixos-23.11";
-                    extra_nix_config = "access-tokens = github.com=\${{ secrets.GITHUB_TOKEN }}";
-                  };
-                }
-                {
-                  uses = "cachix/cachix-action@v14";
-                  "with" = {
-                    name = "njk";
-                    extraPullNames = "cuda-maintainers, mic92, nix-community, nrdxp";
-                    authToken = "\${{ secrets.CACHIX_AUTH_TOKEN }}";
-                    signingKey = "\${{ secrets.CACHIX_SIGNING_KEY }}";
-                  };
-                }
+              steps = common_steps ++ [
                 {
                   name = "Build devshell";
                   run = ''nix develop --command "menu"'';
@@ -255,24 +271,7 @@ in
           };
           jobs.build_system = {
             runs-on = "ubuntu-latest";
-            steps = [
-              {
-                name = "Checkout repository";
-                uses = "actions/checkout@v4.1.1";
-              }
-              {
-                name = "Install Nix";
-                uses = "cachix/install-nix-action@v25";
-                "with".nix_path = "nixpkgs=channel:nixos-23.11";
-                "with".extra_nix_config = "access-tokens = github.com=\${{ secrets.GITHUB_TOKEN }}";
-              }
-              {
-                uses = "cachix/cachix-action@v14";
-                "with".name = "njk";
-                "with".extraPullNames = "cuda-maintainers, mic92, nix-community, nrdxp";
-                "with".authToken = "\${{ secrets.CACHIX_AUTH_TOKEN }}";
-                "with".signingKey = "\${{ secrets.CACHIX_SIGNING_KEY }}";
-              }
+            steps = common_steps ++ [
               {
                 name = "Build system configuration";
                 run = ''nix build ".#nixosConfigurations.''${{ inputs.configuration }}.config.system.build.toplevel"'';
@@ -311,24 +310,7 @@ in
           on.workflow_dispatch = null;
           on.schedule = [{ cron = "0 0 * * 6"; }];
           jobs.lockfile.runs-on = "ubuntu-latest";
-          jobs.lockfile.steps = [
-            {
-              name = "Checkout repository";
-              uses = "actions/checkout@v4.1.1";
-            }
-            {
-              name = "Install Nix";
-              uses = "cachix/install-nix-action@v25";
-              "with".nix_path = "nixpkgs=channel:nixos-23.11";
-              "with".extra_nix_config = "access-tokens = github.com=\${{ secrets.GITHUB_TOKEN }}";
-            }
-            {
-              uses = "cachix/cachix-action@v14";
-              "with".name = "njk";
-              "with".extraPullNames = "cuda-maintainers, mic92, nix-community, nrdxp";
-              "with".authToken = "\${{ secrets.CACHIX_AUTH_TOKEN }}";
-              "with".signingKey = "\${{ secrets.CACHIX_SIGNING_KEY }}";
-            }
+          jobs.lockfile.steps = common_steps ++ [
             {
               name = "Configure git";
               run = ''

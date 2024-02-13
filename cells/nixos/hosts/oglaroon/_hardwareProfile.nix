@@ -18,6 +18,8 @@
   imports =
     [
       cell.nixosProfiles.hardware.common
+      cell.nixosProfiles.hardware.tlp
+      cell.nixosProfiles.hardware.fwupd
       cell.nixosProfiles.hardware.amd
       cell.nixosProfiles.core.kernel.physical-access-system
       # TODO: cell.nixosProfiles.hardware.rtw89

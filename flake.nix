@@ -102,6 +102,9 @@
     home-unstable.url = "github:nix-community/home-manager";
     home-unstable.inputs.nixpkgs.follows = "latest";
 
+    home-activitywatch.url = "github:nix-community/home-manager?ref=pull/4429/head";
+    home-activitywatch.inputs.nixpkgs.follows = "latest";
+
     srvos.url = "github:nix-community/srvos";
     srvos.inputs.nixpkgs.follows = "latest";
     srvos.inputs.nixos-23_05.follows = "nixos";
