@@ -5,6 +5,8 @@ lib.mkIf config.programs.zsh.enable
   home.file."${dotDir}/lib".source = ./libzsh;
   # NOTE: skim is a rust replacement for perl programs.fzf.enable = true;
 
+  programs.navi.enable = true;
+
   # TODO: maybe replace it with https://github.com/cantino/mcfly
   programs.skim = {
     enable = true;
@@ -25,10 +27,10 @@ lib.mkIf config.programs.zsh.enable
     "\\C-h" = "backward-kill-word";
   };
 
+  # ${lib.optionalString (lib.elem pkgs.navi config.home.packages) "source <(navi widget zsh)"}
   programs.zsh.dotDir = dotDir;
   programs.zsh.initExtra = ''
     autoload -Uz +X bashcompinit && bashcompinit
-    ${lib.optionalString (lib.elem pkgs.navi config.home.packages) "source <(navi widget zsh)"}
     for config_file ($ZDOTDIR/lib/*.zsh); do
       source $config_file
     done

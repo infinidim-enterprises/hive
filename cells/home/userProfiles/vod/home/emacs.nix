@@ -133,8 +133,8 @@ in
   home.file."bin/css-ls".source = "${pkgs.nodePackages.vscode-css-languageserver-bin}/bin/css-languageserver";
 
   home.packages = with pkgs; [
-    python39Packages.grip
-    python39Full # treemacs seems to want that
+    python3Packages.grip
+    python3Full # treemacs seems to want that
     gnuplot
 
     openjdk11 # plantuml preview and friends

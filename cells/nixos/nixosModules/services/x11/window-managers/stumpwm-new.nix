@@ -171,7 +171,7 @@ in
     (mkIf cfg.enable {
       xdg.mime.enable = true;
       services.xserver = {
-        layout = "us";
+        xkb.layout = "us";
         enable = true;
         updateDbusEnvironment = true;
         desktopManager.mate.enable = true;
