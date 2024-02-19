@@ -11,7 +11,7 @@ let
   ssh-to-age = inputs.sops-ssh-to-age.packages.default;
 
   inherit
-    (nixpkgs.appendOverlays [ inputs.cells.common.overlays.latest-overrides ])
+    (nixpkgs.appendOverlays [ inputs.cells.common.overlays.nixpkgs-unstable-overrides ])
     gnupg
     alejandra
     nixUnstable

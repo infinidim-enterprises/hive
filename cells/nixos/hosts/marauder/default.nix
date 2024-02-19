@@ -1,26 +1,19 @@
 { inputs, cell, ... }:
 let
-  inherit (builtins) toString baseNameOf;
-  system = "x86_64-linux";
+  inherit (builtins) baseNameOf;
 in
 rec {
   bee = {
-    inherit system;
+    system = "x86_64-linux";
+    # inherit (inputs.nixpkgs) system;
     home = inputs.home-unstable;
     pkgs = import inputs.latest {
       inherit (inputs.nixpkgs) system;
       config.allowUnfree = true;
       overlays = with inputs.cells.common.overlays; [
         sources
-        inputs.cells.emacs.overlays.sources
-        latest-overrides
+        nixpkgs-unstable-overrides
         nixpkgs-master-overrides
-        make-desktopitem
-        vscode-extensions
-        firefox-addons
-        masterpdfeditor
-        numix-solarized-gtk-theme
-        stumpwm
       ];
     };
   };

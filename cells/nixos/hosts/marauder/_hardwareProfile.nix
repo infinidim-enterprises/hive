@@ -3,7 +3,7 @@
 { config, lib, pkgs, modulesPath, ... }:
 {
   # TODO: https://xanmod.org/ pkgs.linuxPackages_xanmod
-  boot.kernelPackages = pkgs.linuxPackages_6_5;
+  boot.kernelPackages = pkgs.linuxPackages;
   deploy.params.cpu = "amd";
   deploy.params.gpu = "amd";
   deploy.params.ram = 64;

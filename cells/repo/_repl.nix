@@ -20,8 +20,8 @@ let
 
   Channels =
     lib.genAttrs [
-      "latest"
       "nixpkgs"
+      "nixpkgs-unstable"
       "nixpkgs-master"
     ]
       (x: Flake.inputs.${x} // { pkgs = Flake.inputs.${x}.legacyPackages.${builtins.currentSystem}; });

@@ -15,6 +15,7 @@
     flake-compat.url = "github:edolstra/flake-compat";
     flake-utils.url = "github:numtide/flake-utils";
     nixpkgs-lib.url = "github:nix-community/nixpkgs.lib";
+    bird-nix-lib.url = "github:spikespaz/bird-nix-lib";
   };
 
   # hive
@@ -36,9 +37,16 @@
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
+    microvm.url = "github:astro/microvm.nix";
+    microvm.inputs.nixpkgs.follows = "nixpkgs-unstable";
+
+    arion.url = "github:hercules-ci/arion";
+    arion.inputs.nixpkgs.follows = "nixpkgs-unstable";
+
     std.follows = "hive/std";
     std.inputs.microvm.follows = "microvm";
-    std.inputs.arion.follows = "arion";
+    # std.inputs.microvm.url = "github:astro/microvm.nix";
+    # std.inputs.arion.follows = "arion";
 
     # std.url = "github:divnix/std/release/0.24";
     # std.inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -46,11 +54,12 @@
     # std.inputs.devshell.follows = "devshell";
     # std.inputs.nixago.follows = "nixago";
 
-
     hive.url = "github:divnix/hive";
 
     # hive.inputs.std.nixpkgs.follows = "nixpkgs-unstable";
     # hive.inputs.std.follows = "std";
+
+    # hive.inputs.std.inputs.microvm.follows = "microvm";
 
     hive.inputs.devshell.follows = "devshell";
     hive.inputs.paisano.follows = "paisano";
@@ -133,12 +142,6 @@
     nvfetcher.inputs.nixpkgs.follows = "nixpkgs-unstable";
     nvfetcher.inputs.flake-utils.follows = "flake-utils";
 
-    microvm.url = "github:astro/microvm.nix";
-    microvm.inputs.nixpkgs.follows = "nixpkgs-unstable";
-
-    arion.url = "github:hercules-ci/arion";
-    arion.inputs.nixpkgs.follows = "nixpkgs-unstable";
-
     nur.url = "github:nix-community/NUR";
 
     nurl.url = "github:nix-community/nurl";
@@ -212,6 +215,7 @@
             (functions "homeSuites")
 
             (devshells "shells")
+            # (microvms "microvms")
 
             (functions "lib")
 

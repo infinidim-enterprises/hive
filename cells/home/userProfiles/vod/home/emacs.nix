@@ -133,8 +133,7 @@ in
   home.file."bin/css-ls".source = "${pkgs.nodePackages.vscode-css-languageserver-bin}/bin/css-languageserver";
 
   home.packages = with pkgs; [
-    # https://github.com/NixOS/nixpkgs/issues/288478
-    # FIXME: python3Packages.grip
+    python3Packages.grip
     python3Full # treemacs seems to want that
     gnuplot
 

@@ -60,3 +60,8 @@ fetch.git = "https://github.com/pauldub/activity-watch-mode"
 passthru = { ename = "nix-mode" }
 src.git = "https://github.com/NixOS/nix-mode"
 fetch.git = "https://github.com/NixOS/nix-mode"
+
+### Non-emacs tools
+[grip]
+src.git = "https://github.com/joeyespo/grip"
+fetch.git = "https://github.com/joeyespo/grip"
