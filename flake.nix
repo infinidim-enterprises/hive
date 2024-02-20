@@ -42,6 +42,9 @@
     dmerge.inputs.yants.follows = "yants";
     dmerge.inputs.nixlib.follows = "nixpkgs-lib";
 
+    haumea.url = "github:nix-community/haumea/v0.2.2";
+    haumea.inputs.nixpkgs.follows = "nixpkgs-lib";
+
     yants.url = "github:divnix/yants";
     yants.inputs.nixpkgs.follows = "nixpkgs-lib";
 
@@ -73,13 +76,10 @@
     arion.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
     # std.follows = "hive/std";
-
-    std.url = "github:divnix/std/release/0.32";
-
-    ###
     # std.url = "github:divnix/std/release/0.24";
     # commit used by hive: 0ce59ac671f041183da72e7cd5db9c6eb878e326
 
+    std.url = "github:divnix/std/release/0.32";
     std.inputs.nixpkgs.follows = "nixpkgs-unstable";
     std.inputs.n2c.follows = "n2c";
     std.inputs.devshell.follows = "devshell";
@@ -95,17 +95,12 @@
     std.inputs.incl.follows = "incl";
 
     hive.url = "github:divnix/hive";
-
     hive.inputs.std.follows = "std";
-
     hive.inputs.devshell.follows = "devshell";
     hive.inputs.paisano.follows = "paisano";
     hive.inputs.colmena.follows = "colmena";
     hive.inputs.nixago.follows = "nixago";
     hive.inputs.nixpkgs.follows = "nixpkgs-unstable";
-
-    haumea.url = "github:nix-community/haumea/v0.2.2";
-    haumea.inputs.nixpkgs.follows = "nixpkgs-lib";
   };
 
   # tools
