@@ -115,6 +115,10 @@
     nixos-generators.url = "github:nix-community/nixos-generators";
     nixos-generators.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
+    nixos-anywhere.url = "github:nix-community/nixos-anywhere/1.1.1";
+    nixos-anywhere.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    nixos-anywhere.inputs.disko.follows = "disko";
+
     nixos-hardware.url = "github:nixos/nixos-hardware";
 
     impermanence.url = "github:nix-community/impermanence";
@@ -251,7 +255,7 @@
             (functions "homeSuites")
 
             (devshells "shells")
-            # (microvms "microvms")
+            (microvms "microvms")
 
             (functions "lib")
 
