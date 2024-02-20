@@ -217,21 +217,6 @@
         "type": "github"
       }
     },
-    "call-flake_3": {
-      "locked": {
-        "lastModified": 1687380775,
-        "narHash": "sha256-bmhE1TmrJG4ba93l9WQTLuYM53kwGQAjYHRvHOeuxWU=",
-        "owner": "divnix",
-        "repo": "call-flake",
-        "rev": "74061f6c241227cd05e79b702db9a300a2e4131a",
-        "type": "github"
-      },
-      "original": {
-        "owner": "divnix",
-        "repo": "call-flake",
-        "type": "github"
-      }
-    },
     "cardano-shell": {
       "flake": false,
       "locked": {
@@ -488,39 +473,6 @@
           "nixpkgs-lib"
         ],
         "yants": [
-          "yants"
-        ]
-      },
-      "locked": {
-        "lastModified": 1686862774,
-        "narHash": "sha256-ojGtRQ9pIOUrxsQEuEPerUkqIJEuod9hIflfNkY+9CE=",
-        "owner": "divnix",
-        "repo": "dmerge",
-        "rev": "9f7f7a8349d33d7bd02e0f2b484b1f076e503a96",
-        "type": "github"
-      },
-      "original": {
-        "owner": "divnix",
-        "ref": "0.2.1",
-        "repo": "dmerge",
-        "type": "github"
-      }
-    },
-    "dmerge_4": {
-      "inputs": {
-        "haumea": [
-          "hive",
-          "std",
-          "haumea"
-        ],
-        "nixlib": [
-          "hive",
-          "std",
-          "lib"
-        ],
-        "yants": [
-          "hive",
-          "std",
           "yants"
         ]
       },
@@ -1310,29 +1262,6 @@
         "type": "github"
       }
     },
-    "haumea_2": {
-      "inputs": {
-        "nixpkgs": [
-          "hive",
-          "std",
-          "lib"
-        ]
-      },
-      "locked": {
-        "lastModified": 1685133229,
-        "narHash": "sha256-FePm/Gi9PBSNwiDFq3N+DWdfxFq0UKsVVTJS3cQPn94=",
-        "owner": "nix-community",
-        "repo": "haumea",
-        "rev": "34dd58385092a23018748b50f9b23de6266dffc2",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "ref": "v0.2.2",
-        "repo": "haumea",
-        "type": "github"
-      }
-    },
     "hercules-ci-effects": {
       "inputs": {
         "flake-parts": "flake-parts_2",
@@ -1372,7 +1301,9 @@
         "paisano": [
           "paisano"
         ],
-        "std": "std_3"
+        "std": [
+          "std"
+        ]
       },
       "locked": {
         "lastModified": 1705513593,
@@ -1558,28 +1489,6 @@
     "incl_3": {
       "inputs": {
         "nixlib": [
-          "hive",
-          "std",
-          "lib"
-        ]
-      },
-      "locked": {
-        "lastModified": 1669263024,
-        "narHash": "sha256-E/+23NKtxAqYG/0ydYgxlgarKnxmDbg6rCMWnOBqn9Q=",
-        "owner": "divnix",
-        "repo": "incl",
-        "rev": "ce7bebaee048e4cd7ebdb4cee7885e00c4e2abca",
-        "type": "github"
-      },
-      "original": {
-        "owner": "divnix",
-        "repo": "incl",
-        "type": "github"
-      }
-    },
-    "incl_4": {
-      "inputs": {
-        "nixlib": [
           "nixpkgs-lib"
         ]
       },
@@ -1627,21 +1536,6 @@
         "owner": "nixos",
         "repo": "nixpkgs",
         "rev": "3005f20ce0aaa58169cdee57c8aa12e5f1b6e1b3",
-        "type": "github"
-      }
-    },
-    "lib": {
-      "locked": {
-        "lastModified": 1694306727,
-        "narHash": "sha256-26fkTOJOI65NOTNKFvtcJF9mzzf/kK9swHzfYt1Dl6Q=",
-        "owner": "nix-community",
-        "repo": "nixpkgs.lib",
-        "rev": "c30b6a84c0b84ec7aecbe74466033facc9ed103f",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "nixpkgs.lib",
         "type": "github"
       }
     },
@@ -2777,21 +2671,6 @@
         "type": "github"
       }
     },
-    "nosys_4": {
-      "locked": {
-        "lastModified": 1668010795,
-        "narHash": "sha256-JBDVBnos8g0toU7EhIIqQ1If5m/nyBqtHhL3sicdPwI=",
-        "owner": "divnix",
-        "repo": "nosys",
-        "rev": "feade0141487801c71ff55623b421ed535dbdefa",
-        "type": "github"
-      },
-      "original": {
-        "owner": "divnix",
-        "repo": "nosys",
-        "type": "github"
-      }
-    },
     "nur": {
       "locked": {
         "lastModified": 1708402266,
@@ -2934,14 +2813,10 @@
       "inputs": {
         "call-flake": "call-flake_2",
         "nixpkgs": [
-          "hive",
-          "std",
-          "nixpkgs"
+          "nixpkgs-unstable"
         ],
         "nosys": "nosys_3",
         "yants": [
-          "hive",
-          "std",
           "yants"
         ]
       },
@@ -2962,42 +2837,17 @@
     "paisano-tui": {
       "flake": false,
       "locked": {
-        "lastModified": 1694014205,
-        "narHash": "sha256-u0+T6vMznzfjDMUd01ZXQsrQPMEhMjrQwUPTFsPBR1k=",
+        "lastModified": 1708353388,
+        "narHash": "sha256-RzNQ5P4fdYYAXb5Bmazh5KLjlbeCtyMX7WNiOFsqN68=",
         "owner": "paisano-nix",
         "repo": "tui",
-        "rev": "587ab9fd07bd969d59df73bfe527b5f8a4e752d1",
+        "rev": "db1f97e3d5213e66e5c1251d23d1401d7068b5f5",
         "type": "github"
       },
       "original": {
         "owner": "paisano-nix",
-        "ref": "0.2.0",
+        "ref": "v0.4.3",
         "repo": "tui",
-        "type": "github"
-      }
-    },
-    "paisano_2": {
-      "inputs": {
-        "call-flake": "call-flake_3",
-        "nixpkgs": [
-          "nixpkgs-unstable"
-        ],
-        "nosys": "nosys_4",
-        "yants": [
-          "yants"
-        ]
-      },
-      "locked": {
-        "lastModified": 1693982790,
-        "narHash": "sha256-WTZYlqGUjzzz/PSzcvjEZz2kkwYSXObjeQVrFBaqa2Y=",
-        "owner": "paisano-nix",
-        "repo": "core",
-        "rev": "3e897a19418361ece34841105122ed4f9379ca96",
-        "type": "github"
-      },
-      "original": {
-        "owner": "paisano-nix",
-        "repo": "core",
         "type": "github"
       }
     },
@@ -3052,7 +2902,7 @@
         "home-activitywatch": "home-activitywatch",
         "home-unstable": "home-unstable",
         "impermanence": "impermanence",
-        "incl": "incl_4",
+        "incl": "incl_3",
         "k8s": "k8s",
         "latest": [
           "nixpkgs-unstable"
@@ -3086,15 +2936,12 @@
         "nur": "nur",
         "nurl": "nurl",
         "nvfetcher": "nvfetcher",
-        "paisano": "paisano_2",
+        "paisano": "paisano",
         "sops-nix": "sops-nix",
         "sops-ssh-to-age": "sops-ssh-to-age",
         "sops-ssh-to-pgp": "sops-ssh-to-pgp",
         "srvos": "srvos",
-        "std": [
-          "hive",
-          "std"
-        ],
+        "std": "std_3",
         "terranix": "terranix",
         "yants": "yants_4"
       }
@@ -3398,61 +3245,59 @@
     "std_3": {
       "inputs": {
         "arion": [
-          "hive",
-          "std",
-          "blank"
+          "arion"
         ],
         "blank": "blank_3",
         "devshell": [
-          "hive",
           "devshell"
         ],
-        "dmerge": "dmerge_4",
-        "haumea": "haumea_2",
-        "incl": "incl_3",
-        "lib": "lib",
+        "dmerge": [
+          "dmerge"
+        ],
+        "haumea": [
+          "haumea"
+        ],
+        "incl": [
+          "incl"
+        ],
+        "lib": [
+          "nixpkgs-lib"
+        ],
         "makes": [
-          "hive",
-          "std",
-          "blank"
+          "makes"
         ],
         "microvm": [
-          "hive",
-          "std",
-          "blank"
+          "microvm"
         ],
         "n2c": [
-          "hive",
-          "std",
-          "blank"
+          "n2c"
         ],
         "nixago": [
-          "hive",
           "nixago"
         ],
         "nixpkgs": [
-          "hive",
-          "nixpkgs"
+          "nixpkgs-unstable"
         ],
-        "paisano": "paisano",
+        "paisano": [
+          "paisano"
+        ],
         "paisano-tui": "paisano-tui",
         "terranix": [
-          "hive",
-          "std",
-          "blank"
+          "terranix"
         ],
         "yants": "yants_3"
       },
       "locked": {
-        "lastModified": 1694815542,
-        "narHash": "sha256-VxKm6oq3GeVIhrhrCBTGIomxqesWmjsDiOeYiKmrzrY=",
+        "lastModified": 1708355221,
+        "narHash": "sha256-OKvIHwwZnUhTikXhs2vpKbo5g/tyX+wiMvLYkqeAM9o=",
         "owner": "divnix",
         "repo": "std",
-        "rev": "0ce59ac671f041183da72e7cd5db9c6eb878e326",
+        "rev": "453b1830abb6dde5f2ac06531aadc9da6bf4ffc0",
         "type": "github"
       },
       "original": {
         "owner": "divnix",
+        "ref": "release/0.32",
         "repo": "std",
         "type": "github"
       }
@@ -3729,7 +3574,6 @@
     "yants_3": {
       "inputs": {
         "nixpkgs": [
-          "hive",
           "std",
           "lib"
         ]

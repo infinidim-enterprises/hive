@@ -72,31 +72,31 @@
     arion.url = "github:hercules-ci/arion";
     arion.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
-    std.follows = "hive/std";
+    # std.follows = "hive/std";
 
-    # std.url = "github:divnix/std/release/0.32";
+    std.url = "github:divnix/std/release/0.32";
 
     ###
     # std.url = "github:divnix/std/release/0.24";
     # commit used by hive: 0ce59ac671f041183da72e7cd5db9c6eb878e326
 
-    # std.inputs.nixpkgs.follows = "nixpkgs-unstable";
-    # std.inputs.n2c.follows = "n2c";
-    # std.inputs.devshell.follows = "devshell";
-    # std.inputs.nixago.follows = "nixago";
-    # std.inputs.terranix.follows = "terranix";
-    # std.inputs.microvm.follows = "microvm";
-    # std.inputs.makes.follows = "makes";
-    # std.inputs.arion.follows = "arion";
-    # std.inputs.lib.follows = "nixpkgs-lib";
-    # std.inputs.paisano.follows = "paisano";
-    # std.inputs.dmerge.follows = "dmerge";
-    # std.inputs.haumea.follows = "haumea";
-    # std.inputs.incl.follows = "incl";
+    std.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    std.inputs.n2c.follows = "n2c";
+    std.inputs.devshell.follows = "devshell";
+    std.inputs.nixago.follows = "nixago";
+    std.inputs.terranix.follows = "terranix";
+    std.inputs.microvm.follows = "microvm";
+    std.inputs.makes.follows = "makes";
+    std.inputs.arion.follows = "arion";
+    std.inputs.lib.follows = "nixpkgs-lib";
+    std.inputs.paisano.follows = "paisano";
+    std.inputs.dmerge.follows = "dmerge";
+    std.inputs.haumea.follows = "haumea";
+    std.inputs.incl.follows = "incl";
 
     hive.url = "github:divnix/hive";
 
-    # hive.inputs.std.follows = "std";
+    hive.inputs.std.follows = "std";
 
     hive.inputs.devshell.follows = "devshell";
     hive.inputs.paisano.follows = "paisano";
