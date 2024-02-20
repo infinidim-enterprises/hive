@@ -327,32 +327,50 @@
         (device: nameValuePair (removePrefix "/dev/disk/by-id/" device) {
           inherit device;
           type = "disk";
-          content.type = "table";
-          content.format = "gpt";
-          content.partitions = [
-
-            {
-              name = "ESP";
-              start = "1MiB";
-              end = "1GiB";
-              bootable = true;
+          content.type = "gpt";
+          # content.format = "gpt";
+          content.partitions = {
+            ESP = {
+              size = "1GiB";
+              type = "EF00";
               content = {
                 type = "filesystem";
                 format = "vfat";
                 mountpoint = "/boot";
               };
-            }
-
-            {
-              name = "zfs";
-              start = "1GiB";
-              end = "100%";
+            };
+            zfs = {
+              size = "100%";
               content = {
                 type = "zfs";
                 pool = "rpool";
               };
-            }
-          ];
+            };
+          };
+
+          # [
+          #   {
+          #     name = "ESP";
+          #     start = "1MiB";
+          #     end = "1GiB";
+          #     bootable = true;
+          #     content = {
+          #       type = "filesystem";
+          #       format = "vfat";
+          #       mountpoint = "/boot";
+          #     };
+          #   }
+
+          #   {
+          #     name = "zfs";
+          #     start = "1GiB";
+          #     end = "100%";
+          #     content = {
+          #       type = "zfs";
+          #       pool = "rpool";
+          #     };
+          #   }
+          # ];
 
         })
         disks);

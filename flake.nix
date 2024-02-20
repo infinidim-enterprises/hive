@@ -18,13 +18,33 @@
     bird-nix-lib.url = "github:spikespaz/bird-nix-lib";
   };
 
-  # hive
+  # hive / std
   inputs = {
     devshell.url = "github:numtide/devshell";
     devshell.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
+    n2c.url = "github:nlewo/nix2container";
+    n2c.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    n2c.inputs.flake-utils.follows = "flake-utils";
+
+    makes.url = "github:fluidattacks/makes/24.01";
+    makes.inputs.nixpkgs.follows = "nixpkgs-lib";
+
     paisano.url = "github:paisano-nix/core";
     paisano.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    paisano.inputs.yants.follows = "yants";
+
+    incl.url = "github:divnix/incl";
+    incl.inputs.nixlib.follows = "nixpkgs-lib";
+
+    dmerge.url = "github:divnix/dmerge/0.2.1";
+    dmerge.inputs.nixpkgs.follows = "nixpkgs-lib";
+    dmerge.inputs.haumea.follows = "haumea";
+    dmerge.inputs.yants.follows = "yants";
+    dmerge.inputs.nixlib.follows = "nixpkgs-lib";
+
+    yants.url = "github:divnix/yants";
+    yants.inputs.nixpkgs.follows = "nixpkgs-lib";
 
     colmena.url = "github:zhaofengli/colmena";
     colmena.inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -33,6 +53,10 @@
     nixago.url = "github:nix-community/nixago";
     nixago.inputs.nixpkgs.follows = "nixpkgs-unstable";
     nixago.inputs.flake-utils.follows = "flake-utils";
+
+    terranix.url = "github:terranix/terranix/2.7.0";
+    terranix.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    terranix.inputs.flake-utils.follows = "flake-utils";
 
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -43,23 +67,40 @@
     arion.url = "github:hercules-ci/arion";
     arion.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
+    # std.url = "github:divnix/std/release/0.24";
+    # commit used by hive: 0ce59ac671f041183da72e7cd5db9c6eb878e326
+
     std.follows = "hive/std";
     std.inputs.microvm.follows = "microvm";
-    # std.inputs.microvm.url = "github:astro/microvm.nix";
-    # std.inputs.arion.follows = "arion";
 
-    # std.url = "github:divnix/std/release/0.24";
+    /*
+
+      inputs.haumea = {
+      url = "github:nix-community/haumea/v0.2.2";
+
+      };
+      inputs.incl = {
+      url =
+
+      };
+
+    */
+
     # std.inputs.nixpkgs.follows = "nixpkgs-unstable";
-    # std.inputs.paisano.follows = "paisano";
+    # std.inputs.n2c.follows = "n2c";
     # std.inputs.devshell.follows = "devshell";
     # std.inputs.nixago.follows = "nixago";
+    # std.inputs.terranix.follows = "terranix";
+    # std.inputs.microvm.url = "github:astro/microvm.nix";
+    # std.inputs.makes.follows = "makes";
+    # std.inputs.arion.follows = "arion";
+    # std.inputs.lib.follows = "nixpkgs-lib";
+    # std.inputs.paisano.follows = "paisano";
+    # std.inputs.incl.follows = "incl";
 
     hive.url = "github:divnix/hive";
 
-    # hive.inputs.std.nixpkgs.follows = "nixpkgs-unstable";
     # hive.inputs.std.follows = "std";
-
-    # hive.inputs.std.inputs.microvm.follows = "microvm";
 
     hive.inputs.devshell.follows = "devshell";
     hive.inputs.paisano.follows = "paisano";
@@ -67,8 +108,9 @@
     hive.inputs.nixago.follows = "nixago";
     hive.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
-    haumea.follows = "hive/std/haumea";
-    # haumea.url = "github:nix-community/haumea";
+    # haumea.follows = "hive/std/haumea";
+    haumea.url = "github:nix-community/haumea/v0.2.2";
+    haumea.inputs.nixpkgs.follows = "nixpkgs-lib";
   };
 
   # tools
@@ -115,8 +157,7 @@
     home-activitywatch.inputs.nixpkgs.follows = "latest";
 
     srvos.url = "github:nix-community/srvos";
-    srvos.inputs.nixpkgs.follows = "latest";
-    srvos.inputs.nixos-23_05.follows = "nixos";
+    srvos.inputs.nixpkgs.follows = "nixpkgs-unstable";
   };
 
   # Compat nixpkgs
