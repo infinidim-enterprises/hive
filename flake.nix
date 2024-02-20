@@ -73,6 +73,10 @@
     arion.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
     std.follows = "hive/std";
+
+    # std.url = "github:divnix/std/release/0.32";
+
+    ###
     # std.url = "github:divnix/std/release/0.24";
     # commit used by hive: 0ce59ac671f041183da72e7cd5db9c6eb878e326
 
@@ -87,6 +91,7 @@
     # std.inputs.lib.follows = "nixpkgs-lib";
     # std.inputs.paisano.follows = "paisano";
     # std.inputs.dmerge.follows = "dmerge";
+    # std.inputs.haumea.follows = "haumea";
     # std.inputs.incl.follows = "incl";
 
     hive.url = "github:divnix/hive";
