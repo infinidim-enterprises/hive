@@ -27,21 +27,36 @@ in
       ({ pkgs, ... }: {
         boot.kernelPackages = pkgs.linuxPackages_xanmod_stable;
         boot.zfs.enableUnstable = true;
+        boot.zfs.removeLinuxDRM = true;
       })
     ];
 
     documentation.enable = false;
     services.openssh.enable = true;
+
     networking.hostId = "23f7e2ff";
+    networking.hostName = "marauder";
 
     services.getty.autologinUser = "admin";
 
     nix.settings.auto-optimise-store = false;
     nix.optimise.automatic = false;
 
+    microvm.hypervisor = "qemu";
     microvm.vcpu = 4;
     microvm.mem = 4 * 1024;
-    microvm.hypervisor = "qemu";
+
+    microvm.interfaces = [{
+      type = "user";
+      id = "vm-qemu-1";
+      mac = "00:02:00:01:01:00";
+    }];
+
+    microvm.forwardPorts = [{
+      from = "host";
+      host.port = 5999;
+      guest.port = 22;
+    }];
 
     # NOTE: home-manager requires a writable store!
     microvm.writableStoreOverlay = "/nix/.rw-store";
