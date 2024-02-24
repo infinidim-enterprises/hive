@@ -24,6 +24,10 @@ in
       (import "${inputs.hive}/src/beeModule.nix" { nixpkgs = bee.pkgs; })
       cell.nixosConfigurations.marauder.bee.home.nixosModules.default
       { nixpkgs.pkgs = cell.nixosConfigurations.marauder.bee.pkgs; }
+      ({ pkgs, ... }: {
+        boot.kernelPackages = pkgs.linuxPackages_xanmod_stable;
+        boot.zfs.enableUnstable = true;
+      })
     ];
 
     documentation.enable = false;
@@ -39,8 +43,8 @@ in
     microvm.mem = 4 * 1024;
     microvm.hypervisor = "qemu";
 
+    # NOTE: home-manager requires a writable store!
     microvm.writableStoreOverlay = "/nix/.rw-store";
-
     microvm.volumes = [{
       image = "/tmp/nix-store-overlay.img";
       mountPoint = "/nix/.rw-store";
@@ -48,14 +52,6 @@ in
     }];
 
     microvm.shares = [
-      # {
-      #   proto = "virtiofs";
-      #   tag = "root";
-      #   source = "/tmp/mvm.root";
-      #   mountPoint = "/";
-      #   neededForBoot = true;
-      # }
-
       {
         # proto = "virtiofs";
         proto = "9p";
