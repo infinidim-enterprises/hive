@@ -188,6 +188,10 @@
 
     # Just in case
     call-flake.url = "github:divnix/call-flake";
+
+    # terraform
+    terraform-providers-bin.url = "github:nix-community/nixpkgs-terraform-providers-bin";
+    terraform-providers-bin.inputs.nixpkgs.follows = "nixpkgs-unstable";
   };
 
   # emacs & friends

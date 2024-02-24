@@ -23,7 +23,7 @@ in
 
 {
   nix.package = pkgs.nixUnstable;
-  nix.optimise.automatic = true;
+  nix.optimise.automatic = lib.mkDefault true;
   nix.nrBuildUsers = 0;
   nix.gc.automatic = true;
   nix.gc.dates = "weekly";
@@ -31,7 +31,7 @@ in
   nix.settings.nix-path = [ "nixpkgs=${pkgs.path}" ];
   nix.settings.allowed-users = [ "@wheel" ];
   nix.settings.trusted-users = [ "root" "@wheel" ];
-  nix.settings.auto-optimise-store = true;
+  nix.settings.auto-optimise-store = lib.mkDefault true;
   nix.settings.substituters = attrNames cachix;
   nix.settings.trusted-public-keys = attrValues cachix;
   nix.settings.sandbox = true;
