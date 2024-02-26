@@ -45,15 +45,15 @@
   };
   chatgpt-wrapper = {
     pname = "chatgpt-wrapper";
-    version = "61a0ca3345f904ab9a97a632524b522af0be3290";
+    version = "90ab44e8e78b4d22922c6fd1e7982ebbda2255c9";
     src = fetchFromGitHub {
       owner = "llm-workflow-engine";
       repo = "llm-workflow-engine";
-      rev = "61a0ca3345f904ab9a97a632524b522af0be3290";
+      rev = "90ab44e8e78b4d22922c6fd1e7982ebbda2255c9";
       fetchSubmodules = false;
-      sha256 = "sha256-37qhOPWzxlLgumV22kaAQI+XEKzE19EP7fkdPCxqjFA=";
+      sha256 = "sha256-rEKod0jq4zLqaWXH0J+xEft7MPf3i4zu+Nm8vhwNsjI=";
     };
-    date = "2024-02-07";
+    date = "2024-02-08";
   };
   cl-hash-util = {
     pname = "cl-hash-util";
@@ -143,10 +143,10 @@
   };
   drawio = {
     pname = "drawio";
-    version = "23.0.2";
+    version = "23.1.5";
     src = fetchurl {
-      url = "https://github.com/jgraph/drawio-desktop/releases/download/v23.0.2/drawio-x86_64-23.0.2.rpm";
-      sha256 = "sha256-nV104DlIzffA6j9wxndjQB0IUi2UhXAcaQ5j+tCL0wQ=";
+      url = "https://github.com/jgraph/drawio-desktop/releases/download/v23.1.5/drawio-x86_64-23.1.5.rpm";
+      sha256 = "sha256-/AKA3yXBEEL1V5Os/aqOYCfoVLG3V9Mf29a+TZNKqIs=";
     };
   };
   git-get = {
@@ -210,26 +210,26 @@
   };
   ipxe = {
     pname = "ipxe";
-    version = "e7ae51b0d75d9b9925748743b91405c99e5c7fec";
+    version = "43e385091a36af34e495ac8c6595bddab55665bb";
     src = fetchgit {
       url = "https://github.com/ipxe/ipxe";
-      rev = "e7ae51b0d75d9b9925748743b91405c99e5c7fec";
+      rev = "43e385091a36af34e495ac8c6595bddab55665bb";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-3jGUGn10JD2R2Afu4302G2NwPOyF6dosGmQELlQFX7c=";
+      sha256 = "sha256-Ux5rYLJXWqj0oFXHenF7g28AwSyNqGDyPMp97c/kuWk=";
     };
-    date = "2024-02-07";
+    date = "2024-02-23";
   };
   langchain = {
     pname = "langchain";
-    version = "v0.1.5";
+    version = "v0.1.9";
     src = fetchFromGitHub {
       owner = "langchain-ai";
       repo = "langchain";
-      rev = "v0.1.5";
+      rev = "v0.1.9";
       fetchSubmodules = false;
-      sha256 = "sha256-BpXYbyf3Jhbh0KP1T7WP1HmRNzt5C9DwbpOP1feEahk=";
+      sha256 = "sha256-AgEze4JUo3i6HCg541tz/gV6g+zrueyOljy/TXUYBV4=";
     };
   };
   listopia = {
@@ -322,12 +322,12 @@
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "0302e47841653952b496fbe1a8be6fb2ebb1c8c4";
+    version = "2a34566b67bef34c551f204063faeecc444ae9da";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";
     };
-    date = "2024-02-08";
+    date = "2024-02-25";
   };
   promnesia = {
     pname = "promnesia";
@@ -374,29 +374,42 @@
   };
   stumpwm-contrib = {
     pname = "stumpwm-contrib";
-    version = "54dfbeb553ad68272163c520655b6a4af4ad0430";
+    version = "4d15d6f17b98c97f5235d928f6e4ffb5f18307e6";
     src = fetchFromGitHub {
       owner = "stumpwm";
       repo = "stumpwm-contrib";
-      rev = "54dfbeb553ad68272163c520655b6a4af4ad0430";
+      rev = "4d15d6f17b98c97f5235d928f6e4ffb5f18307e6";
       fetchSubmodules = false;
-      sha256 = "sha256-kaI6B3TWSRBlVtzO4MZAJC08Xo6206J0MuTyKglaAqQ=";
+      sha256 = "sha256-8tDUM26xba52xr6DE7LxDI27I2xjcmkNKK0u9W0zLQ0=";
     };
-    date = "2023-10-26";
+    date = "2024-02-17";
   };
   stumpwm-git = {
     pname = "stumpwm-git";
-    version = "9c7f0c70b8f856ff6ec30e953f7d451b2ae88a76";
+    version = "cb50d6d2e3ecbd12a98b2ce18d373d8146cc656c";
     src = fetchFromGitHub {
       owner = "stumpwm";
       repo = "stumpwm";
-      rev = "9c7f0c70b8f856ff6ec30e953f7d451b2ae88a76";
+      rev = "cb50d6d2e3ecbd12a98b2ce18d373d8146cc656c";
       fetchSubmodules = false;
-      sha256 = "sha256-n5UfAodJxvSKPvPL/wUfTh45ymZGHmEgzFGIabXsxKY=";
+      sha256 = "sha256-Fg4stpCRe0SpgNcdcqb9dYsCASbtN/wrO/ig9ML2nlM=";
     };
     system = "stumpwm";
     asd = "stumpwm";
-    date = "2023-12-23";
+    date = "2024-02-17";
+  };
+  stumpwm-release = {
+    pname = "stumpwm-release";
+    version = "23.11";
+    src = fetchFromGitHub {
+      owner = "stumpwm";
+      repo = "stumpwm";
+      rev = "23.11";
+      fetchSubmodules = false;
+      sha256 = "sha256-sWCr3wm99Hv4LsZ572921wcUnQV40AmWSUVMWnmfeSo=";
+    };
+    system = "stumpwm";
+    asd = "stumpwm";
   };
   tfenv = {
     pname = "tfenv";

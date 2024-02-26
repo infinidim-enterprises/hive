@@ -358,10 +358,10 @@
   };
   "darkreader" = rec {
     pname = "darkreader";
-    version = "4.9.76";
+    version = "4.9.77";
     addonId = "addon@darkreader.org";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4223104/darkreader-4.9.76.xpi";
-    sha256 = "d3afe139928c3c30bd11347c08a3360fa3417be4667c47f3de19fdc0ab92da9f";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4233074/darkreader-4.9.77.xpi";
+    sha256 = "931de67e9091c69edd9fd3f348a7ed1de1dce7d136017fed641bd10eb0ae8891";
     meta = with lib;
       {
         homepage = "https://darkreader.org/";
@@ -468,10 +468,10 @@
   };
   "ether-metamask" = rec {
     pname = "ether-metamask";
-    version = "11.7.3";
+    version = "11.7.5";
     addonId = "webextension@metamask.io";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4225715/ether_metamask-11.7.3.xpi";
-    sha256 = "65f212aa161d972bff93f7a9f9811c2a7bf437bf1af251d6287fa0ae4d9eb4f5";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4232237/ether_metamask-11.7.5.xpi";
+    sha256 = "adc0aef8a353ab0e274783662c25b9e0f965e9d32ff676e849636621aa6683b5";
     meta = with lib;
       {
         description = "Ethereum Browser Extension";
@@ -627,10 +627,10 @@
   };
   "privacy-badger17" = rec {
     pname = "privacy-badger17";
-    version = "2023.12.1";
+    version = "2024.2.6";
     addonId = "jid1-MnnxcxisBPnSXQ@jetpack";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4203344/privacy_badger17-2023.12.1.xpi";
-    sha256 = "aacac794c211fc6ea7dc51529883fd3e477aff37441d29ae7f576ab0f8c737b7";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4232703/privacy_badger17-2024.2.6.xpi";
+    sha256 = "81d80bff29b6209aa444713bc548a3d06fd5bde208c9c3c596dba81cc97add02";
     meta = with lib;
       {
         homepage = "https://privacybadger.org/";
@@ -1144,10 +1144,10 @@
   };
   "ublock-origin" = rec {
     pname = "ublock-origin";
-    version = "1.55.0";
+    version = "1.56.0";
     addonId = "uBlock0@raymondhill.net";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4216633/ublock_origin-1.55.0.xpi";
-    sha256 = "a02ca1d32737c3437f97553e5caaead6479a66ac1f8ff3b84a06cfa6bb0c7647";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4237670/ublock_origin-1.56.0.xpi";
+    sha256 = "f5fbeeac511ca4e10a74723413727fda8e6f9236c726d16eb54ade1fbe7be5be";
     meta = with lib;
       {
         homepage = "https://github.com/gorhill/uBlock#ublock-origin";

@@ -151,7 +151,19 @@ passthru = { vendorSha256 = "0789v1r6my256pncs0105yji28ifchj6ppfiy8gavglgclq3cgv
 #src.branch ="master"
 #fetch.github = "jnjcc/cl-qrencode"
 ########
-# lisp overlays stuff
+
+### :BEGIN: lisp overlays stuff
+### TODO: migrate to a separate cell eventually
+[stumpwm-release]
+src.github = "stumpwm/stumpwm"
+src.use_latest_release = true
+fetch.github = "stumpwm/stumpwm"
+passthru = { system = "stumpwm", asd = "stumpwm" }
+
+[stumpwm-contrib]
+src.git = "https://github.com/stumpwm/stumpwm-contrib"
+fetch.github = "stumpwm/stumpwm-contrib"
+
 [stumpwm-git]
 src.git = "https://github.com/stumpwm/stumpwm"
 fetch.github = "stumpwm/stumpwm"
@@ -166,10 +178,7 @@ fetch.url = "https://beta.quicklisp.org/quicklisp.lisp"
 src.manual = "189a730f73266999d5b8f992faf939c11d7815ad"
 # src.git = "https://github.com/stumpwm/stumpwm"
 fetch.github = "stumpwm/stumpwm"
-
-[stumpwm-contrib]
-src.git = "https://github.com/stumpwm/stumpwm-contrib"
-fetch.github = "stumpwm/stumpwm-contrib"
+passthru = { system = "stumpwm", asd = "stumpwm" }
 
 [dbus]
 src.git = "https://github.com/death/dbus"
@@ -198,6 +207,9 @@ fetch.git = "https://git.code.sf.net/p/portableaserve/git"
 [cl-syslog]
 src.git = "https://github.com/lhope/cl-syslog"
 fetch.github = "lhope/cl-syslog"
+
+### :END: lisp overlays stuff
+###
 
 # [age-plugin-yubikey]
 # src.git = "https://github.com/str4d/age-plugin-yubikey"

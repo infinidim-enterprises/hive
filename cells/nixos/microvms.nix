@@ -8,6 +8,7 @@ let
       inherit (inputs.nixpkgs) system;
       config.allowUnfree = true;
       overlays = with inputs.cells.common.overlays; [
+        stumpwm-new
         sources
         nixpkgs-unstable-overrides
         nixpkgs-master-overrides
@@ -22,8 +23,8 @@ in
     inherit bee;
     imports = cell.nixosSuites.base ++ [
       (import "${inputs.hive}/src/beeModule.nix" { nixpkgs = bee.pkgs; })
-      cell.nixosConfigurations.marauder.bee.home.nixosModules.default
-      { nixpkgs.pkgs = cell.nixosConfigurations.marauder.bee.pkgs; }
+      bee.home.nixosModules.default
+      { nixpkgs.pkgs = bee.pkgs; }
       ({ pkgs, ... }: {
         boot.kernelPackages = pkgs.linuxPackages_xanmod_stable;
         boot.zfs.enableUnstable = true;
