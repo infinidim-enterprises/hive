@@ -3,19 +3,23 @@
 final: prev:
 
 let
-  # createAsd = { url, sha256, asd, system }:
-  #   with prev;
-  #   let
-  #     src = fetchzip { inherit url sha256; };
-  #   in
-  #   if asd == system
-  #   then src
-  #   else
-  #     runCommand "source" { } ''
-  #       mkdir -pv $out
-  #       cp -r ${src}/* $out
-  #       find $out -name "${asd}.asd" | while read f; do mv -fv $f $(dirname $f)/${system}.asd || true; done
-  #     '';
+  inherit (inputs.nixpkgs-lib.lib // builtins)
+    attrValues
+    filterAttrs
+    optionalAttrs
+    mapAttrs'
+    nameValuePair
+    fold
+
+    fileContents
+    splitString
+
+    optional
+    elem
+    filter
+
+    hasPrefix
+    readDir;
 
   build-asdf-system = prev.sbcl.buildASDFSystem;
 
@@ -36,28 +40,104 @@ let
       });
     in
     build-asdf-system (args // {
-      # Patches are already applied in `build`
       patches = [ ];
       src = build;
     });
 
-  stumpwm_release = (build-asdf-system {
+  stumpwm-contrib-build-system = src:
+    let
+      broken_asd_names = [ "golden-ratio" "pomodoro" ];
+      fix_dirname = prev.runCommandNoCC "fix_broken_dirname_stumpwm-contrib" { } ''
+        mkdir -p $out/swm-${baseNameOf src}
+        cp -r ${src}/* $out/swm-${baseNameOf src}
+      '';
+      src' =
+        if elem (baseNameOf src) broken_asd_names
+        then "${fix_dirname}/swm-${baseNameOf src}"
+        else src;
+      getDepsScript = prev.writeScriptBin "lispLibs"
+        ("#!${prev.sbcl}/bin/sbcl --script\n" +
+          (fileContents ./find-lisp-deps.lisp));
+      depends-on = filter
+        (e: (e != "" &&
+          e != "stumpwm" &&
+          e != "uiop"))
+        (splitString "," (fileContents (prev.runCommandNoCC "findDependencies"
+          { buildInputs = [ getDepsScript ]; }
+          ''
+            lispLibs ${src'} $out
+          '')));
+      lispLibs = [ unwrapped ] ++
+        (optional
+          (depends-on != [ ])
+          (map (e: final.stumpwm_release_latest.sbcl.pkgs.${e} or final.stumpwm_release_latest.stumpwm-contrib.${e}) depends-on)) ++
+        (optional
+          (elem "mcclim" depends-on)
+          (attrValues (filterAttrs (n: v: hasPrefix "mcclim" n) final.stumpwm_release_latest.sbcl.pkgs)));
+      pname = baseNameOf src';
+      inherit (final.sources.stumpwm-contrib) version;
+    in
+    build-with-compile-into-pwd { inherit lispLibs pname version; src = src'; };
+
+  unwrapped = (build-asdf-system {
     inherit (final.sources.stumpwm-release) src pname version;
     asds = [ "stumpwm" ];
     systems = [ "stumpwm" ];
-    lispLibs = with final.sbcl.pkgs; [
+    lispLibs = with final.stumpwm_release_latest.sbcl.pkgs; [
+      ### Minimum required
       alexandria
       cl-ppcre
       clx
-      stumpwm_release_dynamic-mixins-swm
+      dynamic-mixins
+
+      ### Additional pkgs
+      cl-diskspace
+      cl-mount-info
+      cl-strings
+      cl-hash-util
+      cl-shellwords
+      cl-dejavu
+      cl-pdf
+      cl-ppcre-unicode
+      cl-syslog
+      clx-truetype
+      log4cl
+      xml-emitter
+      xkeyboard
+      usocket-server
+      percent-encoding
+      clim
+      opticl
+      py-configparser
+      dexador
+      str
+      quri
+      drakma
+      yason
+      alexandria
+      closer-mop
+      anaphora
+      xembed
+      dbus
+      bordeaux-threads
+      listopia
+      lparallel
+      acl-compat
+
+      ### Sly stuff
+      slynk
+      # FIXME: slynk-quicklisp
+      slynk-asdf
+      slynk-named-readtables
+      slynk-macrostep
     ];
   });
 
-  stumpwm_release_bin = stumpwm_release.overrideLispAttrs (o: rec {
+  bin = unwrapped.overrideLispAttrs (o: rec {
     inherit (final.sources.stumpwm-release) src pname version;
 
     buildScript = prev.writeText "build-stumpwm.lisp" ''
-      (load "${stumpwm_release.asdfFasl}/asdf.${stumpwm_release.faslExt}")
+      (load "${unwrapped.asdfFasl}/asdf.${unwrapped.faslExt}")
 
       (asdf:load-system 'stumpwm)
 
@@ -86,17 +166,17 @@ let
     '';
   });
 
-  stumpwm_release_dynamic-mixins-swm = build-with-compile-into-pwd rec {
+  dynamic-mixins = build-with-compile-into-pwd rec {
     inherit (final.sources.stumpwm-release) version;
     pname = "dynamic-mixins-swm";
     src = "${final.sources.stumpwm-release.src}/dynamic-mixins";
     systems = [ "dynamic-mixins-swm" ];
     asds = systems;
-    lispLibs = [ final.sbcl.pkgs.alexandria ];
+    lispLibs = [ final.stumpwm_release_latest.sbcl.pkgs.alexandria ];
   };
 
 
-  stumpwm_release_stumpish = prev.writeShellApplication {
+  stumpish = prev.writeShellApplication {
     name = "stumpish";
     runtimeInputs = with prev; [
       gnused
@@ -121,67 +201,13 @@ let
         (readFile "${final.sources.stumpwm-contrib.src}/util/stumpish/stumpish"));
   };
 
-  # depends-on = filter (e: (e != "" && e != "stumpwm"))
-  #   (splitString ":" (fileContents (prev.runCommandNoCC "findDependencies"
-  #     {
-  #       buildInputs = with prev; [ gnused findutils coreutils ];
-  #     }
-  #     ''
-  #       asdFile=$(find ${src} -type f -name \*.asd)
-
-  #       sed -n '/:depends-on (/{
-  #       :loop
-  #       $!{N;b loop}
-  #       s/.*:depends-on (\([^)]*\)).*/\1/p
-  #       }' $asdFile | tr -d ' \n#' > $out
-  #     '')));
-
-  stumpwm-contrib-build-system = src:
-    with (inputs.nixpkgs-lib.lib // builtins);
-    let
-      getDepsScript = prev.writeScriptBin "lispLibs"
-        ("#!${prev.sbcl}/bin/sbcl --script\n" +
-          (fileContents ./find-lisp-deps.lisp));
-      depends-on = filter
-        (e: (e != "" &&
-          e != "stumpwm" &&
-          e != "uiop"))
-        (splitString "," (fileContents (prev.runCommandNoCC "findDependencies"
-          { buildInputs = [ getDepsScript ]; }
-          ''
-            lispLibs ${src} $out
-          '')));
-      lispLibs =
-        let
-          inherit (prev.lib)
-            optional
-            elem
-            attrValues
-            filterAttrs
-            hasPrefix
-            optionalAttrs;
-        in
-        [ stumpwm_release ] ++
-        (optional
-          (depends-on != [ ])
-          (map (e: final.sbcl.pkgs.${e} or final.stumpwm-contrib.${e}) depends-on)) ++
-        (optional
-          (elem "mcclim" depends-on)
-          (attrValues (filterAttrs (n: v: hasPrefix "mcclim" n) final.sbcl.pkgs)));
-      pname = baseNameOf src;
-      inherit (final.sources.stumpwm-contrib) version;
-    in
-    # { inherit getDepsScript depends-on lispLibs pname src; fdrv = build-with-compile-into-pwd { inherit src lispLibs pname version; }; };
-    build-with-compile-into-pwd { inherit src lispLibs pname version; } //
-    (optionalAttrs (pname == "golden-ratio") { systems = [ "swm-golden-ratio" ]; });
-
   sbcl = prev.sbcl.withOverrides (finalLisp: prevLisp: rec {
 
     "(FEATURE LINUX cl-mount-info)" = cl-mount-info;
 
     cl-mount-info = build-with-compile-into-pwd {
       inherit (final.sources.cl-mount-info) src pname version;
-      lispLibs = with final.sbcl.pkgs; [
+      lispLibs = with final.stumpwm_release_latest.sbcl.pkgs; [
         alexandria
         cffi
         cl-ppcre
@@ -198,15 +224,12 @@ let
   });
 
   stumpwm-contrib =
-    with builtins;
-    with final.lib; let
+    let
       broken = [
-        "golden-ratio" # FIXME: lisp script cannot find the system, since the name is swm-golden-ratio
-        "pomodoro" # FIXME: as above, swm-pomodoro is the system name
+        "swm-clim-message" # BUG: default-icons-tmpAAURSO1.fasl
+        "clim-mode-line" # BUG: default-icons-tmpAAURSO1.fasl
 
-        "swm-clim-message" # default-icons-tmpAAURSO1.fasl
-        "clim-mode-line" # default-icons-tmpAAURSO1.fasl
-        "debian" # NOTE: because this is not a debian system
+        "passwd" # NOTE: some lisp bugs
 
         /* BUG:
           ; There is no applicable method for the generic function
@@ -217,11 +240,12 @@ let
         "stump-backlight"
         "lookup"
 
-        "passwd" # NOTE: some lisp bugs
         "qubes" # NOTE: because this is not qubes
+        "debian" # NOTE: because this is not debian
         "stumpish" # NOTE: stumpish is a shell-script and it's being installed separately
 
         "screenshot" # BUG: BUILD FAILED: The name "STUMPWM" does not designate any package.
+
         /* BUG:
           ; caught ERROR:
           ;   (during macroexpansion of (AUTO-DEFINE-SURFRAW-COMMANDS-FROM-ELVIS-LIST))
@@ -230,68 +254,22 @@ let
         */
         "surfraw"
       ];
-      buildDirs = [ "media" "minor-mode" "modeline" "util" ];
+      srcTop = final.sources.stumpwm-contrib.src;
       allPkgs = fold (p: n: p // n) { } (
         map
-          (d:
-            let
-              srcTop = final.sources.stumpwm-contrib;
-              dir = readDir "${srcTop.src}/${d}";
-            in
-            mapAttrs'
-              (k: _: nameValuePair
-                k
-                (stumpwm-contrib-build-system "${srcTop.src}/${d}/${k}"))
-              dir)
-          buildDirs
+          (d: mapAttrs'
+            (k: _: nameValuePair
+              k
+              (stumpwm-contrib-build-system "${srcTop}/${d}/${k}"))
+            (readDir "${srcTop}/${d}"))
+          [ "media" "minor-mode" "modeline" "util" ]
       );
     in
     filterAttrs (k: _: ! elem k broken) allPkgs;
 
-  # sbcl = prev.sbcl.withPackages (pkgs:
-  #   with pkgs; [
-  #     cl-diskspace
-  #     cl-mount-info
-  #     xml-emitter
-  #     xkeyboard
-  #     usocket-server
-  #     percent-encoding
-
-  #     clim
-  #     # slim
-  #     cl-dejavu
-  #     opticl
-  #     cl-pdf
-  #     py-configparser
-  #     dexador
-  #     str
-  #     quri
-  #     drakma
-  #     yason
-  #     alexandria
-  #     closer-mop
-  #     cl-ppcre
-  #     cl-ppcre-unicode
-  #     clx
-  #     clx-truetype
-  #     anaphora
-  #     xembed
-  #     dbus
-  #     bordeaux-threads
-  #     cl-strings
-  #     cl-hash-util
-  #     cl-shellwords
-  #     listopia
-  #     lparallel
-  #     acl-compat
-  #     cl-syslog
-  #     log4cl
-  #   ]);
-
   slynk = build-with-compile-into-pwd rec {
     inherit (final.emacsPackages.sly) version src;
     pname = "slynk";
-    # postUnpack = "src=$src/slynk";
     systems = [
       "slynk"
       "slynk/mrepl"
@@ -306,14 +284,7 @@ let
     ];
   };
 
-  # quicklisp = build-with-compile-into-pwd rec {
-  #   pname = "quicklisp";
-  #   dontUnpack = true;
-  #   # lispLibs = [ slynk ];
-  #   inherit (final.sources.quicklisp) src version;
-  # };
-
-  slynk-quicklisp = prev.lispPackages_new.build-asdf-system {
+  slynk-quicklisp = build-with-compile-into-pwd {
     lisp = "${final.sbcl}/bin/sbcl --load ${final.sources.quicklisp.src} --eval '(quicklisp-quickstart:install)' --script";
     preConfigure = ''export HOME=$(mktemp -d)'';
     __impure = true;
@@ -322,82 +293,39 @@ let
     inherit (final.emacsPackages.sly-quicklisp) src version;
   };
 
-  slynk-asdf = build-with-compile-into-pwd rec {
+  slynk-asdf = build-with-compile-into-pwd {
     pname = "slynk-asdf";
     lispLibs = [ slynk ];
     inherit (final.emacsPackages.sly-asdf) src version;
   };
 
-  slynk-named-readtables = build-with-compile-into-pwd rec {
+  slynk-named-readtables = build-with-compile-into-pwd {
     pname = "slynk-named-readtables";
     lispLibs = [ slynk ];
     inherit (final.emacsPackages.sly-named-readtables) src version;
   };
 
-  slynk-macrostep = build-with-compile-into-pwd rec {
+  slynk-macrostep = build-with-compile-into-pwd {
     pname = "slynk-macrostep";
     lispLibs = [ slynk ];
     inherit (final.emacsPackages.sly-macrostep) src version;
   };
 
-  # stumpwm-git-new = nixpkgs-22-11.lispPackages_new.sbclWithPackages (pkgs:
-  #   with pkgs;
-  #   (builtins.attrValues final.stumpwm-contrib)
-  #   ++ [
-  #     stumpwmCustomBuild_new_lispPackages
-
-  #     slynk
-  #     slynk-macrostep
-  #     slynk-named-readtables
-  #     slynk-asdf
-
-  #     cl-diskspace
-  #     cl-mount-info
-  #     xml-emitter
-  #     xkeyboard
-  #     usocket-server
-  #     percent-encoding
-
-  #     clim
-  #     # FIXME slim/mcclim
-  #     cl-dejavu
-  #     opticl
-  #     cl-pdf
-  #     py-configparser
-  #     dexador
-  #     str
-  #     quri
-  #     drakma
-  #     yason
-  #     alexandria
-  #     closer-mop
-  #     cl-ppcre
-  #     cl-ppcre-unicode
-  #     clx
-  #     clx-truetype
-  #     anaphora
-  #     xembed
-  #     dbus
-  #     bordeaux-threads
-  #     cl-strings
-  #     cl-hash-util
-  #     cl-shellwords
-  #     listopia
-  #     acl-compat
-  #     cl-syslog
-  #     log4cl
-  #     dbus
-  #   ]);
-
 in
 {
-  inherit
-    stumpwm_release
-    stumpwm_release_bin
-    stumpwm_release_stumpish
-    stumpwm_release_dynamic-mixins-swm
+  stumpwm_release_latest = {
+    inherit
+      sbcl
 
-    stumpwm-contrib-build-system
-    stumpwm-contrib
-    sbcl;
+      bin
+      stumpish
+      unwrapped
+      stumpwm-contrib
+
+      slynk
+      slynk-quicklisp
+      slynk-asdf
+      slynk-named-readtables
+      slynk-macrostep;
+  };
 }
