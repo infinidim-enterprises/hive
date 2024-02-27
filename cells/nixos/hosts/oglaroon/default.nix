@@ -13,7 +13,7 @@ rec {
       overlays = with inputs.cells.common.overlays; [
         sources
         inputs.cells.emacs.overlays.sources
-        inputs.cells.emacs.overlays.tools
+        # inputs.cells.emacs.overlays.tools
         nixpkgs-unstable-overrides
         nixpkgs-master-overrides
         make-desktopitem
