@@ -110,6 +110,25 @@
         },
         "version": "43f6d363722bf849bef10010e07fca17f024fb9d"
     },
+    "cl-mount-info": {
+        "cargoLocks": null,
+        "date": "2023-06-20",
+        "extract": null,
+        "name": "cl-mount-info",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "5a7fbdbfe4ac3810c7f00434d3d6dc7555891705",
+            "sha256": "sha256-nFEecXmStgu/ePtNretaCgC1huBr4kKnzvgdoUG+u0Q=",
+            "type": "git",
+            "url": "https://codeberg.org/cage/cl-mount-info"
+        },
+        "version": "5a7fbdbfe4ac3810c7f00434d3d6dc7555891705"
+    },
     "cl-shellwords": {
         "cargoLocks": null,
         "date": "2015-09-20",
@@ -526,7 +545,7 @@
     },
     "pbkdf2-sha512": {
         "cargoLocks": null,
-        "date": "2024-02-25",
+        "date": "2024-02-27",
         "extract": null,
         "name": "pbkdf2-sha512",
         "passthru": null,
@@ -537,7 +556,7 @@
             "type": "url",
             "url": "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c"
         },
-        "version": "2a34566b67bef34c551f204063faeecc444ae9da"
+        "version": "3ddd0690f250eb1bac831628f91f0810ae950a53"
     },
     "promnesia": {
         "cargoLocks": null,
@@ -599,7 +618,10 @@
         "date": null,
         "extract": null,
         "name": "stumpwm",
-        "passthru": null,
+        "passthru": {
+            "asd": "stumpwm",
+            "system": "stumpwm"
+        },
         "pinned": false,
         "src": {
             "deepClone": false,

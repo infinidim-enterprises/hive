@@ -67,6 +67,19 @@
     };
     date = "2023-07-05";
   };
+  cl-mount-info = {
+    pname = "cl-mount-info";
+    version = "5a7fbdbfe4ac3810c7f00434d3d6dc7555891705";
+    src = fetchgit {
+      url = "https://codeberg.org/cage/cl-mount-info";
+      rev = "5a7fbdbfe4ac3810c7f00434d3d6dc7555891705";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sha256 = "sha256-nFEecXmStgu/ePtNretaCgC1huBr4kKnzvgdoUG+u0Q=";
+    };
+    date = "2023-06-20";
+  };
   cl-shellwords = {
     pname = "cl-shellwords";
     version = "313576b9f6b925cbbc3dcf5e49e8f47c9c1b46bc";
@@ -322,12 +335,12 @@
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "2a34566b67bef34c551f204063faeecc444ae9da";
+    version = "3ddd0690f250eb1bac831628f91f0810ae950a53";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";
     };
-    date = "2024-02-25";
+    date = "2024-02-27";
   };
   promnesia = {
     pname = "promnesia";
@@ -371,6 +384,8 @@
       fetchSubmodules = false;
       sha256 = "sha256-jPxMo3QfqfSYTkKYnCf6CQhkSJrX90p70amSXynBxnE=";
     };
+    system = "stumpwm";
+    asd = "stumpwm";
   };
   stumpwm-contrib = {
     pname = "stumpwm-contrib";

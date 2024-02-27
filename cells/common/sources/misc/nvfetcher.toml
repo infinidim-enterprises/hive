@@ -208,6 +208,9 @@ fetch.git = "https://git.code.sf.net/p/portableaserve/git"
 src.git = "https://github.com/lhope/cl-syslog"
 fetch.github = "lhope/cl-syslog"
 
+[cl-mount-info]
+src.git = "https://codeberg.org/cage/cl-mount-info"
+fetch.git = "https://codeberg.org/cage/cl-mount-info"
 ### :END: lisp overlays stuff
 ###
 
