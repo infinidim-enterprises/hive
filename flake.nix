@@ -79,7 +79,7 @@
     # std.url = "github:divnix/std/release/0.24";
     # commit used by hive: 0ce59ac671f041183da72e7cd5db9c6eb878e326
 
-    std.url = "github:divnix/std/release/0.32";
+    std.url = "github:divnix/std/release/0.33";
     std.inputs.nixpkgs.follows = "nixpkgs-unstable";
     std.inputs.n2c.follows = "n2c";
     std.inputs.devshell.follows = "devshell";
