@@ -295,6 +295,7 @@ let
     with final.lib; let
       # FIXME: interdeps and mcclim is broken!
       broken = [
+        "ticker"
         "swm-clim-message"
         "clim-mode-line"
         "debian"
