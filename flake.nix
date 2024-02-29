@@ -118,10 +118,6 @@
 
     impermanence.url = "github:nix-community/impermanence";
 
-    sops-nix-mod.url = "github:TrueLecter/sops-nix/darwin-upstream";
-    sops-nix-mod.inputs.nixpkgs.follows = "nixpkgs-unstable";
-    sops-nix-mod.inputs.nixpkgs-stable.follows = "nixos";
-
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs-unstable";
     sops-nix.inputs.nixpkgs-stable.follows = "nixos";
