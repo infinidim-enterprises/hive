@@ -13,7 +13,7 @@ in
   mkHome = username: shell: {
     imports =
       [
-        cell.nixosModules.hm-system-defaults
+        cell.nixosProfiles.home-manager-defaults
         (inputs.cells.home.userProfiles.extraGroupsMod username)
         ({ pkgs, ... }: {
           programs.${shell} = {

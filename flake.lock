@@ -3029,6 +3029,7 @@
         "nvfetcher": "nvfetcher",
         "paisano": "paisano",
         "sops-nix": "sops-nix",
+        "sops-nix-mod": "sops-nix-mod",
         "sops-ssh-to-age": "sops-ssh-to-age",
         "sops-ssh-to-pgp": "sops-ssh-to-pgp",
         "srvos": "srvos",
@@ -3118,6 +3119,30 @@
       },
       "original": {
         "owner": "Mic92",
+        "repo": "sops-nix",
+        "type": "github"
+      }
+    },
+    "sops-nix-mod": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs-unstable"
+        ],
+        "nixpkgs-stable": [
+          "nixos"
+        ]
+      },
+      "locked": {
+        "lastModified": 1698186302,
+        "narHash": "sha256-2e0eQTq8/lC3qzZMiQG41FHO4tREZpFWbvT8SEQMrAU=",
+        "owner": "TrueLecter",
+        "repo": "sops-nix",
+        "rev": "4e50b50aa2c20c2113fca3247064f3a9df456a71",
+        "type": "github"
+      },
+      "original": {
+        "owner": "TrueLecter",
+        "ref": "darwin-upstream",
         "repo": "sops-nix",
         "type": "github"
       }

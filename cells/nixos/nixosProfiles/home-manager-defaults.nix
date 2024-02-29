@@ -1,6 +1,6 @@
 { inputs, cell, ... }:
 
-{ config, ... }:
+{ config, lib, ... }:
 {
   # NOTE: https://github.com/NixOS/nixpkgs/issues/5200
   # https://github.com/rycee/home-manager/issues/1011
@@ -14,7 +14,7 @@
   programs.command-not-found.enable = true; # to use the home-manager version
 
   environment.homeBinInPath = true;
-  users.mutableUsers = false;
+  users.mutableUsers = lib.mkDefault false;
 
   home-manager.verbose = false; # DEBUG disabled!
   home-manager.sharedModules = [

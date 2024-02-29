@@ -31,7 +31,7 @@
       AllowAgentForwarding yes
       AcceptEnv *
     '';
-    hostKeys = [
+    hostKeys = mkDefault [
       {
         bits = 4096;
         openSSHFormat = true;

@@ -17,4 +17,13 @@
       colmena {{action}} --on {{name}}
     '';
   };
+
+  # vm = {
+  #   args = [ "name" ];
+  #   description = "Start microvm [name]";
+  #   content = ''
+  #     rm -rf /tmp/nix-store-overlay.img
+  #     std //nixos/microvms/{{name}}:run
+  #   '';
+  # };
 }
