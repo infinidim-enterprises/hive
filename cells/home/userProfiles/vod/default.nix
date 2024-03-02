@@ -1,11 +1,10 @@
 { inputs, cell, ... }:
 
 { config, lib, pkgs, ... }:
-# let
-#   extraGroups = cell.userProfiles.extraGroups ++ [ "wheel" ];
-# in
+
 {
   imports =
+    inputs.cells.nixos.nixosSuites.desktop ++
     [
       {
         disabledModules = [
@@ -21,8 +20,6 @@
     ] ++
     # [ cell.nixosProfiles.desktop.remote-display-host-5-heads ] ++
     (with inputs.cells.nixos.nixosProfiles; [
-      desktop.xdmcp
-      desktop.common
       desktop.stumpwm
       desktop.chromium-browser
       # desktop.firefox-browser

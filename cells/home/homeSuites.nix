@@ -8,8 +8,9 @@ rec {
     cli;
 
   cli = with cell.homeProfiles; [
-    # TODO: programs.atuin
+    xdg
     shell.zsh
+    shell.atuin
     shell.screen
     shell.cli-tools
     look-and-feel.starship-prompt
@@ -17,10 +18,10 @@ rec {
 
   desktop = with cell.homeProfiles; [
     # emacs
+    remmina
     terminals.tilix
     terminals.kitty
     conky
-    xdg
     qt
   ];
 

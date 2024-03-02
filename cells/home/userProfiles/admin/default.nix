@@ -5,6 +5,11 @@ let
   inherit (lib) mkMerge;
 in
 lib.mkMerge [
+  {
+    # home-manager.users.admin.imports = [
+    #   cell.homeProfiles.shell.atuin
+    # ];
+  }
   { users.users.admin.extraGroups = [ "wheel" ]; }
   {
     users.users.admin = {

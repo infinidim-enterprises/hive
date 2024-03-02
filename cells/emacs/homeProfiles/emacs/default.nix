@@ -56,7 +56,6 @@ mkMerge [
   (mkIf config.xdg.enable {
 
     xdg.userDirs.extraConfig = {
-      XDG_LOGS_DIR = "$HOME/Logs";
       EMACS_PATH_SNIPPETS_DIR = "$HOME/Documents/snippets";
       EMACS_PATH_ORG = "$HOME/Documents/org";
       EMACS_PATH_ORG_BRAIN = "$HOME/Documents/org/brain";

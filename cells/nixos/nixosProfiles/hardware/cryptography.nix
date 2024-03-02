@@ -191,6 +191,7 @@ mkMerge [
     # ATTRS{idVendor}=="1209"
 
     environment.systemPackages = with pkgs; [
+      gcr
       gpa
       yubikey-personalization-gui
       yubikey-manager-qt

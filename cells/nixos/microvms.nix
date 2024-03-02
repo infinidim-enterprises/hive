@@ -9,6 +9,7 @@ let
       overlays = with inputs.cells.common.overlays; [
         sources
         stumpwm-new
+        make-desktopitem
         nixpkgs-unstable-overrides
         nixpkgs-master-overrides
       ];
@@ -119,6 +120,9 @@ let
   };
 
   desktop-config = { pkgs, ... }: {
+    # services.xserver.desktopManager.mate.enable = true;
+    imports = [ inputs.cells.nixos.nixosModules.services.x11.window-managers.stumpwm-new ];
+    services.xserver.windowManager.stumpwm-new.enable = true;
     hardware.opengl.enable = true;
     microvm.graphics.enable = true;
     microvm.qemu.extraArgs = [
@@ -143,7 +147,7 @@ let
 
     services.xserver = {
       enable = true;
-      desktopManager.xfce.enable = true;
+      # desktopManager.xfce.enable = true;
       displayManager.autoLogin.user = "admin";
     };
 
@@ -171,10 +175,18 @@ in
   # std //nixos/microvms/desktop:run
   desktop = inputs.std.lib.ops.mkMicrovm {
     inherit bee;
-    imports = [
-      common-config
-      desktop-config
-    ];
+    imports =
+      inputs.cells.nixos.nixosSuites.desktop ++
+      [
+        common-config
+        desktop-config
+        {
+          home-manager.users.admin.imports = [
+            { services.xserver.windowManager.stumpwm-new.enable = true; }
+          ];
+        }
+
+      ];
   };
 
 }

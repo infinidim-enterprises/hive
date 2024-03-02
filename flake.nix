@@ -103,7 +103,7 @@
     hive.inputs.nixpkgs.follows = "nixpkgs-unstable";
   };
 
-  # tools
+  # system tools
   inputs = {
     nix-filter.url = "github:numtide/nix-filter";
 
@@ -145,7 +145,7 @@
     home.inputs.nixpkgs.follows = "nixos";
 
     home-unstable.url = "github:nix-community/home-manager";
-    home-unstable.inputs.nixpkgs.follows = "latest";
+    home-unstable.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
     home-activitywatch.url = "github:nix-community/home-manager?ref=pull/4429/head";
     home-activitywatch.inputs.nixpkgs.follows = "latest";
@@ -173,9 +173,14 @@
     nix-vscode-extensions.inputs.nixpkgs.follows = "nixpkgs";
     nix-vscode-extensions.inputs.flake-utils.follows = "flake-utils";
 
-    nvfetcher.url = "github:berberman/nvfetcher";
-    nvfetcher.inputs.nixpkgs.follows = "nixpkgs-unstable";
-    nvfetcher.inputs.flake-utils.follows = "flake-utils";
+    # TODO: move to stylix!
+    stylix.url = "github:danth/stylix";
+    stylix.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    stylix.inputs.home-manager.follows = "home-unstable";
+
+    nvfetcher.url = "github:berberman/nvfetcher/0.6.2";
+    # nvfetcher.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    # nvfetcher.inputs.flake-utils.follows = "flake-utils";
 
     nur.url = "github:nix-community/NUR";
 

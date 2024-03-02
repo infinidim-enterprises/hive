@@ -223,16 +223,16 @@
   };
   ipxe = {
     pname = "ipxe";
-    version = "43e385091a36af34e495ac8c6595bddab55665bb";
+    version = "182ee909313fc60875d3f1741cd4a0bb7dfd15e1";
     src = fetchgit {
       url = "https://github.com/ipxe/ipxe";
-      rev = "43e385091a36af34e495ac8c6595bddab55665bb";
+      rev = "182ee909313fc60875d3f1741cd4a0bb7dfd15e1";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-Ux5rYLJXWqj0oFXHenF7g28AwSyNqGDyPMp97c/kuWk=";
+      sha256 = "sha256-fP+bl+wZpLkwH+tArWRKMvDuw5VDjv80AR7QTt3cv/8=";
     };
-    date = "2024-02-23";
+    date = "2024-02-27";
   };
   langchain = {
     pname = "langchain";
@@ -243,6 +243,14 @@
       rev = "v0.1.9";
       fetchSubmodules = false;
       sha256 = "sha256-AgEze4JUo3i6HCg541tz/gV6g+zrueyOljy/TXUYBV4=";
+    };
+  };
+  ledger-live-desktop = {
+    pname = "ledger-live-desktop";
+    version = "2.77.2";
+    src = fetchurl {
+      url = "https://download.live.ledger.com/ledger-live-desktop-2.77.2-linux-x86_64.AppImage";
+      sha256 = "sha256-orIyfRs6TJgqGGLpl2tvoUtejsB0ni8xRK0SboP2LHw=";
     };
   };
   listopia = {
@@ -335,12 +343,12 @@
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "3ddd0690f250eb1bac831628f91f0810ae950a53";
+    version = "9d64752753ec04998437b1a3ca57d27b66c47891";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";
     };
-    date = "2024-02-27";
+    date = "2024-02-29";
   };
   promnesia = {
     pname = "promnesia";
@@ -384,8 +392,8 @@
       fetchSubmodules = false;
       sha256 = "sha256-jPxMo3QfqfSYTkKYnCf6CQhkSJrX90p70amSXynBxnE=";
     };
-    system = "stumpwm";
     asd = "stumpwm";
+    system = "stumpwm";
   };
   stumpwm-contrib = {
     pname = "stumpwm-contrib";
@@ -409,8 +417,8 @@
       fetchSubmodules = false;
       sha256 = "sha256-Fg4stpCRe0SpgNcdcqb9dYsCASbtN/wrO/ig9ML2nlM=";
     };
-    system = "stumpwm";
     asd = "stumpwm";
+    system = "stumpwm";
     date = "2024-02-17";
   };
   stumpwm-release = {
@@ -423,8 +431,8 @@
       fetchSubmodules = false;
       sha256 = "sha256-sWCr3wm99Hv4LsZ572921wcUnQV40AmWSUVMWnmfeSo=";
     };
-    system = "stumpwm";
     asd = "stumpwm";
+    system = "stumpwm";
   };
   tfenv = {
     pname = "tfenv";

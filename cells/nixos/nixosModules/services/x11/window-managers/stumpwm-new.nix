@@ -95,18 +95,8 @@ let
         else
           echo "DESKTOP_AUTOSTART_ID not set."
         fi
-        ${cfg.package}/bin/sbcl \
-          --eval '(declaim #+sbcl(sb-ext:muffle-conditions style-warning))' \
-          --eval '(require :asdf)' \
-          --eval '(require :stumpwm)' \
-          --eval '(defun stumpwm::data-dir () (merge-pathnames "Logs/" (user-homedir-pathname)))' \
-          --eval '(stumpwm:stumpwm)' \
-          --eval '(quit)'
-      '';
 
-      mate-session-script = pkgs.writeShellScript "mate-session-script" ''
-        ${pkgs.dconf}/bin/dconf load / < ${customDconf}
-        ${pkgs.mate.mate-session-manager}/bin/mate-session
+        ${cfg.package}/bin/stumpwm
       '';
 
       icons = pkgs.stdenvNoCC.mkDerivation {
@@ -147,15 +137,8 @@ let
           X-MATE-Autostart-Notify = "false";
         };
       });
-
-      xsession = pkgs.makeDesktopItem (desktopItemTemlate // {
-        exec = "${mate-session-script}";
-        destination = "/share/xsessions";
-        comment = "This session logs you into MATE+STUMPWM";
-        extraConfig.DesktopNames = "stumpwm";
-      });
     in
-    { inherit xsession item icons; };
+    { inherit item icons; };
 
 in
 {
@@ -163,7 +146,7 @@ in
     enable = mkEnableOption "StumpWM";
     package = mkOption {
       type = package;
-      default = pkgs.stumpwm-git-new;
+      default = pkgs.stumpwm_release_latest.bin;
     };
   };
 
@@ -175,11 +158,6 @@ in
         enable = true;
         updateDbusEnvironment = true;
         desktopManager.mate.enable = true;
-        displayManager.sessionPackages = [
-          (stumpwm_desktop.xsession.overrideAttrs (_: {
-            passthru.providedSessions = [ "stumpwm" ];
-          }))
-        ];
         gdk-pixbuf.modulePackages = [ pkgs.librsvg ];
       };
 
@@ -188,7 +166,7 @@ in
       environment.sessionVariables.CPATH = "${pkgs.libfixposix}/include";
       environment.systemPackages = [
         cfg.package # FIXME: have emacs use different inferrior lisps
-        pkgs.stumpwm-contrib-stumpish
+        pkgs.stumpwm_release_latest.stumpish
         stumpwm_desktop.item
         stumpwm_desktop.icons
       ];
@@ -211,6 +189,7 @@ in
             cfgMimeApps = config.xdg.mimeApps.enable;
           in
           {
+            options.services.xserver.windowManager.stumpwm-new.enable = lib.mkEnableOption "Use mate+stumpwm";
             options.services.xserver.windowManager.stumpwm-new.confDir = with lib.types; lib.mkOption {
               default = null;
               # let tPath = "${self}/users/${name}/dotfiles/stumpwm.d";
@@ -220,23 +199,25 @@ in
               description = "Path to stumpwm config dir";
             };
 
-            config = lib.mkMerge [
+            config = lib.mkIf cfg.enable (lib.mkMerge [
+              { dconf.settings."org/mate/desktop/session/required-components".windowmanager = "stumpwm"; }
+
               (lib.mkIf cfgMimeApps {
                 xdg.mimeApps.defaultApplications."inode/directory" = "caja-folder-handler.desktop";
                 xdg.mimeApps.defaultApplications."application/x-mate-saved-search" = "caja-folder-handler.desktop";
               })
 
-              (lib.mkIf cfgOpenSnitch {
-                services.opensnitch.allow =
-                  with builtins;
-                  let
-                    withDir = dir: map (x: "${dir}/${x}") (filter (hasPrefix ".") (attrNames (readDir dir)));
-                  in
-                  flatten (map withDir [
-                    "${pkgs.mate.mate-panel}/libexec"
-                    "${pkgs.gvfs}/libexec"
-                  ]);
-              })
+              # (lib.mkIf cfgOpenSnitch {
+              #   services.opensnitch.allow =
+              #     with builtins;
+              #     let
+              #       withDir = dir: map (x: "${dir}/${x}") (filter (hasPrefix ".") (attrNames (readDir dir)));
+              #     in
+              #     flatten (map withDir [
+              #       "${pkgs.mate.mate-panel}/libexec"
+              #       "${pkgs.gvfs}/libexec"
+              #     ]);
+              # })
 
               (lib.mkIf (!builtins.isNull cfg.confDir) {
                 xdg.configFile."stumpwm".source = cfg.confDir;
@@ -245,7 +226,7 @@ in
                 xdg.dataFile."fonts".source = fontsDir;
               })
 
-            ];
+            ]);
           }
         )
       ];

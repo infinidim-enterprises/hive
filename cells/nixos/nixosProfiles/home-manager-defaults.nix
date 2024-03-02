@@ -17,15 +17,22 @@
   users.mutableUsers = lib.mkDefault false;
 
   home-manager.verbose = false; # DEBUG disabled!
-  home-manager.sharedModules = [
-    {
-      programs.starship.enable = true;
-      programs.command-not-found.enable = !config.programs.command-not-found.enable;
+  home-manager.sharedModules =
+    [
+      {
+        programs.starship.enable = true;
+        programs.command-not-found.enable = !config.programs.command-not-found.enable;
 
-      home.sessionVariables.HM_FONT_NAME = "UbuntuMono Nerd Font Mono";
-      home.sessionVariables.HM_FONT_SIZE = "15";
+        # TODO: home.sessionVariables.HM_FONT_ use stylix instead!
+        home.sessionVariables.HM_FONT_NAME = "UbuntuMono Nerd Font Mono";
+        home.sessionVariables.HM_FONT_SIZE = "15";
+      }
 
-      xdg.configFile."nix/registry.json".text = config.environment.etc."nix/registry.json".text;
-    }
-  ];
+      ({ config, lib, osConfig, ... }:
+        lib.mkIf config.xdg.enable
+          {
+            xdg.userDirs.extraConfig.XDG_LOGS_DIR = "${config.home.homeDirectory}/Logs";
+            xdg.configFile."nix/registry.json".text = osConfig.environment.etc."nix/registry.json".text;
+          })
+    ];
 }

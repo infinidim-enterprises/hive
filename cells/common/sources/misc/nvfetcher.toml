@@ -231,3 +231,8 @@ fetch.git = "https://codeberg.org/cage/cl-mount-info"
 [masterpdfeditor]
 src.manual = "5.9.82"
 fetch.url = "https://code-industry.net/public/master-pdf-editor-$ver-qt5.x86_64.tar.gz"
+
+[ledger-live-desktop]
+# src.manual = "2.57.0"
+src.manual = "2.77.2"
+fetch.url = "https://download.live.ledger.com/ledger-live-desktop-$ver-linux-x86_64.AppImage"

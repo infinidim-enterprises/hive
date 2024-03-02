@@ -137,9 +137,11 @@ let
     inherit (final.sources.stumpwm-release) src pname version;
 
     buildScript = prev.writeText "build-stumpwm.lisp" ''
-      (load "${unwrapped.asdfFasl}/asdf.${unwrapped.faslExt}")
-
+      (load "${sbcl_with_pkgs.asdfFasl}/asdf.${sbcl_with_pkgs.faslExt}")
+      (declaim #+sbcl(sb-ext:muffle-conditions style-warning))
       (asdf:load-system 'stumpwm)
+
+      (defun stumpwm::data-dir () (merge-pathnames "Logs/" (user-homedir-pathname)))
 
       ;; Prevents package conflict error
       (when (uiop:version<= "3.1.5" (asdf:asdf-version))
@@ -155,11 +157,22 @@ let
       (sb-ext:save-lisp-and-die
         "stumpwm"
         :executable t
+        :save-runtime-options t
         :purify t
         #+sb-core-compression :compression
         #+sb-core-compression t
         :toplevel #'stumpwm:stumpwm)
     '';
+    /*
+          --eval '(declaim #+sbcl(sb-ext:muffle-conditions style-warning))' \
+          --eval '(require :asdf)' \
+          --eval '(require :stumpwm)' \
+      XDG_LOGS_DIR
+          --eval '(defun stumpwm::data-dir () (merge-pathnames "Logs/" (user-homedir-pathname)))' \
+          --eval '(stumpwm:stumpwm)' \
+          --eval '(quit)'
+
+    */
     installPhase = ''
       mkdir -p $out/bin
       cp -v stumpwm $out/bin
@@ -223,6 +236,14 @@ let
     });
   });
 
+  sbcl_with_pkgs = sbcl.withPackages (p: [
+    slynk
+    slynk-asdf
+    slynk-named-readtables
+    slynk-macrostep
+    unwrapped
+  ] ++ (attrValues stumpwm-contrib));
+
   stumpwm-contrib =
     let
       broken = [
@@ -284,14 +305,14 @@ let
     ];
   };
 
-  slynk-quicklisp = build-with-compile-into-pwd {
-    lisp = "${final.sbcl}/bin/sbcl --load ${final.sources.quicklisp.src} --eval '(quicklisp-quickstart:install)' --script";
-    preConfigure = ''export HOME=$(mktemp -d)'';
-    __impure = true;
-    pname = "slynk-quicklisp";
-    lispLibs = [ slynk ];
-    inherit (final.emacsPackages.sly-quicklisp) src version;
-  };
+  # slynk-quicklisp = build-with-compile-into-pwd {
+  #   lisp = "${final.sbcl}/bin/sbcl --load ${final.sources.quicklisp.src} --eval '(quicklisp-quickstart:install)' --script";
+  #   preConfigure = ''export HOME=$(mktemp -d)'';
+  #   __impure = true;
+  #   pname = "slynk-quicklisp";
+  #   lispLibs = [ slynk ];
+  #   inherit (final.emacsPackages.sly-quicklisp) src version;
+  # };
 
   slynk-asdf = build-with-compile-into-pwd {
     pname = "slynk-asdf";
@@ -316,6 +337,7 @@ in
   stumpwm_release_latest = {
     inherit
       sbcl
+      sbcl_with_pkgs
 
       bin
       stumpish
@@ -323,7 +345,7 @@ in
       stumpwm-contrib
 
       slynk
-      slynk-quicklisp
+      # slynk-quicklisp
       slynk-asdf
       slynk-named-readtables
       slynk-macrostep;

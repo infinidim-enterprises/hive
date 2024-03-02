@@ -59,12 +59,12 @@ lib.mkMerge [
     #  /etc/chromium/master_preferences
   }
 
-  (lib.mkIf (config ? home-manager) {
-    home-manager.sharedModules = [
-      { programs.chromium.enable = true; }
-      ({ config, lib, ... }:
-        lib.mkIf (config.services ? opensnitch)
-          { services.opensnitch.allow = [ "${config.programs.chromium.package.browser}/libexec/chromium/chromium" ]; })
-    ];
-  })
+  # (lib.mkIf (config ? home-manager) {
+  #   home-manager.sharedModules = [
+  #     { programs.chromium.enable = true; }
+  #     ({ config, lib, ... }:
+  #       lib.mkIf (config.services ? opensnitch)
+  #         { services.opensnitch.allow = [ "${config.programs.chromium.package.browser}/libexec/chromium/chromium" ]; })
+  #   ];
+  # })
 ]

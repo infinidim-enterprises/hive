@@ -15,7 +15,5 @@
     xdg-desktop-portal-xapp
   ];
 
-  environment.systemPackages = with pkgs; [
-    xdg-utils
-  ];
+  environment.systemPackages = with pkgs; [ xdg-utils ];
 }

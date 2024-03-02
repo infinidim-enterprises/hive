@@ -36,7 +36,6 @@ rec {
       (import ./_hardwareProfile.nix { inherit inputs cell; })
 
       cell.nixosProfiles.desktop.printer-kyocera
-      cell.nixosProfiles.networking.adguardhome
 
       ({ pkgs, ... }: {
         systemd.network.networks.local-eth.matchConfig.Name = "eno1";

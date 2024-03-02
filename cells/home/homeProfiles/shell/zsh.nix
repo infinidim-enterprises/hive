@@ -8,7 +8,7 @@ lib.mkIf config.programs.zsh.enable
   programs.navi.enable = true;
 
   # TODO: maybe replace it with https://github.com/cantino/mcfly
-  programs.skim = {
+  programs.skim = lib.mkIf (!config.programs.atuin.enable) {
     enable = true;
     defaultCommand = "fd --type f";
     defaultOptions = [ "--ansi" "--height 30%" "--prompt ⟫" ];

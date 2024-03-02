@@ -365,7 +365,7 @@
     },
     "ipxe": {
         "cargoLocks": null,
-        "date": "2024-02-23",
+        "date": "2024-02-27",
         "extract": null,
         "name": "ipxe",
         "passthru": null,
@@ -375,12 +375,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "43e385091a36af34e495ac8c6595bddab55665bb",
-            "sha256": "sha256-Ux5rYLJXWqj0oFXHenF7g28AwSyNqGDyPMp97c/kuWk=",
+            "rev": "182ee909313fc60875d3f1741cd4a0bb7dfd15e1",
+            "sha256": "sha256-fP+bl+wZpLkwH+tArWRKMvDuw5VDjv80AR7QTt3cv/8=",
             "type": "git",
             "url": "https://github.com/ipxe/ipxe"
         },
-        "version": "43e385091a36af34e495ac8c6595bddab55665bb"
+        "version": "182ee909313fc60875d3f1741cd4a0bb7dfd15e1"
     },
     "langchain": {
         "cargoLocks": null,
@@ -401,6 +401,21 @@
             "type": "github"
         },
         "version": "v0.1.9"
+    },
+    "ledger-live-desktop": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "ledger-live-desktop",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-orIyfRs6TJgqGGLpl2tvoUtejsB0ni8xRK0SboP2LHw=",
+            "type": "url",
+            "url": "https://download.live.ledger.com/ledger-live-desktop-2.77.2-linux-x86_64.AppImage"
+        },
+        "version": "2.77.2"
     },
     "listopia": {
         "cargoLocks": null,
@@ -545,7 +560,7 @@
     },
     "pbkdf2-sha512": {
         "cargoLocks": null,
-        "date": "2024-02-27",
+        "date": "2024-02-29",
         "extract": null,
         "name": "pbkdf2-sha512",
         "passthru": null,
@@ -556,7 +571,7 @@
             "type": "url",
             "url": "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c"
         },
-        "version": "3ddd0690f250eb1bac831628f91f0810ae950a53"
+        "version": "9d64752753ec04998437b1a3ca57d27b66c47891"
     },
     "promnesia": {
         "cargoLocks": null,

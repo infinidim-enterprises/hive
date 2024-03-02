@@ -3,7 +3,7 @@ let
   defaultPasswordStorePath = "${config.xdg.dataHome}/password-store";
   # FIXME: isDesktop = with osConfig.services; xserver.displayManager.lightdm.enable && (pass-secret-service.enable || gnome.gnome-keyring.enable);
   isDesktop = with osConfig.services;
-    xserver.displayManager.lightdm.enable && gnome.gnome-keyring.enable;
+    xserver.displayManager.lightdm.enable; # && gnome.gnome-keyring.enable;
 in
 with lib;
 mkMerge [
@@ -17,6 +17,8 @@ mkMerge [
   }
 
   {
+    services.pass-secret-service.enable = true;
+
     programs.password-store = {
       enable = true;
       settings.PASSWORD_STORE_DIR = mkDefault defaultPasswordStorePath;

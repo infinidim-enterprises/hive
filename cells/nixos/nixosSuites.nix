@@ -20,10 +20,20 @@ in
   ++ [ cell.nixosModules.deploy ]
   ++ [ inputs.cells.common.nixosProfiles.nix-config ];
 
+  desktop = with cell.nixosProfiles.desktop; [
+    common
+    dconf
+    fonts
+    multimedia # bluetooth only atm
+    xdg
+    # TODO: desktop.opensnitch
+  ];
+
   networking = [
     cell.nixosProfiles.networking.networkd
     cell.nixosProfiles.networking.firewall
     cell.nixosProfiles.networking.openssh
+    cell.nixosProfiles.networking.adguardhome
   ];
 
   virtualization = [
