@@ -1,4 +1,5 @@
 ;; -*-lisp-*-
+(require :asdf)
 (require :anaphora)
 (require :cl-hash-util)
 (require :cl-strings)

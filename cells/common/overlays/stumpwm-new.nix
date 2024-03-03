@@ -22,6 +22,43 @@ let
     readDir;
 
   build-asdf-system = prev.sbcl.buildASDFSystem;
+  sbcl_unwrapped = prev.sbcl.override { purgeNixReferences = true; };
+  sbcl_wrapped = prev.wrapLisp {
+    pkg = sbcl_unwrapped;
+    faslExt = "fasl";
+    flags = [ "--dynamic-space-size" "3000" ];
+  };
+
+  sbcl = sbcl_wrapped.withOverrides (finalLisp: prevLisp: rec {
+
+    "(FEATURE LINUX cl-mount-info)" = cl-mount-info;
+
+    cl-mount-info = build-with-compile-into-pwd {
+      inherit (final.sources.cl-mount-info) src pname version;
+      lispLibs = with final.stumpwm_release_latest.sbcl.pkgs; [
+        alexandria
+        cffi
+        cl-ppcre
+      ];
+    };
+
+    mcclim-layouts = build-with-compile-into-pwd { inherit (prevLisp.mcclim-layouts) src lispLibs pname version; };
+    mcclim-fontconfig = prevLisp.mcclim-fontconfig.overrideLispAttrs (oldAttrs: {
+      nativeLibs = with prev; [ pkg-config fontconfig ];
+    });
+    mcclim-harfbuzz = prevLisp.mcclim-harfbuzz.overrideLispAttrs (oldAttrs: {
+      nativeLibs = with prev; [ pkg-config harfbuzz freetype ];
+    });
+  });
+
+  sbcl_with_pkgs = sbcl.withPackages (p: [
+    slynk
+    slynk-asdf
+    slynk-named-readtables
+    slynk-macrostep
+    unwrapped
+  ] ++ (attrValues stumpwm-contrib));
+
 
   build-with-compile-into-pwd = args:
     let
@@ -80,6 +117,7 @@ let
     build-with-compile-into-pwd { inherit lispLibs pname version; src = src'; };
 
   unwrapped = (build-asdf-system {
+    # pkg = final.stumpwm_release_latest.sbcl_with_pkgs;
     inherit (final.sources.stumpwm-release) src pname version;
     asds = [ "stumpwm" ];
     systems = [ "stumpwm" ];
@@ -122,7 +160,8 @@ let
       bordeaux-threads
       listopia
       lparallel
-      acl-compat
+
+      acl-compat-fresh
 
       ### Sly stuff
       slynk
@@ -133,9 +172,20 @@ let
     ];
   });
 
-  bin = unwrapped.overrideLispAttrs (o: rec {
-    inherit (final.sources.stumpwm-release) src pname version;
+  bin = prev.writeShellScriptBin "stumpwm" ''
+    exec ${sbcl_with_pkgs}/bin/sbcl \
+      --eval '(declaim #+sbcl(sb-ext:muffle-conditions style-warning))' \
+      --eval '(require :asdf)' \
+      --eval '(require :stumpwm)' \
+      --eval '(defun stumpwm::data-dir () (merge-pathnames "Logs/" (user-homedir-pathname)))' \
+      --eval '(stumpwm:stumpwm)' \
+      --eval '(quit)'
+  '';
 
+  bin_defective = unwrapped.overrideLispAttrs (o: rec {
+    inherit (final.sources.stumpwm-release) src pname version;
+    nativeBuildInputs = [ prev.makeWrapper ];
+    # XDG_LOGS_DIR
     buildScript = prev.writeText "build-stumpwm.lisp" ''
       (load "${sbcl_with_pkgs.asdfFasl}/asdf.${sbcl_with_pkgs.faslExt}")
       (declaim #+sbcl(sb-ext:muffle-conditions style-warning))
@@ -163,20 +213,16 @@ let
         #+sb-core-compression t
         :toplevel #'stumpwm:stumpwm)
     '';
-    /*
-          --eval '(declaim #+sbcl(sb-ext:muffle-conditions style-warning))' \
-          --eval '(require :asdf)' \
-          --eval '(require :stumpwm)' \
-      XDG_LOGS_DIR
-          --eval '(defun stumpwm::data-dir () (merge-pathnames "Logs/" (user-homedir-pathname)))' \
-          --eval '(stumpwm:stumpwm)' \
-          --eval '(quit)'
 
-    */
     installPhase = ''
       mkdir -p $out/bin
       cp -v stumpwm $out/bin
     '';
+
+    postFixup = ''
+      wrapProgram $out/bin/stumpwm --set SBCL_HOME "${sbcl}/lib/sbcl"
+    '';
+
   });
 
   dynamic-mixins = build-with-compile-into-pwd rec {
@@ -213,36 +259,6 @@ let
         [ "" ]
         (readFile "${final.sources.stumpwm-contrib.src}/util/stumpish/stumpish"));
   };
-
-  sbcl = prev.sbcl.withOverrides (finalLisp: prevLisp: rec {
-
-    "(FEATURE LINUX cl-mount-info)" = cl-mount-info;
-
-    cl-mount-info = build-with-compile-into-pwd {
-      inherit (final.sources.cl-mount-info) src pname version;
-      lispLibs = with final.stumpwm_release_latest.sbcl.pkgs; [
-        alexandria
-        cffi
-        cl-ppcre
-      ];
-    };
-
-    mcclim-layouts = build-with-compile-into-pwd { inherit (prevLisp.mcclim-layouts) src lispLibs pname version; };
-    mcclim-fontconfig = prevLisp.mcclim-fontconfig.overrideLispAttrs (oldAttrs: {
-      nativeLibs = with prev; [ pkg-config fontconfig ];
-    });
-    mcclim-harfbuzz = prevLisp.mcclim-harfbuzz.overrideLispAttrs (oldAttrs: {
-      nativeLibs = with prev; [ pkg-config harfbuzz freetype ];
-    });
-  });
-
-  sbcl_with_pkgs = sbcl.withPackages (p: [
-    slynk
-    slynk-asdf
-    slynk-named-readtables
-    slynk-macrostep
-    unwrapped
-  ] ++ (attrValues stumpwm-contrib));
 
   stumpwm-contrib =
     let
@@ -287,6 +303,16 @@ let
       );
     in
     filterAttrs (k: _: ! elem k broken) allPkgs;
+
+  acl-compat-fresh = build-with-compile-into-pwd rec {
+    inherit (final.sources.acl-compat) src pname version;
+    lispLibs = with final.stumpwm_release_latest.sbcl.pkgs; [
+      puri
+      cl-ppcre
+      ironclad
+      cl-fad
+    ];
+  };
 
   slynk = build-with-compile-into-pwd rec {
     inherit (final.emacsPackages.sly) version src;

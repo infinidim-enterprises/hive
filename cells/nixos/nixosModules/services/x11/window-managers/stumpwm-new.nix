@@ -125,7 +125,7 @@ let
         keywords = [ "launch" "stumpwm" "desktop" "session" ];
         icon = "stumpwm";
         type = "Application";
-        # noDisplay = true;
+        noDisplay = true;
       };
 
       item = pkgs.makeDesktopItem (desktopItemTemlate // {

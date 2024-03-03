@@ -182,7 +182,10 @@ in
         desktop-config
         {
           home-manager.users.admin.imports = [
-            { services.xserver.windowManager.stumpwm-new.enable = true; }
+            {
+              services.xserver.windowManager.stumpwm-new.enable = true;
+              services.xserver.windowManager.stumpwm-new.confDir = ../home/userProfiles/vod/dotfiles/stumpwm.d;
+            }
           ];
         }
 
