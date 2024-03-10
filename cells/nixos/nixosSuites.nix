@@ -20,6 +20,7 @@ in
   ++ [ cell.nixosModules.deploy ]
   ++ [ inputs.cells.common.nixosProfiles.nix-config ];
 
+  # TODO: desktop profiles with different window managers
   desktop = with cell.nixosProfiles.desktop; [
     common
     dconf
