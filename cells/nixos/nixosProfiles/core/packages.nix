@@ -29,6 +29,8 @@ in
     ncdu
 
     # hardware
+    smartmontools # Tools for monitoring the health of hard drives
+    nvme-cli # NVM-Express user space tooling for Linux
     acpi # Show battery status and other ACPI information
     acpitool # A small, convenient command-line ACPI client with a lot of features
     lm_sensors # Tools for reading hardware sensors

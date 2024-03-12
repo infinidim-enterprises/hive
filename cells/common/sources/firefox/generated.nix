@@ -358,10 +358,10 @@
   };
   "darkreader" = rec {
     pname = "darkreader";
-    version = "4.9.77";
+    version = "4.9.78";
     addonId = "addon@darkreader.org";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4233074/darkreader-4.9.77.xpi";
-    sha256 = "931de67e9091c69edd9fd3f348a7ed1de1dce7d136017fed641bd10eb0ae8891";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4243182/darkreader-4.9.78.xpi";
+    sha256 = "21e08b3f26e9b54257d30f6b2fb2d966d41ace54d2d79ccec55e55517084c7ce";
     meta = with lib;
       {
         homepage = "https://darkreader.org/";
@@ -468,10 +468,10 @@
   };
   "ether-metamask" = rec {
     pname = "ether-metamask";
-    version = "11.7.5";
+    version = "11.10.1";
     addonId = "webextension@metamask.io";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4232237/ether_metamask-11.7.5.xpi";
-    sha256 = "adc0aef8a353ab0e274783662c25b9e0f965e9d32ff676e849636621aa6683b5";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4242329/ether_metamask-11.10.1.xpi";
+    sha256 = "728ee6e988fecbe312b644d28d6591478ba15afb3193f8bf74d76052ad132502";
     meta = with lib;
       {
         description = "Ethereum Browser Extension";

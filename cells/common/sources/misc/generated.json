@@ -42,11 +42,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-vRn5PEeoqJNjnk7ygWHhYXCHZ8iYzBBHH/P++8NaOnY=",
+            "sha256": "sha256-myU9oHRBODYHIe6Y0BUMQ2scMuhzMGvcb4l7tmS4MXs=",
             "type": "url",
-            "url": "https://github.com/AdguardTeam/AdGuardHome/releases/download/v0.107.44/AdGuardHome_linux_amd64.tar.gz"
+            "url": "https://github.com/AdguardTeam/AdGuardHome/releases/download/v0.107.45/AdGuardHome_linux_amd64.tar.gz"
         },
-        "version": "v0.107.44"
+        "version": "v0.107.45"
     },
     "age-plugin-trezor": {
         "cargoLocks": null,
@@ -256,11 +256,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-/AKA3yXBEEL1V5Os/aqOYCfoVLG3V9Mf29a+TZNKqIs=",
+            "sha256": "sha256-+uvhBRa8ak6kNpszqRqj4uMo8wKpjs+q9ef+EcYRY6o=",
             "type": "url",
-            "url": "https://github.com/jgraph/drawio-desktop/releases/download/v23.1.5/drawio-x86_64-23.1.5.rpm"
+            "url": "https://github.com/jgraph/drawio-desktop/releases/download/v24.0.4/drawio-x86_64-24.0.4.rpm"
         },
-        "version": "23.1.5"
+        "version": "24.0.4"
     },
     "git-get": {
         "cargoLocks": null,
@@ -365,7 +365,7 @@
     },
     "ipxe": {
         "cargoLocks": null,
-        "date": "2024-02-27",
+        "date": "2024-03-07",
         "extract": null,
         "name": "ipxe",
         "passthru": null,
@@ -375,12 +375,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "182ee909313fc60875d3f1741cd4a0bb7dfd15e1",
-            "sha256": "sha256-fP+bl+wZpLkwH+tArWRKMvDuw5VDjv80AR7QTt3cv/8=",
+            "rev": "226531ed36ec682728a13d2bd327a3d587a88926",
+            "sha256": "sha256-XnI5jFywy7mNNuSjGCGwUE2JG3GOYwbGYpfrdQaI5sA=",
             "type": "git",
             "url": "https://github.com/ipxe/ipxe"
         },
-        "version": "182ee909313fc60875d3f1741cd4a0bb7dfd15e1"
+        "version": "226531ed36ec682728a13d2bd327a3d587a88926"
     },
     "langchain": {
         "cargoLocks": null,
@@ -396,11 +396,11 @@
             "name": null,
             "owner": "langchain-ai",
             "repo": "langchain",
-            "rev": "v0.1.9",
-            "sha256": "sha256-AgEze4JUo3i6HCg541tz/gV6g+zrueyOljy/TXUYBV4=",
+            "rev": "v0.1.11",
+            "sha256": "sha256-I7H8W85WJCt8Dkep5UvFRVuhJS8uAeg0xF9mNPZwm2g=",
             "type": "github"
         },
-        "version": "v0.1.9"
+        "version": "v0.1.11"
     },
     "ledger-live-desktop": {
         "cargoLocks": null,
@@ -446,11 +446,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-OUQh+6HRnzxw8Nn/OkU+DkjPKWKpMN0xchD1vPU3KV8=",
+            "sha256": "sha256-EC83D7tSpoDV6h363yIdX9IrTfoMd4b0hTVdW1T0pXg=",
             "type": "url",
-            "url": "https://github.com/logseq/logseq/releases/download/0.10.6/logseq-linux-x64-0.10.6.AppImage"
+            "url": "https://github.com/logseq/logseq/releases/download/0.10.7/logseq-linux-x64-0.10.7.AppImage"
         },
-        "version": "0.10.6"
+        "version": "0.10.7"
     },
     "masterpdfeditor": {
         "cargoLocks": null,
@@ -560,7 +560,7 @@
     },
     "pbkdf2-sha512": {
         "cargoLocks": null,
-        "date": "2024-02-29",
+        "date": "2024-03-12",
         "extract": null,
         "name": "pbkdf2-sha512",
         "passthru": null,
@@ -571,7 +571,7 @@
             "type": "url",
             "url": "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c"
         },
-        "version": "9d64752753ec04998437b1a3ca57d27b66c47891"
+        "version": "da05945c74fcb2a7eb8fe49be8803b74b6a17b07"
     },
     "promnesia": {
         "cargoLocks": null,

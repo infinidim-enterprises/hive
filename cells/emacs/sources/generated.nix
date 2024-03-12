@@ -15,16 +15,16 @@
   };
   activity-watch-mode = {
     pname = "activity-watch-mode";
-    version = "63eb19a10e4262c529f1b205ef61d69055350f49";
+    version = "0189963cb60a0efdbb1cfd17641c06d16a74a974";
     src = fetchgit {
       url = "https://github.com/pauldub/activity-watch-mode";
-      rev = "63eb19a10e4262c529f1b205ef61d69055350f49";
+      rev = "0189963cb60a0efdbb1cfd17641c06d16a74a974";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-x6CrLGslawBtixdXDyp1U3i5yY8tkuI75LkHvOyt6YI=";
+      sha256 = "sha256-SMN02++A7+pf/S24rseoZSw1fodTyeWI6aWz0wLU80w=";
     };
-    date = "2023-07-31";
+    date = "2024-02-23";
   };
   all-the-icons = {
     pname = "all-the-icons";
@@ -54,42 +54,42 @@
   };
   color-rg = {
     pname = "color-rg";
-    version = "ee296163e53f44c92fc8869a60bcfdd68376581a";
+    version = "c576573c600ba0a6b78761ffda0e5ba8dddc048f";
     src = fetchgit {
       url = "https://github.com/manateelazycat/color-rg";
-      rev = "ee296163e53f44c92fc8869a60bcfdd68376581a";
+      rev = "c576573c600ba0a6b78761ffda0e5ba8dddc048f";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-U9fOY7G1eC6xHTIZ4290WcY61+ZFzmNY+AJsraAbSZ8=";
+      sha256 = "sha256-y6gl2by+UZVgsvb12E3rDeWp46Ok+5+Dq5+ucbmv+fQ=";
     };
-    date = "2023-12-12";
+    date = "2024-02-26";
   };
   copilot-el = {
     pname = "copilot-el";
-    version = "581cadd6f4229223fd5c57984f9595aeb86c84f7";
+    version = "4e203efaa1f4047c800a026ba496d3bda8b67119";
     src = fetchgit {
       url = "https://github.com/zerolfx/copilot.el.git";
-      rev = "581cadd6f4229223fd5c57984f9595aeb86c84f7";
+      rev = "4e203efaa1f4047c800a026ba496d3bda8b67119";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-h6tBAI9kf2+UhWat6xERLCNAfgugLVve/PGCjr5py2A=";
+      sha256 = "sha256-BLIyJ9z4yI2Iv5eqrmULJ5VXoGnlXSVJx+5lVQyIoO8=";
     };
-    date = "2024-02-11";
+    date = "2024-03-09";
   };
   doom-emacs = {
     pname = "doom-emacs";
-    version = "d6db0312fdf8c3a69d1aac243808b824ec9491e7";
+    version = "a0344ffc3ad7844075f6b0bc53c5130545d5a1d5";
     src = fetchgit {
       url = "https://github.com/hlissner/doom-emacs";
-      rev = "d6db0312fdf8c3a69d1aac243808b824ec9491e7";
+      rev = "a0344ffc3ad7844075f6b0bc53c5130545d5a1d5";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = true;
-      sha256 = "sha256-OTBB5w880kEJTmcJzLpEIYyr40BRdqdXafwRCNuiEFg=";
+      sha256 = "sha256-sM/vojFBf2VttGZEKCIz/UvOtFQ+lZu9y+oijgXTFX8=";
     };
-    date = "2024-02-10";
+    date = "2024-03-11";
   };
   grip = {
     pname = "grip";
@@ -106,27 +106,27 @@
   };
   jinx = {
     pname = "jinx";
-    version = "50dfdcdbdeb320fe0cf02006c90d087eb7a9787d";
+    version = "b09efcb85b1a8db8054a3d5a298e8d9516836f16";
     src = fetchFromGitHub {
       owner = "minad";
       repo = "jinx";
-      rev = "50dfdcdbdeb320fe0cf02006c90d087eb7a9787d";
+      rev = "b09efcb85b1a8db8054a3d5a298e8d9516836f16";
       fetchSubmodules = false;
-      sha256 = "sha256-etw6pYpwNErtSNVnJwv17xuyrUYhfMppCLvjbSVrMj0=";
+      sha256 = "sha256-sIbE1CS/JKeXrYKTnnu4Fh2rdh/R6rIcwmOTAguSzjc=";
     };
-    date = "2024-01-29";
+    date = "2024-03-11";
   };
   lsp-bridge = {
     pname = "lsp-bridge";
-    version = "dda0d227d071be0406cd1292ca53271b6a65c8ea";
+    version = "935f7181102182045ba7d203d22a4d717bcd127d";
     src = fetchFromGitHub {
       owner = "manateelazycat";
       repo = "lsp-bridge";
-      rev = "dda0d227d071be0406cd1292ca53271b6a65c8ea";
+      rev = "935f7181102182045ba7d203d22a4d717bcd127d";
       fetchSubmodules = false;
-      sha256 = "sha256-SBzEDIp7SJ3Hte6wvouDVdRIySt3+GwMR21N17/sch8=";
+      sha256 = "sha256-MdJQbYWDdVC7fKEdRhycRH4S/Qj5FTVztDBV3Xfnep4=";
     };
-    date = "2024-02-14";
+    date = "2024-03-09";
   };
   nix-mode = {
     pname = "nix-mode";

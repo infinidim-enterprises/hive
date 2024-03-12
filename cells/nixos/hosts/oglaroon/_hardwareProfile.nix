@@ -13,7 +13,10 @@
   # hardware.opengl.extraPackages = [ pkgs.rocm-opencl-icd ];
 
   boot.initrd.availableKernelModules = [ "nvme" "nvme_core" ];
-  boot.kernelParams = [ "amdgpu.sg_display=0" ];
+  boot.kernelParams = [
+    "amdgpu.sg_display=0"
+    "nvme_core.default_ps_max_latency_us=0" # NOTE: possibly a workaround for shitty Crucial nvme drive
+  ];
   disko.devices = cell.diskoConfigurations.oglaroon { inherit lib; };
   imports =
     [

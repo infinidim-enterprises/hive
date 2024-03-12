@@ -10,6 +10,123 @@ let
   ssh-to-pgp = inputs.sops-ssh-to-pgp.packages.default;
   ssh-to-age = inputs.sops-ssh-to-age.packages.default;
 
+  nixpkgs-master = import inputs.nixpkgs-master {
+    inherit (inputs.nixpkgs) system;
+    overlays = [ inputs.cells.common.overlays.vscode-extensions ];
+    config.allowUnfree = true;
+  };
+  /*
+    { pkgs ? import <nixpkgs> { } }:
+    with pkgs;
+    let
+    codium = vscode-with-extensions.override {
+    vscode = vscodium;
+    vscodeExtensions = with vscode-extensions; [
+      jnoortheen.nix-ide
+    ];
+    };
+    in
+    writeShellScriptBin "codium-test" ''
+    set -e
+    dir="''${XDG_CACHE_HOME:-~/.cache}/nixd-codium"
+    ${coreutils}/bin/mkdir -p "$dir/User"
+    cat >"$dir/User/settings.json" <<EOF
+    {
+    "security.workspace.trust.enabled": false,
+    "nix.enableLanguageServer": true,
+    "nix.serverPath": "nixd",
+    }
+    EOF
+    ${codium}/bin/codium --user-data-dir "$dir" "$@"
+    ''
+  */
+
+  nixd = inputs.nixd.packages.default.override {
+    inherit (nixpkgs) nix;
+  };
+
+  vscode =
+    let
+      jsonFormat = nixpkgs.formats.json { };
+      keybindings = jsonFormat.generate "vscode-keybindings.json" [
+        {
+          key = "tab";
+          command = "emacs-tab.reindentCurrentLine";
+          when = "editorTextFocus";
+        }
+      ];
+
+      userSettings = jsonFormat.generate "vscode-user-settings.json" {
+        "workbench.colorTheme" = "Solarized Dark";
+
+        "editor.fontFamily" = "UbuntuMono Nerd Font Mono";
+        "editor.fontSize" = 15;
+
+        "emacs-mcx.strictEmacsMove" = false;
+        "emacs-mcx.killRingMax" = 100;
+        "emacs-mcx.cursorMoveOnFindWidget" = true;
+
+        "editor.quickSuggestions".strings = true;
+        "editor.formatOnPaste" = true;
+
+        "shellformat.path" = lib.getExe nixpkgs.shfmt;
+        "bashIde.shellcheckPath" = lib.getExe nixpkgs.shellcheck;
+
+        "nix.enableLanguageServer" = true;
+        "nix.formatterPath" = lib.getExe nixpkgs-fmt;
+        "nix.serverPath" = "${nixd}/bin/nixd";
+        "nix.serverSettings" = {
+          # nixd.eval = { };
+          nixd.formatting.command = lib.getExe nixpkgs-fmt;
+          nixd.options.enable = true;
+          nixd.options.target.installable = ".#nixosConfigurations.nixos-oglaroon.options";
+        };
+      };
+
+      vscode-bin = nixpkgs-master.vscode-with-extensions.override {
+        vscodeExtensions = with nixpkgs-master.vscode-extensions; [
+          nix-ide
+
+          vscode-direnv
+          gherkintablealign
+          cucumberautocomplete
+
+          bash-ide-vscode
+          shell-format
+
+          emacs-mcx
+          vscode-emacs-tab
+
+          remote-ssh-edit
+          multi-cursor-case-preserve
+        ];
+
+      };
+
+      bin = writeShellApplication {
+        name = "code";
+        runtimeInputs = with nixpkgs; [
+          coreutils-full
+          nodePackages.bash-language-server
+        ];
+        text = ''
+          dataDir="''${XDG_CACHE_HOME}/vscode-devshell_user-data-dir"
+          userDir="''${dataDir}/User"
+          rm -rf "''${dataDir}"
+          mkdir -p "''${userDir}"
+
+          ln -s "${keybindings}" "''${userDir}/keybindings.json"
+          ln -s "${userSettings}" "''${userDir}/settings.json"
+
+          exec "${vscode-bin}/bin/code" --user-data-dir "''${dataDir}"
+        '';
+      };
+    in
+    bin;
+
+  inherit (nixpkgs-master)
+    ledger-live-desktop;
+
   inherit
     (nixpkgs.appendOverlays [ inputs.cells.common.overlays.nixpkgs-unstable-overrides ])
     gnupg
@@ -157,6 +274,7 @@ lib.mapAttrs (_: std.lib.dev.mkShell) {
 
     packages = [
       gnupg
+      vscode
     ];
 
     commands = [
@@ -186,6 +304,13 @@ lib.mapAttrs (_: std.lib.dev.mkShell) {
         name = "sops-reencrypt";
         help = "Reencrypt sops-encrypted files";
         package = sops-reencrypt;
+      }
+
+      {
+        category = "crypto-utils";
+        inherit (ledger-live-desktop) name;
+        help = ledger-live-desktop.meta.description;
+        package = ledger-live-desktop;
       }
 
       {

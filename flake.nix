@@ -169,6 +169,9 @@
     nixos-vscode-server.inputs.nixpkgs.follows = "nixpkgs";
     nixos-vscode-server.inputs.flake-utils.follows = "flake-utils";
 
+    flakey-devShells.url = "github:GetPsyched/not-so-flakey-devshells";
+    flakey-devShells.inputs.nixpkgs.follows = "nixpkgs-unstable";
+
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     nix-vscode-extensions.inputs.nixpkgs.follows = "nixpkgs";
     nix-vscode-extensions.inputs.flake-utils.follows = "flake-utils";
@@ -252,14 +255,16 @@
             (functions "nixosProfiles")
             (functions "homeProfiles")
             (functions "userProfiles")
-            (functions "users")
+            (functions "arionProfiles")
 
             # Suites
             (functions "nixosSuites")
             (functions "homeSuites")
 
             (devshells "shells")
+
             (microvms "microvms")
+            (arion "arionConfigurations")
 
             (functions "lib")
 

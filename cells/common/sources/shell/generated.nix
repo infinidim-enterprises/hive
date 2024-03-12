@@ -164,16 +164,16 @@
   };
   zsh-plugin_oh-my-zsh = {
     pname = "zsh-plugin_oh-my-zsh";
-    version = "fcab8f161139d04fb1137be815d8130584a99713";
+    version = "1cc41576d4d2ffe2f63bb893a40ef864dc7f2c98";
     src = fetchgit {
       url = "https://github.com/robbyrussell/oh-my-zsh";
-      rev = "fcab8f161139d04fb1137be815d8130584a99713";
+      rev = "1cc41576d4d2ffe2f63bb893a40ef864dc7f2c98";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-/tSV456ivzttLdJlhOFeQrBk0tOqaHn4JaPPllV0Fhs=";
+      sha256 = "sha256-UXioaglHiU1FFK3v2jzjpPErH3Db77A/0Vnk1sV1ADM=";
     };
-    date = "2024-02-23";
+    date = "2024-03-12";
   };
   zsh-plugin_tipz = {
     pname = "zsh-plugin_tipz";
@@ -216,16 +216,16 @@
   };
   zsh-plugin_zsh-autopair = {
     pname = "zsh-plugin_zsh-autopair";
-    version = "396c38a7468458ba29011f2ad4112e4fd35f78e6";
+    version = "2ec3fd3c9b950c01dbffbb2a4d191e1d34b8c58a";
     src = fetchgit {
       url = "https://github.com/hlissner/zsh-autopair";
-      rev = "396c38a7468458ba29011f2ad4112e4fd35f78e6";
+      rev = "2ec3fd3c9b950c01dbffbb2a4d191e1d34b8c58a";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-PXHxPxFeoYXYMOC29YQKDdMnqTO0toyA7eJTSCV6PGE=";
+      sha256 = "sha256-Y7fkpvCOC/lC2CHYui+6vOdNO8dNHGrVYTGGNf9qgdg=";
     };
-    date = "2022-10-03";
+    date = "2024-03-08";
   };
   zsh-plugin_zsh-completions = {
     pname = "zsh-plugin_zsh-completions";

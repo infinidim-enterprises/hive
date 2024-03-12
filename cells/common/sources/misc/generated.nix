@@ -24,10 +24,10 @@
   };
   adguardhome = {
     pname = "adguardhome";
-    version = "v0.107.44";
+    version = "v0.107.45";
     src = fetchurl {
-      url = "https://github.com/AdguardTeam/AdGuardHome/releases/download/v0.107.44/AdGuardHome_linux_amd64.tar.gz";
-      sha256 = "sha256-vRn5PEeoqJNjnk7ygWHhYXCHZ8iYzBBHH/P++8NaOnY=";
+      url = "https://github.com/AdguardTeam/AdGuardHome/releases/download/v0.107.45/AdGuardHome_linux_amd64.tar.gz";
+      sha256 = "sha256-myU9oHRBODYHIe6Y0BUMQ2scMuhzMGvcb4l7tmS4MXs=";
     };
   };
   age-plugin-trezor = {
@@ -156,10 +156,10 @@
   };
   drawio = {
     pname = "drawio";
-    version = "23.1.5";
+    version = "24.0.4";
     src = fetchurl {
-      url = "https://github.com/jgraph/drawio-desktop/releases/download/v23.1.5/drawio-x86_64-23.1.5.rpm";
-      sha256 = "sha256-/AKA3yXBEEL1V5Os/aqOYCfoVLG3V9Mf29a+TZNKqIs=";
+      url = "https://github.com/jgraph/drawio-desktop/releases/download/v24.0.4/drawio-x86_64-24.0.4.rpm";
+      sha256 = "sha256-+uvhBRa8ak6kNpszqRqj4uMo8wKpjs+q9ef+EcYRY6o=";
     };
   };
   git-get = {
@@ -223,26 +223,26 @@
   };
   ipxe = {
     pname = "ipxe";
-    version = "182ee909313fc60875d3f1741cd4a0bb7dfd15e1";
+    version = "226531ed36ec682728a13d2bd327a3d587a88926";
     src = fetchgit {
       url = "https://github.com/ipxe/ipxe";
-      rev = "182ee909313fc60875d3f1741cd4a0bb7dfd15e1";
+      rev = "226531ed36ec682728a13d2bd327a3d587a88926";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-fP+bl+wZpLkwH+tArWRKMvDuw5VDjv80AR7QTt3cv/8=";
+      sha256 = "sha256-XnI5jFywy7mNNuSjGCGwUE2JG3GOYwbGYpfrdQaI5sA=";
     };
-    date = "2024-02-27";
+    date = "2024-03-07";
   };
   langchain = {
     pname = "langchain";
-    version = "v0.1.9";
+    version = "v0.1.11";
     src = fetchFromGitHub {
       owner = "langchain-ai";
       repo = "langchain";
-      rev = "v0.1.9";
+      rev = "v0.1.11";
       fetchSubmodules = false;
-      sha256 = "sha256-AgEze4JUo3i6HCg541tz/gV6g+zrueyOljy/TXUYBV4=";
+      sha256 = "sha256-I7H8W85WJCt8Dkep5UvFRVuhJS8uAeg0xF9mNPZwm2g=";
     };
   };
   ledger-live-desktop = {
@@ -267,10 +267,10 @@
   };
   logseq = {
     pname = "logseq";
-    version = "0.10.6";
+    version = "0.10.7";
     src = fetchurl {
-      url = "https://github.com/logseq/logseq/releases/download/0.10.6/logseq-linux-x64-0.10.6.AppImage";
-      sha256 = "sha256-OUQh+6HRnzxw8Nn/OkU+DkjPKWKpMN0xchD1vPU3KV8=";
+      url = "https://github.com/logseq/logseq/releases/download/0.10.7/logseq-linux-x64-0.10.7.AppImage";
+      sha256 = "sha256-EC83D7tSpoDV6h363yIdX9IrTfoMd4b0hTVdW1T0pXg=";
     };
   };
   masterpdfeditor = {
@@ -343,12 +343,12 @@
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "9d64752753ec04998437b1a3ca57d27b66c47891";
+    version = "da05945c74fcb2a7eb8fe49be8803b74b6a17b07";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";
     };
-    date = "2024-02-29";
+    date = "2024-03-12";
   };
   promnesia = {
     pname = "promnesia";
