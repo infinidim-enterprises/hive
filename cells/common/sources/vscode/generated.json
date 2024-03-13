@@ -179,6 +179,24 @@
         },
         "version": "1.0.2"
     },
+    "gitlens": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "gitlens",
+        "passthru": {
+            "name": "gitlens",
+            "publisher": "eamodio"
+        },
+        "pinned": false,
+        "src": {
+            "name": "gitlens-2024.3.1205.zip",
+            "sha256": "sha256-G/z9RH5BtxaQVZqMKjkxHfYgJNXrif89Z7/KFZisnww=",
+            "type": "url",
+            "url": "https://eamodio.gallery.vsassets.io/_apis/public/gallery/publisher/eamodio/extension/gitlens/2024.3.1205/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+        },
+        "version": "2024.3.1205"
+    },
     "haml": {
         "cargoLocks": null,
         "date": null,

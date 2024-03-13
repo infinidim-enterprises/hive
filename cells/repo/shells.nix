@@ -60,7 +60,7 @@ let
         "workbench.colorTheme" = "Solarized Dark";
 
         "editor.fontFamily" = "UbuntuMono Nerd Font Mono";
-        "editor.fontSize" = 15;
+        "editor.fontSize" = 17;
 
         "emacs-mcx.strictEmacsMove" = false;
         "emacs-mcx.killRingMax" = 100;
@@ -98,7 +98,42 @@ let
           vscode-emacs-tab
 
           remote-ssh-edit
+          gitlens
           multi-cursor-case-preserve
+          /*
+          TODO: check those out, maybe use some of them
+        dbaeumer.vscode-eslint
+        denoland.vscode-deno
+        dhall.dhall-lang
+        dhall.vscode-dhall-lsp-server
+        editorconfig.editorconfig
+        esbenp.prettier-vscode
+        geequlim.godot-tools
+        github.copilot
+        github.vscode-github-actions
+        gitlab.gitlab-workflow
+        golang.go
+        graphql.vscode-graphql-syntax
+        gruntfuggly.todo-tree
+        jock.svg
+        leonardssh.vscord
+        lunuan.kubernetes-templates
+        mikestead.dotenv
+        mkhl.direnv
+        ms-kubernetes-tools.vscode-kubernetes-tools
+        ms-vscode.live-server
+        oscarotero.vento-syntax
+        redhat.vscode-yaml
+        ryanluker.vscode-coverage-gutters
+        serayuzgur.crates
+        tamasfe.even-better-toml
+        tobermory.es6-string-html
+        tomoki1207.pdf
+        unifiedjs.vscode-mdx
+        usernamehw.errorlens
+        vscodevim.vim
+        wakatime.vscode-wakatime
+          */
         ];
 
       };

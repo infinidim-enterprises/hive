@@ -2,3 +2,6 @@
 * AI stuff
 ** UIs
 https://github.com/lobehub/lobe-chat
+* Filesystems
+** pkgs.google-drive-ocamlfuse
+Write a home-manager module for this

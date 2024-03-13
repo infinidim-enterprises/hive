@@ -221,6 +221,8 @@
 
     # LSP for nix
     nixd.url = "github:nix-community/nixd";
+    # TODO: https://github.com/nix-community/nixd/blob/main/nixd/docs/user-guide.md
+    # flake-compat, so options are visible
     nixd.inputs.nixpkgs.follows = "nixpkgs-unstable";
   };
 
@@ -268,6 +270,9 @@
 
             (functions "lib")
 
+            # FIXME: rename to something usefull
+            # (functions "ledger-openpgp")
+
             (files "files")
             (installables "packages")
             (installables "firmwares")
@@ -287,6 +292,7 @@
 
         packages = hive.harvest inputs.self [
           [ "common" "packages" ]
+          [ "containers" "packages" ]
         ];
 
         nixosModules = hive.pick inputs.self [

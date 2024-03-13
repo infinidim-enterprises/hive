@@ -571,7 +571,7 @@
             "type": "url",
             "url": "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c"
         },
-        "version": "da05945c74fcb2a7eb8fe49be8803b74b6a17b07"
+        "version": "0dd6aae052b3748d761c93efa16b49c02f8a14e4"
     },
     "promnesia": {
         "cargoLocks": null,

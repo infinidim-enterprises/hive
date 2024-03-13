@@ -111,6 +111,17 @@
     publisher = "AlanCole";
     name = "gherkintablealign";
   };
+  gitlens = {
+    pname = "gitlens";
+    version = "2024.3.1205";
+    src = fetchurl {
+      url = "https://eamodio.gallery.vsassets.io/_apis/public/gallery/publisher/eamodio/extension/gitlens/2024.3.1205/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "gitlens-2024.3.1205.zip";
+      sha256 = "sha256-G/z9RH5BtxaQVZqMKjkxHfYgJNXrif89Z7/KFZisnww=";
+    };
+    publisher = "eamodio";
+    name = "gitlens";
+  };
   haml = {
     pname = "haml";
     version = "1.0.1";

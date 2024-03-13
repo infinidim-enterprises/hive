@@ -343,7 +343,7 @@
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "da05945c74fcb2a7eb8fe49be8803b74b6a17b07";
+    version = "0dd6aae052b3748d761c93efa16b49c02f8a14e4";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";
