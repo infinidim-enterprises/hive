@@ -3,7 +3,7 @@ let
   inherit (inputs) std;
   inherit (std.lib.dev) mkNixago;
   lib = inputs.nixpkgs-lib.lib // builtins;
-  latest = import inputs.latest {
+  nixpkgs = import inputs.nixpkgs-unstable {
     inherit (inputs.nixpkgs) system;
     config.allowUnfree = true;
   };
@@ -58,10 +58,10 @@ in
   treefmt = mkNixago std.lib.cfg.treefmt {
     packages = [
       # (nixpkgs.appendOverlays [inputs.cells.common.overlays.latest-overrides]).alejandra
-      latest.nixpkgs-fmt
-      latest.nodePackages.prettier
-      # FIXME: latest.nodePackages.prettier-plugin-toml
-      latest.shfmt
+      nixpkgs.nixpkgs-fmt
+      nixpkgs.nodePackages.prettier
+      # FIXME: nixpkgs.nodePackages.prettier-plugin-toml
+      nixpkgs.shfmt
     ];
     # devshell.startup.prettier-plugin-toml = lib.stringsWithDeps.noDepEntry ''
     #   export NODE_PATH=${latest.nodePackages.prettier-plugin-toml}/lib/node_modules:''${NODE_PATH:-}
@@ -352,10 +352,12 @@ in
       };
 
     in
-    [ devshell-x86_64-linux workflowHostTemplate flake-lock ]
-    ++ (lib.map
-      (host: mkNixago (hostTemplate host))
-      (hostsWithArch "x86_64-linux"));
+    [ devshell-x86_64-linux workflowHostTemplate flake-lock ];
+  # NOTE: github doesn't build my hosts, because of the space constraints, over 50GB needed
+  # and the runner doesn't have it
+  # ++ (lib.map
+  #   (host: mkNixago (hostTemplate host))
+  #   (hostsWithArch "x86_64-linux"));
 
   # Tool Hompeage: https://github.com/apps/settings
   # Install Setting App in your repo to enable it

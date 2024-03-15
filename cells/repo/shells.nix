@@ -15,6 +15,12 @@ let
     overlays = [ inputs.cells.common.overlays.vscode-extensions ];
     config.allowUnfree = true;
   };
+
+  nixpkgs-unstable = import inputs.nixpkgs-unstable {
+    inherit (inputs.nixpkgs) system;
+    config.allowUnfree = true;
+  };
+
   /*
     { pkgs ? import <nixpkgs> { } }:
     with pkgs;
@@ -42,7 +48,7 @@ let
   */
 
   nixd = inputs.nixd.packages.default.override {
-    inherit (nixpkgs) nix;
+    inherit (inputs.nix4nixd.packages) nix;
   };
 
   vscode =

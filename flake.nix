@@ -221,6 +221,7 @@
 
     # LSP for nix
     nixd.url = "github:nix-community/nixd";
+    nix4nixd.url = "github:NixOS/nix/2.19.4";
     # TODO: https://github.com/nix-community/nixd/blob/main/nixd/docs/user-guide.md
     # flake-compat, so options are visible
     nixd.inputs.nixpkgs.follows = "nixpkgs-unstable";
