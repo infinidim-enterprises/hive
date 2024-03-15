@@ -52,9 +52,17 @@ let
 
   Cells = Flake.${builtins.currentSystem};
   # TODO: Me = with stdLib; let hostName = readFile /etc/hostname; in hostName;
+
+  LedgerDev = import Flake.inputs.nixpkgs-unstable {
+    system = builtins.currentSystem;
+    overlays = with Cells.ledger.overlays; [ sources python ];
+    config.allowUnfree = true;
+  };
 in
 {
   inherit
+    LedgerDev
+
     Cells
     Channels
     Flake

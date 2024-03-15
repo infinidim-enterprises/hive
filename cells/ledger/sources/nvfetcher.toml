@@ -1,0 +1,8 @@
+[ledgerblue]
+src.git = "https://github.com/LedgerHQ/blue-loader-python"
+fetch.git = "https://github.com/LedgerHQ/blue-loader-python"
+
+[python-gnupg]
+src.use_latest_release = true
+src.github = "vsajip/python-gnupg"
+fetch.github = "vsajip/python-gnupg"
