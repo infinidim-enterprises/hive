@@ -52,9 +52,9 @@
   security.polkit.enable = true;
 
   # Enable wpa_supplicant, but don't start it by default.
-  networking.wireless.enable = mkDefault true;
+  networking.wireless.enable = lib.mkDefault true;
   networking.wireless.userControlled.enable = true;
-  systemd.services.wpa_supplicant.wantedBy = mkOverride 50 [ ];
+  systemd.services.wpa_supplicant.wantedBy = lib.mkOverride 50 [ ];
 
   environment.variables.GC_INITIAL_HEAP_SIZE = "1M";
   boot.kernel.sysctl."vm.overcommit_memory" = "1";
@@ -78,7 +78,7 @@
   # Show all debug messages from the kernel but don't log refused packets
   # because we have the firewall enabled. This makes installs from the
   # console less cumbersome if the machine has a public IP.
-  networking.firewall.logRefusedConnections = mkDefault false;
+  networking.firewall.logRefusedConnections = lib.mkDefault false;
 
   # Prevent installation media from evacuating persistent storage, as their
   # var directory is not persistent and it would thus result in deletion of
