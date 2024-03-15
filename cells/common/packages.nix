@@ -42,6 +42,8 @@ cell.lib.importers.importPackagesRakeleaves {
     "kea-ma"
     # FIXME: ASAP
     "make-desktopitem"
+    # FIXME: ipxe
+    "ipxe"
   ];
 }
 

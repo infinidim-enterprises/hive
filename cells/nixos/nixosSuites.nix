@@ -28,7 +28,8 @@ in
     multimedia # bluetooth only atm
     xdg
     # TODO: desktop.opensnitch
-  ];
+  ]
+  ++ [ ({ pkgs, ... }: { environment.systemPackages = with pkgs; [ networkmanagerapplet ]; }) ];
 
   networking = [
     cell.nixosProfiles.networking.networkd

@@ -4,8 +4,8 @@ let
 in
 rec {
   bee = {
-    system = "x86_64-linux";
     # inherit (inputs.nixpkgs) system;
+    system = "x86_64-linux";
     home = inputs.home-unstable;
     pkgs = import inputs.nixpkgs-unstable {
       inherit (inputs.nixpkgs) system;
@@ -29,7 +29,6 @@ rec {
         systemd.network.networks.local-eth.matchConfig.Name = "eno1";
         networking.wireless.enable = false;
         networking.networkmanager.enable = true;
-        environment.systemPackages = with pkgs; [ networkmanagerapplet ];
       })
       {
         deploy.enable = true;
@@ -40,9 +39,6 @@ rec {
 
         networking.hostName = baseNameOf ./.;
         networking.hostId = "23d7e2ff";
-
-        # services.redshift.brightness.night = "0.85";
-        # services.redshift.brightness.day = "0.85";
       }
       ({ lib, config, ... }: {
         systemd.network.networks.lan = {

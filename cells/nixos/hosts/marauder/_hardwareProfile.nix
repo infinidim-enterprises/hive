@@ -7,14 +7,11 @@
   deploy.params.cpu = "amd";
   deploy.params.gpu = "amd";
   deploy.params.ram = 64;
-  # deploy.params.zfsCacheMax = 8;
-
-  # services.xserver.videoDrivers = [ "amdgpu" ];
-  # hardware.opengl.extraPackages = [ pkgs.rocm-opencl-icd ];
 
   boot.initrd.availableKernelModules = [ "nvme" "nvme_core" ];
   boot.kernelParams = [ "amdgpu.sg_display=0" ];
   # disko.devices = cell.diskoConfigurations.oglaroon { inherit lib; };
+
   fileSystems = lib.mkDefault {
     "/" = {
       device = "/dev/disk/by-label/nixos";

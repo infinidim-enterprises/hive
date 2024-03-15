@@ -1,14 +1,15 @@
-{ stdenv
-, lib
-, sources
-, perl
+{ stdenv #
+, buildPackages
+, lib #
+, sources #
+, perl #
 , cdrkit
-, xorriso
-, xz
-, openssl
-, gnu-efi
-, mtools
-, syslinux ? null
+, xorriso #
+, xz #
+, openssl #
+, gnu-efi #
+, mtools #
+, syslinux ? null #
 , embedScript ? null
 , embedTrust ? null
 , embedCert ? null
@@ -51,22 +52,35 @@ in
 
 stdenv.mkDerivation rec {
   inherit (sources.ipxe) pname version src;
+
   nativeBuildInputs = [
-    perl
+    perl #
     cdrkit
-    xorriso
-    xz
-    openssl
-    gnu-efi
-    mtools
+    xorriso #
+    xz #
+    openssl #
+    gnu-efi #
+    mtools #
   ] ++ lib.optional stdenv.hostPlatform.isx86 syslinux;
+
+  depsBuildBuild = [ buildPackages.stdenv.cc ];
+
+  strictDeps = true;
+
+  postPatch = lib.optionalString stdenv.hostPlatform.isAarch64 ''
+    substituteInPlace src/util/genfsimg --replace "	syslinux " "	true "
+  ''; # calling syslinux on a FAT image isn't going to work
 
   hardeningDisable = [ "pic" "stackprotector" ];
 
   NIX_CFLAGS_COMPILE = "-Wno-error";
 
   makeFlags =
-    [ "ECHO_E_BIN_ECHO=echo" "ECHO_E_BIN_ECHO_E=echo" ]
+    [
+      "ECHO_E_BIN_ECHO=echo"
+      "ECHO_E_BIN_ECHO_E=echo"
+      "CROSS=${stdenv.cc.targetPrefix}"
+    ]
     ++ lib.optionals stdenv.hostPlatform.isx86 [
       "ISOLINUX_BIN_LIST=${syslinux}/share/syslinux/isolinux.bin"
       "LDLINUX_C32=${syslinux}/share/syslinux/ldlinux.c32"
