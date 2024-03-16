@@ -45,15 +45,15 @@
   };
   chatgpt-wrapper = {
     pname = "chatgpt-wrapper";
-    version = "90ab44e8e78b4d22922c6fd1e7982ebbda2255c9";
+    version = "6296c8c149212ddd8101dde482db4b8aa15fa210";
     src = fetchFromGitHub {
       owner = "llm-workflow-engine";
       repo = "llm-workflow-engine";
-      rev = "90ab44e8e78b4d22922c6fd1e7982ebbda2255c9";
+      rev = "6296c8c149212ddd8101dde482db4b8aa15fa210";
       fetchSubmodules = false;
-      sha256 = "sha256-rEKod0jq4zLqaWXH0J+xEft7MPf3i4zu+Nm8vhwNsjI=";
+      sha256 = "sha256-rpvf89yGylBI07XS8IjmJuHNaX3yUHPG1o4nwwdXbUM=";
     };
-    date = "2024-02-08";
+    date = "2024-03-14";
   };
   cl-hash-util = {
     pname = "cl-hash-util";
@@ -223,26 +223,26 @@
   };
   ipxe = {
     pname = "ipxe";
-    version = "226531ed36ec682728a13d2bd327a3d587a88926";
+    version = "17882e76afc0e69a0d4ed142aa33b94017ae4e58";
     src = fetchgit {
       url = "https://github.com/ipxe/ipxe";
-      rev = "226531ed36ec682728a13d2bd327a3d587a88926";
+      rev = "17882e76afc0e69a0d4ed142aa33b94017ae4e58";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-XnI5jFywy7mNNuSjGCGwUE2JG3GOYwbGYpfrdQaI5sA=";
+      sha256 = "sha256-vyes3k+cN6l2Izy3PMj8u6kiJqp2kjTk+udXY/fTNYE=";
     };
-    date = "2024-03-07";
+    date = "2024-03-15";
   };
   langchain = {
     pname = "langchain";
-    version = "v0.1.11";
+    version = "v0.1.12";
     src = fetchFromGitHub {
       owner = "langchain-ai";
       repo = "langchain";
-      rev = "v0.1.11";
+      rev = "v0.1.12";
       fetchSubmodules = false;
-      sha256 = "sha256-I7H8W85WJCt8Dkep5UvFRVuhJS8uAeg0xF9mNPZwm2g=";
+      sha256 = "sha256-2HEomfoghU9Lr14I3aFWo9KF7SeuDBb7dCz8ba81rcE=";
     };
   };
   ledger-live-desktop = {
@@ -343,24 +343,24 @@
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "0dd6aae052b3748d761c93efa16b49c02f8a14e4";
+    version = "90d4146a881ecbc59573bcebecbb055da8cb19be";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";
     };
-    date = "2024-03-12";
+    date = "2024-03-15";
   };
   promnesia = {
     pname = "promnesia";
-    version = "9868180a9583e81ee68dd271688d5fee54edd779";
+    version = "196742f3706d3dbe5c0347b4f259b8dde65c9967";
     src = fetchFromGitHub {
       owner = "karlicoss";
       repo = "promnesia";
-      rev = "9868180a9583e81ee68dd271688d5fee54edd779";
+      rev = "196742f3706d3dbe5c0347b4f259b8dde65c9967";
       fetchSubmodules = false;
-      sha256 = "sha256-rICpVr8QE7kSFgs3xhSyi6Ot9p9WTyQU52THBo2h5Z0=";
+      sha256 = "sha256-mR9v3+8CTQqF/ojNiiall6IEuoMWyK/4mxmB2nWgvO0=";
     };
-    date = "2024-01-10";
+    date = "2024-03-13";
   };
   quicklisp = {
     pname = "quicklisp";
