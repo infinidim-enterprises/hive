@@ -27,7 +27,8 @@ rec {
   };
 
   imports =
-    cell.nixosSuites.base
+    cell.nixosSuites.desktop
+    ++ [ inputs.cells.secrets.nixosProfiles.common ]
     ++ cell.nixosSuites.networking
     ++ cell.nixosSuites.virtualization
     ++ [ (cell.lib.mkHome "vod" "zsh") ]
@@ -52,9 +53,6 @@ rec {
 
         networking.hostName = baseNameOf ./.;
         networking.hostId = "23d7e2ff";
-
-        # services.redshift.brightness.night = "0.85";
-        # services.redshift.brightness.day = "0.85";
       }
       ({ lib, config, ... }: {
         systemd.network.networks.lan = {

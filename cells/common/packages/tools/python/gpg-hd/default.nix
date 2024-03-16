@@ -1,5 +1,7 @@
 { monkeysphere, python3Packages, gnupg, gnused, sources }:
 
+# FIXME: Must pin the PyCrypto version
+# since - https://github.com/Logicwax/gpg-hd/issues/3
 python3Packages.buildPythonPackage {
   inherit (sources.gpg-hd) pname version src;
   format = "other";

@@ -2,7 +2,7 @@
 let
   lib = inputs.nixpkgs-lib.lib // builtins;
 in
-{
+rec {
 
   base = with cell.nixosProfiles; [
     sudo
@@ -13,7 +13,6 @@ in
     core.packages
     core.shell-defaults
   ]
-  ++ [ inputs.cells.secrets.nixosProfiles.common ]
   ++ [ ({ config, ... }: { system.stateVersion = config.bee.pkgs.lib.trivial.release; }) ]
   ++ [ (cell.lib.mkHome "admin" "zsh") ]
   ++ [ inputs.cells.home.userProfiles.root ]
@@ -21,15 +20,19 @@ in
   ++ [ inputs.cells.common.nixosProfiles.nix-config ];
 
   # TODO: desktop profiles with different window managers
-  desktop = with cell.nixosProfiles.desktop; [
+  desktop = base
+    ++ (with cell.nixosProfiles.desktop; [
     common
     dconf
     fonts
     multimedia # bluetooth only atm
     xdg
     # TODO: desktop.opensnitch
-  ]
-  ++ [ ({ pkgs, ... }: { environment.systemPackages = with pkgs; [ networkmanagerapplet ]; }) ];
+  ])
+    ++ [ ({ pkgs, ... }: { environment.systemPackages = with pkgs; [ networkmanagerapplet ]; }) ];
+  # ++ [ inputs.cells.secrets.nixosProfiles.common ];
+
+  cli = base ++ [ inputs.cells.secrets.nixosProfiles.common ];
 
   networking = [
     cell.nixosProfiles.networking.networkd

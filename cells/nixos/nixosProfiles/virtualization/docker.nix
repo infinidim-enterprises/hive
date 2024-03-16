@@ -46,8 +46,9 @@ mkMerge [
     virtualisation.docker.autoPrune.dates = mkDefault "daily";
 
     environment.systemPackages = with pkgs; [
+      ctop
       docker-compose
-      # docker-machine-kvm2
+      docker-machine-kvm2
     ];
   }
 ]

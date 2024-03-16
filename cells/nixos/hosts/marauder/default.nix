@@ -19,7 +19,7 @@ rec {
   };
 
   imports =
-    cell.nixosSuites.base
+    cell.nixosSuites.base # NOTE: sops-nix is absent \, since it's an installer image!
     ++ cell.nixosSuites.networking
     ++ [
       bee.home.nixosModules.home-manager

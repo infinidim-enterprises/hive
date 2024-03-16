@@ -48,7 +48,7 @@ bindkey -M emacs '\C-x\C-e' edit-command-line                      # [Ctrl-x Ctr
 bindkey -M emacs ' '        magic-space                            # [Space] - don't do history expansion
 
 # Quick-keys for commands
-bindkey -s       '^[l'      'exa --group-directories-first -lgm\n' # [Alt-l]
+# bindkey -s       '^[l'      'exa --group-directories-first -lgm\n' # [Alt-l]
 
 # [Alt-W]
 # "^[W" copy-region-as-kill
