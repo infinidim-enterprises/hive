@@ -428,10 +428,10 @@
   };
   "duckduckgo-for-firefox" = rec {
     pname = "duckduckgo-for-firefox";
-    version = "2024.1.19";
+    version = "2024.3.11";
     addonId = "jid1-ZAdIEUB7XOzOJw@jetpack";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4229541/duckduckgo_for_firefox-2024.1.19.xpi";
-    sha256 = "48bc215807024dd1f95774b4844bcfdbc90e989fddfab42d08961866fc0f3191";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4248904/duckduckgo_for_firefox-2024.3.11.xpi";
+    sha256 = "705babc0c33f76cf9642015e5dfec8c62f94fe227592d4206c3c039cb25bb44c";
     meta = with lib;
       {
         homepage = "https://duckduckgo.com/app";

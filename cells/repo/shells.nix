@@ -18,8 +18,15 @@ let
 
   nixpkgs-unstable = import inputs.nixpkgs-unstable {
     inherit (inputs.nixpkgs) system;
+    overlays = with inputs.cells.common.overlays; [ sources crystal ];
     config.allowUnfree = true;
   };
+
+  # crystal_fresh = import inputs.crystal-1_11_2_pr {
+  #   inherit (inputs.nixpkgs) system;
+  #   overlays = with inputs.cells.common.overlays; [ sources crystal ];
+  #   config.allowUnfree = true;
+  # };
 
   /*
     { pkgs ? import <nixpkgs> { } }:
@@ -65,6 +72,7 @@ let
       userSettings = jsonFormat.generate "vscode-user-settings.json" {
         "workbench.colorTheme" = "Solarized Dark";
 
+        "fonted.font" = "UbuntuMono Nerd Font Mono";
         "editor.fontFamily" = "UbuntuMono Nerd Font Mono";
         "editor.fontSize" = 17;
 
@@ -77,6 +85,10 @@ let
 
         "shellformat.path" = lib.getExe nixpkgs.shfmt;
         "bashIde.shellcheckPath" = lib.getExe nixpkgs.shellcheck;
+
+        "crystal-lang.compiler" = "${nixpkgs-unstable.crystal}/bin/crystal";
+        "crystal-lang.server" = "${nixpkgs-unstable.crystalline}/bin/crystalline";
+        "crystal-lang.shards" = "${nixpkgs-unstable.shards}/bin/shards";
 
         "nix.enableLanguageServer" = true;
         "nix.formatterPath" = lib.getExe nixpkgs-fmt;
@@ -93,13 +105,16 @@ let
         vscodeExtensions = with nixpkgs-master.vscode-extensions; [
           nix-ide
 
+          bash-ide-vscode
+          shell-format
+
+          crystal-lang
+
           vscode-direnv
           gherkintablealign
           cucumberautocomplete
 
-          bash-ide-vscode
-          shell-format
-
+          fonted
           emacs-mcx
           vscode-emacs-tab
 

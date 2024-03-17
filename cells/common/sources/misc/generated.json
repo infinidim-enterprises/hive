@@ -72,7 +72,7 @@
     },
     "chatgpt-wrapper": {
         "cargoLocks": null,
-        "date": "2024-02-08",
+        "date": "2024-03-14",
         "extract": null,
         "name": "chatgpt-wrapper",
         "passthru": null,
@@ -84,11 +84,11 @@
             "name": null,
             "owner": "llm-workflow-engine",
             "repo": "llm-workflow-engine",
-            "rev": "90ab44e8e78b4d22922c6fd1e7982ebbda2255c9",
-            "sha256": "sha256-rEKod0jq4zLqaWXH0J+xEft7MPf3i4zu+Nm8vhwNsjI=",
+            "rev": "6296c8c149212ddd8101dde482db4b8aa15fa210",
+            "sha256": "sha256-rpvf89yGylBI07XS8IjmJuHNaX3yUHPG1o4nwwdXbUM=",
             "type": "github"
         },
-        "version": "90ab44e8e78b4d22922c6fd1e7982ebbda2255c9"
+        "version": "6296c8c149212ddd8101dde482db4b8aa15fa210"
     },
     "cl-hash-util": {
         "cargoLocks": null,
@@ -208,6 +208,26 @@
             "type": "github"
         },
         "version": "26929b5e303703ec527b6f6e4569f351d9831e52"
+    },
+    "crystalline": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "crystalline",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "elbywan",
+            "repo": "crystalline",
+            "rev": "v0.12.2",
+            "sha256": "sha256-9CXWw7Jye5XZzPdzz+Dnvyy7Wk1ENM0an8vOFrPbESA=",
+            "type": "github"
+        },
+        "version": "v0.12.2"
     },
     "dbus": {
         "cargoLocks": null,
@@ -365,7 +385,7 @@
     },
     "ipxe": {
         "cargoLocks": null,
-        "date": "2024-03-07",
+        "date": "2024-03-16",
         "extract": null,
         "name": "ipxe",
         "passthru": null,
@@ -375,12 +395,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "226531ed36ec682728a13d2bd327a3d587a88926",
-            "sha256": "sha256-XnI5jFywy7mNNuSjGCGwUE2JG3GOYwbGYpfrdQaI5sA=",
+            "rev": "bac967d51a8851ef274da6aa7a3a9711de0bb056",
+            "sha256": "sha256-TWmVo2GRo/nuNWU6/NBZT36tXo3eNyTREvY/3VrH4PU=",
             "type": "git",
             "url": "https://github.com/ipxe/ipxe"
         },
-        "version": "226531ed36ec682728a13d2bd327a3d587a88926"
+        "version": "bac967d51a8851ef274da6aa7a3a9711de0bb056"
     },
     "langchain": {
         "cargoLocks": null,
@@ -396,11 +416,11 @@
             "name": null,
             "owner": "langchain-ai",
             "repo": "langchain",
-            "rev": "v0.1.11",
-            "sha256": "sha256-I7H8W85WJCt8Dkep5UvFRVuhJS8uAeg0xF9mNPZwm2g=",
+            "rev": "v0.1.12",
+            "sha256": "sha256-2HEomfoghU9Lr14I3aFWo9KF7SeuDBb7dCz8ba81rcE=",
             "type": "github"
         },
-        "version": "v0.1.11"
+        "version": "v0.1.12"
     },
     "ledger-live-desktop": {
         "cargoLocks": null,
@@ -560,7 +580,7 @@
     },
     "pbkdf2-sha512": {
         "cargoLocks": null,
-        "date": "2024-03-12",
+        "date": "2024-03-17",
         "extract": null,
         "name": "pbkdf2-sha512",
         "passthru": null,
@@ -571,11 +591,11 @@
             "type": "url",
             "url": "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c"
         },
-        "version": "0dd6aae052b3748d761c93efa16b49c02f8a14e4"
+        "version": "6e40f37fa37aee5b9aeb828b15cc360198d8b201"
     },
     "promnesia": {
         "cargoLocks": null,
-        "date": "2024-01-10",
+        "date": "2024-03-13",
         "extract": null,
         "name": "promnesia",
         "passthru": null,
@@ -587,11 +607,11 @@
             "name": null,
             "owner": "karlicoss",
             "repo": "promnesia",
-            "rev": "9868180a9583e81ee68dd271688d5fee54edd779",
-            "sha256": "sha256-rICpVr8QE7kSFgs3xhSyi6Ot9p9WTyQU52THBo2h5Z0=",
+            "rev": "196742f3706d3dbe5c0347b4f259b8dde65c9967",
+            "sha256": "sha256-mR9v3+8CTQqF/ojNiiall6IEuoMWyK/4mxmB2nWgvO0=",
             "type": "github"
         },
-        "version": "9868180a9583e81ee68dd271688d5fee54edd779"
+        "version": "196742f3706d3dbe5c0347b4f259b8dde65c9967"
     },
     "quicklisp": {
         "cargoLocks": null,

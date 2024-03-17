@@ -132,6 +132,9 @@
     devos-ext-lib.inputs.nixpkgs.follows = "nixpkgs-unstable";
   };
 
+  inputs = {
+    crystal-1_11_2_pr.url = "github:nixos/nixpkgs?ref=pull/286273/head";
+  };
   # nixpkgs & home-manager
   inputs = {
     # latest.url = "github:nixos/nixpkgs/nixos-unstable";

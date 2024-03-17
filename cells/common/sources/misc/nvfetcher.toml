@@ -236,3 +236,11 @@ fetch.url = "https://code-industry.net/public/master-pdf-editor-$ver-qt5.x86_64.
 # src.manual = "2.57.0"
 src.manual = "2.77.2"
 fetch.url = "https://download.live.ledger.com/ledger-live-desktop-$ver-linux-x86_64.AppImage"
+
+### crystal-lang
+[crystalline]
+src.use_latest_release = true
+src.github = "elbywan/crystalline"
+fetch.github = "elbywan/crystalline"
+
+###

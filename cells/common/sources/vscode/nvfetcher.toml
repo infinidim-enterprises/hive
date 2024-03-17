@@ -314,3 +314,8 @@ passthru = { publisher = "mads-hartmann", name = "bash-ide-vscode"}
 src.vsmarketplace = "eamodio.gitlens"
 fetch.vsmarketplace = "eamodio.gitlens"
 passthru = { publisher = "eamodio", name = "gitlens"}
+
+[fonted]
+src.vsmarketplace = "degreat.fonted"
+fetch.vsmarketplace = "degreat.fonted"
+passthru = { publisher = "degreat", name = "fonted"}
