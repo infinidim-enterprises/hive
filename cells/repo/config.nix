@@ -351,8 +351,25 @@ in
         hook.mode = "copy";
       };
 
+      dependabot = mkNixago {
+        data = {
+          version = 2;
+          updates = [{
+            package-ecosystem = "github-actions";
+            directory = "/";
+            schedule.interval = "weekly";
+            schedule.day = "saturday";
+            schedule.time = "05:00";
+          }];
+        };
+
+        output = ".github/dependabot.yml";
+        format = "yaml";
+        hook.mode = "copy";
+      };
+
     in
-    [ devshell-x86_64-linux workflowHostTemplate flake-lock ];
+    [ devshell-x86_64-linux workflowHostTemplate flake-lock dependabot ];
   # NOTE: github doesn't build my hosts, because of the space constraints, over 50GB needed
   # and the runner doesn't have it
   # ++ (lib.map
