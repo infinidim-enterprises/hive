@@ -3,13 +3,10 @@
 #+html: <a href="https://github.com/infinidim-enterprises/hive/actions/workflows/build-x86_64-devshell.yaml">
 #+html:   <img src="https://img.shields.io/github/actions/workflow/status/infinidim-enterprises/hive/build-x86_64-devshell.yaml?event=push&logo=nixos&logoColor=white&label=devshell"/>
 #+html: </a>
-#+html: <a href="https://github.com/infinidim-enterprises/hive/actions/workflows/build-x86_64-devshell.yaml">
+|
+#+html: <a href="https://garnix.io">
 #+html:   <img src="https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fgarnix.io%2Fapi%2Fbadges%2Finfinidim-enterprises%2Fhive%3Fbranch%3Dmaster"/>
 #+html: </a>
-
-alt format:
-#+ATTR_HTML: :alt built with garnix
-[[https://garnix.io][https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fgarnix.io%2Fapi%2Fbadges%2Finfinidim-enterprises%2Fhive%3Fbranch%3Dmaster]]
 
 ** Apply configs
 *** NixOS hosts
