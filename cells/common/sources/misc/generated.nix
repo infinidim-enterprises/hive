@@ -234,16 +234,16 @@
   };
   ipxe = {
     pname = "ipxe";
-    version = "bac967d51a8851ef274da6aa7a3a9711de0bb056";
+    version = "390bce9516ce3a4adf599762b6c965813332595e";
     src = fetchgit {
       url = "https://github.com/ipxe/ipxe";
-      rev = "bac967d51a8851ef274da6aa7a3a9711de0bb056";
+      rev = "390bce9516ce3a4adf599762b6c965813332595e";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-TWmVo2GRo/nuNWU6/NBZT36tXo3eNyTREvY/3VrH4PU=";
+      sha256 = "sha256-GpPyNXWgG0LIfUeYURTx0DPssxQkGhbXPDlyTlWUa1s=";
     };
-    date = "2024-03-16";
+    date = "2024-03-19";
   };
   langchain = {
     pname = "langchain";
@@ -354,12 +354,12 @@
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "6e40f37fa37aee5b9aeb828b15cc360198d8b201";
+    version = "a5c530979994172ab3d266f058c644836e129567";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";
     };
-    date = "2024-03-17";
+    date = "2024-03-19";
   };
   promnesia = {
     pname = "promnesia";

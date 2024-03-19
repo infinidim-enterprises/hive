@@ -358,10 +358,10 @@
   };
   "darkreader" = rec {
     pname = "darkreader";
-    version = "4.9.78";
+    version = "4.9.80";
     addonId = "addon@darkreader.org";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4243182/darkreader-4.9.78.xpi";
-    sha256 = "21e08b3f26e9b54257d30f6b2fb2d966d41ace54d2d79ccec55e55517084c7ce";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4249607/darkreader-4.9.80.xpi";
+    sha256 = "a93f1250b72cc27fe4a9b02be062c68fb079e45a1233d562852b48e1e9b99307";
     meta = with lib;
       {
         homepage = "https://darkreader.org/";
@@ -535,10 +535,10 @@
   };
   "languagetool" = rec {
     pname = "languagetool";
-    version = "8.3.0";
+    version = "8.6.0";
     addonId = "languagetool-webextension@languagetool.org";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4199245/languagetool-8.3.0.xpi";
-    sha256 = "e357424e3df9dde4ba10eb9f8f3719ac4830681570557f4d51db15a462cd7667";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4249956/languagetool-8.6.0.xpi";
+    sha256 = "d9db9aac9fdd53eb39179c153161762cd9e9eb1f6d7da8e8b8a32238b4847094";
     meta = with lib;
       {
         homepage = "https://languagetool.org";
