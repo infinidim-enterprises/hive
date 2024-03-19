@@ -353,13 +353,13 @@ in
 
       dependabot = mkNixago {
         data = {
-          version = "2";
+          version = 2;
           updates = [{
             package-ecosystem = "github-actions";
             directory = "/";
             schedule.interval = "weekly";
             schedule.day = "saturday";
-            schedule.time = "05:00";
+            # schedule.time = "05:00";
           }];
         };
 

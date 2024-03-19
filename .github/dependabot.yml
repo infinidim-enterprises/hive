@@ -4,5 +4,4 @@ updates:
   schedule:
     day: saturday
     interval: weekly
-    time: 05:00
-version: '2'
+version: 2
