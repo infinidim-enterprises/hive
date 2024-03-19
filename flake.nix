@@ -267,10 +267,11 @@
             (functions "nixosSuites")
             (functions "homeSuites")
 
-            (devshells "shells")
+            (devshells "shells" { ci.build = true; })
 
             (microvms "microvms")
             (arion "arionConfigurations")
+            (containers "containers" { ci.publish = true; })
 
             (functions "lib")
 
@@ -278,7 +279,7 @@
             # (functions "ledger-openpgp")
 
             (files "files")
-            (installables "packages")
+            (installables "packages" { ci.build = true; })
             (installables "firmwares")
             (pkgs "overrides")
             (functions "overlays")

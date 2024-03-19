@@ -44,8 +44,8 @@ let
     sha256 = "sha256-Qxl5XE/7+ug8kt7dwvojyDr30kQVQORO8ZT2MVRlRZc=";
   };
 
-  ledger-app-dev-tools = buildImage {
-    name = "ledger-app-dev-tools";
+  ledger-app-dev-tools_nix = buildImage {
+    name = "ledger-app-dev-tools_nix";
     fromImage = ledger-app-dev-tools_img;
     config = {
       /*
@@ -65,10 +65,10 @@ let
             ],
 
       */
-      volumes = { "/dev/bus/usb:/dev/bus/usb" = { }; };
+      # volumes = { "/dev/bus/usb:/dev/bus/usb" = { }; };
       entrypoint = [ "${pkgs.coreutils}/bin/env" ];
     };
   };
 
 in
-{ inherit ledger-app-dev-tools; }
+{ inherit ledger-app-dev-tools_nix; }

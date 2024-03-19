@@ -1,6 +1,7 @@
-{ inputs, cell, ... }:
-cell.lib.importers.importPackagesRakeleaves {
-  src = ./packages;
-  overlays = with cell.overlays; [ sources python ];
-  # skip = [ ];
-}
+# { inputs, cell, ... }:
+# inputs.cells.common.lib.importers.importPackagesRakeleaves {
+#   src = ./packages;
+#   overlays = with cell.overlays; [ sources python ];
+#   # skip = [ ];
+# }
+{ }
