@@ -353,7 +353,7 @@ in
 
       dependabot = mkNixago {
         data = {
-          version = 2;
+          version = "2";
           updates = [{
             package-ecosystem = "github-actions";
             directory = "/";
