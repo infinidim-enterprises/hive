@@ -47,11 +47,11 @@
   };
   copilot = {
     pname = "copilot";
-    version = "1.174.0";
+    version = "1.175.777";
     src = fetchurl {
-      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.174.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "copilot-1.174.0.zip";
-      sha256 = "sha256-6j8wvhgTPxg20rkj4hGi5Xv6YFTf0EpNTeuzB1cyosU=";
+      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.175.777/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "copilot-1.175.777.zip";
+      sha256 = "sha256-lS9tLR3Z21uKsFI/39RFkJANJXYAIKr6G64w53ajJWE=";
     };
     publisher = "GitHub";
     name = "copilot";
@@ -124,11 +124,11 @@
   };
   gitlens = {
     pname = "gitlens";
-    version = "2024.3.1605";
+    version = "2024.3.1905";
     src = fetchurl {
-      url = "https://eamodio.gallery.vsassets.io/_apis/public/gallery/publisher/eamodio/extension/gitlens/2024.3.1605/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "gitlens-2024.3.1605.zip";
-      sha256 = "sha256-15OSObLFralCLRyJY9LRYdxoMm2KkQKn94Z2482W5q4=";
+      url = "https://eamodio.gallery.vsassets.io/_apis/public/gallery/publisher/eamodio/extension/gitlens/2024.3.1905/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "gitlens-2024.3.1905.zip";
+      sha256 = "sha256-i2eYO1W8r7lwRrRhU9UdmJYqQQa7/EP//gm7vQ7moBs=";
     };
     publisher = "eamodio";
     name = "gitlens";
@@ -179,11 +179,11 @@
   };
   markdown-preview-enhanced = {
     pname = "markdown-preview-enhanced";
-    version = "0.8.12";
+    version = "0.8.13";
     src = fetchurl {
-      url = "https://shd101wyy.gallery.vsassets.io/_apis/public/gallery/publisher/shd101wyy/extension/markdown-preview-enhanced/0.8.12/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "markdown-preview-enhanced-0.8.12.zip";
-      sha256 = "sha256-4Iq6idux029i7cBV3x79ZRAbSk3ymqx+Q2jv0zV9ZTI=";
+      url = "https://shd101wyy.gallery.vsassets.io/_apis/public/gallery/publisher/shd101wyy/extension/markdown-preview-enhanced/0.8.13/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "markdown-preview-enhanced-0.8.13.zip";
+      sha256 = "sha256-DxM7oWAbIonsKTvJjxX4oTaBwvRcxNT2y10ljYAzVeI=";
     };
     publisher = "shd101wyy";
     name = "markdown-preview-enhanced";
