@@ -1,10 +1,8 @@
-* Nix Configuration
+* nix [[https://github.com/divnix/hive][hive]]
 
-#+html: <a href="http://opensource.org/licenses/GPL-3.0">
+#+html: <a href="https://github.com/infinidim-enterprises/hive/actions/workflows/build-x86_64-devshell.yaml">
 #+html:   <img src="https://img.shields.io/github/actions/workflow/status/infinidim-enterprises/hive/build-x86_64-devshell.yaml?event=push&logo=nixos&logoColor=white&label=devshell"/>
 #+html: </a>
-
-This flake uses [[https://github.com/divnix/hive][hive]].
 
 ** Apply configs
 *** NixOS hosts
