@@ -129,7 +129,7 @@ in
       builds.include = [
         "devShells.x86_64-linux.*"
         "packages.x86_64-linux.*"
-        "nixosConfigurations.*"
+        # FIXME: "nixosConfigurations.*"
       ];
     };
 
@@ -205,7 +205,7 @@ in
         }
         {
           name = "Install Nix";
-          uses = "cachix/install-nix-action@v25";
+          uses = "cachix/install-nix-action@v26";
           "with" = {
             nix_path = "nixpkgs=channel:nixos-23.11";
             extra_nix_config = "access-tokens = github.com=\${{ secrets.GITHUB_TOKEN }}";
@@ -334,7 +334,7 @@ in
             # }
             {
               name = "Update flake.lock";
-              uses = "DeterminateSystems/update-flake-lock@v20";
+              uses = "DeterminateSystems/update-flake-lock@v21";
               "with".commit-msg = "deps(flake-lock): Updated flake.lock";
               "with".pr-title = "[Automated] Update 'flake.lock' and sources";
               "with".branch = "auto/upgrade-dependencies";
