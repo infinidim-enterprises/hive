@@ -357,7 +357,7 @@
     },
     "zsh-plugin_zsh-completions": {
         "cargoLocks": null,
-        "date": "2024-02-07",
+        "date": "2024-03-18",
         "extract": null,
         "name": "zsh-plugin_zsh-completions",
         "passthru": null,
@@ -367,12 +367,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "507f1f8715edd9f1f403c140fa332644d81ebab5",
-            "sha256": "sha256-8qgANoYAvTlAnyKcOfHATEAWvvPzztIcRVmTHWcEM5c=",
+            "rev": "2f951267cde726076988bc5706d737510a88e2fb",
+            "sha256": "sha256-gAvCKxc3jXEUA/+nqdxQk5dNzLODx5mc18H8LGWI/KY=",
             "type": "git",
             "url": "https://github.com/zsh-users/zsh-completions"
         },
-        "version": "507f1f8715edd9f1f403c140fa332644d81ebab5"
+        "version": "2f951267cde726076988bc5706d737510a88e2fb"
     },
     "zsh-plugin_zsh-history-substring-search": {
         "cargoLocks": null,
