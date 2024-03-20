@@ -388,7 +388,7 @@ in
                 name = "Release";
                 uses = "softprops/action-gh-release@v2.0.2";
                 "with" = {
-                  files = ''/release/keygen-x86_64-linux.iso'';
+                  files = ''/tmp/release/keygen-x86_64-linux.iso'';
                   make_latest = "true";
                 };
               }
