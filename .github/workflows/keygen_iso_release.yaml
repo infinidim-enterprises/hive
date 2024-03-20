@@ -1,5 +1,5 @@
 jobs:
-  build_shell:
+  build_and_release_iso:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
@@ -25,9 +25,15 @@ jobs:
         large-packages: true
         swap-storage: true
         tool-cache: true
-    - name: Build devshell
-      run: nix develop --command "menu"
-name: Build devshell [x86_64-linux]
+    - name: Build keygen.iso
+      run: nix develop --command "just generate installer nixos-marauder > /tmp/output.txt"
+    - name: copy iso
+      run: mkdir -p /tmp/release && cp $(/tmp/output.txt) /tmp/release/keygen-x86_64-linux.iso
+    - name: Release
+      uses: softprops/action-gh-release@v2.0.2
+      with:
+        files: /release/keygen-x86_64-linux.iso
+        make_latest: 'true'
+name: Release keygen.iso [x86_64-linux]
 'on':
-  push: null
   workflow_dispatch: null

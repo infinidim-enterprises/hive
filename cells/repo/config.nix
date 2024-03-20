@@ -127,8 +127,8 @@ in
   garnix_io = mkNixago {
     data = {
       builds.include = [
-        "devShells.x86_64-linux.*"
-        "packages.x86_64-linux.*"
+        "devShells.x86_64-linux.ci" # FIXME: Change it back later
+        # FIXME: "packages.x86_64-linux.*"
         # FIXME: "nixosConfigurations.*"
       ];
     };
@@ -201,7 +201,7 @@ in
       common_steps = [
         {
           name = "Checkout repository";
-          uses = "actions/checkout@v4.1.1";
+          uses = "actions/checkout@v4.1.2";
         }
         {
           name = "Install Nix";
@@ -368,15 +368,53 @@ in
         hook.mode = "copy";
       };
 
+      keygen_iso_release = mkNixago {
+        data = {
+          name = "Release keygen.iso [x86_64-linux]";
+          # on.push = null;
+          on.workflow_dispatch = null;
+          jobs.build_and_release_iso = {
+            runs-on = "ubuntu-latest";
+            steps = common_steps ++ [
+              {
+                name = "Build keygen.iso";
+                run = ''nix develop --command "just generate installer nixos-marauder > /tmp/output.txt"'';
+              }
+              {
+                name = "copy iso";
+                run = ''mkdir -p /tmp/release && cp $(/tmp/output.txt) /tmp/release/keygen-x86_64-linux.iso'';
+              }
+              {
+                name = "Release";
+                uses = "softprops/action-gh-release@v2.0.2";
+                "with" = {
+                  files = ''/release/keygen-x86_64-linux.iso'';
+                  make_latest = "true";
+                };
+              }
+
+            ];
+          };
+        };
+        output = ".github/workflows/keygen_iso_release.yaml";
+        format = "yaml";
+        hook.mode = "copy";
+      };
     in
-    [ devshell-x86_64-linux workflowHostTemplate flake-lock dependabot ];
+    [
+      devshell-x86_64-linux
+      workflowHostTemplate
+      flake-lock
+      dependabot
+      keygen_iso_release
+    ];
   # NOTE: github doesn't build my hosts, because of the space constraints, over 50GB needed
   # and the runner doesn't have it
   # ++ (lib.map
   #   (host: mkNixago (hostTemplate host))
   #   (hostsWithArch "x86_64-linux"));
 
-  # Tool Hompeage: https://github.com/apps/settings
+  # Tool Homepage: https://github.com/apps/settings
   # Install Setting App in your repo to enable it
   githubsettings = mkNixago
     std.lib.cfg.githubsettings
