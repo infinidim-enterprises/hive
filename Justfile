@@ -11,3 +11,7 @@ generate format-path name:
 # Colmena [action] [name] Machine
 machine action name:
     colmena {{ action }} --on {{ name }}
+
+# gh-actions keygen.iso
+release:
+    nixos-generate --format-path ${PRJ_ROOT}/cells/nixos/generators/installer.nix --system x86_64-linux --flake .#nixos-marauder > /tmp/output.txt

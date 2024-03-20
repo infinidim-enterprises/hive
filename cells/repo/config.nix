@@ -378,7 +378,7 @@ in
             steps = common_steps ++ [
               {
                 name = "Build keygen.iso";
-                run = ''nix develop --command "just generate installer nixos-marauder > /tmp/output.txt"'';
+                run = ''nix develop --accept-flake-config --command just release'';
               }
               {
                 name = "copy iso";

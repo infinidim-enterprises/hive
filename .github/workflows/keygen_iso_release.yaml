@@ -26,7 +26,8 @@ jobs:
         swap-storage: true
         tool-cache: true
     - name: Build keygen.iso
-      run: nix develop --command "just generate installer nixos-marauder > /tmp/output.txt"
+      run: nix develop --accept-flake-config --command just generate installer nixos-marauder
+        > /tmp/output.txt
     - name: copy iso
       run: mkdir -p /tmp/release && cp $(/tmp/output.txt) /tmp/release/keygen-x86_64-linux.iso
     - name: Release
