@@ -15,16 +15,6 @@ jobs:
         extraPullNames: cuda-maintainers, mic92, nix-community, nrdxp
         name: njk
         signingKey: ${{ secrets.CACHIX_SIGNING_KEY }}
-    - name: Free Disk Space
-      uses: jlumbroso/free-disk-space@main
-      with:
-        android: true
-        docker-images: true
-        dotnet: true
-        haskell: true
-        large-packages: true
-        swap-storage: true
-        tool-cache: true
     - name: Build keygen.iso
       run: nix develop --accept-flake-config --command just release
     - name: copy iso
@@ -34,6 +24,7 @@ jobs:
       uses: softprops/action-gh-release@v2.0.2
       with:
         files: /home/runner/work/_temp/iso_release/keygen-x86_64-linux.iso
+        tag_name: v0.0.1
 name: Release keygen.iso [x86_64-linux]
 'on':
   workflow_dispatch: null

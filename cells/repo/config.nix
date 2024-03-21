@@ -220,19 +220,19 @@ in
             signingKey = "\${{ secrets.CACHIX_SIGNING_KEY }}";
           };
         }
-        {
-          name = "Free Disk Space";
-          uses = "jlumbroso/free-disk-space@main";
-          "with" = {
-            tool-cache = true;
-            android = true;
-            dotnet = true;
-            haskell = true;
-            large-packages = true;
-            docker-images = true;
-            swap-storage = true;
-          };
-        }
+        # {
+        #   name = "Free Disk Space";
+        #   uses = "jlumbroso/free-disk-space@main";
+        #   "with" = {
+        #     tool-cache = true;
+        #     android = true;
+        #     dotnet = true;
+        #     haskell = true;
+        #     large-packages = true;
+        #     docker-images = true;
+        #     swap-storage = true;
+        #   };
+        # }
       ];
 
       devshell-x86_64-linux = mkNixago {
@@ -389,6 +389,7 @@ in
                 uses = "softprops/action-gh-release@v2.0.2";
                 "with" = {
                   files = ''/home/runner/work/_temp/iso_release/keygen-x86_64-linux.iso'';
+                  tag_name = "v0.0.1";
                   # make_latest = "true";
                 };
               }
