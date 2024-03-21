@@ -382,13 +382,13 @@ in
               }
               {
                 name = "copy iso";
-                run = ''mkdir -p /tmp/release && cp $(/tmp/output.txt) /tmp/release/keygen-x86_64-linux.iso'';
+                run = ''mkdir -p ''${TMPDIR}/release && cp $(cat ''${TMPDIR}/output.txt) ''${TMPDIR}/release/keygen-x86_64-linux.iso'';
               }
               {
                 name = "Release";
                 uses = "softprops/action-gh-release@v2.0.2";
                 "with" = {
-                  files = ''/tmp/release/keygen-x86_64-linux.iso'';
+                  files = ''''${TMPDIR}/release/keygen-x86_64-linux.iso'';
                   make_latest = "true";
                 };
               }

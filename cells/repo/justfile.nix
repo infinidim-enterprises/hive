@@ -20,9 +20,8 @@
 
   release = {
     description = "gh-actions keygen.iso";
-    # awk -F ' ' '{print $3}'
     content = ''
-      nixos-generate --format-path ''${PRJ_ROOT}/cells/nixos/generators/installer.nix --system x86_64-linux --flake .#nixos-marauder > /tmp/output.txt
+      nixos-generate --format-path ''${PRJ_ROOT}/cells/nixos/generators/installer.nix --system x86_64-linux --flake .#nixos-marauder > ''${TMPDIR}/output.txt
     '';
   };
 
