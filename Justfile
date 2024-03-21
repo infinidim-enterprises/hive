@@ -14,4 +14,4 @@ machine action name:
 
 # gh-actions keygen.iso
 release:
-    nixos-generate --format-path ${PRJ_ROOT}/cells/nixos/generators/installer.nix --system x86_64-linux --flake .#nixos-marauder > ${TMPDIR}/output.txt
+    nixos-generate --format-path ${PRJ_ROOT}/cells/nixos/generators/installer.nix --system x86_64-linux --flake .#nixos-marauder > /home/runner/work/_temp/iso_location.txt

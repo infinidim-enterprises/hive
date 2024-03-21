@@ -382,13 +382,13 @@ in
               }
               {
                 name = "copy iso";
-                run = ''mkdir -p ''${TMPDIR}/release && cp $(cat ''${TMPDIR}/output.txt) ''${TMPDIR}/release/keygen-x86_64-linux.iso'';
+                run = ''mkdir -p /home/runner/work/_temp/iso_release && cp $(cat /home/runner/work/_temp/iso_location.txt) /home/runner/work/_temp/iso_release/keygen-x86_64-linux.iso'';
               }
               {
                 name = "Release";
                 uses = "softprops/action-gh-release@v2.0.2";
                 "with" = {
-                  files = ''''${TMPDIR}/release/keygen-x86_64-linux.iso'';
+                  files = ''/home/runner/work/_temp/iso_release/keygen-x86_64-linux.iso'';
                   make_latest = "true";
                 };
               }
@@ -402,7 +402,7 @@ in
       };
     in
     [
-      devshell-x86_64-linux
+      # NOTE: garnix builds most things now! devshell-x86_64-linux
       workflowHostTemplate
       flake-lock
       dependabot
