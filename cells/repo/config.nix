@@ -389,7 +389,7 @@ in
                 uses = "softprops/action-gh-release@v2.0.2";
                 "with" = {
                   files = ''/home/runner/work/_temp/iso_release/keygen-x86_64-linux.iso'';
-                  make_latest = "true";
+                  # make_latest = "true";
                 };
               }
 
