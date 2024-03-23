@@ -77,15 +77,15 @@
   };
   spaceship-prompt = {
     pname = "spaceship-prompt";
-    version = "be826cbe2bb11a0675dd71f548ff1396608da7ea";
+    version = "134d97984900285db2c2ec0c992f4d82b74d5e17";
     src = fetchFromGitHub {
       owner = "spaceship-prompt";
       repo = "spaceship-prompt";
-      rev = "be826cbe2bb11a0675dd71f548ff1396608da7ea";
+      rev = "134d97984900285db2c2ec0c992f4d82b74d5e17";
       fetchSubmodules = false;
-      sha256 = "sha256-473Srq7aDe4R9UIVdQiG0P4vXNRPtg0r8Vgc+HIxZMQ=";
+      sha256 = "sha256-LrRFi4jqTmnTWsrFcXAGqfrV69dRKynXxo0AJDxVbLQ=";
     };
-    date = "2023-10-10";
+    date = "2024-03-22";
   };
   zsh-plugin_any-nix-shell = {
     pname = "zsh-plugin_any-nix-shell";
@@ -164,16 +164,16 @@
   };
   zsh-plugin_oh-my-zsh = {
     pname = "zsh-plugin_oh-my-zsh";
-    version = "0fed36688f9a60d8b1f2182f27de7fdc8a1e6b72";
+    version = "d157fc60c93fa59e757921b503e9594bd23b422c";
     src = fetchgit {
       url = "https://github.com/robbyrussell/oh-my-zsh";
-      rev = "0fed36688f9a60d8b1f2182f27de7fdc8a1e6b72";
+      rev = "d157fc60c93fa59e757921b503e9594bd23b422c";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-kz/DzldvJEsjebQ2TbWBV4z+I6rJpUzXQjgatvVohrk=";
+      sha256 = "sha256-7gdabhnL7b6BRi0TXXxEruohj6eXQqRctCMSoLnwJPs=";
     };
-    date = "2024-03-16";
+    date = "2024-03-21";
   };
   zsh-plugin_tipz = {
     pname = "zsh-plugin_tipz";
@@ -229,16 +229,16 @@
   };
   zsh-plugin_zsh-completions = {
     pname = "zsh-plugin_zsh-completions";
-    version = "507f1f8715edd9f1f403c140fa332644d81ebab5";
+    version = "2f951267cde726076988bc5706d737510a88e2fb";
     src = fetchgit {
       url = "https://github.com/zsh-users/zsh-completions";
-      rev = "507f1f8715edd9f1f403c140fa332644d81ebab5";
+      rev = "2f951267cde726076988bc5706d737510a88e2fb";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-8qgANoYAvTlAnyKcOfHATEAWvvPzztIcRVmTHWcEM5c=";
+      sha256 = "sha256-gAvCKxc3jXEUA/+nqdxQk5dNzLODx5mc18H8LGWI/KY=";
     };
-    date = "2024-02-07";
+    date = "2024-03-18";
   };
   zsh-plugin_zsh-history-substring-search = {
     pname = "zsh-plugin_zsh-history-substring-search";

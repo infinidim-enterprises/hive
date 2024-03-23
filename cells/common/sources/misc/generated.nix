@@ -24,10 +24,10 @@
   };
   adguardhome = {
     pname = "adguardhome";
-    version = "v0.107.45";
+    version = "v0.107.46";
     src = fetchurl {
-      url = "https://github.com/AdguardTeam/AdGuardHome/releases/download/v0.107.45/AdGuardHome_linux_amd64.tar.gz";
-      sha256 = "sha256-myU9oHRBODYHIe6Y0BUMQ2scMuhzMGvcb4l7tmS4MXs=";
+      url = "https://github.com/AdguardTeam/AdGuardHome/releases/download/v0.107.46/AdGuardHome_linux_amd64.tar.gz";
+      sha256 = "sha256-jTGy0BVShSBNNWH0mtj5YYbv+w/iFbMEzFPtH/sqq/8=";
     };
   };
   age-plugin-trezor = {
@@ -234,26 +234,26 @@
   };
   ipxe = {
     pname = "ipxe";
-    version = "bac967d51a8851ef274da6aa7a3a9711de0bb056";
+    version = "390bce9516ce3a4adf599762b6c965813332595e";
     src = fetchgit {
       url = "https://github.com/ipxe/ipxe";
-      rev = "bac967d51a8851ef274da6aa7a3a9711de0bb056";
+      rev = "390bce9516ce3a4adf599762b6c965813332595e";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-TWmVo2GRo/nuNWU6/NBZT36tXo3eNyTREvY/3VrH4PU=";
+      sha256 = "sha256-GpPyNXWgG0LIfUeYURTx0DPssxQkGhbXPDlyTlWUa1s=";
     };
-    date = "2024-03-16";
+    date = "2024-03-19";
   };
   langchain = {
     pname = "langchain";
-    version = "v0.1.12";
+    version = "v0.1.13";
     src = fetchFromGitHub {
       owner = "langchain-ai";
       repo = "langchain";
-      rev = "v0.1.12";
+      rev = "v0.1.13";
       fetchSubmodules = false;
-      sha256 = "sha256-2HEomfoghU9Lr14I3aFWo9KF7SeuDBb7dCz8ba81rcE=";
+      sha256 = "sha256-tBEO0GOY1cqO5FOYnBXAOSupSRhcoI9u4Nu4FieId74=";
     };
   };
   ledger-live-desktop = {
@@ -354,12 +354,12 @@
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "6e40f37fa37aee5b9aeb828b15cc360198d8b201";
+    version = "555c3e43f121399e7b649528cd02a055676a5909";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";
     };
-    date = "2024-03-17";
+    date = "2024-03-23";
   };
   promnesia = {
     pname = "promnesia";
@@ -408,29 +408,29 @@
   };
   stumpwm-contrib = {
     pname = "stumpwm-contrib";
-    version = "4d15d6f17b98c97f5235d928f6e4ffb5f18307e6";
+    version = "8ed9201dee887aa797921a3511051b3f5fb5ba78";
     src = fetchFromGitHub {
       owner = "stumpwm";
       repo = "stumpwm-contrib";
-      rev = "4d15d6f17b98c97f5235d928f6e4ffb5f18307e6";
+      rev = "8ed9201dee887aa797921a3511051b3f5fb5ba78";
       fetchSubmodules = false;
-      sha256 = "sha256-8tDUM26xba52xr6DE7LxDI27I2xjcmkNKK0u9W0zLQ0=";
+      sha256 = "sha256-bNajitwyK5kvQvtOI6QwYxYyiXE0Mdgv1bJ9xlzil88=";
     };
-    date = "2024-02-17";
+    date = "2024-03-22";
   };
   stumpwm-git = {
     pname = "stumpwm-git";
-    version = "cb50d6d2e3ecbd12a98b2ce18d373d8146cc656c";
+    version = "c802c7edd6323c9e768dd9383e3813a71aa8d59b";
     src = fetchFromGitHub {
       owner = "stumpwm";
       repo = "stumpwm";
-      rev = "cb50d6d2e3ecbd12a98b2ce18d373d8146cc656c";
+      rev = "c802c7edd6323c9e768dd9383e3813a71aa8d59b";
       fetchSubmodules = false;
-      sha256 = "sha256-Fg4stpCRe0SpgNcdcqb9dYsCASbtN/wrO/ig9ML2nlM=";
+      sha256 = "sha256-KRU0p6Q+4FMrSyE0C1MFlQp/r8cFi2QxFGDCirzxOiA=";
     };
     asd = "stumpwm";
     system = "stumpwm";
-    date = "2024-02-17";
+    date = "2024-03-22";
   };
   stumpwm-release = {
     pname = "stumpwm-release";
