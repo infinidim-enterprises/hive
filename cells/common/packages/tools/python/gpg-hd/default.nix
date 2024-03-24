@@ -1,4 +1,12 @@
-{ monkeysphere, python3Packages, gnupg, gnused, sources }:
+{ monkeysphere
+, python3Packages
+, gnupg
+, gnused
+, gnugrep
+, coreutils
+, gawk
+, sources
+}:
 
 # FIXME: Must pin the PyCrypto version
 # since - https://github.com/Logicwax/gpg-hd/issues/3
@@ -10,6 +18,9 @@ python3Packages.buildPythonPackage {
     pexpect
     pycrypto
     gnupg
+    gnugrep
+    coreutils
+    gawk
     monkeysphere
   ];
 

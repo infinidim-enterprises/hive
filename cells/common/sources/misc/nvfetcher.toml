@@ -95,8 +95,8 @@ fetch.git = "https://github.com/mcdope/pam_usb"
 
 [gpg-hd]
 # Deterministic GPG brainwallet keychain generator
-src.git = "https://github.com/Logicwax/gpg-hd"
-fetch.github = "Logicwax/gpg-hd"
+src.git = "https://github.com/infinidim-enterprises/gpg-hd"
+fetch.github = "infinidim-enterprises/gpg-hd"
 
 [trezor-agent]
 #  Hardware-based SSH/GPG/age agent

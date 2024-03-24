@@ -385,12 +385,12 @@ in
                 run = ''mkdir -p /home/runner/work/_temp/iso_release && cp $(cat /home/runner/work/_temp/iso_location.txt) /home/runner/work/_temp/iso_release/keygen-x86_64-linux.iso'';
               }
               {
+                # NOTE: there's an alternative here: https://github.com/ncipollo/release-action
                 name = "Release";
-                uses = "softprops/action-gh-release@v2.0.2";
+                uses = "softprops/action-gh-release@v2.0.4";
                 "with" = {
                   files = ''/home/runner/work/_temp/iso_release/keygen-x86_64-linux.iso'';
                   tag_name = "v0.0.1";
-                  # make_latest = "true";
                 };
               }
 
