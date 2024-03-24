@@ -21,7 +21,7 @@
     },
     "activity-watch-mode": {
         "cargoLocks": null,
-        "date": "2024-02-23",
+        "date": "2024-03-13",
         "extract": null,
         "name": "activity-watch-mode",
         "passthru": null,
@@ -31,12 +31,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "0189963cb60a0efdbb1cfd17641c06d16a74a974",
-            "sha256": "sha256-SMN02++A7+pf/S24rseoZSw1fodTyeWI6aWz0wLU80w=",
+            "rev": "19aed6ca81a3b1e549f47867c924d180d8536791",
+            "sha256": "sha256-FZmWuu64D08kysLa/LU8o3W60s6/0FeQbVL923mJd1k=",
             "type": "git",
             "url": "https://github.com/pauldub/activity-watch-mode"
         },
-        "version": "0189963cb60a0efdbb1cfd17641c06d16a74a974"
+        "version": "19aed6ca81a3b1e549f47867c924d180d8536791"
     },
     "all-the-icons": {
         "cargoLocks": null,
@@ -78,7 +78,7 @@
     },
     "color-rg": {
         "cargoLocks": null,
-        "date": "2024-02-26",
+        "date": "2024-03-13",
         "extract": null,
         "name": "color-rg",
         "passthru": null,
@@ -88,16 +88,16 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "c576573c600ba0a6b78761ffda0e5ba8dddc048f",
-            "sha256": "sha256-y6gl2by+UZVgsvb12E3rDeWp46Ok+5+Dq5+ucbmv+fQ=",
+            "rev": "8025e980c1da71543304243213854154754fa831",
+            "sha256": "sha256-v7fcGxctwEF0X6I9so7loh1lakhtxSaLFbPpZYZJCBc=",
             "type": "git",
             "url": "https://github.com/manateelazycat/color-rg"
         },
-        "version": "c576573c600ba0a6b78761ffda0e5ba8dddc048f"
+        "version": "8025e980c1da71543304243213854154754fa831"
     },
     "copilot-el": {
         "cargoLocks": null,
-        "date": "2024-03-09",
+        "date": "2024-03-18",
         "extract": null,
         "name": "copilot-el",
         "passthru": null,
@@ -107,16 +107,16 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "4e203efaa1f4047c800a026ba496d3bda8b67119",
-            "sha256": "sha256-BLIyJ9z4yI2Iv5eqrmULJ5VXoGnlXSVJx+5lVQyIoO8=",
+            "rev": "f6475131f720e22071b5bbfeb91901c159202281",
+            "sha256": "sha256-1iDLxLvlDqgRjVqJwlWYeEMzbDEMqfv96k/I3LiuYz8=",
             "type": "git",
             "url": "https://github.com/zerolfx/copilot.el.git"
         },
-        "version": "4e203efaa1f4047c800a026ba496d3bda8b67119"
+        "version": "f6475131f720e22071b5bbfeb91901c159202281"
     },
     "doom-emacs": {
         "cargoLocks": null,
-        "date": "2024-03-11",
+        "date": "2024-03-22",
         "extract": null,
         "name": "doom-emacs",
         "passthru": null,
@@ -126,12 +126,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": true,
             "name": null,
-            "rev": "a0344ffc3ad7844075f6b0bc53c5130545d5a1d5",
-            "sha256": "sha256-sM/vojFBf2VttGZEKCIz/UvOtFQ+lZu9y+oijgXTFX8=",
+            "rev": "bbadabda511027e515f02ccd7b70291ed03d8945",
+            "sha256": "sha256-4YHpNAcZS5j4O9GuDaIS69StSp4aPIf6CEeNaf1773Y=",
             "type": "git",
             "url": "https://github.com/hlissner/doom-emacs"
         },
-        "version": "a0344ffc3ad7844075f6b0bc53c5130545d5a1d5"
+        "version": "bbadabda511027e515f02ccd7b70291ed03d8945"
     },
     "grip": {
         "cargoLocks": null,
@@ -174,7 +174,7 @@
     },
     "lsp-bridge": {
         "cargoLocks": null,
-        "date": "2024-03-12",
+        "date": "2024-03-24",
         "extract": null,
         "name": "lsp-bridge",
         "passthru": null,
@@ -186,11 +186,11 @@
             "name": null,
             "owner": "manateelazycat",
             "repo": "lsp-bridge",
-            "rev": "6b13fe8dee285e28229cf8ea3a13f7373b93b16b",
-            "sha256": "sha256-BKYR6WG07145VXlqBVojCq3Axliw76DV/ixtc2PB5Zk=",
+            "rev": "de8f8447a65198206c38ec9aa3792c8f3b9c9c1f",
+            "sha256": "sha256-RBdYocOk7d8HO3WWE1ixKiKjEAoW90zRrVOY/sJ66oo=",
             "type": "github"
         },
-        "version": "6b13fe8dee285e28229cf8ea3a13f7373b93b16b"
+        "version": "de8f8447a65198206c38ec9aa3792c8f3b9c9c1f"
     },
     "nix-mode": {
         "cargoLocks": null,

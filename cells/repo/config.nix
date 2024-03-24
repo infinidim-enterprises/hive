@@ -404,7 +404,8 @@ in
       };
     in
     [
-      # NOTE: garnix builds most things now! devshell-x86_64-linux
+      # NOTE: garnix builds most things now!
+      devshell-x86_64-linux
       workflowHostTemplate
       flake-lock
       dependabot
