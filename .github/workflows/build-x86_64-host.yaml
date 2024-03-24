@@ -9,12 +9,23 @@ jobs:
       with:
         extra_nix_config: access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
         nix_path: nixpkgs=channel:nixos-23.11
-    - uses: cachix/cachix-action@v14
+    - name: Install cachix action
+      uses: cachix/cachix-action@v14
       with:
         authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
         extraPullNames: cuda-maintainers, mic92, nix-community, nrdxp
         name: njk
         signingKey: ${{ secrets.CACHIX_SIGNING_KEY }}
+    - name: Free Disk Space
+      uses: jlumbroso/free-disk-space@main
+      with:
+        android: true
+        docker-images: true
+        dotnet: true
+        haskell: true
+        large-packages: true
+        swap-storage: true
+        tool-cache: true
     - name: Build system configuration
       run: nix build ".#nixosConfigurations.${{ inputs.configuration }}.config.system.build.toplevel"
 name: Build x86_64 host

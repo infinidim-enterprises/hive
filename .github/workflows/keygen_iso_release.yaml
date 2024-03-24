@@ -9,19 +9,30 @@ jobs:
       with:
         extra_nix_config: access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
         nix_path: nixpkgs=channel:nixos-23.11
-    - uses: cachix/cachix-action@v14
+    - name: Install cachix action
+      uses: cachix/cachix-action@v14
       with:
         authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
         extraPullNames: cuda-maintainers, mic92, nix-community, nrdxp
         name: njk
         signingKey: ${{ secrets.CACHIX_SIGNING_KEY }}
+    - name: Free Disk Space
+      uses: jlumbroso/free-disk-space@main
+      with:
+        android: true
+        docker-images: true
+        dotnet: true
+        haskell: true
+        large-packages: true
+        swap-storage: true
+        tool-cache: true
     - name: Build keygen.iso
       run: nix develop --accept-flake-config --command just release
     - name: copy iso
       run: mkdir -p /home/runner/work/_temp/iso_release && cp $(cat /home/runner/work/_temp/iso_location.txt)
         /home/runner/work/_temp/iso_release/keygen-x86_64-linux.iso
     - name: Release
-      uses: softprops/action-gh-release@v2.0.2
+      uses: softprops/action-gh-release@v2.0.4
       with:
         files: /home/runner/work/_temp/iso_release/keygen-x86_64-linux.iso
         tag_name: v0.0.1

@@ -212,6 +212,7 @@ in
           };
         }
         {
+          name = "Install cachix action";
           uses = "cachix/cachix-action@v14";
           "with" = {
             name = "njk";
@@ -220,19 +221,19 @@ in
             signingKey = "\${{ secrets.CACHIX_SIGNING_KEY }}";
           };
         }
-        # {
-        #   name = "Free Disk Space";
-        #   uses = "jlumbroso/free-disk-space@main";
-        #   "with" = {
-        #     tool-cache = true;
-        #     android = true;
-        #     dotnet = true;
-        #     haskell = true;
-        #     large-packages = true;
-        #     docker-images = true;
-        #     swap-storage = true;
-        #   };
-        # }
+        {
+          name = "Free Disk Space";
+          uses = "jlumbroso/free-disk-space@main";
+          "with" = {
+            tool-cache = true;
+            android = true;
+            dotnet = true;
+            haskell = true;
+            large-packages = true;
+            docker-images = true;
+            swap-storage = true;
+          };
+        }
       ];
 
       devshell-x86_64-linux = mkNixago {
