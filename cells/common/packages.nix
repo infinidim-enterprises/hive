@@ -1,64 +1,59 @@
 { inputs, cell, ... }:
-cell.lib.importers.importPackagesRakeleaves {
-  src = ./packages;
-  overlays = [ cell.overlays.sources ];
-  skip = [
-    "TakeTheTime"
-    "age-plugin-yubikey"
+let
+  nixpkgs-pycrypto-pinned = import inputs.nixpkgs-pycrypto-pinned {
+    inherit (inputs.nixpkgs) system;
+    overlays = [ cell.overlays.sources ];
+    config.allowUnfree = true;
+  };
+in
 
-    "promnesia"
-    "HPI"
-    "orgparse"
-    "timeslot"
+cell.lib.importers.importPackagesRakeleaves
+  {
+    src = ./packages;
+    overlays = [ cell.overlays.sources ];
+    skip = [
+      "TakeTheTime"
+      "age-plugin-yubikey"
 
-    "activitywatch"
-    "aw-client"
-    "aw-core"
-    "persist-queue"
+      "promnesia"
+      "HPI"
+      "orgparse"
+      "timeslot"
 
-    "chatgpt-wrapper"
-    "langchain"
+      "activitywatch"
+      "aw-client"
+      "aw-core"
+      "persist-queue"
 
-    "git-pr-mirror"
-    "gitea-tea"
+      "chatgpt-wrapper"
+      "langchain"
 
-    "huginn"
-    "integration-studio"
-    "k3d"
-    "lita"
-    "okteto"
-    "roadrunner"
+      "git-pr-mirror"
+      "gitea-tea"
 
-    "zeronsd"
-    "ztncui"
-    "git-get"
-    "git-remote-ipfs"
+      "huginn"
+      "integration-studio"
+      "k3d"
+      "lita"
+      "okteto"
+      "roadrunner"
 
-    "trezor-agent-recover"
-    # FIXME:
-    "xxhash2mac"
-    "uhk-agent"
-    "rtw89"
-    "kea-ma"
-    # FIXME: ASAP
-    "make-desktopitem"
-    # FIXME: ipxe
-    "ipxe"
-  ];
-}
+      "zeronsd"
+      "ztncui"
+      "git-get"
+      "git-remote-ipfs"
 
-# {
-#   misc = cell.lib.importers.importPackages {
-#     src = ./packages;
-#     overlays = [ cell.overlays.sources ];
-#     skip = [
-#       "TakeTheTime"
-#       "age-plugin-yubikey"
-#       "activitywatch"
-#       "promnesia"
-#       "HPI"
-#       "aw-client"
-#       "aw-core"
-#     ];
-#   };
-# }
+      "trezor-agent-recover"
+      # FIXME:
+      "xxhash2mac"
+      "uhk-agent"
+      "rtw89"
+      "kea-ma"
+      # FIXME: ASAP
+      "make-desktopitem"
+      # FIXME: ipxe
+      "ipxe"
+      ### NOTE: gpg-hd must remain pinned to a specific version of pycrypto
+      "gpg-hd"
+    ];
+  } // { gpg-hd = nixpkgs-pycrypto-pinned.callPackage ./packages/tools/python/gpg-hd { }; }

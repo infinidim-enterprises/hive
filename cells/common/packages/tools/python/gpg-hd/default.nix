@@ -1,4 +1,5 @@
-{ monkeysphere
+{ lib
+, monkeysphere
 , python3Packages
 , gnupg
 , gnused
@@ -8,19 +9,21 @@
 , sources
 }:
 
-# FIXME: Must pin the PyCrypto version
-# since - https://github.com/Logicwax/gpg-hd/issues/3
+# FIXME: assert lib.assertMsg ((lib.trivial.revisionWithDefault null) == "e1d501922fd7351da4200e1275dfcf5faaad1220")
+#   "gpg-hd is pinned to e1d501922fd7351da4200e1275dfcf5faaad1220, but we're running on ${toString (lib.trivial.revisionWithDefault null)}";
+
 python3Packages.buildPythonPackage {
   inherit (sources.gpg-hd) pname version src;
   format = "other";
   doCheck = false;
   propagatedBuildInputs = with python3Packages; [
-    pexpect
     pycrypto
+    pexpect
+
+    gawk
     gnupg
     gnugrep
     coreutils
-    gawk
     monkeysphere
   ];
 
@@ -34,4 +37,5 @@ python3Packages.buildPythonPackage {
     ln -s $src/hmac_drbg.py $out/bin/hmac_drbg.py
     chmod 0755 $out/bin/gpg-hd
   '';
+  meta.mainProgram = "gpg-hd";
 }

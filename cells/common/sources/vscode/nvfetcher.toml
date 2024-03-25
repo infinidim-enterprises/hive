@@ -319,3 +319,8 @@ passthru = { publisher = "eamodio", name = "gitlens"}
 src.vsmarketplace = "degreat.fonted"
 fetch.vsmarketplace = "degreat.fonted"
 passthru = { publisher = "degreat", name = "fonted"}
+
+[gpt-pilot-vs-code]
+src.vsmarketplace = "PythagoraTechnologies.gpt-pilot-vs-code"
+fetch.vsmarketplace = "PythagoraTechnologies.gpt-pilot-vs-code"
+passthru = { publisher = "PythagoraTechnologies", name = "gpt-pilot-vs-code"}

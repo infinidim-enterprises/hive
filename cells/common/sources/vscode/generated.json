@@ -82,12 +82,12 @@
         },
         "pinned": false,
         "src": {
-            "name": "copilot-1.175.784.zip",
-            "sha256": "sha256-l9XN3CehWY7fo5iKAY+iPrcMWxIteRMU11cg9QGYKdE=",
+            "name": "copilot-1.175.786.zip",
+            "sha256": "sha256-tOzSO3bQ8pfC3JgMMnJ7CDIkke6Fhsrnl7IxTjs77t0=",
             "type": "url",
-            "url": "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.175.784/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.175.786/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "1.175.784"
+        "version": "1.175.786"
     },
     "crystal-lang": {
         "cargoLocks": null,
@@ -208,12 +208,30 @@
         },
         "pinned": false,
         "src": {
-            "name": "gitlens-2024.3.2405.zip",
-            "sha256": "sha256-qFpfxQSw4DsWPzy5wFF3D5wTq17Gdx3vZdkZwRaSeT8=",
+            "name": "gitlens-2024.3.2505.zip",
+            "sha256": "sha256-1bzsbNe06ZAmXIEeNO+XlkZvTIkVQ6nTSDQcWuoLTxk=",
             "type": "url",
-            "url": "https://eamodio.gallery.vsassets.io/_apis/public/gallery/publisher/eamodio/extension/gitlens/2024.3.2405/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://eamodio.gallery.vsassets.io/_apis/public/gallery/publisher/eamodio/extension/gitlens/2024.3.2505/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "2024.3.2405"
+        "version": "2024.3.2505"
+    },
+    "gpt-pilot-vs-code": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "gpt-pilot-vs-code",
+        "passthru": {
+            "name": "gpt-pilot-vs-code",
+            "publisher": "PythagoraTechnologies"
+        },
+        "pinned": false,
+        "src": {
+            "name": "gpt-pilot-vs-code-0.1.10.zip",
+            "sha256": "sha256-0C+4hPU4uyclvIVRH9uojvtolnKA/ZaoJIcIBf1nTxM=",
+            "type": "url",
+            "url": "https://PythagoraTechnologies.gallery.vsassets.io/_apis/public/gallery/publisher/PythagoraTechnologies/extension/gpt-pilot-vs-code/0.1.10/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+        },
+        "version": "0.1.10"
     },
     "haml": {
         "cargoLocks": null,

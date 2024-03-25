@@ -110,6 +110,8 @@ let
 
           crystal-lang
 
+          gpt-pilot-vs-code
+
           vscode-direnv
           gherkintablealign
           cucumberautocomplete
@@ -329,6 +331,10 @@ lib.mapAttrs (_: std.lib.dev.mkShell) {
       ];
 
     packages = [
+      nixpkgs-unstable.crystal
+      nixpkgs-unstable.crystalline
+      nixpkgs-unstable.shards
+
       gnupg
       vscode
     ];

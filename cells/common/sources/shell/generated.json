@@ -262,7 +262,7 @@
     },
     "zsh-plugin_oh-my-zsh": {
         "cargoLocks": null,
-        "date": "2024-03-21",
+        "date": "2024-03-25",
         "extract": null,
         "name": "zsh-plugin_oh-my-zsh",
         "passthru": null,
@@ -272,12 +272,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "d157fc60c93fa59e757921b503e9594bd23b422c",
-            "sha256": "sha256-7gdabhnL7b6BRi0TXXxEruohj6eXQqRctCMSoLnwJPs=",
+            "rev": "3e05befaeee60a0f8522f470292c75046b05ceb9",
+            "sha256": "sha256-d4CY51VUsvu9KYd3k1yIVdt2Yc+tnCC+1V9sd9JAg5I=",
             "type": "git",
             "url": "https://github.com/robbyrussell/oh-my-zsh"
         },
-        "version": "d157fc60c93fa59e757921b503e9594bd23b422c"
+        "version": "3e05befaeee60a0f8522f470292c75046b05ceb9"
     },
     "zsh-plugin_tipz": {
         "cargoLocks": null,

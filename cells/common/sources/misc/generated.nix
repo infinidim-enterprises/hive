@@ -214,15 +214,15 @@
   };
   gpg-hd = {
     pname = "gpg-hd";
-    version = "89ddff3ca8c594f282370e2519d439d5bfdd9e2c";
+    version = "7c50fbb58d16b33dc01581d6dda1ee11ecceeee6";
     src = fetchFromGitHub {
       owner = "infinidim-enterprises";
       repo = "gpg-hd";
-      rev = "89ddff3ca8c594f282370e2519d439d5bfdd9e2c";
+      rev = "7c50fbb58d16b33dc01581d6dda1ee11ecceeee6";
       fetchSubmodules = false;
-      sha256 = "sha256-DmbbnmiF0pKGZ/I0NqfA8zYtZTmSqvDhpr8odoaaDO4=";
+      sha256 = "sha256-FIKvgatYdiyAV4NuFkrOtYj0CQfMJ3jJHgVi/9gZtmc=";
     };
-    date = "2024-03-24";
+    date = "2024-03-25";
   };
   hug = {
     pname = "hug";
@@ -354,12 +354,12 @@
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "62d5927bce995d2feb62a4d8813826a32d59a2fb";
+    version = "b3f96e06613e7479f3cbfeb1d62a463390a7fa81";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";
     };
-    date = "2024-03-24";
+    date = "2024-03-25";
   };
   promnesia = {
     pname = "promnesia";

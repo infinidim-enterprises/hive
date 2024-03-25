@@ -2815,6 +2815,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-pycrypto-pinned": {
+      "locked": {
+        "lastModified": 1711231723,
+        "narHash": "sha256-dARJQ8AJOv6U+sdRePkbcVyVbXJTi1tReCrkkOeusiA=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "e1d501922fd7351da4200e1275dfcf5faaad1220",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "e1d501922fd7351da4200e1275dfcf5faaad1220",
+        "type": "github"
+      }
+    },
     "nixpkgs-regression": {
       "locked": {
         "lastModified": 1643052045,
@@ -3375,6 +3391,7 @@
         ],
         "nixpkgs-lib": "nixpkgs-lib_3",
         "nixpkgs-master": "nixpkgs-master",
+        "nixpkgs-pycrypto-pinned": "nixpkgs-pycrypto-pinned",
         "nixpkgs-unstable": "nixpkgs-unstable_2",
         "nur": "nur",
         "nurl": "nurl",
