@@ -2,6 +2,11 @@
 * AI stuff
 ** UIs
 https://github.com/lobehub/lobe-chat
+** API
+https://localai.io
 * Filesystems
 ** pkgs.google-drive-ocamlfuse
 Write a home-manager module for this
+* k8s
+** Use it
+https://github.com/argoproj/argo-workflows

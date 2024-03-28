@@ -135,9 +135,9 @@
   inputs = {
     crystal-1_11_2_pr.url = "github:nixos/nixpkgs?ref=pull/286273/head";
   };
+
   # nixpkgs & home-manager
   inputs = {
-    # latest.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixpkgs-master.url = "github:nixos/nixpkgs";
     nixos.url = "github:nixos/nixpkgs/release-23.11";
@@ -155,6 +155,9 @@
 
     srvos.url = "github:nix-community/srvos";
     srvos.inputs.nixpkgs.follows = "nixpkgs-unstable";
+
+    # Nix flake for "too much bleeding-edge" and unreleased packages
+    # nyx.url = "github:chaotic-cx/nyx";
   };
 
   # Compat nixpkgs
@@ -187,6 +190,8 @@
     stylix.url = "github:danth/stylix";
     stylix.inputs.nixpkgs.follows = "nixpkgs-unstable";
     stylix.inputs.home-manager.follows = "home-unstable";
+
+    # TODO: netboot-nix.url = "github:grahamc/netboot.nix";
 
     nvfetcher.url = "github:berberman/nvfetcher/0.6.2";
     # nvfetcher.inputs.nixpkgs.follows = "nixpkgs-unstable";

@@ -142,6 +142,7 @@ let
 
 in
 {
+  # NOTE: https://github.com/search?q=xserver.displayManager.session+language%3ANix+&type=code
   options.services.xserver.windowManager.stumpwm-new = with types; {
     enable = mkEnableOption "StumpWM";
     package = mkOption {
