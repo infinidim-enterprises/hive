@@ -125,7 +125,7 @@
     },
     "spaceship-prompt": {
         "cargoLocks": null,
-        "date": "2024-03-22",
+        "date": "2024-03-27",
         "extract": null,
         "name": "spaceship-prompt",
         "passthru": null,
@@ -137,11 +137,11 @@
             "name": null,
             "owner": "spaceship-prompt",
             "repo": "spaceship-prompt",
-            "rev": "134d97984900285db2c2ec0c992f4d82b74d5e17",
-            "sha256": "sha256-LrRFi4jqTmnTWsrFcXAGqfrV69dRKynXxo0AJDxVbLQ=",
+            "rev": "fe3780f231c12d1ce44336b34983f97d5a5cb1e9",
+            "sha256": "sha256-5nlku/JUs1YnchOGvsle7rF96b3DteMuxZhSzoNvDGY=",
             "type": "github"
         },
-        "version": "134d97984900285db2c2ec0c992f4d82b74d5e17"
+        "version": "fe3780f231c12d1ce44336b34983f97d5a5cb1e9"
     },
     "zsh-plugin_any-nix-shell": {
         "cargoLocks": null,
@@ -262,7 +262,7 @@
     },
     "zsh-plugin_oh-my-zsh": {
         "cargoLocks": null,
-        "date": "2024-03-25",
+        "date": "2024-03-26",
         "extract": null,
         "name": "zsh-plugin_oh-my-zsh",
         "passthru": null,
@@ -272,12 +272,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "3e05befaeee60a0f8522f470292c75046b05ceb9",
-            "sha256": "sha256-d4CY51VUsvu9KYd3k1yIVdt2Yc+tnCC+1V9sd9JAg5I=",
+            "rev": "1d09c6bb0a950756a65b02457842933e3aa493eb",
+            "sha256": "sha256-YjYajT3TjxEcWWZD4k8EXZxed3vZ3mz6gr6hnbnr+dk=",
             "type": "git",
             "url": "https://github.com/robbyrussell/oh-my-zsh"
         },
-        "version": "3e05befaeee60a0f8522f470292c75046b05ceb9"
+        "version": "1d09c6bb0a950756a65b02457842933e3aa493eb"
     },
     "zsh-plugin_tipz": {
         "cargoLocks": null,

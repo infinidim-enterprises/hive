@@ -11,15 +11,15 @@
   };
   rtl88x2bu = {
     pname = "rtl88x2bu";
-    version = "7bdc911e1c14cac9448c3b9f68bf5392cc318849";
+    version = "358f13d1749cac4b314c8fa4187f65dfa7ef1813";
     src = fetchFromGitHub {
       owner = "RinCat";
       repo = "RTL88x2BU-Linux-Driver";
-      rev = "7bdc911e1c14cac9448c3b9f68bf5392cc318849";
+      rev = "358f13d1749cac4b314c8fa4187f65dfa7ef1813";
       fetchSubmodules = false;
-      sha256 = "sha256-Qkidicv1jMTMJpuaLOMSsffKQnsR8+NP1D7+H+ziK7g=";
+      sha256 = "sha256-CWjitFU3Kjfh4wRnQ8hYRVmCIOGoOX+vhaAvYE5OErM=";
     };
-    date = "2024-01-31";
+    date = "2024-03-27";
   };
   rtw89 = {
     pname = "rtw89";

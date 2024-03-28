@@ -212,6 +212,10 @@
     # terraform
     terraform-providers-bin.url = "github:nix-community/nixpkgs-terraform-providers-bin";
     terraform-providers-bin.inputs.nixpkgs.follows = "nixpkgs-unstable";
+
+    # AAA
+    # TODO: authentik
+    authentik-nix.url = "github:nix-community/authentik-nix";
   };
 
   # emacs & friends

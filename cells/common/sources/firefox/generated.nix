@@ -468,10 +468,10 @@
   };
   "ether-metamask" = rec {
     pname = "ether-metamask";
-    version = "11.12.2";
+    version = "11.12.4";
     addonId = "webextension@metamask.io";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4251470/ether_metamask-11.12.2.xpi";
-    sha256 = "ddcea096d03fb3a8e2e202f3ed5e3811a523956d54e87fffbefbab8d91f448f1";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4254098/ether_metamask-11.12.4.xpi";
+    sha256 = "eee5e8fcdc530ad3c11d0d931ff9a2c6d317ad78e6c5742ff90fb10371f8ab3f";
     meta = with lib;
       {
         description = "Ethereum Browser Extension";

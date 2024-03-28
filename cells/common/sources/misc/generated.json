@@ -385,7 +385,7 @@
     },
     "ipxe": {
         "cargoLocks": null,
-        "date": "2024-03-19",
+        "date": "2024-03-26",
         "extract": null,
         "name": "ipxe",
         "passthru": null,
@@ -395,12 +395,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "390bce9516ce3a4adf599762b6c965813332595e",
-            "sha256": "sha256-GpPyNXWgG0LIfUeYURTx0DPssxQkGhbXPDlyTlWUa1s=",
+            "rev": "9bbe77669c6e2b71826449d854f5aa0e2cee7767",
+            "sha256": "sha256-7yaiGj8Yo7OmXKvOqlKn8WIoFRR0ZZQ3GPY2RfLDKqs=",
             "type": "git",
             "url": "https://github.com/ipxe/ipxe"
         },
-        "version": "390bce9516ce3a4adf599762b6c965813332595e"
+        "version": "9bbe77669c6e2b71826449d854f5aa0e2cee7767"
     },
     "langchain": {
         "cargoLocks": null,
@@ -580,7 +580,7 @@
     },
     "pbkdf2-sha512": {
         "cargoLocks": null,
-        "date": "2024-03-25",
+        "date": "2024-03-28",
         "extract": null,
         "name": "pbkdf2-sha512",
         "passthru": null,
@@ -591,7 +591,7 @@
             "type": "url",
             "url": "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c"
         },
-        "version": "b3f96e06613e7479f3cbfeb1d62a463390a7fa81"
+        "version": "4f28c0b741d07965701272897d117c196c08b952"
     },
     "promnesia": {
         "cargoLocks": null,

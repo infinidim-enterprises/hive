@@ -82,12 +82,12 @@
         },
         "pinned": false,
         "src": {
-            "name": "copilot-1.175.786.zip",
-            "sha256": "sha256-tOzSO3bQ8pfC3JgMMnJ7CDIkke6Fhsrnl7IxTjs77t0=",
+            "name": "copilot-1.176.792.zip",
+            "sha256": "sha256-yyWvn/5gxJgtHSG60UqQ+1tNqMnU9m8PvVQeOWCTDkE=",
             "type": "url",
-            "url": "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.175.786/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.176.792/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "1.175.786"
+        "version": "1.176.792"
     },
     "crystal-lang": {
         "cargoLocks": null,
@@ -208,12 +208,12 @@
         },
         "pinned": false,
         "src": {
-            "name": "gitlens-2024.3.2505.zip",
-            "sha256": "sha256-1bzsbNe06ZAmXIEeNO+XlkZvTIkVQ6nTSDQcWuoLTxk=",
+            "name": "gitlens-2024.3.2705.zip",
+            "sha256": "sha256-ZPY/LRHeUQQKHmZVPPXOHCYqRZfwdnLrPcfLbHOuWmo=",
             "type": "url",
-            "url": "https://eamodio.gallery.vsassets.io/_apis/public/gallery/publisher/eamodio/extension/gitlens/2024.3.2505/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://eamodio.gallery.vsassets.io/_apis/public/gallery/publisher/eamodio/extension/gitlens/2024.3.2705/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "2024.3.2505"
+        "version": "2024.3.2705"
     },
     "gpt-pilot-vs-code": {
         "cargoLocks": null,
@@ -226,12 +226,12 @@
         },
         "pinned": false,
         "src": {
-            "name": "gpt-pilot-vs-code-0.1.10.zip",
-            "sha256": "sha256-0C+4hPU4uyclvIVRH9uojvtolnKA/ZaoJIcIBf1nTxM=",
+            "name": "gpt-pilot-vs-code-0.1.12.zip",
+            "sha256": "sha256-f+XNo3NRstKk+nc9q4qBbTehbdteDvss2MqazrlwVOQ=",
             "type": "url",
-            "url": "https://PythagoraTechnologies.gallery.vsassets.io/_apis/public/gallery/publisher/PythagoraTechnologies/extension/gpt-pilot-vs-code/0.1.10/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://PythagoraTechnologies.gallery.vsassets.io/_apis/public/gallery/publisher/PythagoraTechnologies/extension/gpt-pilot-vs-code/0.1.12/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "0.1.10"
+        "version": "0.1.12"
     },
     "haml": {
         "cargoLocks": null,
@@ -622,12 +622,12 @@
         },
         "pinned": false,
         "src": {
-            "name": "tabnine-vscode-3.79.0.zip",
-            "sha256": "sha256-3LF4aknsJ+cKsQ2hHGCMd/jsYw6wU5bnyahX5ZmDz3k=",
+            "name": "tabnine-vscode-3.80.0.zip",
+            "sha256": "sha256-Rbk12nIKwjMILeDHFSxnFMjZMj8ZmNjjlIryasd53zY=",
             "type": "url",
-            "url": "https://TabNine.gallery.vsassets.io/_apis/public/gallery/publisher/TabNine/extension/tabnine-vscode/3.79.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://TabNine.gallery.vsassets.io/_apis/public/gallery/publisher/TabNine/extension/tabnine-vscode/3.80.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "3.79.0"
+        "version": "3.80.0"
     },
     "tokyo-night": {
         "cargoLocks": null,
