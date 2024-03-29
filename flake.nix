@@ -122,6 +122,7 @@
     sops-nix.inputs.nixpkgs.follows = "nixpkgs-unstable";
     sops-nix.inputs.nixpkgs-stable.follows = "nixos";
 
+    # ssh root@host "cat /etc/ssh/ssh_host_rsa_key" | ssh-to-pgp -o nixos/secrets/keys/host.asc
     sops-ssh-to-pgp.url = "github:Mic92/ssh-to-pgp/1.1.2";
     sops-ssh-to-pgp.inputs.nixpkgs.follows = "nixpkgs-unstable";
 

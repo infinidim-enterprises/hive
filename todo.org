@@ -10,6 +10,9 @@ Write a home-manager module for this
 * k8s
 ** Use it
 https://github.com/argoproj/argo-workflows
+https://github.com/kubevela/kubevela
+https://github.com/meshery/meshery
+https://github.com/helm/chartmuseum
 * Cloud services
 ** auth
 https://github.com/nix-community/authentik-nix
