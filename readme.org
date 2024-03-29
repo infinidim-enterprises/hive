@@ -1,5 +1,7 @@
+#+html: <img src="https://img.shields.io/badge/Status-Alpha-%23f39c12?style=flat-square">&nbsp;
+
 * [[https://github.com/NixOS/nixpkgs][Nix]] [[https://github.com/divnix/hive][hive]]
-#+html: <img src="https://img.shields.io/badge/Status-Alpha-%23f39c12?style=flat-square">&nbsp;<a href="https://garnix.io"><img src="https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fgarnix.io%2Fapi%2Fbadges%2Finfinidim-enterprises%2Fhive%3Fbranch%3Dmaster"/></a>&nbsp;<a href="https://github.com/infinidim-enterprises/hive/actions/workflows/build-x86_64-devshell.yaml"><img src="https://img.shields.io/github/actions/workflow/status/infinidim-enterprises/hive/build-x86_64-devshell.yaml?event=push&logo=nixos&logoColor=white&label=devshell"/></a>&nbsp;
+#+html: <a href="https://garnix.io"><img src="https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fgarnix.io%2Fapi%2Fbadges%2Finfinidim-enterprises%2Fhive%3Fbranch%3Dmaster"/></a>&nbsp;<a href="https://github.com/infinidim-enterprises/hive/actions/workflows/build-x86_64-devshell.yaml"><img src="https://img.shields.io/github/actions/workflow/status/infinidim-enterprises/hive/build-x86_64-devshell.yaml?event=push&logo=nixos&logoColor=white&label=devshell"/></a>&nbsp;
 
 ** Apply configs
 *** NixOS hosts
