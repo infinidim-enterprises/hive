@@ -234,16 +234,16 @@
   };
   ipxe = {
     pname = "ipxe";
-    version = "9bbe77669c6e2b71826449d854f5aa0e2cee7767";
+    version = "764e34f15af89cc7c5e46694ac15c5266f13b3d3";
     src = fetchgit {
       url = "https://github.com/ipxe/ipxe";
-      rev = "9bbe77669c6e2b71826449d854f5aa0e2cee7767";
+      rev = "764e34f15af89cc7c5e46694ac15c5266f13b3d3";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-7yaiGj8Yo7OmXKvOqlKn8WIoFRR0ZZQ3GPY2RfLDKqs=";
+      sha256 = "sha256-fljZW7weasnWploxHlmEB5n55TRZH8O9dwKRbSPg8VQ=";
     };
-    date = "2024-03-26";
+    date = "2024-03-29";
   };
   langchain = {
     pname = "langchain";
@@ -278,10 +278,10 @@
   };
   logseq = {
     pname = "logseq";
-    version = "0.10.7";
+    version = "0.10.8";
     src = fetchurl {
-      url = "https://github.com/logseq/logseq/releases/download/0.10.7/logseq-linux-x64-0.10.7.AppImage";
-      sha256 = "sha256-EC83D7tSpoDV6h363yIdX9IrTfoMd4b0hTVdW1T0pXg=";
+      url = "https://github.com/logseq/logseq/releases/download/0.10.8/logseq-linux-x64-0.10.8.AppImage";
+      sha256 = "sha256-kVnQ33gozrL6BOWQxUfiMypiIZOffeT2cMVMHIfsaWg=";
     };
   };
   masterpdfeditor = {
@@ -354,12 +354,12 @@
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "4f28c0b741d07965701272897d117c196c08b952";
+    version = "cd75d22750541115d5e3876838645d2d9123c842";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";
     };
-    date = "2024-03-28";
+    date = "2024-03-30";
   };
   promnesia = {
     pname = "promnesia";
