@@ -1,19 +1,17 @@
 { sources
 , cryptopp
 , libsodium
-  # , boost
-, boost179
+, boost
 , cmake
 , stdenv
 , pkg-config
 }:
 
 let
-  common_buildInputs = [
+  buildInputs = [
     cryptopp
     libsodium
-    # boost
-    boost179
+    boost
   ];
 
   nativeBuildInputs = [
@@ -23,9 +21,7 @@ let
 
   pgp-packet-library = stdenv.mkDerivation {
     inherit (sources.pgp-packet-library) pname version src;
-    inherit nativeBuildInputs;
-
-    buildInputs = common_buildInputs;
+    inherit nativeBuildInputs buildInputs;
   };
 in
 
@@ -33,7 +29,7 @@ stdenv.mkDerivation {
   inherit (sources.pgp-key-generation) pname version src;
   inherit nativeBuildInputs;
 
-  buildInputs = common_buildInputs ++ [ pgp-packet-library ];
+  buildInputs = buildInputs ++ [ pgp-packet-library ];
 
   installPhase = ''
     mkdir -p $out/bin
