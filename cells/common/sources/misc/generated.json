@@ -385,7 +385,7 @@
     },
     "ipxe": {
         "cargoLocks": null,
-        "date": "2024-03-26",
+        "date": "2024-03-29",
         "extract": null,
         "name": "ipxe",
         "passthru": null,
@@ -395,12 +395,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "9bbe77669c6e2b71826449d854f5aa0e2cee7767",
-            "sha256": "sha256-7yaiGj8Yo7OmXKvOqlKn8WIoFRR0ZZQ3GPY2RfLDKqs=",
+            "rev": "764e34f15af89cc7c5e46694ac15c5266f13b3d3",
+            "sha256": "sha256-fljZW7weasnWploxHlmEB5n55TRZH8O9dwKRbSPg8VQ=",
             "type": "git",
             "url": "https://github.com/ipxe/ipxe"
         },
-        "version": "9bbe77669c6e2b71826449d854f5aa0e2cee7767"
+        "version": "764e34f15af89cc7c5e46694ac15c5266f13b3d3"
     },
     "langchain": {
         "cargoLocks": null,
@@ -466,11 +466,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-EC83D7tSpoDV6h363yIdX9IrTfoMd4b0hTVdW1T0pXg=",
+            "sha256": "sha256-kVnQ33gozrL6BOWQxUfiMypiIZOffeT2cMVMHIfsaWg=",
             "type": "url",
-            "url": "https://github.com/logseq/logseq/releases/download/0.10.7/logseq-linux-x64-0.10.7.AppImage"
+            "url": "https://github.com/logseq/logseq/releases/download/0.10.8/logseq-linux-x64-0.10.8.AppImage"
         },
-        "version": "0.10.7"
+        "version": "0.10.8"
     },
     "masterpdfeditor": {
         "cargoLocks": null,
@@ -580,7 +580,7 @@
     },
     "pbkdf2-sha512": {
         "cargoLocks": null,
-        "date": "2024-03-28",
+        "date": "2024-03-31",
         "extract": null,
         "name": "pbkdf2-sha512",
         "passthru": null,
@@ -591,7 +591,47 @@
             "type": "url",
             "url": "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c"
         },
-        "version": "4f28c0b741d07965701272897d117c196c08b952"
+        "version": "6aa88482a7465dd0fa9169e2778c1a2d6059aa1b"
+    },
+    "pgp-key-generation": {
+        "cargoLocks": null,
+        "date": "2022-12-02",
+        "extract": null,
+        "name": "pgp-key-generation",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "summitto",
+            "repo": "pgp-key-generation",
+            "rev": "e4549972b1ed686b38da9e2a663106669edddb9b",
+            "sha256": "sha256-FR6I4jwrF9t+pur0E/z54cgQ8acwtsAsKIp4pO0Ulng=",
+            "type": "github"
+        },
+        "version": "e4549972b1ed686b38da9e2a663106669edddb9b"
+    },
+    "pgp-packet-library": {
+        "cargoLocks": null,
+        "date": "2022-07-26",
+        "extract": null,
+        "name": "pgp-packet-library",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": true,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "summitto",
+            "repo": "pgp-packet-library",
+            "rev": "42b4d08c0cb4b8ee527f729c1674e982eca409a7",
+            "sha256": "sha256-DI0vxfbewqlXocrvzPgCM66IuSVxHjFdL3hIPxzFou8=",
+            "type": "github"
+        },
+        "version": "42b4d08c0cb4b8ee527f729c1674e982eca409a7"
     },
     "promnesia": {
         "cargoLocks": null,

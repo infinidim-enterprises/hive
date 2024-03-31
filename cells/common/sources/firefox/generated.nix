@@ -380,10 +380,10 @@
   };
   "decentraleyes" = rec {
     pname = "decentraleyes";
-    version = "2.0.18";
+    version = "2.0.19";
     addonId = "jid1-BoFifL9Vbdl2zQ@jetpack";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4158232/decentraleyes-2.0.18.xpi";
-    sha256 = "f8f031ef91c02a1cb1a6552acd02b8f488693400656b4047d68f03ba0a1078d9";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4255788/decentraleyes-2.0.19.xpi";
+    sha256 = "105d65bf8189d527251647d0452715c5725af6065fba67cd08187190aae4a98f";
     meta = with lib;
       {
         homepage = "https://decentraleyes.org";

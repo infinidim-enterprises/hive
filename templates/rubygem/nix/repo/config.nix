@@ -7,23 +7,6 @@ let
     inherit (inputs.nixpkgs) system;
     config.allowUnfree = true;
   };
-
-  hostsWithArch = arch: with lib;
-    flatten (map
-      (e: attrNames e)
-      (map
-        (cell: mapAttrs' (name: value: nameValuePair "${cell}-${name}" value)
-          (filterAttrs (n: v: v.bee.system == arch)
-            inputs.cells.${cell}.nixosConfigurations))
-        (attrNames (filterAttrs (n: v: v ? nixosConfigurations) inputs.cells))));
-
-  hostname = hostNameWithCell:
-    with lib;
-    let
-      arr = splitString "-" hostNameWithCell;
-    in
-    removePrefix ((head arr) + "-") hostNameWithCell;
-
 in
 {
   just = mkNixago std.lib.cfg.just {
@@ -124,79 +107,6 @@ in
     };
   };
 
-  garnix_io = mkNixago {
-    data = {
-      builds.include = [
-        "devShells.x86_64-linux.*"
-        "packages.x86_64-linux.*"
-        # FIXME: "packages.x86_64-linux.*"
-        # FIXME: "nixosConfigurations.*"
-      ];
-    };
-
-    output = "garnix.yaml";
-    format = "yaml";
-    hook.mode = "copy";
-  };
-
-  circleci = mkNixago {
-    data = {
-      version = "2.1";
-      workflows.version = "2";
-      workflows.workflow.jobs = [
-        {
-          build = {
-            filters.branches.only = [ "master" "auto/upgrade-dependencies" ];
-            matrix.parameters.host = hostsWithArch "aarch64-linux";
-          };
-        }
-      ];
-      orbs.nix = "eld/nix@1.1.1";
-      jobs.build = {
-        machine.image = "ubuntu-2204:2023.07.1";
-        parameters.host.type = "string";
-        resource_class = "arm.large";
-        steps = [
-          {
-            "nix/install".channels = "nixpkgs=https://nixos.org/channels/nixos-23.11";
-            "nix/install".extra-conf = ''
-              experimental-features = flakes nix-command
-            '';
-          }
-          "nix/install-cachix"
-          "checkout"
-          {
-            run.name = "Setup Cachix repos";
-            run.command = ''
-              cachix use nix-community
-              cachix use mic92
-              cachix use nrdxp
-              cachix use njk
-              ./.ci/install-nix.sh > /tmp/store-path-pre-build
-            '';
-          }
-          {
-            run.name = "Build system";
-            run.command = ''
-              nix build ".#nixosConfigurations.<< parameters.host >>.config.system.build.toplevel"
-            '';
-          }
-          {
-            run.name = "Push cache";
-            run.no_output_timeout = "30m";
-            run.command = ''
-              ./.ci/push-paths.sh cachix "--compression-method xz --compression-level 9 --jobs 8" njk ""  ""
-            '';
-          }
-        ];
-      };
-    };
-
-    output = ".circleci/config.yml";
-    format = "yaml";
-    hook.mode = "copy";
-  };
-
   githubworkflows =
     let
       common_steps = [
@@ -260,52 +170,6 @@ in
         hook.mode = "copy";
       };
 
-      workflowHostTemplate = mkNixago {
-        data = {
-          name = "Build x86_64 host";
-          on.workflow_call.inputs.configuration = {
-            required = true;
-            type = "string";
-          };
-          on.workflow_call.secrets = {
-            CACHIX_AUTH_TOKEN.required = true;
-            CACHIX_SIGNING_KEY.required = true;
-          };
-          jobs.build_system = {
-            runs-on = "ubuntu-latest";
-            steps = common_steps ++ [
-              {
-                name = "Build system configuration";
-                run = ''nix build ".#nixosConfigurations.''${{ inputs.configuration }}.config.system.build.toplevel"'';
-              }
-            ];
-          };
-        };
-
-        output = ".github/workflows/build-x86_64-host.yaml";
-        format = "yaml";
-        hook.mode = "copy";
-      };
-
-      hostTemplate = host: {
-        data = {
-          name = "Build ${hostname host} [x86_64-linux]";
-          on.push = null;
-          on.workflow_dispatch = null;
-          jobs = {
-            call-workflow-passing-data = {
-              uses = "./.github/workflows/build-x86_64-host.yaml";
-              "with".configuration = "${host}";
-              secrets = "inherit";
-            };
-          };
-        };
-
-        output = ".github/workflows/build-x86_64-${hostname host}.yaml";
-        format = "yaml";
-        hook.mode = "copy";
-      };
-
       flake-lock = mkNixago {
         data = {
           name = "Update [flake.lock, nvfetcher sources]";
@@ -327,13 +191,6 @@ in
                 git commit -am "deps(sources): Updated cell sources"
               '';
             }
-            # {
-            #   name = "Update deps hashes packages";
-            #   run = ''
-            #     nix run '.#mainsail.npmDepsHash' > cells/klipper/packages/_deps-hash/mainsail-npm.nix
-            #     git commit -am "deps(sources): Updated deps hash" || true
-            #   '';
-            # }
             {
               name = "Update flake.lock";
               uses = "DeterminateSystems/update-flake-lock@v21";
@@ -361,7 +218,6 @@ in
             directory = "/";
             schedule.interval = "weekly";
             schedule.day = "saturday";
-            # schedule.time = "05:00";
           }];
         };
 
@@ -387,11 +243,10 @@ in
                 run = ''mkdir -p /home/runner/work/_temp/iso_release && cp $(cat /home/runner/work/_temp/iso_location.txt) /home/runner/work/_temp/iso_release/keygen-x86_64-linux.iso'';
               }
               {
-                # NOTE: there's an alternative here: https://github.com/ncipollo/release-action
                 name = "Release";
                 uses = "softprops/action-gh-release@v2.0.4";
                 "with" = {
-                  files = ''/home/runner/work/_temp/iso_release/keygen-x86_64-linux.iso'';
+                  files = "/home/runner/work/_temp/iso_release/keygen-x86_64-linux.iso";
                   tag_name = "v0.0.1";
                 };
               }
@@ -405,18 +260,11 @@ in
       };
     in
     [
-      # NOTE: garnix builds most things now!
       devshell-x86_64-linux
-      workflowHostTemplate
       flake-lock
       dependabot
       keygen_iso_release
     ];
-  # NOTE: github doesn't build my hosts, because of the space constraints, over 50GB needed
-  # and the runner doesn't have it
-  # ++ (lib.map
-  #   (host: mkNixago (hostTemplate host))
-  #   (hostsWithArch "x86_64-linux"));
 
   # Tool Homepage: https://github.com/apps/settings
   # Install Setting App in your repo to enable it
@@ -465,42 +313,10 @@ in
               "refactor"
               "test"
             ];
-            scopes =
-              [
-                "ci"
-                "flake"
-              ]
-              ++ (lib.attrNames inputs.cells.nixos.nixosConfigurations);
-            # ++ (lib.attrNames inputs.cells.darwin.darwinConfigurations);
+            scopes = [ "ci" "flake" ];
             descriptionLength = 72;
           };
         };
       };
     };
-
-  # # Tool Homepage: https://rust-lang.github.io/mdBook/
-  # mdbook = std.lib.cfg.mdbook {
-  #   # add preprocessor packages here
-  #   packages = [
-  #     inputs.nixpkgs.mdbook-linkcheck
-  #   ];
-  #   data = {
-  #     # Configuration Reference: https://rust-lang.github.io/mdBook/format/configuration/index.html
-  #     book = {
-  #       language = "en";
-  #       multilingual = false;
-  #       title = "CONFIGURE-ME";
-  #       src = "docs";
-  #     };
-  #     build.build-dir = "docs/build";
-  #     preprocessor = {};
-  #     output = {
-  #       html = {};
-  #       # Tool Homepage: https://github.com/Michael-F-Bryan/mdbook-linkcheck
-  #       linkcheck = {};
-  #     };
-  #   };
-  #   output = "book.toml";
-  #   hook.mode = "copy"; # let CI pick it up outside of devshell
-  # };
 }

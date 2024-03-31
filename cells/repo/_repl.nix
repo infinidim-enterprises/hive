@@ -24,7 +24,11 @@ let
       "nixpkgs-unstable"
       "nixpkgs-master"
     ]
-      (x: Flake.inputs.${x} // { pkgs = Flake.inputs.${x}.legacyPackages.${builtins.currentSystem}; });
+      (x: Flake.inputs.${x} // {
+        pkgs = Flake.inputs.${x}.legacyPackages.${builtins.currentSystem}.appendOverlays [
+          Cells.common.overlays.sources
+        ];
+      });
 
   Flake = builtins.getFlake (toString flakePath);
 

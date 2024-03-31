@@ -234,16 +234,16 @@
   };
   ipxe = {
     pname = "ipxe";
-    version = "9bbe77669c6e2b71826449d854f5aa0e2cee7767";
+    version = "764e34f15af89cc7c5e46694ac15c5266f13b3d3";
     src = fetchgit {
       url = "https://github.com/ipxe/ipxe";
-      rev = "9bbe77669c6e2b71826449d854f5aa0e2cee7767";
+      rev = "764e34f15af89cc7c5e46694ac15c5266f13b3d3";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-7yaiGj8Yo7OmXKvOqlKn8WIoFRR0ZZQ3GPY2RfLDKqs=";
+      sha256 = "sha256-fljZW7weasnWploxHlmEB5n55TRZH8O9dwKRbSPg8VQ=";
     };
-    date = "2024-03-26";
+    date = "2024-03-29";
   };
   langchain = {
     pname = "langchain";
@@ -278,10 +278,10 @@
   };
   logseq = {
     pname = "logseq";
-    version = "0.10.7";
+    version = "0.10.8";
     src = fetchurl {
-      url = "https://github.com/logseq/logseq/releases/download/0.10.7/logseq-linux-x64-0.10.7.AppImage";
-      sha256 = "sha256-EC83D7tSpoDV6h363yIdX9IrTfoMd4b0hTVdW1T0pXg=";
+      url = "https://github.com/logseq/logseq/releases/download/0.10.8/logseq-linux-x64-0.10.8.AppImage";
+      sha256 = "sha256-kVnQ33gozrL6BOWQxUfiMypiIZOffeT2cMVMHIfsaWg=";
     };
   };
   masterpdfeditor = {
@@ -354,12 +354,36 @@
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "4f28c0b741d07965701272897d117c196c08b952";
+    version = "6aa88482a7465dd0fa9169e2778c1a2d6059aa1b";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";
     };
-    date = "2024-03-28";
+    date = "2024-03-31";
+  };
+  pgp-key-generation = {
+    pname = "pgp-key-generation";
+    version = "e4549972b1ed686b38da9e2a663106669edddb9b";
+    src = fetchFromGitHub {
+      owner = "summitto";
+      repo = "pgp-key-generation";
+      rev = "e4549972b1ed686b38da9e2a663106669edddb9b";
+      fetchSubmodules = false;
+      sha256 = "sha256-FR6I4jwrF9t+pur0E/z54cgQ8acwtsAsKIp4pO0Ulng=";
+    };
+    date = "2022-12-02";
+  };
+  pgp-packet-library = {
+    pname = "pgp-packet-library";
+    version = "42b4d08c0cb4b8ee527f729c1674e982eca409a7";
+    src = fetchFromGitHub {
+      owner = "summitto";
+      repo = "pgp-packet-library";
+      rev = "42b4d08c0cb4b8ee527f729c1674e982eca409a7";
+      fetchSubmodules = true;
+      sha256 = "sha256-DI0vxfbewqlXocrvzPgCM66IuSVxHjFdL3hIPxzFou8=";
+    };
+    date = "2022-07-26";
   };
   promnesia = {
     pname = "promnesia";
