@@ -25,10 +25,6 @@ generate_pgp_key() {
   local COMMAND_LINE
   COMMAND_LINE="generate_derived_key --sigtime ${SIGTIME} --sigexpiry ${SIGEXPIRY} --key-creation ${KEYTIME} --key-type ${KEYTYPE} --name ${UID_NAME_AND_COMMENT} --email ${UID_EMAIL} --output-file ${OUT_KEYFNAME}"
 
-  echo '**********'
-  echo "${COMMAND_LINE}"
-  echo '**********'
-
   expect <<-DONE | sed 's/^  //'
   set timeout 90
   spawn $COMMAND_LINE
@@ -85,10 +81,14 @@ DONE
 }
 
 set_optional_args() {
+  # NOTE: Need to escape spaces with '\' for generate_derived_key to parse the args,
+  # when invoked with spawn from expect heredoc
   if [[ -n ${COMMENT} ]]; then
-    UID_NAME_AND_COMMENT="${NAME} (${COMMENT})"
+    variable="${NAME} (${COMMENT})"
+    UID_NAME_AND_COMMENT="${variable// /\\ }"
   else
-    UID_NAME_AND_COMMENT="${NAME}"
+    variable="${NAME}"
+    UID_NAME_AND_COMMENT="${variable// /\\ }"
   fi
 
   if [[ -n ${KEYFNAME} ]]; then
