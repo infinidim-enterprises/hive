@@ -27,7 +27,7 @@ let
   #   ];
   # };
 
-  uname = "gpg-hd";
+  uname = "dkeygen";
   gname = "users";
   uid = "1000";
   gid = "100";
@@ -52,26 +52,50 @@ let
     mkdir -p $out/home/${uname}
   '';
   runtimeInputs = with pkgs; [
-    inputs.cells.common.packages.gpg-hd
     gawk
     bash
     gnupg
+    coreutils-full
     gnugrep
-    coreutils
-    monkeysphere
+    inputs.cells.common.packages.pgp-key-generation
+    # monkeysphere
   ];
+
+  keygen_script = pkgs.writeShellApplication {
+    name = "dkeygen";
+    excludeShellChecks = [ "SC2206" "SC2034" ];
+    bashOptions = [ "errexit" "pipefail" ];
+    runtimeEnv.BIP39_WORDLIST = pkgs.writeText "bip39-wordlist" (pkgs.lib.fileContents ./nixosProfiles/hardware/crypto/bip39-english.txt);
+    runtimeInputs = with pkgs; [
+      inputs.cells.common.packages.pgp-key-generation
+      coreutils-full
+      findutils
+      expect
+      gnused
+      gnupg
+      gawk
+    ];
+
+    text =
+      with pkgs.lib;
+      let
+        remove_shebang = txt: concatStringsSep "\n" (tail (splitString "\n" txt));
+      in
+      remove_shebang (fileContents ./nixosProfiles/hardware/crypto/dkeygen.sh);
+  };
+
 in
 {
-  # std //nixos/containers/gpg-hd:{build,load,publish}
+  # std //nixos/containers/dkeygen:{build,load,publish}
   # NOTE: https://github.com/nlewo/nix2container/issues/72
-  gpg-hd = mkOCI {
+  dkeygen = mkOCI {
     inherit uid gid runtimeInputs;
     name = "ghcr.io/infinidim-enterprises/hive";
     labels = {
-      source = "https://github.com/infinidim-enterprises/hive:gpg-hd";
+      source = "https://github.com/infinidim-enterprises/hive:dkeygen";
       description = "Deterministic key generator BIP39->GPG";
     };
-    meta.tags = [ "gpg-hd" ];
+    meta.tags = [ "dkeygen" ];
     # entrypoint = inputs.cells.common.packages.gpg-hd;
     entrypoint = pkgs.bash;
 
@@ -79,8 +103,11 @@ in
       "USER=${uname}"
       "HOME=/home/${uname}"
       "NIX_PAGER=cat"
-      "PATH=${pkgs.lib.makeBinPath runtimeInputs}"
+      "PATH=${pkgs.lib.makeBinPath (runtimeInputs ++ [ keygen_script ])}"
     ];
+
+    config.volumes."/tmp" = { };
+
     setup = [ mkUser ];
 
     perms = [{

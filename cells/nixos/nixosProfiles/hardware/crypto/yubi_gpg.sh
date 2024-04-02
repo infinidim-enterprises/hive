@@ -19,6 +19,14 @@
 ## rm ~/.gnupg/gpg-agent.conf
 ## rm ~/.gnupg/scdaemon.conf
 ##
+# TEST command line: generate_derived_key --sigtime '2023-01-01 00:00:00' --sigexpiry '2030-01-01 00:00:00' --key-creation '1970-01-01 00:00:01' --key-type rsa4096 --name 'Booby Lover (Key comment)' --email 'boobylover@gmail.com' --output-file ~/Documents/private.key
+# TEST SEED: client foot exact plastic type spawn tooth spin knee asset found survey apology want ridge chaos pelican seed carpet off group desk cry engage -- actual
+# TEST key fingerprint: 4AE3 67C9 B78C 07F6 3719  F213 2B35 3748 22A4 1189
+# gpg --import ~/Documents/private.key
+# echo "4AE367C9B78C07F63719F2132B35374822A41189:6:" | gpg --import-ownertrust
+# gpg --export -a 4AE367C9B78C07F63719F2132B35374822A41189 > ~/Documents/public.key
+# echo "\ntest message string" | gpg --encrypt --armor --recipient 4AE367C9B78C07F63719F2132B35374822A41189 --output ~/Documents/encrypted-string.txt
+# gpg --decrypt --armor ~/Documents/encrypted-string.txt
 
 # TODO: make this runnable in std!
 

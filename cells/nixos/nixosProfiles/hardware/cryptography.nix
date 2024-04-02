@@ -7,60 +7,9 @@
 { config, lib, pkgs, ... }:
 with lib;
 let
-  # scdaemonDisableCcid = pkgs.stdenv.mkDerivation {
-  #   pname = "scdaemon-disable-ccid";
-  #   version = cfg.package.version;
-  #   phases = [ "installPhase" ];
-  #   nativeBuildInputs = [ pkgs.makeWrapper ];
-  #   installPhase = ''
-  #     mkdir -p $out/bin
-  #     makeWrapper ${cfg.package}/libexec/scdaemon $out/bin/scdaemon-disable-ccid --add-flags --disable-ccid
-  #   '';
-  # };
-
-  # gpgAgentExtraArgs =
-  #   (lib.optional (cfg.agent.pinentryFlavor != null) "--pinentry-program ${pkgs.pinentry.${cfg.agent.pinentryFlavor}}/bin/pinentry")
-  #   ++ (lib.optional config.services.pcscd.enable "--scdaemon-program ${scdaemonDisableCcid}/bin/scdaemon-disable-ccid");
-
   hmModule = { config, osConfig, lib, ... }:
     let
       cfgTrezor = config.services.trezor-agent;
-      # homedir = config.programs.gpg.homedir;
-      # gpgconf = dir:
-      #   let
-      #     hash = substring 0 24 (hexStringToBase32 (builtins.hashString "sha1" homedir));
-      #   in
-      #   if homedir == config.programs.gpg.homedir then
-      #     "%t/gnupg/${dir}"
-      #   else
-      #     "%t/gnupg/d.${hash}/${dir}";
-      # hexStringToBase32 =
-      #   let
-      #     mod = a: b: a - a / b * b;
-      #     pow2 = elemAt [ 1 2 4 8 16 32 64 128 256 ];
-      #     splitChars = s: init (tail (splitString "" s));
-
-      #     base32Alphabet = splitChars "ybndrfg8ejkmcpqxot1uwisza345h769";
-      #     hexToIntTable = listToAttrs (genList (value: { name = toLower (toHexString value); inherit value; }) 16);
-
-      #     initState = { ret = ""; buf = 0; bufBits = 0; };
-      #     go = { ret, buf, bufBits }: hex:
-      #       let
-      #         buf' = buf * pow2 4 + hexToIntTable.${hex};
-      #         bufBits' = bufBits + 4;
-      #         extraBits = bufBits' - 5;
-      #       in
-      #       if bufBits >= 5 then {
-      #         ret = ret + elemAt base32Alphabet (buf' / pow2 extraBits);
-      #         buf = mod buf' (pow2 extraBits);
-      #         bufBits = bufBits' - 5;
-      #       } else {
-      #         inherit ret;
-      #         buf = buf';
-      #         bufBits = bufBits';
-      #       };
-      #   in
-      #   hexString: (foldl' go initState (splitChars hexString)).ret;
     in
     {
       config = with lib; mkMerge [
@@ -71,14 +20,15 @@ let
           programs.gpg.enable = mkDefault true;
           programs.gpg.mutableKeys = mkDefault true;
           programs.gpg.mutableTrust = mkDefault true;
-          programs.gpg.scdaemonSettings.disable-ccid = lib.mkIf osConfig.services.pcscd.enable true; # NOTE: This is needed to support multiple keys
+          # NOTE: This is needed to support multiple keys
+          programs.gpg.scdaemonSettings.disable-ccid = lib.mkIf osConfig.services.pcscd.enable true;
         }
         (mkIf cfgTrezor.enable { })
         (mkIf (!cfgTrezor.enable) {
           services.gpg-agent.enable = mkDefault true;
           services.gpg-agent.enableSshSupport = mkDefault true;
           services.gpg-agent.enableExtraSocket = mkDefault true;
-          services.gpg-agent.pinentryFlavor = mkDefault "gnome3";
+          services.gpg-agent.pinentryPackage = mkDefault pkgs.pinentry-gnome3;
           services.gpg-agent.extraConfig = ''
             allow-emacs-pinentry
             allow-loopback-pinentry
@@ -86,17 +36,6 @@ let
         })
 
       ];
-
-      # systemd.user.sockets.gpg-agent-browser = {
-      #   Unit.Description = "GnuPG cryptographic agent and passphrase cache (browser)";
-      #   Unit.Documentation = "man:gpg-agent(1)";
-      #   Socket.ListenStream = gpgconf "S.gpg-agent.browser";
-      #   Socket.FileDescriptorName = "browser";
-      #   Socket.Service = "gpg-agent.service";
-      #   Socket.SocketMode = "0600";
-      #   Socket.DirectoryMode = "0700";
-      #   Install.WantedBy = [ "sockets.target" ];
-      # };
     };
 
 in
@@ -144,7 +83,7 @@ mkMerge [
       pam_u2f
 
       # age-plugin-yubikey
-      rage
+      # rage
 
       pcsclite
       pcsctools
@@ -162,7 +101,7 @@ mkMerge [
       # gpg_autogenkey
 
       ###
-      inputs.cells.common.packages.gpg-hd # Deterministic ssh-keys from BIP39
+      inputs.cells.common.packages.pgp-key-generation # Deterministic ssh-keys from BIP39
       paperkey
       qrencode
       zbar
@@ -190,8 +129,9 @@ mkMerge [
     # ATTRS{idProduct}=="53c1"
     # ATTRS{idVendor}=="1209"
 
+    services.dbus.packages = [ pkgs.gcr ];
     environment.systemPackages = with pkgs; [
-      gcr
+      # gcr
       gpa
       yubikey-personalization-gui
       yubikey-manager-qt
