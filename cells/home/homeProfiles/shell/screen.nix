@@ -1,4 +1,4 @@
-{ name, pkgs, lib, ... }:
+{ name, pkgs, lib, config, ... }:
 
 {
   # TODO: create dvtm/abduco config, instead of screen
@@ -13,6 +13,7 @@
     startup_message off
     defscrollback 4096
     autodetach on
+    ${lib.optionalString config.programs.atuin.enable "altscreen on"}
 
     # otherwise it gets set to screen.xterm-256color
     term xterm-256color
