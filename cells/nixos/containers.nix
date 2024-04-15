@@ -65,11 +65,14 @@ let
     name = "dkeygen";
     excludeShellChecks = [ "SC2206" "SC2034" ];
     bashOptions = [ "errexit" "pipefail" ];
-    runtimeEnv.BIP39_WORDLIST = pkgs.writeText "bip39-wordlist" (pkgs.lib.fileContents ./nixosProfiles/hardware/crypto/bip39-english.txt);
+    runtimeEnv.WORDLIST = pkgs.writeText "bip39-wordlist" (pkgs.lib.fileContents ./nixosProfiles/hardware/crypto/bip39-english.txt);
     runtimeInputs = with pkgs; [
       inputs.cells.common.packages.pgp-key-generation
       coreutils-full
       findutils
+      qrencode
+      openssh
+      systemd
       expect
       gnused
       gnupg
@@ -123,4 +126,5 @@ in
     #   fromImage = gpg-hd-image;
     # };
   };
+  inherit keygen_script;
 }

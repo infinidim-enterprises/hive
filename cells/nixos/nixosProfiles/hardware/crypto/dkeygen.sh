@@ -1,23 +1,56 @@
 #!/usr/bin/env bash
 
-declare -a FULL_SEED
-
 KEYID=""
+KEYGRIP=""
 KEYFNAME_PUBLIC=""
 
-# NOTE: not all openPGP cards might be the same. Let the user set those vars elsewhere, if required.
-: "${PGP_CARD_ADMIN_PIN:=12345678}" "${PGP_CARD_USER_PIN:=123456}"
+: "${PGP_CARD_ADMIN_PIN:=12345678}" \
+  "${PGP_CARD_USER_PIN:=123456}" \
+  "${KEY_PUBLIC_PARTS_DIR:=${HOME}/pgp_keys}" \
+  "${KEYTIME:=1970-01-02 00:00:00}" \
+  "${KEYTYPE:=rsa4096}" \
+  "${WORDLIST:=$(dirname "${0}")/bip39-english.txt}" \
+  "${GNUPGHOME:=${HOME}/.gnupg}"
 
 GPG_TTY=$(tty)
 export GPG_TTY
 
-if [[ -n ${BIP39_WORDLIST} ]]; then
-  WORDLIST="${BIP39_WORDLIST}"
-else
-  WORDLIST="./bip39-english.txt"
-fi
+pgp_key_private_revocation_cert() {
+  local COMMAND_LINE
+  COMMAND_LINE="gpg --output ${KEY_PUBLIC_PARTS_DIR}/${KEYID}_revocation.asc --generate-revocation ${KEYID}"
 
-readarray -t BIP39 <"${WORDLIST}"
+  expect <<-DONE | sed 's/^  //'
+  set timeout 90
+  spawn $COMMAND_LINE
+
+  expect "Create a revocation certificate for this key? (y/N) "
+  send -- "y\r"
+
+  expect "Your decision? "
+  send -- "0\r"
+
+  expect "> "
+  send -- "Desc \r"
+
+  expect "Is this okay? (y/N) "
+  send -- "y\r"
+DONE
+
+  qrencode -o "${KEY_PUBLIC_PARTS_DIR}/${KEYID}_revocation.png" -l H -t PNG <"${KEY_PUBLIC_PARTS_DIR}/${KEYID}_revocation.asc"
+}
+
+pgp_key_public_import() {
+  echo 'Importing public key...'
+  systemctl --user list-unit-files | grep gpg- | grep -v '.service' | awk '{ print $1 }' | xargs systemctl --user start
+  gpg --import "${KEYFNAME_PUBLIC}"
+  echo "${KEYID}:6:" | gpg --import-ownertrust
+}
+
+pgp_key_private_remove() {
+  echo 'Removing private key and resetting gpg...'
+  systemctl --user | grep gpg- | awk '{ print $1 }' | xargs systemctl --user stop
+  find "${GNUPGHOME}" -not -type l -delete || true
+}
 
 pgp_subkeys_private_move_to_card() {
   local COMMAND_LINE
@@ -40,8 +73,8 @@ pgp_subkeys_private_move_to_card() {
   expect "Your selection? "
   send -- "1\r"
 
-  expect "Enter passphrase: "
-  send -- "${PGP_CARD_ADMIN_PIN}\r"
+  # expect "Enter passphrase: "
+  # send -- "${PGP_CARD_ADMIN_PIN}\r"
 
   # Deselect all keys
   expect "gpg> "
@@ -79,8 +112,14 @@ pgp_subkeys_private_move_to_card() {
 DONE
 }
 
+ssh_key_public_export() {
+  echo "${KEYGRIP}" >>"${GNUPGHOME}/sshcontrol"
+  ssh-add -L >"${KEY_PUBLIC_PARTS_DIR}/${KEYID}_ssh_key.pub"
+}
+
 pgp_key_public_export() {
-  KEYFNAME_PUBLIC="${HOME}/public_key_${KEYID}.asc"
+  KEYGRIP=$(gpg --list-public-keys --keyid-format LONG --with-colon --with-keygrip --fingerprint "${UID_EMAIL}" | grep 'grp:' | head -n 1 | awk -F: '{print $10}')
+  KEYFNAME_PUBLIC="${KEY_PUBLIC_PARTS_DIR}/${KEYID}_public_key.asc"
   gpg --export -a "${KEYID}" >"${KEYFNAME_PUBLIC}"
 }
 
@@ -88,7 +127,6 @@ pgp_key_private_import() {
   gpg --import "${OUT_KEYFNAME}"
   KEYID=$(gpg --list-secret-keys --keyid-format LONG --with-colon --fingerprint "${UID_EMAIL}" | grep 'fpr:' | head -n 1 | awk -F: '{print $10}')
   echo "${KEYID}:6:" | gpg --import-ownertrust
-  gpg -k
 }
 
 pgp_card_set_owner() {
@@ -114,6 +152,9 @@ pgp_card_set_owner() {
 
   expect "Cardholder's given name: "
   send -- "${UID_FIRSTNAME}\r"
+
+  expect "Enter passphrase: "
+  send -- "${PGP_CARD_ADMIN_PIN}\r"
 
   expect "gpg/card> "
   send -- "login\r"
@@ -254,50 +295,57 @@ full_seed_create() {
   done
 }
 
-debug_str() {
-  cat <<-EOF
-dkeygen --seed 'clie foot exac plas type spawn tooth spin knee asset found survey apol want ridge chaos pelican seed carpet off group desk cry engage' \
---sigtime '2023-01-01 00:00:00' \
---sigexpiry '2043-01-01 00:00:00' \
---keytime '1970-01-01 00:00:01' \
---keytype rsa4096 \
---name 'Booby Love' \
---email 'boobylover@gmail.com' \
---comment 'Some sensible key comment' \
---keyfname /tmp/generated.key
-EOF
-}
-
 show_report() {
+  # revocation cert: ${KEY_PUBLIC_PARTS_DIR}/${KEYID}_revocation.asc
+  # revocation cert png: ${KEY_PUBLIC_PARTS_DIR}/${KEYID}_revocation.png
+
   cat <<-DONE | sed 's/^  //'
 
   ********************************************************************************
-  Your public key: ${KEYID} ${KEYFNAME_PUBLIC}
-  Generated private key: rm -rf ${OUT_KEYFNAME}
+  [ ${KEYID} '${NAME} (${COMMENT})' <${UID_EMAIL}> @${KEYTIME} ]
+  private key: rm -rf ${OUT_KEYFNAME}
+
+  keygrip: ${KEYGRIP}
+  public key pgp: ${KEYFNAME_PUBLIC}
+  public key ssh: ${KEY_PUBLIC_PARTS_DIR}/${KEYID}_ssh_key.pub
+
+  Remember to change the card PINs: gpg --change-pin
+
+  home-manager: services.gpg-agent.sshKeys = [ "${KEYGRIP}" ]
   ********************************************************************************
 DONE
 }
 
 show_usage() {
   cat <<-DONE | sed 's/^  //'
-  Remember - [--key-creation], [--seed], [--name], [--comment] and [--email]
+  $(basename "${0}") version 0.0.1
+  Usage: $(basename "${0}") [--seed 'BIP39 mnemonic'] [--sigtime 'Signature time'] [--sigexpiry 'expiry time'] [--name 'Full Name'] [--email 'user@email.com'] [OPTION]...
+  Deterministic pgp key generation - https://github.com/summitto/pgp-key-generation
 
-  $(basename "${0}") --seed '24 word bip39 phrase' \\
-    --sigtime '2023-01-01 00:00:00' \\
-    --sigexpiry '2033-01-01 00:00:00' \\
-    --keytime '1970-01-01 00:00:01' \\
-    --keytype rsa4096 \\
-    --name 'Full Name' \\
-    --comment 'any key comment' \\
-    --email 'some@email.com'"
+  Not every pgp card *DEFAULT* PINs might be the same:
+
+  PGP_CARD_ADMIN_PIN="${PGP_CARD_ADMIN_PIN}"
+  PGP_CARD_USER_PIN="${PGP_CARD_USER_PIN}"
+
+  It's possible to control the output location:
+
+  KEY_PUBLIC_PARTS_DIR="${KEY_PUBLIC_PARTS_DIR}"
+
+[ 95C97641C65C57EB7EFDA3AC09C5E1A8BE99C742 ]
+$(basename "${0}") --seed 'clie foot exac plas type spawn tooth spin knee asset found survey apol want ridge chaos pelican seed carpet off group desk cry engage' \\
+--sigtime '2023-01-01 00:00:00' \\
+--sigexpiry '2043-01-01 00:00:00' \\
+--name 'Boobs Lover' \\
+--email 'boobs@lover.com' \\
+--comment 'Boobies'
 DONE
 }
 
-optional_args_set() {
+args_optional_set() {
   # create first and last names for card owner info
   read -r -a name_array <<<"${NAME}"
   UID_FIRSTNAME="${name_array[0]}"
-  UID_LASTNAME="${name_array[@]:1}"
+  UID_LASTNAME="${name_array[*]:1}"
 
   # NOTE: Need to escape spaces with '\' for generate_derived_key to parse the args,
   # when invoked with spawn from expect heredoc
@@ -315,9 +363,11 @@ optional_args_set() {
     TEMPLOC=$(mktemp -d keyfile.XXXXXXXX --tmpdir)
     OUT_KEYFNAME="${TEMPLOC}/derived.key"
   fi
+
+  mkdir -p "${KEY_PUBLIC_PARTS_DIR}"
 }
 
-required_args_check() {
+args_required_check() {
   for arg in "${required_args[@]}"; do
     varname="${arg}_provided"
     if ! ${!varname}; then
@@ -329,24 +379,28 @@ required_args_check() {
 }
 
 is_valid_utc_time() {
-  local input=$1
-  if [[ $(date -d "${input}" +"%Y-%m-%d %H:%M:%S" 2>/dev/null) == "${input}" ]]; then
-    return 0
+  local input
+  input=$1
+
+  if [[ $(date -d "${input}" +"%Y-%m-%d %H:%M:%S") == "${input}" ]]; then
+    true
   else
-    return 1
+    false
   fi
 }
 
 if [ "$#" -eq 0 ]; then
   show_usage
-  exit 1
+  exit 0
 fi
 
-required_args=("seed" "sigtime" "sigexpiry" "keytime" "keytype" "name" "email")
+required_args=("seed" "sigtime" "sigexpiry" "name" "email")
 
 for arg in "${required_args[@]}"; do
   declare "$arg"_provided=false
 done
+
+WRITE_CARD=false
 
 while [ "$#" -gt 0 ]; do
   i="$1"
@@ -373,13 +427,11 @@ while [ "$#" -gt 0 ]; do
 
   --keytime)
     KEYTIME="${1}"
-    keytime_provided=true
     shift 1
     ;;
 
   --keytype)
     KEYTYPE="${1}"
-    keytype_provided=true
     shift 1
     ;;
 
@@ -423,20 +475,34 @@ while [ "$#" -gt 0 ]; do
   esac
 done
 
-optional_args_set
-required_args_check
+args_optional_set
+args_required_check
+
+if [[ ! -d ${GNUPGHOME} ]]; then
+  mkdir -p "${GNUPGHOME}"
+  chmod 0700 "${GNUPGHOME}"
+fi
+
+readarray -t BIP39 <"${WORDLIST}"
+declare -a FULL_SEED
+
 full_seed_create
 
 pgp_key_private_generate
 pgp_key_private_import
 
 pgp_key_public_export
+# FIXME: pgp_key_private_revocation_cert - something 'expect' doesn't handle
 
 if "${WRITE_CARD}"; then
   pgp_card_reset
   pgp_card_set_keyattrs
   pgp_card_set_owner
   pgp_subkeys_private_move_to_card
+
+  pgp_key_private_remove
+  pgp_key_public_import
+  ssh_key_public_export
 fi
 
 show_report

@@ -16,3 +16,7 @@ https://github.com/helm/chartmuseum
 * Cloud services
 ** auth
 https://github.com/nix-community/authentik-nix
+* Cool stuff I want
+** github alternatives
+https://onedev.io
+https://forgejo.org/
