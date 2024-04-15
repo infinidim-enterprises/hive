@@ -87,10 +87,10 @@
   };
   "canvasblocker" = rec {
     pname = "canvasblocker";
-    version = "1.9";
+    version = "1.10.1";
     addonId = "CanvasBlocker@kkapsner.de";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4097901/canvasblocker-1.9.xpi";
-    sha256 = "5248c2c2dedd14b8aa2cd73f9484285d9453e93339f64fcf04a3d63c859cf3d7";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4262820/canvasblocker-1.10.1.xpi";
+    sha256 = "dae3b648f0b559b8b08cdad8adaaba2fcde3aa7baf0ffe9b2cbca5a3373c98b7";
     meta = with lib;
       {
         homepage = "https://github.com/kkapsner/CanvasBlocker/";
@@ -358,10 +358,10 @@
   };
   "darkreader" = rec {
     pname = "darkreader";
-    version = "4.9.80";
+    version = "4.9.83";
     addonId = "addon@darkreader.org";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4249607/darkreader-4.9.80.xpi";
-    sha256 = "a93f1250b72cc27fe4a9b02be062c68fb079e45a1233d562852b48e1e9b99307";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4262984/darkreader-4.9.83.xpi";
+    sha256 = "a43cca2449de202d17040b0d91b2fb3ed4dd58ac81ec5d3fde4c9940d326c822";
     meta = with lib;
       {
         homepage = "https://darkreader.org/";
@@ -1144,10 +1144,10 @@
   };
   "ublock-origin" = rec {
     pname = "ublock-origin";
-    version = "1.56.0";
+    version = "1.57.2";
     addonId = "uBlock0@raymondhill.net";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4237670/ublock_origin-1.56.0.xpi";
-    sha256 = "f5fbeeac511ca4e10a74723413727fda8e6f9236c726d16eb54ade1fbe7be5be";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4261710/ublock_origin-1.57.2.xpi";
+    sha256 = "9928e79a52cecf7cfa231fdb0699c7d7a427660d94eb10d711ed5a2f10d2eb89";
     meta = with lib;
       {
         homepage = "https://github.com/gorhill/uBlock#ublock-origin";

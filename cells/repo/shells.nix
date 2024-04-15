@@ -342,7 +342,7 @@ lib.mapAttrs (_: std.lib.dev.mkShell) {
       nixpkgs-unstable.shards
 
       gnupg
-      vscode
+      # vscode
     ];
 
     commands = [
@@ -374,12 +374,12 @@ lib.mapAttrs (_: std.lib.dev.mkShell) {
         package = sops-reencrypt;
       }
 
-      {
-        category = "crypto-utils";
-        inherit (ledger-live-desktop) name;
-        help = ledger-live-desktop.meta.description;
-        package = ledger-live-desktop;
-      }
+      # {
+      #   category = "crypto-utils";
+      #   inherit (ledger-live-desktop) name;
+      #   help = ledger-live-desktop.meta.description;
+      #   package = ledger-live-desktop;
+      # }
 
       {
         category = "nix";

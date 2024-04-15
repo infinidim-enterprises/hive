@@ -12,7 +12,7 @@ fetch.github = "RinCat/RTL88x2BU-Linux-Driver"
 src.git = "https://github.com/lwfinger/rtw89"
 fetch.github = "lwfinger/rtw89"
 
-[gnupg-git]
-# TODO: refs/tags/gnupg-2.4.5
-src.git = "https://git.gnupg.org/gnupg.git"
-fetch.git = "https://git.gnupg.org/gnupg.git"
+# [gnupg-git]
+# # TODO: refs/tags/gnupg-2.4.5
+# src.git = "https://git.gnupg.org/gnupg.git"
+# fetch.git = "https://git.gnupg.org/gnupg.git"

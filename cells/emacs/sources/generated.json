@@ -78,7 +78,7 @@
     },
     "color-rg": {
         "cargoLocks": null,
-        "date": "2024-03-13",
+        "date": "2024-04-14",
         "extract": null,
         "name": "color-rg",
         "passthru": null,
@@ -88,16 +88,16 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "8025e980c1da71543304243213854154754fa831",
-            "sha256": "sha256-v7fcGxctwEF0X6I9so7loh1lakhtxSaLFbPpZYZJCBc=",
+            "rev": "4f5d9702c8baa65a934aa55d6cd0f8bd5e13b775",
+            "sha256": "sha256-dg3DBfsZ1fBRJn1VSqMnpppbTQG5AgxtrIX/d5lXsQY=",
             "type": "git",
             "url": "https://github.com/manateelazycat/color-rg"
         },
-        "version": "8025e980c1da71543304243213854154754fa831"
+        "version": "4f5d9702c8baa65a934aa55d6cd0f8bd5e13b775"
     },
     "copilot-el": {
         "cargoLocks": null,
-        "date": "2024-03-27",
+        "date": "2024-04-06",
         "extract": null,
         "name": "copilot-el",
         "passthru": null,
@@ -107,16 +107,16 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "b2dd13345bbe1e85621406c78d52cd1320d76df0",
-            "sha256": "sha256-jxIzLv3nNV7gzWrEh4AxzS6PixJgeGm5PeKQ8esKepM=",
+            "rev": "5f30a2b667df03c120ba31ce3af933255c8a558b",
+            "sha256": "sha256-28pTCggQyVIn5pA260VokYjH5kaypBrG3FDphfzXJcU=",
             "type": "git",
             "url": "https://github.com/zerolfx/copilot.el.git"
         },
-        "version": "b2dd13345bbe1e85621406c78d52cd1320d76df0"
+        "version": "5f30a2b667df03c120ba31ce3af933255c8a558b"
     },
     "doom-emacs": {
         "cargoLocks": null,
-        "date": "2024-03-28",
+        "date": "2024-04-11",
         "extract": null,
         "name": "doom-emacs",
         "passthru": null,
@@ -126,12 +126,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": true,
             "name": null,
-            "rev": "b44337198171bf612047d78f99968e17054cf48c",
-            "sha256": "sha256-KYx0lW++1f+jYNL8FkTaK59rLcSFZ1PE7siFwPnd8Wo=",
+            "rev": "5b7d6763f8f899e556c7c5d89556bf39a1c81f64",
+            "sha256": "sha256-ucZe9nvPTrKjf0dfCCu2XfF3wD9lByuGLdPOjKyF5UA=",
             "type": "git",
             "url": "https://github.com/hlissner/doom-emacs"
         },
-        "version": "b44337198171bf612047d78f99968e17054cf48c"
+        "version": "5b7d6763f8f899e556c7c5d89556bf39a1c81f64"
     },
     "grip": {
         "cargoLocks": null,
@@ -154,7 +154,7 @@
     },
     "jinx": {
         "cargoLocks": null,
-        "date": "2024-03-11",
+        "date": "2024-04-15",
         "extract": null,
         "name": "jinx",
         "passthru": null,
@@ -166,15 +166,15 @@
             "name": null,
             "owner": "minad",
             "repo": "jinx",
-            "rev": "b09efcb85b1a8db8054a3d5a298e8d9516836f16",
-            "sha256": "sha256-sIbE1CS/JKeXrYKTnnu4Fh2rdh/R6rIcwmOTAguSzjc=",
+            "rev": "77cac7f240f45d6c4836e844bd68151c7f863298",
+            "sha256": "sha256-EkJjpdQOYML5dcvre8g4XP6I3togLEziuvpg9ARqUV0=",
             "type": "github"
         },
-        "version": "b09efcb85b1a8db8054a3d5a298e8d9516836f16"
+        "version": "77cac7f240f45d6c4836e844bd68151c7f863298"
     },
     "lsp-bridge": {
         "cargoLocks": null,
-        "date": "2024-03-27",
+        "date": "2024-04-13",
         "extract": null,
         "name": "lsp-bridge",
         "passthru": null,
@@ -186,11 +186,11 @@
             "name": null,
             "owner": "manateelazycat",
             "repo": "lsp-bridge",
-            "rev": "de8805cd0eec59e3fa6e4f43080d2ed740ba06b6",
-            "sha256": "sha256-3psZBEXND2xaT0WqDxwnLCJM3NZm6uAAley5ljokRrk=",
+            "rev": "9087c8ef1410bde8fe2f9f149d5637199edf81e6",
+            "sha256": "sha256-wGwhLN5TTTS7XDIl0iUtM5nwVDXqVYR4yETKc70kaG0=",
             "type": "github"
         },
-        "version": "de8805cd0eec59e3fa6e4f43080d2ed740ba06b6"
+        "version": "9087c8ef1410bde8fe2f9f149d5637199edf81e6"
     },
     "nix-mode": {
         "cargoLocks": null,

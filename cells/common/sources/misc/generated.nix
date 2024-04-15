@@ -24,10 +24,10 @@
   };
   adguardhome = {
     pname = "adguardhome";
-    version = "v0.107.46";
+    version = "v0.107.48";
     src = fetchurl {
-      url = "https://github.com/AdguardTeam/AdGuardHome/releases/download/v0.107.46/AdGuardHome_linux_amd64.tar.gz";
-      sha256 = "sha256-jTGy0BVShSBNNWH0mtj5YYbv+w/iFbMEzFPtH/sqq/8=";
+      url = "https://github.com/AdguardTeam/AdGuardHome/releases/download/v0.107.48/AdGuardHome_linux_amd64.tar.gz";
+      sha256 = "sha256-FUnQJ3RRtsWz4DIO8Zi9Y6dO130qTdwj6RhJ6RNpljc=";
     };
   };
   age-plugin-trezor = {
@@ -45,15 +45,15 @@
   };
   chatgpt-wrapper = {
     pname = "chatgpt-wrapper";
-    version = "6296c8c149212ddd8101dde482db4b8aa15fa210";
+    version = "a4c8fdedf926a3a8490e0d46c3d54a49b7b5a767";
     src = fetchFromGitHub {
       owner = "llm-workflow-engine";
       repo = "llm-workflow-engine";
-      rev = "6296c8c149212ddd8101dde482db4b8aa15fa210";
+      rev = "a4c8fdedf926a3a8490e0d46c3d54a49b7b5a767";
       fetchSubmodules = false;
-      sha256 = "sha256-rpvf89yGylBI07XS8IjmJuHNaX3yUHPG1o4nwwdXbUM=";
+      sha256 = "sha256-tpKvXBalXCfcClWwSMxEqMfJaz/hPAuOH4vtpbZNhnU=";
     };
-    date = "2024-03-14";
+    date = "2024-04-09";
   };
   cl-hash-util = {
     pname = "cl-hash-util";
@@ -167,10 +167,10 @@
   };
   drawio = {
     pname = "drawio";
-    version = "24.1.0";
+    version = "24.2.5";
     src = fetchurl {
-      url = "https://github.com/jgraph/drawio-desktop/releases/download/v24.1.0/drawio-x86_64-24.1.0.rpm";
-      sha256 = "sha256-c4swoOGgTIB6kzKS1wMuKgzYIG8EPXKIsOzVhhqgvsg=";
+      url = "https://github.com/jgraph/drawio-desktop/releases/download/v24.2.5/drawio-x86_64-24.2.5.rpm";
+      sha256 = "sha256-m5BUvz9as+QOzju8M3Vz3QZ18Zn8c1tAlGiLwt1/m6Q=";
     };
   };
   git-get = {
@@ -234,26 +234,26 @@
   };
   ipxe = {
     pname = "ipxe";
-    version = "764e34f15af89cc7c5e46694ac15c5266f13b3d3";
+    version = "59f27d69358efc919b50760f3d6dac0b637b5488";
     src = fetchgit {
       url = "https://github.com/ipxe/ipxe";
-      rev = "764e34f15af89cc7c5e46694ac15c5266f13b3d3";
+      rev = "59f27d69358efc919b50760f3d6dac0b637b5488";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-fljZW7weasnWploxHlmEB5n55TRZH8O9dwKRbSPg8VQ=";
+      sha256 = "sha256-xjLXJe3NV/VSSSii0jZq6kryy7UvqirxrGjO0HmguZ8=";
     };
-    date = "2024-03-29";
+    date = "2024-04-03";
   };
   langchain = {
     pname = "langchain";
-    version = "v0.1.13";
+    version = "v0.1.16";
     src = fetchFromGitHub {
       owner = "langchain-ai";
       repo = "langchain";
-      rev = "v0.1.13";
+      rev = "v0.1.16";
       fetchSubmodules = false;
-      sha256 = "sha256-tBEO0GOY1cqO5FOYnBXAOSupSRhcoI9u4Nu4FieId74=";
+      sha256 = "sha256-Xv8juma/1qGC2Rb659dJBvRzRh5W+zU+O8W6peElFGc=";
     };
   };
   ledger-live-desktop = {
@@ -328,38 +328,38 @@
   };
   pam_usb = {
     pname = "pam_usb";
-    version = "688b65c3d5f7f81600c37f9fc9a29da9d2cc7abe";
+    version = "09aeaeccfae20a815161467e31e41bb5c6ce2d7f";
     src = fetchgit {
       url = "https://github.com/mcdope/pam_usb";
-      rev = "688b65c3d5f7f81600c37f9fc9a29da9d2cc7abe";
+      rev = "09aeaeccfae20a815161467e31e41bb5c6ce2d7f";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-e5atF4xenj6rC6wYdajCIVe1m2PeA5lDsP1LNgcULKg=";
+      sha256 = "sha256-KKl1w5+dseRWTxnN0JWIT4owbx0nL3wt9GmWmGowpYk=";
     };
-    date = "2024-01-05";
+    date = "2024-03-31";
   };
   paper-store = {
     pname = "paper-store";
-    version = "638a495e9b56262b981c7b19e82967495bdd1278";
+    version = "f369e81f8723123d89b8ac527f955e4d4c60b7fd";
     src = fetchgit {
       url = "https://github.com/nurupo/paper-store";
-      rev = "638a495e9b56262b981c7b19e82967495bdd1278";
+      rev = "f369e81f8723123d89b8ac527f955e4d4c60b7fd";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-aPxao4BZ15m6pEWPYhftbN/6Witu2GSydPforjt2sro=";
+      sha256 = "sha256-StmpmszWHzmi8pMd+y3f6+1s2vjW8HM5O6maJiE6Ajc=";
     };
-    date = "2019-07-05";
+    date = "2024-04-06";
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "6aa88482a7465dd0fa9169e2778c1a2d6059aa1b";
+    version = "9ceafd7772ad2f74af4692961cad6e3a7d60573b";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";
     };
-    date = "2024-03-31";
+    date = "2024-04-15";
   };
   pgp-key-generation = {
     pname = "pgp-key-generation";
@@ -387,15 +387,15 @@
   };
   promnesia = {
     pname = "promnesia";
-    version = "196742f3706d3dbe5c0347b4f259b8dde65c9967";
+    version = "31ee24bf980ca3ab0f5e497c144f49e54d6c705f";
     src = fetchFromGitHub {
       owner = "karlicoss";
       repo = "promnesia";
-      rev = "196742f3706d3dbe5c0347b4f259b8dde65c9967";
+      rev = "31ee24bf980ca3ab0f5e497c144f49e54d6c705f";
       fetchSubmodules = false;
-      sha256 = "sha256-mR9v3+8CTQqF/ojNiiall6IEuoMWyK/4mxmB2nWgvO0=";
+      sha256 = "sha256-7r3jacAXJyXSZU6vlDLMHAFRL983HCA/xth2YeNGLHY=";
     };
-    date = "2024-03-13";
+    date = "2024-03-31";
   };
   quicklisp = {
     pname = "quicklisp";

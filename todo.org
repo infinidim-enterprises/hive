@@ -20,3 +20,7 @@ https://github.com/nix-community/authentik-nix
 ** github alternatives
 https://onedev.io
 https://forgejo.org/
+** Nix / flakes
+https://github.com/cachix/devenv
+https://github.com/sellout/project-manager
+https://github.com/hercules-ci/flake-parts
