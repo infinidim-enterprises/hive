@@ -110,17 +110,28 @@ mkMerge [
     };
   })
 
-  (mkIf config.services.adguardhome.enable {
-    networking.resolvconf.dnsExtensionMechanism = false;
-
-    services.resolved.dnssec = "false";
-    services.resolved.llmnr = "false";
-    services.resolved.fallbackDns = [ "8.8.8.8" ];
-    networking.nameservers = with config.services.adguardhome; [ "${settings.bind_host}:${builtins.toString settings.dns.port}" ];
-    services.resolved.extraConfig = ''
-      MulticastDNS=false
-    '';
+  (mkIf (! config.services.adguardhome.enable) {
+    systemd.network.networks.lan.dns = [ "8.8.8.8" ];
   })
+
+  (mkIf config.services.adguardhome.enable (
+    let
+      adguardhomeDNS = with config.services.adguardhome;
+        [ "${settings.bind_host}:${builtins.toString settings.dns.port}" ];
+    in
+    {
+      networking.resolvconf.dnsExtensionMechanism = false;
+
+      services.resolved.dnssec = "false";
+      services.resolved.llmnr = "false";
+      services.resolved.fallbackDns = [ "8.8.8.8" ];
+      networking.nameservers = adguardhomeDNS;
+      services.resolved.extraConfig = ''
+        MulticastDNS=false
+      '';
+      systemd.network.networks.lan.dns = adguardhomeDNS;
+    }
+  ))
 
   (mkIf config.networking.networkmanager.enable {
     # systemd.network.wait-online.anyInterface = true;

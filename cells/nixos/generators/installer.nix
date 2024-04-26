@@ -11,6 +11,27 @@
     "${toString modulesPath}/installer/cd-dvd/channel.nix"
   ];
 
+  boot.initrd.availableKernelModules = [
+    "dm_mod"
+    "dm_crypt"
+    "cryptd"
+    "input_leds"
+    "aes"
+    "aes_generic"
+    "blowfish"
+    "twofish"
+    "serpent"
+    "cbc"
+    "xts"
+    "lrw"
+    "sha1"
+    "sha256"
+    "sha512"
+    "af_alg"
+    "algif_skcipher"
+    "ecb"
+  ];
+
   console.packages = options.console.packages.default ++ [ pkgs.terminus_font ];
 
   isoImage.isoName = config.networking.hostName +

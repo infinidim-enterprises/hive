@@ -200,6 +200,7 @@ mkMerge
           strict_sni_check = false;
         };
         user_rules = [
+          "@@||whatsapp.net^$important"
           "@@||web.whatsapp.com^$important"
           "@@||cache.nixos.org^$important"
           "@@||davidshield.com^$important"

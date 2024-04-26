@@ -17,6 +17,9 @@ https://github.com/helm/chartmuseum
 ** auth
 https://github.com/nix-community/authentik-nix
 * Cool stuff I want
+** NixOS secrets management
+https://github.com/oddlama/agenix-rekey
+Maybe switch to agenix or find auto-rekey for sops-nix
 ** github alternatives
 https://onedev.io
 https://forgejo.org/
@@ -24,3 +27,8 @@ https://forgejo.org/
 https://github.com/cachix/devenv
 https://github.com/sellout/project-manager
 https://github.com/hercules-ci/flake-parts
+* TODO installers
+** [ ] Add disko-install script to iso
+https://github.com/nix-community/disko/blob/master/docs/disko-install.md
+https://github.com/nix-community/disko/blob/master/tests/disko-install/default.nix
+** [ ] Reuse parts of https://github.com/nix-community/nixos-images

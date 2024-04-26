@@ -44,10 +44,6 @@ rec {
         systemd.network.networks.lan = {
           addresses = [{ addressConfig.Address = "10.11.1.125/24"; }];
           networkConfig.Gateway = "10.11.1.1";
-          dns =
-            if config.services.adguardhome.enable
-            then config.services.adguardhome.settings.dns.bind_hosts
-            else lib.mkDefault [ "8.8.8.8" ];
         };
       })
     ];

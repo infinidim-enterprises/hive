@@ -105,6 +105,8 @@
 
   # system tools
   inputs = {
+    nix-super.url = "github:privatevoid-net/nix-super";
+
     nix-filter.url = "github:numtide/nix-filter";
 
     nixos-generators.url = "github:nix-community/nixos-generators";
