@@ -14,22 +14,22 @@
   };
   codium = {
     pname = "codium";
-    version = "0.8.3";
+    version = "0.8.7";
     src = fetchurl {
-      url = "https://Codium.gallery.vsassets.io/_apis/public/gallery/publisher/Codium/extension/codium/0.8.3/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "codium-0.8.3.zip";
-      sha256 = "sha256-8YS8CQ4aM6n7M4vuGGByA1RSXL5wgT8FeJq4FAFiqKM=";
+      url = "https://Codium.gallery.vsassets.io/_apis/public/gallery/publisher/Codium/extension/codium/0.8.7/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "codium-0.8.7.zip";
+      sha256 = "sha256-Bx4QjLaEvZqudix0FDPNZfQDLe+Q4FltMXstGMyQs4E=";
     };
     publisher = "Codium";
     name = "codium";
   };
   copilot = {
     pname = "copilot";
-    version = "1.180.821";
+    version = "1.186.856";
     src = fetchurl {
-      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.180.821/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "copilot-1.180.821.zip";
-      sha256 = "sha256-YETgX5/wtCYn+FPO7onESWwMpNkpVvcmwa2BkjJAv5I=";
+      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.186.856/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "copilot-1.186.856.zip";
+      sha256 = "sha256-AMzSDLBCQ2F48u14eRrf/QnIc9mwXwrUj4JvTdWEN+E=";
     };
     publisher = "GitHub";
     name = "copilot";
@@ -47,11 +47,11 @@
   };
   emacs-mcx = {
     pname = "emacs-mcx";
-    version = "0.58.0";
+    version = "0.59.2";
     src = fetchurl {
-      url = "https://tuttieee.gallery.vsassets.io/_apis/public/gallery/publisher/tuttieee/extension/emacs-mcx/0.58.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "emacs-mcx-0.58.0.zip";
-      sha256 = "sha256-KOhaTP58wx4L3wtR9EEhQCIbhvJNKmF0NaVC8/28CPU=";
+      url = "https://tuttieee.gallery.vsassets.io/_apis/public/gallery/publisher/tuttieee/extension/emacs-mcx/0.59.2/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "emacs-mcx-0.59.2.zip";
+      sha256 = "sha256-lFXGV2CQ30D0uYDnkogiQ263y36kQCWGta5SBg3uSNo=";
     };
     publisher = "tuttieee";
     name = "emacs-mcx";
@@ -289,11 +289,11 @@
   };
   vscode-docker = {
     pname = "vscode-docker";
-    version = "1.29.0";
+    version = "1.29.1";
     src = fetchurl {
-      url = "https://ms-azuretools.gallery.vsassets.io/_apis/public/gallery/publisher/ms-azuretools/extension/vscode-docker/1.29.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "vscode-docker-1.29.0.zip";
-      sha256 = "sha256-mVRsVsolXj31WhbWnt3Xml+NnIq7Q2uHhUUd1zgW42c=";
+      url = "https://ms-azuretools.gallery.vsassets.io/_apis/public/gallery/publisher/ms-azuretools/extension/vscode-docker/1.29.1/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "vscode-docker-1.29.1.zip";
+      sha256 = "sha256-uleZLIkfOxKan+U56fKEwUjaleig07zdEwQKzsAzan0=";
     };
     publisher = "ms-azuretools";
     name = "vscode-docker";
@@ -322,11 +322,11 @@
   };
   vscode-markdownlint = {
     pname = "vscode-markdownlint";
-    version = "0.54.0";
+    version = "0.55.0";
     src = fetchurl {
-      url = "https://DavidAnson.gallery.vsassets.io/_apis/public/gallery/publisher/DavidAnson/extension/vscode-markdownlint/0.54.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "vscode-markdownlint-0.54.0.zip";
-      sha256 = "sha256-BrPFFRspJIz1U08hPbLziCmRUeZv2NhRrTCx6qvhOJw=";
+      url = "https://DavidAnson.gallery.vsassets.io/_apis/public/gallery/publisher/DavidAnson/extension/vscode-markdownlint/0.55.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "vscode-markdownlint-0.55.0.zip";
+      sha256 = "sha256-slfHfRPcuRu+649n6kAr2bv9H6J+DvYVN/ysq1QpPQM=";
     };
     publisher = "DavidAnson";
     name = "vscode-markdownlint";

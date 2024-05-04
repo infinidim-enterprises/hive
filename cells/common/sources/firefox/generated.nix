@@ -2,10 +2,10 @@
 {
   "absolute-enable-right-click" = rec {
     pname = "absolute-enable-right-click";
-    version = "1.3.8";
+    version = "1.3.9resigned1";
     addonId = "{9350bc42-47fb-4598-ae0f-825e3dd9ceba}";
-    url = "https://addons.mozilla.org/firefox/downloads/file/1205179/absolute_enable_right_click-1.3.8.xpi";
-    sha256 = "d1ca76d23234e6fd0f5d521caef62d20d071c8806887cda89914fd8325715a0a";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4274207/absolute_enable_right_click-1.3.9resigned1.xpi";
+    sha256 = "46cd0be06eb1decc2095b1afd47fd11aee80db7d5576b59f8794246ef65301ff";
     meta = with lib;
       {
         description = "Force Enable Right Click &amp; Copy";
@@ -358,10 +358,10 @@
   };
   "darkreader" = rec {
     pname = "darkreader";
-    version = "4.9.83";
+    version = "4.9.84";
     addonId = "addon@darkreader.org";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4262984/darkreader-4.9.83.xpi";
-    sha256 = "a43cca2449de202d17040b0d91b2fb3ed4dd58ac81ec5d3fde4c9940d326c822";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4278339/darkreader-4.9.84.xpi";
+    sha256 = "d418b40fc2cb69cfffabf6cc291f2cc5ca4c9d6a99e46562b44f4e2c0148374c";
     meta = with lib;
       {
         homepage = "https://darkreader.org/";
@@ -588,10 +588,10 @@
   };
   "org-capture" = rec {
     pname = "org-capture";
-    version = "0.2.1";
+    version = "0.2.2resigned1";
     addonId = "{ddefd400-12ea-4264-8166-481f23abaa87}";
-    url = "https://addons.mozilla.org/firefox/downloads/file/1127481/org_capture-0.2.1.xpi";
-    sha256 = "5683ee1ebfafc24abc2d759c7180c4e839c24fa90764d8cf3285c5d72fc81f0a";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4272196/org_capture-0.2.2resigned1.xpi";
+    sha256 = "eac6fdbfb90ff92862228acb7e8d265f1326ddcc4b86f87455d74ae448a22f45";
     meta = with lib;
       {
         homepage = "https://github.com/sprig/org-capture-extension";
@@ -1090,10 +1090,10 @@
   };
   "russian-spellchecking-dic-3703" = rec {
     pname = "russian-spellchecking-dic-3703";
-    version = "0.4.5.1webext";
+    version = "0.4.5.2resigned1";
     addonId = "ru@dictionaries.addons.mozilla.org";
-    url = "https://addons.mozilla.org/firefox/downloads/file/1163927/russian_spellchecking_dic_3703-0.4.5.1webext.xpi";
-    sha256 = "8681bfbc86a8aa2c211638b97792dca42e3599f79b6cf456b32aebea711c0f1a";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4270210/russian_spellchecking_dic_3703-0.4.5.2resigned1.xpi";
+    sha256 = "1aff851a43ebfd0740a1f0d4ab354ea770e813144f288e6270efdd031a550283";
     meta = with lib;
       {
         homepage = "http://www.mozilla-russia.org";
@@ -1184,10 +1184,10 @@
   };
   "ugetintegration" = rec {
     pname = "ugetintegration";
-    version = "2.1.3.1";
+    version = "2.1.3.2resigned1";
     addonId = "uget-integration@slgobinath";
-    url = "https://addons.mozilla.org/firefox/downloads/file/911315/ugetintegration-2.1.3.1.xpi";
-    sha256 = "235f29ca5df79e4e5a338e29ef7cd721bb7873309b56364cc7a4bf4612e1ae85";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4272310/ugetintegration-2.1.3.2resigned1.xpi";
+    sha256 = "323d69317af8a882560c8eeb131cceb66a68c16f305c057d5755009ee09297e1";
     meta = with lib;
       {
         homepage = "https://github.com/ugetdm/uget-integrator";

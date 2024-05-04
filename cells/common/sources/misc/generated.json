@@ -72,7 +72,7 @@
     },
     "chatgpt-wrapper": {
         "cargoLocks": null,
-        "date": "2024-04-09",
+        "date": "2024-05-03",
         "extract": null,
         "name": "chatgpt-wrapper",
         "passthru": null,
@@ -84,11 +84,11 @@
             "name": null,
             "owner": "llm-workflow-engine",
             "repo": "llm-workflow-engine",
-            "rev": "a4c8fdedf926a3a8490e0d46c3d54a49b7b5a767",
-            "sha256": "sha256-tpKvXBalXCfcClWwSMxEqMfJaz/hPAuOH4vtpbZNhnU=",
+            "rev": "2cd7fd14ebae8fba240352f2b0e155348d091b18",
+            "sha256": "sha256-s+3cIfjX0SdvyYYmaOJjd4av/KGRMTb20bEByVpAPag=",
             "type": "github"
         },
-        "version": "a4c8fdedf926a3a8490e0d46c3d54a49b7b5a767"
+        "version": "2cd7fd14ebae8fba240352f2b0e155348d091b18"
     },
     "cl-hash-util": {
         "cargoLocks": null,
@@ -385,7 +385,7 @@
     },
     "ipxe": {
         "cargoLocks": null,
-        "date": "2024-04-03",
+        "date": "2024-04-17",
         "extract": null,
         "name": "ipxe",
         "passthru": null,
@@ -395,12 +395,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "59f27d69358efc919b50760f3d6dac0b637b5488",
-            "sha256": "sha256-xjLXJe3NV/VSSSii0jZq6kryy7UvqirxrGjO0HmguZ8=",
+            "rev": "d7e58c5a812988c341ec4ad19f79faf067388d58",
+            "sha256": "sha256-OIisRd2o2zrTqH1Xv3FDhQWDqhKNeGhPkHWyYZzbtTU=",
             "type": "git",
             "url": "https://github.com/ipxe/ipxe"
         },
-        "version": "59f27d69358efc919b50760f3d6dac0b637b5488"
+        "version": "d7e58c5a812988c341ec4ad19f79faf067388d58"
     },
     "langchain": {
         "cargoLocks": null,
@@ -416,11 +416,11 @@
             "name": null,
             "owner": "langchain-ai",
             "repo": "langchain",
-            "rev": "v0.1.16",
-            "sha256": "sha256-Xv8juma/1qGC2Rb659dJBvRzRh5W+zU+O8W6peElFGc=",
+            "rev": "langchain-openai==0.1.6",
+            "sha256": "sha256-dNxBfdt0FFzbI2HIh7MNonGeSF+Tw3VXzJwkjOl806A=",
             "type": "github"
         },
-        "version": "v0.1.16"
+        "version": "langchain-openai==0.1.6"
     },
     "ledger-live-desktop": {
         "cargoLocks": null,
@@ -466,11 +466,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-kVnQ33gozrL6BOWQxUfiMypiIZOffeT2cMVMHIfsaWg=",
+            "sha256": "sha256-XROuY2RlKnGvK1VNvzauHuLJiveXVKrIYPppoz8fCmc=",
             "type": "url",
-            "url": "https://github.com/logseq/logseq/releases/download/0.10.8/logseq-linux-x64-0.10.8.AppImage"
+            "url": "https://github.com/logseq/logseq/releases/download/0.10.9/logseq-linux-x64-0.10.9.AppImage"
         },
-        "version": "0.10.8"
+        "version": "0.10.9"
     },
     "masterpdfeditor": {
         "cargoLocks": null,
@@ -580,7 +580,7 @@
     },
     "pbkdf2-sha512": {
         "cargoLocks": null,
-        "date": "2024-04-15",
+        "date": "2024-05-04",
         "extract": null,
         "name": "pbkdf2-sha512",
         "passthru": null,
@@ -591,7 +591,7 @@
             "type": "url",
             "url": "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c"
         },
-        "version": "9ceafd7772ad2f74af4692961cad6e3a7d60573b"
+        "version": "d1e72c52d036c600078d66530d01d4afb1ffa933"
     },
     "pgp-key-generation": {
         "cargoLocks": null,
@@ -713,7 +713,7 @@
     },
     "stumpwm-contrib": {
         "cargoLocks": null,
-        "date": "2024-03-22",
+        "date": "2024-04-18",
         "extract": null,
         "name": "stumpwm-contrib",
         "passthru": null,
@@ -725,15 +725,15 @@
             "name": null,
             "owner": "stumpwm",
             "repo": "stumpwm-contrib",
-            "rev": "8ed9201dee887aa797921a3511051b3f5fb5ba78",
-            "sha256": "sha256-bNajitwyK5kvQvtOI6QwYxYyiXE0Mdgv1bJ9xlzil88=",
+            "rev": "042a9fcb053839f4b1527d2e6f4baf33e2d16434",
+            "sha256": "sha256-idSdD/IXPOJXAsZSJgXbpRBH7DelEVz3xUTYh/9ZtLk=",
             "type": "github"
         },
-        "version": "8ed9201dee887aa797921a3511051b3f5fb5ba78"
+        "version": "042a9fcb053839f4b1527d2e6f4baf33e2d16434"
     },
     "stumpwm-git": {
         "cargoLocks": null,
-        "date": "2024-03-22",
+        "date": "2024-04-18",
         "extract": null,
         "name": "stumpwm-git",
         "passthru": {
@@ -748,11 +748,11 @@
             "name": null,
             "owner": "stumpwm",
             "repo": "stumpwm",
-            "rev": "c802c7edd6323c9e768dd9383e3813a71aa8d59b",
-            "sha256": "sha256-KRU0p6Q+4FMrSyE0C1MFlQp/r8cFi2QxFGDCirzxOiA=",
+            "rev": "11be454df8f01f2ed7aa20cffe23f16f1d7b7bd6",
+            "sha256": "sha256-aEacyvOv0mOCoPyrPOoZHhCsLNCMp+VSLr9mfamuk8A=",
             "type": "github"
         },
-        "version": "c802c7edd6323c9e768dd9383e3813a71aa8d59b"
+        "version": "11be454df8f01f2ed7aa20cffe23f16f1d7b7bd6"
     },
     "stumpwm-release": {
         "cargoLocks": null,
