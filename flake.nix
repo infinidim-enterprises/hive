@@ -5,10 +5,13 @@
     "https://njk.cachix.org"
     "https://cache.garnix.io"
   ];
+
   nixConfig.extra-trusted-public-keys = [
     "njk.cachix.org-1:ON4lemYq096ZfK5MtL1NU3afFk9ILAsEnXdy5lDDgKs="
     "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
   ];
+
+  # nixConfig.extra-access-tokens = ["github.com=github_pat_XYZ"];
 
   # common for deduplication
   inputs = {
@@ -111,6 +114,7 @@
 
     nixos-generators.url = "github:nix-community/nixos-generators";
     nixos-generators.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    nixos-generators.inputs.nixlib.follows = "nixpkgs-lib";
 
     nixos-anywhere.url = "github:nix-community/nixos-anywhere/1.1.1";
     nixos-anywhere.inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -257,11 +261,8 @@
     std.growOn
       {
         inherit inputs;
-
-        nixpkgsConfig.allowUnfree = true;
-
         systems = [ "aarch64-linux" "x86_64-linux" ];
-
+        nixpkgsConfig.allowUnfree = true;
         cellsFrom = ./cells;
 
         cellBlocks = with std.blockTypes;

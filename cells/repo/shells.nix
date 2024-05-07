@@ -189,7 +189,7 @@ let
     (nixpkgs.appendOverlays [ inputs.cells.common.overlays.nixpkgs-unstable-overrides ])
     gnupg
     alejandra
-    nixUnstable
+    # nixUnstable
     nixpkgs-fmt
     editorconfig-checker
     cachix
@@ -223,7 +223,7 @@ let
 
   repl =
     let
-      nixBinary = nixpkgs.nixUnstable;
+      nixBinary = nixpkgs.nixVersions.nix_2_18;
       # nixBinary = nixpkgs-unstable.nixUnstable;
       # NOTE: https://github.com/NixOS/nix/issues/8761
     in
@@ -346,7 +346,7 @@ lib.mapAttrs (_: std.lib.dev.mkShell) {
     ];
 
     commands = [
-      (nix nixUnstable)
+      (nix nixpkgs-unstable.nixVersions.latest)
       (nix cachix)
       (nix nix-index)
       (nix statix)

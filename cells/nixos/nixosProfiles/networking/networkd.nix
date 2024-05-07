@@ -117,7 +117,7 @@ mkMerge [
   (mkIf config.services.adguardhome.enable (
     let
       adguardhomeDNS = with config.services.adguardhome;
-        [ "${settings.bind_host}:${builtins.toString settings.dns.port}" ];
+        [ "${host}:${builtins.toString port}" ];
     in
     {
       networking.resolvconf.dnsExtensionMechanism = false;

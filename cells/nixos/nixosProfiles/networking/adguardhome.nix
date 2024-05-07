@@ -94,13 +94,10 @@ mkMerge
       # networking.extraHosts = lib.readFile "${pkgs.sources.StevenBlack-hosts.src}/alternates/fakenews-gambling-porn-social/hosts";
 
       services.adguardhome.enable = true;
-      # services.adguardhome.host = "127.0.0.1";
-      # services.adguardhome.port = 8888;
+      services.adguardhome.host = "127.0.0.1";
+      services.adguardhome.port = 8888;
       services.adguardhome.mutableSettings = false;
       services.adguardhome.settings = {
-
-        bind_host = "127.0.0.1";
-        bind_port = 8888;
 
         auth_attempts = 5;
         beta_bind_port = 0;

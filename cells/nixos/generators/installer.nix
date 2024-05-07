@@ -1,5 +1,54 @@
 { config, lib, options, modulesPath, pkgs, ... }:
 
+let
+  self = getFlake (toString ../../../.);
+
+  inherit (lib)
+    mkIf
+    mkMerge
+    flatten
+    attrNames
+    filterAttrs
+    hasAttrByPath
+    mapAttrsToList
+    concatStringsSep;
+
+  inherit (builtins)
+    map
+    getFlake
+    toString
+    attrValues;
+
+  diskoMod = { config, pkgs, ... }:
+    let
+      hosts_with_disko =
+        filterAttrs (n: v: hasAttrByPath [ "disko" ] v.config) self.nixosConfigurations;
+
+      diskoDisks = cfg:
+        let
+          deviceList = mapAttrsToList
+            (k: v: "--disk ${k} \"${v.device}\"")
+            cfg.disko.devices.disk;
+        in
+        concatStringsSep " " deviceList;
+
+      installScriptUnattended = host:
+        pkgs.writeShellScriptBin "install-${host}" ''
+          set -eux
+          exec ${pkgs.disko}/bin/disko-install --flake "${self}#${host}" ${diskoDisks self.nixosConfigurations.${host}.config}
+        '';
+
+      diskoScript = host:
+        pkgs.writeShellScriptBin "disko-${host}" "${self.nixosConfigurations.${host}.config.system.build.diskoScript}";
+
+      diskoScriptPkgs = map (host: [ (installScriptUnattended host) (diskoScript host) ]) (attrNames hosts_with_disko);
+    in
+    mkMerge
+      [
+        { environment.systemPackages = flatten diskoScriptPkgs; }
+        # (mkIf (hasAttrByPath [ "disko" ] config) { disko.enableConfig = lib.mkForce false; })
+      ];
+in
 {
   imports = [
     "${toString modulesPath}/profiles/all-hardware.nix"
@@ -9,6 +58,7 @@
     "${toString modulesPath}/installer/scan/detected.nix"
     "${toString modulesPath}/installer/scan/not-detected.nix"
     "${toString modulesPath}/installer/cd-dvd/channel.nix"
+    diskoMod
   ];
 
   boot.initrd.availableKernelModules = [
@@ -40,6 +90,9 @@
 
   isoImage.makeEfiBootable = true;
   isoImage.makeUsbBootable = true;
+  isoImage.includeSystemBuildDependencies = true;
+  isoImage.storeContents = [ (attrValues self.inputs) ];
+
   boot.loader.grub.memtest86.enable = false;
 
   # An installation media cannot tolerate a host config defined file

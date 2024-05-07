@@ -46,4 +46,5 @@ rec {
     cell.nixosProfiles.virtualization.docker
   ];
 
+  bootstrap = [ ];
 }

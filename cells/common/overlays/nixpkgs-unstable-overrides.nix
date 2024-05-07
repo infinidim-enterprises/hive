@@ -25,7 +25,7 @@ in
     nil
     nixpkgs-fmt
     statix
-    nixUnstable
+    # nixUnstable
     cachix
     nix-index
 

@@ -22,7 +22,7 @@ let
 in
 
 {
-  nix.package = pkgs.nixUnstable;
+  nix.package = pkgs.nixVersions.latest;
   nix.optimise.automatic = lib.mkDefault true;
   nix.nrBuildUsers = 0;
   nix.gc.automatic = true;

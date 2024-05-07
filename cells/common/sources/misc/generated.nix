@@ -45,15 +45,15 @@
   };
   chatgpt-wrapper = {
     pname = "chatgpt-wrapper";
-    version = "a4c8fdedf926a3a8490e0d46c3d54a49b7b5a767";
+    version = "2cd7fd14ebae8fba240352f2b0e155348d091b18";
     src = fetchFromGitHub {
       owner = "llm-workflow-engine";
       repo = "llm-workflow-engine";
-      rev = "a4c8fdedf926a3a8490e0d46c3d54a49b7b5a767";
+      rev = "2cd7fd14ebae8fba240352f2b0e155348d091b18";
       fetchSubmodules = false;
-      sha256 = "sha256-tpKvXBalXCfcClWwSMxEqMfJaz/hPAuOH4vtpbZNhnU=";
+      sha256 = "sha256-s+3cIfjX0SdvyYYmaOJjd4av/KGRMTb20bEByVpAPag=";
     };
-    date = "2024-04-09";
+    date = "2024-05-03";
   };
   cl-hash-util = {
     pname = "cl-hash-util";
@@ -234,26 +234,34 @@
   };
   ipxe = {
     pname = "ipxe";
-    version = "59f27d69358efc919b50760f3d6dac0b637b5488";
+    version = "d7e58c5a812988c341ec4ad19f79faf067388d58";
     src = fetchgit {
       url = "https://github.com/ipxe/ipxe";
-      rev = "59f27d69358efc919b50760f3d6dac0b637b5488";
+      rev = "d7e58c5a812988c341ec4ad19f79faf067388d58";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-xjLXJe3NV/VSSSii0jZq6kryy7UvqirxrGjO0HmguZ8=";
+      sha256 = "sha256-OIisRd2o2zrTqH1Xv3FDhQWDqhKNeGhPkHWyYZzbtTU=";
     };
-    date = "2024-04-03";
+    date = "2024-04-17";
+  };
+  iterable-io = {
+    pname = "iterable-io";
+    version = "1.0.0";
+    src = fetchurl {
+      url = "https://pypi.org/packages/source/i/iterable-io/iterable-io-1.0.0.tar.gz";
+      sha256 = "sha256-+54bc5WHqboNXGCj4etxJGdhWDvJ8Ys8NbsRK0SxjDw=";
+    };
   };
   langchain = {
     pname = "langchain";
-    version = "v0.1.16";
+    version = "langchain-together==0.1.1";
     src = fetchFromGitHub {
       owner = "langchain-ai";
       repo = "langchain";
-      rev = "v0.1.16";
+      rev = "langchain-together==0.1.1";
       fetchSubmodules = false;
-      sha256 = "sha256-Xv8juma/1qGC2Rb659dJBvRzRh5W+zU+O8W6peElFGc=";
+      sha256 = "sha256-1Evv0X0hShDZLyffy9Cyy/Z2h+h9yGpo/Rurh4Lf8Fo=";
     };
   };
   ledger-live-desktop = {
@@ -278,10 +286,10 @@
   };
   logseq = {
     pname = "logseq";
-    version = "0.10.8";
+    version = "0.10.9";
     src = fetchurl {
-      url = "https://github.com/logseq/logseq/releases/download/0.10.8/logseq-linux-x64-0.10.8.AppImage";
-      sha256 = "sha256-kVnQ33gozrL6BOWQxUfiMypiIZOffeT2cMVMHIfsaWg=";
+      url = "https://github.com/logseq/logseq/releases/download/0.10.9/logseq-linux-x64-0.10.9.AppImage";
+      sha256 = "sha256-XROuY2RlKnGvK1VNvzauHuLJiveXVKrIYPppoz8fCmc=";
     };
   };
   masterpdfeditor = {
@@ -354,12 +362,12 @@
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "9ceafd7772ad2f74af4692961cad6e3a7d60573b";
+    version = "e62a9364e266b06f941a4d987916f4bbf2a6cb73";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";
     };
-    date = "2024-04-15";
+    date = "2024-05-07";
   };
   pgp-key-generation = {
     pname = "pgp-key-generation";
@@ -432,29 +440,29 @@
   };
   stumpwm-contrib = {
     pname = "stumpwm-contrib";
-    version = "8ed9201dee887aa797921a3511051b3f5fb5ba78";
+    version = "042a9fcb053839f4b1527d2e6f4baf33e2d16434";
     src = fetchFromGitHub {
       owner = "stumpwm";
       repo = "stumpwm-contrib";
-      rev = "8ed9201dee887aa797921a3511051b3f5fb5ba78";
+      rev = "042a9fcb053839f4b1527d2e6f4baf33e2d16434";
       fetchSubmodules = false;
-      sha256 = "sha256-bNajitwyK5kvQvtOI6QwYxYyiXE0Mdgv1bJ9xlzil88=";
+      sha256 = "sha256-idSdD/IXPOJXAsZSJgXbpRBH7DelEVz3xUTYh/9ZtLk=";
     };
-    date = "2024-03-22";
+    date = "2024-04-18";
   };
   stumpwm-git = {
     pname = "stumpwm-git";
-    version = "c802c7edd6323c9e768dd9383e3813a71aa8d59b";
+    version = "11be454df8f01f2ed7aa20cffe23f16f1d7b7bd6";
     src = fetchFromGitHub {
       owner = "stumpwm";
       repo = "stumpwm";
-      rev = "c802c7edd6323c9e768dd9383e3813a71aa8d59b";
+      rev = "11be454df8f01f2ed7aa20cffe23f16f1d7b7bd6";
       fetchSubmodules = false;
-      sha256 = "sha256-KRU0p6Q+4FMrSyE0C1MFlQp/r8cFi2QxFGDCirzxOiA=";
+      sha256 = "sha256-aEacyvOv0mOCoPyrPOoZHhCsLNCMp+VSLr9mfamuk8A=";
     };
     asd = "stumpwm";
     system = "stumpwm";
-    date = "2024-03-22";
+    date = "2024-04-18";
   };
   stumpwm-release = {
     pname = "stumpwm-release";

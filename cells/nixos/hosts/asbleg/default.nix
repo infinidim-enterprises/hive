@@ -1,7 +1,8 @@
 { inputs, cell, ... }:
 let
   inherit (builtins) toString baseNameOf;
-  inherit (inputs.nixpkgs) system;
+  # inherit (inputs.nixpkgs) system; # FIXME: Why does it default to aarch64-linux?
+  system = "x86_64-linux";
 in
 
 rec {
@@ -31,7 +32,7 @@ rec {
     ++ cell.nixosSuites.networking
     ++ cell.nixosSuites.virtualization
     ++ [ inputs.cells.secrets.nixosProfiles.common ]
-    ++ [ (cell.lib.mkHome "vod" "zsh") ]
+    # FIXME: ++ [ (cell.lib.mkHome "vod" "zsh") ]
     ++ [
       bee.home.nixosModules.home-manager
       (import ./_hardwareProfile.nix { inherit inputs cell; })

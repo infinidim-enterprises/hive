@@ -13,8 +13,8 @@
     # cell.nixosProfiles.desktop.printer-kyocera
   ];
 
-  services.xserver.displayManager.job.logToFile = false;
-  services.xserver.displayManager.job.logToJournal = false;
+  services.displayManager.logToFile = false;
+  services.displayManager.logToJournal = false;
 
   services.xserver.enable = true;
   # services.xserver.videoDrivers = lib.mkDefault [ "intel" ];

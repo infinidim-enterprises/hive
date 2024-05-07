@@ -71,6 +71,11 @@ src.git = "https://github.com/karlicoss/open-in-editor"
 fetch.git = "https://github.com/karlicoss/open-in-editor"
 
 ### :END: promnesia
+
+[iterable-io]
+src.pypi = "iterable-io"
+fetch.pypi = "iterable-io"
+
 [logseq]
 # A privacy-first, open-source platform for knowledge management and collaboration
 src.github = "logseq/logseq"

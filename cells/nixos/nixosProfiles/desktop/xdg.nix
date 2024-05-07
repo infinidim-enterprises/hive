@@ -10,7 +10,7 @@
   xdg.sounds.enable = true;
   xdg.portal.enable = true;
   xdg.portal.wlr.enable = true;
-  xdg.portal.extraPortals = with pkgs; [
+  xdg.portal.configPackages = with pkgs; [
     xdg-desktop-portal-gtk
     xdg-desktop-portal-xapp
   ];

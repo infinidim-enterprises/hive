@@ -402,73 +402,6 @@
 
   asbleg = { disks ? [ "/dev/disk/by-id/ata-BIWIN_SSD_2051028801186" ], lib, ... }:
     let
-      settings = {
-        bypassWorkqueues = true;
-
-        # preLVM = true;
-
-        allowDiscards = false;
-        fallbackToPassword = true;
-        # gpgCard = {
-        #   gracePeriod = 25;
-        #   encryptedPass = "/boot/luks/decryption-key.gpg";
-        #   publicKey = "/boot/luks/public-key.asc";
-        # };
-
-      };
-
-      inherit (lib) listToAttrs nameValuePair removePrefix;
-      disk = listToAttrs (map
-        (device: nameValuePair (removePrefix "/dev/disk/by-id/" device) {
-          inherit device;
-          type = "disk";
-          content.type = "gpt";
-          content.partitions = {
-            ESP = {
-              size = "1G";
-              type = "EF00";
-              content = {
-                type = "filesystem";
-                format = "vfat";
-                mountpoint = "/boot";
-              };
-            };
-
-            encryptedSwap = {
-              size = "8G";
-              # type = "8300";
-              content = {
-                type = "luks";
-                name = "cryptoswap";
-                # extraFormatArgs = [ "--type luks1" ];
-                inherit settings;
-                content = {
-                  type = "swap";
-                  resumeDevice = true;
-                };
-              };
-            };
-
-            encryptedRoot = {
-              size = "100%";
-              content = {
-                type = "luks";
-                name = "cryptoroot";
-                inherit settings;
-                content = {
-                  type = "zfs";
-                  pool = "rpool";
-                };
-              };
-            };
-          };
-
-        })
-        disks);
-    in
-    {
-      inherit disk;
-
       zpool = {
         rpool = {
           type = "zpool";
@@ -514,7 +447,67 @@
           };
         };
       };
-    };
+
+      settings = {
+        bypassWorkqueues = true;
+        allowDiscards = false;
+        fallbackToPassword = true;
+        # preLVM = true;
+        # gpgCard = {
+        #   gracePeriod = 25;
+        #   encryptedPass = "/boot/luks/decryption-key.gpg";
+        #   publicKey = "/boot/luks/public-key.asc";
+        # };
+      };
+
+      inherit (lib) listToAttrs nameValuePair removePrefix;
+      disk = listToAttrs (map
+        (device: nameValuePair (removePrefix "/dev/disk/by-id/" device) {
+          inherit device;
+          type = "disk";
+          content.type = "gpt";
+          content.partitions = {
+            ESP = {
+              size = "1G";
+              type = "EF00";
+              content = {
+                type = "filesystem";
+                format = "vfat";
+                mountpoint = "/boot";
+              };
+            };
+
+            encryptedSwap = {
+              size = "8G";
+              content = {
+                type = "luks";
+                name = "cryptoswap";
+                inherit settings;
+                content = {
+                  type = "swap";
+                  resumeDevice = true;
+                };
+              };
+            };
+
+            encryptedRoot = {
+              size = "100%";
+              content = {
+                type = "luks";
+                name = "cryptoroot";
+                inherit settings;
+                content = {
+                  type = "zfs";
+                  pool = "rpool";
+                };
+              };
+            };
+          };
+
+        })
+        disks);
+    in
+    { inherit disk zpool; };
 
   folfanga = { disks ? [ "/dev/disk/by-id/mmc-DF4064_0x33157f7a" ], lib, ... }:
     let
