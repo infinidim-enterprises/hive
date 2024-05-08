@@ -4,7 +4,6 @@
 
 {
   imports =
-    inputs.cells.nixos.nixosSuites.desktop ++
     [
       {
         disabledModules = [

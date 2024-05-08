@@ -21,7 +21,7 @@ rec {
         firefox-addons
         masterpdfeditor
         numix-solarized-gtk-theme
-        stumpwm
+        stumpwm-new
       ];
     };
   };

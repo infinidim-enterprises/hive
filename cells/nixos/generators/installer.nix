@@ -2,6 +2,9 @@
 
 let
   self = getFlake (toString ../../../.);
+  hosts_with_disko =
+    filterAttrs (n: v: hasAttrByPath [ "disko" ] v.config) self.nixosConfigurations;
+  installable_hosts = mapAttrsToList (_: host: host.config.system.build.toplevel) hosts_with_disko;
 
   inherit (lib)
     mkIf
@@ -21,9 +24,6 @@ let
 
   diskoMod = { config, pkgs, ... }:
     let
-      hosts_with_disko =
-        filterAttrs (n: v: hasAttrByPath [ "disko" ] v.config) self.nixosConfigurations;
-
       diskoDisks = cfg:
         let
           deviceList = mapAttrsToList
@@ -41,7 +41,7 @@ let
       diskoScript = host:
         pkgs.writeShellScriptBin "disko-${host}" "${self.nixosConfigurations.${host}.config.system.build.diskoScript}";
 
-      diskoScriptPkgs = map (host: [ (installScriptUnattended host) (diskoScript host) ]) (attrNames hosts_with_disko);
+      diskoScriptPkgs = mapAttrsToList (host: _: [ (installScriptUnattended host) (diskoScript host) ]) hosts_with_disko;
     in
     mkMerge
       [
@@ -91,7 +91,7 @@ in
   isoImage.makeEfiBootable = true;
   isoImage.makeUsbBootable = true;
   isoImage.includeSystemBuildDependencies = true;
-  isoImage.storeContents = [ (attrValues self.inputs) ];
+  isoImage.storeContents = [ (attrValues self.inputs) ] ++ installable_hosts;
 
   boot.loader.grub.memtest86.enable = false;
 
@@ -141,8 +141,7 @@ in
       stdenvNoCC # for runCommand
       busybox
       jq # for closureInfo
-      # For boot.initrd.systemd
-      makeInitrdNGTool
+      makeInitrdNGTool # For boot.initrd.systemd
     ];
 
   boot.swraid.enable = true;

@@ -1,6 +1,12 @@
 { inputs, cell, ... }:
 let
-  inherit (inputs.nixpkgs-lib.lib // builtins) optionals optional hasAttrByPath filterAttrs;
+  inherit (inputs.nixpkgs-lib.lib // builtins)
+    mkForce
+    optional
+    mkDefault
+    optionals
+    filterAttrs
+    hasAttrByPath;
   inherit (inputs.cells.common.lib) disableModulesFrom;
   # nixpkgs = inputs.nixpkgs.appendOverlays cell.overlays.desktop;
 
@@ -18,6 +24,7 @@ in
         ({ pkgs, ... }: {
           programs.${shell} = {
             enable = true;
+            vteIntegration = true;
             enableCompletion = true;
           };
           users.users.${username}.shell = pkgs.${shell};
@@ -49,11 +56,7 @@ in
                   programs.promnesia
                   programs.chemacs
                   programs.activitywatch
-                ]) ++
-                [
-                  # TODO: "${inputs.home-activitywatch}/modules/services/activitywatch.nix"
-                ];
-
+                ]); # TODO: add activitywatch from home-manager!
             };
         })
       ]

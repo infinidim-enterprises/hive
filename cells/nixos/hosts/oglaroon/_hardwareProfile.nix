@@ -2,8 +2,6 @@
 
 { config, lib, pkgs, ... }:
 {
-  # TODO: https://xanmod.org/ pkgs.linuxPackages_xanmod
-  # FIXME: boot.kernelPackages = pkgs.linuxPackages_6_5;
   deploy.params.cpu = "amd";
   deploy.params.gpu = "amd";
   deploy.params.ram = 64;
@@ -12,6 +10,7 @@
   # services.xserver.videoDrivers = [ "amdgpu" ];
   # hardware.opengl.extraPackages = [ pkgs.rocm-opencl-icd ];
 
+  boot.kernelPackages = pkgs.linuxPackages_xanmod;
   boot.initrd.availableKernelModules = [ "nvme" "nvme_core" ];
   boot.kernelParams = [
     "amdgpu.sg_display=0"
