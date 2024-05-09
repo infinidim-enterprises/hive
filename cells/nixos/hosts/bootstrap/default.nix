@@ -2,6 +2,7 @@
 let
   inherit (builtins) baseNameOf;
 in
+
 rec {
   bee = {
     # inherit (inputs.nixpkgs) system;
@@ -10,13 +11,7 @@ rec {
     pkgs = import inputs.nixpkgs-unstable {
       inherit (inputs.nixpkgs) system;
       config.allowUnfree = true;
-      overlays = with inputs.cells.common.overlays; [
-        python
-        sources
-        nixpkgs-unstable-overrides
-        nixpkgs-master-overrides
-        dart-fix
-      ];
+      overlays = cell.overlays.base;
     };
   };
 

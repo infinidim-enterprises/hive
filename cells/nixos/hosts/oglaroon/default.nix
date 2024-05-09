@@ -3,27 +3,19 @@ let
   inherit (builtins) toString baseNameOf;
   system = "x86_64-linux";
 in
+
 rec {
   bee = {
     inherit system;
     home = inputs.home-unstable;
-    pkgs = import inputs.latest {
+    pkgs = import inputs.nixpkgs-unstable {
       inherit (inputs.nixpkgs) system;
       config.allowUnfree = true;
-      overlays = with inputs.cells.common.overlays; [
-        sources
-        inputs.cells.emacs.overlays.sources
-        # inputs.cells.emacs.overlays.tools
-        nixpkgs-unstable-overrides
-        nixpkgs-master-overrides
-        make-desktopitem
-        vscode-extensions
-        firefox-addons
-        # masterpdfeditor
-        numix-solarized-gtk-theme
-        stumpwm-new
-        dart-fix
-      ];
+      overlays = with cell.overlays;
+        base ++
+        desktop ++
+        emacs ++
+        developer;
     };
   };
 

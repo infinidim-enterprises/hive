@@ -9,22 +9,14 @@ rec {
   bee = {
     inherit system;
     home = inputs.home-unstable;
-    pkgs = import inputs.latest {
+    pkgs = import inputs.nixpkgs-unstable {
       inherit system;
       config.allowUnfree = true;
-      overlays = with inputs.cells.common.overlays; [
-        sources
-        inputs.cells.emacs.overlays.sources
-        nixpkgs-unstable-overrides
-        nixpkgs-master-overrides
-        make-desktopitem
-        vscode-extensions
-        firefox-addons
-        # masterpdfeditor
-        numix-solarized-gtk-theme
-        stumpwm
-        dart-fix
-      ];
+      overlays = with cell.overlays;
+        base ++
+        desktop ++
+        emacs ++
+        developer;
     };
   };
 
@@ -33,7 +25,7 @@ rec {
     ++ cell.nixosSuites.networking
     ++ cell.nixosSuites.virtualization
     ++ [ inputs.cells.secrets.nixosProfiles.common ]
-    # FIXME: ++ [ (cell.lib.mkHome "vod" "zsh") ]
+    ++ [ (cell.lib.mkHome "vod" "zsh") ]
     ++ [
       bee.home.nixosModules.home-manager
       (import ./_hardwareProfile.nix { inherit inputs cell; })

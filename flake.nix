@@ -157,9 +157,6 @@
     home-unstable.url = "github:nix-community/home-manager";
     home-unstable.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
-    home-activitywatch.url = "github:nix-community/home-manager?ref=pull/4429/head";
-    home-activitywatch.inputs.nixpkgs.follows = "latest";
-
     srvos.url = "github:nix-community/srvos";
     srvos.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
@@ -177,7 +174,13 @@
     nixos-unstable-linux_6_5.url = "github:nixos/nixpkgs/b644d97bda6dae837d577e28383c10aa51e5e2d2";
     nixos-22-11.url = "github:nixos/nixpkgs/release-22.11";
     nixpkgs-22-11.follows = "nixos-22-11"; # TODO: rework stumpwm-git!
+  };
+
+  # kubernetes and friends
+  inputs = {
     k8s.url = "github:nixos/nixpkgs/3005f20ce0aaa58169cdee57c8aa12e5f1b6e1b3";
+    kubenix.url = "github:hall/kubenix";
+    kubenix.inputs.nixpkgs.follows = "nixpkgs-unstable";
   };
 
   # tools
