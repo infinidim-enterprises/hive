@@ -127,6 +127,7 @@ in
   garnix_io = mkNixago {
     data = {
       builds.include = [
+        # "*.x86_64-linux.*"
         "devShells.x86_64-linux.*"
         "packages.x86_64-linux.*"
         "nixosConfigurations.*"
@@ -201,7 +202,7 @@ in
       common_steps = [
         {
           name = "Checkout repository";
-          uses = "actions/checkout@v4.1.2";
+          uses = "actions/checkout@v4.1.4";
         }
         {
           name = "Install Nix";
