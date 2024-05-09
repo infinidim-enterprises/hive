@@ -129,8 +129,7 @@ in
       builds.include = [
         "devShells.x86_64-linux.*"
         "packages.x86_64-linux.*"
-        # FIXME: "packages.x86_64-linux.*"
-        # FIXME: "nixosConfigurations.*"
+        "nixosConfigurations.*"
       ];
     };
 

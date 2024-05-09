@@ -2,3 +2,4 @@ builds:
   include:
   - devShells.x86_64-linux.*
   - packages.x86_64-linux.*
+  - nixosConfigurations.*
