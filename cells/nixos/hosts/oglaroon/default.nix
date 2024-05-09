@@ -19,9 +19,10 @@ rec {
         make-desktopitem
         vscode-extensions
         firefox-addons
-        masterpdfeditor
+        # masterpdfeditor
         numix-solarized-gtk-theme
         stumpwm-new
+        dart-fix
       ];
     };
   };

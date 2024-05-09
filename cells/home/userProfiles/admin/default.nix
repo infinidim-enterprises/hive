@@ -8,7 +8,8 @@ in
   imports = [ inputs.cells.nixos.nixosProfiles.hardware.cryptography ];
   home-manager.users.admin.imports = [
     ({ pkgs, ... }: {
-      services.gpg-agent.pinentryPackage = pkgs.pinentry-tty;
+      # FIXME: `home-manager.users.admin.services.gpg-agent.pinentryPackage' is defined multiple times
+      # services.gpg-agent.pinentryPackage = pkgs.pinentry-tty;
       # home.packages = [ inputs.cells.nixos.containers.keygen_script ];
     })
   ];

@@ -22,7 +22,10 @@ let
     readDir;
 
   build-asdf-system = prev.sbcl.buildASDFSystem;
-  sbcl_unwrapped = prev.sbcl.override { purgeNixReferences = true; };
+  sbcl_unwrapped = prev.sbcl.override {
+    purgeNixReferences = true; # NOTE: produce binaries for non-NixOS
+    coreCompression = false; # NOTE: works when purgeNixReferences = false
+  };
   sbcl_wrapped = prev.wrapLisp {
     pkg = sbcl_unwrapped;
     faslExt = "fasl";
@@ -42,7 +45,13 @@ let
       ];
     };
 
-    mcclim-layouts = build-with-compile-into-pwd { inherit (prevLisp.mcclim-layouts) src lispLibs pname version; };
+    mcclim-layouts = build-with-compile-into-pwd {
+      inherit (prevLisp.mcclim-layouts)
+        src
+        lispLibs
+        pname
+        version;
+    };
     mcclim-fontconfig = prevLisp.mcclim-fontconfig.overrideLispAttrs (oldAttrs: {
       nativeLibs = with prev; [ pkg-config fontconfig ];
     });
@@ -245,12 +254,14 @@ let
     ];
 
     excludeShellChecks = [
-      "SC2162"
-      "SC2046"
       "SC2005"
-      "SC2268"
-      "SC2086"
+      "SC2030"
+      "SC2031"
+      "SC2046"
       "SC2068"
+      "SC2086"
+      "SC2162"
+      "SC2268"
     ];
 
     text = with builtins;

@@ -14,6 +14,7 @@ rec {
         sources
         nixpkgs-unstable-overrides
         nixpkgs-master-overrides
+        dart-fix
       ];
     };
   };

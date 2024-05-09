@@ -10,6 +10,6 @@ mkMerge [
   }
 
   (mkIf osConfig.services.xserver.displayManager.lightdm.enable {
-    home.packages = with pkgs; [ dfeet bustle ];
+    home.packages = with pkgs; [ d-spy bustle ];
   })
 ]

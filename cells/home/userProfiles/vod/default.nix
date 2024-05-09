@@ -30,7 +30,7 @@
 
   # FIXME: services.pass-secret-service.enable = true;
   services.xserver.windowManager.stumpwm-new.enable = true;
-  services.xserver.windowManager.stumpwm-new.package = pkgs.stumpwm-git-new;
+  # services.xserver.windowManager.stumpwm-new.package = pkgs.stumpwm-git-new;
 
   home-manager.users.vod.imports =
     cell.homeSuites.developer.default ++

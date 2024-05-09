@@ -113,7 +113,7 @@ let
           gpt-pilot-vs-code
 
           vscode-direnv
-          gherkintablealign
+          # FIXME: gherkintablealign
           cucumberautocomplete
 
           fonted

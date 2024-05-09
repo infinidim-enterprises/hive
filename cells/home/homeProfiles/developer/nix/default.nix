@@ -109,12 +109,12 @@ mkMerge [
       nixos-shell
       cached-nix-shell
       nixpkgs-fmt
-      nixfmt
+      nixfmt-classic
+      # nixfmt-rfc-style
       nixpkgs-review
       # NOTE: broken nix-linter
       cachix
       # LSP
-      rnix-lsp
       nixd
       alejandra
     ];

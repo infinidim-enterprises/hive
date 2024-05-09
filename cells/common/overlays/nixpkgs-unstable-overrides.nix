@@ -21,7 +21,6 @@ in
     vscode
 
     alejandra
-    rnix-lsp
     nil
     nixpkgs-fmt
     statix

@@ -25,7 +25,7 @@ in
       starship-prompt
       pointer-cursor
     ]) ++ (with profiles.developer; [
-      vscode
+      # FIXME: extensions - vscode
       ruby
       nix
       direnv
