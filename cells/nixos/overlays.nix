@@ -24,7 +24,7 @@
     # inputs.cells.emacs.overlays.tools
   ];
 
-  developer = with inputs.cells.common.overlays; [
+  vscode = with inputs.cells.common.overlays; [
     vscode-extensions
   ];
 }
