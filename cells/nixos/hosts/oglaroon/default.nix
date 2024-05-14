@@ -15,7 +15,7 @@ rec {
         base ++
         desktop ++
         emacs ++
-        developer;
+        vscode;
     };
   };
 
