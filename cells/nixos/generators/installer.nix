@@ -90,7 +90,7 @@ in
 
   isoImage.makeEfiBootable = true;
   isoImage.makeUsbBootable = true;
-  isoImage.includeSystemBuildDependencies = true;
+  # isoImage.includeSystemBuildDependencies = true;
   # isoImage.storeContents = installable_hosts; # [ (attrValues self.inputs) ] ++ installable_hosts;
 
   boot.loader.grub.memtest86.enable = false;

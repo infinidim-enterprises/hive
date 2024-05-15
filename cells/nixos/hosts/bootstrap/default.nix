@@ -1,6 +1,11 @@
-{ inputs, cell, ... }:
+{ inputs, cell, host ? null, ... }:
 let
-  inherit (builtins) baseNameOf;
+  inherit (builtins)
+    isNull
+    baseNameOf;
+  inherit (inputs.nixpkgs-lib.lib)
+    optionals
+    optionalString;
 in
 
 rec {
@@ -34,7 +39,7 @@ rec {
         deploy.params.lan.ipv4 = "10.11.1.125/24";
         deploy.params.lan.dhcpClient = false;
 
-        networking.hostName = baseNameOf ./.;
+        networking.hostName = (baseNameOf ./.) + (optionalString (! isNull host) host);
         networking.hostId = "23d7efff";
       }
       ({ lib, config, ... }: {
@@ -42,6 +47,12 @@ rec {
           addresses = [{ addressConfig.Address = "10.11.1.125/24"; }];
           networkConfig.Gateway = "10.11.1.1";
         };
+      })
+    ] ++ optionals (! isNull host) [
+      inputs.disko.nixosModules.disko
+      cell.nixosProfiles.filesystems.impermanence.default
+      ({ lib, ... }: {
+        disko.devices = cell.diskoConfigurations.${host} { inherit lib; };
       })
     ];
 }

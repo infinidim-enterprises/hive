@@ -4106,7 +4106,7 @@
       },
       "original": {
         "owner": "divnix",
-        "ref": "release/0.33",
+        "ref": "v0.33.1",
         "repo": "std",
         "type": "github"
       }
