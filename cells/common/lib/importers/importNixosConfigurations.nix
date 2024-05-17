@@ -13,9 +13,9 @@ let
 
   importNixosConfigurations = {
     __functor = _self:
-      { src, skip ? [ ], inputs, cell, ... }:
+      { src, skip ? [ ], inputs, cell, bootstrapSystem ? "bootstrap", ... }:
       let
-        bootstrapPath = src + "/bootstrap";
+        bootstrapPath = src + "/${bootstrapSystem}";
         hasBootstrap = pathExists bootstrapPath;
         transformer = [ raiseDefault ];
 
@@ -26,6 +26,7 @@ let
             inputs = { inherit inputs cell; host = null; };
           };
 
+        # NOTE: secrets management - install a bootstrap->get the public ssh key->install the target system
         bootstrap = mapAttrs'
           (n: v: nameValuePair
             "${n}-bootstrap"
@@ -35,12 +36,12 @@ let
               inputs = { inherit inputs cell; host = n; };
             })
           )
-          (removeAttrs systems [ "bootstrap" ]);
+          (removeAttrs systems [ bootstrapSystem ]);
       in
       systems // (optionalAttrs hasBootstrap bootstrap);
 
     doc = ''
-      importNixosConfigurations { skip = [ "hostX" ]; src = ./hosts; inherit inputs cell; }
+      importNixosConfigurations { skip = [ "hostX" ]; src = ./hosts; bootstrapSystem = "path/to/bootstrap/system/inside/''${src}"; inherit inputs cell; }
     '';
   };
 in

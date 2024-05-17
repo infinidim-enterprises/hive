@@ -2,10 +2,14 @@
 let
   inherit (builtins)
     isNull
+    toString
     baseNameOf;
   inherit (inputs.nixpkgs-lib.lib)
     optionals
+    hasAttrByPath
     optionalString;
+
+  hasDiskoConfig = hasAttrByPath [ (toString host) ] cell.diskoConfigurations;
 in
 
 rec {
@@ -39,7 +43,9 @@ rec {
         deploy.params.lan.ipv4 = "10.11.1.125/24";
         deploy.params.lan.dhcpClient = false;
 
-        networking.hostName = (baseNameOf ./.) + (optionalString (! isNull host) host);
+        networking.hostName =
+          (optionalString (! isNull host) "${host}-") +
+          (baseNameOf ./.);
         networking.hostId = "23d7efff";
       }
       ({ lib, config, ... }: {
@@ -48,7 +54,7 @@ rec {
           networkConfig.Gateway = "10.11.1.1";
         };
       })
-    ] ++ optionals (! isNull host) [
+    ] ++ optionals (! isNull host && hasDiskoConfig) [
       inputs.disko.nixosModules.disko
       cell.nixosProfiles.filesystems.impermanence.default
       ({ lib, ... }: {

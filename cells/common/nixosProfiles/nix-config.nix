@@ -33,6 +33,7 @@ in
   nix.settings.trusted-users = [ "root" "@wheel" ];
   nix.settings.auto-optimise-store = lib.mkDefault true;
   nix.settings.substituters = attrNames cachix;
+  # nix.settings.trusted-substituters = attrNames cachix;
   nix.settings.trusted-public-keys = attrValues cachix;
   nix.settings.sandbox = true;
   nix.settings.keep-outputs = lib.mkDefault true;

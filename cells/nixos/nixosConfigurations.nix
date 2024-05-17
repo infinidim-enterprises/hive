@@ -3,7 +3,7 @@ let
   inherit (inputs.cells.common.lib.importers) importNixosConfigurations;
 in
 importNixosConfigurations {
-  skip = [ "marauder" ];
+  # skip = [ "marauder" ];
   src = ./hosts;
   inherit inputs cell;
 }
