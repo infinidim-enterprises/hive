@@ -45,15 +45,15 @@
   };
   chatgpt-wrapper = {
     pname = "chatgpt-wrapper";
-    version = "2cd7fd14ebae8fba240352f2b0e155348d091b18";
+    version = "f428e56f4c131e65dd9bc2833c7edb083ec92736";
     src = fetchFromGitHub {
       owner = "llm-workflow-engine";
       repo = "llm-workflow-engine";
-      rev = "2cd7fd14ebae8fba240352f2b0e155348d091b18";
+      rev = "f428e56f4c131e65dd9bc2833c7edb083ec92736";
       fetchSubmodules = false;
-      sha256 = "sha256-s+3cIfjX0SdvyYYmaOJjd4av/KGRMTb20bEByVpAPag=";
+      sha256 = "sha256-JmXSOzJg1aWGtk6/2oQuU6delAYyawCvYeZ9nteO850=";
     };
-    date = "2024-05-03";
+    date = "2024-05-15";
   };
   cl-hash-util = {
     pname = "cl-hash-util";
@@ -130,13 +130,13 @@
   };
   crystalline = {
     pname = "crystalline";
-    version = "v0.12.2";
+    version = "v0.13.1";
     src = fetchFromGitHub {
       owner = "elbywan";
       repo = "crystalline";
-      rev = "v0.12.2";
+      rev = "v0.13.1";
       fetchSubmodules = false;
-      sha256 = "sha256-9CXWw7Jye5XZzPdzz+Dnvyy7Wk1ENM0an8vOFrPbESA=";
+      sha256 = "sha256-Exv83jmSyhJv90Oo4oApZwNgNjy7tOKxLNh7yJIbfws=";
     };
   };
   dbus = {
@@ -167,10 +167,10 @@
   };
   drawio = {
     pname = "drawio";
-    version = "24.2.5";
+    version = "24.4.0";
     src = fetchurl {
-      url = "https://github.com/jgraph/drawio-desktop/releases/download/v24.2.5/drawio-x86_64-24.2.5.rpm";
-      sha256 = "sha256-m5BUvz9as+QOzju8M3Vz3QZ18Zn8c1tAlGiLwt1/m6Q=";
+      url = "https://github.com/jgraph/drawio-desktop/releases/download/v24.4.0/drawio-x86_64-24.4.0.rpm";
+      sha256 = "sha256-MntfoZ4+RuRGVgtRgDEvXSuSBCuZv417Pv6UkNsfbq8=";
     };
   };
   git-get = {
@@ -234,16 +234,16 @@
   };
   ipxe = {
     pname = "ipxe";
-    version = "d7e58c5a812988c341ec4ad19f79faf067388d58";
+    version = "dc118c53696af6a0b1a8ee78fc9a4d28a217fb21";
     src = fetchgit {
       url = "https://github.com/ipxe/ipxe";
-      rev = "d7e58c5a812988c341ec4ad19f79faf067388d58";
+      rev = "dc118c53696af6a0b1a8ee78fc9a4d28a217fb21";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-OIisRd2o2zrTqH1Xv3FDhQWDqhKNeGhPkHWyYZzbtTU=";
+      sha256 = "sha256-k6AMv0xSdQsE/s44NgDuZR11cCvkrqk0nHK5MtmexhY=";
     };
-    date = "2024-04-17";
+    date = "2024-05-15";
   };
   iterable-io = {
     pname = "iterable-io";
@@ -255,13 +255,13 @@
   };
   langchain = {
     pname = "langchain";
-    version = "langchain-together==0.1.1";
+    version = "langchain==0.2.0";
     src = fetchFromGitHub {
       owner = "langchain-ai";
       repo = "langchain";
-      rev = "langchain-together==0.1.1";
+      rev = "langchain==0.2.0";
       fetchSubmodules = false;
-      sha256 = "sha256-1Evv0X0hShDZLyffy9Cyy/Z2h+h9yGpo/Rurh4Lf8Fo=";
+      sha256 = "sha256-aJIxDUTQlkXocmMysQI3dufDQKuGq9e05Tjd89mTxaM=";
     };
   };
   ledger-live-desktop = {
@@ -362,12 +362,12 @@
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "e62a9364e266b06f941a4d987916f4bbf2a6cb73";
+    version = "4d91d168651ed0cd665d80d449c80bf012077d33";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";
     };
-    date = "2024-05-07";
+    date = "2024-05-17";
   };
   pgp-key-generation = {
     pname = "pgp-key-generation";
@@ -395,15 +395,15 @@
   };
   promnesia = {
     pname = "promnesia";
-    version = "31ee24bf980ca3ab0f5e497c144f49e54d6c705f";
+    version = "813c4a693ca5dd2ace2c99dab807d53547a21402";
     src = fetchFromGitHub {
       owner = "karlicoss";
       repo = "promnesia";
-      rev = "31ee24bf980ca3ab0f5e497c144f49e54d6c705f";
+      rev = "813c4a693ca5dd2ace2c99dab807d53547a21402";
       fetchSubmodules = false;
-      sha256 = "sha256-7r3jacAXJyXSZU6vlDLMHAFRL983HCA/xth2YeNGLHY=";
+      sha256 = "sha256-Tg4+ybkFbyYTVAEJyPXeR5THBigaVkAylJPp83LucYg=";
     };
-    date = "2024-03-31";
+    date = "2024-05-17";
   };
   quicklisp = {
     pname = "quicklisp";

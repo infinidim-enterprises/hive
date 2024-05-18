@@ -10,12 +10,12 @@
         },
         "pinned": false,
         "src": {
-            "name": "bash-ide-vscode-1.39.0.zip",
-            "sha256": "sha256-8tpGZ6GRnRZIwq27N8Z/NbS/ZR+FXiclcrdxcE1qVv0=",
+            "name": "bash-ide-vscode-1.41.0.zip",
+            "sha256": "sha256-glaoBIYnjl5yXA804htdbnbsgLjJyyChel0AIdN0hD0=",
             "type": "url",
-            "url": "https://mads-hartmann.gallery.vsassets.io/_apis/public/gallery/publisher/mads-hartmann/extension/bash-ide-vscode/1.39.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://mads-hartmann.gallery.vsassets.io/_apis/public/gallery/publisher/mads-hartmann/extension/bash-ide-vscode/1.41.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "1.39.0"
+        "version": "1.41.0"
     },
     "codium": {
         "cargoLocks": null,
@@ -28,12 +28,12 @@
         },
         "pinned": false,
         "src": {
-            "name": "codium-0.8.3.zip",
-            "sha256": "sha256-8YS8CQ4aM6n7M4vuGGByA1RSXL5wgT8FeJq4FAFiqKM=",
+            "name": "codium-0.8.9.zip",
+            "sha256": "sha256-m9tL/6ubhdXAb/tUFyTCgh/YBZfRM/5WtK8xWB6p/V8=",
             "type": "url",
-            "url": "https://Codium.gallery.vsassets.io/_apis/public/gallery/publisher/Codium/extension/codium/0.8.3/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://Codium.gallery.vsassets.io/_apis/public/gallery/publisher/Codium/extension/codium/0.8.9/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "0.8.3"
+        "version": "0.8.9"
     },
     "copilot": {
         "cargoLocks": null,
@@ -46,12 +46,12 @@
         },
         "pinned": false,
         "src": {
-            "name": "copilot-1.180.821.zip",
-            "sha256": "sha256-YETgX5/wtCYn+FPO7onESWwMpNkpVvcmwa2BkjJAv5I=",
+            "name": "copilot-1.194.885.zip",
+            "sha256": "sha256-rBWCvOWT0M5CEy9+ndWEr9z+O70UncKyMYnNipEZePo=",
             "type": "url",
-            "url": "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.180.821/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.194.885/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "1.180.821"
+        "version": "1.194.885"
     },
     "cucumberautocomplete": {
         "cargoLocks": null,
@@ -82,12 +82,12 @@
         },
         "pinned": false,
         "src": {
-            "name": "emacs-mcx-0.58.0.zip",
-            "sha256": "sha256-KOhaTP58wx4L3wtR9EEhQCIbhvJNKmF0NaVC8/28CPU=",
+            "name": "emacs-mcx-0.61.0.zip",
+            "sha256": "sha256-W0NJyvwQ/+SQEUeK+BY9NT3fx2Du2kH6D979xhdcYSw=",
             "type": "url",
-            "url": "https://tuttieee.gallery.vsassets.io/_apis/public/gallery/publisher/tuttieee/extension/emacs-mcx/0.58.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://tuttieee.gallery.vsassets.io/_apis/public/gallery/publisher/tuttieee/extension/emacs-mcx/0.61.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "0.58.0"
+        "version": "0.61.0"
     },
     "fonted": {
         "cargoLocks": null,
@@ -478,12 +478,12 @@
         },
         "pinned": false,
         "src": {
-            "name": "vscode-docker-1.29.0.zip",
-            "sha256": "sha256-mVRsVsolXj31WhbWnt3Xml+NnIq7Q2uHhUUd1zgW42c=",
+            "name": "vscode-docker-1.29.1.zip",
+            "sha256": "sha256-uleZLIkfOxKan+U56fKEwUjaleig07zdEwQKzsAzan0=",
             "type": "url",
-            "url": "https://ms-azuretools.gallery.vsassets.io/_apis/public/gallery/publisher/ms-azuretools/extension/vscode-docker/1.29.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://ms-azuretools.gallery.vsassets.io/_apis/public/gallery/publisher/ms-azuretools/extension/vscode-docker/1.29.1/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "1.29.0"
+        "version": "1.29.1"
     },
     "vscode-emacs-friendly": {
         "cargoLocks": null,
@@ -532,11 +532,11 @@
         },
         "pinned": false,
         "src": {
-            "name": "vscode-markdownlint-0.54.0.zip",
-            "sha256": "sha256-BrPFFRspJIz1U08hPbLziCmRUeZv2NhRrTCx6qvhOJw=",
+            "name": "vscode-markdownlint-0.55.0.zip",
+            "sha256": "sha256-slfHfRPcuRu+649n6kAr2bv9H6J+DvYVN/ysq1QpPQM=",
             "type": "url",
-            "url": "https://DavidAnson.gallery.vsassets.io/_apis/public/gallery/publisher/DavidAnson/extension/vscode-markdownlint/0.54.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://DavidAnson.gallery.vsassets.io/_apis/public/gallery/publisher/DavidAnson/extension/vscode-markdownlint/0.55.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "0.54.0"
+        "version": "0.55.0"
     }
 }
