@@ -28,16 +28,16 @@
   };
   nix-index = {
     pname = "nix-index";
-    version = "3cc5fc9acfe4c739c60ea519188f7a795c3484ef";
+    version = "195fb3525038e40836b8d286371365f5e7857c0c";
     src = fetchFromGitHub {
       owner = "bennofs";
       repo = "nix-index";
-      rev = "3cc5fc9acfe4c739c60ea519188f7a795c3484ef";
+      rev = "195fb3525038e40836b8d286371365f5e7857c0c";
       fetchSubmodules = false;
-      sha256 = "sha256-h+YsV4sODXtS2ZCi+SzdEGQivBXrChByciF+67ATWME=";
+      sha256 = "sha256-Cw6Q9rHcLjPKzab5O4G7cetFAaTZCex2VLvYIhJCbpg=";
     };
     cargoSha256 = "0000000000000000000000000000000000000000000000000000";
-    date = "2024-04-17";
+    date = "2024-05-11";
   };
   rainbowsh = {
     pname = "rainbowsh";
@@ -53,15 +53,15 @@
   };
   shellspec = {
     pname = "shellspec";
-    version = "f800240b606ed8d60f27ca687400836c0083e76a";
+    version = "cee95dc752997d434dc3f1f1bb4d213dbe3d9d34";
     src = fetchFromGitHub {
       owner = "shellspec";
       repo = "shellspec";
-      rev = "f800240b606ed8d60f27ca687400836c0083e76a";
+      rev = "cee95dc752997d434dc3f1f1bb4d213dbe3d9d34";
       fetchSubmodules = false;
-      sha256 = "sha256-PyZBc7bmycV02nTpoDaA40m4DA1IuDmb/eCd3+RAp0o=";
+      sha256 = "sha256-7qVmcMdirmhbpiuVaIyRo686lNbJUnnIhDQoJqknXHQ=";
     };
-    date = "2022-05-04";
+    date = "2024-05-19";
   };
   shflags = {
     pname = "shflags";
@@ -77,15 +77,15 @@
   };
   spaceship-prompt = {
     pname = "spaceship-prompt";
-    version = "17149a85ce7924fa5f9dfe96d53badecc0ce74e8";
+    version = "3cad5cab7a30ae4749245c865c1a6bdde1bfcf80";
     src = fetchFromGitHub {
       owner = "spaceship-prompt";
       repo = "spaceship-prompt";
-      rev = "17149a85ce7924fa5f9dfe96d53badecc0ce74e8";
+      rev = "3cad5cab7a30ae4749245c865c1a6bdde1bfcf80";
       fetchSubmodules = false;
-      sha256 = "sha256-T5tilMwRc0vbj6Cq3xSf9Q77UfX2aQ+Y1RdkYtzD0k8=";
+      sha256 = "sha256-K5rQjdCh1ziyYu7PJ3INKiEC7J1V6m6eZMSh0TKca9A=";
     };
-    date = "2024-05-01";
+    date = "2024-05-13";
   };
   zsh-plugin_any-nix-shell = {
     pname = "zsh-plugin_any-nix-shell";
@@ -164,16 +164,16 @@
   };
   zsh-plugin_oh-my-zsh = {
     pname = "zsh-plugin_oh-my-zsh";
-    version = "668ca3a32dae5ff5d164fc3be565f1e2ece248db";
+    version = "a779d6563ffb2f0093b4b74c8d5ff0982fa3e930";
     src = fetchgit {
       url = "https://github.com/robbyrussell/oh-my-zsh";
-      rev = "668ca3a32dae5ff5d164fc3be565f1e2ece248db";
+      rev = "a779d6563ffb2f0093b4b74c8d5ff0982fa3e930";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-Rpqfwfs2MxNtSI5rX7XNx0oXExDgf7RAGR7nN8JAayY=";
+      sha256 = "sha256-wqh0KMHA+JaqKmXz9BRlSn0rWrRRuadDpcBUWBnmOjQ=";
     };
-    date = "2024-05-03";
+    date = "2024-05-16";
   };
   zsh-plugin_tipz = {
     pname = "zsh-plugin_tipz";

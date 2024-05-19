@@ -358,10 +358,10 @@
   };
   "darkreader" = rec {
     pname = "darkreader";
-    version = "4.9.84";
+    version = "4.9.85";
     addonId = "addon@darkreader.org";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4278339/darkreader-4.9.84.xpi";
-    sha256 = "d418b40fc2cb69cfffabf6cc291f2cc5ca4c9d6a99e46562b44f4e2c0148374c";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4286925/darkreader-4.9.85.xpi";
+    sha256 = "28180bd8b970c4b9f961bda310df271d1e26a7cdf4ff01c94239f2fca3079d05";
     meta = with lib;
       {
         homepage = "https://darkreader.org/";
@@ -428,10 +428,10 @@
   };
   "duckduckgo-for-firefox" = rec {
     pname = "duckduckgo-for-firefox";
-    version = "2024.3.11";
+    version = "2024.4.26";
     addonId = "jid1-ZAdIEUB7XOzOJw@jetpack";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4248904/duckduckgo_for_firefox-2024.3.11.xpi";
-    sha256 = "705babc0c33f76cf9642015e5dfec8c62f94fe227592d4206c3c039cb25bb44c";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4286002/duckduckgo_for_firefox-2024.4.26.xpi";
+    sha256 = "41b607ab971bcf5ef66ac2d84f1d932ad53a95214d421bea08946cbb1aee5bb1";
     meta = with lib;
       {
         homepage = "https://duckduckgo.com/app";
@@ -603,10 +603,10 @@
   };
   "passff" = rec {
     pname = "passff";
-    version = "1.16";
+    version = "1.17";
     addonId = "passff@invicem.pro";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4202971/passff-1.16.xpi";
-    sha256 = "ac410a2fbdaa3a43ae3f0ec01056bc0b037b4441a9e38d2cc330f186c8fce112";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4284061/passff-1.17.xpi";
+    sha256 = "fe447ebab2741166bdeb505274724649c9146de454d74599419ff3b2a73cdfbe";
     meta = with lib;
       {
         homepage = "https://github.com/passff/passff";

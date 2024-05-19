@@ -681,4 +681,39 @@
     in
     { inherit disk; };
 
+
+  marauder = { disks ? [ "/dev/disk/by-id/usb-Lexar_microSD_RDR_000000000001-0:0" ], lib, ... }:
+    let
+      inherit (lib) listToAttrs nameValuePair removePrefix;
+      disk = listToAttrs (map
+        (device: nameValuePair (removePrefix "/dev/disk/by-id/" device) {
+          inherit device;
+          type = "disk";
+          content.type = "gpt";
+          content.partitions = {
+            ESP = {
+              size = "1G";
+              type = "EF00";
+              content = {
+                type = "filesystem";
+                format = "vfat";
+                mountpoint = "/boot";
+              };
+            };
+
+            root = {
+              size = "100%";
+              content = {
+                type = "filesystem";
+                format = "ext4";
+                mountpoint = "/";
+              };
+            };
+          };
+
+        })
+        disks);
+    in
+    { inherit disk; };
+
 }

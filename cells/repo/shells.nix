@@ -340,6 +340,7 @@ lib.mapAttrs (_: std.lib.dev.mkShell) {
       nixpkgs-unstable.crystal
       nixpkgs-unstable.crystalline
       nixpkgs-unstable.shards
+      nixpkgs-unstable.nixos-install-tools
 
       gnupg
       # vscode

@@ -1,16 +1,12 @@
 { config, lib, options, modulesPath, pkgs, ... }:
 
 let
-  self = getFlake (toString ../../../.);
-  hosts_with_disko =
-    filterAttrs (n: v: hasAttrByPath [ "disko" ] v.config) self.nixosConfigurations;
-  installable_hosts = mapAttrsToList (_: host: host.config.system.build.toplevel) hosts_with_disko;
-
   inherit (lib)
     mkIf
     mkMerge
     flatten
     attrNames
+    hasSuffix
     filterAttrs
     hasAttrByPath
     mapAttrsToList
@@ -21,6 +17,14 @@ let
     getFlake
     toString
     attrValues;
+
+  self = getFlake (toString ../../../.);
+  hosts_with_disko = filterAttrs
+    (n: v:
+      hasSuffix "bootstrap" n &&
+      hasAttrByPath [ "disko" ] v.config)
+    self.nixosConfigurations;
+  installable_hosts = mapAttrsToList (_: host: host.config.system.build.toplevel) hosts_with_disko;
 
   diskoMod = { config, pkgs, ... }:
     let
@@ -90,8 +94,8 @@ in
 
   isoImage.makeEfiBootable = true;
   isoImage.makeUsbBootable = true;
-  # isoImage.includeSystemBuildDependencies = true;
-  # isoImage.storeContents = installable_hosts; # [ (attrValues self.inputs) ] ++ installable_hosts;
+  isoImage.includeSystemBuildDependencies = true; # NOTE: needs lots of space for build deps!
+  isoImage.storeContents = installable_hosts; # [ (attrValues self.inputs) ] ++ installable_hosts;
 
   boot.loader.grub.memtest86.enable = false;
 

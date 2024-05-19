@@ -36,7 +36,7 @@
     },
     "rtw89": {
         "cargoLocks": null,
-        "date": "2024-04-03",
+        "date": "2024-05-07",
         "extract": null,
         "name": "rtw89",
         "passthru": null,
@@ -48,10 +48,10 @@
             "name": null,
             "owner": "lwfinger",
             "repo": "rtw89",
-            "rev": "20389b0b539e5511c7650dad8b4a1d1e0662cf02",
-            "sha256": "sha256-72cAZ9l2ZhlcSBMuRBww/XuZ3jyX75l9+alGlVvGBXE=",
+            "rev": "239cc6670a67a1e7b6f43bd681efdfedf6a53bb1",
+            "sha256": "sha256-7rhZs9P9c/z1DcHLw0zhnwf6WvOOxRioJhC3k4h668A=",
             "type": "github"
         },
-        "version": "20389b0b539e5511c7650dad8b4a1d1e0662cf02"
+        "version": "239cc6670a67a1e7b6f43bd681efdfedf6a53bb1"
     }
 }

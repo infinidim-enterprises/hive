@@ -1,23 +1,17 @@
 { inputs, cell, ... }:
 
 { lib, ... }:
+let inherit (lib) mkDefault; in
 {
-  boot = {
-    loader = {
-      # timeout = 0;
-      efi.canTouchEfiVariables = lib.mkDefault true;
-      # https://discourse.nixos.org/t/configure-grub-on-efi-system/2926/7
-      grub = {
-        enable = lib.mkDefault true;
-        efiSupport = true;
-        device = "nodev";
-      };
-    };
-    initrd = {
-      systemd = {
-        enable = true;
-        # emergencyAccess = true;
-      };
-    };
+  boot.initrd.systemd.enable = mkDefault true;
+  # initrd.systemd.emergencyAccess = mkDefault true;
+
+  boot.loader.timeout = mkDefault 0;
+  boot.loader.efi.canTouchEfiVariables = mkDefault true;
+  boot.loader.grub = {
+    # NOTE: https://discourse.nixos.org/t/configure-grub-on-efi-system/2926/7
+    enable = mkDefault true;
+    efiSupport = true;
+    device = mkDefault "nodev";
   };
 }
