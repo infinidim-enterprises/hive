@@ -38,7 +38,7 @@ in
 
   boot.initrd.compressor = mkDefault "${pkgs.pigz}/bin/pigz --best --recursive";
   boot.initrd.supportedFilesystems = [ "ext4" "vfat" ];
-  boot.initrd.kernelModules = [ "nfs" ];
+  boot.initrd.kernelModules = [ "nfs" "usbhid" ];
   boot.initrd.availableKernelModules = [
     # Mostly useful
     "crc32c_generic"
