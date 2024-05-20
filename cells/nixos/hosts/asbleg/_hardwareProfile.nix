@@ -26,7 +26,8 @@ in
       cell.nixosProfiles.hardware.intel
       cell.nixosProfiles.core.kernel.physical-access-system
       cell.nixosProfiles.filesystems.zfs
-      cell.nixosProfiles.boot.systemd-grub-zfs-luks-gpg
+      # cell.nixosProfiles.boot.systemd-grub-zfs-luks-gpg
+      cell.nixosProfiles.boot.systemd-boot
       cell.nixosProfiles.filesystems.impermanence.default
     ];
 }

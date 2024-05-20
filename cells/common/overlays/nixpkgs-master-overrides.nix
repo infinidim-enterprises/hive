@@ -9,5 +9,6 @@ in
 {
   inherit
     (nixpkgs-master)
+    gimp-with-plugins
     activitywatch;
 }
