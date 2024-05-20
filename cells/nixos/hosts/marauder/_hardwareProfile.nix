@@ -10,23 +10,6 @@
 
   boot.loader.efi.canTouchEfiVariables = false;
 
-  # fileSystems = lib.mkDefault {
-  #   "/" = {
-  #     device = "/dev/disk/by-label/nixos";
-  #     autoResize = true;
-  #     fsType = "ext4";
-  #   };
-  # };
-
-  # boot.growPartition = lib.mkDefault true;
-
-  # boot.kernelParams = [ "console=ttyS0" ];
-  # boot.loader.grub.device =
-  #   if (pkgs.stdenv.system == "x86_64-linux") then
-  #     (lib.mkDefault "/dev/vda")
-  #   else
-  #     (lib.mkDefault "nodev");
-
   disko.devices = cell.diskoConfigurations.${baseNameOf ./.} { inherit lib; };
   # disko.rootMountPoint = "/mnt/install";
 
@@ -34,10 +17,15 @@
     [
       cell.nixosProfiles.hardware.common
       cell.nixosProfiles.core.kernel.physical-access-system
-      cell.nixosProfiles.filesystems.zfs
 
-      ###
       inputs.disko.nixosModules.disko
+      cell.nixosProfiles.filesystems.zfs
       cell.nixosProfiles.boot.systemd-boot
+
+      cell.nixosModules.bootstrap
+      {
+        _module.args.self = with builtins; getFlake
+          (unsafeDiscardStringContext (toString inputs.self));
+      }
     ];
 }

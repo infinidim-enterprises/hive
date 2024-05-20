@@ -269,7 +269,8 @@
         nixpkgsConfig.allowUnfree = true;
         cellsFrom = ./cells;
 
-        cellBlocks = with std.blockTypes;
+        cellBlocks =
+          with std.blockTypes;
           with hive.blockTypes; [
             (nixago "config")
 
@@ -312,7 +313,6 @@
           ];
       }
 
-      # soil
       {
         devShells = hive.harvest inputs.self [ "repo" "shells" ];
 
