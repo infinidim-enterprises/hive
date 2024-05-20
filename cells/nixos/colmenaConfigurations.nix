@@ -10,7 +10,7 @@ let
   inherit (lib) mapAttrs recursiveUpdate filterAttrs;
 
   overrides = {
-    nixos-asbleg-bootstrap = { deployment.targetHost = "192.168.1.133"; };
+    asbleg-bootstrap = { deployment.targetHost = "192.168.1.133"; };
   };
 in
 mapAttrs
