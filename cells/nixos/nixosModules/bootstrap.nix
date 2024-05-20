@@ -7,6 +7,7 @@ let
     attrNames
     hasSuffix
     filterAttrs
+    fileContents
     hasAttrByPath
     mapAttrsToList
     concatStringsSep;
@@ -16,6 +17,17 @@ let
     getFlake
     toString
     attrValues;
+
+  # FIXME: ugly shit, git can have multiple remotes
+  flake_uri = pkgs.runCommandNoCC "flake_uri"
+    {
+      buildInputs = with pkgs; [ gawk gitMinimal ];
+    } ''
+    cd ${self.outPath}
+    export HOME=$TEMPDIR
+    git config --global --add safe.directory ${self.outPath}
+    cat .git/config | grep url | awk -F '@' '{print $2}' | awk -F '.git' '{print $1}' > $out
+  '';
 
   hosts_with_disko = filterAttrs
     (n: v:
@@ -39,7 +51,7 @@ let
       exec ${pkgs.disko}/bin/disko-install \
         --option extra-experimental-features auto-allocate-uids \
         --option extra-experimental-features cgroups \
-        --flake "${self}#${host}" ${diskoDisks self.nixosConfigurations.${host}.config}
+        --flake "${fileContents flake_uri}#${host}" ${diskoDisks self.nixosConfigurations.${host}.config}
     '';
 
   diskoScript = host:

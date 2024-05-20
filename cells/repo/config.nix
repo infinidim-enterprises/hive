@@ -206,7 +206,7 @@ in
         }
         {
           name = "Install Nix";
-          uses = "cachix/install-nix-action@v26";
+          uses = "cachix/install-nix-action@v27";
           "with" = {
             nix_path = "nixpkgs=channel:nixos-23.11";
             extra_nix_config = "access-tokens = github.com=\${{ secrets.GITHUB_TOKEN }}";
@@ -389,7 +389,7 @@ in
               {
                 # NOTE: there's an alternative here: https://github.com/ncipollo/release-action
                 name = "Release";
-                uses = "softprops/action-gh-release@v2.0.4";
+                uses = "softprops/action-gh-release@v2.0.5";
                 "with" = {
                   files = ''/home/runner/work/_temp/iso_release/keygen-x86_64-linux.iso'';
                   tag_name = "v0.0.1";
