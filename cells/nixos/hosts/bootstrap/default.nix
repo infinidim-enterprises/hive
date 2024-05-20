@@ -56,6 +56,7 @@ rec {
       })
     ] ++ optionals (! isNull host && hasDiskoConfig) [
       inputs.disko.nixosModules.disko
+      cell.nixosProfiles.boot.systemd-boot
       cell.nixosProfiles.filesystems.impermanence.default
       ({ lib, ... }: {
         disko.devices = cell.diskoConfigurations.${host} { inherit lib; };
