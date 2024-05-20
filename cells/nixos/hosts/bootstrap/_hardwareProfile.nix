@@ -23,11 +23,11 @@
 
   # boot.growPartition = lib.mkDefault true;
   # boot.kernelParams = [ "console=ttyS0" ];
-  # boot.loader.grub.device =
-  #   if (pkgs.stdenv.system == "x86_64-linux") then
-  #     (lib.mkDefault "/dev/vda")
-  #   else
-  #     (lib.mkDefault "nodev");
+  boot.loader.grub.device = lib.mkIf config.boot.loader.grub.enable (lib.mkDefault "nodev");
+  # if (pkgs.stdenv.system == "x86_64-linux") then
+  #   (lib.mkDefault "/dev/vda")
+  # else
+  #   (lib.mkDefault "nodev");
 
   imports =
     [
