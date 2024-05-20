@@ -22,10 +22,11 @@
       cell.nixosProfiles.filesystems.zfs
       cell.nixosProfiles.boot.systemd-boot
 
-      cell.nixosModules.bootstrap
-      {
-        _module.args.self = with builtins; getFlake
-          (unsafeDiscardStringContext (toString inputs.self));
-      }
+      # FIXME: error: cannot call 'getFlake' on unlocked flake reference (use --impure to override)
+      # cell.nixosModules.bootstrap
+      # {
+      #   _module.args.self = with builtins; getFlake
+      #     (unsafeDiscardStringContext (toString inputs.self));
+      # }
     ];
 }
