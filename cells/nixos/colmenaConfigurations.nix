@@ -4,13 +4,13 @@
 }:
 let
   lib = inputs.nixpkgs-lib.lib // builtins;
-  hosts = cell.nixosConfigurations;
+  # hosts = cell.nixosConfigurations;
 
-  inherit (inputs) haumea nixpkgs;
+  # inherit (inputs) haumea nixpkgs;
   inherit (lib) mapAttrs recursiveUpdate filterAttrs;
 
   overrides = {
-    depsos = { deployment.targetPort = 2265; };
+    nixos-asbleg-bootstrap = { deployment.targetHost = "192.168.1.133"; };
   };
 in
 mapAttrs
@@ -23,7 +23,7 @@ mapAttrs
           deployment = {
             targetHost = name;
             targetPort = 22;
-            targetUser = "truelecter";
+            targetUser = "admin";
           };
         }
         (
@@ -33,4 +33,4 @@ mapAttrs
         )
     )
   )
-  (filterAttrs (n: _: n != "octoprint") hosts)
+  (filterAttrs (n: _: n != "octoprint") cell.nixosConfigurations)
