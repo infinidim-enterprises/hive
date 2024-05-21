@@ -77,7 +77,7 @@ in
     "systemd.gpt_auto=0"
     "systemd.crash_reboot=1"
     "systemd.dump_core=0"
-    # "udev.log_priority=3"
+    "udev.log_level=err"
     "quiet"
   ];
 }

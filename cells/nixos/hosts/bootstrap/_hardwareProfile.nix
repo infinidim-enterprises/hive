@@ -9,6 +9,15 @@
 
   boot.initrd.availableKernelModules = [ "nvme" "nvme_core" ];
 
+  # ExecStartPre = "${config.systemd.package}/bin/udevadm trigger -s usb -a idVendor=${apple}";
+  # RUN+="/path/to/your/program"
+  boot.initrd.services.udev.rules = ''
+    ACTION=="add|change", SUBSYSTEM=="usb", ATTRS{idVendor}=="6080", ATTRS{idProduct}=="8061", OPTIONS="log_level=debug"
+  '';
+
+  # # /etc/udev/rules.d/99-usb.rules
+  #
+
   # ##
   # Bus 001 Device 002: ID 6080:8061 AMR-4630-XXX-0- 0-1023 USB KEYBOARD
   # ##
@@ -30,10 +39,7 @@
 
   boot.initrd.systemd.managerEnvironment.SYSTEMD_LOG_LEVEL = "debug";
 
-  boot.kernelParams = [
-    "udev.log_level=debug"
-
-  ];
+  # boot.kernelParams = [ "udev.log_level=debug" ];
 
   fileSystems = lib.mkDefault {
     "/" = {

@@ -3,8 +3,13 @@
 {
   # TODO: sops-nix for atuin key in ~/.local/share/atuin
   programs.atuin.enable = true;
+  # FIXME: zfs - https://github.com/atuinsh/atuin/pull/2006
+  # TODO: run atuin as a daemon in systemd service
+  programs.atuin.package = pkgs.atuin.overrideAttrs (_: {
+    # NOTE: https://github.com/Mic92/dotfiles/tree/main/home-manager/pkgs/atuin
+    patches = [ ./0001-make-atuin-on-zfs-fast-again.patch ];
+  });
   programs.atuin.settings = {
-    # FIXME: zfs - https://github.com/atuinsh/atuin/pull/2006
     sync_frequency = "1m";
     search_mode = "fuzzy";
     filter_mode = "global";
