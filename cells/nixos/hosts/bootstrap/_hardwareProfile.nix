@@ -9,6 +9,9 @@
 
   boot.initrd.availableKernelModules = [ "nvme" "nvme_core" ];
 
+  # ##
+  # Bus 001 Device 002: ID 6080:8061 AMR-4630-XXX-0- 0-1023 USB KEYBOARD
+  # ##
   # boot.initrd.systemd.package
   # boot.initrd.services.udev.packages
   #

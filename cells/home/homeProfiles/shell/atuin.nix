@@ -4,6 +4,7 @@
   # TODO: sops-nix for atuin key in ~/.local/share/atuin
   programs.atuin.enable = true;
   programs.atuin.settings = {
+    # FIXME: zfs - https://github.com/atuinsh/atuin/pull/2006
     sync_frequency = "1m";
     search_mode = "fuzzy";
     filter_mode = "global";

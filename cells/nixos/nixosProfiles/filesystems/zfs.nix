@@ -2,8 +2,10 @@
 
 { config, lib, ... }:
 {
-  # TODO: encrypted swap on none-zfs partition boot.zfs.allowHibernation = lib.mkDefault true;
-  boot.zfs.forceImportAll = lib.mkDefault true;
+  boot.zfs.allowHibernation = lib.mkDefault true;
+  boot.zfs.forceImportAll = lib.mkDefault false;
+  boot.zfs.forceImportRoot = lib.mkDefault false;
+
   boot.zfs.devNodes = "/dev/disk/by-id";
   boot.initrd.supportedFilesystems = [ "zfs" ];
   boot.supportedFilesystems = [ "zfs" ];
