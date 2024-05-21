@@ -14,7 +14,7 @@
   #
 
   security.tpm2.enable = true;
-  security.tpm2.abrmd.enable = true;
+  # security.tpm2.abrmd.enable = true;
   environment.systemPackages = with pkgs; [
     tpm2-abrmd
     tpm2-tools
