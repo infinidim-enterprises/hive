@@ -4,6 +4,7 @@
 
   base = with inputs.cells.common.overlays; [
     nixpkgs-unstable-overrides
+    nixpkgs-release-overrides
     nixpkgs-master-overrides
     dart-fix
     sources

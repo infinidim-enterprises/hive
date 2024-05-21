@@ -20,7 +20,7 @@
   home.packages = with pkgs; [
     nomacs # Qt-based image viewer
     inkscape # Vector graphics editor
-    # FIXME: gimp-with-plugins # The GNU Image Manipulation Program
+    gimp-with-plugins # The GNU Image Manipulation Program
     imagemagick # A software suite to create, edit, compose, or convert bitmap images
   ];
 }

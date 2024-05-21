@@ -20,6 +20,7 @@ in
   imports =
     [ inputs.disko.nixosModules.disko ] ++
     [
+      inputs.nixos-hardware.nixosModules.gpd-micropc
       cell.nixosProfiles.hardware.common
       cell.nixosProfiles.hardware.tlp
       cell.nixosProfiles.hardware.fwupd

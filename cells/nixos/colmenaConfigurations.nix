@@ -11,6 +11,7 @@ let
 
   overrides = {
     asbleg-bootstrap = { deployment.targetHost = "192.168.1.133"; };
+    asbleg = { deployment.targetHost = "192.168.1.133"; };
   };
 in
 mapAttrs
