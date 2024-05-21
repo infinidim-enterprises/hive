@@ -11,9 +11,22 @@
 
   # ExecStartPre = "${config.systemd.package}/bin/udevadm trigger -s usb -a idVendor=${apple}";
   # RUN+="/path/to/your/program"
-  boot.initrd.services.udev.rules = ''
-    ACTION=="add|change", SUBSYSTEM=="usb", ATTRS{idVendor}=="6080", ATTRS{idProduct}=="8061", OPTIONS="log_level=debug"
-  '';
+  # boot.initrd.services.udev.rules = ''
+  #   ACTION=="add|change", SUBSYSTEM=="usb", ATTRS{idVendor}=="6080", ATTRS{idProduct}=="8061", OPTIONS="log_level=debug"
+  # '';
+
+  /*
+    systemd.paths.trackpoint = {
+    pathConfig = {
+      PathExists = "/sys/devices/rmi4-00/rmi4-00.fn03/serio2";
+      Unit = "trackpoint.service";
+    };
+    };
+
+    systemd.services.trackpoint.script = ''
+    ${config.systemd.package}/bin/udevadm trigger --attr-match=name="${config.hardware.trackpoint.device}"
+    '';
+  */
 
   # # /etc/udev/rules.d/99-usb.rules
   #
@@ -37,9 +50,15 @@
     # tpmmanager
   ];
 
-  boot.initrd.systemd.managerEnvironment.SYSTEMD_LOG_LEVEL = "debug";
+  # boot.initrd.systemd.managerEnvironment.SYSTEMD_LOG_LEVEL = "debug";
 
-  # boot.kernelParams = [ "udev.log_level=debug" ];
+  # boot.kernelParams = [
+  #   # "udev.log_level=debug"
+
+  #   # "i8042.nopnp"
+  #   "i8042.debug"
+  #   "i8042.kbdreset"
+  # ];
 
   fileSystems = lib.mkDefault {
     "/" = {
@@ -59,6 +78,8 @@
 
   imports =
     [
+      inputs.nixos-hardware.nixosModules.gpd-micropc
+
       cell.nixosProfiles.hardware.common
       cell.nixosProfiles.core.kernel.physical-access-system
       cell.nixosProfiles.filesystems.zfs

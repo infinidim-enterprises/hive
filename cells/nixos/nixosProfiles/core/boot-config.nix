@@ -42,14 +42,8 @@ in
   # boot.initrd.kernelModules = [ "nfs" ];
 
   boot.initrd.availableKernelModules = [
-    # FIXME: udevadm trigger --type=subsystems --action=add is added to udev.init?
-    ### NOTE: on microPC the builtin keyboard doesn't come up, during LUKS setup
-    "sdhci_pci"
-    "xhci_pci"
-    "hid_generic"
-    "usbhid"
-    ###
-
+    #"battery" # NOTE: on microPC the builtin keyboard needs this!
+    # "hid_generic"
     # Mostly useful
     "crc32c_generic"
     "xhci_pci"
