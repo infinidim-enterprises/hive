@@ -38,15 +38,18 @@ in
 
   boot.initrd.compressor = mkDefault "${pkgs.pigz}/bin/pigz --best --recursive";
   boot.initrd.supportedFilesystems = [ "ext4" "vfat" ];
-  boot.initrd.kernelModules = [
-    "nfs"
-    # NOTE: on microPC the builtin keyboard doesn't come up, during LUKS setup
-    "sdhci_pci"
-    "xhci_pci"
-    "usbhid"
-  ];
+
+  # boot.initrd.kernelModules = [ "nfs" ];
 
   boot.initrd.availableKernelModules = [
+    # FIXME: udevadm trigger --type=subsystems --action=add is added to udev.init?
+    ### NOTE: on microPC the builtin keyboard doesn't come up, during LUKS setup
+    "sdhci_pci"
+    "xhci_pci"
+    "hid_generic"
+    "usbhid"
+    ###
+
     # Mostly useful
     "crc32c_generic"
     "xhci_pci"
@@ -66,13 +69,15 @@ in
   hardware.firmware = [ pkgs.firmwareLinuxNonfree ];
 
   boot.kernelParams = mkAfter [
+    # NOTE: https://askubuntu.com/questions/1418992/sgx-disabled-by-bios-message-on-ubuntu-20-04-booting
+    "nosgx"
     "panic=10"
     "boot.panic_on_fail"
     "consoleblank=90"
     "systemd.gpt_auto=0"
     "systemd.crash_reboot=1"
     "systemd.dump_core=0"
-    "udev.log_priority=3"
+    # "udev.log_priority=3"
     "quiet"
   ];
 }

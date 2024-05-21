@@ -7,11 +7,30 @@
   # deploy.params.gpu = "amd";
   # deploy.params.ram = 64;
 
-  # NOTE: https://askubuntu.com/questions/1418992/sgx-disabled-by-bios-message-on-ubuntu-20-04-booting
-  boot.kernelParams = [ "nosgx" ];
-
   boot.initrd.availableKernelModules = [ "nvme" "nvme_core" ];
-  # boot.kernelParams = [ "amdgpu.sg_display=0" ];
+
+  # boot.initrd.systemd.package
+  # boot.initrd.services.udev.packages
+  #
+
+  security.tpm2.enable = true;
+  security.tpm2.abrmd.enable = true;
+  environment.systemPackages = with pkgs; [
+    tpm2-abrmd
+    tpm2-tools
+    tpm2-openssl
+    tpm2-pkcs11
+    tpm2-totp
+    tpm2-tss
+    # tpmmanager
+  ];
+
+  boot.initrd.systemd.managerEnvironment.SYSTEMD_LOG_LEVEL = "debug";
+
+  boot.kernelParams = [
+    "udev.log_level=debug"
+
+  ];
 
   fileSystems = lib.mkDefault {
     "/" = {
