@@ -16,6 +16,8 @@ in
   hardware.opengl.enable = true;
   services.xserver.videoDrivers = lib.mkIf config.services.xserver.enable [ "intel" ];
 
+  # TODO: maybe? kernelParams = [ "i915.force_probe=!9a49" "xe.force_probe=9a49" ]
+
   disko.devices = cell.diskoConfigurations.${baseNameOf ./.} { inherit lib; };
   imports =
     [ inputs.disko.nixosModules.disko ] ++
