@@ -202,6 +202,9 @@
     stylix.inputs.nixpkgs.follows = "nixpkgs-unstable";
     stylix.inputs.home-manager.follows = "home-unstable";
 
+    auto-cpufreq.url = "github:AdnanHodzic/auto-cpufreq";
+    auto-cpufreq.inputs.nixpkgs.follows = "nixpkgs-unstable";
+
     # TODO: netboot-nix.url = "github:grahamc/netboot.nix";
 
     nvfetcher.url = "github:berberman/nvfetcher/0.6.2";
