@@ -9,7 +9,6 @@ in
     (inputs.cells.common.lib.importers.importFolder ./.) ++
     suites.desktop ++
     suites.office ++
-    suites.base ++
     [
       profiles.messengers
       profiles.multimedia.players

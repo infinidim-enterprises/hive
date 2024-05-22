@@ -1,12 +1,6 @@
-{ inputs
-, cell
-, ...
-}:
+{ inputs, cell, ... }:
 let
   lib = inputs.nixpkgs-lib.lib // builtins;
-  # hosts = cell.nixosConfigurations;
-
-  # inherit (inputs) haumea nixpkgs;
   inherit (lib) mapAttrs recursiveUpdate filterAttrs;
 
   overrides = {

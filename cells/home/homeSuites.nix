@@ -4,6 +4,7 @@ rec {
   # TODO: MAYBE remove and rework default, base
   base = default;
   default =
+    # NOTE: This always gets applied from lib.mkHome
     [{ disabledModules = inputs.cells.common.lib.disableModulesFrom ./homeModules; }] ++
     cli;
 
