@@ -1,7 +1,5 @@
-{ pkgs
-, lib
-, ...
-}:
+{ pkgs, lib, ... }:
+
 let
   sopsPGPKeyDirs = lib.concatStringsSep " "
     [

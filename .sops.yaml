@@ -1,6 +1,7 @@
 keys:
   - &vod E3C4C12EDF24CA20F167CC7EE203A151BB3FD1AE
-  - &oglaroon age13tpvs5ucgxcv5ta8q8rvx98w4c2690flvgeccyjq0a3km4e3xaqqvqhmj0
+  # - &oglaroon age13tpvs5ucgxcv5ta8q8rvx98w4c2690flvgeccyjq0a3km4e3xaqqvqhmj0
+  - &asbleg FBB71EC4A2F7CC7BE6F7495E0486D59153B435CF
 creation_rules:
   - path_regex: cells/secrets/sops/envs.yaml
     key_groups:
@@ -11,8 +12,9 @@ creation_rules:
     key_groups:
       - pgp:
           - *vod
-      - age:
-          - *oglaroon
+          - *asbleg
+      # - age:
+      #     - *oglaroon
 
   - path_regex: cells/secrets/sops/wifi.yaml
     key_groups:

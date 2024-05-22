@@ -202,8 +202,9 @@
     stylix.inputs.nixpkgs.follows = "nixpkgs-unstable";
     stylix.inputs.home-manager.follows = "home-unstable";
 
-    auto-cpufreq.url = "github:AdnanHodzic/auto-cpufreq";
-    auto-cpufreq.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    # TODO: rewrite auto-cpufreq in crystal
+    # auto-cpufreq.url = "github:AdnanHodzic/auto-cpufreq";
+    # auto-cpufreq.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
     # TODO: netboot-nix.url = "github:grahamc/netboot.nix";
 
