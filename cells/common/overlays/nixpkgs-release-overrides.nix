@@ -9,5 +9,6 @@ in
 {
   inherit
     (nixpkgs-release)
+    gimp
     gimp-with-plugins;
 }
