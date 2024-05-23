@@ -16,7 +16,15 @@ rec {
   #   };
 
   default = { lib, config, ... }:
-    let inherit (lib) mkIf mkAfter any hasAttr; in
+    let
+      inherit (lib)
+        any
+        mkIf
+        mkAfter
+        hasAttr
+        optional
+        optionals;
+    in
     {
       boot.initrd.postDeviceCommands = mkAfter ''
         zfs rollback -r ${config.fileSystems."/".device}@blank
@@ -25,6 +33,8 @@ rec {
       fileSystems."/persist".neededForBoot = true;
       imports = [ inputs.impermanence.nixosModules.impermanence ];
       environment.persistence."/persist" = {
+        hideMounts = true;
+
         directories = with config; [
           "/var/log"
 
@@ -57,11 +67,9 @@ rec {
         ];
 
         files =
-          [ (mkIf (cell.lib.isZfs config) "/etc/machine-id") ] ++
-          [
-            "/etc/ssh/ssh_host_ed25519_key"
-            "/etc/ssh/ssh_host_rsa_key"
-          ];
+          (optional (cell.lib.isZfs config) "/etc/machine-id") ++
+          (optionals config.services.openssh.enable
+            (map (e: e.path) config.services.openssh.hostKeys));
       };
     };
 
