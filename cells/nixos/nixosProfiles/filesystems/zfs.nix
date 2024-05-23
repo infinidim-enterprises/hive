@@ -4,6 +4,8 @@
 {
   boot.kernel.sysctl."vm.swappiness" = 1;
 
+  boot.kernelParams = [ "zfs_force=1" ];
+
   boot.zfs.allowHibernation = lib.mkDefault true;
   boot.zfs.forceImportAll = lib.mkDefault false;
   boot.zfs.forceImportRoot = lib.mkDefault false;

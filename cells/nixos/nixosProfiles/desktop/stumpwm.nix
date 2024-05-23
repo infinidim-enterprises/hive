@@ -1,3 +1,4 @@
 { inputs, cell, ... }:
 
-{ lib, ... }: { services.xserver.windowManager.stumpwm-new.enable = lib.mkDefault true; }
+{ lib, ... }:
+{ services.xserver.windowManager.stumpwm.enable = lib.mkDefault true; }

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, osConfig, localLib, lib, ... }:
 
 {
   services.kbfs.enable = true;
@@ -10,5 +10,5 @@
     keybase.Service.StandardOutput = "null";
   };
 
-  home.packages = with pkgs; [ keybase-gui ];
+  home.packages = lib.mkIf (localLib.isGui osConfig) [ pkgs.keybase-gui ];
 }

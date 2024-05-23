@@ -8,7 +8,7 @@ let
       config.allowUnfree = true;
       overlays = with inputs.cells.common.overlays; [
         sources
-        stumpwm-new
+        stumpwm
         make-desktopitem
         nixpkgs-unstable-overrides
         nixpkgs-master-overrides
@@ -121,8 +121,8 @@ let
 
   desktop-config = { pkgs, ... }: {
     # services.xserver.desktopManager.mate.enable = true;
-    imports = [ inputs.cells.nixos.nixosModules.services.x11.window-managers.stumpwm-new ];
-    services.xserver.windowManager.stumpwm-new.enable = true;
+    imports = [ inputs.cells.nixos.nixosModules.services.x11.window-managers.stumpwm ];
+    services.xserver.windowManager.stumpwm.enable = true;
     hardware.opengl.enable = true;
     microvm.graphics.enable = true;
     microvm.qemu.extraArgs = [
@@ -183,8 +183,8 @@ in
         {
           home-manager.users.admin.imports = [
             {
-              services.xserver.windowManager.stumpwm-new.enable = true;
-              services.xserver.windowManager.stumpwm-new.confDir = ../home/userProfiles/vod/dotfiles/stumpwm.d;
+              services.xserver.windowManager.stumpwm.enable = true;
+              services.xserver.windowManager.stumpwm.confDir = ../home/userProfiles/vod/dotfiles/stumpwm.d;
             }
           ];
         }

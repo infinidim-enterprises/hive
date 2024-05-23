@@ -1,11 +1,12 @@
-{ pkgs, lib, config, osConfig, ... }:
+{ pkgs, lib, config, osConfig, localLib, ... }:
 let
   defaultPasswordStorePath = "${config.xdg.dataHome}/password-store";
-  # FIXME: isDesktop = with osConfig.services; xserver.displayManager.lightdm.enable && (pass-secret-service.enable || gnome.gnome-keyring.enable);
-  isDesktop = with osConfig.services;
-    xserver.displayManager.lightdm.enable; # && gnome.gnome-keyring.enable;
+  inherit (lib)
+    mkDefault
+    mkMerge
+    mkIf;
 in
-with lib;
+
 mkMerge [
   {
     services.git-sync.enable = true;
@@ -41,7 +42,7 @@ mkMerge [
     programs.rofi.pass.stores = mkDefault [ defaultPasswordStorePath ];
   })
 
-  (mkIf isDesktop {
+  (mkIf (localLib.isGui osConfig) {
     home.packages = [ pkgs.gnome.seahorse ];
   })
 ]

@@ -13,7 +13,7 @@
       }
       inputs.cells.nixos.nixosModules.services.security.opensnitch
       # cell.nixosModules.services.security.pass-secret-service
-      inputs.cells.nixos.nixosModules.services.x11.window-managers.stumpwm-new
+      inputs.cells.nixos.nixosModules.services.x11.window-managers.stumpwm
       # cell.nixosModules.services.x11.remote-display
       # cell.nixosModules.services.networking.zerotierone
     ] ++
@@ -28,14 +28,15 @@
       # inputs.cells.bootstrap.nixosProfiles.core.fonts
     ];
 
-  # FIXME: services.pass-secret-service.enable = true;
-  services.xserver.windowManager.stumpwm-new.enable = true;
-  # services.xserver.windowManager.stumpwm-new.package = pkgs.stumpwm-git-new;
+  services.xserver.windowManager.stumpwm.enable = true;
 
   home-manager.users.vod.imports =
     cell.homeSuites.developer.default ++
     [ ./home ] ++
-    [{ services.xserver.windowManager.stumpwm-new.confDir = ./dotfiles/stumpwm.d; }];
+    [{
+      services.xserver.windowManager.stumpwm.confDir = ./dotfiles/stumpwm.d;
+      services.xserver.windowManager.stumpwm.enable = true;
+    }];
 
   users.users.vod = {
     hashedPassword = "$6$VsWUQCau32Oa$tNiMK5LftcuYDRPeACeP/BLikr7tYps/MHDeF3GT0bNRvyEW3PgIXXMzBY5x.FvGO6NprwhDldeFeKBzVQuhI1";

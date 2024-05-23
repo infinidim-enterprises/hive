@@ -17,7 +17,7 @@
       make-desktopitem
       # NOTE: obsolete masterpdfeditor
       firefox-addons
-      stumpwm-new
+      stumpwm
     ];
 
   emacs = [

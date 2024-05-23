@@ -30,6 +30,7 @@
 , startupNotify ? null
 , startupWMClass ? null
 , url ? null
+, passthru ? { }
 , prefersNonDefaultGPU ? null
   # not supported until version 1.5, which is not supported by our desktop-file-utils as of 2022-02-23
   # , singleMainWindow ? null
@@ -112,9 +113,9 @@ let
 
   content = [ mainSectionRendered ] ++ actionsRendered;
 in
-writeTextFile {
+(writeTextFile {
   name = "${name}.desktop";
   destination = "${destination}/${name}.desktop";
   text = builtins.concatStringsSep "\n" content;
   # checkPhase = ''${buildPackages.desktop-file-utils}/bin/desktop-file-validate "$target"'';
-}
+}) // passthru

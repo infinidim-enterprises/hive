@@ -1,7 +1,4 @@
-{ lib
-, cell
-, ...
-}:
+{ lib, cell, ... }:
 let
   disableModulesFrom = {
     __functor = _self: path:

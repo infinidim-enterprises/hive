@@ -6,12 +6,30 @@ let
     mkDefault
     optionals
     filterAttrs
+    removeAttrs
     hasAttrByPath;
   inherit (inputs.cells.common.lib) disableModulesFrom;
-  # nixpkgs = inputs.nixpkgs.appendOverlays cell.overlays.desktop;
 
   isZfs = config:
     (filterAttrs (n: v: v.fsType == "zfs") config.fileSystems) != { };
+  isGui = config:
+    let
+      dm = removeAttrs config.services.xserver.displayManager
+        [
+          "auto"
+          "desktopManagerHandlesLidAndPower"
+          "slim"
+          "sddm"
+          "autoLogin"
+          "defaultSession"
+          "extraSessionFilesPackages"
+          "hiddenUsers"
+          "logToJournal"
+          "sessionData"
+          "sessionPackages"
+        ];
+    in
+    (filterAttrs (k: v: v ? enable && v.enable) dm) != { };
 in
 {
   inherit isZfs;
@@ -32,6 +50,8 @@ in
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = {
+            # TODO: lib.extend (_: _: { inherit isGui; }) # Do it for the lib, passed into home-manager
+            localLib = { inherit isGui; };
             # NOTE: compatibility layer for old, digga based config
             # TODO: refactor and remove compatibility layer!
             inherit inputs;

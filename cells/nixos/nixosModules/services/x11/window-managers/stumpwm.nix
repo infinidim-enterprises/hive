@@ -4,19 +4,8 @@
 #
 with lib;
 let
-  addToXDGDirs = p: ''
-    if [ -d "${p}/share/gsettings-schemas/${p.name}" ]; then
-      export XDG_DATA_DIRS=$XDG_DATA_DIRS''${XDG_DATA_DIRS:+:}${p}/share/gsettings-schemas/${p.name}
-    fi
-
-    if [ -d "${p}/lib/girepository-1.0" ]; then
-      export GI_TYPELIB_PATH=$GI_TYPELIB_PATH''${GI_TYPELIB_PATH:+:}${p}/lib/girepository-1.0
-      export LD_LIBRARY_PATH=$LD_LIBRARY_PATH''${LD_LIBRARY_PATH:+:}${p}/lib
-    fi
-  '';
-
   cfg = config.services.xserver.windowManager.stumpwm;
-  cfgHm = config ? home-manager;
+  cfgHm = hasAttr "home-manager" config;
 
   fontPkg = pkgs.symlinkJoin {
     name = "hmLocalFontsDir";
@@ -94,25 +83,20 @@ let
         theme='standard'
       '';
 
-      stumpwm-mate-script = pkgs.writeShellScriptBin "stumpwm-mate" ''
+      stumpwm-mate-script = pkgs.writeShellScript "stumpwm-mate" ''
         if [ -n "$DESKTOP_AUTOSTART_ID" ]; then
           echo "STUMPWM: Registering with Mate Session Manager via Dbus id $DESKTOP_AUTOSTART_ID"
           ${pkgs.dbus}/bin/dbus-send --session \
-            --dest=org.gnome.SessionManager "/org/gnome/SessionManager" org.gnome.SessionManager.RegisterClient "string:stumpwm" "string:$DESKTOP_AUTOSTART_ID"
+            --dest=org.gnome.SessionManager \
+            "/org/gnome/SessionManager" \
+            org.gnome.SessionManager.RegisterClient \
+            "string:stumpwm" \
+            "string:$DESKTOP_AUTOSTART_ID"
         else
           echo "DESKTOP_AUTOSTART_ID not set."
         fi
-        ${cfg.package}/bin/stumpwm-lisp-launcher.sh \
-          --eval '(declaim #+sbcl(sb-ext:muffle-conditions style-warning))' \
-          --eval '(require :stumpwm)' \
-          --eval '(defun stumpwm::data-dir () (merge-pathnames "Logs/" (user-homedir-pathname)))' \
-          --eval '(stumpwm:stumpwm)' \
-          --eval '(quit)'
-      '';
 
-      mate-session-script = pkgs.writeShellScript "mate-session-script" ''
-        ${pkgs.dconf}/bin/dconf load / < ${customDconf}
-        ${pkgs.mate.mate-session-manager}/bin/mate-session
+        ${cfg.package}/bin/stumpwm
       '';
 
       icons = pkgs.stdenvNoCC.mkDerivation {
@@ -135,37 +119,38 @@ let
         '';
       };
 
-      item = pkgs.makeDesktopItem {
+      desktopItemTemlate = {
         name = "stumpwm";
-        icon = "stumpwm";
         desktopName = "stumpwm";
-        exec = "${stumpwm-mate-script}/bin/stumpwm-mate";
+        keywords = [ "launch" "stumpwm" "desktop" "session" ];
+        icon = "stumpwm";
         type = "Application";
         noDisplay = true;
+      };
+
+      item = pkgs.makeDesktopItem (desktopItemTemlate // {
+        passthru.providedSessions = [ "stumpwm" ];
+        exec = "${stumpwm-mate-script}";
+        destination = "/share/xsessions";
         extraConfig = {
           X-MATE-WMName = "stumpwm";
           X-MATE-Autostart-Phase = "WindowManager";
           X-MATE-Provides = "windowmanager";
           X-MATE-Autostart-Notify = "false";
         };
-      };
-
-      xsession = {
-        name = "stumpwm";
-        desktopNames = [ "MATE" ];
-        bgSupport = true;
-        start = "${mate-session-script}";
-      };
+      });
     in
-    { inherit xsession icons item; };
+    { inherit item icons; };
 
 in
 {
+  disabledModules = [ "services/x11/window-managers/stumpwm.nix" ];
+  # NOTE: https://github.com/search?q=xserver.displayManager.session+language%3ANix+&type=code
   options.services.xserver.windowManager.stumpwm = with types; {
     enable = mkEnableOption "StumpWM";
     package = mkOption {
       type = package;
-      default = pkgs.stumpwmCustomBuild;
+      default = pkgs.stumpwm_release_latest.bin;
     };
   };
 
@@ -173,18 +158,23 @@ in
     (mkIf cfg.enable {
       xdg.mime.enable = true;
       services.xserver = {
-        layout = "us";
+        xkb.layout = "us";
         enable = true;
         updateDbusEnvironment = true;
         desktopManager.mate.enable = true;
-        desktopManager.session = singleton stumpwm_desktop.xsession;
         gdk-pixbuf.modulePackages = [ pkgs.librsvg ];
       };
 
       services.gnome.glib-networking.enable = true;
 
       environment.sessionVariables.CPATH = "${pkgs.libfixposix}/include";
-      environment.systemPackages = [ cfg.package stumpwm_desktop.item stumpwm_desktop.icons ];
+      services.displayManager.sessionPackages = [ stumpwm_desktop.item ];
+      environment.systemPackages = [
+        cfg.package # FIXME: have emacs use different inferrior lisps
+        pkgs.stumpwm_release_latest.stumpish
+        stumpwm_desktop.item
+        stumpwm_desktop.icons
+      ];
       environment.mate.excludePackages = with pkgs.mate; [
         atril
         mate-terminal
@@ -200,35 +190,39 @@ in
         ({ name, config, lib, ... }:
           let
             cfg = config.services.xserver.windowManager.stumpwm;
-            cfgEmacs = config.programs.emacs.enable;
             cfgOpenSnitch = config.services ? opensnitch;
             cfgMimeApps = config.xdg.mimeApps.enable;
           in
           {
+            options.services.xserver.windowManager.stumpwm.enable = lib.mkEnableOption "Use mate+stumpwm";
             options.services.xserver.windowManager.stumpwm.confDir = with lib.types; lib.mkOption {
-              default = let tPath = "${self}/users/${name}/dotfiles/stumpwm.d"; in if builtins.pathExists tPath then tPath else null;
+              default = null;
+              # let tPath = "${self}/users/${name}/dotfiles/stumpwm.d";
+              # in if builtins.pathExists tPath then tPath else null;
               type = nullOr (oneOf [ path string ]);
               apply = v: if v != null then builtins.toPath v else null;
               description = "Path to stumpwm config dir";
             };
 
-            config = lib.mkMerge [
+            config = lib.mkIf cfg.enable (lib.mkMerge [
+              { dconf.settings."org/mate/desktop/session/required-components".windowmanager = "stumpwm"; }
+
               (lib.mkIf cfgMimeApps {
                 xdg.mimeApps.defaultApplications."inode/directory" = "caja-folder-handler.desktop";
                 xdg.mimeApps.defaultApplications."application/x-mate-saved-search" = "caja-folder-handler.desktop";
               })
 
-              (lib.mkIf cfgOpenSnitch {
-                services.opensnitch.allow =
-                  with builtins;
-                  let
-                    withDir = dir: map (x: "${dir}/${x}") (filter (hasPrefix ".") (attrNames (readDir dir)));
-                  in
-                  flatten (map withDir [
-                    "${pkgs.mate.mate-panel}/libexec"
-                    "${pkgs.gvfs}/libexec"
-                  ]);
-              })
+              # (lib.mkIf cfgOpenSnitch {
+              #   services.opensnitch.allow =
+              #     with builtins;
+              #     let
+              #       withDir = dir: map (x: "${dir}/${x}") (filter (hasPrefix ".") (attrNames (readDir dir)));
+              #     in
+              #     flatten (map withDir [
+              #       "${pkgs.mate.mate-panel}/libexec"
+              #       "${pkgs.gvfs}/libexec"
+              #     ]);
+              # })
 
               (lib.mkIf (!builtins.isNull cfg.confDir) {
                 xdg.configFile."stumpwm".source = cfg.confDir;
@@ -237,18 +231,7 @@ in
                 xdg.dataFile."fonts".source = fontsDir;
               })
 
-              # (mkIf cfgEmacs {
-              #   programs.emacs.extraPackages = (p: with p; [
-              #     sly
-              #     sly-asdf
-              #     sly-macrostep
-              #     sly-named-readtables
-              #     sly-quicklisp
-              #     sly-repl-ansi-color
-              #   ]);
-              # })
-
-            ];
+            ]);
           }
         )
       ];
