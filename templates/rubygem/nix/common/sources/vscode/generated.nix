@@ -14,33 +14,33 @@
   };
   codium = {
     pname = "codium";
-    version = "0.8.9";
+    version = "0.8.10";
     src = fetchurl {
-      url = "https://Codium.gallery.vsassets.io/_apis/public/gallery/publisher/Codium/extension/codium/0.8.9/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "codium-0.8.9.zip";
-      sha256 = "sha256-m9tL/6ubhdXAb/tUFyTCgh/YBZfRM/5WtK8xWB6p/V8=";
+      url = "https://Codium.gallery.vsassets.io/_apis/public/gallery/publisher/Codium/extension/codium/0.8.10/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "codium-0.8.10.zip";
+      sha256 = "sha256-uI9ZKJiODc6JSlv2rt3bNucpOjK2SM4E3TwD6Rz98/0=";
     };
     publisher = "Codium";
     name = "codium";
   };
   copilot = {
     pname = "copilot";
-    version = "1.194.885";
+    version = "1.194.894";
     src = fetchurl {
-      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.194.885/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "copilot-1.194.885.zip";
-      sha256 = "sha256-rBWCvOWT0M5CEy9+ndWEr9z+O70UncKyMYnNipEZePo=";
+      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.194.894/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "copilot-1.194.894.zip";
+      sha256 = "sha256-k8DCvA8lJiWCmabPmZmXkbSUt9kG/MgWnoYYjqJwhjY=";
     };
     publisher = "GitHub";
     name = "copilot";
   };
   cucumberautocomplete = {
     pname = "cucumberautocomplete";
-    version = "2.15.2";
+    version = "3.0.0";
     src = fetchurl {
-      url = "https://alexkrechik.gallery.vsassets.io/_apis/public/gallery/publisher/alexkrechik/extension/cucumberautocomplete/2.15.2/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "cucumberautocomplete-2.15.2.zip";
-      sha256 = "sha256-MdBJ71fIkIVOhLCoF/6/CATmUvutiTJPrIoVeb/eXc0=";
+      url = "https://alexkrechik.gallery.vsassets.io/_apis/public/gallery/publisher/alexkrechik/extension/cucumberautocomplete/3.0.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "cucumberautocomplete-3.0.0.zip";
+      sha256 = "sha256-zoxZd6QL8P+hTuzAuckMurH3SMEco+AYoR/PBzO3cHs=";
     };
     publisher = "alexkrechik";
     name = "cucumberautocomplete";

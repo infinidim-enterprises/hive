@@ -168,7 +168,7 @@ in
       services.gnome.glib-networking.enable = true;
 
       environment.sessionVariables.CPATH = "${pkgs.libfixposix}/include";
-      services.displayManager.sessionPackages = [ stumpwm_desktop.item ];
+      # services.displayManager.sessionPackages = [ stumpwm_desktop.item ];
       environment.systemPackages = [
         cfg.package # FIXME: have emacs use different inferrior lisps
         pkgs.stumpwm_release_latest.stumpish

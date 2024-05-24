@@ -468,10 +468,10 @@
   };
   "ether-metamask" = rec {
     pname = "ether-metamask";
-    version = "11.12.4";
+    version = "11.14.5";
     addonId = "webextension@metamask.io";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4254098/ether_metamask-11.12.4.xpi";
-    sha256 = "eee5e8fcdc530ad3c11d0d931ff9a2c6d317ad78e6c5742ff90fb10371f8ab3f";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4289710/ether_metamask-11.14.5.xpi";
+    sha256 = "261efb390d3bda9ed0dd9851809f70a8c0e643889f54c959e26ccf3e60bcefb9";
     meta = with lib;
       {
         description = "Ethereum Browser Extension";
@@ -482,6 +482,7 @@
           "http://localhost:8545/"
           "https://*.infura.io/"
           "https://*.codefi.network/"
+          "https://*.cx.metamask.io/"
           "https://chainid.network/chains.json"
           "https://lattice.gridplus.io/*"
           "activeTab"
@@ -627,10 +628,10 @@
   };
   "privacy-badger17" = rec {
     pname = "privacy-badger17";
-    version = "2024.2.6";
+    version = "2024.5.17";
     addonId = "jid1-MnnxcxisBPnSXQ@jetpack";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4232703/privacy_badger17-2024.2.6.xpi";
-    sha256 = "81d80bff29b6209aa444713bc548a3d06fd5bde208c9c3c596dba81cc97add02";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4288634/privacy_badger17-2024.5.17.xpi";
+    sha256 = "5dfe8b3a8d1a8dde87c2873a5b82b5e78e413f981e629c8b341dcd947c3ec4fe";
     meta = with lib;
       {
         homepage = "https://privacybadger.org/";
@@ -1144,10 +1145,10 @@
   };
   "ublock-origin" = rec {
     pname = "ublock-origin";
-    version = "1.57.2";
+    version = "1.58.0";
     addonId = "uBlock0@raymondhill.net";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4261710/ublock_origin-1.57.2.xpi";
-    sha256 = "9928e79a52cecf7cfa231fdb0699c7d7a427660d94eb10d711ed5a2f10d2eb89";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4290466/ublock_origin-1.58.0.xpi";
+    sha256 = "470c56994a7174db21578adce598b158a5dc0970c87c5cfe889ac632bd3085ea";
     meta = with lib;
       {
         homepage = "https://github.com/gorhill/uBlock#ublock-origin";
@@ -1174,7 +1175,6 @@
           "https://forums.lanik.us/*"
           "https://github.com/*"
           "https://*.github.io/*"
-          "https://*.letsblock.it/*"
           "https://github.com/uBlockOrigin/*"
           "https://ublockorigin.github.io/*"
           "https://*.reddit.com/r/uBlockOrigin/*"

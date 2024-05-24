@@ -42,11 +42,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-FUnQJ3RRtsWz4DIO8Zi9Y6dO130qTdwj6RhJ6RNpljc=",
+            "sha256": "sha256-krxAIJSQrvZrXsAfFZOr/ons4mSKnaQ+fIdHULKcvyA=",
             "type": "url",
-            "url": "https://github.com/AdguardTeam/AdGuardHome/releases/download/v0.107.48/AdGuardHome_linux_amd64.tar.gz"
+            "url": "https://github.com/AdguardTeam/AdGuardHome/releases/download/v0.107.50/AdGuardHome_linux_amd64.tar.gz"
         },
-        "version": "v0.107.48"
+        "version": "v0.107.50"
     },
     "age-plugin-trezor": {
         "cargoLocks": null,
@@ -72,7 +72,7 @@
     },
     "chatgpt-wrapper": {
         "cargoLocks": null,
-        "date": "2024-05-19",
+        "date": "2024-05-20",
         "extract": null,
         "name": "chatgpt-wrapper",
         "passthru": null,
@@ -84,11 +84,11 @@
             "name": null,
             "owner": "llm-workflow-engine",
             "repo": "llm-workflow-engine",
-            "rev": "60f98f8c20501cb6fa391357002fd1771b7e9e05",
-            "sha256": "sha256-RAtQLXL+/J6EUJrICc1yScTo+Zo0K/E/f933REpTSYI=",
+            "rev": "ece9f49d7efc8da0556ec1e47c9bb853ba2cf2ec",
+            "sha256": "sha256-T9UjuEHvhzV3NEI4nx56eAzstTMUIXePG3WreWVPnUc=",
             "type": "github"
         },
-        "version": "60f98f8c20501cb6fa391357002fd1771b7e9e05"
+        "version": "ece9f49d7efc8da0556ec1e47c9bb853ba2cf2ec"
     },
     "cl-hash-util": {
         "cargoLocks": null,
@@ -276,11 +276,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-MntfoZ4+RuRGVgtRgDEvXSuSBCuZv417Pv6UkNsfbq8=",
+            "sha256": "sha256-tAmmflchhgwJUUqBZgNSPp/0yGZdVfgT3EeZ6ko/QNg=",
             "type": "url",
-            "url": "https://github.com/jgraph/drawio-desktop/releases/download/v24.4.0/drawio-x86_64-24.4.0.rpm"
+            "url": "https://github.com/jgraph/drawio-desktop/releases/download/v24.4.8/drawio-x86_64-24.4.8.rpm"
         },
-        "version": "24.4.0"
+        "version": "24.4.8"
     },
     "git-get": {
         "cargoLocks": null,
@@ -431,11 +431,11 @@
             "name": null,
             "owner": "langchain-ai",
             "repo": "langchain",
-            "rev": "langchain==0.2.0",
-            "sha256": "sha256-aJIxDUTQlkXocmMysQI3dufDQKuGq9e05Tjd89mTxaM=",
+            "rev": "langchain-core==0.2.2rc1",
+            "sha256": "sha256-1bwcOtVF4XozYmBAksmA+RQX+y/jAvPgBKnt243Si9g=",
             "type": "github"
         },
-        "version": "langchain==0.2.0"
+        "version": "langchain-core==0.2.2rc1"
     },
     "ledger-live-desktop": {
         "cargoLocks": null,
@@ -595,7 +595,7 @@
     },
     "pbkdf2-sha512": {
         "cargoLocks": null,
-        "date": "2024-05-19",
+        "date": "2024-05-24",
         "extract": null,
         "name": "pbkdf2-sha512",
         "passthru": null,
@@ -606,7 +606,7 @@
             "type": "url",
             "url": "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c"
         },
-        "version": "8036f1ffa7c94d49d40523e14bce8ceb70a20fed"
+        "version": "5e872e63fe9021adda07a1a655b51422623352c4"
     },
     "pgp-key-generation": {
         "cargoLocks": null,
@@ -650,7 +650,7 @@
     },
     "promnesia": {
         "cargoLocks": null,
-        "date": "2024-05-17",
+        "date": "2024-05-21",
         "extract": null,
         "name": "promnesia",
         "passthru": null,
@@ -662,11 +662,11 @@
             "name": null,
             "owner": "karlicoss",
             "repo": "promnesia",
-            "rev": "813c4a693ca5dd2ace2c99dab807d53547a21402",
-            "sha256": "sha256-Tg4+ybkFbyYTVAEJyPXeR5THBigaVkAylJPp83LucYg=",
+            "rev": "02de43322d70e09f224cd5cb1ad33bfadae4744e",
+            "sha256": "sha256-6PE3Ss0vvnXFvs1Geqc4eN3OqDgYn0kyG8egcl3a5Ww=",
             "type": "github"
         },
-        "version": "813c4a693ca5dd2ace2c99dab807d53547a21402"
+        "version": "02de43322d70e09f224cd5cb1ad33bfadae4744e"
     },
     "quicklisp": {
         "cargoLocks": null,

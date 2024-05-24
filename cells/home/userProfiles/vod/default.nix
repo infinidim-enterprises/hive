@@ -38,8 +38,15 @@
       services.xserver.windowManager.stumpwm.enable = true;
     }];
 
+  sops.secrets.vod-password = {
+    key = "vod-password";
+    sopsFile = ./sops/nixos-common.yaml;
+    neededForUsers = true;
+  };
+
   users.users.vod = {
-    hashedPassword = "$6$VsWUQCau32Oa$tNiMK5LftcuYDRPeACeP/BLikr7tYps/MHDeF3GT0bNRvyEW3PgIXXMzBY5x.FvGO6NprwhDldeFeKBzVQuhI1";
+    hashedPasswordFile = config.sops.secrets.vod-password.path;
+    # hashedPassword = "$6$VsWUQCau32Oa$tNiMK5LftcuYDRPeACeP/BLikr7tYps/MHDeF3GT0bNRvyEW3PgIXXMzBY5x.FvGO6NprwhDldeFeKBzVQuhI1";
     description = "Никто кроме нас";
     isNormalUser = true;
     uid = 1000;
