@@ -40,7 +40,7 @@
 
   sops.secrets.vod-password = {
     key = "vod-password";
-    sopsFile = ../../../secrects/sops/nixos-common.yaml;
+    sopsFile = ../../../secrets/sops/nixos-common.yaml;
     neededForUsers = true;
   };
 
