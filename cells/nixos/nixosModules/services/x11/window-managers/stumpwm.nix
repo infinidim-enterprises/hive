@@ -205,6 +205,7 @@ in
             };
 
             config = lib.mkIf cfg.enable (lib.mkMerge [
+              # FIXME: mate-session[3416]: WARNING: Unable to find provider 'stumpwm' of required component 'windowmanager'
               { dconf.settings."org/mate/desktop/session/required-components".windowmanager = "stumpwm"; }
 
               (lib.mkIf cfgMimeApps {
