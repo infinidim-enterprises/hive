@@ -1,5 +1,5 @@
 { pkgs, ... }:
 
 {
-  home.packages = with pkgs;[ pgcli dbeaver beekeeper-studio ];
+  home.packages = with pkgs;[ pgcli dbeaver-bin beekeeper-studio ];
 }
