@@ -129,9 +129,9 @@ let
       };
 
       item = pkgs.makeDesktopItem (desktopItemTemlate // {
-        passthru.providedSessions = [ "stumpwm" ];
+        # passthru.providedSessions = [ "stumpwm" ];
         exec = "${stumpwm-mate-script}";
-        destination = "/share/xsessions";
+        # destination = "/share/xsessions";
         extraConfig = {
           X-MATE-WMName = "stumpwm";
           X-MATE-Autostart-Phase = "WindowManager";

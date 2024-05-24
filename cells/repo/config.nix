@@ -202,7 +202,7 @@ in
       common_steps = [
         {
           name = "Checkout repository";
-          uses = "actions/checkout@v4.1.4";
+          uses = "actions/checkout@v4.1.6";
         }
         {
           name = "Install Nix";
