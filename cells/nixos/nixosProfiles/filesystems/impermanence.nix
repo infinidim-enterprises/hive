@@ -1,19 +1,5 @@
 { inputs, cell, ... }:
 rec {
-  # agenix = { lib, config, ... }: # TODO: impermanence agenix
-  #   let inherit (lib) mkIf mkDefault hasAttrByPath; in
-  #   mkIf ((hasAttrByPath [ "age" ] config) && config.services.openssh.enable) {
-
-  #     age.identityPaths = mkDefault [
-  #       "/persist/etc/ssh/ssh_host_ed25519_key"
-  #       "/persist/etc/ssh/ssh_host_rsa_key"
-  #     ];
-
-  #     environment.persistence."/persist".files = mkDefault [
-  #       "/etc/ssh/ssh_host_ed25519_key"
-  #       "/etc/ssh/ssh_host_rsa_key"
-  #     ];
-  #   };
 
   default = { lib, config, ... }:
     let
@@ -21,7 +7,6 @@ rec {
         any
         mkIf
         mkAfter
-        hasAttr
         optional
         optionals;
     in

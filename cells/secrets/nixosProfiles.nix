@@ -7,39 +7,55 @@ let
   */
 in
 {
-  common = { lib, config, ... }:
+  common = { pkgs, lib, config, ... }:
     let
-      inherit (lib)
+      inherit (lib // builtins)
         map
         mkIf
+        elem
         filter
         flatten
+        mkForce
+        mkMerge
         hasAttrByPath
         mapAttrsToList;
-      isImpermanence = hasAttrByPath [ "persistence" ] config.envronment;
+      isImpermanence =
+        (hasAttrByPath [ "persistence" ] config.environment) &&
+        (config.environment.persistence != { });
       isOpenssh = config.services.openssh.enable;
-      # sshKeyPaths =
-      #   if
-      #   then
-      #   else
+      opensshServiceKeyPaths = map (e: e.path)
+        (filter (e: e.type == "rsa")
+          config.services.openssh.hostKeys);
+      impermanenceSshKeyPaths = map (e: e.persistentStoragePath + e.filePath)
+        (filter (e: elem e.filePath opensshServiceKeyPaths)
+          (flatten (mapAttrsToList (k: v: v.files)
+            config.environment.persistence)));
     in
     {
-      imports = [
-        inputs.sops-nix.nixosModules.sops
-        ./_common.nix
+      imports = [ inputs.sops-nix.nixosModules.sops ];
+
+      config = mkMerge [
+        (mkIf (isOpenssh && isImpermanence) {
+          sops.gnupg.sshKeyPaths = impermanenceSshKeyPaths;
+        })
+
+        (mkIf (isOpenssh && !isImpermanence) {
+          sops.gnupg.sshKeyPaths = opensshServiceKeyPaths;
+        })
+
+        {
+          sops.age.sshKeyPaths = mkForce [ ]; # Not using age!
+          environment.systemPackages = [ pkgs.sops ];
+
+          sops.secrets = {
+            root-password = {
+              key = "root-password";
+              sopsFile = ./sops/nixos-common.yaml;
+              neededForUsers = true;
+            };
+          };
+        }
       ];
 
-      # sops.gnupg.home = "/var/lib/sops";
-      sops.gnupg.sshKeyPaths = [ "/persist/etc/ssh/ssh_host_rsa_key" ];
-
-      # sops.gnupg = { inherit sshKeyPaths; };
-
-      sops.secrets = {
-        root-password = {
-          key = "root-password";
-          sopsFile = ./sops/nixos-common.yaml;
-          neededForUsers = true;
-        };
-      };
     };
 }
