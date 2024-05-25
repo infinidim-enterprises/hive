@@ -87,7 +87,7 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = true;
-      sha256 = "sha256-KDMN7grnfXcQYMpjMYXPFMV3BALahduLqhmaJSNreIc=";
+      sha256 = "sha256-4F3WaKetjPyMxntP/dmRNMCCDjnHmx3sdnvc6Idmms0=";
     };
     date = "2024-04-18";
   };
