@@ -16,6 +16,16 @@ in
   hardware.opengl.enable = true;
   services.xserver.videoDrivers = lib.mkIf config.services.xserver.enable [ "intel" ];
 
+  services.logind.powerKeyLongPress = "hibernate";
+  services.logind.lidSwitchExternalPower = "ignore";
+  services.logind.lidSwitch = "hibernate";
+
+  # NOTE: https://github.com/systemd/systemd/issues/25269
+  # services.logind.lidSwitch = "suspend-then-hibernate";
+  # systemd.sleep.extraConfig = ''
+  #   HibernateDelaySec=300s
+  # '';
+
   # TODO: maybe? kernelParams = [ "i915.force_probe=!9a49" "xe.force_probe=9a49" ]
 
   disko.devices = cell.diskoConfigurations.${baseNameOf ./.} { inherit lib; };

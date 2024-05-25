@@ -50,6 +50,9 @@ in
       ];
 
   root = { config, lib, ... }: {
+
+    services.logind.killUserProcesses = true;
+
     users.users.root = {
       homeMode = "0700";
       createHome = true;
