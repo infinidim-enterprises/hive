@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  # TODO: sops-nix for atuin key in ~/.local/share/atuin
+  # TODO: sops-nix for atuin key in ~/.local/share/atuin/key
   programs.atuin.enable = true;
   # FIXME: zfs - https://github.com/atuinsh/atuin/pull/2006
   # TODO: run atuin as a daemon in systemd service
@@ -10,6 +10,9 @@
     patches = [ ./0001-make-atuin-on-zfs-fast-again.patch ];
   });
   programs.atuin.settings = {
+    dialect = "uk";
+    update_check = false;
+    auto_sync = true;
     sync_frequency = "1m";
     search_mode = "fuzzy";
     filter_mode = "global";
@@ -22,6 +25,18 @@
     keymap_mode = "emacs";
     keymap_cursor.emacs = "blink-block";
     prefers_reduced_motion = true;
-    common_prefix = [ "sudo" ];
+    sync.records = true;
+    common_prefix = [ "sudo" "_" ];
+    common_subcommands = [
+      "docker"
+      "git"
+      "ip"
+      "kubectl"
+      "nix"
+      "npm"
+      "podman"
+      "systemctl"
+      "yarn"
+    ];
   };
 }
