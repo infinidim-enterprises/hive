@@ -24,65 +24,6 @@ let
 
   stumpwm_desktop =
     let
-      ### TODO:  https://github.com/mate-desktop/mate-panel/blob/36be054255ff728061c056899c052c790ed43ae1/mate-panel/panel-schemas.h#L50
-      # relative-to-edge is available in dev versions, instead of panel-right-stick
-      customDconf = pkgs.writeText "customDconf" ''
-        [ca/desrt/dconf-editor]
-        show-warning=false
-
-        [org/mate/desktop/background]
-        draw-background=false
-        show-desktop-icons=false
-
-        [org/mate/desktop/session]
-        required-components-list=['windowmanager', 'panel']
-        gnome-compat-startup=['smproxy']
-
-        [org/mate/desktop/session/required-components]
-        windowmanager='stumpwm'
-        panel='mate-panel'
-
-        [org/mate/panel/general]
-        object-id-list=['menu-bar', 'notification-area', 'clock']
-        toplevel-id-list=['top']
-
-        [org/mate/panel/objects/clock]
-        position=0
-        locked=true
-        toplevel-id='top'
-        object-type='applet'
-        panel-right-stick=true
-        applet-iid='ClockAppletFactory::ClockApplet'
-
-        [org/mate/panel/objects/menu-bar]
-        toplevel-id='top'
-        locked=true
-        position=0
-
-        [org/mate/panel/objects/notification-area]
-        position=1
-        locked=true
-        toplevel-id='top'
-        object-type='applet'
-        panel-right-stick=true
-        applet-iid='NotificationAreaAppletFactory::NotificationArea'
-
-        [org/mate/panel/toplevels/top]
-        screen=0
-        expand=true
-        x-centered=true
-        orientation='top'
-
-        [org/mate/caja/preferences]
-        enable-delete=true
-        confirm-trash=false
-        default-folder-viewer='list-view'
-
-        [org/mate/notification-daemon]
-        popup-location='top_right'
-        theme='standard'
-      '';
-
       stumpwm-mate-script = pkgs.writeShellScript "stumpwm-mate" ''
         if [ -n "$DESKTOP_AUTOSTART_ID" ]; then
           echo "STUMPWM: Registering with Mate Session Manager via Dbus id $DESKTOP_AUTOSTART_ID"
@@ -220,6 +161,13 @@ in
 
                   "org/mate/panel/general".object-id-list = [ "menu-bar" "notification-area" "clock" ];
                   "org/mate/panel/general".toplevel-id-list = [ "top" ];
+
+                  "org/mate/caja/preferences".enable-delete = true;
+                  "org/mate/caja/preferences".confirm-trash = false;
+                  "org/mate/caja/preferences".default-folder-viewer = "list-view";
+
+                  "org/mate/notification-daemon".popup-location = "top_right";
+                  "org/mate/notification-daemon".theme = "standard";
 
                   "ca/desrt/dconf-editor".show-warning = false;
                 };

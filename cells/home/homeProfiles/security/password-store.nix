@@ -14,6 +14,7 @@ mkMerge [
       interval = 300;
       path = config.programs.password-store.settings.PASSWORD_STORE_DIR;
       uri = "keybase://private/voobofdoom/password-store";
+      extraPackages = [ pkgs.kbfs ];
     };
   }
 
