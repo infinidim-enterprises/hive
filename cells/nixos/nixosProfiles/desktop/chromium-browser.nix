@@ -1,12 +1,14 @@
 { inputs, cell, ... }:
 
-{ lib, config, ... }:
+{ lib, config, pkgs, ... }:
 # let
 
 # in
 lib.mkMerge [
   {
-    programs.chromium.enable = true;
+    environment.systemPackages = [ pkgs.chromium ];
+
+    programs.chromium.enable = true; # # NOTE: chromium policies only!
     programs.chromium.defaultSearchProviderSearchURL = "https://duckduckgo.com/?q={searchTerms}";
     # programs.chromium.defaultSearchProviderSuggestURL = "";
 

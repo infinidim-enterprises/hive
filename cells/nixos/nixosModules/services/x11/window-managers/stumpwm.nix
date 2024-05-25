@@ -205,8 +205,25 @@ in
             };
 
             config = lib.mkIf cfg.enable (lib.mkMerge [
-              # FIXME: mate-session[3416]: WARNING: Unable to find provider 'stumpwm' of required component 'windowmanager'
-              { dconf.settings."org/mate/desktop/session/required-components".windowmanager = "stumpwm"; }
+              {
+                dconf.settings = {
+                  "org/mate/desktop/background".draw-background = false;
+                  "org/mate/desktop/background".show-desktop-icons = false;
+
+                  "org/mate/desktop/session".default-session = [ "mate-settings-daemon" ];
+                  "org/mate/desktop/session".required-components-list = [ "windowmanager" "panel" "filemanager" ];
+                  "org/mate/desktop/session".gnome-compat-startup = [ "smproxy" ];
+
+                  "org/mate/desktop/session/required-components".windowmanager = "stumpwm";
+                  "org/mate/desktop/session/required-components".filemanager = "caja";
+                  "org/mate/desktop/session/required-components".panel = "mate-panel";
+
+                  "org/mate/panel/general".object-id-list = [ "menu-bar" "notification-area" "clock" ];
+                  "org/mate/panel/general".toplevel-id-list = [ "top" ];
+
+                  "ca/desrt/dconf-editor".show-warning = false;
+                };
+              }
 
               (lib.mkIf cfgMimeApps {
                 xdg.mimeApps.defaultApplications."inode/directory" = "caja-folder-handler.desktop";
