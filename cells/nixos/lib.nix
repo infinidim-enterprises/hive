@@ -75,8 +75,7 @@ in
                   programs.firefox
                   programs.promnesia
                   programs.chemacs
-                  programs.activitywatch
-                ]); # TODO: add activitywatch from home-manager!
+                ]);
             };
         })
       ]

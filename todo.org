@@ -33,3 +33,5 @@ https://github.com/hercules-ci/flake-parts
 https://github.com/nix-community/disko/blob/master/docs/disko-install.md
 https://github.com/nix-community/disko/blob/master/tests/disko-install/default.nix
 ** [ ] Reuse parts of https://github.com/nix-community/nixos-images
+* home-manager
+** TODO modules/services/barrier.nix

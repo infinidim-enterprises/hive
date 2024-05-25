@@ -67,7 +67,6 @@
 
   programs.nix-ld.enable = true;
   programs.droidcam.enable = true;
-  programs.kdeconnect.enable = true;
 
   xdg.mime.enable = true;
 

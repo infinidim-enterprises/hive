@@ -20,6 +20,7 @@ mkMerge [
 
   {
     services.pass-secret-service.enable = true;
+    services.pass-secret-service.storePath = config.programs.password-store.settings.PASSWORD_STORE_DIR;
 
     programs.password-store = {
       enable = true;

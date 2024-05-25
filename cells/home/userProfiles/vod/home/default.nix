@@ -15,7 +15,7 @@ in
       profiles.pentester.traffic
       profiles.security.keybase
       profiles.security.password-store
-      # TODO: profiles.activitywatch
+      profiles.activitywatch
     ] ++
     (with profiles.look-and-feel;
     [
@@ -41,7 +41,8 @@ in
 
   home.packages = with pkgs; [ tigervnc jekyll vultr-cli virt-manager sops ];
 
-  programs.activitywatch.enable = true;
+  services.kdeconnect.enable = true;
+  services.kdeconnect.indicator = true;
 
   xdg.userDirs.extraConfig.XDG_PROJ_DIR = "$HOME/Projects";
   home.sessionVariables.XDG_PROJ_DIR = "$HOME/Projects";
