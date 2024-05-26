@@ -4,9 +4,13 @@
 {
   boot.kernel.sysctl."vm.swappiness" = 1;
 
+  # NOTE: Multiple issues with zfs and hibernation:
+  # https://github.com/openzfs/zfs/issues/12842
+  # https://github.com/openzfs/zfs/issues/260
+  # https://github.com/NixOS/nixpkgs/pull/208037
   boot.zfs.allowHibernation = lib.mkDefault true;
-  boot.zfs.forceImportAll = lib.mkDefault false;
-  boot.zfs.forceImportRoot = lib.mkDefault false;
+  boot.zfs.forceImportAll = false;
+  boot.zfs.forceImportRoot = false;
 
   boot.zfs.devNodes = "/dev/disk/by-id";
   boot.initrd.supportedFilesystems = [ "zfs" ];
@@ -36,8 +40,11 @@
       '';
   };
 
-  boot.kernelParams = [ "zfs_force=1" "rd.luks.allow-discards" ] ++
-    lib.optional
-      (cell.lib.isZfs config && config.deploy.params.zfsCacheMax != null)
-      "zfs.zfs_arc_max=${config.deploy.params.zfsCacheMax}";
+  boot.kernelParams = [
+    # "zfs_force=1"
+    "rd.luks.allow-discards"
+  ] ++
+  lib.optional
+    (cell.lib.isZfs config && config.deploy.params.zfsCacheMax != null)
+    "zfs.zfs_arc_max=${config.deploy.params.zfsCacheMax}";
 }
