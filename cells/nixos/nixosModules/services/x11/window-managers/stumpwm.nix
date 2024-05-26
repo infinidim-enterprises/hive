@@ -167,6 +167,25 @@ in
                   "org/mate/panel/objects/menu-bar".toplevel-id = "top";
                   "org/mate/panel/objects/menu-bar".position = 0;
 
+                  "org/mate/panel/objects/clock".applet-iid = "ClockAppletFactory::ClockApplet";
+                  "org/mate/panel/objects/clock".locked = true;
+                  "org/mate/panel/objects/clock".object-type = "applet";
+                  "org/mate/panel/objects/clock".panel-right-stick = true;
+                  "org/mate/panel/objects/clock".position = 0;
+                  "org/mate/panel/objects/clock".toplevel-id = "top";
+
+                  "org/mate/panel/objects/notification-area".applet-iid = "NotificationAreaAppletFactory::NotificationArea";
+                  "org/mate/panel/objects/notification-area".locked = true;
+                  "org/mate/panel/objects/notification-area".object-type = "applet";
+                  "org/mate/panel/objects/notification-area".panel-right-stick = true;
+                  "org/mate/panel/objects/notification-area".position = 10;
+                  "org/mate/panel/objects/notification-area".toplevel-id = "top";
+
+                  "org/mate/panel/toplevels/top".expand = true;
+                  "org/mate/panel/toplevels/top".orientation = "top";
+                  "org/mate/panel/toplevels/top".screen = 0;
+                  "org/mate/panel/toplevels/top".size = 24;
+
                   "org/mate/caja/preferences".enable-delete = true;
                   "org/mate/caja/preferences".confirm-trash = false;
                   "org/mate/caja/preferences".default-folder-viewer = "list-view";
