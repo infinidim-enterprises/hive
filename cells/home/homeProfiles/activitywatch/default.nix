@@ -26,7 +26,7 @@ in
           };
         };
 
-        aw-watcher-windows = {
+        aw-watcher-window = {
           package = pkgs.activitywatch;
           settings = {
             poll_time = 3;

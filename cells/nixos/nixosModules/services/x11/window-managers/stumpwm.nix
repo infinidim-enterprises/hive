@@ -162,6 +162,11 @@ in
                   "org/mate/panel/general".object-id-list = [ "menu-bar" "notification-area" "clock" ];
                   "org/mate/panel/general".toplevel-id-list = [ "top" ];
 
+                  "org/mate/panel/objects/menu-bar".object-type = "menu-bar";
+                  "org/mate/panel/objects/menu-bar".locked = true;
+                  "org/mate/panel/objects/menu-bar".toplevel-id = "top";
+                  "org/mate/panel/objects/menu-bar".position = 0;
+
                   "org/mate/caja/preferences".enable-delete = true;
                   "org/mate/caja/preferences".confirm-trash = false;
                   "org/mate/caja/preferences".default-folder-viewer = "list-view";
