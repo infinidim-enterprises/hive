@@ -39,7 +39,14 @@ in
       ballerina # NOTE: currently only java support
     ]);
 
-  home.packages = with pkgs; [ tigervnc jekyll vultr-cli virt-manager sops ];
+  home.packages = with pkgs; [
+    nyxt # TODO: nyxt proper config!
+    tigervnc
+    jekyll
+    vultr-cli
+    virt-manager
+    sops
+  ];
 
   services.kdeconnect.enable = true;
   services.kdeconnect.indicator = true;
