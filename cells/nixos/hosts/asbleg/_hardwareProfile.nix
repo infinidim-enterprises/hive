@@ -10,7 +10,7 @@ in
   deploy.params.ram = 8;
 
   boot.consoleLogLevel = 0;
-  boot.kernelPackages = pkgs.linuxPackages_xanmod_stable;
+  boot.kernelPackages = pkgs.linuxPackages_xanmod;
   boot.blacklistedKernelModules = [ "nouveau" ];
   boot.initrd.kernelModules = [ "drm" "intel_agp" "i915" ];
   hardware.opengl.enable = true;
