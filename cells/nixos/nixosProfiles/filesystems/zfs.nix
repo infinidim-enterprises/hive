@@ -7,16 +7,16 @@
   # NOTE: Multiple issues with zfs and hibernation:
   # https://github.com/openzfs/zfs/issues/12842
   # https://github.com/openzfs/zfs/issues/260
-  # https://github.com/NixOS/nixpkgs/pull/208037
-  boot.zfs.allowHibernation = lib.mkDefault true;
+  # TODO: once merged, allows semi-safe hibernation - https://github.com/NixOS/nixpkgs/pull/208037
+  boot.zfs.allowHibernation = false;
   boot.zfs.forceImportAll = false;
   boot.zfs.forceImportRoot = false;
 
   boot.zfs.devNodes = "/dev/disk/by-id";
   boot.initrd.supportedFilesystems = [ "zfs" ];
   boot.supportedFilesystems = [ "zfs" ];
+
   services.fstrim.enable = false;
-  # rd.luks.allow-discards
   services.zfs.trim.enable = false;
   services.zfs.autoScrub.enable = true;
 
