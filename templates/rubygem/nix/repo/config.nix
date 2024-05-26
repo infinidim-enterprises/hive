@@ -124,7 +124,7 @@ in
         }
         {
           name = "Install cachix action";
-          uses = "cachix/cachix-action@v14";
+          uses = "cachix/cachix-action@v15";
           "with" = {
             name = "njk";
             extraPullNames = "cuda-maintainers, mic92, nix-community, nrdxp";
