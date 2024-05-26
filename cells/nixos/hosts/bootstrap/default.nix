@@ -14,7 +14,7 @@ in
 
 rec {
   bee = {
-    # inherit (inputs.nixpkgs) system;
+    #  inherit (inputs.nixpkgs) system;
     system = "x86_64-linux";
     home = inputs.home-unstable;
     pkgs = import inputs.nixpkgs-unstable {
