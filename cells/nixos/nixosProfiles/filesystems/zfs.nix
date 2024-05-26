@@ -11,7 +11,9 @@
   boot.zfs.devNodes = "/dev/disk/by-id";
   boot.initrd.supportedFilesystems = [ "zfs" ];
   boot.supportedFilesystems = [ "zfs" ];
-  services.zfs.trim.enable = true;
+  services.fstrim.enable = false;
+  # rd.luks.allow-discards
+  services.zfs.trim.enable = false;
   services.zfs.autoScrub.enable = true;
 
   networking.hostId = lib.mkDefault (abort "ZFS requires networking.hostId to be set");
@@ -34,7 +36,7 @@
       '';
   };
 
-  boot.kernelParams = [ "zfs_force=1" ] ++
+  boot.kernelParams = [ "zfs_force=1" "rd.luks.allow-discards" ] ++
     lib.optional
       (cell.lib.isZfs config && config.deploy.params.zfsCacheMax != null)
       "zfs.zfs_arc_max=${config.deploy.params.zfsCacheMax}";
