@@ -47,11 +47,11 @@
   };
   copilot = {
     pname = "copilot";
-    version = "1.194.894";
+    version = "1.195.0";
     src = fetchurl {
-      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.194.894/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "copilot-1.194.894.zip";
-      sha256 = "sha256-k8DCvA8lJiWCmabPmZmXkbSUt9kG/MgWnoYYjqJwhjY=";
+      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.195.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "copilot-1.195.0.zip";
+      sha256 = "sha256-Hu+QfKu6mHp7+AkZgv7mSViO1SP93gkOBHMdSzYnloQ=";
     };
     publisher = "GitHub";
     name = "copilot";
@@ -80,11 +80,11 @@
   };
   cucumberautocomplete = {
     pname = "cucumberautocomplete";
-    version = "3.0.0";
+    version = "3.0.1";
     src = fetchurl {
-      url = "https://alexkrechik.gallery.vsassets.io/_apis/public/gallery/publisher/alexkrechik/extension/cucumberautocomplete/3.0.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "cucumberautocomplete-3.0.0.zip";
-      sha256 = "sha256-zoxZd6QL8P+hTuzAuckMurH3SMEco+AYoR/PBzO3cHs=";
+      url = "https://alexkrechik.gallery.vsassets.io/_apis/public/gallery/publisher/alexkrechik/extension/cucumberautocomplete/3.0.1/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "cucumberautocomplete-3.0.1.zip";
+      sha256 = "sha256-7kz0zeY2/ePvrIXv4R8W10uSFXT2GgWM30ftfwc30aY=";
     };
     publisher = "alexkrechik";
     name = "cucumberautocomplete";
@@ -124,11 +124,11 @@
   };
   gitlens = {
     pname = "gitlens";
-    version = "2024.5.2405";
+    version = "2024.5.2505";
     src = fetchurl {
-      url = "https://eamodio.gallery.vsassets.io/_apis/public/gallery/publisher/eamodio/extension/gitlens/2024.5.2405/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "gitlens-2024.5.2405.zip";
-      sha256 = "sha256-ppLytCQVz7EFpTUYn2jAd4MW1wCg/bYlbdsNQZcbzJg=";
+      url = "https://eamodio.gallery.vsassets.io/_apis/public/gallery/publisher/eamodio/extension/gitlens/2024.5.2505/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "gitlens-2024.5.2505.zip";
+      sha256 = "sha256-jvmHpfKPVfRFtp3NhKBRET00aVeTWT1lI09tnNfANMo=";
     };
     publisher = "eamodio";
     name = "gitlens";

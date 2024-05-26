@@ -45,15 +45,15 @@
   };
   chatgpt-wrapper = {
     pname = "chatgpt-wrapper";
-    version = "ece9f49d7efc8da0556ec1e47c9bb853ba2cf2ec";
+    version = "dfe329f493541a65a466cd21e1ac3caa34684a27";
     src = fetchFromGitHub {
       owner = "llm-workflow-engine";
       repo = "llm-workflow-engine";
-      rev = "ece9f49d7efc8da0556ec1e47c9bb853ba2cf2ec";
+      rev = "dfe329f493541a65a466cd21e1ac3caa34684a27";
       fetchSubmodules = false;
-      sha256 = "sha256-T9UjuEHvhzV3NEI4nx56eAzstTMUIXePG3WreWVPnUc=";
+      sha256 = "sha256-7bcnhhAsblK+xqZuYnNITr22QCds7nGFCAdV2Nz/MS4=";
     };
-    date = "2024-05-20";
+    date = "2024-05-24";
   };
   cl-hash-util = {
     pname = "cl-hash-util";
@@ -362,12 +362,12 @@
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "5e872e63fe9021adda07a1a655b51422623352c4";
+    version = "637bdc3d2f5216a9bb53d99c52bc7874a458bae4";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";
     };
-    date = "2024-05-24";
+    date = "2024-05-26";
   };
   pgp-key-generation = {
     pname = "pgp-key-generation";

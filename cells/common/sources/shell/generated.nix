@@ -53,15 +53,15 @@
   };
   shellspec = {
     pname = "shellspec";
-    version = "6f930df1d7a892870089731f9d996bf4d8fda220";
+    version = "45b02e05e3ac789459a3d649295370d2dce5180f";
     src = fetchFromGitHub {
       owner = "shellspec";
       repo = "shellspec";
-      rev = "6f930df1d7a892870089731f9d996bf4d8fda220";
+      rev = "45b02e05e3ac789459a3d649295370d2dce5180f";
       fetchSubmodules = false;
-      sha256 = "sha256-CNl3MDyFDlXeXOnZ1kmsSY1WCCgyiIfBx4HOHLo5swY=";
+      sha256 = "sha256-xN1Es6Se0kZSZiakpi0QeMBvGIgXwi1BIR8MIPHZ5ro=";
     };
-    date = "2024-05-21";
+    date = "2024-05-26";
   };
   shflags = {
     pname = "shflags";

@@ -72,7 +72,7 @@
     },
     "chatgpt-wrapper": {
         "cargoLocks": null,
-        "date": "2024-05-20",
+        "date": "2024-05-24",
         "extract": null,
         "name": "chatgpt-wrapper",
         "passthru": null,
@@ -84,11 +84,11 @@
             "name": null,
             "owner": "llm-workflow-engine",
             "repo": "llm-workflow-engine",
-            "rev": "ece9f49d7efc8da0556ec1e47c9bb853ba2cf2ec",
-            "sha256": "sha256-T9UjuEHvhzV3NEI4nx56eAzstTMUIXePG3WreWVPnUc=",
+            "rev": "dfe329f493541a65a466cd21e1ac3caa34684a27",
+            "sha256": "sha256-7bcnhhAsblK+xqZuYnNITr22QCds7nGFCAdV2Nz/MS4=",
             "type": "github"
         },
-        "version": "ece9f49d7efc8da0556ec1e47c9bb853ba2cf2ec"
+        "version": "dfe329f493541a65a466cd21e1ac3caa34684a27"
     },
     "cl-hash-util": {
         "cargoLocks": null,
@@ -595,7 +595,7 @@
     },
     "pbkdf2-sha512": {
         "cargoLocks": null,
-        "date": "2024-05-24",
+        "date": "2024-05-26",
         "extract": null,
         "name": "pbkdf2-sha512",
         "passthru": null,
@@ -606,7 +606,7 @@
             "type": "url",
             "url": "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c"
         },
-        "version": "5e872e63fe9021adda07a1a655b51422623352c4"
+        "version": "637bdc3d2f5216a9bb53d99c52bc7874a458bae4"
     },
     "pgp-key-generation": {
         "cargoLocks": null,
