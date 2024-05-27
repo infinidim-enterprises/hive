@@ -17,7 +17,7 @@ in
       profiles.security.password-store
       profiles.activitywatch
       profiles.browsers.firefox
-      profiles.browsers.floorp
+      # profiles.browsers.floorp
     ] ++
     (with profiles.look-and-feel;
     [
