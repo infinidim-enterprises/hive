@@ -17,47 +17,10 @@ lib.mkMerge [
       firefox_decrypt # extract passwords from profiles TODO: make an overlay with git version.
     ];
     programs.firefox.enable = true;
-    programs.firefox.package = pkgs.firefox-esr;
+    programs.firefox.package = pkgs.firefox; #-esr;
 
     programs.firefox.policies = import ./_firefox-browser-policies.nix;
-    /*
-      FIXME: firefox-esr DOES support sideloading addons
-      NOTE: https://blog.mozilla.org/addons/2020/03/10/support-for-extension-sideloading-has-ended
-      NOTE: https://github.com/NixOS/nixpkgs/issues/273509
-      NOTE: https://github.com/NixOS/nixpkgs/pull/269817
 
-      programs.firefox.extensions = with pkgs.firefox-addons; [
-      # ether-metamask
-      ugetintegration.value
-      russian-spellchecking-dic-3703.value
-      export-tabs-urls-and-titles.value
-      # passff
-      # org-capture
-      # promnesia
-      swisscows-search.value
-      darkreader.value
-      privacy-badger17.value
-
-      # aw-watcher-web
-
-      # duckduckgo-for-firefox
-      # browserpass-ce
-      # ugetintegration
-      # bukubrow
-      # reduxdevtools
-      # absolute-enable-right-click
-      # canvasblocker
-      # clearurls
-      # cookie-autodelete
-      # decentraleyes
-      # multi-account-containers
-      # temporary-containers
-      # https-everywhere
-      # privacy-badger17
-      # ublock-origin
-      # umatrix
-      ];
-    */
     programs.firefox.profiles.default = {
       id = 0;
       name = "default";
@@ -81,6 +44,7 @@ lib.mkMerge [
         swisscows-search
         darkreader
         privacy-badger17
+        absolute-enable-right-click
 
         # aw-watcher-web
 
@@ -89,7 +53,7 @@ lib.mkMerge [
         # ugetintegration
         # bukubrow
         # reduxdevtools
-        # absolute-enable-right-click
+
         # canvasblocker
         # clearurls
         # cookie-autodelete
