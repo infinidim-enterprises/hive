@@ -15,6 +15,8 @@ lib.mkMerge [
     programs.chromium.extensions = [
       # "nglaklhklhcoonedhgnpgddginnjdadi" # TODO: mkIf hmModule activitywatch enabled.
       "nkbihfbeogaeaoehlefnkodbefgpgknn" # metamask
+      "kcgpggonjhmeaejebeoeomdlohicfhce" # Removes cookies for the current site
+
       # "jpefmbpcbebpjpmelobfakahfdcgcmkl" # adblock for youtube
       "maekfnoeejhpjfkfmdlckioggdcdofpg" # Adblocker for Youtube™
       # "kbbdabhdfibnancpjfhlkhafgdilcnji" # Screenity

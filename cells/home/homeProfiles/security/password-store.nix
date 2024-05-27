@@ -41,7 +41,7 @@ mkMerge [
 
   (mkIf config.programs.rofi.enable {
     programs.rofi.pass.enable = true;
-    programs.rofi.pass.stores = mkDefault [ defaultPasswordStorePath ];
+    programs.rofi.pass.stores = [ config.programs.password-store.settings.PASSWORD_STORE_DIR ];
   })
 
   (mkIf (localLib.isGui osConfig) {
