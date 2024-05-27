@@ -173,6 +173,17 @@
       sha256 = "sha256-tAmmflchhgwJUUqBZgNSPp/0yGZdVfgT3EeZ6ko/QNg=";
     };
   };
+  firefox_user_js = {
+    pname = "firefox_user_js";
+    version = "122.0";
+    src = fetchFromGitHub {
+      owner = "arkenfox";
+      repo = "user.js";
+      rev = "122.0";
+      fetchSubmodules = false;
+      sha256 = "sha256-624Giuo1TfeXQGzcGK9ETW86esNFhFZ5a46DCjT6K5I=";
+    };
+  };
   git-get = {
     pname = "git-get";
     version = "8cd27a8f629317bd27432f2e9a4bd00561b3b21e";
@@ -362,12 +373,12 @@
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "637bdc3d2f5216a9bb53d99c52bc7874a458bae4";
+    version = "30881b23dbb6b2d8b8e48e0495e14473b0c69d0d";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";
     };
-    date = "2024-05-26";
+    date = "2024-05-27";
   };
   pgp-key-generation = {
     pname = "pgp-key-generation";
@@ -395,15 +406,15 @@
   };
   promnesia = {
     pname = "promnesia";
-    version = "02de43322d70e09f224cd5cb1ad33bfadae4744e";
+    version = "d2e4697877fb48b2cced50dd35c206b0491c8b28";
     src = fetchFromGitHub {
       owner = "karlicoss";
       repo = "promnesia";
-      rev = "02de43322d70e09f224cd5cb1ad33bfadae4744e";
+      rev = "d2e4697877fb48b2cced50dd35c206b0491c8b28";
       fetchSubmodules = false;
-      sha256 = "sha256-6PE3Ss0vvnXFvs1Geqc4eN3OqDgYn0kyG8egcl3a5Ww=";
+      sha256 = "sha256-kVGGyHgIaulPmtgyiahrDbYIHPvK3e2BsCm3IzG/lNE=";
     };
-    date = "2024-05-21";
+    date = "2024-05-26";
   };
   quicklisp = {
     pname = "quicklisp";

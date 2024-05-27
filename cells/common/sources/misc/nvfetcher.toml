@@ -259,4 +259,8 @@ src.use_latest_release = true
 src.github = "elbywan/crystalline"
 fetch.github = "elbywan/crystalline"
 
-###
+### firefox stuff, but not addons
+[firefox_user_js]
+src.use_latest_release = true
+src.github = "arkenfox/user.js"
+fetch.github = "arkenfox/user.js"

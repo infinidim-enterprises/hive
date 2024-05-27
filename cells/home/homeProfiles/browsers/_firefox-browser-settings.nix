@@ -1,6 +1,13 @@
 {
+  "browser.startup.page" = 3; # session restore
+
   "xpinstall.signatures.required" = false;
   "extensions.autoDisableScopes" = 0;
+
+  "privacy.clearOnShutdown.history" = false; # don't clear history
+  "privacy.resistFingerprinting.letterboxing" = false;
+  "webgl.disabled" = false;
+
 
   "distribution.searchplugins.defaultLocale" = "en-US";
 

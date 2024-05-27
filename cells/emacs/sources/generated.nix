@@ -144,15 +144,15 @@
   };
   nix-ts-mode = {
     pname = "nix-ts-mode";
-    version = "63d83d7fa721b1b27cac330beb5cfcbbcc808196";
+    version = "36effd4c7b37a83e782f6e53bc1b338f1cc2e583";
     src = fetchFromGitHub {
       owner = "remi-gelinas";
       repo = "nix-ts-mode";
-      rev = "63d83d7fa721b1b27cac330beb5cfcbbcc808196";
+      rev = "36effd4c7b37a83e782f6e53bc1b338f1cc2e583";
       fetchSubmodules = false;
-      sha256 = "sha256-yKctP4tv5dvVce/r+NIbCdt066hpxt0FQeCNyEr+iu4=";
+      sha256 = "sha256-l+rNPXZJMXu8kxwgxymZH2UhVXzrGDOAtRv4ZOavupk=";
     };
-    date = "2024-05-23";
+    date = "2024-05-27";
   };
   org-pretty-table = {
     pname = "org-pretty-table";

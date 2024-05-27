@@ -14,6 +14,29 @@
         platforms = platforms.all;
       };
   };
+  "auto-tab-discard" = rec {
+    pname = "auto-tab-discard";
+    version = "0.6.7";
+    addonId = "{c2c003ee-bd69-42a2-b0e9-6f34222cb046}";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4045009/auto_tab_discard-0.6.7.xpi";
+    sha256 = "89e59b8603c444258c89a507d7126be52ad7a35e4f7b8cfbca039b746f70b5d5";
+    meta = with lib;
+      {
+        homepage = "https://webextension.org/listing/tab-discard.html";
+        description = "Increase browser speed and reduce memory load and when you have numerous open tabs.";
+        license = licenses.mpl20;
+        mozPermissions = [
+          "idle"
+          "storage"
+          "contextMenus"
+          "notifications"
+          "alarms"
+          "*://*/*"
+          "<all_urls>"
+        ];
+        platforms = platforms.all;
+      };
+  };
   "aw-watcher-web" = rec {
     pname = "aw-watcher-web";
     version = "0.4.8";
@@ -534,6 +557,30 @@
         platforms = platforms.all;
       };
   };
+  "istilldontcareaboutcookies" = rec {
+    pname = "istilldontcareaboutcookies";
+    version = "1.1.4";
+    addonId = "idcac-pub@guus.ninja";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4216095/istilldontcareaboutcookies-1.1.4.xpi";
+    sha256 = "cadeb24622d3b9a2b82bf4308242fd802546b126bb9dd14e1ea66f2aa2066795";
+    meta = with lib;
+      {
+        homepage = "https://github.com/OhMyGuus/I-Dont-Care-About-Cookies";
+        description = "Community version of the popular extension \"I don't care about cookies\"  \n\n<a href=\"https://prod.outgoing.prod.webservices.mozgcp.net/v1/d899243c3222e303a4ac90833f850da61cdf8f7779e2685f60f657254302216d/https%3A//github.com/OhMyGuus/I-Dont-Care-About-Cookies\" rel=\"nofollow\">https://github.com/OhMyGuus/I-Dont-Care-About-Cookies</a>";
+        license = licenses.gpl3;
+        mozPermissions = [
+          "tabs"
+          "storage"
+          "http://*/*"
+          "https://*/*"
+          "notifications"
+          "webRequest"
+          "webRequestBlocking"
+          "webNavigation"
+        ];
+        platforms = platforms.all;
+      };
+  };
   "languagetool" = rec {
     pname = "languagetool";
     version = "8.6.0";
@@ -1039,6 +1086,54 @@
         platforms = platforms.all;
       };
   };
+  "privacy-redirect" = rec {
+    pname = "privacy-redirect";
+    version = "1.1.49";
+    addonId = "{b7f9d2cd-d772-4302-8c3f-eb941af36f76}";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3815058/privacy_redirect-1.1.49.xpi";
+    sha256 = "9f1cf6e58fa3f86d180b5b99549fa666fa853a827c48cb231558566b0c1c3c75";
+    meta = with lib;
+      {
+        homepage = "https://github.com/SimonBrazell/privacy-redirect";
+        description = "Redirects Twitter, YouTube, Instagram and more to privacy friendly alternatives.";
+        license = licenses.gpl3;
+        mozPermissions = [
+          "storage"
+          "webRequest"
+          "webRequestBlocking"
+          "<all_urls>"
+          "*://twitter.com/*"
+          "*://www.twitter.com/*"
+          "*://mobile.twitter.com/*"
+          "*://pbs.twimg.com/*"
+          "*://video.twimg.com/*"
+          "*://invidious.snopyta.org/*"
+          "*://invidious.xyz/*"
+          "*://invidious.kavin.rocks/*"
+          "*://tube.connect.cafe/*"
+          "*://invidious.zapashcanon.fr/*"
+          "*://invidiou.site/*"
+          "*://vid.mint.lgbt/*"
+          "*://invidious.site/*"
+          "*://yewtu.be/*"
+          "*://invidious.tube/*"
+          "*://invidious.silkky.cloud/*"
+          "*://invidious.himiko.cloud/*"
+          "*://inv.skyn3t.in/*"
+          "*://tube.incognet.io/*"
+          "*://invidious.tinfoil-hat.net/*"
+          "*://invidious.namazso.eu/*"
+          "*://vid.puffyan.us/*"
+          "*://dev.viewtube.io/*"
+          "*://invidious.048596.xyz/*"
+          "*://fz253lmuao3strwbfbmx46yu7acac2jz27iwtorgmbqlkurlclmancad.onion/*"
+          "*://qklhadlycap4cnod.onion/*"
+          "*://c7hqkpkpemu6e7emz5b4vyz7idjgdvgaaa3dyimmeojqbgpea3xqjoid.onion/*"
+          "*://w6ijuptxiku4xpnnaetxvnkc5vqcdu7mgns2u77qefoixi63vbvnpnqd.onion/*"
+        ];
+        platforms = platforms.all;
+      };
+  };
   "promnesia" = rec {
     pname = "promnesia";
     version = "1.2.4";
@@ -1104,6 +1199,28 @@
         platforms = platforms.all;
       };
   };
+  "skip-redirect" = rec {
+    pname = "skip-redirect";
+    version = "2.3.6";
+    addonId = "skipredirect@sblask";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3920533/skip_redirect-2.3.6.xpi";
+    sha256 = "dbe8950245c1f475c5c1c6daab89c79b83ba4680621c91e80f15be7b09b618ae";
+    meta = with lib;
+      {
+        description = "Some web pages use intermediary pages before redirecting to a final page. This add-on tries to extract the final url from the intermediary url and goes there straight away if successful.";
+        license = licenses.mit;
+        mozPermissions = [
+          "<all_urls>"
+          "clipboardWrite"
+          "contextMenus"
+          "notifications"
+          "storage"
+          "webRequest"
+          "webRequestBlocking"
+        ];
+        platforms = platforms.all;
+      };
+  };
   "swisscows-search" = rec {
     pname = "swisscows-search";
     version = "1.4";
@@ -1139,6 +1256,57 @@
           "tabs"
           "webRequest"
           "webRequestBlocking"
+        ];
+        platforms = platforms.all;
+      };
+  };
+  "temporary-containers" = rec {
+    pname = "temporary-containers";
+    version = "1.9.2";
+    addonId = "{c607c8df-14a7-4f28-894f-29e8722976af}";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3723251/temporary_containers-1.9.2.xpi";
+    sha256 = "3340a08c29be7c83bd0fea3fc27fde71e4608a4532d932114b439aa690e7edc0";
+    meta = with lib;
+      {
+        homepage = "https://github.com/stoically/temporary-containers";
+        description = "Open tabs, websites, and links in automatically managed disposable containers which isolate the data websites store (cookies, storage, and more) from each other, enhancing your privacy and security while you browse.";
+        license = licenses.mit;
+        mozPermissions = [
+          "<all_urls>"
+          "contextMenus"
+          "contextualIdentities"
+          "cookies"
+          "management"
+          "storage"
+          "tabs"
+          "webRequest"
+          "webRequestBlocking"
+        ];
+        platforms = platforms.all;
+      };
+  };
+  "tree-style-tab" = rec {
+    pname = "tree-style-tab";
+    version = "4.0.15";
+    addonId = "treestyletab@piro.sakura.ne.jp";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4290043/tree_style_tab-4.0.15.xpi";
+    sha256 = "edcf2c8509786ee0c6f93579e25b1b491223f96bc0ba9bc08fd5852cb4c5f02e";
+    meta = with lib;
+      {
+        homepage = "http://piro.sakura.ne.jp/xul/_treestyletab.html.en";
+        description = "Show tabs like a tree.";
+        mozPermissions = [
+          "activeTab"
+          "contextualIdentities"
+          "cookies"
+          "menus"
+          "menus.overrideContext"
+          "notifications"
+          "search"
+          "sessions"
+          "storage"
+          "tabs"
+          "theme"
         ];
         platforms = platforms.all;
       };

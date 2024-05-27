@@ -2,7 +2,20 @@
 
 { pkgs, lib, config, ... }:
 let
-  settings = import ./_firefox-browser-settings.nix;
+  arkenfox_user_js =
+    let
+      inherit (lib // builtins) fromJSON fileContents;
+      jsonFile =
+        pkgs.runCommandNoCC "arkenfox_user_js" { buildInputs = [ pkgs.nodejs ]; } ''
+          cp ${./user_js_to_json.js} ./script.js
+          cp ${pkgs.sources.firefox_user_js.src}/user.js ./
+          node ./script.js
+          cp prefs.json $out
+        '';
+    in
+    fromJSON (fileContents jsonFile);
+  # NOTE: Not letting arkenfox overwrite settings
+  settings = arkenfox_user_js // (import ./_firefox-browser-settings.nix);
   policies = import ./_firefox-browser-policies.nix;
 in
 lib.mkMerge [
@@ -33,41 +46,62 @@ lib.mkMerge [
       name = "default";
       isDefault = true;
       extraConfig = ''
-        // Show more ssl cert infos
         lockPref("security.identityblock.show_extended_validation", true);
+        lockPref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
+        lockPref("browser.tabs.inTitlebar", "0");
+        lockPref("media.ffmpeg.vaapi.enabled", true);
       '';
+
+      userChrome = ''
+        /* Hide horizontal tabs on top of the window */
+        #main-window[tabsintitlebar="true"]:not([extradragspace="true"]) #TabsToolbar > .toolbar-items {
+          opacity: 0;
+          pointer-events: none;
+        }
+        #main-window:not([tabsintitlebar="true"]) #TabsToolbar {
+          visibility: collapse !important;
+        }
+      '';
+
       # TODO: firefox: How to set "restore session on startup" in settings?
       inherit settings;
 
       # NOTE: https://bugzilla.mozilla.org/show_bug.cgi?id=259356
       # NOTE: fuck you mozilla devs, you're a bunch of stupid wankers! - a 20 years old bug
       extensions = with pkgs.firefox-addons; [
+        ublock-origin
+        skip-redirect
+        multi-account-containers
+
+        istilldontcareaboutcookies
+        # MAYBE: privacy-redirect
+        tree-style-tab
+        auto-tab-discard
+        temporary-containers
+
         # ether-metamask
         ugetintegration
         russian-spellchecking-dic-3703
         export-tabs-urls-and-titles
-        # passff
-        # org-capture
-        # promnesia
         swisscows-search
         darkreader
         privacy-badger17
         absolute-enable-right-click
         aw-watcher-web
 
+        # passff
+        # org-capture
+        # promnesia
         # duckduckgo-for-firefox
         # browserpass-ce
         # bukubrow
         # reduxdevtools
-
         # canvasblocker
         # clearurls
         # cookie-autodelete
         # decentraleyes
-        # multi-account-containers
         # temporary-containers
         # https-everywhere
-        # ublock-origin
         # umatrix
       ];
     };

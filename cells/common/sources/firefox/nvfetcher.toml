@@ -1,5 +1,4 @@
 [[addons]]
-# TODO: ugetintegration
 slug = "ugetintegration"
 
 [[addons]]
@@ -72,6 +71,9 @@ slug = "privacy-badger17"
 slug = "ublock-origin"
 
 [[addons]]
+slug = "skip-redirect"
+
+[[addons]]
 slug = "umatrix"
 
 [[addons]]
@@ -82,3 +84,18 @@ slug = "enterprise-policy-generator"
 
 [[addons]]
 slug = "languagetool"
+
+[[addons]]
+slug = "tree-style-tab"
+
+[[addons]]
+slug = "auto-tab-discard"
+
+[[addons]]
+slug = "temporary-containers"
+
+[[addons]]
+slug = "privacy-redirect"
+
+[[addons]]
+slug = "istilldontcareaboutcookies"
