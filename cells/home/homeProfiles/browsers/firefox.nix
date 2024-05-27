@@ -100,7 +100,6 @@ lib.mkMerge [
         # clearurls
         # cookie-autodelete
         # decentraleyes
-        # temporary-containers
         # https-everywhere
         # umatrix
       ];

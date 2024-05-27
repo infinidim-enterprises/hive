@@ -1260,31 +1260,6 @@
         platforms = platforms.all;
       };
   };
-  "temporary-containers" = rec {
-    pname = "temporary-containers";
-    version = "1.9.2";
-    addonId = "{c607c8df-14a7-4f28-894f-29e8722976af}";
-    url = "https://addons.mozilla.org/firefox/downloads/file/3723251/temporary_containers-1.9.2.xpi";
-    sha256 = "3340a08c29be7c83bd0fea3fc27fde71e4608a4532d932114b439aa690e7edc0";
-    meta = with lib;
-      {
-        homepage = "https://github.com/stoically/temporary-containers";
-        description = "Open tabs, websites, and links in automatically managed disposable containers which isolate the data websites store (cookies, storage, and more) from each other, enhancing your privacy and security while you browse.";
-        license = licenses.mit;
-        mozPermissions = [
-          "<all_urls>"
-          "contextMenus"
-          "contextualIdentities"
-          "cookies"
-          "management"
-          "storage"
-          "tabs"
-          "webRequest"
-          "webRequestBlocking"
-        ];
-        platforms = platforms.all;
-      };
-  };
   "tree-style-tab" = rec {
     pname = "tree-style-tab";
     version = "4.0.15";

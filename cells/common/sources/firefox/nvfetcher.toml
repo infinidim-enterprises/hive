@@ -92,9 +92,6 @@ slug = "tree-style-tab"
 slug = "auto-tab-discard"
 
 [[addons]]
-slug = "temporary-containers"
-
-[[addons]]
 slug = "privacy-redirect"
 
 [[addons]]
