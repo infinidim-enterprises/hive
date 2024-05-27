@@ -70,15 +70,15 @@ lib.mkMerge [
 
       extensions = with pkgs.firefox-addons; [
         # ether-metamask
-        ugetintegration.value
-        russian-spellchecking-dic-3703.value
-        export-tabs-urls-and-titles.value
+        ugetintegration
+        russian-spellchecking-dic-3703
+        export-tabs-urls-and-titles
         # passff
         # org-capture
         # promnesia
-        swisscows-search.value
-        darkreader.value
-        privacy-badger17.value
+        swisscows-search
+        darkreader
+        privacy-badger17
 
         # aw-watcher-web
 
