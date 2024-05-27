@@ -19,7 +19,7 @@ lib.mkMerge [
     programs.firefox.enable = true;
     programs.firefox.package = pkgs.firefox-esr-unwrapped;
 
-    programs.firefox.extraPolicies = import ./_firefox-browser-policies.nix;
+    programs.firefox.policies = import ./_firefox-browser-policies.nix;
     programs.firefox.extraPrefs = ''
       // Show more ssl cert infos
       lockPref("security.identityblock.show_extended_validation", true);
@@ -67,8 +67,43 @@ lib.mkMerge [
       id = 0;
       name = "default";
       isDefault = true;
+      extensions = with pkgs.firefox-addons; [
+        # ether-metamask
+        ugetintegration.value
+        russian-spellchecking-dic-3703.value
+        export-tabs-urls-and-titles.value
+        # passff
+        # org-capture
+        # promnesia
+        swisscows-search.value
+        darkreader.value
+        privacy-badger17.value
+
+        # aw-watcher-web
+
+        # duckduckgo-for-firefox
+        # browserpass-ce
+        # ugetintegration
+        # bukubrow
+        # reduxdevtools
+        # absolute-enable-right-click
+        # canvasblocker
+        # clearurls
+        # cookie-autodelete
+        # decentraleyes
+        # multi-account-containers
+        # temporary-containers
+        # https-everywhere
+        # privacy-badger17
+        # ublock-origin
+        # umatrix
+      ];
+
       # TODO: firefox: How to set "restore session on startup" in settings?
       settings = {
+        "xpinstall.signatures.required" = false;
+        "extensions.autoDisableScopes" = 0;
+
         "distribution.searchplugins.defaultLocale" = "en-US";
 
         "general.smoothScroll" = true;
