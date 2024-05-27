@@ -87,7 +87,7 @@ lib.mkMerge [
         darkreader
         privacy-badger17
         absolute-enable-right-click
-        aw-watcher-web
+        # aw-watcher-web
 
         # passff
         # org-capture
