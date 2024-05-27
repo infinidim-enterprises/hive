@@ -138,7 +138,6 @@
   "toolkit.telemetry.unified" = false;
   "toolkit.telemetry.unifiedIsOptIn" = false;
   "toolkit.telemetry.updatePing.enabled" = false;
-  "webgl.disabled" = true;
   "webgl.renderer-string-override" = " ";
   "webgl.vendor-string-override" = " ";
 }
