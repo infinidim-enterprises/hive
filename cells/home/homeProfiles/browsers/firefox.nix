@@ -68,6 +68,8 @@ lib.mkMerge [
       '';
       # lockPref("extensions.autoDisableScopes", 0)
 
+      # NOTE: https://bugzilla.mozilla.org/show_bug.cgi?id=259356
+      # NOTE: fuck you mozilla devs, you're a bunch of stupid wankers! - a 20 years old bug
       extensions = with pkgs.firefox-addons; [
         # ether-metamask
         ugetintegration
