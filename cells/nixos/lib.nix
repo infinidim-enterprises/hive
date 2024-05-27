@@ -72,7 +72,6 @@ in
                 (with inputs.cells.home.homeModules; [
                   services.trezor-agent
                   services.emacs
-                  # programs.firefox
                   programs.promnesia
                   programs.chemacs
                 ]);

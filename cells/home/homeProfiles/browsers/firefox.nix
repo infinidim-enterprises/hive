@@ -17,7 +17,7 @@ lib.mkMerge [
       firefox_decrypt # extract passwords from profiles TODO: make an overlay with git version.
     ];
     programs.firefox.enable = true;
-    # programs.firefox.package = pkgs.firefox-esr;
+    programs.firefox.package = pkgs.firefox-esr;
 
     programs.firefox.policies = import ./_firefox-browser-policies.nix;
     /*
