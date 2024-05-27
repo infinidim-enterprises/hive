@@ -45,12 +45,6 @@ lib.mkMerge [
       id = 0;
       name = "default";
       isDefault = true;
-      extraConfig = ''
-        lockPref("security.identityblock.show_extended_validation", true);
-        lockPref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
-        lockPref("browser.tabs.inTitlebar", "0");
-        lockPref("media.ffmpeg.vaapi.enabled", true);
-      '';
 
       userChrome = ''
         /* Hide horizontal tabs on top of the window */
@@ -60,6 +54,8 @@ lib.mkMerge [
         }
         #main-window:not([tabsintitlebar="true"]) #TabsToolbar {
           visibility: collapse !important;
+          height: 0 !important;
+          margin-bottom: 0 !important;
         }
       '';
 

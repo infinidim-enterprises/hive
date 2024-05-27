@@ -2,6 +2,9 @@
   "browser.startup.page" = 3; # session restore
 
   "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+  "browser.tabs.inTitlebar" = 0;
+  "media.ffmpeg.vaapi.enabled" = true;
+  "security.identityblock.show_extended_validation" = true;
 
   "xpinstall.signatures.required" = false;
   "extensions.autoDisableScopes" = 0;
