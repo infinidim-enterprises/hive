@@ -1,6 +1,8 @@
 {
   "browser.startup.page" = 3; # session restore
 
+  "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+
   "xpinstall.signatures.required" = false;
   "extensions.autoDisableScopes" = 0;
 
