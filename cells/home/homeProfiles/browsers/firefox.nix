@@ -20,11 +20,6 @@ lib.mkMerge [
     programs.firefox.package = pkgs.firefox-esr-unwrapped;
 
     programs.firefox.policies = import ./_firefox-browser-policies.nix;
-    programs.firefox.extraPrefs = ''
-      // Show more ssl cert infos
-      lockPref("security.identityblock.show_extended_validation", true);
-      lockPref("extensions.autoDisableScopes", 0)
-    '';
     /*
       FIXME: firefox-esr DOES support sideloading addons
       NOTE: https://blog.mozilla.org/addons/2020/03/10/support-for-extension-sideloading-has-ended
@@ -67,6 +62,12 @@ lib.mkMerge [
       id = 0;
       name = "default";
       isDefault = true;
+      extraConfig = ''
+        // Show more ssl cert infos
+        lockPref("security.identityblock.show_extended_validation", true);
+      '';
+      # lockPref("extensions.autoDisableScopes", 0)
+
       extensions = with pkgs.firefox-addons; [
         # ether-metamask
         ugetintegration.value
