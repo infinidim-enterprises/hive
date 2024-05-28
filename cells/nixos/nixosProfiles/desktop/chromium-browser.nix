@@ -1,9 +1,7 @@
 { inputs, cell, ... }:
 
 { lib, config, pkgs, ... }:
-# let
 
-# in
 lib.mkMerge [
   {
     environment.systemPackages = [ pkgs.chromium ];
@@ -16,9 +14,10 @@ lib.mkMerge [
       # "nglaklhklhcoonedhgnpgddginnjdadi" # TODO: mkIf hmModule activitywatch enabled.
       "nkbihfbeogaeaoehlefnkodbefgpgknn" # metamask
       "kcgpggonjhmeaejebeoeomdlohicfhce" # Removes cookies for the current site
+      "ldpochfccmkkmhdbclfhpagapcfdljkj" # Decentraleyes
+      "maekfnoeejhpjfkfmdlckioggdcdofpg" # Adblocker for Youtube™
 
       # "jpefmbpcbebpjpmelobfakahfdcgcmkl" # adblock for youtube
-      "maekfnoeejhpjfkfmdlckioggdcdofpg" # Adblocker for Youtube™
       # "kbbdabhdfibnancpjfhlkhafgdilcnji" # Screenity
       # "kkkjlfejijcjgjllecmnejhogpbcigdc" # org-capture
       # "kdmegllpofldcpaclldkopnnjjljoiio" # promnesia

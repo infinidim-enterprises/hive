@@ -2,6 +2,93 @@
 
 { pkgs, lib, config, ... }:
 let
+  search = {
+    force = true;
+    default = "swisscows";
+    order = [ "DuckDuckGo" ];
+    engines = {
+      "Amazon.com".metaData.hidden = true;
+      "Bing".metaData.hidden = true;
+      "Google".metaData.hidden = true;
+      "Wikipedia (en)".metaData.alias = "@w";
+      "swisscows" = {
+        urls = [{ template = "https://swisscows.com/en/web?query={searchTerms}&region=en-US"; }];
+      };
+
+      "Nix Packages" = {
+        urls = [
+          {
+            template = "https://search.nixos.org/packages";
+            params = [
+              {
+                name = "channel";
+                value = "unstable";
+              }
+              {
+                name = "type";
+                value = "packages";
+              }
+              {
+                name = "query";
+                value = "{searchTerms}";
+              }
+            ];
+          }
+        ];
+
+        icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+        definedAliases = [ "@np" ];
+      };
+
+      "NixOS Options" = {
+        urls = [
+          {
+            template = "https://search.nixos.org/options";
+            params = [
+              {
+                name = "channel";
+                value = "unstable";
+              }
+              {
+                name = "type";
+                value = "packages";
+              }
+              {
+                name = "query";
+                value = "{searchTerms}";
+              }
+            ];
+          }
+        ];
+
+        icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+        definedAliases = [ "@no" ];
+      };
+
+      "NixOS Wiki" = {
+        urls = [{ template = "https://nixos.wiki/index.php?search={searchTerms}"; }];
+        iconUpdateURL = "https://nixos.wiki/favicon.png";
+        updateInterval = 24 * 60 * 60 * 1000; # every day
+        definedAliases = [ "@nw" ];
+      };
+
+      "nix functions" = {
+        urls = [{ template = "https://noogle.dev/q?term={searchTerms}"; }];
+        definedAliases = [ "@nf" ];
+      };
+
+      "mynixos" = {
+        urls = [{ template = "https://mynixos.com/search?q={searchTerms}"; }];
+        definedAliases = [ "@mn" ];
+      };
+
+      "home-manager options" = {
+        urls = [{ template = "https://home-manager-options.extranix.com/?query={searchTerms}&release=master"; }];
+        definedAliases = [ "@ho" ];
+      };
+    };
+  };
+
   arkenfox_user_js =
     let
       inherit (lib // builtins) fromJSON fileContents;
@@ -42,6 +129,7 @@ lib.mkMerge [
     ];
 
     programs.firefox.profiles.default = {
+      inherit settings search;
       id = 0;
       name = "default";
       isDefault = true;
@@ -59,9 +147,6 @@ lib.mkMerge [
         }
       '';
 
-      # TODO: firefox: How to set "restore session on startup" in settings?
-      inherit settings;
-
       # NOTE: https://bugzilla.mozilla.org/show_bug.cgi?id=259356
       # NOTE: fuck you mozilla devs, you're a bunch of stupid wankers! - a 20 years old bug
       extensions = with pkgs.firefox-addons; [
@@ -71,33 +156,34 @@ lib.mkMerge [
 
         istilldontcareaboutcookies
         # MAYBE: privacy-redirect
+        umatrix
         tree-style-tab
         auto-tab-discard
         temporary-containers
 
         # ether-metamask
         ugetintegration
+        bukubrow
         russian-spellchecking-dic-3703
         export-tabs-urls-and-titles
         swisscows-search
         darkreader
         privacy-badger17
         absolute-enable-right-click
-        # aw-watcher-web
+        aw-watcher-web
+        decentraleyes
 
         # passff
         # org-capture
         # promnesia
         # duckduckgo-for-firefox
         # browserpass-ce
-        # bukubrow
         # reduxdevtools
         # canvasblocker
         # clearurls
         # cookie-autodelete
-        # decentraleyes
         # https-everywhere
-        # umatrix
+        #
       ];
     };
   }
