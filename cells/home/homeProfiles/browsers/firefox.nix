@@ -171,7 +171,7 @@ lib.mkMerge [
         privacy-badger17
         absolute-enable-right-click
         aw-watcher-web
-        decentraleyes
+        # NOTE: makes everything very slow - decentraleyes
 
         # passff
         # org-capture
