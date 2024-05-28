@@ -111,7 +111,7 @@ let
   filters = with lib; imap1
     (counter: v: {
       enabled = true;
-      id = (fname v) + "_" + (toString counter);
+      id = counter;
       url = v;
       name = fname v;
     })
