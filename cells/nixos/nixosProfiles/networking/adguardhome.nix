@@ -108,7 +108,14 @@ let
       prefix = "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/";
     in
     removeSuffix ".txt" (replaceStrings [ "/" ] [ "_" ] (removePrefix prefix url));
-  filters = with lib; imap1 (counter: v: { enabled = true; id = counter; url = v; name = fname v; }) all_filters;
+  filters = with lib; imap1
+    (counter: v: {
+      enabled = true;
+      id = (fname v) + "_" + (toString counter);
+      url = v;
+      name = fname v;
+    })
+    all_filters;
 in
 mkMerge
   [
