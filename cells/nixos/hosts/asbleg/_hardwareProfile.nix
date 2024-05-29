@@ -20,6 +20,8 @@ in
   services.logind.lidSwitchExternalPower = "ignore";
   services.logind.lidSwitch = "ignore";
 
+  # loaded firmware version 29.4063824552.0 7265D-29.ucode
+  #
   # NOTE: https://github.com/systemd/systemd/issues/25269
   # services.logind.lidSwitch = "suspend-then-hibernate";
   # systemd.sleep.extraConfig = ''

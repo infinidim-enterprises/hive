@@ -92,7 +92,7 @@
     },
     "cl-hash-util": {
         "cargoLocks": null,
-        "date": "2023-07-05",
+        "date": "2024-05-28",
         "extract": null,
         "name": "cl-hash-util",
         "passthru": null,
@@ -104,11 +104,11 @@
             "name": null,
             "owner": "orthecreedence",
             "repo": "cl-hash-util",
-            "rev": "43f6d363722bf849bef10010e07fca17f024fb9d",
-            "sha256": "sha256-A1pZT35RkA9xeQ7ulh2shrqEMUgSoYx8Ry3j1GyRWPU=",
+            "rev": "b46b0cb87a8f1cb0ab7ce18816062e31d98a6e54",
+            "sha256": "sha256-X2z8IqLjOyN0Wk768TpeHk96IYEjru0MySl01k0IsuI=",
             "type": "github"
         },
-        "version": "43f6d363722bf849bef10010e07fca17f024fb9d"
+        "version": "b46b0cb87a8f1cb0ab7ce18816062e31d98a6e54"
     },
     "cl-mount-info": {
         "cargoLocks": null,
@@ -472,6 +472,21 @@
         },
         "version": "2.77.2"
     },
+    "linux-firmware": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "linux-firmware",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-Jc1HyGsfX3WRRst+a4xJw6SLOd7FBzSvcpirkQ7g6ZY=",
+            "type": "url",
+            "url": "https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/linux-firmware-20240410.tar.gz"
+        },
+        "version": "20240410"
+    },
     "listopia": {
         "cargoLocks": null,
         "date": "2021-03-17",
@@ -615,7 +630,7 @@
     },
     "pbkdf2-sha512": {
         "cargoLocks": null,
-        "date": "2024-05-27",
+        "date": "2024-05-29",
         "extract": null,
         "name": "pbkdf2-sha512",
         "passthru": null,
@@ -626,7 +641,7 @@
             "type": "url",
             "url": "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c"
         },
-        "version": "ba9ce78e30320c15b8fe3adf0797a4ed560cfaae"
+        "version": "12f94650676ad7ee0a953134edb135a24f20604a"
     },
     "pgp-key-generation": {
         "cargoLocks": null,
@@ -670,7 +685,7 @@
     },
     "promnesia": {
         "cargoLocks": null,
-        "date": "2024-05-26",
+        "date": "2024-05-29",
         "extract": null,
         "name": "promnesia",
         "passthru": null,
@@ -682,11 +697,11 @@
             "name": null,
             "owner": "karlicoss",
             "repo": "promnesia",
-            "rev": "d2e4697877fb48b2cced50dd35c206b0491c8b28",
-            "sha256": "sha256-kVGGyHgIaulPmtgyiahrDbYIHPvK3e2BsCm3IzG/lNE=",
+            "rev": "bbe32027ef4f113138379b6d73950b68e176c17d",
+            "sha256": "sha256-S5PkqjNqQMVzZYI+VzGUk76lVacYHYPRQybMLGVKe5s=",
             "type": "github"
         },
-        "version": "d2e4697877fb48b2cced50dd35c206b0491c8b28"
+        "version": "bbe32027ef4f113138379b6d73950b68e176c17d"
     },
     "quicklisp": {
         "cargoLocks": null,

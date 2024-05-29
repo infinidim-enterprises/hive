@@ -264,3 +264,7 @@ fetch.github = "elbywan/crystalline"
 src.use_latest_release = true
 src.github = "arkenfox/user.js"
 fetch.github = "arkenfox/user.js"
+
+[linux-firmware]
+src.manual = "20240410"
+fetch.url = "https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/linux-firmware-$ver.tar.gz"

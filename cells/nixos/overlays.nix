@@ -7,6 +7,7 @@
     nixpkgs-release-overrides
     nixpkgs-master-overrides
     dart-fix
+    linux-firmware-fix
     sources
     python
   ];

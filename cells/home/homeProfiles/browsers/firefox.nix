@@ -4,16 +4,14 @@
 let
   search = {
     force = true;
-    default = "swisscows";
+    default = "Swisscows";
     order = [ "DuckDuckGo" ];
     engines = {
       "Amazon.com".metaData.hidden = true;
       "Bing".metaData.hidden = true;
       "Google".metaData.hidden = true;
       "Wikipedia (en)".metaData.alias = "@w";
-      "swisscows" = {
-        urls = [{ template = "https://swisscows.com/en/web?query={searchTerms}&region=en-US"; }];
-      };
+      # "swisscows" = { urls = [{ template = "https://swisscows.com/en/web?query={searchTerms}&region=en-US"; }]; };
 
       "Nix Packages" = {
         urls = [

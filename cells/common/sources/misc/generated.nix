@@ -57,15 +57,15 @@
   };
   cl-hash-util = {
     pname = "cl-hash-util";
-    version = "43f6d363722bf849bef10010e07fca17f024fb9d";
+    version = "b46b0cb87a8f1cb0ab7ce18816062e31d98a6e54";
     src = fetchFromGitHub {
       owner = "orthecreedence";
       repo = "cl-hash-util";
-      rev = "43f6d363722bf849bef10010e07fca17f024fb9d";
+      rev = "b46b0cb87a8f1cb0ab7ce18816062e31d98a6e54";
       fetchSubmodules = false;
-      sha256 = "sha256-A1pZT35RkA9xeQ7ulh2shrqEMUgSoYx8Ry3j1GyRWPU=";
+      sha256 = "sha256-X2z8IqLjOyN0Wk768TpeHk96IYEjru0MySl01k0IsuI=";
     };
-    date = "2023-07-05";
+    date = "2024-05-28";
   };
   cl-mount-info = {
     pname = "cl-mount-info";
@@ -283,6 +283,14 @@
       sha256 = "sha256-orIyfRs6TJgqGGLpl2tvoUtejsB0ni8xRK0SboP2LHw=";
     };
   };
+  linux-firmware = {
+    pname = "linux-firmware";
+    version = "20240410";
+    src = fetchurl {
+      url = "https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/linux-firmware-20240410.tar.gz";
+      sha256 = "sha256-Jc1HyGsfX3WRRst+a4xJw6SLOd7FBzSvcpirkQ7g6ZY=";
+    };
+  };
   listopia = {
     pname = "listopia";
     version = "2d2a1a3c35580252ca0085e15ebf625f73230d60";
@@ -373,12 +381,12 @@
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "ba9ce78e30320c15b8fe3adf0797a4ed560cfaae";
+    version = "12f94650676ad7ee0a953134edb135a24f20604a";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";
     };
-    date = "2024-05-27";
+    date = "2024-05-29";
   };
   pgp-key-generation = {
     pname = "pgp-key-generation";
@@ -406,15 +414,15 @@
   };
   promnesia = {
     pname = "promnesia";
-    version = "d2e4697877fb48b2cced50dd35c206b0491c8b28";
+    version = "bbe32027ef4f113138379b6d73950b68e176c17d";
     src = fetchFromGitHub {
       owner = "karlicoss";
       repo = "promnesia";
-      rev = "d2e4697877fb48b2cced50dd35c206b0491c8b28";
+      rev = "bbe32027ef4f113138379b6d73950b68e176c17d";
       fetchSubmodules = false;
-      sha256 = "sha256-kVGGyHgIaulPmtgyiahrDbYIHPvK3e2BsCm3IzG/lNE=";
+      sha256 = "sha256-S5PkqjNqQMVzZYI+VzGUk76lVacYHYPRQybMLGVKe5s=";
     };
-    date = "2024-05-26";
+    date = "2024-05-29";
   };
   quicklisp = {
     pname = "quicklisp";
