@@ -9,9 +9,12 @@ in
   deploy.params.gpu = "intel";
   deploy.params.ram = 8;
 
-  boot.plymouth.enable = true;
+  # boot.plymouth.enable = true;
   # NOTE: i915 *ERROR* GPIO index request failed (-ENOENT)
   boot.kernelParams = [ "drm.debug=0" ];
+  boot.extraModprobeConfig = ''
+    options iwlwifi bt_coex_active=0 11n_disable=1 wd_disable=0
+  '';
 
   boot.consoleLogLevel = 0;
   boot.kernelPackages = pkgs.linuxPackages_xanmod_stable;
