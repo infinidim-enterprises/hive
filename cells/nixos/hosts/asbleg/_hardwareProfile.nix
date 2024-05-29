@@ -11,12 +11,13 @@ in
 
   # boot.plymouth.enable = true;
   # NOTE: i915 *ERROR* GPIO index request failed (-ENOENT)
-  boot.kernelParams = [ "drm.debug=0" "i915.verbose_state_checks=0" "i915.guc_log_level=0" ];
+  boot.kernelParams = [ "drm.debug=0" ];
   # NOTE: tradeoff - get lower wifi speeds, but at least no interruptions
   # NOTE: iwlmvm doesn't allow to disable BT Coex, check bt_coex_active module parameter
   # bt_coex_active=0
   boot.extraModprobeConfig = ''
     options iwlwifi 11n_disable=1
+    options i915 verbose_state_checks=0 guc_log_level=0
   '';
 
   boot.consoleLogLevel = 0;
