@@ -1,7 +1,10 @@
 { inputs, cell, ... }:
 final: prev:
-{
-  linux-firmware = prev.linux-firmware.overrideAttrs (_: {
-    inherit (final.sources.linux-firmware) version src;
-  });
-}
+let
+  working_iwlwifi = import inputs.nixpkgs-linux-firmware {
+    inherit (inputs.nixpkgs) system;
+    config.allowUnfree = true;
+  };
+
+in
+{ inherit (working_iwlwifi) linux-firmware; }

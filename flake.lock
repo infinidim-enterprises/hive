@@ -3037,6 +3037,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-linux-firmware": {
+      "locked": {
+        "lastModified": 1712766783,
+        "narHash": "sha256-Z5AYz3WyH3bDxzoClszAZwM0H+521z231MgSKgoUksQ=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "39a83160747fe0a16005e1dd920f0d2c4f3ff4eb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "39a83160747fe0a16005e1dd920f0d2c4f3ff4eb",
+        "type": "github"
+      }
+    },
     "nixpkgs-master": {
       "locked": {
         "lastModified": 1716729029,
@@ -3737,6 +3753,7 @@
           "nixos-22-11"
         ],
         "nixpkgs-lib": "nixpkgs-lib_4",
+        "nixpkgs-linux-firmware": "nixpkgs-linux-firmware",
         "nixpkgs-master": "nixpkgs-master",
         "nixpkgs-pycrypto-pinned": "nixpkgs-pycrypto-pinned",
         "nixpkgs-unstable": "nixpkgs-unstable_2",
