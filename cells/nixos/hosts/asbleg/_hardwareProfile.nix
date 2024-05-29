@@ -9,6 +9,10 @@ in
   deploy.params.gpu = "intel";
   deploy.params.ram = 8;
 
+  boot.plymouth.enable = true;
+  # NOTE: i915 *ERROR* GPIO index request failed (-ENOENT)
+  boot.kernelParams = [ "drm.debug=0" ];
+
   boot.consoleLogLevel = 0;
   boot.kernelPackages = pkgs.linuxPackages_xanmod_stable;
   boot.blacklistedKernelModules = [ "nouveau" ];
@@ -21,7 +25,7 @@ in
   services.logind.lidSwitch = "ignore";
 
   # loaded firmware version 29.4063824552.0 7265D-29.ucode
-  # FIXME: i915 *ERROR* GPIO index request failed (-ENOENT)
+
   #
   # NOTE: https://github.com/systemd/systemd/issues/25269
   # services.logind.lidSwitch = "suspend-then-hibernate";
