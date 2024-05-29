@@ -14,7 +14,7 @@ in
   boot.kernelParams = [ "drm.debug=0" "i915.verbose_state_checks=0" "i915.guc_log_level=0" ];
   # NOTE: tradeoff - get lower wifi speeds, but at least no interruptions
   boot.extraModprobeConfig = ''
-    options iwlwifi bt_coex_active=0 11n_disable=2
+    options iwlwifi bt_coex_active=0 11n_disable=1
   '';
 
   boot.consoleLogLevel = 0;
