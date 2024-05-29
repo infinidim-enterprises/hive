@@ -7,7 +7,7 @@
     nixpkgs-release-overrides
     nixpkgs-master-overrides
     dart-fix
-    linux-firmware-fix
+    # linux-firmware-fix
     sources
     python
   ];
@@ -30,3 +30,6 @@
     vscode-extensions
   ];
 }
+/*
+  FIXME: i915 *ERROR* GPIO index request failed (-ENOENT)
+*/
