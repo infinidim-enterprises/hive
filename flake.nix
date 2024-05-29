@@ -170,7 +170,7 @@
     # NOTE: nixpkgs-pycrypto-pinned is pinned for gpg-hd package, never upgrade!
     # https://github.com/Logicwax/gpg-hd/issues/3 - is the reason.
     nixpkgs-pycrypto-pinned.url = "github:nixos/nixpkgs/e1d501922fd7351da4200e1275dfcf5faaad1220";
-    nixpkgs-linux-firmware.url = "github:nixos/nixpkgs/release-21.05";
+    nixpkgs-linux-firmware.url = "github:nixos/nixpkgs/07f2b4bebf1a457d4e709ad20b3c53aa55a960e7";
     nixos-unstable-linux_6_2.url = "github:nixos/nixpkgs/63464b8c2837ec56e1d610f5bd2a9b8e1f532c07";
     nixos-unstable-linux_6_5.url = "github:nixos/nixpkgs/b644d97bda6dae837d577e28383c10aa51e5e2d2";
     nixos-22-11.url = "github:nixos/nixpkgs/release-22.11";
