@@ -35,14 +35,15 @@ rec {
           systemd.network.networks.local-eth.matchConfig.Name = "eno1";
           networking.wireless.enable = false;
           networking.networkmanager.enable = true;
-          environment.systemPackages = with pkgs; [ networkmanagerapplet ventoy-full ];
+          environment.systemPackages = with pkgs; [ ventoy-full ];
         })
 
       {
         deploy.enable = true;
         deploy.params.hidpi.enable = false;
         deploy.params.lan.mac = "16:07:77:ff:ba:ff";
-        deploy.params.lan.ipv4 = "10.11.1.122/24";
+        # deploy.params.lan.ipv4 = "10.11.1.122/24";
+        deploy.params.lan.ipv4 = "192.168.1.133/24";
         deploy.params.lan.dhcpClient = false;
 
         networking.hostName = baseNameOf ./.;
@@ -54,8 +55,8 @@ rec {
 
       ({ lib, config, ... }: {
         systemd.network.networks.lan = {
-          addresses = [{ addressConfig.Address = "10.11.1.122/24"; }];
-          networkConfig.Gateway = "10.11.1.1";
+          addresses = [{ addressConfig.Address = "192.168.1.133/24"; }];
+          networkConfig.Gateway = "192.168.1.1";
         };
       })
 
