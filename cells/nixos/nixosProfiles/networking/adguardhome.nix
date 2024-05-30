@@ -129,6 +129,8 @@ mkMerge
 
     {
       # networking.extraHosts = lib.readFile "${pkgs.sources.StevenBlack-hosts.src}/alternates/fakenews-gambling-porn-social/hosts";
+      # TODO: depend on systemd service, that waits for connectivity
+      # TODO: declaratively create rules from nvfetcher of AdguardTeam/AdguardFilters repo, since changes are common, and urls go missing.
 
       services.adguardhome.enable = true;
       services.adguardhome.host = "127.0.0.1";

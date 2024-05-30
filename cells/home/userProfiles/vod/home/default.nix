@@ -107,4 +107,5 @@ in
 
   programs.password-store.settings.PASSWORD_STORE_KEY = "E3C4C12EDF24CA20F167CC7EE203A151BB3FD1AE";
 
+  services.gpg-agent.pinentryPackage = pkgs.pinentry-gtk2;
 }
