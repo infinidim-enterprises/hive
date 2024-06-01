@@ -16,6 +16,7 @@ cell.lib.importers.importPackagesRakeleaves
     "age-plugin-yubikey"
 
     "iterable-io"
+    # TODO: promnesia https://github.com/NixOS/nixpkgs/pull/215228
     "promnesia"
     "HPI"
     "orgparse"
