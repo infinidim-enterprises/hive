@@ -127,7 +127,7 @@
             "leaveDotGit": true,
             "name": null,
             "rev": "9620bb45ac4cd7b0274c497b2d9d93c4ad9364ee",
-            "sha256": "sha256-KDMN7grnfXcQYMpjMYXPFMV3BALahduLqhmaJSNreIc=",
+            "sha256": "sha256-4F3WaKetjPyMxntP/dmRNMCCDjnHmx3sdnvc6Idmms0=",
             "type": "git",
             "url": "https://github.com/hlissner/doom-emacs"
         },

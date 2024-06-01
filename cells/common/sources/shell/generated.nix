@@ -77,15 +77,15 @@
   };
   spaceship-prompt = {
     pname = "spaceship-prompt";
-    version = "1fa40b67ddfd1333d06a64608c97166c44e7ba69";
+    version = "6af88441124179ca6d76c51519b72fb97e9ff3cc";
     src = fetchFromGitHub {
       owner = "spaceship-prompt";
       repo = "spaceship-prompt";
-      rev = "1fa40b67ddfd1333d06a64608c97166c44e7ba69";
+      rev = "6af88441124179ca6d76c51519b72fb97e9ff3cc";
       fetchSubmodules = false;
-      sha256 = "sha256-yqOPw/N0yZB/cBuvXzCP3MyvqOQHVk3y40l8srd14mc=";
+      sha256 = "sha256-2Z9NUC1TR0lYBQux+Tkac0oFVnYIxsMkdWNGKQIz9IU=";
     };
-    date = "2024-05-28";
+    date = "2024-05-29";
   };
   zsh-plugin_any-nix-shell = {
     pname = "zsh-plugin_any-nix-shell";
@@ -164,16 +164,16 @@
   };
   zsh-plugin_oh-my-zsh = {
     pname = "zsh-plugin_oh-my-zsh";
-    version = "071b8f8921cb2bbb1fcabbf3d271e77af0b12a7d";
+    version = "e0c6cb147030350c8e27dbdeda6e8a4d367d1e66";
     src = fetchgit {
       url = "https://github.com/robbyrussell/oh-my-zsh";
-      rev = "071b8f8921cb2bbb1fcabbf3d271e77af0b12a7d";
+      rev = "e0c6cb147030350c8e27dbdeda6e8a4d367d1e66";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-uVgRmiR9CH+VIKlerg+FilE7+Cv63JfWGRs5ZeXodDY=";
+      sha256 = "sha256-lFaHehB7TCXH58GQbjUt4INtR7mCTOVOKvjOLxytK/o=";
     };
-    date = "2024-05-28";
+    date = "2024-05-31";
   };
   zsh-plugin_tipz = {
     pname = "zsh-plugin_tipz";

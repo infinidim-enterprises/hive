@@ -167,10 +167,10 @@
   };
   drawio = {
     pname = "drawio";
-    version = "24.4.8";
+    version = "24.4.13";
     src = fetchurl {
-      url = "https://github.com/jgraph/drawio-desktop/releases/download/v24.4.8/drawio-x86_64-24.4.8.rpm";
-      sha256 = "sha256-tAmmflchhgwJUUqBZgNSPp/0yGZdVfgT3EeZ6ko/QNg=";
+      url = "https://github.com/jgraph/drawio-desktop/releases/download/v24.4.13/drawio-x86_64-24.4.13.rpm";
+      sha256 = "sha256-3RNoQAMYm78YEs3CnnoGLxPmtnRw/OMs4uH91Cp0oQY=";
     };
   };
   firefox_user_js = {
@@ -245,16 +245,16 @@
   };
   ipxe = {
     pname = "ipxe";
-    version = "dc118c53696af6a0b1a8ee78fc9a4d28a217fb21";
+    version = "e965f179e1654103eca33feed7a9cc4c51d91be6";
     src = fetchgit {
       url = "https://github.com/ipxe/ipxe";
-      rev = "dc118c53696af6a0b1a8ee78fc9a4d28a217fb21";
+      rev = "e965f179e1654103eca33feed7a9cc4c51d91be6";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-k6AMv0xSdQsE/s44NgDuZR11cCvkrqk0nHK5MtmexhY=";
+      sha256 = "sha256-32LYNF+5z5rS4y2iGKA2BnQntXg9Ec9709m6pL5hBdo=";
     };
-    date = "2024-05-15";
+    date = "2024-05-31";
   };
   iterable-io = {
     pname = "iterable-io";
@@ -266,13 +266,13 @@
   };
   langchain = {
     pname = "langchain";
-    version = "langchain-core==0.2.2rc1";
+    version = "langchain-core==0.2.3";
     src = fetchFromGitHub {
       owner = "langchain-ai";
       repo = "langchain";
-      rev = "langchain-core==0.2.2rc1";
+      rev = "langchain-core==0.2.3";
       fetchSubmodules = false;
-      sha256 = "sha256-1bwcOtVF4XozYmBAksmA+RQX+y/jAvPgBKnt243Si9g=";
+      sha256 = "sha256-QRsx9qYuYmv5oL3J5trvaV4aX8vHBxumuUM5JWHfQ4w=";
     };
   };
   ledger-live-desktop = {
@@ -381,12 +381,12 @@
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "12f94650676ad7ee0a953134edb135a24f20604a";
+    version = "f99897f4e2c72873d888226e2908dfbbc3995223";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";
     };
-    date = "2024-05-29";
+    date = "2024-06-01";
   };
   pgp-key-generation = {
     pname = "pgp-key-generation";
@@ -414,15 +414,15 @@
   };
   promnesia = {
     pname = "promnesia";
-    version = "bbe32027ef4f113138379b6d73950b68e176c17d";
+    version = "c522744e94ab57cbda1a0a80984f4519bdda634b";
     src = fetchFromGitHub {
       owner = "karlicoss";
       repo = "promnesia";
-      rev = "bbe32027ef4f113138379b6d73950b68e176c17d";
+      rev = "c522744e94ab57cbda1a0a80984f4519bdda634b";
       fetchSubmodules = false;
-      sha256 = "sha256-S5PkqjNqQMVzZYI+VzGUk76lVacYHYPRQybMLGVKe5s=";
+      sha256 = "sha256-mlX34vrN6hCAXNwvcfvKlOY8JXWvAZJ54pjOL55hf2w=";
     };
-    date = "2024-05-29";
+    date = "2024-05-31";
   };
   quicklisp = {
     pname = "quicklisp";
