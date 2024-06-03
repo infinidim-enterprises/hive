@@ -108,6 +108,7 @@
   };
 
   # system tools
+  # TODO: inputs.nix-topology.url = "github:oddlama/nix-topology";
   inputs = {
     nix-super.url = "github:privatevoid-net/nix-super";
 
@@ -140,9 +141,9 @@
     devos-ext-lib.inputs.nixpkgs.follows = "nixpkgs-unstable";
   };
 
-  inputs = {
-    crystal-1_11_2_pr.url = "github:nixos/nixpkgs?ref=pull/286273/head";
-  };
+  # inputs = {
+  #   crystal-1_11_2_pr.url = "github:nixos/nixpkgs?ref=pull/286273/head";
+  # };
 
   # nixpkgs & home-manager
   inputs = {

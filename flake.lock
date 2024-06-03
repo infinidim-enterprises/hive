@@ -413,22 +413,6 @@
         "type": "github"
       }
     },
-    "crystal-1_11_2_pr": {
-      "locked": {
-        "lastModified": 1707491243,
-        "narHash": "sha256-QZsVNMYs2vXhDbZFI1+lwOjNVJCgvmT5xFQGkOhhke4=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "ed2ed2211029808423537821b9c6a7dd3957a547",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "pull/286273/head",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "deploy-rs": {
       "inputs": {
         "flake-compat": "flake-compat_3",
@@ -3706,7 +3690,6 @@
         "bird-nix-lib": "bird-nix-lib",
         "call-flake": "call-flake",
         "colmena": "colmena",
-        "crystal-1_11_2_pr": "crystal-1_11_2_pr",
         "devos-ext-lib": "devos-ext-lib",
         "devshell": "devshell_3",
         "disko": "disko",

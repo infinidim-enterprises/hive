@@ -18,7 +18,10 @@ let
 
   nixpkgs-unstable = import inputs.nixpkgs-unstable {
     inherit (inputs.nixpkgs) system;
-    overlays = with inputs.cells.common.overlays; [ sources crystal ];
+    overlays = with inputs.cells.common.overlays; [
+      sources
+      # crystal
+    ];
     config.allowUnfree = true;
   };
 
