@@ -33,14 +33,18 @@ src.github = "langchain-ai/langchain"
 src.use_latest_release = true
 fetch.github = "langchain-ai/langchain"
 
-[drawio]
-src.github = "jgraph/drawio-desktop"
-fetch.url = "https://github.com/jgraph/drawio-desktop/releases/download/v$ver/drawio-x86_64-$ver.rpm"
-src.prefix = "v"
+# [drawio]
+# src.github = "jgraph/drawio-desktop"
+# fetch.url = "https://github.com/jgraph/drawio-desktop/releases/download/v$ver/drawio-x86_64-$ver.rpm"
+# src.prefix = "v"
 
-[adguardhome]
-src.github = "AdguardTeam/AdGuardHome"
-fetch.url = "https://github.com/AdguardTeam/AdGuardHome/releases/download/$ver/AdGuardHome_linux_amd64.tar.gz"
+[adguard-filters]
+src.git = "https://github.com/AdguardTeam/AdguardFilters"
+fetch.git = "https://github.com/AdguardTeam/AdguardFilters"
+
+# [adguardhome]
+# src.github = "AdguardTeam/AdGuardHome"
+# fetch.url = "https://github.com/AdguardTeam/AdGuardHome/releases/download/$ver/AdGuardHome_linux_amd64.tar.gz"
 
 ### :START: ipxe
 [ipxe]
@@ -265,6 +269,8 @@ src.use_latest_release = true
 src.github = "arkenfox/user.js"
 fetch.github = "arkenfox/user.js"
 
-[linux-firmware]
-src.manual = "20240410"
-fetch.url = "https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/linux-firmware-$ver.tar.gz"
+# [linux-firmware]
+# src.manual = "20240410"
+# fetch.url = "https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/linux-firmware-$ver.tar.gz"
+
+###

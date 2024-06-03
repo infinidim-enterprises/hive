@@ -33,20 +33,24 @@
         },
         "version": "cac1d6920998ddcbee8310a873414732e707d8e5"
     },
-    "adguardhome": {
+    "adguard-filters": {
         "cargoLocks": null,
-        "date": null,
+        "date": "2024-06-03",
         "extract": null,
-        "name": "adguardhome",
+        "name": "adguard-filters",
         "passthru": null,
         "pinned": false,
         "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
             "name": null,
-            "sha256": "sha256-krxAIJSQrvZrXsAfFZOr/ons4mSKnaQ+fIdHULKcvyA=",
-            "type": "url",
-            "url": "https://github.com/AdguardTeam/AdGuardHome/releases/download/v0.107.50/AdGuardHome_linux_amd64.tar.gz"
+            "rev": "5076c7c53a33836f6a76a0bcd5d8c0ca18621161",
+            "sha256": "sha256-tCGrUknFylJjC5aY0fjLKug+WhQCEH6iN+TflFmHpYc=",
+            "type": "git",
+            "url": "https://github.com/AdguardTeam/AdguardFilters"
         },
-        "version": "v0.107.50"
+        "version": "5076c7c53a33836f6a76a0bcd5d8c0ca18621161"
     },
     "age-plugin-trezor": {
         "cargoLocks": null,
@@ -72,7 +76,7 @@
     },
     "chatgpt-wrapper": {
         "cargoLocks": null,
-        "date": "2024-05-24",
+        "date": "2024-06-02",
         "extract": null,
         "name": "chatgpt-wrapper",
         "passthru": null,
@@ -84,11 +88,11 @@
             "name": null,
             "owner": "llm-workflow-engine",
             "repo": "llm-workflow-engine",
-            "rev": "dfe329f493541a65a466cd21e1ac3caa34684a27",
-            "sha256": "sha256-7bcnhhAsblK+xqZuYnNITr22QCds7nGFCAdV2Nz/MS4=",
+            "rev": "0423590dc9727db6dc6592a2f50040e100863c6b",
+            "sha256": "sha256-KgHTMXv3wBVGfbS59k5eOy1TXINMsVF51uP6dHwamPM=",
             "type": "github"
         },
-        "version": "dfe329f493541a65a466cd21e1ac3caa34684a27"
+        "version": "0423590dc9727db6dc6592a2f50040e100863c6b"
     },
     "cl-hash-util": {
         "cargoLocks": null,
@@ -267,21 +271,6 @@
         },
         "version": "e7aeedfbcdc18e3ea2d45cf6931e38d350096f2f"
     },
-    "drawio": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "drawio",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": null,
-            "sha256": "sha256-tAmmflchhgwJUUqBZgNSPp/0yGZdVfgT3EeZ6ko/QNg=",
-            "type": "url",
-            "url": "https://github.com/jgraph/drawio-desktop/releases/download/v24.4.8/drawio-x86_64-24.4.8.rpm"
-        },
-        "version": "24.4.8"
-    },
     "firefox_user_js": {
         "cargoLocks": null,
         "date": null,
@@ -405,7 +394,7 @@
     },
     "ipxe": {
         "cargoLocks": null,
-        "date": "2024-05-15",
+        "date": "2024-05-31",
         "extract": null,
         "name": "ipxe",
         "passthru": null,
@@ -415,12 +404,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "dc118c53696af6a0b1a8ee78fc9a4d28a217fb21",
-            "sha256": "sha256-k6AMv0xSdQsE/s44NgDuZR11cCvkrqk0nHK5MtmexhY=",
+            "rev": "e965f179e1654103eca33feed7a9cc4c51d91be6",
+            "sha256": "sha256-32LYNF+5z5rS4y2iGKA2BnQntXg9Ec9709m6pL5hBdo=",
             "type": "git",
             "url": "https://github.com/ipxe/ipxe"
         },
-        "version": "dc118c53696af6a0b1a8ee78fc9a4d28a217fb21"
+        "version": "e965f179e1654103eca33feed7a9cc4c51d91be6"
     },
     "iterable-io": {
         "cargoLocks": null,
@@ -451,11 +440,11 @@
             "name": null,
             "owner": "langchain-ai",
             "repo": "langchain",
-            "rev": "langchain-core==0.2.2rc1",
-            "sha256": "sha256-1bwcOtVF4XozYmBAksmA+RQX+y/jAvPgBKnt243Si9g=",
+            "rev": "langchain-core==0.2.3",
+            "sha256": "sha256-QRsx9qYuYmv5oL3J5trvaV4aX8vHBxumuUM5JWHfQ4w=",
             "type": "github"
         },
-        "version": "langchain-core==0.2.2rc1"
+        "version": "langchain-core==0.2.3"
     },
     "ledger-live-desktop": {
         "cargoLocks": null,
@@ -471,21 +460,6 @@
             "url": "https://download.live.ledger.com/ledger-live-desktop-2.77.2-linux-x86_64.AppImage"
         },
         "version": "2.77.2"
-    },
-    "linux-firmware": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "linux-firmware",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": null,
-            "sha256": "sha256-Jc1HyGsfX3WRRst+a4xJw6SLOd7FBzSvcpirkQ7g6ZY=",
-            "type": "url",
-            "url": "https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/linux-firmware-20240410.tar.gz"
-        },
-        "version": "20240410"
     },
     "listopia": {
         "cargoLocks": null,
@@ -630,7 +604,7 @@
     },
     "pbkdf2-sha512": {
         "cargoLocks": null,
-        "date": "2024-05-29",
+        "date": "2024-06-03",
         "extract": null,
         "name": "pbkdf2-sha512",
         "passthru": null,
@@ -641,7 +615,7 @@
             "type": "url",
             "url": "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c"
         },
-        "version": "12f94650676ad7ee0a953134edb135a24f20604a"
+        "version": "fc6e6b8ffb440710f291883c480e5b7f9c5dd6f9"
     },
     "pgp-key-generation": {
         "cargoLocks": null,
@@ -685,7 +659,7 @@
     },
     "promnesia": {
         "cargoLocks": null,
-        "date": "2024-05-29",
+        "date": "2024-05-31",
         "extract": null,
         "name": "promnesia",
         "passthru": null,
@@ -697,11 +671,11 @@
             "name": null,
             "owner": "karlicoss",
             "repo": "promnesia",
-            "rev": "bbe32027ef4f113138379b6d73950b68e176c17d",
-            "sha256": "sha256-S5PkqjNqQMVzZYI+VzGUk76lVacYHYPRQybMLGVKe5s=",
+            "rev": "c522744e94ab57cbda1a0a80984f4519bdda634b",
+            "sha256": "sha256-mlX34vrN6hCAXNwvcfvKlOY8JXWvAZJ54pjOL55hf2w=",
             "type": "github"
         },
-        "version": "bbe32027ef4f113138379b6d73950b68e176c17d"
+        "version": "c522744e94ab57cbda1a0a80984f4519bdda634b"
     },
     "quicklisp": {
         "cargoLocks": null,

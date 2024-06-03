@@ -22,13 +22,18 @@
     };
     date = "2019-07-20";
   };
-  adguardhome = {
-    pname = "adguardhome";
-    version = "v0.107.50";
-    src = fetchurl {
-      url = "https://github.com/AdguardTeam/AdGuardHome/releases/download/v0.107.50/AdGuardHome_linux_amd64.tar.gz";
-      sha256 = "sha256-krxAIJSQrvZrXsAfFZOr/ons4mSKnaQ+fIdHULKcvyA=";
+  adguard-filters = {
+    pname = "adguard-filters";
+    version = "5076c7c53a33836f6a76a0bcd5d8c0ca18621161";
+    src = fetchgit {
+      url = "https://github.com/AdguardTeam/AdguardFilters";
+      rev = "5076c7c53a33836f6a76a0bcd5d8c0ca18621161";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sha256 = "sha256-tCGrUknFylJjC5aY0fjLKug+WhQCEH6iN+TflFmHpYc=";
     };
+    date = "2024-06-03";
   };
   age-plugin-trezor = {
     pname = "age-plugin-trezor";
@@ -45,15 +50,15 @@
   };
   chatgpt-wrapper = {
     pname = "chatgpt-wrapper";
-    version = "dfe329f493541a65a466cd21e1ac3caa34684a27";
+    version = "0423590dc9727db6dc6592a2f50040e100863c6b";
     src = fetchFromGitHub {
       owner = "llm-workflow-engine";
       repo = "llm-workflow-engine";
-      rev = "dfe329f493541a65a466cd21e1ac3caa34684a27";
+      rev = "0423590dc9727db6dc6592a2f50040e100863c6b";
       fetchSubmodules = false;
-      sha256 = "sha256-7bcnhhAsblK+xqZuYnNITr22QCds7nGFCAdV2Nz/MS4=";
+      sha256 = "sha256-KgHTMXv3wBVGfbS59k5eOy1TXINMsVF51uP6dHwamPM=";
     };
-    date = "2024-05-24";
+    date = "2024-06-02";
   };
   cl-hash-util = {
     pname = "cl-hash-util";
@@ -165,14 +170,6 @@
     };
     date = "2022-09-09";
   };
-  drawio = {
-    pname = "drawio";
-    version = "24.4.8";
-    src = fetchurl {
-      url = "https://github.com/jgraph/drawio-desktop/releases/download/v24.4.8/drawio-x86_64-24.4.8.rpm";
-      sha256 = "sha256-tAmmflchhgwJUUqBZgNSPp/0yGZdVfgT3EeZ6ko/QNg=";
-    };
-  };
   firefox_user_js = {
     pname = "firefox_user_js";
     version = "122.0";
@@ -245,16 +242,16 @@
   };
   ipxe = {
     pname = "ipxe";
-    version = "dc118c53696af6a0b1a8ee78fc9a4d28a217fb21";
+    version = "e965f179e1654103eca33feed7a9cc4c51d91be6";
     src = fetchgit {
       url = "https://github.com/ipxe/ipxe";
-      rev = "dc118c53696af6a0b1a8ee78fc9a4d28a217fb21";
+      rev = "e965f179e1654103eca33feed7a9cc4c51d91be6";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-k6AMv0xSdQsE/s44NgDuZR11cCvkrqk0nHK5MtmexhY=";
+      sha256 = "sha256-32LYNF+5z5rS4y2iGKA2BnQntXg9Ec9709m6pL5hBdo=";
     };
-    date = "2024-05-15";
+    date = "2024-05-31";
   };
   iterable-io = {
     pname = "iterable-io";
@@ -266,13 +263,13 @@
   };
   langchain = {
     pname = "langchain";
-    version = "langchain-core==0.2.2rc1";
+    version = "langchain-core==0.2.3";
     src = fetchFromGitHub {
       owner = "langchain-ai";
       repo = "langchain";
-      rev = "langchain-core==0.2.2rc1";
+      rev = "langchain-core==0.2.3";
       fetchSubmodules = false;
-      sha256 = "sha256-1bwcOtVF4XozYmBAksmA+RQX+y/jAvPgBKnt243Si9g=";
+      sha256 = "sha256-QRsx9qYuYmv5oL3J5trvaV4aX8vHBxumuUM5JWHfQ4w=";
     };
   };
   ledger-live-desktop = {
@@ -281,14 +278,6 @@
     src = fetchurl {
       url = "https://download.live.ledger.com/ledger-live-desktop-2.77.2-linux-x86_64.AppImage";
       sha256 = "sha256-orIyfRs6TJgqGGLpl2tvoUtejsB0ni8xRK0SboP2LHw=";
-    };
-  };
-  linux-firmware = {
-    pname = "linux-firmware";
-    version = "20240410";
-    src = fetchurl {
-      url = "https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/linux-firmware-20240410.tar.gz";
-      sha256 = "sha256-Jc1HyGsfX3WRRst+a4xJw6SLOd7FBzSvcpirkQ7g6ZY=";
     };
   };
   listopia = {
@@ -381,12 +370,12 @@
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "12f94650676ad7ee0a953134edb135a24f20604a";
+    version = "fc6e6b8ffb440710f291883c480e5b7f9c5dd6f9";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";
     };
-    date = "2024-05-29";
+    date = "2024-06-03";
   };
   pgp-key-generation = {
     pname = "pgp-key-generation";
@@ -414,15 +403,15 @@
   };
   promnesia = {
     pname = "promnesia";
-    version = "bbe32027ef4f113138379b6d73950b68e176c17d";
+    version = "c522744e94ab57cbda1a0a80984f4519bdda634b";
     src = fetchFromGitHub {
       owner = "karlicoss";
       repo = "promnesia";
-      rev = "bbe32027ef4f113138379b6d73950b68e176c17d";
+      rev = "c522744e94ab57cbda1a0a80984f4519bdda634b";
       fetchSubmodules = false;
-      sha256 = "sha256-S5PkqjNqQMVzZYI+VzGUk76lVacYHYPRQybMLGVKe5s=";
+      sha256 = "sha256-mlX34vrN6hCAXNwvcfvKlOY8JXWvAZJ54pjOL55hf2w=";
     };
-    date = "2024-05-29";
+    date = "2024-05-31";
   };
   quicklisp = {
     pname = "quicklisp";

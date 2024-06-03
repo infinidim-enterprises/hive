@@ -2,6 +2,7 @@
 * AI stuff
 ** UIs
 https://github.com/lobehub/lobe-chat
+https://github.com/zylon-ai/private-gpt
 ** API
 https://localai.io
 * Filesystems
@@ -16,11 +17,32 @@ https://github.com/helm/chartmuseum
 * Cloud services
 ** auth
 https://github.com/nix-community/authentik-nix
+** https://unifiedpush.org/
 * Cool stuff I want
-** NixOS secrets management
+** shell things
+https://github.com/charmbracelet/gum
+https://github.com/DannyBen/bashly
+** use modules in nixos
+https://git.sr.ht/~whynothugo/systemd-lock-handler/
+https://github.com/dutchcoders/transfer.sh
+https://github.com/Vladimir-csp/xdg-terminal-exec
+https://github.com/ReimuNotMoe/ydotool
+https://github.com/Athou/commafeed
+** collect system stats
+https://github.com/mann1x/ryzen_monitor_ng
+https://gitlab.com/leogx9r/ryzen_smu
+https://github.com/AnalogJ/scrutiny
+** TODO eliminate perl
+#+begin_src nix
+{ modulesPath, ... }: {
+  imports = [ "${modulesPath}/profiles/perlless.nix" ];
+}
+#+end_src
+** TODO NixOS secrets management
 https://github.com/oddlama/agenix-rekey
 Maybe switch to agenix or find auto-rekey for sops-nix
 ** github alternatives
+https://radicle.xyz/
 https://onedev.io
 https://forgejo.org/
 https://github.com/harness/gitness
@@ -28,6 +50,7 @@ https://github.com/harness/gitness
 https://github.com/cachix/devenv
 https://github.com/sellout/project-manager
 https://github.com/hercules-ci/flake-parts
+https://github.com/maralorn/nix-output-monitor
 * TODO installers
 ** DONE Add disko-install script to iso
 https://github.com/nix-community/disko/blob/master/docs/disko-install.md

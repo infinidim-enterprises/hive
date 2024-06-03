@@ -69,7 +69,9 @@ in
     home.flake = inputs.home;
     nixpkgs-unstable.flake = inputs.nixpkgs-unstable;
   };
-
+  /*
+    TODO: nixpkgs.flake.setNixPath nixpkgs.flake.setFlakeRegistry
+  */
   nix.nixPath = [
     # TODO:     "nixos-config=${../lib/compat/nixos}"
     "nixpkgs=${pkgs.path}"

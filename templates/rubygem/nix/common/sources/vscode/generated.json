@@ -28,12 +28,12 @@
         },
         "pinned": false,
         "src": {
-            "name": "codium-0.8.10.zip",
-            "sha256": "sha256-uI9ZKJiODc6JSlv2rt3bNucpOjK2SM4E3TwD6Rz98/0=",
+            "name": "codium-0.9.1.zip",
+            "sha256": "sha256-gxcdggsZZuDjpBTZgq64IkBZsBwydvCCdQipBP7j6Qc=",
             "type": "url",
-            "url": "https://Codium.gallery.vsassets.io/_apis/public/gallery/publisher/Codium/extension/codium/0.8.10/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://Codium.gallery.vsassets.io/_apis/public/gallery/publisher/Codium/extension/codium/0.9.1/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "0.8.10"
+        "version": "0.9.1"
     },
     "copilot": {
         "cargoLocks": null,
@@ -46,12 +46,12 @@
         },
         "pinned": false,
         "src": {
-            "name": "copilot-1.196.0.zip",
-            "sha256": "sha256-muk/Fmx+wYfGRUu13EE66RZj/8o2EiPmDhO6kSoCv1Q=",
+            "name": "copilot-1.197.909.zip",
+            "sha256": "sha256-mwYPGwUd4Vbv+moi+glyH2YEb8D95s7b5yKdX1RfpsA=",
             "type": "url",
-            "url": "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.196.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.197.909/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "1.196.0"
+        "version": "1.197.909"
     },
     "cucumberautocomplete": {
         "cargoLocks": null,
@@ -334,12 +334,12 @@
         },
         "pinned": false,
         "src": {
-            "name": "ruby-lsp-0.6.10.zip",
-            "sha256": "sha256-o4ml8OUEHQAPSYD70uWYCjQag7RvgPGVbs6FqGH7+LE=",
+            "name": "ruby-lsp-0.7.1.zip",
+            "sha256": "sha256-Frrv0CMghitIsoGyah1h2b7CIvz3BNJQ2uPN7rQkLtg=",
             "type": "url",
-            "url": "https://Shopify.gallery.vsassets.io/_apis/public/gallery/publisher/Shopify/extension/ruby-lsp/0.6.10/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://Shopify.gallery.vsassets.io/_apis/public/gallery/publisher/Shopify/extension/ruby-lsp/0.7.1/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "0.6.10"
+        "version": "0.7.1"
     },
     "ruby-rubocop": {
         "cargoLocks": null,
