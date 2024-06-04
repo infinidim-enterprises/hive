@@ -9,7 +9,7 @@ in
   deploy.params.gpu = "intel";
   deploy.params.ram = 8;
 
-  boot.plymouth.enable = true;
+  # boot.plymouth.enable = true;
   # pkgs.plymouth-matrix-theme
   # NOTE: i915 *ERROR* GPIO index request failed (-ENOENT)
   boot.kernelParams = [ "drm.debug=0" ];
@@ -25,6 +25,7 @@ in
   boot.kernelPackages = pkgs.linuxPackages_xanmod_stable;
   boot.kernelPatches = [
     {
+      # NOTE: https://superuser.com/questions/610581/iotop-complains-config-task-delay-acct-not-enabled-in-kernel-only-for-specific
       name = "iotop CONFIG_TASK_DELAY_ACCT";
       patch = null;
       extraConfig = ''
@@ -33,6 +34,7 @@ in
       '';
     }
     {
+      # NOTE: annoying messages removed on gpd micro-pc
       name = "disable showing '*ERROR* GPIO index request failed'";
       patch = ./intel_dsi_vbt.patch;
     }
