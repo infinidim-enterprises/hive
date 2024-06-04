@@ -32,6 +32,7 @@ mkMerge [
         pass-checkup
         pass-genphrase
         pass-import
+        pass-file
         pass-otp
         pass-tomb
         pass-update

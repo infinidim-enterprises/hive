@@ -1,7 +1,34 @@
 { pkgs, lib, config, ... }:
 with lib;
+
 let
   zshEnable = config.programs.zsh.enable;
+  isX11 = pkgs.writeShellApplication {
+    name = "isX11";
+    runtimeInputs = with pkgs; [ systemd gnugrep ];
+    text = ''
+      if [ -z "$1" ]; then
+          echo "Usage: $0 <username>"
+          exit 1
+      fi
+
+      username="$1"
+
+      while true; do
+          session_ids=$(loginctl show-user "$username" --property=Sessions --value)
+          for session_id in $session_ids; do
+              session_type=$(loginctl show-session "$session_id" --property=Type --value)
+              if [ "$session_type" == "x11" ]; then
+                  systemctl --user import-environment DISPLAY
+                  exit 0
+              fi
+          done
+          sleep 3
+      done
+    '';
+  };
+  ExecStartPre = "${isX11}/bin/isX11 %u";
+
 in
 {
   config = mkMerge [
@@ -46,6 +73,14 @@ in
         # };
 
       };
+
+      systemd.user.services.activitywatch-watcher-aw-watcher-window.Service = {
+        inherit ExecStartPre;
+      };
+      systemd.user.services.activitywatch-watcher-aw-watcher-afk.Service = {
+        inherit ExecStartPre;
+      };
+
     }
   ];
 }

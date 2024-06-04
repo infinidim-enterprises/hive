@@ -105,6 +105,7 @@ in
   programs.rofi.plugins = with pkgs; [ rofi-systemd rofi-calc ];
   programs.rofi.cycle = true;
 
+  # NOTE: PASSWORD_STORE_KEY can use multiple fingerprints separated by a whitespace
   programs.password-store.settings.PASSWORD_STORE_KEY = "E3C4C12EDF24CA20F167CC7EE203A151BB3FD1AE";
 
   services.gpg-agent.pinentryPackage = pkgs.pinentry-gnome3;

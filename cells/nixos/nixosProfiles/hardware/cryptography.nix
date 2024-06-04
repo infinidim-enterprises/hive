@@ -99,7 +99,7 @@ mkMerge [
       inputs.cells.common.packages.paper-store
       # enc_with_passwd
       # gpg_autogenkey
-
+      # gpg-tui # NOTE: Fuck rust
       ###
       inputs.cells.common.packages.pgp-key-generation # Deterministic ssh-keys from BIP39
       paperkey
@@ -132,7 +132,8 @@ mkMerge [
     services.dbus.packages = [ pkgs.gcr ];
     environment.systemPackages = with pkgs; [
       # gcr
-      gpa
+      sirikali # GUI front end to sshfs,ecryptfs,cryfs,gocryptfs,securefs,fscrypt,encfs
+      gpa # Graphical user interface for the GnuPG
       yubikey-personalization-gui
       yubikey-manager-qt
       # yubioath-desktop
