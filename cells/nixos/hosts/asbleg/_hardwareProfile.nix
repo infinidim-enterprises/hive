@@ -9,7 +9,8 @@ in
   deploy.params.gpu = "intel";
   deploy.params.ram = 8;
 
-  # boot.plymouth.enable = true;
+  boot.plymouth.enable = true;
+  # pkgs.plymouth-matrix-theme
   # NOTE: i915 *ERROR* GPIO index request failed (-ENOENT)
   boot.kernelParams = [ "drm.debug=0" ];
   # NOTE: tradeoff - get lower wifi speeds, but at least no interruptions
