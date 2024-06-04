@@ -1,6 +1,7 @@
 { inputs, cell, ... }:
 
 {
+  # TODO: https://github.com/Xe/nixos-configs/blob/master/ops/mai/fs-verity/README.md
   boot.kernelPatches = [
     {
       name = "iotop CONFIG_TASK_DELAY_ACCT";

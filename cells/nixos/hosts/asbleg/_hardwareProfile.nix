@@ -22,6 +22,21 @@ in
 
   boot.consoleLogLevel = 0;
   boot.kernelPackages = pkgs.linuxPackages_xanmod_stable;
+  boot.kernelPatches = [
+    {
+      name = "iotop CONFIG_TASK_DELAY_ACCT";
+      patch = null;
+      extraConfig = ''
+        TASK_DELAY_ACCT y
+        TASKSTATS y
+      '';
+    }
+    {
+      name = "disable showing '*ERROR* GPIO index request failed'";
+      patch = ./intel_dsi_vbt.patch;
+    }
+  ];
+
   boot.blacklistedKernelModules = [ "nouveau" ];
   boot.initrd.kernelModules = [ "drm" "intel_agp" "i915" ];
   hardware.opengl.enable = true;
