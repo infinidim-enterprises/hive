@@ -13,7 +13,7 @@ mkMerge [
     services.git-sync.repositories.password-store = {
       interval = 300;
       path = config.programs.password-store.settings.PASSWORD_STORE_DIR;
-      uri = "keybase://private/voobofdoom/password-store";
+      uri = "keybase://private/voobofdoom/password-store"; # FIXME: keybase uri for all users
       extraPackages = [ pkgs.kbfs ];
     };
   }

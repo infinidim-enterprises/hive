@@ -8,10 +8,13 @@
   xdg.mime.enable = true;
   xdg.icons.enable = true;
   xdg.sounds.enable = true;
-  xdg.portal.enable = true;
-  xdg.portal.wlr.enable = true;
+
+  xdg.portal.enable = false;
+  xdg.portal.wlr.enable = false;
   xdg.portal.configPackages = with pkgs; [
-    xdg-desktop-portal-gtk
+    # xdg-desktop-portal
+    # xdg-desktop-portal-gnome
+    # xdg-desktop-portal-gtk
     xdg-desktop-portal-xapp
   ];
 

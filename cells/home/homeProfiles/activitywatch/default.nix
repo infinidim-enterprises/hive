@@ -28,6 +28,7 @@ let
     '';
   };
   ExecStartPre = "${isX11}/bin/isX11 %u";
+  BindsTo = [ "graphical-session.target" ];
 
 in
 {
@@ -74,11 +75,13 @@ in
 
       };
 
-      systemd.user.services.activitywatch-watcher-aw-watcher-window.Service = {
-        inherit ExecStartPre;
+      systemd.user.services.activitywatch-watcher-aw-watcher-window = {
+        Service = { inherit ExecStartPre; };
+        Unit = { inherit BindsTo; };
       };
-      systemd.user.services.activitywatch-watcher-aw-watcher-afk.Service = {
-        inherit ExecStartPre;
+      systemd.user.services.activitywatch-watcher-aw-watcher-afk = {
+        Service = { inherit ExecStartPre; };
+        Unit = { inherit BindsTo; };
       };
 
     }

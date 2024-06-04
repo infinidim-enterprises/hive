@@ -15,7 +15,7 @@ in
       profiles.pentester.traffic
       profiles.security.keybase
       profiles.security.password-store
-      profiles.activitywatch
+      # FIXME: profiles.activitywatch
       profiles.browsers.firefox
       # profiles.browsers.floorp
     ] ++
@@ -46,7 +46,7 @@ in
     tigervnc
     jekyll
     vultr-cli
-    virt-manager
+    # virt-manager
     sops
   ];
 

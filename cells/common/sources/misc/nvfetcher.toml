@@ -3,6 +3,8 @@
 src.git = "https://github.com/adeverteuil/console-solarized"
 fetch.github = "adeverteuil/console-solarized"
 
+# TODO: https://github.com/lassekongo83/adw-colors
+# https://github.com/lassekongo83/adw-gtk3
 [numix-solarized-gtk-theme-git]
 src.git = "https://github.com/Ferdi265/numix-solarized-gtk-theme.git"
 fetch.git = "https://github.com/Ferdi265/numix-solarized-gtk-theme.git"
