@@ -89,7 +89,7 @@
   services.udisks2.enable = true;
   services.accounts-daemon.enable = true;
   services.packagekit.enable = true;
-  # services.gnome.gnome-keyring.enable = lib.mkForce false;
+  services.gnome.gnome-keyring.enable = lib.mkForce false;
   services.gnome.at-spi2-core.enable = true;
   services.gnome.glib-networking.enable = true;
   services.redshift.enable = true;
