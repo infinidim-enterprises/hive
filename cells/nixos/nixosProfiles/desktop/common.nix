@@ -79,7 +79,7 @@
   hardware.sane.enable = true;
   hardware.acpilight.enable = true;
   hardware.pulseaudio.enable = true;
-  # FIXME: hardware.pulseaudio.extraModules = [ pkgs.pulseaudio-modules-bt ];
+  hardware.pulseaudio.extraModules = [ pkgs.pulseaudio-module-xrdp ];
 
   services.opensnitch.enable = false; # NOTE: opensnitch SUCKS!
 
