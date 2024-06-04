@@ -23,7 +23,8 @@ in
 
   # NOTE: https://sourceware.org/git/?p=glibc.git;a=blob;f=localedata/SUPPORTED
   # time.timeZone = mkDefault "Europe/Berlin";
-  services.automatic-timezoned.enable = true;
+  # services.automatic-timezoned.enable = true;
+  services.localtimed.enable = true;
 
   i18n.defaultLocale = mkDefault "en_US.UTF-8";
   i18n.supportedLocales = mkDefault [
