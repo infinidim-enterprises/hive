@@ -31,6 +31,16 @@ in
   services.logind.lidSwitchExternalPower = "ignore";
   services.logind.lidSwitch = "ignore";
 
+  hardware.bluetooth.disabledPlugins = [
+    "bap"
+    "bass"
+    "mcp"
+    "vcp"
+    "micp"
+    "ccp"
+    "csip"
+  ];
+
   # loaded firmware version 29.4063824552.0 7265D-29.ucode
 
   #
