@@ -93,7 +93,7 @@ lib.mkIf config.programs.zsh.enable
     ls = "ls -gh --group-directories-first -p -X --color";
     grep = "rg";
     myip = "dig +short myip.opendns.com @resolver1.opendns.com";
-    top = "${pkgs.btop}/bin/btop";
+    # top = "${pkgs.btop}/bin/btop";
   };
 
   programs.zsh.localVariables = {

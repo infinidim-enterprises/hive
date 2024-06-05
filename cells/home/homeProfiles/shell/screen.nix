@@ -82,13 +82,13 @@
     bind R screen -t -=root=- 0 sudo su -
     bind L screen -t -=syslog=- 1 journalctl -fn -l -q
     bind D screen -t docker-stats 5 $SHELL -c docker-ps
-    bind P screen -t -=top=- 2 ${pkgs.btop}/bin/btop
+    bind P screen -t -=top=- 2 ${pkgs.btop}/bin/btop --low-color
 
     # chdir $HOME/Projects/world
     screen -t -=flake=- 0 $SHELL
     screen -t -=syslog=- 1 journalctl -fn -l -q
     chdir $HOME
-    screen -t -=top=- 2 ${pkgs.btop}/bin/btop
+    screen -t -=top=- 2 ${pkgs.btop}/bin/btop --low-color
     screen -t src 2 $SHELL
     screen -t misc 3 $SHELL
     select 0

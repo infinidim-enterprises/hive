@@ -2,13 +2,29 @@
 let
   inherit (inputs.nixpkgs-lib.lib // builtins)
     mkForce
+    hasAttr
+    flatten
     optional
     mkDefault
     optionals
     filterAttrs
     removeAttrs
-    hasAttrByPath;
+    hasAttrByPath
+    mapAttrsToList;
   inherit (inputs.cells.common.lib) disableModulesFrom;
+
+  isImpermanence = config:
+    (hasAttrByPath [ "persistence" ] config.environment) &&
+    (config.environment.persistence != { });
+
+  impermanenceMounts = config:
+    map
+      (e:
+        if hasAttr "filePath" e
+        then e.filePath
+        else e.dirPath)
+      (flatten (mapAttrsToList (_: v: v.files ++ v.directories)
+        config.environment.persistence));
 
   isZfs = config:
     (filterAttrs (n: v: v.fsType == "zfs") config.fileSystems) != { };
@@ -32,7 +48,11 @@ let
     (filterAttrs (k: v: v ? enable && v.enable) dm) != { };
 in
 {
-  inherit isZfs isGui;
+  inherit
+    isZfs
+    isGui
+    isImpermanence
+    impermanenceMounts;
 
   mkHome = username: shell: {
     imports =

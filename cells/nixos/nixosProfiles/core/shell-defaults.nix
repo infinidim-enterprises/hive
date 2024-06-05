@@ -1,9 +1,43 @@
 { inputs, cell, ... }:
 
 { self, pkgs, lib, config, ... }:
+let
+  env = "TERM=screen CLICOLOR_FORCE=1 COLORTERM=truecolor -hide-mp '/boot' -theme ansi";
+
+  df = with lib;
+    "${env} ${pkgs.duf}/bin/duf " +
+    (optionalString (cell.lib.isImpermanence config)
+      "-hide-mp " +
+    (concatStringsSep "," (cell.lib.impermanenceMounts config))) + " -theme ansi -hide binds,special";
+
+  fs_types = [
+    "f2fs"
+    "vfat"
+    "hfsplus"
+    "fuseblk"
+    "cifs"
+    "exfat"
+    "ext4"
+    "ext3"
+    "ext2"
+    "fuse.encfs"
+    "fuse.sshfs"
+    "ntfs"
+    "fuse.cryfs"
+    "zfs"
+    "fuse.gocryptfs"
+    "xtreemfs"
+    "fuse.mergerfs"
+    "xfs"
+    "nfs4"
+    "nfs"
+    "iso9660"
+    "fuse"
+  ];
+in
 {
 
-  environment.shellInit = ''
+  environment.interactiveShellInit = ''
     which_nix() {
       realpath $(which $1)
     }
@@ -41,10 +75,11 @@
       mv = "mv -iv";
       md = "mkdir -pv";
       mkdir = "mkdir -pv";
-      df = "df -haT --type=f2fs --type=vfat --type=hfsplus --type=fuseblk --type=cifs --type=exfat --type=ext4 --type=ext3 --type=ext2 --type=fuse.encfs --type=fuse.sshfs --type=ntfs --type=fuse.cryfs --type=zfs --type=fuse.gocryptfs --type=xtreemfs --type=fuse.mergerfs --type=xfs --type=nfs4 --type=nfs --type=iso9660 --type=fuse";
+
       docker-ps = "docker ps --format \"table {{.Names}}\t{{.RunningFor}}\t{{.Image}}\"";
       docker-stats = "docker ps --format \"{{ .Names }}\" | xargs docker stats";
       du = "du -sh";
+      inherit df;
       ec = "emacsclient -c";
       gzip = "pigz";
       history = "fc -El 1";
@@ -59,6 +94,6 @@
       nix-cleanup = "nix-collect-garbage -d && sudo nix-collect-garbage -d";
 
       # top
-      top = "${pkgs.btop}/bin/btop";
+      top = "${pkgs.btop}/bin/btop --low-color";
     };
 }

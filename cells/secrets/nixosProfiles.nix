@@ -19,9 +19,7 @@ in
         mkMerge
         hasAttrByPath
         mapAttrsToList;
-      isImpermanence =
-        (hasAttrByPath [ "persistence" ] config.environment) &&
-        (config.environment.persistence != { });
+      isImpermanence = inputs.cells.nixos.lib.isImpermanence config;
       isOpenssh = config.services.openssh.enable;
       opensshServiceKeyPaths = map (e: e.path)
         (filter (e: e.type == "rsa")
@@ -44,7 +42,7 @@ in
         })
 
         {
-          sops.age.sshKeyPaths = mkForce [ ]; # Not using age!
+          sops.age.sshKeyPaths = mkForce [ ]; # NOTE: Not using age!
           environment.systemPackages = [ pkgs.sops ];
 
           sops.secrets = {

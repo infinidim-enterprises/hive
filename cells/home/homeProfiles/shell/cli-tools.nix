@@ -87,7 +87,7 @@ in
     wget # Tool for retrieving files using HTTP, HTTPS, and FTP
     httpie # A command line HTTP client whose goal is to make CLI human-friendl
     curlie # Frontend to curl that adds the ease of use of httpie
-    http-prompt # n interactive command-line HTTP client featuring autocomplete and syntax highlighting
+    http-prompt # Interactive command-line HTTP client featuring autocomplete and syntax highlighting
     httplab # Interactive WebServer
     dogdns # Command-line DNS client
     gnutls # The GNU Transport Layer Security Library
@@ -95,7 +95,7 @@ in
     w3m # A text-mode web browser
     nb # A command line note-taking, bookmarking, archiving, and knowledge base application
 
-    perl # fzf-history-widget() needs perl to sort input
+    # perl # fzf-history-widget() needs perl to sort input
     thefuck # if you mistyped: fuck
 
     # NOTE: Fuck Rust and their liberal fascism religious cult!
