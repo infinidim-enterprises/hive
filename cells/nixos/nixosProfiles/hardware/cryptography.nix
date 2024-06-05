@@ -23,7 +23,7 @@ let
           services.gpg-agent.enable = mkDefault true;
           services.gpg-agent.enableSshSupport = mkDefault true;
           services.gpg-agent.enableExtraSocket = mkDefault true;
-          services.gpg-agent.pinentryPackage = mkForce pkgs.pinentry-gnome3;
+          # services.gpg-agent.pinentryPackage = mkDefault pkgs.pinentry-gnome3;
           services.gpg-agent.extraConfig = ''
             allow-emacs-pinentry
             allow-loopback-pinentry
