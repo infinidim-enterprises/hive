@@ -70,7 +70,6 @@ in
               imports =
                 inputs.cells.home.homeSuites.default ++
                 (with inputs.cells.home.homeModules; [
-                  # DEFUNCT: services.trezor-agent
                   services.emacs
                   programs.promnesia
                   programs.chemacs
