@@ -55,7 +55,5 @@ cell.lib.importers.importPackagesRakeleaves
     "make-desktopitem"
     # FIXME: ipxe
     "ipxe"
-    ### NOTE: gpg-hd must remain pinned to a specific version of pycrypto
-    "gpg-hd"
   ];
-} # TODO: completely delete the crappy python shit 'gpg-hd'!  // { gpg-hd = nixpkgs-pycrypto-pinned.callPackage ./packages/tools/python/gpg-hd { }; }
+}

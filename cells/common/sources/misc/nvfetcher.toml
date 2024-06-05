@@ -104,18 +104,13 @@ fetch.url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/module
 src.git = "https://github.com/mcdope/pam_usb"
 fetch.git = "https://github.com/mcdope/pam_usb"
 
-[gpg-hd]
-# Deterministic GPG brainwallet keychain generator
-src.git = "https://github.com/infinidim-enterprises/gpg-hd"
-fetch.github = "infinidim-enterprises/gpg-hd"
-
-# Deterministic GPG key generator
 [pgp-key-generation]
+# Deterministic GPG key generator
 src.git = "https://github.com/summitto/pgp-key-generation"
 fetch.github = "summitto/pgp-key-generation"
 
-# Dependency of pgp-key-generation
 [pgp-packet-library]
+# Dependency of pgp-key-generation
 src.git = "https://github.com/summitto/pgp-packet-library"
 fetch.github = "summitto/pgp-packet-library"
 git.fetchSubmodules = true

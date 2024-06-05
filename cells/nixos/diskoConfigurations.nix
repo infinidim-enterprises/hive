@@ -453,6 +453,7 @@
         allowDiscards = false;
         fallbackToPassword = true;
         # preLVM = true;
+        # NOTE: https://github.com/sgillespie/nixos-yubikey-luks
         # gpgCard = {
         #   gracePeriod = 25;
         #   encryptedPass = "/boot/luks/decryption-key.gpg";

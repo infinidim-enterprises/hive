@@ -32,7 +32,7 @@ let
     (filterAttrs (k: v: v ? enable && v.enable) dm) != { };
 in
 {
-  inherit isZfs;
+  inherit isZfs isGui;
 
   mkHome = username: shell: {
     imports =

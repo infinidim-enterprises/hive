@@ -1,6 +1,5 @@
 { inputs, cell, ... }:
 
-# NOTE: https://github.com/sgillespie/nixos-yubikey-luks
 #
 # https://raymii.org/s/articles/GPG_noninteractive_batch_sign_trust_and_send_gnupg_keys.html
 # https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html
@@ -8,9 +7,6 @@
 with lib;
 let
   hmModule = { config, osConfig, lib, ... }:
-    let
-      cfgTrezor = config.services.trezor-agent;
-    in
     {
       config = with lib; mkMerge [
         {
@@ -20,21 +16,19 @@ let
           programs.gpg.enable = mkDefault true;
           programs.gpg.mutableKeys = mkDefault true;
           programs.gpg.mutableTrust = mkDefault true;
+
           # NOTE: This is needed to support multiple keys
-          programs.gpg.scdaemonSettings.disable-ccid = lib.mkIf osConfig.services.pcscd.enable true;
-        }
-        (mkIf cfgTrezor.enable { })
-        (mkIf (!cfgTrezor.enable) {
+          programs.gpg.scdaemonSettings.disable-ccid = osConfig.services.pcscd.enable;
+
           services.gpg-agent.enable = mkDefault true;
           services.gpg-agent.enableSshSupport = mkDefault true;
           services.gpg-agent.enableExtraSocket = mkDefault true;
-          # FIXME: services.gpg-agent.pinentryPackage = mkDefault pkgs.pinentry-gnome3;
+          services.gpg-agent.pinentryPackage = mkDefault pkgs.pinentry-gnome3;
           services.gpg-agent.extraConfig = ''
             allow-emacs-pinentry
             allow-loopback-pinentry
           '';
-        })
-
+        }
       ];
     };
 
@@ -88,26 +82,22 @@ mkMerge [
       pcsclite
       pcsctools
 
-      # pinentry-curses
-
       inputs.cells.common.packages.pbkdf2-sha512
       cryptsetup
       openssl
-
-      # TODO: key backup
-      ###
-      inputs.cells.common.packages.paper-store
-      # enc_with_passwd
-      # gpg_autogenkey
-      # gpg-tui # NOTE: Fuck rust
-      ###
-      inputs.cells.common.packages.pgp-key-generation # Deterministic ssh-keys from BIP39
       paperkey
       qrencode
       zbar
+
+      ###
+      inputs.cells.common.packages.paper-store
+      # gpg-tui # NOTE: Fuck rust
+      ###
+      inputs.cells.common.packages.pgp-key-generation # Deterministic ssh-keys from BIP39
+      inputs.cells.common.packages.dkeygen # helper script for pgp-key-generation
     ];
 
-    environment.shellInit = ''
+    environment.interactiveShellInit = ''
       rbtohex() {
         ( od -An -vtx1 | tr -d ' \n' )
       }
@@ -119,7 +109,7 @@ mkMerge [
 
   }
 
-  (mkIf config.services.xserver.displayManager.lightdm.enable {
+  (mkIf (cell.lib.isGui config) {
     # TODO: Lock screen when trezor device is removed via udev.
     # udevadm info --attribute-walk --name /dev/usb/hiddev0
     #
