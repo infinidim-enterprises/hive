@@ -60,7 +60,8 @@ in
   dkeygen = mkOCI {
     inherit uid gid runtimeInputs;
     name = "ghcr.io/infinidim-enterprises/hive";
-    labels.source = "https://github.com/infinidim-enterprises/hive:dkeygen";
+    # labels.source = "https://github.com/infinidim-enterprises/hive:dkeygen";
+    labels.source = "https://github.com/infinidim-enterprises/hive";
     labels.description = "Deterministic key generator BIP39->GPG";
     meta.tags = [ "dkeygen" ];
     entrypoint = pkgs.bash;
@@ -69,7 +70,7 @@ in
       "USER=${uname}"
       "HOME=/home/${uname}"
       "NIX_PAGER=cat"
-      "PATH=${pkgs.lib.makeBinPath (runtimeInputs ++ [ inputs.common.packages.dkeygen ])}"
+      "PATH=${pkgs.lib.makeBinPath (runtimeInputs ++ [ inputs.cells.common.packages.dkeygen ])}"
     ];
 
     config.volumes."/tmp" = { };
