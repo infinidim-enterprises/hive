@@ -58,7 +58,7 @@ in
       gzip = "pigz";
       history = "fc -El 1";
       ls = "ls -gh --group-directories-first -p -X --color";
-
+      free = "free -h";
       mn = ''
         manix "" | grep '^# ' | sed 's/^# \(.*\) (.*/\1/;s/ (.*//;s/^# //' | sk --preview="manix '{}'" | xargs manix
       '';
