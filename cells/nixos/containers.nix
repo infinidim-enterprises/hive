@@ -7,7 +7,7 @@ let
     buildImage
     buildLayer;
 
-  pkgs = import inputs.nixpkgs-pycrypto-pinned {
+  pkgs = import inputs.nixpkgs-unstable {
     inherit (inputs.nixpkgs) system;
     config.allowUnfree = true;
   };
@@ -17,14 +17,6 @@ let
   #   imageDigest = "sha256:115731bab0862031b44766733890091c17924f9b7781b79997f5f163be262178";
   #   arch = "amd64";
   #   sha256 = "sha256-o4GvFCq6pvzASvlI5BLnk+Y4UN6qKL2dowuT0cp8q7Q=";
-  # };
-
-
-  # gpg-hd-image = buildImage {
-  #   name = "gpg-hd";
-  #   layers = [
-  #     (buildLayer { deps = with pkgs; [ coreutils bash inputs.cells.common.packages.gpg-hd ]; })
-  #   ];
   # };
 
   uname = "dkeygen";
@@ -68,12 +60,9 @@ in
   dkeygen = mkOCI {
     inherit uid gid runtimeInputs;
     name = "ghcr.io/infinidim-enterprises/hive";
-    labels = {
-      source = "https://github.com/infinidim-enterprises/hive:dkeygen";
-      description = "Deterministic key generator BIP39->GPG";
-    };
+    labels.source = "https://github.com/infinidim-enterprises/hive:dkeygen";
+    labels.description = "Deterministic key generator BIP39->GPG";
     meta.tags = [ "dkeygen" ];
-    # entrypoint = inputs.cells.common.packages.gpg-hd;
     entrypoint = pkgs.bash;
 
     config.Env = [
