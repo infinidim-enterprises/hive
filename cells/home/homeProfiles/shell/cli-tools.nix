@@ -1,4 +1,40 @@
 { pkgs, ... }:
+let
+  iotop_task_delayacct = pkgs.writeShellApplication {
+    name = "iotop";
+    runtimeInputs = with pkgs; [ sudo procps ];
+    text = ''
+      # Function to disable task_delayacct upon script exit
+      disable_task_delayacct() {
+          sudo sysctl kernel.task_delayacct=0
+      }
+
+      # Ensure disable_task_delayacct is called on script exit
+      trap 'disable_task_delayacct' EXIT
+
+      # Check if the user has sudo capabilities
+      if ! sudo -n true 2>/dev/null; then
+          echo "Error: This script requires sudo privileges."
+          exit 1
+      fi
+
+      # Check the value of kernel.task_delayacct
+      task_delayacct_value=$(sysctl -n kernel.task_delayacct)
+
+      if [ "$task_delayacct_value" -eq 0 ]; then
+          # Set kernel.task_delayacct to 1
+          sudo sysctl kernel.task_delayacct=1
+
+          # Run iotop with passed arguments
+          sudo iotop "$@"
+      else
+          # Find the already running iotop process and print its PID and COMMAND
+          ps -C '.iotop-wrapped' -o pid,cmd
+      fi
+    '';
+  };
+
+in
 {
   home.packages = with pkgs; [
     tmate #TODO: make a home-manager module - https://tmate.io/ Instant terminal sharing
@@ -18,7 +54,7 @@
     magic-wormhole # secure file sharing over cli
 
     ###
-    iotop # A tool to find out the processes doing the most IO
+    iotop_task_delayacct # A tool to find out the processes doing the most IO
     iftop # Display bandwidth usage on a network interface
     nload # Monitors network traffic and bandwidth usage with ncurses graphs
     iptraf-ng # A console-based network monitoring utility (fork of iptraf)
