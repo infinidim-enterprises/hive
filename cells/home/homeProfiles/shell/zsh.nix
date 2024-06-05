@@ -49,52 +49,7 @@ lib.mkIf config.programs.zsh.enable
   programs.zsh.dirHashes.vids = "$HOME/Videos";
   programs.zsh.dirHashes.bins = "$HOME/bin";
 
-  programs.zsh.shellAliases = {
-    # sr = "surfraw";
-    # _ = "sudo";
-    # cp = "rsync -avh --progress";
-    # md = "mkdir -p";
-    # df =
-    #   let
-    #     fsTypes = [
-    #       "f2fs"
-    #       "vfat"
-    #       "hfsplus"
-    #       "fuseblk"
-    #       "cifs"
-    #       "exfat"
-    #       "ext4"
-    #       "ext3"
-    #       "ext2"
-    #       "fuse"
-    #       "fuse.encfs"
-    #       "fuse.sshfs"
-    #       "fuse.cryfs"
-    #       "fuse.gocryptfs"
-    #       "fuse.mergerfs"
-    #       "ntfs"
-    #       "zfs"
-    #       "xtreemfs"
-    #       "xfs"
-    #       "nfs"
-    #       "nfs4"
-    #       "iso9660"
-    #     ];
-    #     dfAliases = lib.concatMapStringsSep " " (x: "--type=${x}") fsTypes;
-    #   in
-    #   "df -haT ${dfAliases}";
-    # docker-ps = "docker ps --format \"table {{.Names}}\t{{.RunningFor}}\t{{.Image}}\"";
-    # docker-stats = "docker ps --format \"{{ .Names }}\" | xargs docker stats";
-    # du = "du -sh";
-
-    # ec = "emacsclient -c";
-    # gzip = "pigz";
-    # history = "fc -El 1";
-    # ls = "ls -gh --group-directories-first -p -X --color";
-    # grep = "rg";
-    # myip = "dig +short myip.opendns.com @resolver1.opendns.com";
-    # top = "${pkgs.btop}/bin/btop";
-  };
+  # programs.zsh.shellAliases = { };
 
   programs.zsh.localVariables = {
     WORDCHARS = "*?_-.[]~=&;!#$%^(){}<>";

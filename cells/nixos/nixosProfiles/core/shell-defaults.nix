@@ -7,7 +7,8 @@ let
     "${env} ${pkgs.duf}/bin/duf " +
     (optionalString (cell.lib.isImpermanence config)
       "-hide-mp " +
-    (concatStringsSep "," (cell.lib.impermanenceMounts config))) + " -theme ansi -hide binds,special";
+    "'" + (concatStringsSep "," (cell.lib.impermanenceMounts config)) + "'") +
+    " -theme ansi -hide binds,special";
 in
 {
 
