@@ -61,32 +61,6 @@ let
     # monkeysphere
   ];
 
-  keygen_script = pkgs.writeShellApplication {
-    name = "dkeygen";
-    excludeShellChecks = [ "SC2206" "SC2034" ];
-    bashOptions = [ "errexit" "pipefail" ];
-    runtimeEnv.WORDLIST = pkgs.writeText "bip39-wordlist" (pkgs.lib.fileContents ./nixosProfiles/hardware/crypto/bip39-english.txt);
-    runtimeInputs = with pkgs; [
-      inputs.cells.common.packages.pgp-key-generation
-      coreutils-full
-      findutils
-      qrencode
-      openssh
-      systemd
-      expect
-      gnused
-      gnupg
-      gawk
-    ];
-
-    text =
-      with pkgs.lib;
-      let
-        remove_shebang = txt: concatStringsSep "\n" (tail (splitString "\n" txt));
-      in
-      remove_shebang (fileContents ./nixosProfiles/hardware/crypto/dkeygen.sh);
-  };
-
 in
 {
   # std //nixos/containers/dkeygen:{build,load,publish}
@@ -106,7 +80,7 @@ in
       "USER=${uname}"
       "HOME=/home/${uname}"
       "NIX_PAGER=cat"
-      "PATH=${pkgs.lib.makeBinPath (runtimeInputs ++ [ keygen_script ])}"
+      "PATH=${pkgs.lib.makeBinPath (runtimeInputs ++ [ inputs.common.packages.dkeygen ])}"
     ];
 
     config.volumes."/tmp" = { };
@@ -126,5 +100,4 @@ in
     #   fromImage = gpg-hd-image;
     # };
   };
-  inherit keygen_script;
 }
