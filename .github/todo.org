@@ -6,6 +6,8 @@ https://github.com/zylon-ai/private-gpt
 ** API
 https://localai.io
 * Filesystems
+** unionfs
+mergerfs aufs overlayfs
 ** pkgs.google-drive-ocamlfuse
 Write a home-manager module for this
 * k8s

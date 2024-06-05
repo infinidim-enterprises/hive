@@ -2,38 +2,12 @@
 
 { self, pkgs, lib, config, ... }:
 let
-  env = "TERM=screen CLICOLOR_FORCE=1 COLORTERM=truecolor -hide-mp '/boot' -theme ansi";
-
+  env = "TERM=screen CLICOLOR_FORCE=1 COLORTERM=truecolor";
   df = with lib;
     "${env} ${pkgs.duf}/bin/duf " +
     (optionalString (cell.lib.isImpermanence config)
       "-hide-mp " +
     (concatStringsSep "," (cell.lib.impermanenceMounts config))) + " -theme ansi -hide binds,special";
-
-  fs_types = [
-    "f2fs"
-    "vfat"
-    "hfsplus"
-    "fuseblk"
-    "cifs"
-    "exfat"
-    "ext4"
-    "ext3"
-    "ext2"
-    "fuse.encfs"
-    "fuse.sshfs"
-    "ntfs"
-    "fuse.cryfs"
-    "zfs"
-    "fuse.gocryptfs"
-    "xtreemfs"
-    "fuse.mergerfs"
-    "xfs"
-    "nfs4"
-    "nfs"
-    "iso9660"
-    "fuse"
-  ];
 in
 {
 
