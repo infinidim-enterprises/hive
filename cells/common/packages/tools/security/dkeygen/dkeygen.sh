@@ -489,96 +489,88 @@ done
 WRITE_CARD=false
 DEBUG=false
 
-# parse_args() {
-#   while [[ "$#" -gt 0 ]]; do
-#     case $1 in
-#       --debug) DEBUG=true ;;
-#       *) echo "Unknown parameter passed: $1"; exit 1 ;;
-#     esac
-#     shift
-#   done
-# }
-
-# # Parse arguments
-# parse_args "$@"
-
-while [ "$#" -gt 0 ]; do
-  i="$1"
-  shift 1
-
-  case "$i" in
-  --seed)
-    SEED=(${1})
-    seed_provided=true
+parse_args() {
+  while [[ $# -gt 0 ]]; do
+    i="$1"
     shift 1
-    ;;
 
-  --sigtime)
-    SIGTIME="${1}"
-    sigtime_provided=true
-    shift 1
-    ;;
+    case "$i" in
+    --seed)
+      SEED=(${1})
+      seed_provided=true
+      shift 1
+      ;;
 
-  --sigexpiry)
-    SIGEXPIRY="${1}"
-    sigexpiry_provided=true
-    shift 1
-    ;;
+    --sigtime)
+      SIGTIME="${1}"
+      sigtime_provided=true
+      shift 1
+      ;;
 
-  --keytime)
-    KEYTIME="${1}"
-    shift 1
-    ;;
+    --sigexpiry)
+      SIGEXPIRY="${1}"
+      sigexpiry_provided=true
+      shift 1
+      ;;
 
-  --keytype)
-    KEYTYPE="${1}"
-    shift 1
-    ;;
+    --keytime)
+      KEYTIME="${1}"
+      shift 1
+      ;;
 
-  --keyfname)
-    KEYFNAME="${1}"
-    shift 1
-    ;;
+    --keytype)
+      KEYTYPE="${1}"
+      shift 1
+      ;;
 
-  --name)
-    NAME="${1}"
-    name_provided=true
-    shift 1
-    ;;
+    --keyfname)
+      KEYFNAME="${1}"
+      shift 1
+      ;;
 
-  --comment)
-    COMMENT="${1}"
-    shift 1
-    ;;
+    --name)
+      NAME="${1}"
+      name_provided=true
+      shift 1
+      ;;
 
-  --email)
-    UID_EMAIL="${1}"
-    email_provided=true
-    shift 1
-    ;;
+    --comment)
+      COMMENT="${1}"
+      shift 1
+      ;;
 
-  --write-card)
-    WRITE_CARD=true
-    shift 1
-    ;;
+    --email)
+      UID_EMAIL="${1}"
+      email_provided=true
+      shift 1
+      ;;
 
-  --debug)
-    DEBUG=true
-    shift 1
-    ;;
+    --write-card)
+      WRITE_CARD=true
+      shift 1
+      ;;
 
-  --help)
-    show_usage
-    exit 0
-    ;;
+    --debug)
+      DEBUG=true
+      shift 1
+      ;;
 
-  *)
-    echo "${0}: unknown option \`${i}'"
-    show_usage
-    exit 1
-    ;;
-  esac
-done
+    --help)
+      show_usage
+      exit 0
+      ;;
+
+    *)
+      echo "${0}: unknown option \`${i}'"
+      show_usage
+      exit 1
+      ;;
+    esac
+  done
+}
+
+# Parse arguments
+parse_args "$@"
 
 echo "${red}***************** DEBUG is ${DEBUG} *****************${normal}"
 
