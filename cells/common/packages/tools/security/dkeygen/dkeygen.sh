@@ -563,6 +563,8 @@ while [ "$#" -gt 0 ]; do
   esac
 done
 
+echo "${red}***************** DEBUG is ${DEBUG} *****************${normal}"
+
 args_optional_set
 args_required_check
 
