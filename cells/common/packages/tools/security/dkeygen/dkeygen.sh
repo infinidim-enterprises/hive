@@ -15,26 +15,28 @@ KEYFNAME_PUBLIC=""
 GPG_TTY=$(tty)
 export GPG_TTY
 
-# normal=$'\e[0m'                         # (works better sometimes)
-normal=$(tput sgr0)        # normal text
-bold=$(tput bold)          # make colors bold/bright
-red="$bold$(tput setaf 1)" # bright red text
-green=$(tput setaf 2)      # dim green text
-fawn=$(tput setaf 3)
-beige="$fawn"            # dark yellow text
-yellow="$bold$fawn"      # bright yellow text
-darkblue=$(tput setaf 4) # dim blue text
-blue="$bold$darkblue"    # bright blue text
-purple=$(tput setaf 5)
-magenta="$purple"               # magenta text
-pink="$bold$purple"             # bright magenta text
-darkcyan=$(tput setaf 6)        # dim cyan text
-cyan="$bold$darkcyan"           # bright cyan text
-gray=$(tput setaf 7)            # dim white text
-darkgray="$bold"$(tput setaf 0) # bold black = dark gray text
-white="$bold$gray"              # bright white text
+ncurses_load_colors() {
+  # normal=$'\e[0m'                         # (works better sometimes)
+  normal=$(tput sgr0)        # normal text
+  bold=$(tput bold)          # make colors bold/bright
+  red="$bold$(tput setaf 1)" # bright red text
+  green=$(tput setaf 2)      # dim green text
+  fawn=$(tput setaf 3)
+  beige="$fawn"            # dark yellow text
+  yellow="$bold$fawn"      # bright yellow text
+  darkblue=$(tput setaf 4) # dim blue text
+  blue="$bold$darkblue"    # bright blue text
+  purple=$(tput setaf 5)
+  magenta="$purple"               # magenta text
+  pink="$bold$purple"             # bright magenta text
+  darkcyan=$(tput setaf 6)        # dim cyan text
+  cyan="$bold$darkcyan"           # bright cyan text
+  gray=$(tput setaf 7)            # dim white text
+  darkgray="$bold"$(tput setaf 0) # bold black = dark gray text
+  white="$bold$gray"              # bright white text
 
-# echo "${red}hello ${yellow}this is ${green}coloured${normal}"
+  # echo "${red}hello ${yellow}this is ${green}coloured${normal}"
+}
 
 pgp_key_private_revocation_cert() {
   if "${DEBUG}"; then
@@ -476,6 +478,8 @@ if [ "$#" -eq 0 ]; then
   exit 0
 fi
 
+ncurses_load_colors
+
 required_args=("seed" "sigtime" "sigexpiry" "name" "email")
 
 for arg in "${required_args[@]}"; do
@@ -484,6 +488,19 @@ done
 
 WRITE_CARD=false
 DEBUG=false
+
+# parse_args() {
+#   while [[ "$#" -gt 0 ]]; do
+#     case $1 in
+#       --debug) DEBUG=true ;;
+#       *) echo "Unknown parameter passed: $1"; exit 1 ;;
+#     esac
+#     shift
+#   done
+# }
+
+# # Parse arguments
+# parse_args "$@"
 
 while [ "$#" -gt 0 ]; do
   i="$1"
