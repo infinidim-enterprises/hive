@@ -6,6 +6,7 @@
 , qrencode
 , openssh
 , systemd
+, ncurses
 , expect
 , gnused
 , gnupg
@@ -35,6 +36,7 @@ writeShellApplication {
     qrencode
     openssh
     systemd
+    ncurses
     expect
     gnused
     gnupg

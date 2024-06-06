@@ -15,7 +15,32 @@ KEYFNAME_PUBLIC=""
 GPG_TTY=$(tty)
 export GPG_TTY
 
+# normal=$'\e[0m'                         # (works better sometimes)
+normal=$(tput sgr0)        # normal text
+bold=$(tput bold)          # make colors bold/bright
+red="$bold$(tput setaf 1)" # bright red text
+green=$(tput setaf 2)      # dim green text
+fawn=$(tput setaf 3)
+beige="$fawn"            # dark yellow text
+yellow="$bold$fawn"      # bright yellow text
+darkblue=$(tput setaf 4) # dim blue text
+blue="$bold$darkblue"    # bright blue text
+purple=$(tput setaf 5)
+magenta="$purple"               # magenta text
+pink="$bold$purple"             # bright magenta text
+darkcyan=$(tput setaf 6)        # dim cyan text
+cyan="$bold$darkcyan"           # bright cyan text
+gray=$(tput setaf 7)            # dim white text
+darkgray="$bold"$(tput setaf 0) # bold black = dark gray text
+white="$bold$gray"              # bright white text
+
+# echo "${red}hello ${yellow}this is ${green}coloured${normal}"
+
 pgp_key_private_revocation_cert() {
+  if "${DEBUG}"; then
+    echo "${red}pgp_key_private_revocation_cert${normal}"
+  fi
+
   local COMMAND_LINE
   COMMAND_LINE="gpg --output ${KEY_PUBLIC_PARTS_DIR}/${KEYID}_revocation.asc --generate-revocation ${KEYID}"
 
@@ -40,19 +65,32 @@ DONE
 }
 
 pgp_key_public_import() {
-  echo 'Importing public key...'
+  if "${DEBUG}"; then
+    echo "${red}pgp_key_public_import${normal}"
+  fi
+
+  echo "${yellow}Importing public key...${normal}"
+
   systemctl --user list-unit-files | grep gpg- | grep -v '.service' | awk '{ print $1 }' | xargs systemctl --user start
   gpg --import "${KEYFNAME_PUBLIC}"
   echo "${KEYID}:6:" | gpg --import-ownertrust
 }
 
 pgp_key_private_remove() {
-  echo 'Removing private key and resetting gpg...'
+  if "${DEBUG}"; then
+    echo "${red}pgp_key_private_remove${normal}"
+  fi
+
+  echo "${yellow}Removing private key and resetting gpg...${normal}"
   systemctl --user | grep gpg- | awk '{ print $1 }' | xargs systemctl --user stop
   find "${GNUPGHOME}" -not -type l -delete || true
 }
 
 pgp_subkeys_private_move_to_card() {
+  if "${DEBUG}"; then
+    echo "${red}pgp_subkeys_private_move_to_card${normal}"
+  fi
+
   local COMMAND_LINE
   COMMAND_LINE="gpg --pinentry-mode loopback --expert --edit-key ${KEYID}"
 
@@ -113,23 +151,39 @@ DONE
 }
 
 ssh_key_public_export() {
+  if "${DEBUG}"; then
+    echo "${red}ssh_key_public_export${normal}"
+  fi
+
   echo "${KEYGRIP}" >>"${GNUPGHOME}/sshcontrol"
   ssh-add -L >"${KEY_PUBLIC_PARTS_DIR}/${KEYID}_ssh_key.pub"
 }
 
 pgp_key_public_export() {
+  if "${DEBUG}"; then
+    echo "${red}pgp_key_public_export${normal}"
+  fi
+
   KEYGRIP=$(gpg --list-public-keys --keyid-format LONG --with-colon --with-keygrip --fingerprint "${UID_EMAIL}" | grep 'grp:' | head -n 1 | awk -F: '{print $10}')
   KEYFNAME_PUBLIC="${KEY_PUBLIC_PARTS_DIR}/${KEYID}_public_key.asc"
   gpg --export -a "${KEYID}" >"${KEYFNAME_PUBLIC}"
 }
 
 pgp_key_private_import() {
+  if "${DEBUG}"; then
+    echo "${red}pgp_key_private_import${normal}"
+  fi
+
   gpg --import "${OUT_KEYFNAME}"
   KEYID=$(gpg --list-secret-keys --keyid-format LONG --with-colon --fingerprint "${UID_EMAIL}" | grep 'fpr:' | head -n 1 | awk -F: '{print $10}')
   echo "${KEYID}:6:" | gpg --import-ownertrust
 }
 
 pgp_card_set_owner() {
+  if "${DEBUG}"; then
+    echo "${red}pgp_card_set_owner${normal}"
+  fi
+
   local COMMAND_LINE
   COMMAND_LINE="gpg --pinentry-mode loopback --edit-card"
 
@@ -182,6 +236,10 @@ DONE
 }
 
 pgp_card_set_keyattrs() {
+  if "${DEBUG}"; then
+    echo "${red}pgp_card_set_keyattrs${normal}"
+  fi
+
   local COMMAND_LINE
   COMMAND_LINE="gpg --pinentry-mode loopback --edit-card"
 
@@ -235,6 +293,10 @@ DONE
 }
 
 pgp_card_reset() {
+  if "${DEBUG}"; then
+    echo "${red}pgp_card_reset${normal}"
+  fi
+
   local COMMAND_LINE
   COMMAND_LINE="gpg --edit-card"
 
@@ -266,6 +328,10 @@ DONE
 }
 
 pgp_key_private_generate() {
+  if "${DEBUG}"; then
+    echo "${red}pgp_key_private_generate${normal}"
+  fi
+
   local COMMAND_LINE
   COMMAND_LINE="generate_derived_key --sigtime ${SIGTIME} --sigexpiry ${SIGEXPIRY} --key-creation ${KEYTIME} --key-type ${KEYTYPE} --name ${UID_NAME_AND_COMMENT} --email ${UID_EMAIL} --output-file ${OUT_KEYFNAME}"
 
@@ -284,6 +350,10 @@ DONE
 }
 
 full_seed_create() {
+  if "${DEBUG}"; then
+    echo "${red}full_seed_create${normal}"
+  fi
+
   for partial_word in "${SEED[@]}"; do
     prefix="${partial_word:0:4}"
 
@@ -342,6 +412,10 @@ DONE
 }
 
 args_optional_set() {
+  if "${DEBUG}"; then
+    echo "${red}args_optional_set${normal}"
+  fi
+
   # create first and last names for card owner info
   read -r -a name_array <<<"${NAME}"
   UID_FIRSTNAME="${name_array[0]}"
@@ -368,6 +442,10 @@ args_optional_set() {
 }
 
 args_required_check() {
+  if "${DEBUG}"; then
+    echo "${red}args_required_check${normal}"
+  fi
+
   for arg in "${required_args[@]}"; do
     varname="${arg}_provided"
     if ! ${!varname}; then
@@ -379,6 +457,10 @@ args_required_check() {
 }
 
 is_valid_utc_time() {
+  if "${DEBUG}"; then
+    echo "${red}is_valid_utc_time${normal}"
+  fi
+
   local input
   input=$1
 
@@ -401,6 +483,7 @@ for arg in "${required_args[@]}"; do
 done
 
 WRITE_CARD=false
+DEBUG=false
 
 while [ "$#" -gt 0 ]; do
   i="$1"
@@ -459,6 +542,11 @@ while [ "$#" -gt 0 ]; do
 
   --write-card)
     WRITE_CARD=true
+    shift 1
+    ;;
+
+  --debug)
+    DEBUG=true
     shift 1
     ;;
 

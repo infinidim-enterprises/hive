@@ -3,12 +3,8 @@
 { self, pkgs, lib, config, ... }:
 let
   env = "TERM=screen CLICOLOR_FORCE=1 COLORTERM=truecolor";
-  df = with lib;
-    "${env} ${pkgs.duf}/bin/duf " +
-    (optionalString (cell.lib.isImpermanence config)
-      "-hide-mp " +
-    "'" + (concatStringsSep "," (cell.lib.impermanenceMounts config)) + "'") +
-    " -theme ansi -hide binds,special";
+  duf_impermanence = with lib; " -hide-mp " + "'" + (concatStringsSep "," (cell.lib.impermanenceMounts config)) + "'";
+  duf = "${env} ${pkgs.duf}/bin/duf " + "-theme ansi -hide binds,special";
 in
 {
 
@@ -29,7 +25,10 @@ in
 
   environment.shellAliases =
     {
-
+      df =
+        if (cell.lib.isImpermanence config)
+        then (duf + duf_impermanence)
+        else duf;
       # which = "which_nix";
 
       # quick cd
@@ -54,7 +53,7 @@ in
       docker-ps = "docker ps --format \"table {{.Names}}\t{{.RunningFor}}\t{{.Image}}\"";
       docker-stats = "docker ps --format \"{{ .Names }}\" | xargs docker stats";
       du = "du -sh";
-      inherit df;
+
       ec = "emacsclient -c";
       gzip = "pigz";
       history = "fc -El 1";

@@ -6,6 +6,7 @@ let
   overrides = {
     asbleg-bootstrap = { deployment.targetHost = "192.168.1.133"; };
     asbleg = { deployment.targetHost = "192.168.1.133"; };
+    marauder = { deployment.targetHost = "192.168.1.129"; };
   };
 in
 mapAttrs
@@ -28,4 +29,5 @@ mapAttrs
         )
     )
   )
-  (filterAttrs (n: _: n != "octoprint") cell.nixosConfigurations)
+  cell.nixosConfigurations
+#  (filterAttrs (n: _: n != "some_rpi_host") cell.nixosConfigurations)

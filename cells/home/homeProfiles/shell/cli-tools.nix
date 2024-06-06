@@ -2,7 +2,7 @@
 let
   iotop_task_delayacct = pkgs.writeShellApplication {
     name = "iotop";
-    runtimeInputs = with pkgs; [ sudo procps ];
+    runtimeInputs = with pkgs; [ procps ];
     text = ''
       # Function to disable task_delayacct upon script exit
       disable_task_delayacct() {
