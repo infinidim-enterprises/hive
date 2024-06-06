@@ -85,6 +85,7 @@ pgp_key_private_remove() {
 
   echo "${yellow}Removing private key and resetting gpg...${normal}"
   systemctl --user | grep gpg- | awk '{ print $1 }' | xargs systemctl --user stop
+  pkill keyboxd || true
   find "${GNUPGHOME}" -not -type l -delete || true
 }
 
@@ -478,8 +479,6 @@ if [ "$#" -eq 0 ]; then
   exit 0
 fi
 
-ncurses_load_colors
-
 required_args=("seed" "sigtime" "sigexpiry" "name" "email")
 
 for arg in "${required_args[@]}"; do
@@ -550,10 +549,10 @@ parse_args() {
       shift 1
       ;;
 
-    # --debug)
-    #   DEBUG=true
-    #   shift 1
-    #   ;;
+    --debug)
+      DEBUG=true
+      shift 1
+      ;;
 
     --help)
       show_usage
@@ -569,7 +568,8 @@ parse_args() {
   done
 }
 
-# Parse arguments
+ncurses_load_colors
+
 parse_args "$@"
 
 echo "${red}***************** DEBUG is ${DEBUG} *****************${normal}"
@@ -591,7 +591,7 @@ pgp_key_private_generate
 pgp_key_private_import
 
 pgp_key_public_export
-# FIXME: pgp_key_private_revocation_cert - something 'expect' doesn't handle
+pgp_key_private_revocation_cert # FIXME: something 'expect' doesn't handle
 
 if "${WRITE_CARD}"; then
   pgp_card_reset
