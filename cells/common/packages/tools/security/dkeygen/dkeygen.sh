@@ -487,7 +487,7 @@ for arg in "${required_args[@]}"; do
 done
 
 WRITE_CARD=false
-DEBUG=false
+DEBUG=true
 
 parse_args() {
   while [[ $# -gt 0 ]]; do
@@ -550,10 +550,10 @@ parse_args() {
       shift 1
       ;;
 
-    --debug)
-      DEBUG=true
-      shift 1
-      ;;
+    # --debug)
+    #   DEBUG=true
+    #   shift 1
+    #   ;;
 
     --help)
       show_usage
