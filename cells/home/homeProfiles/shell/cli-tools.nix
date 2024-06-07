@@ -26,10 +26,10 @@ let
           sudo sysctl kernel.task_delayacct=1
 
           # Run iotop with passed arguments
-          sudo iotop "$@"
+          sudo ${pkgs.iotop-c}/bin/iotop-c --processes --only "$@"
       else
           # Find the already running iotop process and print its PID and COMMAND
-          ps -C '.iotop-wrapped' -o pid,cmd
+          ps -C 'iotop-c' -o pid,cmd
       fi
     '';
   };
