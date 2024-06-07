@@ -235,12 +235,13 @@ Maybe use (package! maple-iedit :recipe (:host github :repo "honmaple/emacs-mapl
 #+end_src
 ** Activitywatch
 #+begin_src emacs-lisp :tangle packages.el
-(package! activity-watch-mode)
+;; (package! activity-watch-mode)
+(package! docker-tramp :disable t)
 #+end_src
 
 #+begin_src emacs-lisp :tangle config.el
-(use-package! activity-watch-mode
-  :config (global-activity-watch-mode))
+;; (use-package! activity-watch-mode
+;;   :config (global-activity-watch-mode))
 #+end_src
 ** TODO SFS Search/Indexing
 [[https://github.com/Overdr0ne/sfs][Search File System]]
@@ -891,6 +892,9 @@ Also, needs to complete from pkgs and lib and project buffers
 (package! base16-theme)
 (package! color-theme-sanityinc-solarized
   :recipe (:host github :repo "purcell/color-theme-sanityinc-solarized"))
+
+(after! doom-modeline
+  (set-face-attribute 'doom-modeline-bar-inactive nil :background 'unspecified))
 #+end_src
 
 [] #ff8100 is the color of amber old monochrome terminals
