@@ -522,7 +522,7 @@ helm-swoop can be replaced by (package! ctrlf :recipe (:host github :repo "raxod
 #+end_src
 
 #+begin_src emacs-lisp :tangle config.el
-;;(use-package! vterm :bind (:map vterm-mode-map ("s-j" . vterm-copy-mode)))
+(use-package! vterm :bind (:map vterm-mode-map ("s-j" . vterm-copy-mode)))
 ;;(use-package! vtm :config (add-to-list 'auto-mode-alist '("\\.vtm\\'" . vtm-mode)))
 ;;(use-package! multi-vterm
 ;;  :bind
