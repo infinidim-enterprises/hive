@@ -3,7 +3,7 @@
 { config, lib, ... }:
 
 lib.mkMerge [
-  (mkIf config.services.xserver.displayManager.lightdm.enable {
+  (lib.mkIf config.services.xserver.displayManager.lightdm.enable {
     services.xserver.displayManager.lightdm.extraConfig = ''
       [VNCServer]
       enabled=true
