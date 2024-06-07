@@ -1,19 +1,4 @@
 {
-    "HPI": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "HPI",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": null,
-            "sha256": "sha256-V3lzJs17I3zwaDowngD0gr1t0zRlMnuE7QZeb4dlbXA=",
-            "type": "url",
-            "url": "https://pypi.org/packages/source/H/HPI/HPI-0.4.20231102.tar.gz"
-        },
-        "version": "0.4.20231102"
-    },
     "acl-compat": {
         "cargoLocks": null,
         "date": "2019-07-20",
@@ -35,7 +20,7 @@
     },
     "adguard-filters": {
         "cargoLocks": null,
-        "date": "2024-06-03",
+        "date": "2024-06-07",
         "extract": null,
         "name": "adguard-filters",
         "passthru": null,
@@ -45,12 +30,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "5076c7c53a33836f6a76a0bcd5d8c0ca18621161",
-            "sha256": "sha256-tCGrUknFylJjC5aY0fjLKug+WhQCEH6iN+TflFmHpYc=",
+            "rev": "43fc9904584a110414e5b61c52501f29f3ea0a76",
+            "sha256": "sha256-Z5sSaqySAwC0R6b7Ue+1jpsY0t7L976p7/RlrwGoH/s=",
             "type": "git",
             "url": "https://github.com/AdguardTeam/AdguardFilters"
         },
-        "version": "5076c7c53a33836f6a76a0bcd5d8c0ca18621161"
+        "version": "43fc9904584a110414e5b61c52501f29f3ea0a76"
     },
     "age-plugin-trezor": {
         "cargoLocks": null,
@@ -76,7 +61,7 @@
     },
     "chatgpt-wrapper": {
         "cargoLocks": null,
-        "date": "2024-06-02",
+        "date": "2024-06-06",
         "extract": null,
         "name": "chatgpt-wrapper",
         "passthru": null,
@@ -88,15 +73,15 @@
             "name": null,
             "owner": "llm-workflow-engine",
             "repo": "llm-workflow-engine",
-            "rev": "0423590dc9727db6dc6592a2f50040e100863c6b",
-            "sha256": "sha256-KgHTMXv3wBVGfbS59k5eOy1TXINMsVF51uP6dHwamPM=",
+            "rev": "4ba1d7f473299e17820eb3515f343e0b4398b08f",
+            "sha256": "sha256-4plTQJQoQaiQQTUHJXWq2R/aIL5Y0GOF1J5CcAXjdNE=",
             "type": "github"
         },
-        "version": "0423590dc9727db6dc6592a2f50040e100863c6b"
+        "version": "4ba1d7f473299e17820eb3515f343e0b4398b08f"
     },
     "cl-hash-util": {
         "cargoLocks": null,
-        "date": "2024-05-28",
+        "date": "2024-06-04",
         "extract": null,
         "name": "cl-hash-util",
         "passthru": null,
@@ -108,11 +93,11 @@
             "name": null,
             "owner": "orthecreedence",
             "repo": "cl-hash-util",
-            "rev": "b46b0cb87a8f1cb0ab7ce18816062e31d98a6e54",
-            "sha256": "sha256-X2z8IqLjOyN0Wk768TpeHk96IYEjru0MySl01k0IsuI=",
+            "rev": "e1e065f1f63dfa5d849c1676bd858bdcaf8b52ca",
+            "sha256": "sha256-b63P1AsgdZWPxV0+GtMd5xJYTL75rxvSZngt9gMIAKY=",
             "type": "github"
         },
-        "version": "b46b0cb87a8f1cb0ab7ce18816062e31d98a6e54"
+        "version": "e1e065f1f63dfa5d849c1676bd858bdcaf8b52ca"
     },
     "cl-mount-info": {
         "cargoLocks": null,
@@ -285,11 +270,11 @@
             "name": null,
             "owner": "arkenfox",
             "repo": "user.js",
-            "rev": "122.0",
-            "sha256": "sha256-624Giuo1TfeXQGzcGK9ETW86esNFhFZ5a46DCjT6K5I=",
+            "rev": "126.0",
+            "sha256": "sha256-XWtFa/K91FOpfCad6b8hp4X+xP8ke9h5t5/uj87W6+w=",
             "type": "github"
         },
-        "version": "122.0"
+        "version": "126.0"
     },
     "git-get": {
         "cargoLocks": null,
@@ -357,41 +342,6 @@
         },
         "version": "12b3f421c19eb5548ae76b8c79c9581a428329e0"
     },
-    "gpg-hd": {
-        "cargoLocks": null,
-        "date": "2024-03-25",
-        "extract": null,
-        "name": "gpg-hd",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "infinidim-enterprises",
-            "repo": "gpg-hd",
-            "rev": "7c50fbb58d16b33dc01581d6dda1ee11ecceeee6",
-            "sha256": "sha256-FIKvgatYdiyAV4NuFkrOtYj0CQfMJ3jJHgVi/9gZtmc=",
-            "type": "github"
-        },
-        "version": "7c50fbb58d16b33dc01581d6dda1ee11ecceeee6"
-    },
-    "hug": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "hug",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": null,
-            "sha256": "sha256-sO2s4qy2GIc3ecnObs+RZdtU/vlcIiYvVwD83Z/rrsk=",
-            "type": "url",
-            "url": "https://pypi.org/packages/source/h/hug/hug-2.6.1.tar.gz"
-        },
-        "version": "2.6.1"
-    },
     "ipxe": {
         "cargoLocks": null,
         "date": "2024-05-31",
@@ -440,11 +390,11 @@
             "name": null,
             "owner": "langchain-ai",
             "repo": "langchain",
-            "rev": "langchain-core==0.2.3",
-            "sha256": "sha256-QRsx9qYuYmv5oL3J5trvaV4aX8vHBxumuUM5JWHfQ4w=",
+            "rev": "langchain-core==0.2.5",
+            "sha256": "sha256-EBs6BHxBPBR1TfSyesM2gJJtxgClM6lLXko1qisrz7A=",
             "type": "github"
         },
-        "version": "langchain-core==0.2.3"
+        "version": "langchain-core==0.2.5"
     },
     "ledger-live-desktop": {
         "cargoLocks": null,
@@ -530,40 +480,6 @@
         },
         "version": "2c5a85bd79c7b7d509ec14dd00d310cfe9f9afd2"
     },
-    "open-in-editor": {
-        "cargoLocks": null,
-        "date": "2021-02-28",
-        "extract": null,
-        "name": "open-in-editor",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "rev": "08057f04a8d025a44974cb83770851b0b9149f82",
-            "sha256": "sha256-x7MqX6GLKsZahXAxbw6mVZ5gQP/Sar9EiHJgqhABW9s=",
-            "type": "git",
-            "url": "https://github.com/karlicoss/open-in-editor"
-        },
-        "version": "08057f04a8d025a44974cb83770851b0b9149f82"
-    },
-    "orgparse": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "orgparse",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": null,
-            "sha256": "sha256-pOOK6tq/mYiw9npmrNCCedGCILy8QioSkGDCiQu6kaA=",
-            "type": "url",
-            "url": "https://pypi.org/packages/source/o/orgparse/orgparse-0.4.20231004.tar.gz"
-        },
-        "version": "0.4.20231004"
-    },
     "pam_usb": {
         "cargoLocks": null,
         "date": "2024-03-31",
@@ -604,7 +520,7 @@
     },
     "pbkdf2-sha512": {
         "cargoLocks": null,
-        "date": "2024-06-03",
+        "date": "2024-06-07",
         "extract": null,
         "name": "pbkdf2-sha512",
         "passthru": null,
@@ -615,7 +531,7 @@
             "type": "url",
             "url": "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c"
         },
-        "version": "fc6e6b8ffb440710f291883c480e5b7f9c5dd6f9"
+        "version": "4bc410f1b583c2bdf29cbaefa533de7c5ef93ed1"
     },
     "pgp-key-generation": {
         "cargoLocks": null,
@@ -656,26 +572,6 @@
             "type": "github"
         },
         "version": "42b4d08c0cb4b8ee527f729c1674e982eca409a7"
-    },
-    "promnesia": {
-        "cargoLocks": null,
-        "date": "2024-05-31",
-        "extract": null,
-        "name": "promnesia",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "karlicoss",
-            "repo": "promnesia",
-            "rev": "c522744e94ab57cbda1a0a80984f4519bdda634b",
-            "sha256": "sha256-mlX34vrN6hCAXNwvcfvKlOY8JXWvAZJ54pjOL55hf2w=",
-            "type": "github"
-        },
-        "version": "c522744e94ab57cbda1a0a80984f4519bdda634b"
     },
     "quicklisp": {
         "cargoLocks": null,

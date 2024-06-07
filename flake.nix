@@ -209,9 +209,10 @@
 
     # TODO: netboot-nix.url = "github:grahamc/netboot.nix";
 
-    nvfetcher.url = "github:berberman/nvfetcher/0.6.2";
-    # nvfetcher.inputs.nixpkgs.follows = "nixpkgs-unstable";
-    # nvfetcher.inputs.flake-utils.follows = "flake-utils";
+    # nvfetcher.url = "github:berberman/nvfetcher/0.6.2";
+    nvfetcher.url = "github:berberman/nvfetcher";
+    nvfetcher.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    nvfetcher.inputs.flake-utils.follows = "flake-utils";
 
     nur.url = "github:nix-community/NUR";
 

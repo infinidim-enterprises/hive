@@ -381,10 +381,10 @@
   };
   "darkreader" = rec {
     pname = "darkreader";
-    version = "4.9.85";
+    version = "4.9.86";
     addonId = "addon@darkreader.org";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4286925/darkreader-4.9.85.xpi";
-    sha256 = "28180bd8b970c4b9f961bda310df271d1e26a7cdf4ff01c94239f2fca3079d05";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4295557/darkreader-4.9.86.xpi";
+    sha256 = "dde9896751858d0179f3d724a59f2bd4a0d61e599cb8822dc8ed2de320510714";
     meta = with lib;
       {
         homepage = "https://darkreader.org/";
@@ -651,22 +651,23 @@
   };
   "passff" = rec {
     pname = "passff";
-    version = "1.17";
+    version = "1.19.3";
     addonId = "passff@invicem.pro";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4284061/passff-1.17.xpi";
-    sha256 = "fe447ebab2741166bdeb505274724649c9146de454d74599419ff3b2a73cdfbe";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4299236/passff-1.19.3.xpi";
+    sha256 = "07fc361c2b50498003eda5007c16fec2a2f9472599d9fcc34cae0c2203c28a09";
     meta = with lib;
       {
-        homepage = "https://github.com/passff/passff";
+        homepage = "https://codeberg.org/PassFF/passff";
         description = "Add-on that allows users of the unix password manager 'pass' (see <a href=\"https://prod.outgoing.prod.webservices.mozgcp.net/v1/24f646fb865abe6edf9e3f626db62565bfdc2e7819ab33a5b4c30a9573787988/https%3A//www.passwordstore.org/\" rel=\"nofollow\">https://www.passwordstore.org/</a>) to access their password store from Firefox";
         license = licenses.gpl2;
         mozPermissions = [
           "<all_urls>"
-          "tabs"
-          "storage"
-          "nativeMessaging"
           "clipboardWrite"
           "contextMenus"
+          "contextualIdentities"
+          "nativeMessaging"
+          "storage"
+          "tabs"
           "webRequest"
           "webRequestBlocking"
         ];
@@ -675,10 +676,10 @@
   };
   "privacy-badger17" = rec {
     pname = "privacy-badger17";
-    version = "2024.5.27";
+    version = "2024.6.3";
     addonId = "jid1-MnnxcxisBPnSXQ@jetpack";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4294424/privacy_badger17-2024.5.27.xpi";
-    sha256 = "bf8e9f231bdd7754d337ebb51a96bb179bae8cffac9fe71521c36f1958425de3";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4298042/privacy_badger17-2024.6.3.xpi";
+    sha256 = "e60101d2c31c80addb9d1e2c6fa4b4a17b4907451ea1b2e907b9bee0871a20f4";
     meta = with lib;
       {
         homepage = "https://privacybadger.org/";
@@ -1136,25 +1137,26 @@
   };
   "promnesia" = rec {
     pname = "promnesia";
-    version = "1.2.4";
+    version = "1.3.1";
     addonId = "{07c6b8e1-94f7-4bbf-8e91-26c0a8992ab5}";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4110600/promnesia-1.2.4.xpi";
-    sha256 = "1f35b9e14ac88c250965fd5dbbb03a2a4dce869807484c3be23afc53eb388cee";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4298718/promnesia-1.3.1.xpi";
+    sha256 = "1e98071a762cf21f772bab6fcd84fd878924cc5e58529edb2a93a509d1a2a6c1";
     meta = with lib;
       {
         homepage = "https://github.com/karlicoss/promnesia";
         description = "Enhancement of your browsing history";
         license = licenses.mit;
         mozPermissions = [
-          "file:///*"
-          "https://*/*"
-          "http://*/*"
           "storage"
           "webNavigation"
           "contextMenus"
           "notifications"
           "bookmarks"
           "history"
+          "scripting"
+          "file:///*"
+          "http://*/"
+          "https://*/"
         ];
         platforms = platforms.all;
       };

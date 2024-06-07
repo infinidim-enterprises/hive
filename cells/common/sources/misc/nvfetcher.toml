@@ -56,25 +56,25 @@ fetch.git = "https://github.com/ipxe/ipxe"
 ### :END: ipxe
 
 ### :START: promnesia
-[promnesia]
-src.git = "https://github.com/karlicoss/promnesia"
-fetch.github = "karlicoss/promnesia"
+# [promnesia]
+# src.git = "https://github.com/karlicoss/promnesia"
+# fetch.github = "karlicoss/promnesia"
 
-[HPI]
-src.pypi = "HPI"
-fetch.pypi = "HPI"
+# [HPI]
+# src.pypi = "HPI"
+# fetch.pypi = "HPI"
 
-[hug]
-src.pypi = "hug"
-fetch.pypi = "hug"
+# [hug]
+# src.pypi = "hug"
+# fetch.pypi = "hug"
 
-[orgparse]
-src.pypi = "orgparse"
-fetch.pypi = "orgparse"
+# [orgparse]
+# src.pypi = "orgparse"
+# fetch.pypi = "orgparse"
 
-[open-in-editor]
-src.git = "https://github.com/karlicoss/open-in-editor"
-fetch.git = "https://github.com/karlicoss/open-in-editor"
+# [open-in-editor]
+# src.git = "https://github.com/karlicoss/open-in-editor"
+# fetch.git = "https://github.com/karlicoss/open-in-editor"
 
 ### :END: promnesia
 

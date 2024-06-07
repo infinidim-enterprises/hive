@@ -80,16 +80,16 @@
   };
   doom-emacs = {
     pname = "doom-emacs";
-    version = "9620bb45ac4cd7b0274c497b2d9d93c4ad9364ee";
+    version = "517daa4ed9168855c202ba2fd28920f6ee17249f";
     src = fetchgit {
       url = "https://github.com/hlissner/doom-emacs";
-      rev = "9620bb45ac4cd7b0274c497b2d9d93c4ad9364ee";
+      rev = "517daa4ed9168855c202ba2fd28920f6ee17249f";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = true;
-      sha256 = "sha256-KDMN7grnfXcQYMpjMYXPFMV3BALahduLqhmaJSNreIc=";
+      sha256 = "sha256-Lb046rxvuw6yLhR7CnPfJAxemyJPAm6j/9JjZUHvXV4=";
     };
-    date = "2024-04-18";
+    date = "2024-06-03";
   };
   grip = {
     pname = "grip";
@@ -106,27 +106,27 @@
   };
   jinx = {
     pname = "jinx";
-    version = "09969c50b965a9a01f3c02ec47c4496b991a8624";
+    version = "81d0a092b3ca4c5036af45c9411ebbe66eb123ea";
     src = fetchFromGitHub {
       owner = "minad";
       repo = "jinx";
-      rev = "09969c50b965a9a01f3c02ec47c4496b991a8624";
+      rev = "81d0a092b3ca4c5036af45c9411ebbe66eb123ea";
       fetchSubmodules = false;
-      sha256 = "sha256-mvvQ2iuDjRAEhctFbiLdFZoHLf0GbRmiKYHtgBtValA=";
+      sha256 = "sha256-jBvb8Tpu+ALKKuDsGenOsC7huHMVPFjTrV4+/6/DzxQ=";
     };
-    date = "2024-05-28";
+    date = "2024-06-06";
   };
   lsp-bridge = {
     pname = "lsp-bridge";
-    version = "f48de0896d3af80f5e15aef512b7485eb46df9f6";
+    version = "f183492a56ed3c9b6be0a9c554aa1a64dd416354";
     src = fetchFromGitHub {
       owner = "manateelazycat";
       repo = "lsp-bridge";
-      rev = "f48de0896d3af80f5e15aef512b7485eb46df9f6";
+      rev = "f183492a56ed3c9b6be0a9c554aa1a64dd416354";
       fetchSubmodules = false;
-      sha256 = "sha256-ocKNRSt5RVKGnxd0odI43jdr27oYrRLdnABh6x63CfM=";
+      sha256 = "sha256-GJn9ThlbKY8fi5uKEjJgOhbOnoMlLK110E2lk7rLdAs=";
     };
-    date = "2024-06-01";
+    date = "2024-06-06";
   };
   nix-mode = {
     pname = "nix-mode";
@@ -144,15 +144,15 @@
   };
   nix-ts-mode = {
     pname = "nix-ts-mode";
-    version = "36effd4c7b37a83e782f6e53bc1b338f1cc2e583";
+    version = "1528e47bd1ce187e65e7b87919f30617ccba4ca9";
     src = fetchFromGitHub {
       owner = "remi-gelinas";
       repo = "nix-ts-mode";
-      rev = "36effd4c7b37a83e782f6e53bc1b338f1cc2e583";
+      rev = "1528e47bd1ce187e65e7b87919f30617ccba4ca9";
       fetchSubmodules = false;
-      sha256 = "sha256-l+rNPXZJMXu8kxwgxymZH2UhVXzrGDOAtRv4ZOavupk=";
+      sha256 = "sha256-0p7wwQxJoDAeMYa181JjHgQzIT5ZT02M0KhfUT9uCl8=";
     };
-    date = "2024-05-27";
+    date = "2024-06-03";
   };
   org-pretty-table = {
     pname = "org-pretty-table";

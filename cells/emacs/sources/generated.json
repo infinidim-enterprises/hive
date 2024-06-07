@@ -116,7 +116,7 @@
     },
     "doom-emacs": {
         "cargoLocks": null,
-        "date": "2024-04-18",
+        "date": "2024-06-03",
         "extract": null,
         "name": "doom-emacs",
         "passthru": null,
@@ -126,12 +126,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": true,
             "name": null,
-            "rev": "9620bb45ac4cd7b0274c497b2d9d93c4ad9364ee",
-            "sha256": "sha256-KDMN7grnfXcQYMpjMYXPFMV3BALahduLqhmaJSNreIc=",
+            "rev": "517daa4ed9168855c202ba2fd28920f6ee17249f",
+            "sha256": "sha256-Lb046rxvuw6yLhR7CnPfJAxemyJPAm6j/9JjZUHvXV4=",
             "type": "git",
             "url": "https://github.com/hlissner/doom-emacs"
         },
-        "version": "9620bb45ac4cd7b0274c497b2d9d93c4ad9364ee"
+        "version": "517daa4ed9168855c202ba2fd28920f6ee17249f"
     },
     "grip": {
         "cargoLocks": null,
@@ -154,7 +154,7 @@
     },
     "jinx": {
         "cargoLocks": null,
-        "date": "2024-05-28",
+        "date": "2024-06-06",
         "extract": null,
         "name": "jinx",
         "passthru": null,
@@ -166,15 +166,15 @@
             "name": null,
             "owner": "minad",
             "repo": "jinx",
-            "rev": "09969c50b965a9a01f3c02ec47c4496b991a8624",
-            "sha256": "sha256-mvvQ2iuDjRAEhctFbiLdFZoHLf0GbRmiKYHtgBtValA=",
+            "rev": "81d0a092b3ca4c5036af45c9411ebbe66eb123ea",
+            "sha256": "sha256-jBvb8Tpu+ALKKuDsGenOsC7huHMVPFjTrV4+/6/DzxQ=",
             "type": "github"
         },
-        "version": "09969c50b965a9a01f3c02ec47c4496b991a8624"
+        "version": "81d0a092b3ca4c5036af45c9411ebbe66eb123ea"
     },
     "lsp-bridge": {
         "cargoLocks": null,
-        "date": "2024-06-01",
+        "date": "2024-06-06",
         "extract": null,
         "name": "lsp-bridge",
         "passthru": null,
@@ -186,11 +186,11 @@
             "name": null,
             "owner": "manateelazycat",
             "repo": "lsp-bridge",
-            "rev": "f48de0896d3af80f5e15aef512b7485eb46df9f6",
-            "sha256": "sha256-ocKNRSt5RVKGnxd0odI43jdr27oYrRLdnABh6x63CfM=",
+            "rev": "f183492a56ed3c9b6be0a9c554aa1a64dd416354",
+            "sha256": "sha256-GJn9ThlbKY8fi5uKEjJgOhbOnoMlLK110E2lk7rLdAs=",
             "type": "github"
         },
-        "version": "f48de0896d3af80f5e15aef512b7485eb46df9f6"
+        "version": "f183492a56ed3c9b6be0a9c554aa1a64dd416354"
     },
     "nix-mode": {
         "cargoLocks": null,
@@ -215,7 +215,7 @@
     },
     "nix-ts-mode": {
         "cargoLocks": null,
-        "date": "2024-05-27",
+        "date": "2024-06-03",
         "extract": null,
         "name": "nix-ts-mode",
         "passthru": null,
@@ -227,11 +227,11 @@
             "name": null,
             "owner": "remi-gelinas",
             "repo": "nix-ts-mode",
-            "rev": "36effd4c7b37a83e782f6e53bc1b338f1cc2e583",
-            "sha256": "sha256-l+rNPXZJMXu8kxwgxymZH2UhVXzrGDOAtRv4ZOavupk=",
+            "rev": "1528e47bd1ce187e65e7b87919f30617ccba4ca9",
+            "sha256": "sha256-0p7wwQxJoDAeMYa181JjHgQzIT5ZT02M0KhfUT9uCl8=",
             "type": "github"
         },
-        "version": "36effd4c7b37a83e782f6e53bc1b338f1cc2e583"
+        "version": "1528e47bd1ce187e65e7b87919f30617ccba4ca9"
     },
     "org-pretty-table": {
         "cargoLocks": null,
