@@ -1,10 +1,10 @@
 { inputs, cell, ... }:
 let
-  nixpkgs-pycrypto-pinned = import inputs.nixpkgs-pycrypto-pinned {
-    inherit (inputs.nixpkgs) system;
-    overlays = [ cell.overlays.sources ];
-    config.allowUnfree = true;
-  };
+  # nixpkgs-pycrypto-pinned = import inputs.nixpkgs-pycrypto-pinned {
+  #   inherit (inputs.nixpkgs) system;
+  #   overlays = [ cell.overlays.sources ];
+  #   config.allowUnfree = true;
+  # };
 in
 
 cell.lib.importers.importPackagesRakeleaves

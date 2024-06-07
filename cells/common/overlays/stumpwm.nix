@@ -21,12 +21,18 @@ let
     hasPrefix
     readDir;
 
-  build-asdf-system = prev.sbcl.buildASDFSystem;
-  sbcl_unwrapped = prev.sbcl.override {
+  nixos-24-05 = import inputs.nixos-24-05 {
+    inherit (inputs.nixpkgs) system;
+    overlays = [ cell.overlays.sources ];
+    config.allowUnfree = true;
+  };
+
+  build-asdf-system = nixos-24-05.sbcl.buildASDFSystem;
+  sbcl_unwrapped = nixos-24-05.sbcl.override {
     purgeNixReferences = true; # NOTE: produce binaries for non-NixOS
     coreCompression = false; # NOTE: works when purgeNixReferences = false
   };
-  sbcl_wrapped = prev.wrapLisp {
+  sbcl_wrapped = nixos-24-05.wrapLisp {
     pkg = sbcl_unwrapped;
     faslExt = "fasl";
     flags = [ "--dynamic-space-size" "3000" ];
@@ -102,7 +108,7 @@ let
         then "${fix_dirname}/swm-${baseNameOf src}"
         else src;
       getDepsScript = prev.writeScriptBin "lispLibs"
-        ("#!${prev.sbcl}/bin/sbcl --script\n" +
+        ("#!${sbcl}/bin/sbcl --script\n" +
           (fileContents ./find-lisp-deps.lisp));
       depends-on = filter
         (e: (e != "" &&

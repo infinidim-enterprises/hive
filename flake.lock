@@ -50,11 +50,11 @@
         "poetry2nix": "poetry2nix"
       },
       "locked": {
-        "lastModified": 1715198357,
-        "narHash": "sha256-JFX+z1Gjr4ELAwSiW9uo3mTzr3RHDtWZIMD8epGh9yI=",
+        "lastModified": 1717759153,
+        "narHash": "sha256-uwUsKl5kxyd3pRBSI65c3bA3BbaP6dszHnJyEM3+uZc=",
         "owner": "nix-community",
         "repo": "authentik-nix",
-        "rev": "e9ae3992d542972d787adf2b200a7489ca83aa91",
+        "rev": "1942bdac27c337559ca16ddb7fca5c9ffb686e5b",
         "type": "github"
       },
       "original": {
@@ -2611,7 +2611,23 @@
         "type": "github"
       }
     },
-    "nixos": {
+    "nixos-22-11": {
+      "locked": {
+        "lastModified": 1688392541,
+        "narHash": "sha256-lHrKvEkCPTUO+7tPfjIcb7Trk6k31rz18vkyqmkeJfY=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "ea4c80b39be4c09702b0cb3b42eab59e2ba4f24b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "release-22.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixos-23-11": {
       "locked": {
         "lastModified": 1717737383,
         "narHash": "sha256-HmwWo+j1cWpNJ/kVktVc7rXFGgaWIZgd6YTZLNWiYrs=",
@@ -2627,18 +2643,18 @@
         "type": "github"
       }
     },
-    "nixos-22-11": {
+    "nixos-24-05": {
       "locked": {
-        "lastModified": 1688392541,
-        "narHash": "sha256-lHrKvEkCPTUO+7tPfjIcb7Trk6k31rz18vkyqmkeJfY=",
+        "lastModified": 1717756849,
+        "narHash": "sha256-kUmZTkomPMgr8Yc9n3TXnZqiQWkMwZm0MqSGLrSPO7k=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "ea4c80b39be4c09702b0cb3b42eab59e2ba4f24b",
+        "rev": "ca3a72b763f0b6de2c713ac240f7be6a20c66ed0",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
-        "ref": "release-22.11",
+        "ref": "release-24.05",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -2747,38 +2763,6 @@
         "owner": "NixOS",
         "ref": "nixos-23.11",
         "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixos-unstable-linux_6_2": {
-      "locked": {
-        "lastModified": 1683185507,
-        "narHash": "sha256-Wcj09pigMFgj+0borXeoJvVMwH2Rc4gkSq4BwNq3k7s=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "63464b8c2837ec56e1d610f5bd2a9b8e1f532c07",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "63464b8c2837ec56e1d610f5bd2a9b8e1f532c07",
-        "type": "github"
-      }
-    },
-    "nixos-unstable-linux_6_5": {
-      "locked": {
-        "lastModified": 1698931758,
-        "narHash": "sha256-pwl9xS9JFMXXR1lUP/QOqO9hiZKukEcVUU1A0DKQwi4=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "b644d97bda6dae837d577e28383c10aa51e5e2d2",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "b644d97bda6dae837d577e28383c10aa51e5e2d2",
         "type": "github"
       }
     },
@@ -3003,50 +2987,18 @@
         "type": "github"
       }
     },
-    "nixpkgs-linux-firmware": {
-      "locked": {
-        "lastModified": 1657518616,
-        "narHash": "sha256-jakNcaqHM548/3tvaV6GJFFNA5fmRjU5qlS7JlR77wQ=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "07f2b4bebf1a457d4e709ad20b3c53aa55a960e7",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "07f2b4bebf1a457d4e709ad20b3c53aa55a960e7",
-        "type": "github"
-      }
-    },
     "nixpkgs-master": {
       "locked": {
-        "lastModified": 1717757462,
-        "narHash": "sha256-vwwCa/Y+7cbkYuZt4xGdhsgaJUhHA7yPJVTfHmXFsbc=",
+        "lastModified": 1717761116,
+        "narHash": "sha256-3tKT5bdfvDGNaqwm50lZGwFhuRK91QUqUNUAxkL9tQo=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "f9895b95676cd64a232379f3fd6e8e3fae76b677",
+        "rev": "dfec583872cf7ae087a5ff8659e6480798f16ba9",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
         "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs-pycrypto-pinned": {
-      "locked": {
-        "lastModified": 1711231723,
-        "narHash": "sha256-dARJQ8AJOv6U+sdRePkbcVyVbXJTi1tReCrkkOeusiA=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "e1d501922fd7351da4200e1275dfcf5faaad1220",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "e1d501922fd7351da4200e1275dfcf5faaad1220",
         "type": "github"
       }
     },
@@ -3382,11 +3334,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1717749895,
-        "narHash": "sha256-E6fEND68P37NMIhPyvgZl0jD7KlSg2QKZ1zpsXpobfQ=",
+        "lastModified": 1717760779,
+        "narHash": "sha256-H+949Zq0DprPcLjLRtZlA4nylrY6aXliavb+SRuNBjg=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "b93b6c0b706d78ad95d52104728fd6eed3460f80",
+        "rev": "3c49e3c77046d5a1491928814b5e29aa3d6f7750",
         "type": "github"
       },
       "original": {
@@ -3690,24 +3642,24 @@
         "nixago": "nixago_3",
         "nixago-exts": "nixago-exts",
         "nixd": "nixd",
-        "nixos": "nixos",
+        "nixos": [
+          "nixos-24-05"
+        ],
         "nixos-22-11": "nixos-22-11",
+        "nixos-23-11": "nixos-23-11",
+        "nixos-24-05": "nixos-24-05",
         "nixos-anywhere": "nixos-anywhere",
         "nixos-generators": "nixos-generators",
         "nixos-hardware": "nixos-hardware",
-        "nixos-unstable-linux_6_2": "nixos-unstable-linux_6_2",
-        "nixos-unstable-linux_6_5": "nixos-unstable-linux_6_5",
         "nixos-vscode-server": "nixos-vscode-server",
         "nixpkgs": [
-          "nixos"
+          "nixos-24-05"
         ],
         "nixpkgs-22-11": [
           "nixos-22-11"
         ],
         "nixpkgs-lib": "nixpkgs-lib_4",
-        "nixpkgs-linux-firmware": "nixpkgs-linux-firmware",
         "nixpkgs-master": "nixpkgs-master",
-        "nixpkgs-pycrypto-pinned": "nixpkgs-pycrypto-pinned",
         "nixpkgs-unstable": "nixpkgs-unstable_2",
         "nur": "nur",
         "nurl": "nurl",
