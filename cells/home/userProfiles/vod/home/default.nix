@@ -42,7 +42,7 @@ in
     ]);
 
   home.packages = with pkgs; [
-    # nyxt # TODO: nyxt proper config!
+    nyxt # TODO: nyxt proper config!
     tigervnc
     jekyll
     vultr-cli
