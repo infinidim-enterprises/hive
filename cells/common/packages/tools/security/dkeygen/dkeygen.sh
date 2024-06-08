@@ -537,6 +537,8 @@ is_valid_utc_time() {
   fi
 }
 
+ncurses_load_colors
+
 if [ "$#" -eq 0 ]; then
   show_usage
   exit 0
@@ -630,8 +632,6 @@ parse_args() {
     esac
   done
 }
-
-ncurses_load_colors
 
 parse_args "$@"
 

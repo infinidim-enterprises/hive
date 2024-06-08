@@ -11,7 +11,10 @@ let
 in
 mkMerge [
   (mkIf config.services.gpg-agent.enable {
-    services.gpg-agent.sshKeys = [ "E3C4C12EDF24CA20F167CC7EE203A151BB3FD1AE" ];
+    services.gpg-agent.sshKeys = [
+      "E3C4C12EDF24CA20F167CC7EE203A151BB3FD1AE"
+      "1953CEBFBC2D71B3CA498433F7EFDE2FDC1E69C5"
+    ];
   })
 
   (mkIf (config.services.gpg-agent.enable && config.services.gpg-agent.enableExtraSocket) {
@@ -48,7 +51,4 @@ mkMerge [
       };
     };
   }
-  # (mkIf ((length osConfig.users.users.${name}.openssh.authorizedKeys.keys) > 0) {
-  #   home.file.".ssh/id_rsa.pub".text = head osConfig.users.users.${name}.openssh.authorizedKeys.keys;
-  # })
 ]
