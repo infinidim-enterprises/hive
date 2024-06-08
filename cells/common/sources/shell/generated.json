@@ -85,7 +85,7 @@
     },
     "shellspec": {
         "cargoLocks": null,
-        "date": "2024-06-06",
+        "date": "2024-06-07",
         "extract": null,
         "name": "shellspec",
         "passthru": null,
@@ -97,11 +97,11 @@
             "name": null,
             "owner": "shellspec",
             "repo": "shellspec",
-            "rev": "2b7216ba40b7604833b60704a5fddc8967468cf7",
-            "sha256": "sha256-k341hn69Pk4nRIIm706VmN44RGpRT0nLZRV3iWPhng8=",
+            "rev": "225e0f0e0224729e3be15ea32a2a789c35088731",
+            "sha256": "sha256-pmdX+NQKfRXOllHNFD5EOmHhKSLRUzTHEQuSVSB8pFE=",
             "type": "github"
         },
-        "version": "2b7216ba40b7604833b60704a5fddc8967468cf7"
+        "version": "225e0f0e0224729e3be15ea32a2a789c35088731"
     },
     "shflags": {
         "cargoLocks": null,

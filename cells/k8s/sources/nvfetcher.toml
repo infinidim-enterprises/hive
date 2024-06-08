@@ -1,5 +1,0 @@
-[k9s]
-src.github = "derailed/k9s"
-pinned = true
-src.use_latest_release = true
-fetch.github = "derailed/k9s"

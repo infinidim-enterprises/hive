@@ -80,11 +80,11 @@
   };
   cucumberautocomplete = {
     pname = "cucumberautocomplete";
-    version = "3.0.4";
+    version = "3.0.5";
     src = fetchurl {
-      url = "https://alexkrechik.gallery.vsassets.io/_apis/public/gallery/publisher/alexkrechik/extension/cucumberautocomplete/3.0.4/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "cucumberautocomplete-3.0.4.zip";
-      sha256 = "sha256-CrH/X7K6Y/ci7a1x2vH9X3k6tbSY9ynDCK/Xb35lB+w=";
+      url = "https://alexkrechik.gallery.vsassets.io/_apis/public/gallery/publisher/alexkrechik/extension/cucumberautocomplete/3.0.5/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "cucumberautocomplete-3.0.5.zip";
+      sha256 = "sha256-Tgqd4uoVgGJQKlj4JUM1CrjQhbi0qv9bAGz5NIHyofQ=";
     };
     publisher = "alexkrechik";
     name = "cucumberautocomplete";
@@ -311,11 +311,11 @@
   };
   ruby-lsp = {
     pname = "ruby-lsp";
-    version = "0.7.3";
+    version = "0.7.4";
     src = fetchurl {
-      url = "https://Shopify.gallery.vsassets.io/_apis/public/gallery/publisher/Shopify/extension/ruby-lsp/0.7.3/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "ruby-lsp-0.7.3.zip";
-      sha256 = "sha256-BWONLm9qHWFv1z4YvzsqKJKfe1SbTKjSGI6ZvOkzNbc=";
+      url = "https://Shopify.gallery.vsassets.io/_apis/public/gallery/publisher/Shopify/extension/ruby-lsp/0.7.4/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "ruby-lsp-0.7.4.zip";
+      sha256 = "sha256-BnGLKVkX5CyK/XjyqhLaptHspuY0gfV54CFIVaDawGo=";
     };
     publisher = "Shopify";
     name = "ruby-lsp";

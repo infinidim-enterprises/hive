@@ -16,14 +16,14 @@
   };
   adguard-filters = {
     pname = "adguard-filters";
-    version = "43fc9904584a110414e5b61c52501f29f3ea0a76";
+    version = "239d4ed3163b4277649a533c4348b8c71cda6cea";
     src = fetchgit {
       url = "https://github.com/AdguardTeam/AdguardFilters";
-      rev = "43fc9904584a110414e5b61c52501f29f3ea0a76";
+      rev = "239d4ed3163b4277649a533c4348b8c71cda6cea";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-Z5sSaqySAwC0R6b7Ue+1jpsY0t7L976p7/RlrwGoH/s=";
+      sha256 = "sha256-BdWVAcfKv3AvRRUvtA+y3ZlxP3wSdeUbph/Nd7hyEPA=";
     };
     date = "2024-06-07";
   };
@@ -42,15 +42,15 @@
   };
   chatgpt-wrapper = {
     pname = "chatgpt-wrapper";
-    version = "4ba1d7f473299e17820eb3515f343e0b4398b08f";
+    version = "6c128bb2468a8fc16d595416c426d913e853cda9";
     src = fetchFromGitHub {
       owner = "llm-workflow-engine";
       repo = "llm-workflow-engine";
-      rev = "4ba1d7f473299e17820eb3515f343e0b4398b08f";
+      rev = "6c128bb2468a8fc16d595416c426d913e853cda9";
       fetchSubmodules = false;
-      sha256 = "sha256-4plTQJQoQaiQQTUHJXWq2R/aIL5Y0GOF1J5CcAXjdNE=";
+      sha256 = "sha256-A4O1qZ/EKIhInuMdA5SlG1oKbLiv+vhUa2JBm4ipcp4=";
     };
-    date = "2024-06-06";
+    date = "2024-06-07";
   };
   cl-hash-util = {
     pname = "cl-hash-util";
@@ -164,13 +164,13 @@
   };
   firefox_user_js = {
     pname = "firefox_user_js";
-    version = "126.0";
+    version = "126.1";
     src = fetchFromGitHub {
       owner = "arkenfox";
       repo = "user.js";
-      rev = "126.0";
+      rev = "126.1";
       fetchSubmodules = false;
-      sha256 = "sha256-XWtFa/K91FOpfCad6b8hp4X+xP8ke9h5t5/uj87W6+w=";
+      sha256 = "sha256-Ex+eSb7tZ428MMJDIF/nqUOtnzjqEIPNaDXJPm9FvuY=";
     };
   };
   git-get = {
@@ -321,7 +321,7 @@
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "4bc410f1b583c2bdf29cbaefa533de7c5ef93ed1";
+    version = "17f548b4322d473800e2deafd9acf532b8bdc1ea";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";
