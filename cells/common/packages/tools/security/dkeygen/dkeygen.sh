@@ -16,7 +16,6 @@ GPG_TTY=$(tty)
 export GPG_TTY
 
 ncurses_load_colors() {
-  # normal=$'\e[0m'                         # (works better sometimes)
   normal=$(tput sgr0)        # normal text
   bold=$(tput bold)          # make colors bold/bright
   red="$bold$(tput setaf 1)" # bright red text
@@ -34,8 +33,6 @@ ncurses_load_colors() {
   gray=$(tput setaf 7)            # dim white text
   darkgray="$bold"$(tput setaf 0) # bold black = dark gray text
   white="$bold$gray"              # bright white text
-
-  # echo "${red}hello ${yellow}this is ${green}coloured${normal}"
 }
 
 pgp_key_private_revocation_cert() {
@@ -110,7 +107,7 @@ pgp_subkeys_private_move_to_card() {
   local COMMAND_LINE
   COMMAND_LINE="gpg --pinentry-mode loopback --expert --edit-key ${KEYID}"
 
-  gpg --card-status
+  gpg --card-status >/dev/null 2>&1
 
   expect <<-DONE | sed 's/^  //'
   set timeout 90
@@ -223,7 +220,7 @@ pgp_card_set_owner() {
   local COMMAND_LINE
   COMMAND_LINE="gpg --pinentry-mode loopback --edit-card"
 
-  gpg --card-status
+  gpg --card-status >/dev/null 2>&1
 
   expect <<-DONE | sed 's/^  //'
 
@@ -283,7 +280,7 @@ pgp_card_set_keyattrs() {
   local COMMAND_LINE
   COMMAND_LINE="gpg --pinentry-mode loopback --edit-card"
 
-  gpg --card-status
+  gpg --card-status >/dev/null 2>&1
 
   expect <<-DONE | sed 's/^  //'
   set timeout 90
@@ -344,7 +341,7 @@ pgp_card_reset() {
   local COMMAND_LINE
   COMMAND_LINE="gpg --edit-card"
 
-  gpg --card-status
+  gpg --card-status >/dev/null 2>&1
 
   read -n 1 -s -r -p "Press any key to reset openGPG card to factory-defaults..."
 
@@ -435,7 +432,7 @@ show_report() {
   public key pgp: ${KEYFNAME_PUBLIC}
   public key ssh: ${KEY_PUBLIC_PARTS_DIR}/${KEYID}_ssh_key.pub
 
-  Remember to change the card PINs: gpg --change-pin
+  Remember to change the card PINs: ${red}gpg --change-pin${normal}
 
   home-manager: services.gpg-agent.sshKeys = [ "${KEYGRIP}" ]
   ********************************************************************************
@@ -446,7 +443,8 @@ show_usage() {
   cat <<-DONE | sed 's/^  //'
   $(basename "${0}") version 0.0.2
   Usage: $(basename "${0}") [--seed 'BIP39 mnemonic'] [--sigtime 'Signature time'] [--sigexpiry 'expiry time'] [--name 'Full Name'] [--email 'user@email.com'] [OPTION]...
-  Deterministic pgp key generation - https://github.com/summitto/pgp-key-generation
+  Deterministic pgp key generation - ${yellow}https://github.com/summitto/pgp-key-generation${normal}
+  ${red}Only the seed and key creation time matter!${normal}
 
   Not every pgp card *DEFAULT* PINs might be the same:
 
