@@ -78,11 +78,6 @@
     arion.url = "github:hercules-ci/arion";
     arion.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
-    # std.follows = "hive/std";
-    # std.url = "github:divnix/std/release/0.24";
-    # commit used by hive: 0ce59ac671f041183da72e7cd5db9c6eb878e326
-
-    # std.url = "github:divnix/std/release/0.33";
     std.url = "github:divnix/std/v0.33.1";
     std.inputs.nixpkgs.follows = "nixpkgs-unstable";
     std.inputs.n2c.follows = "n2c";
@@ -130,7 +125,7 @@
     sops-nix.inputs.nixpkgs.follows = "nixpkgs-unstable";
     sops-nix.inputs.nixpkgs-stable.follows = "nixos";
 
-    # ssh root@host "cat /etc/ssh/ssh_host_rsa_key" | ssh-to-pgp -o nixos/secrets/keys/host.asc
+    # NOTE: ssh root@host "cat /etc/ssh/ssh_host_rsa_key" | ssh-to-pgp -o nixos/secrets/keys/host.asc
     sops-ssh-to-pgp.url = "github:Mic92/ssh-to-pgp/1.1.2";
     sops-ssh-to-pgp.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
@@ -140,10 +135,6 @@
     devos-ext-lib.url = "github:divnix/devos-ext-lib/?ref=refs/pull/8/head";
     devos-ext-lib.inputs.nixpkgs.follows = "nixpkgs-unstable";
   };
-
-  # inputs = {
-  #   crystal-1_11_2_pr.url = "github:nixos/nixpkgs?ref=pull/286273/head";
-  # };
 
   # nixpkgs & home-manager
   inputs = {
