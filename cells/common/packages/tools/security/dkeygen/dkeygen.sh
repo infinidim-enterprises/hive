@@ -94,7 +94,8 @@ pgp_key_private_remove() {
   echo "${yellow}Removing private key and resetting gpg...${normal}"
   systemctl --user | grep gpg- | awk '{ print $1 }' | xargs systemctl --user stop
   pkill keyboxd || true
-  find "${GNUPGHOME}" -not -type l -delete || true
+
+  find "${GNUPGHOME}" -mindepth 1 -not -type l -exec rm -rf {} + || true
 
   if "${DEBUG}"; then
     echo "${red}END - pgp_key_private_remove${normal}"
@@ -174,7 +175,11 @@ ssh_key_public_export() {
     echo "${red}START - ssh_key_public_export${normal}"
   fi
 
-  echo "${KEYGRIP}" >>"${GNUPGHOME}/sshcontrol"
+  echo "${KEYGRIP}" >"${GNUPGHOME}/sshcontrol"
+  echo "--------"
+  cat "${GNUPGHOME}/sshcontrol"
+  echo "--------"
+  gpg --card-status >/dev/null 2>&1
   ssh-add -L >"${KEY_PUBLIC_PARTS_DIR}/${KEYID}_ssh_key.pub"
 
   if "${DEBUG}"; then
@@ -439,7 +444,7 @@ DONE
 
 show_usage() {
   cat <<-DONE | sed 's/^  //'
-  $(basename "${0}") version 0.0.1
+  $(basename "${0}") version 0.0.2
   Usage: $(basename "${0}") [--seed 'BIP39 mnemonic'] [--sigtime 'Signature time'] [--sigexpiry 'expiry time'] [--name 'Full Name'] [--email 'user@email.com'] [OPTION]...
   Deterministic pgp key generation - https://github.com/summitto/pgp-key-generation
 
