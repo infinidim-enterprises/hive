@@ -340,11 +340,12 @@ lib.mapAttrs (_: std.lib.dev.mkShell) {
       ];
 
     packages = [
-      nixpkgs-unstable.crystal
-      nixpkgs-unstable.crystalline
-      nixpkgs-unstable.shards
+      # nixpkgs-unstable.crystal
+      # nixpkgs-unstable.crystalline
+      # nixpkgs-unstable.shards
       nixpkgs-unstable.nixos-install-tools
 
+      nvfetcher
       gnupg
       # vscode
     ];
