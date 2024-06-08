@@ -40,7 +40,7 @@ ncurses_load_colors() {
 
 pgp_key_private_revocation_cert() {
   if "${DEBUG}"; then
-    echo "${red}pgp_key_private_revocation_cert${normal}"
+    echo "${red}START - pgp_key_private_revocation_cert${normal}"
   fi
 
   local COMMAND_LINE
@@ -57,18 +57,22 @@ pgp_key_private_revocation_cert() {
   send -- "0\r"
 
   expect "> "
-  send -- "Desc \r"
+  send -- "\r\r"
 
   expect "Is this okay? (y/N) "
   send -- "y\r"
 DONE
 
   qrencode -o "${KEY_PUBLIC_PARTS_DIR}/${KEYID}_revocation.png" -l H -t PNG <"${KEY_PUBLIC_PARTS_DIR}/${KEYID}_revocation.asc"
+  if "${DEBUG}"; then
+    echo "${red}END - pgp_key_private_revocation_cert${normal}"
+  fi
+
 }
 
 pgp_key_public_import() {
   if "${DEBUG}"; then
-    echo "${red}pgp_key_public_import${normal}"
+    echo "${red}START - pgp_key_public_import${normal}"
   fi
 
   echo "${yellow}Importing public key...${normal}"
@@ -76,22 +80,30 @@ pgp_key_public_import() {
   systemctl --user list-unit-files | grep gpg- | grep -v '.service' | awk '{ print $1 }' | xargs systemctl --user start
   gpg --import "${KEYFNAME_PUBLIC}"
   echo "${KEYID}:6:" | gpg --import-ownertrust
+
+  if "${DEBUG}"; then
+    echo "${red}END - pgp_key_public_import${normal}"
+  fi
 }
 
 pgp_key_private_remove() {
   if "${DEBUG}"; then
-    echo "${red}pgp_key_private_remove${normal}"
+    echo "${red}START - pgp_key_private_remove${normal}"
   fi
 
   echo "${yellow}Removing private key and resetting gpg...${normal}"
   systemctl --user | grep gpg- | awk '{ print $1 }' | xargs systemctl --user stop
   pkill keyboxd || true
   find "${GNUPGHOME}" -not -type l -delete || true
+
+  if "${DEBUG}"; then
+    echo "${red}END - pgp_key_private_remove${normal}"
+  fi
 }
 
 pgp_subkeys_private_move_to_card() {
   if "${DEBUG}"; then
-    echo "${red}pgp_subkeys_private_move_to_card${normal}"
+    echo "${red}START - pgp_subkeys_private_move_to_card${normal}"
   fi
 
   local COMMAND_LINE
@@ -151,40 +163,56 @@ pgp_subkeys_private_move_to_card() {
 
   expect eof
 DONE
+
+  if "${DEBUG}"; then
+    echo "${red}END - pgp_subkeys_private_move_to_card${normal}"
+  fi
 }
 
 ssh_key_public_export() {
   if "${DEBUG}"; then
-    echo "${red}ssh_key_public_export${normal}"
+    echo "${red}START - ssh_key_public_export${normal}"
   fi
 
   echo "${KEYGRIP}" >>"${GNUPGHOME}/sshcontrol"
   ssh-add -L >"${KEY_PUBLIC_PARTS_DIR}/${KEYID}_ssh_key.pub"
+
+  if "${DEBUG}"; then
+    echo "${red}END - ssh_key_public_export${normal}"
+  fi
 }
 
 pgp_key_public_export() {
   if "${DEBUG}"; then
-    echo "${red}pgp_key_public_export${normal}"
+    echo "${red}START - pgp_key_public_export${normal}"
   fi
 
   KEYGRIP=$(gpg --list-public-keys --keyid-format LONG --with-colon --with-keygrip --fingerprint "${UID_EMAIL}" | grep 'grp:' | head -n 1 | awk -F: '{print $10}')
   KEYFNAME_PUBLIC="${KEY_PUBLIC_PARTS_DIR}/${KEYID}_public_key.asc"
   gpg --export -a "${KEYID}" >"${KEYFNAME_PUBLIC}"
+
+  if "${DEBUG}"; then
+    echo "${red}END - pgp_key_public_export${normal}"
+  fi
 }
 
 pgp_key_private_import() {
   if "${DEBUG}"; then
-    echo "${red}pgp_key_private_import${normal}"
+    echo "${red}START - pgp_key_private_import${normal}"
   fi
 
   gpg --import "${OUT_KEYFNAME}"
   KEYID=$(gpg --list-secret-keys --keyid-format LONG --with-colon --fingerprint "${UID_EMAIL}" | grep 'fpr:' | head -n 1 | awk -F: '{print $10}')
   echo "${KEYID}:6:" | gpg --import-ownertrust
+
+  if "${DEBUG}"; then
+    echo "${red}END - pgp_key_private_import${normal}"
+  fi
 }
 
 pgp_card_set_owner() {
   if "${DEBUG}"; then
-    echo "${red}pgp_card_set_owner${normal}"
+    echo "${red}START - pgp_card_set_owner${normal}"
   fi
 
   local COMMAND_LINE
@@ -236,11 +264,15 @@ pgp_card_set_owner() {
 
   expect eof
 DONE
+
+  if "${DEBUG}"; then
+    echo "${red}END - pgp_card_set_owner${normal}"
+  fi
 }
 
 pgp_card_set_keyattrs() {
   if "${DEBUG}"; then
-    echo "${red}pgp_card_set_keyattrs${normal}"
+    echo "${red}START - pgp_card_set_keyattrs${normal}"
   fi
 
   local COMMAND_LINE
@@ -293,11 +325,15 @@ pgp_card_set_keyattrs() {
 
   expect eof
 DONE
+
+  if "${DEBUG}"; then
+    echo "${red}END - pgp_card_set_keyattrs${normal}"
+  fi
 }
 
 pgp_card_reset() {
   if "${DEBUG}"; then
-    echo "${red}pgp_card_reset${normal}"
+    echo "${red}START - pgp_card_reset${normal}"
   fi
 
   local COMMAND_LINE
@@ -328,11 +364,15 @@ pgp_card_reset() {
 
   expect eof
 DONE
+
+  if "${DEBUG}"; then
+    echo "${red}END - pgp_card_reset${normal}"
+  fi
 }
 
 pgp_key_private_generate() {
   if "${DEBUG}"; then
-    echo "${red}pgp_key_private_generate${normal}"
+    echo "${red}START - pgp_key_private_generate${normal}"
   fi
 
   local COMMAND_LINE
@@ -350,11 +390,15 @@ pgp_key_private_generate() {
 
   expect eof
 DONE
+
+  if "${DEBUG}"; then
+    echo "${red}END - pgp_key_private_generate${normal}"
+  fi
 }
 
 full_seed_create() {
   if "${DEBUG}"; then
-    echo "${red}full_seed_create${normal}"
+    echo "${red}START - full_seed_create${normal}"
   fi
 
   for partial_word in "${SEED[@]}"; do
@@ -366,6 +410,10 @@ full_seed_create() {
       fi
     done
   done
+
+  if "${DEBUG}"; then
+    echo "${red}END - full_seed_create${normal}"
+  fi
 }
 
 show_report() {
@@ -376,7 +424,7 @@ show_report() {
 
   ********************************************************************************
   [ ${KEYID} '${NAME} (${COMMENT})' <${UID_EMAIL}> @${KEYTIME} ]
-  private key: rm -rf ${OUT_KEYFNAME}
+  private key: ${yellow}rm -rf ${OUT_KEYFNAME}${normal}
 
   keygrip: ${KEYGRIP}
   public key pgp: ${KEYFNAME_PUBLIC}
@@ -416,7 +464,7 @@ DONE
 
 args_optional_set() {
   if "${DEBUG}"; then
-    echo "${red}args_optional_set${normal}"
+    echo "${red}START - args_optional_set${normal}"
   fi
 
   # create first and last names for card owner info
@@ -442,11 +490,15 @@ args_optional_set() {
   fi
 
   mkdir -p "${KEY_PUBLIC_PARTS_DIR}"
+
+  if "${DEBUG}"; then
+    echo "${red}END - args_optional_set${normal}"
+  fi
 }
 
 args_required_check() {
   if "${DEBUG}"; then
-    echo "${red}args_required_check${normal}"
+    echo "${red}START - args_required_check${normal}"
   fi
 
   for arg in "${required_args[@]}"; do
@@ -457,11 +509,15 @@ args_required_check() {
       exit 1
     fi
   done
+
+  if "${DEBUG}"; then
+    echo "${red}END - args_required_check${normal}"
+  fi
 }
 
 is_valid_utc_time() {
   if "${DEBUG}"; then
-    echo "${red}is_valid_utc_time${normal}"
+    echo "${red}START - is_valid_utc_time${normal}"
   fi
 
   local input
@@ -471,6 +527,10 @@ is_valid_utc_time() {
     true
   else
     false
+  fi
+
+  if "${DEBUG}"; then
+    echo "${red}END - is_valid_utc_time${normal}"
   fi
 }
 
@@ -591,7 +651,7 @@ pgp_key_private_generate
 pgp_key_private_import
 
 pgp_key_public_export
-pgp_key_private_revocation_cert # FIXME: something 'expect' doesn't handle
+# pgp_key_private_revocation_cert # FIXME: something 'expect' doesn't handle
 
 if "${WRITE_CARD}"; then
   pgp_card_reset
