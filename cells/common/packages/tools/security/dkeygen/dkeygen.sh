@@ -435,6 +435,7 @@ show_report() {
   Remember to change the card PINs: ${red}gpg --change-pin${normal}
 
   home-manager: services.gpg-agent.sshKeys = [ "${KEYGRIP}" ] ${yellow}<-- KEYGRIP${normal}
+                programs.password-store.settings.PASSWORD_STORE_KEY = "${KEYID}" ${yellow}<-- KEYFPR${normal}
   ********************************************************************************
 DONE
 }
