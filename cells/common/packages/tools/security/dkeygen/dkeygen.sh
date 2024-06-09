@@ -434,7 +434,7 @@ show_report() {
 
   Remember to change the card PINs: ${red}gpg --change-pin${normal}
 
-  home-manager: services.gpg-agent.sshKeys = [ "${KEYID}" ]
+  home-manager: services.gpg-agent.sshKeys = [ "${KEYGRIP}" ] ${yellow}<-- KEYGRIP${normal}
   ********************************************************************************
 DONE
 }
