@@ -1,5 +1,6 @@
 keys:
   - &vod E3C4C12EDF24CA20F167CC7EE203A151BB3FD1AE
+  - &vod_new 382A371CFB344166F69076BE8587AB791475DF76
   # - &oglaroon
   - &asbleg 383717918D3D86D5AC5687AA3E7793D3B1830782
 creation_rules:
@@ -7,11 +8,13 @@ creation_rules:
     key_groups:
       - pgp:
           - *vod
+          - *vod_new
 
   - path_regex: cells/secrets/sops/nixos-common.yaml
     key_groups:
       - pgp:
           - *vod
+          - *vod_new
           - *asbleg
       # - age:
       #     - *oglaroon
@@ -20,8 +23,10 @@ creation_rules:
     key_groups:
       - pgp:
           - *vod
+          - *vod_new
 
   - path_regex: cells/secrets/sops/ssh.*$
     key_groups:
       - pgp:
           - *vod
+          - *vod_new

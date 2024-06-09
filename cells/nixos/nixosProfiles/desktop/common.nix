@@ -26,6 +26,7 @@
     greeters.gtk.iconTheme.name = "Numix-Circle";
     greeters.gtk.iconTheme.package = pkgs.numix-icon-theme-circle;
     greeters.gtk.clock-format = "[%d %b %G] %H:%M %A [week %U]";
+    # TODO: write a nixos module to implement console login with x11vnc and/or xrdp
     extraSeatDefaults = ''
       allow-guest=false
       greeter-hide-users=true
