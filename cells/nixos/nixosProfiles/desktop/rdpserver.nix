@@ -52,6 +52,8 @@ lib.mkMerge [
             password=ask
             ip=127.0.0.1
             port=44444
+            disconnect-timeout=0
+            session-timeout=0
           '';
         in
 
