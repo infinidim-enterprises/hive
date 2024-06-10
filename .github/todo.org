@@ -45,7 +45,7 @@ https://github.com/AnalogJ/scrutiny
 #+end_src
 ** TODO NixOS secrets management
 https://github.com/oddlama/agenix-rekey
-Maybe switch to agenix or find auto-rekey for sops-nix
+Find auto-rekey for sops-nix
 ** github alternatives
 https://radicle.xyz/
 https://onedev.io
@@ -56,6 +56,8 @@ https://github.com/cachix/devenv
 https://github.com/sellout/project-manager
 https://github.com/hercules-ci/flake-parts
 https://github.com/maralorn/nix-output-monitor
+** Security
+https://github.com/aquasecurity/tracee/
 * TODO installers
 ** DONE Add disko-install script to iso
 https://github.com/nix-community/disko/blob/master/docs/disko-install.md

@@ -22,7 +22,7 @@ rec {
 
   imports =
     cell.nixosSuites.desktop
-    ++ [ cell.nixosProfiles.desktop.vncserver ] # LightDM VNC login
+    ++ [ cell.nixosProfiles.desktop.rdpserver ] # LightDM login via xrdp
     ++ cell.nixosSuites.networking
     ++ cell.nixosSuites.virtualization
     ++ [ inputs.cells.secrets.nixosProfiles.common ]

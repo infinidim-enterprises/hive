@@ -38,6 +38,24 @@
         ${pkgs.xorg.xrandr}/bin/xrandr --output DSI1 --rotate right
       ''}
     '';
+    # export PATH=''${lib.makeBinPath reqPkgs}:$PATH
+    # logger -t DM-SESSION 'x11vnc'
+    #   x11vnc -ping 3 \
+    #          -noipv6 \
+    #          -cursorpos \
+    #          -repeat \
+    #          -noxdamage \
+    #          -shared \
+    #          -forever \
+    #          -nolookup \
+    #          -nopw \
+    #          -norc \
+    #          -nonc \
+    #          -geometry 1920x1080 \
+    #          -display $DISPLAY \
+    #          -desktop DEBUG \
+    #          -rfbport 44444 & x11vncPID=$!
+    #   logger -t DM-SESSION "x11vnc with PID $x11vncPID"
 
     greeters.gtk.indicators = [
       "~host"
