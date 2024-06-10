@@ -16,4 +16,10 @@ lib.mkMerge [
       depth=24
     '';
   })
+  {
+    services.xrdp.enable = true;
+    services.xrdp.audio.enable = true;
+    services.xrdp.openFirewall = true;
+
+  }
 ]

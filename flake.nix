@@ -51,6 +51,7 @@
     yants.url = "github:divnix/yants";
     yants.inputs.nixpkgs.follows = "nixpkgs-lib";
 
+    # BUG: https://github.com/zhaofengli/colmena/issues/202
     colmena.url = "github:zhaofengli/colmena";
     colmena.inputs.nixpkgs.follows = "nixpkgs-unstable";
     colmena.inputs.flake-utils.follows = "flake-utils";
