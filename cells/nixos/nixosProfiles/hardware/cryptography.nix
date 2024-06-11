@@ -119,6 +119,8 @@ mkMerge [
     # ATTRS{idProduct}=="53c1"
     # ATTRS{idVendor}=="1209"
 
+    environment.sessionVariables.G_MESSAGES_DEBUG = "none"; # NOTE: gcr is very chatty!
+
     services.dbus.packages = [ pkgs.gcr ];
     environment.systemPackages = with pkgs; [
       # gcr
