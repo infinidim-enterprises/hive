@@ -121,9 +121,9 @@ mkMerge [
 
     # NOTE: https://gitlab.gnome.org/GNOME/gcr/-/issues/78 - gcr is very chatty!
     environment.sessionVariables.G_MESSAGES_DEBUG = "none";
-    services.journald.extraConfig = ''
-      Suppress=gcr-prompter
-    '';
+    # services.journald.extraConfig = "Suppress=gcr-prompter";
+    systemd.services."org.gnome.keyring.SystemPrompter".serviceConfig.StandardOutput = "null";
+    systemd.services."org.gnome.keyring.SystemPrompter".serviceConfig.StandardError = "null";
 
     # FIXME: pkgs.gcr appear twice in services.dbus.packages. why?
     services.dbus.packages = [ pkgs.gcr ];
