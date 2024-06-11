@@ -31,26 +31,35 @@ lib.mkMerge [
 
   {
     networking.firewall.allowedTCPPorts = [ 3389 ];
+
     containers.xrdp.autoStart = true;
     containers.xrdp.ephemeral = true; # NOTE: Journal will not link to host
     containers.xrdp.additionalCapabilities = [ "CAP_NET_BIND_SERVICE" ];
-
     containers.xrdp.bindMounts.user-passwd.mountPoint = config.sops.secrets.xrdp-password.path;
     containers.xrdp.bindMounts.user-passwd.hostPath = config.sops.secrets.xrdp-password.path;
     containers.xrdp.bindMounts.user-passwd.isReadOnly = true;
-
-    containers.xrdp.config = {
+    containers.xrdp.config = { pkgs, ... }: {
       users.users.rdp.hashedPasswordFile = config.sops.secrets.xrdp-password.path;
       users.users.rdp.isNormalUser = true;
 
       services.xrdp.enable = true;
       services.xrdp.audio.enable = true;
-      # services.xrdp.openFirewall = true;
+      services.xrdp.defaultWindowManager =
+        let
+          vnc = pkgs.writeShellApplication {
+            name = "connect2lightdm";
+            runtimeInputs = with pkgs; [ tigervnc ];
+            text = ''
+              vncviewer -FullScreen -FullscreenSystemKeys 127.0.0.1::44444
+            '';
+          };
+        in
+        "${vnc}/bin/connect2lightdm";
       services.xrdp.extraConfDirCommands =
         let
           xrdp_vnc_ini = ''
             [vnc]
-            name=LightDM
+            name=LightDM_KillDisconnected
             lib=libvnc.so
             username=ask
             password=ask
