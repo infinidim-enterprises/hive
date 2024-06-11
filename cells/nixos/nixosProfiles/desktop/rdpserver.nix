@@ -56,7 +56,11 @@ lib.mkMerge [
             name = "connect2lightdm";
             runtimeInputs = with pkgs; [ tigervnc ];
             text = ''
-              vncviewer -FullScreen -FullscreenSystemKeys 127.0.0.1::44444
+              vncviewer -FullScreen \
+                -FullscreenSystemKeys \
+                -PreferredEncoding raw \
+                -NoJpeg \
+                127.0.0.1::44444
             '';
           };
         in
