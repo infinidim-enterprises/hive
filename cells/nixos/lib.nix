@@ -45,6 +45,7 @@ let
           "sessionPackages"
         ];
     in
+    # TODO: replace with hasAttr and don't removeAttrs
     (filterAttrs (k: v: v ? enable && v.enable) dm) != { };
 in
 {

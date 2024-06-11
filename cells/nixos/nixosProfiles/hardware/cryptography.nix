@@ -122,11 +122,27 @@ mkMerge [
     # NOTE: https://gitlab.gnome.org/GNOME/gcr/-/issues/78 - gcr is very chatty!
     environment.sessionVariables.G_MESSAGES_DEBUG = "none";
     # services.journald.extraConfig = "Suppress=gcr-prompter";
-    systemd.services."org.gnome.keyring.SystemPrompter".serviceConfig.StandardOutput = "null";
-    systemd.services."org.gnome.keyring.SystemPrompter".serviceConfig.StandardError = "null";
+    # systemd.services."org.gnome.keyring.SystemPrompter".serviceConfig.StandardOutput = "null";
+    # systemd.services."org.gnome.keyring.SystemPrompter".serviceConfig.StandardError = "null";
 
     # FIXME: pkgs.gcr appear twice in services.dbus.packages. why?
-    services.dbus.packages = [ pkgs.gcr ];
+    services.dbus.packages =
+      let
+        # TODO: reference a systemd service instead and have it redirect output to null
+        # StandardOutput=null
+        # StandardError=null
+        PrivatePrompter = ''
+          [D-BUS Service]
+          Name=org.gnome.keyring.PrivatePrompter
+          Exec=${pkgs.gcr}/libexec/gcr-prompter
+        '';
+        SystemPrompter = ''
+          [D-BUS Service]
+          Name=org.gnome.keyring.SystemPrompter
+          Exec=${pkgs.gcr}/libexec/gcr-prompter
+        '';
+      in
+      [ pkgs.gcr ];
     environment.systemPackages = with pkgs; [
       # gcr
       sirikali # GUI front end to sshfs,ecryptfs,cryfs,gocryptfs,securefs,fscrypt,encfs
