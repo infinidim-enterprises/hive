@@ -2,9 +2,18 @@
 
 { config, lib, pkgs, ... }:
 /*
-  TODO: xorgxrdp runs a vncviewer to connect to lightdm vnc session
-  this will enable reconnects to rdp session
-  as it currently stands, when used as a vnc bridge xrdp doesn't keep the session for a user.
+   xrdp_vnc_ini = ''
+   [vnc]
+   name=LightDM_KillDisconnected
+   lib=libvnc.so
+   username=ask
+   password=ask
+   ip=127.0.0.1
+   port=44444
+   disconnect-timeout=0
+   session-timeout=0
+   '';
+   echo '${xrdp_vnc_ini}' >> $out/xrdp.ini
 */
 lib.mkMerge [
   (lib.mkIf config.services.xserver.displayManager.lightdm.enable {
@@ -19,17 +28,14 @@ lib.mkMerge [
       height=1080
       depth=24
     '';
-  })
 
-  {
     sops.secrets.xrdp-password = {
       key = "xrdp-password";
       sopsFile = ../../../secrets/sops/nixos-common.yaml;
       neededForUsers = true;
     };
-  }
 
-  {
+    # TODO: disable rdp port, allow only ssh port forwarding!
     networking.firewall.allowedTCPPorts = [ 3389 ];
 
     containers.xrdp.autoStart = true;
@@ -55,24 +61,10 @@ lib.mkMerge [
           };
         in
         "${vnc}/bin/connect2lightdm";
-      services.xrdp.extraConfDirCommands =
-        let
-          xrdp_vnc_ini = ''
-            [vnc]
-            name=LightDM_KillDisconnected
-            lib=libvnc.so
-            username=ask
-            password=ask
-            ip=127.0.0.1
-            port=44444
-            disconnect-timeout=0
-            session-timeout=0
-          '';
-        in
-
-        ''
-          echo '${xrdp_vnc_ini}' >> $out/xrdp.ini
-        '';
+      services.xrdp.extraConfDirCommands = ''
+        substituteInPlace $out/xrdp.ini \
+          --replace "name=Xorg" "name=LightDM"
+      '';
     };
-  }
+  })
 ]
