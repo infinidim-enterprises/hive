@@ -119,8 +119,13 @@ mkMerge [
     # ATTRS{idProduct}=="53c1"
     # ATTRS{idVendor}=="1209"
 
-    environment.sessionVariables.G_MESSAGES_DEBUG = "none"; # NOTE: gcr is very chatty!
+    # NOTE: https://gitlab.gnome.org/GNOME/gcr/-/issues/78 - gcr is very chatty!
+    environment.sessionVariables.G_MESSAGES_DEBUG = "none";
+    services.journald.extraConfig = ''
+      Suppress=gcr-prompter
+    '';
 
+    # FIXME: pkgs.gcr appear twice in services.dbus.packages. why?
     services.dbus.packages = [ pkgs.gcr ];
     environment.systemPackages = with pkgs; [
       # gcr
@@ -132,7 +137,6 @@ mkMerge [
       yubioath-flutter
       trezor-suite
       nitrokey-app
-      # FIXME: warnings on collisions ledger-live-desktop
       ledger-live-desktop
     ];
   })
