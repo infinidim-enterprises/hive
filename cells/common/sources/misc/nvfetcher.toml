@@ -77,6 +77,10 @@ fetch.git = "https://github.com/ipxe/ipxe"
 # fetch.git = "https://github.com/karlicoss/open-in-editor"
 
 ### :END: promnesia
+[python-pass]
+$ NOTE: https://github.com/aviau/python-pass/pull/34
+src.manual = "6f51145a3bc12ee79d2881204b88a82d149f3228"
+fetch.github = "aviau/python-pass"
 
 [iterable-io]
 src.pypi = "iterable-io"
@@ -191,11 +195,11 @@ src.manual = "latest"
 fetch.url = "https://beta.quicklisp.org/quicklisp.lisp"
 
 # FIXME: broken nix builds after 189a730f73266999d5b8f992faf939c11d7815ad
-[stumpwm]
-src.manual = "189a730f73266999d5b8f992faf939c11d7815ad"
-# src.git = "https://github.com/stumpwm/stumpwm"
-fetch.github = "stumpwm/stumpwm"
-passthru = { system = "stumpwm", asd = "stumpwm" }
+# [stumpwm]
+# src.manual = "189a730f73266999d5b8f992faf939c11d7815ad"
+# # src.git = "https://github.com/stumpwm/stumpwm"
+# fetch.github = "stumpwm/stumpwm"
+# passthru = { system = "stumpwm", asd = "stumpwm" }
 
 [dbus]
 src.git = "https://github.com/death/dbus"

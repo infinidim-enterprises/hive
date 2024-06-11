@@ -20,7 +20,7 @@
     },
     "adguard-filters": {
         "cargoLocks": null,
-        "date": "2024-06-07",
+        "date": "2024-06-11",
         "extract": null,
         "name": "adguard-filters",
         "passthru": null,
@@ -30,12 +30,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "43fc9904584a110414e5b61c52501f29f3ea0a76",
-            "sha256": "sha256-Z5sSaqySAwC0R6b7Ue+1jpsY0t7L976p7/RlrwGoH/s=",
+            "rev": "c62b06d339a8aa686e44958e42796ba8ebeb1b71",
+            "sha256": "sha256-o3Xm8spPBYjGXKt/ZGlEe3DvtA4jO2lgwVdTEJ/uaTw=",
             "type": "git",
             "url": "https://github.com/AdguardTeam/AdguardFilters"
         },
-        "version": "43fc9904584a110414e5b61c52501f29f3ea0a76"
+        "version": "c62b06d339a8aa686e44958e42796ba8ebeb1b71"
     },
     "age-plugin-trezor": {
         "cargoLocks": null,
@@ -61,7 +61,7 @@
     },
     "chatgpt-wrapper": {
         "cargoLocks": null,
-        "date": "2024-06-06",
+        "date": "2024-06-07",
         "extract": null,
         "name": "chatgpt-wrapper",
         "passthru": null,
@@ -73,11 +73,11 @@
             "name": null,
             "owner": "llm-workflow-engine",
             "repo": "llm-workflow-engine",
-            "rev": "4ba1d7f473299e17820eb3515f343e0b4398b08f",
-            "sha256": "sha256-4plTQJQoQaiQQTUHJXWq2R/aIL5Y0GOF1J5CcAXjdNE=",
+            "rev": "6c128bb2468a8fc16d595416c426d913e853cda9",
+            "sha256": "sha256-A4O1qZ/EKIhInuMdA5SlG1oKbLiv+vhUa2JBm4ipcp4=",
             "type": "github"
         },
-        "version": "4ba1d7f473299e17820eb3515f343e0b4398b08f"
+        "version": "6c128bb2468a8fc16d595416c426d913e853cda9"
     },
     "cl-hash-util": {
         "cargoLocks": null,
@@ -270,11 +270,11 @@
             "name": null,
             "owner": "arkenfox",
             "repo": "user.js",
-            "rev": "126.0",
-            "sha256": "sha256-XWtFa/K91FOpfCad6b8hp4X+xP8ke9h5t5/uj87W6+w=",
+            "rev": "126.1",
+            "sha256": "sha256-Ex+eSb7tZ428MMJDIF/nqUOtnzjqEIPNaDXJPm9FvuY=",
             "type": "github"
         },
-        "version": "126.0"
+        "version": "126.1"
     },
     "git-get": {
         "cargoLocks": null,
@@ -520,7 +520,7 @@
     },
     "pbkdf2-sha512": {
         "cargoLocks": null,
-        "date": "2024-06-07",
+        "date": "2024-06-11",
         "extract": null,
         "name": "pbkdf2-sha512",
         "passthru": null,
@@ -531,7 +531,7 @@
             "type": "url",
             "url": "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c"
         },
-        "version": "4bc410f1b583c2bdf29cbaefa533de7c5ef93ed1"
+        "version": "c570c7fcf6190b955084c49bf8228076bfa0db31"
     },
     "pgp-key-generation": {
         "cargoLocks": null,
@@ -573,6 +573,26 @@
         },
         "version": "42b4d08c0cb4b8ee527f729c1674e982eca409a7"
     },
+    "python-pass": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "python-pass",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "aviau",
+            "repo": "python-pass",
+            "rev": "6f51145a3bc12ee79d2881204b88a82d149f3228",
+            "sha256": "sha256-iJZe/Ljae9igkpfz9WJQK48wZZJWcOt4Z3kdp5VILqE=",
+            "type": "github"
+        },
+        "version": "6f51145a3bc12ee79d2881204b88a82d149f3228"
+    },
     "quicklisp": {
         "cargoLocks": null,
         "date": null,
@@ -590,7 +610,7 @@
     },
     "s5cmd": {
         "cargoLocks": null,
-        "date": "2023-10-12",
+        "date": "2024-06-10",
         "extract": null,
         "name": "s5cmd",
         "passthru": null,
@@ -602,34 +622,11 @@
             "name": null,
             "owner": "peak",
             "repo": "s5cmd",
-            "rev": "c1c7ee35acfc16aaf4a2b060129aa60b75bb5ef5",
-            "sha256": "sha256-C6cs7UB+O70Ixuw7EE5LX6B4ND1mVJqth5ZnmNNR3BU=",
+            "rev": "c13b860c763a56fc8b97dbb2e35e7c6f3b950f2c",
+            "sha256": "sha256-WulvXhAfZsLECFLNhAKswPYL1vDQEAOzQ6UP+3DI6Cw=",
             "type": "github"
         },
-        "version": "c1c7ee35acfc16aaf4a2b060129aa60b75bb5ef5"
-    },
-    "stumpwm": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "stumpwm",
-        "passthru": {
-            "asd": "stumpwm",
-            "system": "stumpwm"
-        },
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "stumpwm",
-            "repo": "stumpwm",
-            "rev": "189a730f73266999d5b8f992faf939c11d7815ad",
-            "sha256": "sha256-jPxMo3QfqfSYTkKYnCf6CQhkSJrX90p70amSXynBxnE=",
-            "type": "github"
-        },
-        "version": "189a730f73266999d5b8f992faf939c11d7815ad"
+        "version": "c13b860c763a56fc8b97dbb2e35e7c6f3b950f2c"
     },
     "stumpwm-contrib": {
         "cargoLocks": null,

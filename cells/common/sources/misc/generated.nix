@@ -16,16 +16,16 @@
   };
   adguard-filters = {
     pname = "adguard-filters";
-    version = "43fc9904584a110414e5b61c52501f29f3ea0a76";
+    version = "c62b06d339a8aa686e44958e42796ba8ebeb1b71";
     src = fetchgit {
       url = "https://github.com/AdguardTeam/AdguardFilters";
-      rev = "43fc9904584a110414e5b61c52501f29f3ea0a76";
+      rev = "c62b06d339a8aa686e44958e42796ba8ebeb1b71";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-Z5sSaqySAwC0R6b7Ue+1jpsY0t7L976p7/RlrwGoH/s=";
+      sha256 = "sha256-o3Xm8spPBYjGXKt/ZGlEe3DvtA4jO2lgwVdTEJ/uaTw=";
     };
-    date = "2024-06-07";
+    date = "2024-06-11";
   };
   age-plugin-trezor = {
     pname = "age-plugin-trezor";
@@ -42,15 +42,15 @@
   };
   chatgpt-wrapper = {
     pname = "chatgpt-wrapper";
-    version = "4ba1d7f473299e17820eb3515f343e0b4398b08f";
+    version = "6c128bb2468a8fc16d595416c426d913e853cda9";
     src = fetchFromGitHub {
       owner = "llm-workflow-engine";
       repo = "llm-workflow-engine";
-      rev = "4ba1d7f473299e17820eb3515f343e0b4398b08f";
+      rev = "6c128bb2468a8fc16d595416c426d913e853cda9";
       fetchSubmodules = false;
-      sha256 = "sha256-4plTQJQoQaiQQTUHJXWq2R/aIL5Y0GOF1J5CcAXjdNE=";
+      sha256 = "sha256-A4O1qZ/EKIhInuMdA5SlG1oKbLiv+vhUa2JBm4ipcp4=";
     };
-    date = "2024-06-06";
+    date = "2024-06-07";
   };
   cl-hash-util = {
     pname = "cl-hash-util";
@@ -164,13 +164,13 @@
   };
   firefox_user_js = {
     pname = "firefox_user_js";
-    version = "126.0";
+    version = "126.1";
     src = fetchFromGitHub {
       owner = "arkenfox";
       repo = "user.js";
-      rev = "126.0";
+      rev = "126.1";
       fetchSubmodules = false;
-      sha256 = "sha256-XWtFa/K91FOpfCad6b8hp4X+xP8ke9h5t5/uj87W6+w=";
+      sha256 = "sha256-Ex+eSb7tZ428MMJDIF/nqUOtnzjqEIPNaDXJPm9FvuY=";
     };
   };
   git-get = {
@@ -321,12 +321,12 @@
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "4bc410f1b583c2bdf29cbaefa533de7c5ef93ed1";
+    version = "c570c7fcf6190b955084c49bf8228076bfa0db31";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";
     };
-    date = "2024-06-07";
+    date = "2024-06-11";
   };
   pgp-key-generation = {
     pname = "pgp-key-generation";
@@ -352,6 +352,17 @@
     };
     date = "2022-07-26";
   };
+  python-pass = {
+    pname = "python-pass";
+    version = "6f51145a3bc12ee79d2881204b88a82d149f3228";
+    src = fetchFromGitHub {
+      owner = "aviau";
+      repo = "python-pass";
+      rev = "6f51145a3bc12ee79d2881204b88a82d149f3228";
+      fetchSubmodules = false;
+      sha256 = "sha256-iJZe/Ljae9igkpfz9WJQK48wZZJWcOt4Z3kdp5VILqE=";
+    };
+  };
   quicklisp = {
     pname = "quicklisp";
     version = "latest";
@@ -362,28 +373,15 @@
   };
   s5cmd = {
     pname = "s5cmd";
-    version = "c1c7ee35acfc16aaf4a2b060129aa60b75bb5ef5";
+    version = "c13b860c763a56fc8b97dbb2e35e7c6f3b950f2c";
     src = fetchFromGitHub {
       owner = "peak";
       repo = "s5cmd";
-      rev = "c1c7ee35acfc16aaf4a2b060129aa60b75bb5ef5";
+      rev = "c13b860c763a56fc8b97dbb2e35e7c6f3b950f2c";
       fetchSubmodules = false;
-      sha256 = "sha256-C6cs7UB+O70Ixuw7EE5LX6B4ND1mVJqth5ZnmNNR3BU=";
+      sha256 = "sha256-WulvXhAfZsLECFLNhAKswPYL1vDQEAOzQ6UP+3DI6Cw=";
     };
-    date = "2023-10-12";
-  };
-  stumpwm = {
-    pname = "stumpwm";
-    version = "189a730f73266999d5b8f992faf939c11d7815ad";
-    src = fetchFromGitHub {
-      owner = "stumpwm";
-      repo = "stumpwm";
-      rev = "189a730f73266999d5b8f992faf939c11d7815ad";
-      fetchSubmodules = false;
-      sha256 = "sha256-jPxMo3QfqfSYTkKYnCf6CQhkSJrX90p70amSXynBxnE=";
-    };
-    system = "stumpwm";
-    asd = "stumpwm";
+    date = "2024-06-10";
   };
   stumpwm-contrib = {
     pname = "stumpwm-contrib";

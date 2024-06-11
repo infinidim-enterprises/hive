@@ -583,10 +583,10 @@
   };
   "languagetool" = rec {
     pname = "languagetool";
-    version = "8.6.0";
+    version = "8.9.1";
     addonId = "languagetool-webextension@languagetool.org";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4249956/languagetool-8.6.0.xpi";
-    sha256 = "d9db9aac9fdd53eb39179c153161762cd9e9eb1f6d7da8e8b8a32238b4847094";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4298468/languagetool-8.9.1.xpi";
+    sha256 = "0747fcd4d7066ac746d140b93870a37eb5cf3241c3a5759128c54bf12b14feea";
     meta = with lib;
       {
         homepage = "https://languagetool.org";

@@ -1,7 +1,11 @@
 { inputs, cell, ... }:
 
 { config, lib, pkgs, ... }:
-
+/*
+  TODO: xorgxrdp runs a vncviewer to connect to lightdm vnc session
+  this will enable reconnects to rdp session
+  as it currently stands, when used as a vnc bridge xrdp doesn't keep the session for a user.
+*/
 lib.mkMerge [
   (lib.mkIf config.services.xserver.displayManager.lightdm.enable {
     systemd.services.display-manager.path = [ pkgs.tigervnc ];

@@ -53,15 +53,15 @@
   };
   shellspec = {
     pname = "shellspec";
-    version = "2b7216ba40b7604833b60704a5fddc8967468cf7";
+    version = "225e0f0e0224729e3be15ea32a2a789c35088731";
     src = fetchFromGitHub {
       owner = "shellspec";
       repo = "shellspec";
-      rev = "2b7216ba40b7604833b60704a5fddc8967468cf7";
+      rev = "225e0f0e0224729e3be15ea32a2a789c35088731";
       fetchSubmodules = false;
-      sha256 = "sha256-k341hn69Pk4nRIIm706VmN44RGpRT0nLZRV3iWPhng8=";
+      sha256 = "sha256-pmdX+NQKfRXOllHNFD5EOmHhKSLRUzTHEQuSVSB8pFE=";
     };
-    date = "2024-06-06";
+    date = "2024-06-07";
   };
   shflags = {
     pname = "shflags";
@@ -152,28 +152,28 @@
   };
   zsh-plugin_nix-zsh-completions = {
     pname = "zsh-plugin_nix-zsh-completions";
-    version = "6e782b97091b07eb849b58953eb200ccc56ef833";
+    version = "57fb88c6b4b1c261087dd0bd27470e263b23d80d";
     src = fetchFromGitHub {
       owner = "spwhitt";
       repo = "nix-zsh-completions";
-      rev = "6e782b97091b07eb849b58953eb200ccc56ef833";
+      rev = "57fb88c6b4b1c261087dd0bd27470e263b23d80d";
       fetchSubmodules = false;
-      sha256 = "sha256-bgbMc4HqigqgdkvUe/CWbUclwxpl17ESLzCIP8Sz+F8=";
+      sha256 = "sha256-B7m+HIoq5ApGZC3zsSD3AFd2VF0UurLmkVAmi1+zF4o=";
     };
-    date = "2024-03-14";
+    date = "2024-06-08";
   };
   zsh-plugin_oh-my-zsh = {
     pname = "zsh-plugin_oh-my-zsh";
-    version = "efdfe2f29ac57a9de76391b4e5548edab6a43241";
+    version = "4295aed17b4b1180b7e42bd7debd7685686c1307";
     src = fetchgit {
       url = "https://github.com/robbyrussell/oh-my-zsh";
-      rev = "efdfe2f29ac57a9de76391b4e5548edab6a43241";
+      rev = "4295aed17b4b1180b7e42bd7debd7685686c1307";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-IyBZMAcSFhZ2zdDZ9FcKpSEK3N2qjkTbkh3ToigFtTw=";
+      sha256 = "sha256-wMzH/KPv6AV/s2Gi2Jg1MBvvJ+npK6FN/LGhFOfosaU=";
     };
-    date = "2024-06-04";
+    date = "2024-06-10";
   };
   zsh-plugin_tipz = {
     pname = "zsh-plugin_tipz";
