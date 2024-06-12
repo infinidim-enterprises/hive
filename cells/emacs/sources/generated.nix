@@ -118,15 +118,15 @@
   };
   lsp-bridge = {
     pname = "lsp-bridge";
-    version = "bb35b16726a79d353baefa2e6b10a068ced1aa6b";
+    version = "f792a84ed79b1fb6d3f51d2121e6b355b59b9ef5";
     src = fetchFromGitHub {
       owner = "manateelazycat";
       repo = "lsp-bridge";
-      rev = "bb35b16726a79d353baefa2e6b10a068ced1aa6b";
+      rev = "f792a84ed79b1fb6d3f51d2121e6b355b59b9ef5";
       fetchSubmodules = false;
-      sha256 = "sha256-ZTJ0RCdZJgh+XeSyy+m+CcZwy1sLMauJow90Un9rjs8=";
+      sha256 = "sha256-i25LTvNslzfv/zi5UaVgorFd9prnXIdmBQLLwwGCa/M=";
     };
-    date = "2024-06-11";
+    date = "2024-06-12";
   };
   nix-mode = {
     pname = "nix-mode";
@@ -144,15 +144,15 @@
   };
   nix-ts-mode = {
     pname = "nix-ts-mode";
-    version = "1528e47bd1ce187e65e7b87919f30617ccba4ca9";
+    version = "e163f39c713fdb4fedbc2a86de7eee1c056e47c7";
     src = fetchFromGitHub {
       owner = "remi-gelinas";
       repo = "nix-ts-mode";
-      rev = "1528e47bd1ce187e65e7b87919f30617ccba4ca9";
+      rev = "e163f39c713fdb4fedbc2a86de7eee1c056e47c7";
       fetchSubmodules = false;
-      sha256 = "sha256-0p7wwQxJoDAeMYa181JjHgQzIT5ZT02M0KhfUT9uCl8=";
+      sha256 = "sha256-HcrnPMPXacf4LqLodwFX0LK+YWt9M70ma7cwouFxohY=";
     };
-    date = "2024-06-03";
+    date = "2024-06-11";
   };
   org-pretty-table = {
     pname = "org-pretty-table";

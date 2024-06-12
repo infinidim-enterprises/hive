@@ -16,14 +16,14 @@
   };
   adguard-filters = {
     pname = "adguard-filters";
-    version = "c62b06d339a8aa686e44958e42796ba8ebeb1b71";
+    version = "acbe77d2d56d0aa42d78de78ba82d831158c5a6d";
     src = fetchgit {
       url = "https://github.com/AdguardTeam/AdguardFilters";
-      rev = "c62b06d339a8aa686e44958e42796ba8ebeb1b71";
+      rev = "acbe77d2d56d0aa42d78de78ba82d831158c5a6d";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-o3Xm8spPBYjGXKt/ZGlEe3DvtA4jO2lgwVdTEJ/uaTw=";
+      sha256 = "sha256-EbilZeG4P7sldaQbtrOOEQ0k7lldpS1Mu4XLieD0Rwk=";
     };
     date = "2024-06-11";
   };
@@ -321,12 +321,12 @@
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "c570c7fcf6190b955084c49bf8228076bfa0db31";
+    version = "e913ae340076bbb73d9f4d3d065c2bca7caafb16";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";
     };
-    date = "2024-06-11";
+    date = "2024-06-12";
   };
   pgp-key-generation = {
     pname = "pgp-key-generation";

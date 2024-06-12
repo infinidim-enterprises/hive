@@ -491,10 +491,10 @@
   };
   "ether-metamask" = rec {
     pname = "ether-metamask";
-    version = "11.14.5";
+    version = "11.16.5";
     addonId = "webextension@metamask.io";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4289710/ether_metamask-11.14.5.xpi";
-    sha256 = "261efb390d3bda9ed0dd9851809f70a8c0e643889f54c959e26ccf3e60bcefb9";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4298695/ether_metamask-11.16.5.xpi";
+    sha256 = "2569556940fdb8504a417ffa24fbca0f53e04558236dd06be340b561d4439690";
     meta = with lib;
       {
         description = "Ethereum Browser Extension";
@@ -1264,10 +1264,10 @@
   };
   "tree-style-tab" = rec {
     pname = "tree-style-tab";
-    version = "4.0.15";
+    version = "4.0.17";
     addonId = "treestyletab@piro.sakura.ne.jp";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4290043/tree_style_tab-4.0.15.xpi";
-    sha256 = "edcf2c8509786ee0c6f93579e25b1b491223f96bc0ba9bc08fd5852cb4c5f02e";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4300287/tree_style_tab-4.0.17.xpi";
+    sha256 = "e724fc86e50b5a1defa985a54e9d7a97fb87e585b1470d72ad270fb78dd15de2";
     meta = with lib;
       {
         homepage = "http://piro.sakura.ne.jp/xul/_treestyletab.html.en";

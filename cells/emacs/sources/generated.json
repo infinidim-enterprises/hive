@@ -174,7 +174,7 @@
     },
     "lsp-bridge": {
         "cargoLocks": null,
-        "date": "2024-06-11",
+        "date": "2024-06-12",
         "extract": null,
         "name": "lsp-bridge",
         "passthru": null,
@@ -186,11 +186,11 @@
             "name": null,
             "owner": "manateelazycat",
             "repo": "lsp-bridge",
-            "rev": "bb35b16726a79d353baefa2e6b10a068ced1aa6b",
-            "sha256": "sha256-ZTJ0RCdZJgh+XeSyy+m+CcZwy1sLMauJow90Un9rjs8=",
+            "rev": "f792a84ed79b1fb6d3f51d2121e6b355b59b9ef5",
+            "sha256": "sha256-i25LTvNslzfv/zi5UaVgorFd9prnXIdmBQLLwwGCa/M=",
             "type": "github"
         },
-        "version": "bb35b16726a79d353baefa2e6b10a068ced1aa6b"
+        "version": "f792a84ed79b1fb6d3f51d2121e6b355b59b9ef5"
     },
     "nix-mode": {
         "cargoLocks": null,
@@ -215,7 +215,7 @@
     },
     "nix-ts-mode": {
         "cargoLocks": null,
-        "date": "2024-06-03",
+        "date": "2024-06-11",
         "extract": null,
         "name": "nix-ts-mode",
         "passthru": null,
@@ -227,11 +227,11 @@
             "name": null,
             "owner": "remi-gelinas",
             "repo": "nix-ts-mode",
-            "rev": "1528e47bd1ce187e65e7b87919f30617ccba4ca9",
-            "sha256": "sha256-0p7wwQxJoDAeMYa181JjHgQzIT5ZT02M0KhfUT9uCl8=",
+            "rev": "e163f39c713fdb4fedbc2a86de7eee1c056e47c7",
+            "sha256": "sha256-HcrnPMPXacf4LqLodwFX0LK+YWt9M70ma7cwouFxohY=",
             "type": "github"
         },
-        "version": "1528e47bd1ce187e65e7b87919f30617ccba4ca9"
+        "version": "e163f39c713fdb4fedbc2a86de7eee1c056e47c7"
     },
     "org-pretty-table": {
         "cargoLocks": null,

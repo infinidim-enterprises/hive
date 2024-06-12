@@ -30,12 +30,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "c62b06d339a8aa686e44958e42796ba8ebeb1b71",
-            "sha256": "sha256-o3Xm8spPBYjGXKt/ZGlEe3DvtA4jO2lgwVdTEJ/uaTw=",
+            "rev": "acbe77d2d56d0aa42d78de78ba82d831158c5a6d",
+            "sha256": "sha256-EbilZeG4P7sldaQbtrOOEQ0k7lldpS1Mu4XLieD0Rwk=",
             "type": "git",
             "url": "https://github.com/AdguardTeam/AdguardFilters"
         },
-        "version": "c62b06d339a8aa686e44958e42796ba8ebeb1b71"
+        "version": "acbe77d2d56d0aa42d78de78ba82d831158c5a6d"
     },
     "age-plugin-trezor": {
         "cargoLocks": null,
@@ -520,7 +520,7 @@
     },
     "pbkdf2-sha512": {
         "cargoLocks": null,
-        "date": "2024-06-11",
+        "date": "2024-06-12",
         "extract": null,
         "name": "pbkdf2-sha512",
         "passthru": null,
@@ -531,7 +531,7 @@
             "type": "url",
             "url": "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c"
         },
-        "version": "c570c7fcf6190b955084c49bf8228076bfa0db31"
+        "version": "e913ae340076bbb73d9f4d3d065c2bca7caafb16"
     },
     "pgp-key-generation": {
         "cargoLocks": null,

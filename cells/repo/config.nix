@@ -336,7 +336,7 @@ in
             # }
             {
               name = "Update flake.lock";
-              uses = "DeterminateSystems/update-flake-lock@v21";
+              uses = "DeterminateSystems/update-flake-lock@v22";
               "with".commit-msg = "deps(flake-lock): Updated flake.lock";
               "with".pr-title = "[Automated] Update 'flake.lock' and sources";
               "with".branch = "auto/upgrade-dependencies";

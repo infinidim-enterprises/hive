@@ -47,11 +47,11 @@
   };
   copilot = {
     pname = "copilot";
-    version = "1.200.924";
+    version = "1.200.925";
     src = fetchurl {
-      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.200.924/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "copilot-1.200.924.zip";
-      sha256 = "sha256-fo5d4Le5zgOqydknXuJjEas159OQcT1XQLtab1kRNpw=";
+      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.200.925/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "copilot-1.200.925.zip";
+      sha256 = "sha256-zw1Vq7lNCjT2azRcYndGKXR8RGjNlsvELDpIEMJ81YI=";
     };
     publisher = "GitHub";
     name = "copilot";
@@ -135,11 +135,11 @@
   };
   gpt-pilot-vs-code = {
     pname = "gpt-pilot-vs-code";
-    version = "0.2.1";
+    version = "0.2.2";
     src = fetchurl {
-      url = "https://PythagoraTechnologies.gallery.vsassets.io/_apis/public/gallery/publisher/PythagoraTechnologies/extension/gpt-pilot-vs-code/0.2.1/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "gpt-pilot-vs-code-0.2.1.zip";
-      sha256 = "sha256-CkZjl8JfYVGPjzC8Wpq0nUjeFvMCLJKyT+ZZaB3bGrc=";
+      url = "https://PythagoraTechnologies.gallery.vsassets.io/_apis/public/gallery/publisher/PythagoraTechnologies/extension/gpt-pilot-vs-code/0.2.2/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "gpt-pilot-vs-code-0.2.2.zip";
+      sha256 = "sha256-E9dvS2OQulkltqU/JNNS3aF1QRAhnwV00Jba+ursfDo=";
     };
     publisher = "PythagoraTechnologies";
     name = "gpt-pilot-vs-code";
