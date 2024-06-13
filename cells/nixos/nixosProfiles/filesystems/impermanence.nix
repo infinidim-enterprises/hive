@@ -24,7 +24,7 @@ rec {
         directories = with config; [
           "/var/log"
 
-          (mkIf (hasAttr "alsa-store" systemd.services)
+          (mkIf sound.enable
             "/var/lib/alsa")
 
           (mkIf (networking.wireless.enable || hardware.bluetooth.enable)
