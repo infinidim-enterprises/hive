@@ -21,6 +21,8 @@ https://github.com/helm/chartmuseum
 https://github.com/nix-community/authentik-nix
 ** https://unifiedpush.org/
 * Cool stuff I want
+** filesystems
+https://github.com/netheril96/securefs
 ** remote access
 xrdp-->vnc-->lightdm
 Xrdp supports forwarding to vnc and an Xorg

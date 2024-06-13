@@ -19,6 +19,7 @@
   services.fstrim.enable = false;
   services.zfs.trim.enable = false;
   services.zfs.autoScrub.enable = true;
+  services.zfs.autoScrub.interval = "daily";
 
   networking.hostId = lib.mkDefault (abort "ZFS requires networking.hostId to be set");
 

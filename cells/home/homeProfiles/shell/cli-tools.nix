@@ -94,6 +94,7 @@ in
     surfraw # "Provides a fast unix command line interface to a variety of popular WWW search engines and other artifacts of power"
     w3m # A text-mode web browser
     nb # A command line note-taking, bookmarking, archiving, and knowledge base application
+    rclone # Command line program to sync files and directories to and from major cloud storage
 
     # perl # fzf-history-widget() needs perl to sort input
     thefuck # if you mistyped: fuck

@@ -98,12 +98,15 @@ in
   config = mkMerge [
     (mkIf cfg.enable {
       xdg.mime.enable = true;
+      programs.gdk-pixbuf.modulePackages = with pkgs; [
+        librsvg
+        webp-pixbuf-loader
+      ];
       services.xserver = {
         xkb.layout = "us";
         enable = true;
         updateDbusEnvironment = true;
         desktopManager.mate.enable = true;
-        gdk-pixbuf.modulePackages = [ pkgs.librsvg ];
       };
 
       services.gnome.glib-networking.enable = true;
