@@ -7,6 +7,7 @@ rec {
         any
         mkIf
         mkAfter
+        hasAttr
         optional
         optionals;
     in
@@ -22,6 +23,9 @@ rec {
 
         directories = with config; [
           "/var/log"
+
+          (mkIf (hasAttr "alsa-store" systemd.services)
+            "/var/lib/alsa")
 
           (mkIf (networking.wireless.enable || hardware.bluetooth.enable)
             "/var/lib/systemd/rfkill")
