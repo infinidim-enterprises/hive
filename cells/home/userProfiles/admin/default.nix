@@ -5,7 +5,10 @@ let
   inherit (lib) mkMerge;
 in
 {
-  imports = [ inputs.cells.nixos.nixosProfiles.hardware.cryptography ];
+  imports = [
+    inputs.cells.nixos.nixosProfiles.hardware.cryptography
+    (inputs.cells.nixos.nixosProfiles.backups.restic { user = "admin"; extraDirs = [ "tmp" ]; })
+  ];
   home-manager.users.admin.imports = [
     ({ pkgs, ... }: {
       # FIXME: `home-manager.users.admin.services.gpg-agent.pinentryPackage' is defined multiple times

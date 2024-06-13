@@ -26,6 +26,13 @@ creation_rules:
           - *vod_new
           - *asbleg
 
+  - path_regex: cells/secrets/sops/rclone.conf
+    key_groups:
+      - pgp:
+          - *vod
+          - *vod_new
+          - *asbleg
+
   - path_regex: cells/secrets/sops/wifi.yaml
     key_groups:
       - pgp:

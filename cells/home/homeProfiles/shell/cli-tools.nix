@@ -6,7 +6,7 @@ let
     text = ''
       # Function to disable task_delayacct upon script exit
       disable_task_delayacct() {
-          sudo sysctl kernel.task_delayacct=0
+          sudo sysctl kernel.task_delayacct=0 >/dev/null 2>&1
       }
 
       # Ensure disable_task_delayacct is called on script exit
@@ -23,7 +23,7 @@ let
 
       if [ "$task_delayacct_value" -eq 0 ]; then
           # Set kernel.task_delayacct to 1
-          sudo sysctl kernel.task_delayacct=1
+          sudo sysctl kernel.task_delayacct=1 >/dev/null 2>&1
 
           # Run iotop with passed arguments
           sudo ${pkgs.iotop-c}/bin/iotop-c --processes --only "$@"
