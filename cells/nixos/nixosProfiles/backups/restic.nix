@@ -38,15 +38,16 @@ in
     initialize = true;
     timerConfig.OnCalendar = "hourly";
     timerConfig.Persistent = true;
-    # environmentFile = config.sops.secrets.rclone_conf;
+    extraBackupArgs = [ "--compression max" "--no-cache" "--with-atime" ];
     passwordFile = config.sops.secrets.restic_passwd.path;
     rcloneConfigFile = config.sops.secrets.rclone_conf.path;
-    repository = "rclone:mega_50GB:/backups/${user}";
+    repository = "rclone:backups:/backups/${user}";
     pruneOpts = [
+      "--keep-hourly 24"
       "--keep-daily 7"
-      "--keep-weekly 5"
+      "--keep-weekly 4"
       "--keep-monthly 12"
-      "--keep-yearly 75"
+      "--keep-yearly 50"
     ];
   };
 }
