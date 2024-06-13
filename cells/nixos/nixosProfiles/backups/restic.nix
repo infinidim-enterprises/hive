@@ -5,7 +5,7 @@
 { config, lib, pkgs, ... }:
 
 let
-  baseDir = config.users.users.${uname}.home + "/";
+  baseDir = config.users.users.${user}.home + "/";
   defaultDirs = [
     "Desktop"
     "Documents"
