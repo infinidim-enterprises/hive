@@ -23,17 +23,7 @@ let
 in
 
 {
-  sops.secrets.rclone_conf = {
-    sopsFile = ../../../secrets/sops/rclone.conf;
-    format = "binary";
-  };
-
-  sops.secrets.restic_passwd = {
-    key = "restic_passwd";
-    sopsFile = ../../../secrets/sops/online-storage-systems.yaml;
-  };
-
-  services.restic.backups."home-${user}" = {
+  services.restic.backups."home-${user}-${config.networking.hostName}" = {
     inherit paths;
     initialize = true;
     timerConfig.OnCalendar = "hourly";
@@ -41,7 +31,7 @@ in
     extraBackupArgs = [ "--compression max" "--no-cache" "--with-atime" ];
     passwordFile = config.sops.secrets.restic_passwd.path;
     rcloneConfigFile = config.sops.secrets.rclone_conf.path;
-    repository = "rclone:backups:/backups/${user}";
+    repository = "rclone:backups:/backups/${user}/${config.networking.hostName}";
     pruneOpts = [
       "--keep-hourly 24"
       "--keep-daily 7"

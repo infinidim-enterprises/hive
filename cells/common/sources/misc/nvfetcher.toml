@@ -6,8 +6,12 @@ fetch.github = "adeverteuil/console-solarized"
 # TODO: https://github.com/lassekongo83/adw-colors
 # https://github.com/lassekongo83/adw-gtk3
 [numix-solarized-gtk-theme-git]
-src.git = "https://github.com/Ferdi265/numix-solarized-gtk-theme.git"
-fetch.git = "https://github.com/Ferdi265/numix-solarized-gtk-theme.git"
+src.git = "https://github.com/Ferdi265/numix-solarized-gtk-theme"
+fetch.git = "https://github.com/Ferdi265/numix-solarized-gtk-theme"
+
+[base16-schemes]
+src.git = "https://github.com/tinted-theming/schemes"
+fetch.git = "https://github.com/tinted-theming/schemes"
 
 [transmissionic]
 # Remote for Transmission Daemon

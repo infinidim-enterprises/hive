@@ -17,15 +17,15 @@
   };
   adguard-filters = {
     pname = "adguard-filters";
-    version = "c5f0eadabf898390702525c47e54400a1176e7e9";
+    version = "369c84082a761eff1591c4cda64c3949db4c83f7";
     src = fetchgit {
       url = "https://github.com/AdguardTeam/AdguardFilters";
-      rev = "c5f0eadabf898390702525c47e54400a1176e7e9";
+      rev = "369c84082a761eff1591c4cda64c3949db4c83f7";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-RF+TNKExvXS+NCg1vWpYw+I/NZvIwFEoyUtietYzgck=";
+      sha256 = "sha256-V8yDbiwwk7VKZplfUJN2YfFNVuiOABT5NWB6DymdiuE=";
     };
     date = "2024-06-14";
   };
@@ -41,6 +41,20 @@
     };
     cargoSha256 = "0000000000000000000000000000000000000000000000000000";
     date = "2021-01-01";
+  };
+  base16-schemes = {
+    pname = "base16-schemes";
+    version = "abcf2a055ae69f1bf047463332f83db3125aa8a5";
+    src = fetchgit {
+      url = "https://github.com/tinted-theming/schemes";
+      rev = "abcf2a055ae69f1bf047463332f83db3125aa8a5";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-wcotm0Ek2ISn8iJBzEujJQdcPLKWrPAOZ/dS/DLKafw=";
+    };
+    date = "2024-04-17";
   };
   chatgpt-wrapper = {
     pname = "chatgpt-wrapper";
@@ -301,7 +315,7 @@
     pname = "numix-solarized-gtk-theme-git";
     version = "2c5a85bd79c7b7d509ec14dd00d310cfe9f9afd2";
     src = fetchgit {
-      url = "https://github.com/Ferdi265/numix-solarized-gtk-theme.git";
+      url = "https://github.com/Ferdi265/numix-solarized-gtk-theme";
       rev = "2c5a85bd79c7b7d509ec14dd00d310cfe9f9afd2";
       fetchSubmodules = false;
       deepClone = false;
@@ -341,7 +355,7 @@
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "0a4964700a4f448f4c3074fd0560d9bf1b619be7";
+    version = "145ddf6013d267659d3f4946ecc2f9ca4094a484";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";

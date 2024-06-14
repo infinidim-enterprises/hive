@@ -41,16 +41,26 @@ in
           sops.gnupg.sshKeyPaths = opensshServiceKeyPaths;
         })
 
+        (mkIf (config.services.restic.backups != { }) {
+          sops.secrets.rclone_conf = {
+            sopsFile = ./sops/rclone.conf;
+            format = "binary";
+          };
+          sops.secrets.restic_passwd = {
+            key = "restic_passwd";
+            sopsFile = ./sops/online-storage-systems.yaml;
+          };
+
+        })
+
         {
           sops.age.sshKeyPaths = mkForce [ ]; # NOTE: Not using age!
           environment.systemPackages = [ pkgs.sops ];
 
-          sops.secrets = {
-            root-password = {
-              key = "root-password";
-              sopsFile = ./sops/nixos-common.yaml;
-              neededForUsers = true;
-            };
+          sops.secrets.root-password = {
+            key = "root-password";
+            sopsFile = ./sops/nixos-common.yaml;
+            neededForUsers = true;
           };
         }
       ];

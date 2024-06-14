@@ -7,7 +7,7 @@ in
 {
   imports = [
     inputs.cells.nixos.nixosProfiles.hardware.cryptography
-    (inputs.cells.nixos.nixosProfiles.backups.restic { user = "admin"; extraDirs = [ "tmp" ]; })
+    # (inputs.cells.nixos.nixosProfiles.backups.restic { user = "admin"; extraDirs = [ "tmp" ]; })
   ];
   home-manager.users.admin.imports = [
     ({ pkgs, ... }: {
@@ -22,7 +22,7 @@ in
   { users.users.admin.extraGroups = [ "wheel" ]; }
   {
     users.users.admin = {
-      # packages = [ inputs.cells.nixos.containers.keygen_script ];
+      # NOTE: cannot have it as a sops secret, since this user gets to be in bootstrap
       hashedPassword = "$6$hMM0iey5Ypc0Mpow$ZU64D7qWfnU/Z088CSSgYzPur.Ele8U6XcxRssNCvfHvWhCtarrTe5dd432sCwl3wooj.PcwAEkiAZyKh0I1X0";
       description = "Administrator";
       isNormalUser = true;

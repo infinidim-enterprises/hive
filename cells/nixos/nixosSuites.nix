@@ -8,16 +8,18 @@ rec {
     sudo
     earlyoom
     core.locale
+    core.stylix
     core.console-solarized
     core.boot-config
     core.packages
     core.shell-defaults
+
+    cell.nixosModules.deploy
+    inputs.cells.secrets.nixosProfiles.common
+    inputs.cells.common.nixosProfiles.nix-config
+    ({ config, ... }: { system.stateVersion = config.bee.pkgs.lib.trivial.release; })
   ]
-  ++ [ ({ config, ... }: { system.stateVersion = config.bee.pkgs.lib.trivial.release; }) ]
-  ++ [ (cell.lib.mkHome "admin" "zsh") ]
-  ++ [ inputs.cells.home.userProfiles.root ]
-  ++ [ cell.nixosModules.deploy ]
-  ++ [ inputs.cells.common.nixosProfiles.nix-config ];
+  ++ [ inputs.cells.home.userProfiles.root (cell.lib.mkHome "admin" "zsh") ];
 
   # TODO: desktop profiles with different window managers
   desktop = base
@@ -30,9 +32,8 @@ rec {
     # TODO: desktop.opensnitch
   ])
     ++ [ ({ pkgs, ... }: { environment.systemPackages = with pkgs; [ networkmanagerapplet ]; }) ];
-  # ++ [ inputs.cells.secrets.nixosProfiles.common ];
 
-  cli = base ++ [ inputs.cells.secrets.nixosProfiles.common ];
+  cli = base;
 
   networking = [
     cell.nixosProfiles.networking.networkd

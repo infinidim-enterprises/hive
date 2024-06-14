@@ -651,10 +651,10 @@
   };
   "passff" = rec {
     pname = "passff";
-    version = "1.19.4";
+    version = "1.19.5";
     addonId = "passff@invicem.pro";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4301803/passff-1.19.4.xpi";
-    sha256 = "10c3102999d02c7dda4e17351d95f73db563a27bdc4aeec7a8b7e6094cee61eb";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4303400/passff-1.19.5.xpi";
+    sha256 = "03331d671c759b8689726aca7146cc2e2d9a4118d2d00e184dda20d1176e79e7";
     meta = with lib;
       {
         homepage = "https://codeberg.org/PassFF/passff";

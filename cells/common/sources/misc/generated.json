@@ -31,13 +31,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "c5f0eadabf898390702525c47e54400a1176e7e9",
-            "sha256": "sha256-RF+TNKExvXS+NCg1vWpYw+I/NZvIwFEoyUtietYzgck=",
+            "rev": "369c84082a761eff1591c4cda64c3949db4c83f7",
+            "sha256": "sha256-V8yDbiwwk7VKZplfUJN2YfFNVuiOABT5NWB6DymdiuE=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/AdguardTeam/AdguardFilters"
         },
-        "version": "c5f0eadabf898390702525c47e54400a1176e7e9"
+        "version": "369c84082a761eff1591c4cda64c3949db4c83f7"
     },
     "age-plugin-trezor": {
         "cargoLocks": null,
@@ -61,6 +61,26 @@
             "type": "github"
         },
         "version": "1a89e1aec4aa6ee85987883146c5decd42a47a39"
+    },
+    "base16-schemes": {
+        "cargoLocks": null,
+        "date": "2024-04-17",
+        "extract": null,
+        "name": "base16-schemes",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "abcf2a055ae69f1bf047463332f83db3125aa8a5",
+            "sha256": "sha256-wcotm0Ek2ISn8iJBzEujJQdcPLKWrPAOZ/dS/DLKafw=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/tinted-theming/schemes"
+        },
+        "version": "abcf2a055ae69f1bf047463332f83db3125aa8a5"
     },
     "chatgpt-wrapper": {
         "cargoLocks": null,
@@ -518,7 +538,7 @@
             "sha256": "sha256-r5xCe8Ew+/SuCUaZ0yjlumORTy/y1VwbQQjQ6uEyGsY=",
             "sparseCheckout": [],
             "type": "git",
-            "url": "https://github.com/Ferdi265/numix-solarized-gtk-theme.git"
+            "url": "https://github.com/Ferdi265/numix-solarized-gtk-theme"
         },
         "version": "2c5a85bd79c7b7d509ec14dd00d310cfe9f9afd2"
     },
@@ -575,7 +595,7 @@
             "type": "url",
             "url": "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c"
         },
-        "version": "0a4964700a4f448f4c3074fd0560d9bf1b619be7"
+        "version": "145ddf6013d267659d3f4946ecc2f9ca4094a484"
     },
     "pgp-key-generation": {
         "cargoLocks": null,

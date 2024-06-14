@@ -21,7 +21,6 @@ rec {
 
   imports =
     cell.nixosSuites.desktop
-    ++ [ inputs.cells.secrets.nixosProfiles.common ]
     ++ cell.nixosSuites.networking
     ++ cell.nixosSuites.virtualization
     ++ [ (cell.lib.mkHome "vod" "zsh") ]

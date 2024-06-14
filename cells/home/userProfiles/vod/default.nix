@@ -5,28 +5,15 @@
 {
   imports =
     [
-      {
-        disabledModules = [
-          "services/security/opensnitch.nix"
-          # "services/security/pass-secret-service"
-        ];
-      }
+      # (inputs.cells.nixos.nixosProfiles.backups.restic { user = "vod"; extraDirs = [ "tmp" ]; })
       inputs.cells.nixos.nixosModules.services.security.opensnitch
-      # cell.nixosModules.services.security.pass-secret-service
       inputs.cells.nixos.nixosModules.services.x11.window-managers.stumpwm
-      # cell.nixosModules.services.x11.remote-display
-      # cell.nixosModules.services.networking.zerotierone
     ] ++
-    # [ cell.nixosProfiles.desktop.remote-display-host-5-heads ] ++
     (with inputs.cells.nixos.nixosProfiles; [
       desktop.stumpwm
       desktop.chromium-browser
-      # desktop.firefox-browser
       hardware.cryptography
-    ]) ++
-    [
-      # inputs.cells.bootstrap.nixosProfiles.core.fonts
-    ];
+    ]);
 
   services.xserver.windowManager.stumpwm.enable = true;
 
@@ -46,7 +33,6 @@
 
   users.users.vod = {
     hashedPasswordFile = config.sops.secrets.vod-password.path;
-    # hashedPassword = "$6$VsWUQCau32Oa$tNiMK5LftcuYDRPeACeP/BLikr7tYps/MHDeF3GT0bNRvyEW3PgIXXMzBY5x.FvGO6NprwhDldeFeKBzVQuhI1";
     description = "Никто кроме нас";
     isNormalUser = true;
     uid = 1000;

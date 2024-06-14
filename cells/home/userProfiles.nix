@@ -58,6 +58,7 @@ in
       createHome = true;
       home = "/root";
       hashedPasswordFile = with lib; mkIf
+        # FIXME: disable root password login if sops secret not found!
         (hasAttrByPath
           [ "sops" "secrets" "root-password" ]
           config)

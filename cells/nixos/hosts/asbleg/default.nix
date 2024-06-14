@@ -25,7 +25,6 @@ rec {
     ++ [ cell.nixosProfiles.desktop.rdpserver ] # LightDM login via xrdp
     ++ cell.nixosSuites.networking
     ++ cell.nixosSuites.virtualization
-    ++ [ inputs.cells.secrets.nixosProfiles.common ]
     ++ [ (cell.lib.mkHome "vod" "zsh") ]
     ++ [
       bee.home.nixosModules.home-manager

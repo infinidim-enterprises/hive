@@ -16,7 +16,7 @@ lib.mkMerge [
       "kcgpggonjhmeaejebeoeomdlohicfhce" # Removes cookies for the current site
       "ldpochfccmkkmhdbclfhpagapcfdljkj" # Decentraleyes
       "maekfnoeejhpjfkfmdlckioggdcdofpg" # Adblocker for Youtube™
-
+      "jappgmhllahigjolfpgbjdfhciabdnde" # Link Map - Professional Tab Manager
       # "jpefmbpcbebpjpmelobfakahfdcgcmkl" # adblock for youtube
       # "kbbdabhdfibnancpjfhlkhafgdilcnji" # Screenity
       # "kkkjlfejijcjgjllecmnejhogpbcigdc" # org-capture

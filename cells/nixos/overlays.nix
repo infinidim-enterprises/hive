@@ -3,10 +3,12 @@
   firmwares = _: _: cell.firmwares;
 
   base = with inputs.cells.common.overlays; [
+    inputs.nix-filter.overlays.default
     nixpkgs-unstable-overrides
     nixpkgs-release-overrides
     nixpkgs-master-overrides
     dart-fix
+    base16-schemes
     # linux-firmware-fix
     sources
     python
