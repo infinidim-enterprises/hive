@@ -6,8 +6,8 @@
   imports =
     [
       # (inputs.cells.nixos.nixosProfiles.backups.restic { user = "vod"; extraDirs = [ "tmp" ]; })
-      inputs.cells.nixos.nixosModules.services.security.opensnitch
       inputs.cells.nixos.nixosModules.services.x11.window-managers.stumpwm
+      # inputs.cells.nixos.nixosModules.services.security.opensnitch
     ] ++
     (with inputs.cells.nixos.nixosProfiles; [
       desktop.stumpwm
