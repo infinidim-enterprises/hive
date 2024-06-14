@@ -8,10 +8,9 @@ let
     gh # GitHub CLI tool
     ghq # Remote repository management made easy
   ];
-  inherit (lib) mkDefault;
 in
 mkMerge [
-  (mkIf (hasAttrByPath [ "opensnitch" ] config.services) {
+  (mkIf (hasAttr "opensnitch" config.services) {
     services.opensnitch.allow =
       (remove pkgs.gitflow gat) ++
       [ "${config.programs.git.package}/libexec/git-core/git-remote-http" ];

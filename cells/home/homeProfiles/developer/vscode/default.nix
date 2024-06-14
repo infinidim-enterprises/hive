@@ -1,7 +1,7 @@
 { pkgs, lib, config, ... }:
 with lib;
 mkMerge [
-  (mkIf (config.services ? opensnitch) {
+  (mkIf (hasAttr "opensnitch" config.services) {
     services.opensnitch.allow = [ "${config.programs.vscode.package}/lib/vscode/code" ];
   })
 
