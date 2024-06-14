@@ -22,5 +22,8 @@ in
     stylix.autoEnable = false;
     stylix.image = "${pkgs.nixos-icons}/share/icons/hicolor/1024x1024/apps/nix-snowflake.png";
     stylix.polarity = "dark";
+    stylix.cursor.name = "Numix-Cursor-Light";
+    stylix.cursor.package = pkgs.numix-cursor-theme;
+    stylix.cursor.size = 32;
   };
 }

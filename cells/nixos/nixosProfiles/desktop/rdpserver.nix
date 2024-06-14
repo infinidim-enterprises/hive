@@ -45,6 +45,7 @@ lib.mkMerge [
     containers.xrdp.bindMounts.user-passwd.hostPath = config.sops.secrets.xrdp-password.path;
     containers.xrdp.bindMounts.user-passwd.isReadOnly = true;
     containers.xrdp.config = { pkgs, ... }: {
+      system.stateVersion = config.bee.pkgs.lib.trivial.release;
       users.users.rdp.hashedPasswordFile = config.sops.secrets.xrdp-password.path;
       users.users.rdp.isNormalUser = true;
 

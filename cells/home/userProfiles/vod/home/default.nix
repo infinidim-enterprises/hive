@@ -24,7 +24,7 @@ in
       solarized-dark
       nerdfonts-ubuntu
       starship-prompt
-      pointer-cursor
+      # pointer-cursor
     ]) ++ (with profiles.developer; [
       # FIXME: extensions - vscode
       ruby

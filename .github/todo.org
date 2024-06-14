@@ -23,9 +23,6 @@ https://github.com/nix-community/authentik-nix
 * Cool stuff I want
 ** filesystems
 https://github.com/netheril96/securefs
-** remote access
-xrdp-->vnc-->lightdm
-Xrdp supports forwarding to vnc and an Xorg
 ** shell things
 https://github.com/charmbracelet/gum
 https://github.com/DannyBen/bashly
