@@ -1,9 +1,9 @@
 { pkgs, lib, config, ... }:
 with lib;
 mkMerge [
-  (mkIf (hasAttr "opensnitch" config.services) {
-    services.opensnitch.allow = [ "${config.programs.vscode.package}/lib/vscode/code" ];
-  })
+  # (mkIf (hasAttr "opensnitch" config.services) {
+  #   services.opensnitch.allow = [ "${config.programs.vscode.package}/lib/vscode/code" ];
+  # })
 
   {
     programs.vscode.enable = true;

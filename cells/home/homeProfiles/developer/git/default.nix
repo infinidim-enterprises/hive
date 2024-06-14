@@ -10,11 +10,11 @@ let
   ];
 in
 mkMerge [
-  (mkIf (hasAttr "opensnitch" config.services) {
-    services.opensnitch.allow =
-      (remove pkgs.gitflow gat) ++
-      [ "${config.programs.git.package}/libexec/git-core/git-remote-http" ];
-  })
+  # (mkIf (hasAttr "opensnitch" config.services) {
+  #   services.opensnitch.allow =
+  #     (remove pkgs.gitflow gat) ++
+  #     [ "${config.programs.git.package}/libexec/git-core/git-remote-http" ];
+  # })
 
   ### General settings
   {
