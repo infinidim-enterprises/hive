@@ -33,7 +33,7 @@
   ExtensionUpdate = false;
   NewTabPage = false;
   NoDefaultBookmarks = true;
-  OverrideFirstRunPage = "";
+  # OverrideFirstRunPage = "";
   OverridePostUpdatePage = "";
   PopupBlocking = { Default = true; };
 
