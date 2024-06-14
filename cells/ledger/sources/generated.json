@@ -13,6 +13,7 @@
             "name": null,
             "rev": "a2eb366bd859fa94c2cb7e7a390a40934e69495c",
             "sha256": "sha256-k7j0S7ukIwkil7KCp4uDfi+rmRfxmJ4XSRLFcajGZbE=",
+            "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/LedgerHQ/blue-loader-python"
         },
@@ -34,6 +35,7 @@
             "repo": "python-gnupg",
             "rev": "0.5.2",
             "sha256": "sha256-Z7kdPJ54CxvXWN1WJ9ywH4YsDJRdwvrapkXkDS26sFY=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "0.5.2"

@@ -25,11 +25,11 @@
   };
   copilot = {
     pname = "copilot";
-    version = "1.200.925";
+    version = "1.202.932";
     src = fetchurl {
-      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.200.925/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "copilot-1.200.925.zip";
-      sha256 = "sha256-zw1Vq7lNCjT2azRcYndGKXR8RGjNlsvELDpIEMJ81YI=";
+      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.202.932/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "copilot-1.202.932.zip";
+      sha256 = "sha256-He+8e94WQngSWy/ziv6bOCwdTeUsQvv2fjT3bnlXoB8=";
     };
     publisher = "GitHub";
     name = "copilot";
@@ -47,11 +47,11 @@
   };
   emacs-mcx = {
     pname = "emacs-mcx";
-    version = "0.61.0";
+    version = "0.61.2";
     src = fetchurl {
-      url = "https://tuttieee.gallery.vsassets.io/_apis/public/gallery/publisher/tuttieee/extension/emacs-mcx/0.61.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "emacs-mcx-0.61.0.zip";
-      sha256 = "sha256-W0NJyvwQ/+SQEUeK+BY9NT3fx2Du2kH6D979xhdcYSw=";
+      url = "https://tuttieee.gallery.vsassets.io/_apis/public/gallery/publisher/tuttieee/extension/emacs-mcx/0.61.2/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "emacs-mcx-0.61.2.zip";
+      sha256 = "sha256-176YgcHZdw3VP/c8ph2gOU5sG+V1IueJp7oW0Q/jezE=";
     };
     publisher = "tuttieee";
     name = "emacs-mcx";

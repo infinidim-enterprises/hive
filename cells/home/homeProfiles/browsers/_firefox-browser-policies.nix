@@ -1,6 +1,8 @@
 # NOTE: https://addons.mozilla.org/en-US/firefox/addon/enterprise-policy-generator/
 #       https://ffprofile.com
 {
+  EnableFirefoxSync = true;
+  OverrideFirstRunPage = "about:preferences#sync";
   CaptivePortal = false;
   NetworkPrediction = false;
   DNSOverHTTPS.Enabled = false;

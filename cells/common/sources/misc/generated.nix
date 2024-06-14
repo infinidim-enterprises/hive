@@ -10,22 +10,24 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
+      sparseCheckout = [ ];
       sha256 = "sha256-CvfiudyBNYQsyPFy05kjbhGVtwl56wKPAllqgi6uZio=";
     };
     date = "2019-07-20";
   };
   adguard-filters = {
     pname = "adguard-filters";
-    version = "acbe77d2d56d0aa42d78de78ba82d831158c5a6d";
+    version = "c5f0eadabf898390702525c47e54400a1176e7e9";
     src = fetchgit {
       url = "https://github.com/AdguardTeam/AdguardFilters";
-      rev = "acbe77d2d56d0aa42d78de78ba82d831158c5a6d";
+      rev = "c5f0eadabf898390702525c47e54400a1176e7e9";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-EbilZeG4P7sldaQbtrOOEQ0k7lldpS1Mu4XLieD0Rwk=";
+      sparseCheckout = [ ];
+      sha256 = "sha256-RF+TNKExvXS+NCg1vWpYw+I/NZvIwFEoyUtietYzgck=";
     };
-    date = "2024-06-11";
+    date = "2024-06-14";
   };
   age-plugin-trezor = {
     pname = "age-plugin-trezor";
@@ -73,6 +75,7 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
+      sparseCheckout = [ ];
       sha256 = "sha256-nFEecXmStgu/ePtNretaCgC1huBr4kKnzvgdoUG+u0Q=";
     };
     date = "2023-06-20";
@@ -145,6 +148,7 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
+      sparseCheckout = [ ];
       sha256 = "sha256-xbg3tPYfRNGJo+9F/58w2bDeZqV33Z871+ClSg4ACPk=";
     };
     date = "2023-11-04";
@@ -158,9 +162,21 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
+      sparseCheckout = [ ];
       sha256 = "sha256-WU3e7F0iNrxiS7WXzNbxnBp4oIru2pLihKbVIR236J4=";
     };
     date = "2022-09-09";
+  };
+  firefox_decrypt = {
+    pname = "firefox_decrypt";
+    version = "1.1.1";
+    src = fetchFromGitHub {
+      owner = "unode";
+      repo = "firefox_decrypt";
+      rev = "1.1.1";
+      fetchSubmodules = false;
+      sha256 = "sha256-HPjOUWusPXoSwwDvW32Uad4gFERvn79ee/WxeX6h3jY=";
+    };
   };
   firefox_user_js = {
     pname = "firefox_user_js";
@@ -221,6 +237,7 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
+      sparseCheckout = [ ];
       sha256 = "sha256-32LYNF+5z5rS4y2iGKA2BnQntXg9Ec9709m6pL5hBdo=";
     };
     date = "2024-05-31";
@@ -235,13 +252,13 @@
   };
   langchain = {
     pname = "langchain";
-    version = "langchain-core==0.2.5";
+    version = "langchain-core==0.2.6";
     src = fetchFromGitHub {
       owner = "langchain-ai";
       repo = "langchain";
-      rev = "langchain-core==0.2.5";
+      rev = "langchain-core==0.2.6";
       fetchSubmodules = false;
-      sha256 = "sha256-EBs6BHxBPBR1TfSyesM2gJJtxgClM6lLXko1qisrz7A=";
+      sha256 = "sha256-GmNBmdoUstNwrR9vQJ2/EaxJGX0l/cj8WnZaY92w5JY=";
     };
   };
   ledger-live-desktop = {
@@ -289,6 +306,7 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
+      sparseCheckout = [ ];
       sha256 = "sha256-r5xCe8Ew+/SuCUaZ0yjlumORTy/y1VwbQQjQ6uEyGsY=";
     };
     date = "2023-03-05";
@@ -302,6 +320,7 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
+      sparseCheckout = [ ];
       sha256 = "sha256-KKl1w5+dseRWTxnN0JWIT4owbx0nL3wt9GmWmGowpYk=";
     };
     date = "2024-03-31";
@@ -315,18 +334,19 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
+      sparseCheckout = [ ];
       sha256 = "sha256-StmpmszWHzmi8pMd+y3f6+1s2vjW8HM5O6maJiE6Ajc=";
     };
     date = "2024-04-06";
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "e913ae340076bbb73d9f4d3d065c2bca7caafb16";
+    version = "0a4964700a4f448f4c3074fd0560d9bf1b619be7";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";
     };
-    date = "2024-06-12";
+    date = "2024-06-14";
   };
   pgp-key-generation = {
     pname = "pgp-key-generation";
@@ -462,6 +482,7 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
+      sparseCheckout = [ ];
       sha256 = "sha256-DA5REsNQNykpbCFb6PJbgEBYiDh1kEq083wRZq+pIQM=";
     };
     date = "2023-06-09";

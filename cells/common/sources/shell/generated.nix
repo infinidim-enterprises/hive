@@ -77,15 +77,15 @@
   };
   spaceship-prompt = {
     pname = "spaceship-prompt";
-    version = "6af88441124179ca6d76c51519b72fb97e9ff3cc";
+    version = "ebacf2edda4e10100e98cdac91d2361d17f52bfb";
     src = fetchFromGitHub {
       owner = "spaceship-prompt";
       repo = "spaceship-prompt";
-      rev = "6af88441124179ca6d76c51519b72fb97e9ff3cc";
+      rev = "ebacf2edda4e10100e98cdac91d2361d17f52bfb";
       fetchSubmodules = false;
-      sha256 = "sha256-2Z9NUC1TR0lYBQux+Tkac0oFVnYIxsMkdWNGKQIz9IU=";
+      sha256 = "sha256-ocWedaJYyY5EN3KZFnTttB2fSMZXv5zGypUHRCV+Tdg=";
     };
-    date = "2024-05-29";
+    date = "2024-06-12";
   };
   zsh-plugin_any-nix-shell = {
     pname = "zsh-plugin_any-nix-shell";
@@ -108,6 +108,7 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
+      sparseCheckout = [ ];
       sha256 = "sha256-72aQ5N5L14mwJ8RB50p/swi6wXhPGYRYJ/Q8CUdP4wE=";
     };
     date = "2023-12-06";
@@ -121,6 +122,7 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
+      sparseCheckout = [ ];
       sha256 = "sha256-BaYYzl6JArfPWASJtzk44scGejwgyT5+W94ugVDCV3I=";
     };
     date = "2024-01-03";
@@ -146,6 +148,7 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
+      sparseCheckout = [ ];
       sha256 = "sha256-32rJjBzqS2e6w/L78KMNwQRg4E3sqqdAmb87XEhqbRQ=";
     };
     date = "2018-09-09";
@@ -164,16 +167,17 @@
   };
   zsh-plugin_oh-my-zsh = {
     pname = "zsh-plugin_oh-my-zsh";
-    version = "4295aed17b4b1180b7e42bd7debd7685686c1307";
+    version = "0c9b42a863778d67aee22bbd43f296110fe1f047";
     src = fetchgit {
       url = "https://github.com/robbyrussell/oh-my-zsh";
-      rev = "4295aed17b4b1180b7e42bd7debd7685686c1307";
+      rev = "0c9b42a863778d67aee22bbd43f296110fe1f047";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-wMzH/KPv6AV/s2Gi2Jg1MBvvJ+npK6FN/LGhFOfosaU=";
+      sparseCheckout = [ ];
+      sha256 = "sha256-8ZVYN97K4KJOG+JnVpCVbMx2HGypvk7KZmwNzUfcovo=";
     };
-    date = "2024-06-10";
+    date = "2024-06-13";
   };
   zsh-plugin_tipz = {
     pname = "zsh-plugin_tipz";
@@ -184,6 +188,7 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
+      sparseCheckout = [ ];
       sha256 = "sha256-oFZJwHYDfK4f53lhcZg6PCw2AgHxFC0CRiqiinKZz8k=";
     };
     date = "2018-05-03";
@@ -197,6 +202,7 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
+      sparseCheckout = [ ];
       sha256 = "sha256-P/pbpDJmsMSZkNi5GjVTDy7R+OxaIVZhb/bEnYQlaLo=";
     };
     date = "2022-09-13";
@@ -210,6 +216,7 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
+      sparseCheckout = [ ];
       sha256 = "sha256-8HznSWSBj1baetvDOIZ+H9mWg5gbbzF52nIEG+u9Di8=";
     };
     date = "2024-06-04";
@@ -223,6 +230,7 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
+      sparseCheckout = [ ];
       sha256 = "sha256-mtDrt4Q5kbddydq/pT554ph0hAd5DGk9jci9auHx0z0=";
     };
     date = "2024-06-04";
@@ -236,6 +244,7 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
+      sparseCheckout = [ ];
       sha256 = "sha256-J2L/jO8lWNGC4Bob+2mH7OEJ+U2g+NVkbPA1OdnIrp0=";
     };
     date = "2024-05-21";
@@ -249,6 +258,7 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
+      sparseCheckout = [ ];
       sha256 = "sha256-1+w0AeVJtu1EK5iNVwk3loenFuIyVlQmlw8TWliHZGI=";
     };
     date = "2024-06-05";
@@ -262,6 +272,7 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
+      sparseCheckout = [ ];
       sha256 = "sha256-Vt2yKzMRJ34FBFPKrN+GJBZYmBt5ASArrs1dkZcIQmI=";
     };
     date = "2024-01-06";

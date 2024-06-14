@@ -28,12 +28,12 @@
         },
         "pinned": false,
         "src": {
-            "name": "ballerina-4.6.0.zip",
-            "sha256": "sha256-xbWIIAonXNnQj0i+bKSmzy1WpFag0KU4sZqGmNW/758=",
+            "name": "ballerina-4.7.0.zip",
+            "sha256": "sha256-4dBWWHmRzqMaNe+uj5ihPd0sVBU4cw8yx0wkpxnItlQ=",
             "type": "url",
-            "url": "https://WSO2.gallery.vsassets.io/_apis/public/gallery/publisher/WSO2/extension/ballerina/4.6.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://WSO2.gallery.vsassets.io/_apis/public/gallery/publisher/WSO2/extension/ballerina/4.7.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "4.6.0"
+        "version": "4.7.0"
     },
     "bash-ide-vscode": {
         "cargoLocks": null,
@@ -82,12 +82,12 @@
         },
         "pinned": false,
         "src": {
-            "name": "copilot-1.200.925.zip",
-            "sha256": "sha256-zw1Vq7lNCjT2azRcYndGKXR8RGjNlsvELDpIEMJ81YI=",
+            "name": "copilot-1.202.932.zip",
+            "sha256": "sha256-He+8e94WQngSWy/ziv6bOCwdTeUsQvv2fjT3bnlXoB8=",
             "type": "url",
-            "url": "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.200.925/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.202.932/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "1.200.925"
+        "version": "1.202.932"
     },
     "crystal-lang": {
         "cargoLocks": null,
@@ -154,12 +154,12 @@
         },
         "pinned": false,
         "src": {
-            "name": "emacs-mcx-0.61.0.zip",
-            "sha256": "sha256-W0NJyvwQ/+SQEUeK+BY9NT3fx2Du2kH6D979xhdcYSw=",
+            "name": "emacs-mcx-0.61.2.zip",
+            "sha256": "sha256-176YgcHZdw3VP/c8ph2gOU5sG+V1IueJp7oW0Q/jezE=",
             "type": "url",
-            "url": "https://tuttieee.gallery.vsassets.io/_apis/public/gallery/publisher/tuttieee/extension/emacs-mcx/0.61.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://tuttieee.gallery.vsassets.io/_apis/public/gallery/publisher/tuttieee/extension/emacs-mcx/0.61.2/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "0.61.0"
+        "version": "0.61.2"
     },
     "fonted": {
         "cargoLocks": null,
@@ -208,12 +208,12 @@
         },
         "pinned": false,
         "src": {
-            "name": "gitlens-2024.6.1105.zip",
-            "sha256": "sha256-QbEp0LwmwjDGqdgw5OwkBFvr92DHUGou/YhFMcG9l0Y=",
+            "name": "gitlens-2024.6.1305.zip",
+            "sha256": "sha256-qpQ7eGRfzGFd7ZLjlyZEnz+RsrVVsDqeBlq3FDWI7vc=",
             "type": "url",
-            "url": "https://eamodio.gallery.vsassets.io/_apis/public/gallery/publisher/eamodio/extension/gitlens/2024.6.1105/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://eamodio.gallery.vsassets.io/_apis/public/gallery/publisher/eamodio/extension/gitlens/2024.6.1305/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "2024.6.1105"
+        "version": "2024.6.1305"
     },
     "gpt-pilot-vs-code": {
         "cargoLocks": null,
@@ -226,12 +226,12 @@
         },
         "pinned": false,
         "src": {
-            "name": "gpt-pilot-vs-code-0.2.2.zip",
-            "sha256": "sha256-E9dvS2OQulkltqU/JNNS3aF1QRAhnwV00Jba+ursfDo=",
+            "name": "gpt-pilot-vs-code-0.2.3.zip",
+            "sha256": "sha256-1cJaNTFL6RKg4P58UDPM8pGWVEL0V+8xEt/Qc1+BLU8=",
             "type": "url",
-            "url": "https://PythagoraTechnologies.gallery.vsassets.io/_apis/public/gallery/publisher/PythagoraTechnologies/extension/gpt-pilot-vs-code/0.2.2/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://PythagoraTechnologies.gallery.vsassets.io/_apis/public/gallery/publisher/PythagoraTechnologies/extension/gpt-pilot-vs-code/0.2.3/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "0.2.2"
+        "version": "0.2.3"
     },
     "haml": {
         "cargoLocks": null,

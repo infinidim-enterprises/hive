@@ -22,6 +22,7 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
+      sparseCheckout = [ ];
       sha256 = "sha256-FZmWuu64D08kysLa/LU8o3W60s6/0FeQbVL923mJd1k=";
     };
     date = "2024-03-13";
@@ -35,6 +36,7 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
+      sparseCheckout = [ ];
       sha256 = "sha256-Da+luefWlhANKNNLa29pJpCez+O2IOYUNDUlqF0486E=";
     };
     date = "2024-01-08";
@@ -48,6 +50,7 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
+      sparseCheckout = [ ];
       sha256 = "sha256-/WtacZPr45lurS0hv+W8UGzsXY3RujkU5oGGGqjqG0Q=";
     };
     date = "2023-01-20";
@@ -61,6 +64,7 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
+      sparseCheckout = [ ];
       sha256 = "sha256-BVf5Dajx8r85M4TlsOih0feLeDUcmW7pGrPV/WLsiyY=";
     };
     date = "2024-05-12";
@@ -74,6 +78,7 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
+      sparseCheckout = [ ];
       sha256 = "sha256-Knp36PtgA73gtYO+W1clQfr570bKCxTFsGW3/iH86A0=";
     };
     date = "2024-05-01";
@@ -87,7 +92,8 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = true;
-      sha256 = "sha256-Lb046rxvuw6yLhR7CnPfJAxemyJPAm6j/9JjZUHvXV4=";
+      sparseCheckout = [ ];
+      sha256 = "sha256-fVuC5fR2iD64X80vNAPECxKyngVMHa1zNvHyxFF7+Ag=";
     };
     date = "2024-06-03";
   };
@@ -100,6 +106,7 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
+      sparseCheckout = [ ];
       sha256 = "sha256-ZOkuzGXgNJw9tj7/MATBojEmDszK7FcYyYKy59Qo19I=";
     };
     date = "2023-10-12";
@@ -118,13 +125,13 @@
   };
   lsp-bridge = {
     pname = "lsp-bridge";
-    version = "f792a84ed79b1fb6d3f51d2121e6b355b59b9ef5";
+    version = "f5550894f9d442e81298cbd95edce2ada1f9d0e5";
     src = fetchFromGitHub {
       owner = "manateelazycat";
       repo = "lsp-bridge";
-      rev = "f792a84ed79b1fb6d3f51d2121e6b355b59b9ef5";
+      rev = "f5550894f9d442e81298cbd95edce2ada1f9d0e5";
       fetchSubmodules = false;
-      sha256 = "sha256-i25LTvNslzfv/zi5UaVgorFd9prnXIdmBQLLwwGCa/M=";
+      sha256 = "sha256-Af1LZxsn8DmHFSBoSlXJShJXZUaGI2rwKsMPpcQ+FDc=";
     };
     date = "2024-06-12";
   };
@@ -137,6 +144,7 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
+      sparseCheckout = [ ];
       sha256 = "sha256-W/bxCAn4cvzKGbhILxtTiWJ5Wln2w6g4TPgk+ziCXsQ=";
     };
     ename = "nix-mode";
@@ -163,6 +171,7 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
+      sparseCheckout = [ ];
       sha256 = "sha256-IeHnoB9hpISwuzI+pKiU+5wvGvz9YJrG5amGg6DGgq4=";
     };
     date = "2023-03-19";
@@ -176,6 +185,7 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
+      sparseCheckout = [ ];
       sha256 = "sha256-X+t8E+0Bxtl6YMU0SwA/vRD8kn1lSXd2PcBhIY001Xo=";
     };
     date = "2022-10-05";

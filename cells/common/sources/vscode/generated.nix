@@ -14,11 +14,11 @@
   };
   ballerina = {
     pname = "ballerina";
-    version = "4.6.0";
+    version = "4.7.0";
     src = fetchurl {
-      url = "https://WSO2.gallery.vsassets.io/_apis/public/gallery/publisher/WSO2/extension/ballerina/4.6.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "ballerina-4.6.0.zip";
-      sha256 = "sha256-xbWIIAonXNnQj0i+bKSmzy1WpFag0KU4sZqGmNW/758=";
+      url = "https://WSO2.gallery.vsassets.io/_apis/public/gallery/publisher/WSO2/extension/ballerina/4.7.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "ballerina-4.7.0.zip";
+      sha256 = "sha256-4dBWWHmRzqMaNe+uj5ihPd0sVBU4cw8yx0wkpxnItlQ=";
     };
     publisher = "WSO2";
     name = "ballerina";
@@ -47,11 +47,11 @@
   };
   copilot = {
     pname = "copilot";
-    version = "1.200.925";
+    version = "1.202.932";
     src = fetchurl {
-      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.200.925/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "copilot-1.200.925.zip";
-      sha256 = "sha256-zw1Vq7lNCjT2azRcYndGKXR8RGjNlsvELDpIEMJ81YI=";
+      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.202.932/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "copilot-1.202.932.zip";
+      sha256 = "sha256-He+8e94WQngSWy/ziv6bOCwdTeUsQvv2fjT3bnlXoB8=";
     };
     publisher = "GitHub";
     name = "copilot";
@@ -91,11 +91,11 @@
   };
   emacs-mcx = {
     pname = "emacs-mcx";
-    version = "0.61.0";
+    version = "0.61.2";
     src = fetchurl {
-      url = "https://tuttieee.gallery.vsassets.io/_apis/public/gallery/publisher/tuttieee/extension/emacs-mcx/0.61.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "emacs-mcx-0.61.0.zip";
-      sha256 = "sha256-W0NJyvwQ/+SQEUeK+BY9NT3fx2Du2kH6D979xhdcYSw=";
+      url = "https://tuttieee.gallery.vsassets.io/_apis/public/gallery/publisher/tuttieee/extension/emacs-mcx/0.61.2/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "emacs-mcx-0.61.2.zip";
+      sha256 = "sha256-176YgcHZdw3VP/c8ph2gOU5sG+V1IueJp7oW0Q/jezE=";
     };
     publisher = "tuttieee";
     name = "emacs-mcx";
@@ -124,22 +124,22 @@
   };
   gitlens = {
     pname = "gitlens";
-    version = "2024.6.1105";
+    version = "2024.6.1305";
     src = fetchurl {
-      url = "https://eamodio.gallery.vsassets.io/_apis/public/gallery/publisher/eamodio/extension/gitlens/2024.6.1105/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "gitlens-2024.6.1105.zip";
-      sha256 = "sha256-QbEp0LwmwjDGqdgw5OwkBFvr92DHUGou/YhFMcG9l0Y=";
+      url = "https://eamodio.gallery.vsassets.io/_apis/public/gallery/publisher/eamodio/extension/gitlens/2024.6.1305/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "gitlens-2024.6.1305.zip";
+      sha256 = "sha256-qpQ7eGRfzGFd7ZLjlyZEnz+RsrVVsDqeBlq3FDWI7vc=";
     };
     publisher = "eamodio";
     name = "gitlens";
   };
   gpt-pilot-vs-code = {
     pname = "gpt-pilot-vs-code";
-    version = "0.2.2";
+    version = "0.2.3";
     src = fetchurl {
-      url = "https://PythagoraTechnologies.gallery.vsassets.io/_apis/public/gallery/publisher/PythagoraTechnologies/extension/gpt-pilot-vs-code/0.2.2/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "gpt-pilot-vs-code-0.2.2.zip";
-      sha256 = "sha256-E9dvS2OQulkltqU/JNNS3aF1QRAhnwV00Jba+ursfDo=";
+      url = "https://PythagoraTechnologies.gallery.vsassets.io/_apis/public/gallery/publisher/PythagoraTechnologies/extension/gpt-pilot-vs-code/0.2.3/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "gpt-pilot-vs-code-0.2.3.zip";
+      sha256 = "sha256-1cJaNTFL6RKg4P58UDPM8pGWVEL0V+8xEt/Qc1+BLU8=";
     };
     publisher = "PythagoraTechnologies";
     name = "gpt-pilot-vs-code";

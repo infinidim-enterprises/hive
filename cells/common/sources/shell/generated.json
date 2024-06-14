@@ -15,6 +15,7 @@
             "repo": "getoptions",
             "rev": "a6c2df16302a2d0cd4cafb5396ef3421b2c3a1aa",
             "sha256": "sha256-MJ4UUDmd+yykvRjgxx8MRZwlLNauDb8Bh8lS0QvkG+U=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "a6c2df16302a2d0cd4cafb5396ef3421b2c3a1aa"
@@ -37,6 +38,7 @@
             "repo": "lorri",
             "rev": "fd13e5466517c8be0369b950d356e0823ed382a4",
             "sha256": "sha256-Dz829CB8MqHuHma9+9Yj1nfMMJU5pwjKUaTo60tCPGo=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "fd13e5466517c8be0369b950d356e0823ed382a4"
@@ -59,6 +61,7 @@
             "repo": "nix-index",
             "rev": "987b3cc16118f598a667de6c59f6143362b9505b",
             "sha256": "sha256-zvG3+V5jhZNMG2yTt1u3DnpHCK511aMeWwB9l+m6D90=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "987b3cc16118f598a667de6c59f6143362b9505b"
@@ -79,6 +82,7 @@
             "repo": "rainbow.sh",
             "rev": "1bcf6e44a0d9694da4d3fa637644e5da5a7250ca",
             "sha256": "sha256-F+Nabc/Fe5ET6lSkdll5YH/mEpKp3OlpaGk+u0rQpPQ=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "1bcf6e44a0d9694da4d3fa637644e5da5a7250ca"
@@ -99,6 +103,7 @@
             "repo": "shellspec",
             "rev": "225e0f0e0224729e3be15ea32a2a789c35088731",
             "sha256": "sha256-pmdX+NQKfRXOllHNFD5EOmHhKSLRUzTHEQuSVSB8pFE=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "225e0f0e0224729e3be15ea32a2a789c35088731"
@@ -119,13 +124,14 @@
             "repo": "shflags",
             "rev": "96694d58ce92065fdd8f8761d930765cb9a8d066",
             "sha256": "sha256-IJJEi8xmIco/IuN9LSf6qMacsG6jHQek9F0dPKEwviI=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "96694d58ce92065fdd8f8761d930765cb9a8d066"
     },
     "spaceship-prompt": {
         "cargoLocks": null,
-        "date": "2024-05-29",
+        "date": "2024-06-12",
         "extract": null,
         "name": "spaceship-prompt",
         "passthru": null,
@@ -137,11 +143,12 @@
             "name": null,
             "owner": "spaceship-prompt",
             "repo": "spaceship-prompt",
-            "rev": "6af88441124179ca6d76c51519b72fb97e9ff3cc",
-            "sha256": "sha256-2Z9NUC1TR0lYBQux+Tkac0oFVnYIxsMkdWNGKQIz9IU=",
+            "rev": "ebacf2edda4e10100e98cdac91d2361d17f52bfb",
+            "sha256": "sha256-ocWedaJYyY5EN3KZFnTttB2fSMZXv5zGypUHRCV+Tdg=",
+            "sparseCheckout": [],
             "type": "github"
         },
-        "version": "6af88441124179ca6d76c51519b72fb97e9ff3cc"
+        "version": "ebacf2edda4e10100e98cdac91d2361d17f52bfb"
     },
     "zsh-plugin_any-nix-shell": {
         "cargoLocks": null,
@@ -159,6 +166,7 @@
             "repo": "any-nix-shell",
             "rev": "2537e5c6901ef934f8f44d61bcfe938b0fc9fa71",
             "sha256": "sha256-j1DE0WTBGLmBLoPmqST9YVj9Jc4Mp8WXQILmPBzRlbM=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "2537e5c6901ef934f8f44d61bcfe938b0fc9fa71"
@@ -177,6 +185,7 @@
             "name": null,
             "rev": "9915c40ba472f3c50c944bcc0e2fa96f982defb9",
             "sha256": "sha256-72aQ5N5L14mwJ8RB50p/swi6wXhPGYRYJ/Q8CUdP4wE=",
+            "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/voobscout/aw-watcher-shell"
         },
@@ -196,6 +205,7 @@
             "name": null,
             "rev": "3e996c5b54b16029fefe8b40648371634b1a7510",
             "sha256": "sha256-BaYYzl6JArfPWASJtzk44scGejwgyT5+W94ugVDCV3I=",
+            "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/zpm-zsh/clipboard"
         },
@@ -217,6 +227,7 @@
             "repo": "F-Sy-H",
             "rev": "3dea11a9018061e6e3a77e529b79e5654679d3a0",
             "sha256": "sha256-AEeGEx2vyyHVS92Nla7XoqSx3rTpQHYwPMrK1jFH1Mg=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "3dea11a9018061e6e3a77e529b79e5654679d3a0"
@@ -235,6 +246,7 @@
             "name": null,
             "rev": "e2bfbaf3b8ca92d6ffc4280211805ce4b8a8c19e",
             "sha256": "sha256-32rJjBzqS2e6w/L78KMNwQRg4E3sqqdAmb87XEhqbRQ=",
+            "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/supercrabtree/k"
         },
@@ -256,13 +268,14 @@
             "repo": "nix-zsh-completions",
             "rev": "57fb88c6b4b1c261087dd0bd27470e263b23d80d",
             "sha256": "sha256-B7m+HIoq5ApGZC3zsSD3AFd2VF0UurLmkVAmi1+zF4o=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "57fb88c6b4b1c261087dd0bd27470e263b23d80d"
     },
     "zsh-plugin_oh-my-zsh": {
         "cargoLocks": null,
-        "date": "2024-06-10",
+        "date": "2024-06-13",
         "extract": null,
         "name": "zsh-plugin_oh-my-zsh",
         "passthru": null,
@@ -272,12 +285,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "4295aed17b4b1180b7e42bd7debd7685686c1307",
-            "sha256": "sha256-wMzH/KPv6AV/s2Gi2Jg1MBvvJ+npK6FN/LGhFOfosaU=",
+            "rev": "0c9b42a863778d67aee22bbd43f296110fe1f047",
+            "sha256": "sha256-8ZVYN97K4KJOG+JnVpCVbMx2HGypvk7KZmwNzUfcovo=",
+            "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/robbyrussell/oh-my-zsh"
         },
-        "version": "4295aed17b4b1180b7e42bd7debd7685686c1307"
+        "version": "0c9b42a863778d67aee22bbd43f296110fe1f047"
     },
     "zsh-plugin_tipz": {
         "cargoLocks": null,
@@ -293,6 +307,7 @@
             "name": null,
             "rev": "594eab4642cc6dcfe063ecd51d76478bd84e2878",
             "sha256": "sha256-oFZJwHYDfK4f53lhcZg6PCw2AgHxFC0CRiqiinKZz8k=",
+            "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/molovo/tipz"
         },
@@ -312,6 +327,7 @@
             "name": null,
             "rev": "559fee48bb74b75cec8b9887f8f3e046f01d5d8f",
             "sha256": "sha256-P/pbpDJmsMSZkNi5GjVTDy7R+OxaIVZhb/bEnYQlaLo=",
+            "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/chrissicool/zsh-256color"
         },
@@ -331,6 +347,7 @@
             "name": null,
             "rev": "f5951dd0cfeb37eb18fd62e14edc902a2c308c1e",
             "sha256": "sha256-8HznSWSBj1baetvDOIZ+H9mWg5gbbzF52nIEG+u9Di8=",
+            "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/Tarrasch/zsh-autoenv"
         },
@@ -350,6 +367,7 @@
             "name": null,
             "rev": "376b586c9739b0a044192747b337f31339d548fd",
             "sha256": "sha256-mtDrt4Q5kbddydq/pT554ph0hAd5DGk9jci9auHx0z0=",
+            "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/hlissner/zsh-autopair"
         },
@@ -369,6 +387,7 @@
             "name": null,
             "rev": "978e79e12c44b5b1d3e1e2920c537002087b82c2",
             "sha256": "sha256-J2L/jO8lWNGC4Bob+2mH7OEJ+U2g+NVkbPA1OdnIrp0=",
+            "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/zsh-users/zsh-completions"
         },
@@ -388,6 +407,7 @@
             "name": null,
             "rev": "87ce96b1862928d84b1afe7c173316614b30e301",
             "sha256": "sha256-1+w0AeVJtu1EK5iNVwk3loenFuIyVlQmlw8TWliHZGI=",
+            "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/zsh-users/zsh-history-substring-search"
         },
@@ -407,6 +427,7 @@
             "name": null,
             "rev": "e0165eaa730dd0fa321a6a6de74f092fe87630b0",
             "sha256": "sha256-Vt2yKzMRJ34FBFPKrN+GJBZYmBt5ASArrs1dkZcIQmI=",
+            "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/zsh-users/zsh-syntax-highlighting"
         },

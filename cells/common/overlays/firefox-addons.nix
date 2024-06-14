@@ -11,4 +11,7 @@ in
     (_: v: buildFirefoxXpiAddon v)
     (final.callPackage ../sources/firefox/generated.nix { });
 
+  firefox_decrypt = prev.firefox_decrypt.overrideAttrs (_: {
+    inherit (final.sources.firefox_decrypt) pname version src;
+  });
 }

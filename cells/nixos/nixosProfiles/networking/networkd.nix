@@ -12,7 +12,10 @@ mkMerge [
     systemd.services.nscd.serviceConfig.StandardError = "null";
   }
 
-  { networking.firewall.allowPing = true; }
+  {
+    networking.firewall.allowPing = true;
+    networking.domain = "njk.li";
+  }
 
   # TODO: Port 5355/udp/tcp - LLMNR - do something about it!
   # TODO: services.fireqos.enable

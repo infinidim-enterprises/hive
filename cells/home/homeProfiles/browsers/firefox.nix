@@ -1,11 +1,11 @@
 { inputs, cell, ... }:
 
-{ pkgs, lib, config, ... }:
+{ pkgs, lib, config, name, osConfig, ... }:
 let
   search = {
     force = true;
     default = "Swisscows";
-    order = [ "DuckDuckGo" ];
+    order = [ "Swisscows" ];
     engines = {
       "Amazon.com".metaData.hidden = true;
       "Bing".metaData.hidden = true;
@@ -100,7 +100,10 @@ let
     in
     fromJSON (fileContents jsonFile);
   # NOTE: Not letting arkenfox overwrite settings
-  settings = arkenfox_user_js // (import ./_firefox-browser-settings.nix);
+  settings = arkenfox_user_js // (import ./_firefox-browser-settings.nix) // {
+    "services.sync.username" = "${name}@${osConfig.networking.domain}";
+    "services.sync.autoconnect" = true;
+  };
   policies = import ./_firefox-browser-policies.nix;
 in
 lib.mkMerge [
@@ -168,7 +171,7 @@ lib.mkMerge [
         darkreader
         privacy-badger17
         absolute-enable-right-click
-        aw-watcher-web
+        # aw-watcher-web
         # NOTE: makes everything very slow - decentraleyes
 
         # passff

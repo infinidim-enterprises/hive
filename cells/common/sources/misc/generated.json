@@ -13,6 +13,7 @@
             "name": null,
             "rev": "cac1d6920998ddcbee8310a873414732e707d8e5",
             "sha256": "sha256-CvfiudyBNYQsyPFy05kjbhGVtwl56wKPAllqgi6uZio=",
+            "sparseCheckout": [],
             "type": "git",
             "url": "https://git.code.sf.net/p/portableaserve/git"
         },
@@ -20,7 +21,7 @@
     },
     "adguard-filters": {
         "cargoLocks": null,
-        "date": "2024-06-11",
+        "date": "2024-06-14",
         "extract": null,
         "name": "adguard-filters",
         "passthru": null,
@@ -30,12 +31,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "acbe77d2d56d0aa42d78de78ba82d831158c5a6d",
-            "sha256": "sha256-EbilZeG4P7sldaQbtrOOEQ0k7lldpS1Mu4XLieD0Rwk=",
+            "rev": "c5f0eadabf898390702525c47e54400a1176e7e9",
+            "sha256": "sha256-RF+TNKExvXS+NCg1vWpYw+I/NZvIwFEoyUtietYzgck=",
+            "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/AdguardTeam/AdguardFilters"
         },
-        "version": "acbe77d2d56d0aa42d78de78ba82d831158c5a6d"
+        "version": "c5f0eadabf898390702525c47e54400a1176e7e9"
     },
     "age-plugin-trezor": {
         "cargoLocks": null,
@@ -55,6 +57,7 @@
             "repo": "age-plugin-trezor",
             "rev": "1a89e1aec4aa6ee85987883146c5decd42a47a39",
             "sha256": "sha256-EXhbCjIl5xDfxOZIQEDWHSFnWabwlVC5EYWk4ezAXy8=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "1a89e1aec4aa6ee85987883146c5decd42a47a39"
@@ -75,6 +78,7 @@
             "repo": "llm-workflow-engine",
             "rev": "6c128bb2468a8fc16d595416c426d913e853cda9",
             "sha256": "sha256-A4O1qZ/EKIhInuMdA5SlG1oKbLiv+vhUa2JBm4ipcp4=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "6c128bb2468a8fc16d595416c426d913e853cda9"
@@ -95,6 +99,7 @@
             "repo": "cl-hash-util",
             "rev": "e1e065f1f63dfa5d849c1676bd858bdcaf8b52ca",
             "sha256": "sha256-b63P1AsgdZWPxV0+GtMd5xJYTL75rxvSZngt9gMIAKY=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "e1e065f1f63dfa5d849c1676bd858bdcaf8b52ca"
@@ -113,6 +118,7 @@
             "name": null,
             "rev": "5a7fbdbfe4ac3810c7f00434d3d6dc7555891705",
             "sha256": "sha256-nFEecXmStgu/ePtNretaCgC1huBr4kKnzvgdoUG+u0Q=",
+            "sparseCheckout": [],
             "type": "git",
             "url": "https://codeberg.org/cage/cl-mount-info"
         },
@@ -134,6 +140,7 @@
             "repo": "cl-shellwords",
             "rev": "313576b9f6b925cbbc3dcf5e49e8f47c9c1b46bc",
             "sha256": "sha256-9hKq54YOOEE3Vc/9LVUnqvcw/1G1rpcUVL+8GKJlqEY=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "313576b9f6b925cbbc3dcf5e49e8f47c9c1b46bc"
@@ -154,6 +161,7 @@
             "repo": "cl-strings",
             "rev": "93ec4177fc51f403a9f1ef0a8933f36d917f2140",
             "sha256": "sha256-UpXjI9KsWvOhsjGSo1zVMNlD1I4Pwu9+cZoD60jREMk=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "93ec4177fc51f403a9f1ef0a8933f36d917f2140"
@@ -174,6 +182,7 @@
             "repo": "cl-syslog",
             "rev": "f62d524874616383650e30f7f23320005fd310c1",
             "sha256": "sha256-rH0zOgXR3BixtVaqcYPhIfZBjqYgWnqrORQfr1mBqFM=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "f62d524874616383650e30f7f23320005fd310c1"
@@ -194,6 +203,7 @@
             "repo": "console-solarized",
             "rev": "26929b5e303703ec527b6f6e4569f351d9831e52",
             "sha256": "sha256-QMxhuDuVHgw8+DpQAavtC3Dyg4rBmbrYoA8tKtamy3Y=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "26929b5e303703ec527b6f6e4569f351d9831e52"
@@ -214,6 +224,7 @@
             "repo": "crystalline",
             "rev": "v0.13.1",
             "sha256": "sha256-Exv83jmSyhJv90Oo4oApZwNgNjy7tOKxLNh7yJIbfws=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "v0.13.1"
@@ -232,6 +243,7 @@
             "name": null,
             "rev": "8bba6a0942232e9d7fa915b33bbe32dfedc5abb9",
             "sha256": "sha256-xbg3tPYfRNGJo+9F/58w2bDeZqV33Z871+ClSg4ACPk=",
+            "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/death/dbus"
         },
@@ -251,10 +263,32 @@
             "name": null,
             "rev": "e7aeedfbcdc18e3ea2d45cf6931e38d350096f2f",
             "sha256": "sha256-WU3e7F0iNrxiS7WXzNbxnBp4oIru2pLihKbVIR236J4=",
+            "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/voobscout/dbus-listen"
         },
         "version": "e7aeedfbcdc18e3ea2d45cf6931e38d350096f2f"
+    },
+    "firefox_decrypt": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "firefox_decrypt",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "unode",
+            "repo": "firefox_decrypt",
+            "rev": "1.1.1",
+            "sha256": "sha256-HPjOUWusPXoSwwDvW32Uad4gFERvn79ee/WxeX6h3jY=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "1.1.1"
     },
     "firefox_user_js": {
         "cargoLocks": null,
@@ -272,6 +306,7 @@
             "repo": "user.js",
             "rev": "126.1",
             "sha256": "sha256-Ex+eSb7tZ428MMJDIF/nqUOtnzjqEIPNaDXJPm9FvuY=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "126.1"
@@ -294,6 +329,7 @@
             "repo": "git-get",
             "rev": "8cd27a8f629317bd27432f2e9a4bd00561b3b21e",
             "sha256": "sha256-dBZNrhg4df7NDECq8B333dY/7OXEyPIByD7YHdV9moo=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "8cd27a8f629317bd27432f2e9a4bd00561b3b21e"
@@ -316,6 +352,7 @@
             "repo": "git-pull-request-mirror",
             "rev": "3d342363b0e1f2da4e59ac01baf4601bcf233bf9",
             "sha256": "sha256-OMtRSGRB1xRk3L3sIfEpagDQHNWNJBBOE5tuW7ic4Y4=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "3d342363b0e1f2da4e59ac01baf4601bcf233bf9"
@@ -338,6 +375,7 @@
             "repo": "git-remote-ipfs",
             "rev": "12b3f421c19eb5548ae76b8c79c9581a428329e0",
             "sha256": "sha256-59zv362KfuW1Lki9vfwe9fJfdm6o0+DTPDbI/L+Ugsk=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "12b3f421c19eb5548ae76b8c79c9581a428329e0"
@@ -356,6 +394,7 @@
             "name": null,
             "rev": "e965f179e1654103eca33feed7a9cc4c51d91be6",
             "sha256": "sha256-32LYNF+5z5rS4y2iGKA2BnQntXg9Ec9709m6pL5hBdo=",
+            "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/ipxe/ipxe"
         },
@@ -390,11 +429,12 @@
             "name": null,
             "owner": "langchain-ai",
             "repo": "langchain",
-            "rev": "langchain-core==0.2.5",
-            "sha256": "sha256-EBs6BHxBPBR1TfSyesM2gJJtxgClM6lLXko1qisrz7A=",
+            "rev": "langchain-core==0.2.6",
+            "sha256": "sha256-GmNBmdoUstNwrR9vQJ2/EaxJGX0l/cj8WnZaY92w5JY=",
+            "sparseCheckout": [],
             "type": "github"
         },
-        "version": "langchain-core==0.2.5"
+        "version": "langchain-core==0.2.6"
     },
     "ledger-live-desktop": {
         "cargoLocks": null,
@@ -427,6 +467,7 @@
             "repo": "listopia",
             "rev": "2d2a1a3c35580252ca0085e15ebf625f73230d60",
             "sha256": "sha256-IEoPmF0QC1S6xF/enlqy1rDX8qi/2bvacxWpCHaro0k=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "2d2a1a3c35580252ca0085e15ebf625f73230d60"
@@ -475,6 +516,7 @@
             "name": null,
             "rev": "2c5a85bd79c7b7d509ec14dd00d310cfe9f9afd2",
             "sha256": "sha256-r5xCe8Ew+/SuCUaZ0yjlumORTy/y1VwbQQjQ6uEyGsY=",
+            "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/Ferdi265/numix-solarized-gtk-theme.git"
         },
@@ -494,6 +536,7 @@
             "name": null,
             "rev": "09aeaeccfae20a815161467e31e41bb5c6ce2d7f",
             "sha256": "sha256-KKl1w5+dseRWTxnN0JWIT4owbx0nL3wt9GmWmGowpYk=",
+            "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/mcdope/pam_usb"
         },
@@ -513,6 +556,7 @@
             "name": null,
             "rev": "f369e81f8723123d89b8ac527f955e4d4c60b7fd",
             "sha256": "sha256-StmpmszWHzmi8pMd+y3f6+1s2vjW8HM5O6maJiE6Ajc=",
+            "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/nurupo/paper-store"
         },
@@ -520,7 +564,7 @@
     },
     "pbkdf2-sha512": {
         "cargoLocks": null,
-        "date": "2024-06-12",
+        "date": "2024-06-14",
         "extract": null,
         "name": "pbkdf2-sha512",
         "passthru": null,
@@ -531,7 +575,7 @@
             "type": "url",
             "url": "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c"
         },
-        "version": "e913ae340076bbb73d9f4d3d065c2bca7caafb16"
+        "version": "0a4964700a4f448f4c3074fd0560d9bf1b619be7"
     },
     "pgp-key-generation": {
         "cargoLocks": null,
@@ -549,6 +593,7 @@
             "repo": "pgp-key-generation",
             "rev": "e4549972b1ed686b38da9e2a663106669edddb9b",
             "sha256": "sha256-FR6I4jwrF9t+pur0E/z54cgQ8acwtsAsKIp4pO0Ulng=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "e4549972b1ed686b38da9e2a663106669edddb9b"
@@ -569,6 +614,7 @@
             "repo": "pgp-packet-library",
             "rev": "42b4d08c0cb4b8ee527f729c1674e982eca409a7",
             "sha256": "sha256-DI0vxfbewqlXocrvzPgCM66IuSVxHjFdL3hIPxzFou8=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "42b4d08c0cb4b8ee527f729c1674e982eca409a7"
@@ -589,6 +635,7 @@
             "repo": "python-pass",
             "rev": "6f51145a3bc12ee79d2881204b88a82d149f3228",
             "sha256": "sha256-iJZe/Ljae9igkpfz9WJQK48wZZJWcOt4Z3kdp5VILqE=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "6f51145a3bc12ee79d2881204b88a82d149f3228"
@@ -624,6 +671,7 @@
             "repo": "s5cmd",
             "rev": "c13b860c763a56fc8b97dbb2e35e7c6f3b950f2c",
             "sha256": "sha256-WulvXhAfZsLECFLNhAKswPYL1vDQEAOzQ6UP+3DI6Cw=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "c13b860c763a56fc8b97dbb2e35e7c6f3b950f2c"
@@ -644,6 +692,7 @@
             "repo": "stumpwm-contrib",
             "rev": "042a9fcb053839f4b1527d2e6f4baf33e2d16434",
             "sha256": "sha256-idSdD/IXPOJXAsZSJgXbpRBH7DelEVz3xUTYh/9ZtLk=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "042a9fcb053839f4b1527d2e6f4baf33e2d16434"
@@ -667,6 +716,7 @@
             "repo": "stumpwm",
             "rev": "11be454df8f01f2ed7aa20cffe23f16f1d7b7bd6",
             "sha256": "sha256-aEacyvOv0mOCoPyrPOoZHhCsLNCMp+VSLr9mfamuk8A=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "11be454df8f01f2ed7aa20cffe23f16f1d7b7bd6"
@@ -690,6 +740,7 @@
             "repo": "stumpwm",
             "rev": "23.11",
             "sha256": "sha256-sWCr3wm99Hv4LsZ572921wcUnQV40AmWSUVMWnmfeSo=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "23.11"
@@ -710,6 +761,7 @@
             "repo": "tfenv",
             "rev": "39d8c27ad9862ffdec57989b66fd2720cb72e76c",
             "sha256": "sha256-h5ZHT4u7oAdwuWpUrL35G8bIAMasx6E81h15lTJSHhQ=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "39d8c27ad9862ffdec57989b66fd2720cb72e76c"
@@ -745,6 +797,7 @@
             "repo": "trezor-agent",
             "rev": "v0.14.8",
             "sha256": "sha256-tcVott/GlHsICQf640Gm5jx89fZWsCdcYnBxi/Kh2oc=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "v0.14.8"
@@ -763,6 +816,7 @@
             "name": null,
             "rev": "eac2f8215f2c11a92faf30170277c57bb7289801",
             "sha256": "sha256-DA5REsNQNykpbCFb6PJbgEBYiDh1kEq083wRZq+pIQM=",
+            "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/jrruethe/trezor-agent"
         },

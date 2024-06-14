@@ -30,6 +30,7 @@
             "repo": "RTL88x2BU-Linux-Driver",
             "rev": "f3df449fbfb5d41974fcb192c9eaf9fa43ffb1b0",
             "sha256": "sha256-iGEaCbA9qOvZIYKF1/l1dTPVJoNCYBZErg+PDd9DOd0=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "f3df449fbfb5d41974fcb192c9eaf9fa43ffb1b0"
@@ -50,6 +51,7 @@
             "repo": "rtw89",
             "rev": "239cc6670a67a1e7b6f43bd681efdfedf6a53bb1",
             "sha256": "sha256-7rhZs9P9c/z1DcHLw0zhnwf6WvOOxRioJhC3k4h668A=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "239cc6670a67a1e7b6f43bd681efdfedf6a53bb1"

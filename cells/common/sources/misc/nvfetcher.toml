@@ -270,6 +270,11 @@ src.use_latest_release = true
 src.github = "arkenfox/user.js"
 fetch.github = "arkenfox/user.js"
 
+[firefox_decrypt]
+src.use_latest_tag = true
+src.github_tag = "unode/firefox_decrypt"
+fetch.github = "unode/firefox_decrypt"
+
 # [linux-firmware]
 # src.manual = "20240410"
 # fetch.url = "https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/linux-firmware-$ver.tar.gz"
