@@ -124,6 +124,20 @@ in
     };
   };
 
+  dot_nixd_json = mkNixago {
+    data = {
+      "$schema" = "https://raw.githubusercontent.com/nix-community/nixd/main/nixd/docs/nixd-schema.json";
+      formatting.command = "nixpkgs-fmt";
+      eval.depth = 10;
+      options.enable = true;
+      options.target.installable = ".#nixosConfigurations.nixos-asbleg.options";
+    };
+
+    output = ".nixd.json";
+    format = "json";
+    hook.mode = "copy";
+  };
+
   garnix_io = mkNixago {
     data = {
       builds.include = [
