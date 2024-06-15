@@ -5,13 +5,14 @@
     bisq-desktop
 
     tdesktop
-    # TODO: signald
+    # TODO: signald # Unofficial daemon for interacting with Signal
     signal-desktop
     element-desktop
     linphone
-    # baresip
+    baresip
     jitsi
     qtox
     utox
+    localsend # Open source cross-platform alternative to AirDrop
   ];
 }

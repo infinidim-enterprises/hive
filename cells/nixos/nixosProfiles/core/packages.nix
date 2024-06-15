@@ -28,8 +28,6 @@ in
     lsof # Tool to list open files
     ncdu # Disk usage analyzer with an ncurses interface
 
-    localsend # Open source cross-platform alternative to AirDrop
-
     # hardware
     smartmontools # Tools for monitoring the health of hard drives
     nvme-cli # NVM-Express user space tooling for Linux
