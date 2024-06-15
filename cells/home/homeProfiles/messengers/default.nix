@@ -11,8 +11,9 @@
     linphone
     baresip
     jitsi
-    qtox
-    utox
+    qtox # Qt Tox client
+    utox # Lightweight Tox client
+    # nym # NOTE: fuck rust. Mixnet providing IP-level privacy
     localsend # Open source cross-platform alternative to AirDrop
   ];
 }
