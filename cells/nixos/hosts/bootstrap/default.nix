@@ -2,6 +2,7 @@
 let
   inherit (builtins)
     isNull
+    hasAttr
     toString
     baseNameOf;
   inherit (inputs.nixpkgs-lib.lib)
@@ -9,7 +10,13 @@ let
     hasAttrByPath
     optionalString;
 
-  hasDiskoConfig = hasAttrByPath [ (toString host) ] cell.diskoConfigurations;
+  hasDiskoConfig = hasAttr host cell.diskoConfigurations;
+  # hasImpermanenceConfig =
+  #   let
+  #     inherit ((builtins.getFlake (builtins.unsafeDiscardStringContext (toString inputs.self))).nixosConfigurations."nixos-${host}") config;
+  #     # inherit (inputs.self.nixosConfigurations."nixos-${host}") config;
+  #   in
+  #   hasAttr "persistence" config.environment;
 in
 
 rec {
