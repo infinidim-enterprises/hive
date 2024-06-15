@@ -19,6 +19,8 @@
     flake-utils.url = "github:numtide/flake-utils";
     nixpkgs-lib.url = "github:nix-community/nixpkgs.lib";
     bird-nix-lib.url = "github:spikespaz/bird-nix-lib";
+
+    flake-schemas.url = "github:DeterminateSystems/flake-schemas";
   };
 
   # hive / std

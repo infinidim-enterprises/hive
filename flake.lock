@@ -934,6 +934,21 @@
         "type": "github"
       }
     },
+    "flake-schemas": {
+      "locked": {
+        "lastModified": 1697467827,
+        "narHash": "sha256-j8SR19V1SRysyJwpOBF4TLuAvAjF5t+gMiboN4gYQDU=",
+        "owner": "DeterminateSystems",
+        "repo": "flake-schemas",
+        "rev": "764932025c817d4e500a8d2a4d8c565563923d29",
+        "type": "github"
+      },
+      "original": {
+        "owner": "DeterminateSystems",
+        "repo": "flake-schemas",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "inputs": {
         "systems": "systems"
@@ -2553,6 +2568,7 @@
         "disko": "disko",
         "dmerge": "dmerge_2",
         "flake-compat": "flake-compat_3",
+        "flake-schemas": "flake-schemas",
         "flake-utils": "flake-utils_4",
         "flakey-devShells": "flakey-devShells",
         "gomod2nix": "gomod2nix",

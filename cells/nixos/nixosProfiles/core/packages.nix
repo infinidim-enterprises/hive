@@ -19,14 +19,16 @@ in
     curl
 
     utilLinux # A set of system utilities for Linux
-    binutils
-    coreutils
-    moreutils
+    binutils # Tools for manipulating binaries (linker, assembler, etc.) (wrapper script)
+    coreutils # GNU Core Utilities
+    moreutils # Growing collection of the unix tools that nobody thought to write long ago when unix was young
     sysfsutils
     utillinux # A set of system utilities for Linux
-    file
-    lsof
-    ncdu
+    file # Program that shows the type of files
+    lsof # Tool to list open files
+    ncdu # Disk usage analyzer with an ncurses interface
+
+    localsend # Open source cross-platform alternative to AirDrop
 
     # hardware
     smartmontools # Tools for monitoring the health of hard drives
