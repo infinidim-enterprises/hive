@@ -8,7 +8,7 @@ rec {
     sudo
     earlyoom
     core.locale
-    core.stylix
+    # TODO: [ fork/rewrite stylix ] core.stylix
     core.console-solarized
     core.boot-config
     core.packages
