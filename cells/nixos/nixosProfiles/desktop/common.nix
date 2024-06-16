@@ -27,17 +27,18 @@
     greeters.gtk.iconTheme.package = pkgs.numix-icon-theme-circle;
     greeters.gtk.clock-format = "[%d %b %G] %H:%M %A [week %U]";
     # TODO: write a nixos module to implement console login with x11vnc and/or xrdp
-    extraSeatDefaults = ''
-      allow-guest=false
-      greeter-hide-users=true
-      greeter-show-manual-login=true
-      display-setup-script=${pkgs.writeScript "display-setup-script" ''
-        # ${pkgs.redshift}/bin/redshift -r -O 3200 || true
-        ${pkgs.xorg.xbacklight}/bin/xbacklight -set 18 || true
-        ${pkgs.xorg.xsetroot}/bin/xsetroot -xcf ${pkgs.numix-cursor-theme}/share/icons/Numix-Cursor-Light/cursors/left_ptr 32 || true
-        ${pkgs.xorg.xrandr}/bin/xrandr --output DSI1 --rotate right
-      ''}
-    '';
+    # extraSeatDefaults = ''
+    #   allow-guest=false
+    #   greeter-hide-users=true
+    #   greeter-show-manual-login=true
+    #   display-setup-script=${pkgs.writeScript "display-setup-script" ''
+    #     # ${pkgs.redshift}/bin/redshift -r -O 3200 || true
+    #     ${pkgs.xorg.xbacklight}/bin/xbacklight -set 18 || true
+    #     ${pkgs.xorg.xsetroot}/bin/xsetroot -xcf ${pkgs.numix-cursor-theme}/share/icons/Numix-Cursor-Light/cursors/left_ptr 32 || true
+    #     ${pkgs.xorg.xrandr}/bin/xrandr --output DSI1 --rotate right
+    #   ''}
+    # '';
+    #
     # export PATH=''${lib.makeBinPath reqPkgs}:$PATH
     # logger -t DM-SESSION 'x11vnc'
     #   x11vnc -ping 3 \
