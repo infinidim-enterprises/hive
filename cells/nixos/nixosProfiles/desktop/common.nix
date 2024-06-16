@@ -27,6 +27,12 @@
     greeters.gtk.iconTheme.package = pkgs.numix-icon-theme-circle;
     greeters.gtk.clock-format = "[%d %b %G] %H:%M %A [week %U]";
     # TODO: write a nixos module to implement console login with x11vnc and/or xrdp
+    # extraSeatDefaults =
+    #   let
+
+    #   in
+    #   ''
+    #   '';
     # extraSeatDefaults = ''
     #   allow-guest=false
     #   greeter-hide-users=true
@@ -38,6 +44,7 @@
     #     ${pkgs.xorg.xrandr}/bin/xrandr --output DSI1 --rotate right
     #   ''}
     # '';
+
     #
     # export PATH=''${lib.makeBinPath reqPkgs}:$PATH
     # logger -t DM-SESSION 'x11vnc'
@@ -70,6 +77,7 @@
     ];
 
     # FIXME: Font for greeter
+
     greeters.gtk.extraConfig = ''
       # TODO: just try if it's a valid option
       # key-theme-name=Emacs
