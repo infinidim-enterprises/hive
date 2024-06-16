@@ -41,7 +41,7 @@ in
   ];
 
   boot.blacklistedKernelModules = [ "nouveau" ];
-  boot.initrd.kernelModules = [ "drm" "intel_agp" "i915" ];
+  # boot.initrd.kernelModules = [ "drm" "intel_agp" "i915" ];
   hardware.opengl.enable = true;
   services.xserver.videoDrivers = lib.mkIf config.services.xserver.enable [ "intel" ];
 
