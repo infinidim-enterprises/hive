@@ -29,6 +29,7 @@ rec {
     fonts
     multimedia # bluetooth only atm
     xdg
+    wayland
     # TODO: desktop.opensnitch
   ])
     ++ [ ({ pkgs, ... }: { environment.systemPackages = with pkgs; [ networkmanagerapplet ]; }) ];
