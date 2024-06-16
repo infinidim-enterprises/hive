@@ -14,6 +14,9 @@
   programs.hyprlock.enable = true;
 
   programs.xwayland.enable = true;
+  xdg.portal.enable = true;
+  # xdg.portal.wlr.enable = true;
+
   environment.systemPackages = with pkgs; [
     wofi
     kitty

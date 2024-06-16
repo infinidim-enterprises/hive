@@ -26,7 +26,11 @@
     greeters.gtk.iconTheme.name = "Numix-Circle";
     greeters.gtk.iconTheme.package = pkgs.numix-icon-theme-circle;
     greeters.gtk.clock-format = "[%d %b %G] %H:%M %A [week %U]";
-
+    extraSeatDefaults = ''
+      allow-guest=false
+      greeter-hide-users=true
+      greeter-show-manual-login=true
+    '';
     #
     # export PATH=''${lib.makeBinPath reqPkgs}:$PATH
     # logger -t DM-SESSION 'x11vnc'
