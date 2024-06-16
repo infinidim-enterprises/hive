@@ -43,14 +43,18 @@ in
   boot.blacklistedKernelModules = [ "nouveau" ];
   # boot.initrd.kernelModules = [ "drm" "intel_agp" "i915" ];
   hardware.opengl.enable = true;
-  services.xserver.displayManager.lightdm.extraSeatDefaults = ''
-    display-setup-script=${pkgs.writeScript "display-setup-script" ''
-      ${pkgs.redshift}/bin/redshift -r -O 3200 || true
-      ${pkgs.xorg.xbacklight}/bin/xbacklight -set 18 || true
-      ${pkgs.xorg.xsetroot}/bin/xsetroot -xcf ${pkgs.numix-cursor-theme}/share/icons/Numix-Cursor-Light/cursors/left_ptr 32 || true
-      ${pkgs.xorg.xrandr}/bin/xrandr --output DSI1 --rotate right
-    ''}
-  '';
+  # services.xserver.displayManager.lightdm.extraSeatDefaults =
+  #   let
+  #     display-setup-script = pkgs.writeScript "display-setup-script" ''
+  #       ${pkgs.redshift}/bin/redshift -r -O 3200 || true
+  #       ${pkgs.xorg.xbacklight}/bin/xbacklight -set 18 || true
+  #       ${pkgs.xorg.xsetroot}/bin/xsetroot -xcf ${pkgs.numix-cursor-theme}/share/icons/Numix-Cursor-Light/cursors/left_ptr 32 || true
+  #       ${pkgs.xorg.xrandr}/bin/xrandr --output DSI1 --rotate right
+  #     '';
+  #   in
+  #   ''
+  #     display-setup-script=${display-setup-script}
+  #   '';
 
   services.xserver.videoDrivers = lib.mkIf config.services.xserver.enable [
     "modesetting"
