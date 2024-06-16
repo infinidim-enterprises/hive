@@ -284,3 +284,7 @@ fetch.github = "unode/firefox_decrypt"
 # fetch.url = "https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/linux-firmware-$ver.tar.gz"
 
 ###
+[waveterm]
+src.use_latest_release = true
+src.github = "wavetermdev/waveterm"
+fetch.github = "wavetermdev/waveterm"

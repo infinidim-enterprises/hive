@@ -12,6 +12,8 @@ cell.lib.importers.importPackagesRakeleaves
   src = ./packages;
   overlays = [ cell.overlays.sources ];
   skip = [
+    "waveterm" # TODO: package it properly
+
     "TakeTheTime"
     "age-plugin-yubikey"
 

@@ -47,11 +47,11 @@
   };
   copilot = {
     pname = "copilot";
-    version = "1.202.933";
+    version = "1.203.0";
     src = fetchurl {
-      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.202.933/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "copilot-1.202.933.zip";
-      sha256 = "sha256-dSm+2vp85U2EBP3C3KwvITbOqVFj55DWFxUFfVSsOjk=";
+      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.203.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "copilot-1.203.0.zip";
+      sha256 = "sha256-qCBmbkCOenEiE/NC+PRGvuIp+xlV3ITq4E3RAuJPHw0=";
     };
     publisher = "GitHub";
     name = "copilot";
@@ -124,11 +124,11 @@
   };
   gitlens = {
     pname = "gitlens";
-    version = "2024.6.1305";
+    version = "2024.6.1505";
     src = fetchurl {
-      url = "https://eamodio.gallery.vsassets.io/_apis/public/gallery/publisher/eamodio/extension/gitlens/2024.6.1305/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "gitlens-2024.6.1305.zip";
-      sha256 = "sha256-qpQ7eGRfzGFd7ZLjlyZEnz+RsrVVsDqeBlq3FDWI7vc=";
+      url = "https://eamodio.gallery.vsassets.io/_apis/public/gallery/publisher/eamodio/extension/gitlens/2024.6.1505/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "gitlens-2024.6.1505.zip";
+      sha256 = "sha256-HiF3KtC1shs/9MmamJZ8r+qDBgRS7Qwd6uuRq6yIfP8=";
     };
     publisher = "eamodio";
     name = "gitlens";

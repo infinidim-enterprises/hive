@@ -25,11 +25,11 @@
   };
   copilot = {
     pname = "copilot";
-    version = "1.202.933";
+    version = "1.203.0";
     src = fetchurl {
-      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.202.933/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "copilot-1.202.933.zip";
-      sha256 = "sha256-dSm+2vp85U2EBP3C3KwvITbOqVFj55DWFxUFfVSsOjk=";
+      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.203.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "copilot-1.203.0.zip";
+      sha256 = "sha256-qCBmbkCOenEiE/NC+PRGvuIp+xlV3ITq4E3RAuJPHw0=";
     };
     publisher = "GitHub";
     name = "copilot";

@@ -13,7 +13,7 @@ let
 
   importNixosConfigurations = {
     __functor = _self:
-      { src, skip ? [ ], inputs, cell, bootstrapSystem ? "bootstrap", ... }:
+      { src, skip ? [ ], inputs, cell, bootstrapSystem ? "bootstrap", skipBootstrap ? [ ], ... }:
       let
         bootstrapPath = src + "/${bootstrapSystem}";
         hasBootstrap = pathExists bootstrapPath;
@@ -36,7 +36,7 @@ let
               inputs = { inherit inputs cell; host = n; };
             })
           )
-          (removeAttrs systems [ bootstrapSystem ]);
+          (removeAttrs systems ([ bootstrapSystem ] ++ skipBootstrap));
       in
       systems // (optionalAttrs hasBootstrap bootstrap);
 

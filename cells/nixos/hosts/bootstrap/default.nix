@@ -13,8 +13,7 @@ let
   hasDiskoConfig = hasAttr host cell.diskoConfigurations;
   # hasImpermanenceConfig =
   #   let
-  #     inherit ((builtins.getFlake (builtins.unsafeDiscardStringContext (toString inputs.self))).nixosConfigurations."nixos-${host}") config;
-  #     # inherit (inputs.self.nixosConfigurations."nixos-${host}") config;
+  #     inherit (inputs.self.colmenaHive.nodes."nixos-${host}") config;
   #   in
   #   hasAttr "persistence" config.environment;
 in
@@ -65,7 +64,7 @@ rec {
       inputs.disko.nixosModules.disko
       cell.nixosProfiles.boot.systemd-boot
       cell.nixosProfiles.filesystems.impermanence.default
-      ({ lib, ... }: {
+      ({ lib, nodes, ... }: {
         # FIXME: networking.hostId = lib.mkForce ${host}.networking.hostId;
         disko.devices = cell.diskoConfigurations.${host} { inherit lib; };
       })

@@ -4,6 +4,7 @@ let
 in
 importNixosConfigurations {
   # skip = [ "marauder" ];
+  skipBootstrap = [ "marauder" ];
   src = ./hosts;
   inherit inputs cell;
 }

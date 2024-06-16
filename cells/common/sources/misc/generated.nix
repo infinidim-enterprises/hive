@@ -17,17 +17,17 @@
   };
   adguard-filters = {
     pname = "adguard-filters";
-    version = "369c84082a761eff1591c4cda64c3949db4c83f7";
+    version = "834d9d71d3d4936534622d1841eb8661361dddd0";
     src = fetchgit {
       url = "https://github.com/AdguardTeam/AdguardFilters";
-      rev = "369c84082a761eff1591c4cda64c3949db4c83f7";
+      rev = "834d9d71d3d4936534622d1841eb8661361dddd0";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-V8yDbiwwk7VKZplfUJN2YfFNVuiOABT5NWB6DymdiuE=";
+      sha256 = "sha256-DbirrPHfHuIx6+Nd7pKm2XV7frGeag4o33f3OW6T2RE=";
     };
-    date = "2024-06-14";
+    date = "2024-06-15";
   };
   age-plugin-trezor = {
     pname = "age-plugin-trezor";
@@ -266,13 +266,13 @@
   };
   langchain = {
     pname = "langchain";
-    version = "langchain-core==0.2.6";
+    version = "langchain-core==0.2.7";
     src = fetchFromGitHub {
       owner = "langchain-ai";
       repo = "langchain";
-      rev = "langchain-core==0.2.6";
+      rev = "langchain-core==0.2.7";
       fetchSubmodules = false;
-      sha256 = "sha256-GmNBmdoUstNwrR9vQJ2/EaxJGX0l/cj8WnZaY92w5JY=";
+      sha256 = "sha256-MmWgnpOO+OWUyRUBqIKuIHG2/p8NfSlVJVbUXfF4spg=";
     };
   };
   ledger-live-desktop = {
@@ -355,12 +355,12 @@
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "145ddf6013d267659d3f4946ecc2f9ca4094a484";
+    version = "ce18a544fe31be0b0106a61700373e40335d595f";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";
     };
-    date = "2024-06-14";
+    date = "2024-06-15";
   };
   pgp-key-generation = {
     pname = "pgp-key-generation";
@@ -507,6 +507,17 @@
     src = fetchurl {
       url = "https://pypi.org/packages/source/t/trezor-gpg-pinentry-tk/trezor-gpg-pinentry-tk-0.0.10.tar.gz";
       sha256 = "sha256-h/NJKbKBP5Sbq0BYJes1h2ka2/k2gSUr564qOQZeAc4=";
+    };
+  };
+  waveterm = {
+    pname = "waveterm";
+    version = "v0.7.5";
+    src = fetchFromGitHub {
+      owner = "wavetermdev";
+      repo = "waveterm";
+      rev = "v0.7.5";
+      fetchSubmodules = false;
+      sha256 = "sha256-JEwFbbHEydB6hQyY77hI3xnbKu7SIG6LIx/VdUq1Ocg=";
     };
   };
 }
