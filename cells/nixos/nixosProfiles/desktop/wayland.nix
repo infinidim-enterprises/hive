@@ -14,4 +14,6 @@
   programs.hyprlock.enable = true;
 
   programs.xwayland.enable = true;
+  environment.systemPackages = with pkgs; [ wofi kitty waybar networkmanagerapplet ];
+  # programs.waybar.enable = true;
 }

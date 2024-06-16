@@ -55,22 +55,23 @@ in
   #   ''
   #     display-setup-script=${display-setup-script}
   #   '';
-  services.xserver.deviceSection = ''
-    Option "AccelMethod" "glamor"
-  '';
 
-  services.xserver.moduleSection = ''
-    Load "dri2"
-    Load "glamoregl"
-  '';
+  # services.xserver.deviceSection = ''
+  #   Option "AccelMethod" "glamor"
+  # '';
+
+  # services.xserver.moduleSection = ''
+  #   Load "dri2"
+  #   Load "glamoregl"
+  # '';
 
   services.xserver.monitorSection = ''
     Option "Rotate" "right"
   '';
 
   services.xserver.videoDrivers = lib.mkIf config.services.xserver.enable [
-    "modesetting"
-    # "intel"
+    # "modesetting"
+    "intel"
   ];
 
   services.logind.powerKeyLongPress = "suspend";
