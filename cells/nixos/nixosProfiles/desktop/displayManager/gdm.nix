@@ -7,7 +7,7 @@
   services.xserver.displayManager.gdm.wayland = true;
 
   services.xserver.displayManager.gdm.settings = {
-    IncludeAll = false;
+    daemon.IncludeAll = false;
   };
 
   # services.xserver.displayManager.gdm.debug
