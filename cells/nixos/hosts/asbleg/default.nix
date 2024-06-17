@@ -13,10 +13,11 @@ rec {
       inherit system;
       config.allowUnfree = true;
       overlays = with cell.overlays;
-        base ++
-        desktop ++
-        emacs ++
-        vscode;
+        base
+        ++ desktop
+        ++ emacs
+        ++ wayland
+        ++ vscode;
     };
   };
 

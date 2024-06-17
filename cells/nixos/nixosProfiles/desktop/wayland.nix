@@ -1,32 +1,62 @@
 { inputs, cell, ... }:
 
 { config, lib, pkgs, ... }:
+let
+  inherit (lib // builtins)
+    mkIf
+    mkMerge
+    hasAttr;
+in
+mkMerge [
+  (mkIf (hasAttr "home-manager" config) {
+    home-manager.sharedModules = [
 
-{
-  # programs.hyprland.package
-  # programs.hyprland.portalPackage
+    ];
+  })
+  {
+    # programs.hyprland.package
+    # programs.hyprland.portalPackage
 
-  programs.hyprland.enable = true;
-  programs.hyprland.systemd.setPath.enable = true;
-  programs.hyprland.xwayland.enable = true;
+    # imports = [ ];
 
-  services.hypridle.enable = true;
-  programs.hyprlock.enable = true;
+    programs.hyprland.enable = true;
+    programs.hyprland.systemd.setPath.enable = true;
+    programs.hyprland.xwayland.enable = true;
 
-  programs.xwayland.enable = true;
-  xdg.portal.enable = true;
+    services.hypridle.enable = true;
+    programs.hyprlock.enable = true;
 
-  # hyprctl output create headless test
-  # https://wiki.hyprland.org/Configuring/Using-hyprctl/#commands
-  environment.systemPackages = with pkgs; [
-    wofi
-    kitty
-    waybar
-    networkmanagerapplet
-    wayvnc
-  ];
-  # programs.waybar.enable = true;
-}
+    programs.xwayland.enable = true;
+    xdg.portal.enable = true;
+
+    ### TODO: hyprland plugins:
+    # https://github.com/jasper-at-windswept/hypr-ws-switcher
+    # https://github.com/zakk4223/hyprNStack
+    # https://github.com/shezdy/hyprsplit
+    # https://github.com/JoaoCostaIFG/hyprtags
+    # https://github.com/VortexCoyote/hyprfocus
+    # https://github.com/horriblename/hyprgrass
+    # https://github.com/DreamMaoMao/hycov
+    ###
+    # hyprctl output create headless test
+    # https://wiki.hyprland.org/Configuring/Using-hyprctl/#commands
+
+    environment.systemPackages = with pkgs; [
+      wofi
+      wtype
+      wofi-pass
+      wofi-emoji
+      wl-clipboard
+
+      kitty
+      waybar
+      networkmanagerapplet
+      wayvnc
+    ];
+
+    # programs.waybar.enable = true;
+  }
+]
 /*
   Hyprland is a dynamic tiling Wayland compositor that supports advanced configurations and is capable of handling multiple displays, including virtual displays streamed via RDP. While Hyprland itself does not natively support RDP or VNC, you can achieve similar functionality by using auxiliary tools like WayVNC or RDP backends. Here is how you can set up a configuration with Hyprland, where the middle display is a local physical screen, and the left and right ones are streamed via RDP:
 

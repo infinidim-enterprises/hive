@@ -263,6 +263,27 @@
     nixd.inputs.nixpkgs.follows = "nixpkgs-unstable";
   };
 
+  # wayland stuff
+  inputs = {
+    # TODO: reorganize inputs to have a let for vars, ie. hyprland_version = "0.41.0"; # 0.41.1
+    systems.url = "github:nix-systems/default-linux";
+
+    waybar.url = "github:Alexays/Waybar";
+    waybar.inputs.nixpkgs.follows = "nixpkgs-unstable";
+
+    hyprland.url = "github:hyprwm/Hyprland?submodules=1&ref=v0.41.0";
+    hyprland.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    hyprland.inputs.systems.follows = "systems";
+
+    hyprland-plugins.url = "github:hyprwm/hyprland-plugins";
+    hyprland-plugins.inputs.hyprland.follows = "hyprland";
+    hyprland-plugins.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    hyprland-plugins.inputs.systems.follows = "systems";
+
+    hyprland-hy3.url = "github:outfoxxed/hy3?ref=hl0.41.0";
+    hyprland-hy3.inputs.hyprland.follows = "hyprland";
+  };
+
   outputs =
     { self
     , std
