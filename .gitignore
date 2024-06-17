@@ -13,3 +13,4 @@ result
 # nixago-auto-created: mdbook-build-folder
 docs/build/**
 /.data/
+/result-man
