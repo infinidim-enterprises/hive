@@ -28,7 +28,7 @@ lib.mkMerge [
       height=1080
       depth=24
     '';
-
+    hardware.pulseaudio.extraModules = [ pkgs.pulseaudio-module-xrdp ];
     sops.secrets.xrdp-password = {
       key = "xrdp-password";
       sopsFile = ../../../secrets/sops/nixos-common.yaml;

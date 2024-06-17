@@ -30,6 +30,7 @@ rec {
     multimedia # bluetooth only atm
     xdg
     wayland
+    displayManager.gdm
     # TODO: desktop.opensnitch
   ])
     ++ [ ({ pkgs, ... }: { environment.systemPackages = with pkgs; [ networkmanagerapplet ]; }) ];

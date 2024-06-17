@@ -15,8 +15,9 @@
 
   programs.xwayland.enable = true;
   xdg.portal.enable = true;
-  # xdg.portal.wlr.enable = true;
 
+  # hyprctl output create headless test
+  # https://wiki.hyprland.org/Configuring/Using-hyprctl/#commands
   environment.systemPackages = with pkgs; [
     wofi
     kitty

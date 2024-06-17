@@ -22,7 +22,7 @@ rec {
 
   imports =
     cell.nixosSuites.desktop
-    ++ [ cell.nixosProfiles.desktop.rdpserver ] # LightDM login via xrdp
+    # ++ [ cell.nixosProfiles.desktop.rdpserver ] # LightDM login via xrdp
     ++ cell.nixosSuites.networking
     ++ cell.nixosSuites.virtualization
     ++ [ (cell.lib.mkHome "vod" "zsh") ]
