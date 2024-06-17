@@ -9,6 +9,7 @@ in
 {
   inherit
     (nixpkgs-release)
+    atuin
     nyxt
     gimp
     gimpPlugins
