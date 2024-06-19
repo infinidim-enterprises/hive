@@ -10,6 +10,7 @@ in
     # (inputs.cells.nixos.nixosProfiles.backups.restic { user = "admin"; extraDirs = [ "tmp" ]; })
   ];
   home-manager.users.admin.imports = [
+    cell.homeProfiles.wayland.waybar
     ({ pkgs, ... }: {
       # FIXME: `home-manager.users.admin.services.gpg-agent.pinentryPackage' is defined multiple times
       # services.gpg-agent.pinentryPackage = pkgs.pinentry-tty;
