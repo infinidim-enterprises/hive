@@ -10,10 +10,16 @@
     daemon.IncludeAll = false;
   };
 
+  services.udev.packages = [ pkgs.gnome.gnome-settings-daemon ];
+
   programs.dconf.profiles.gdm.databases = [{
-    settings."org/gnome/settings-daemon/plugins/power" = {
-      sleep-inactive-ac-type = "nothing";
-      sleep-inactive-battery-type = "nothing";
+    settings = {
+      "org/gnome/settings-daemon/plugins/power" = {
+        sleep-inactive-ac-type = "nothing";
+        sleep-inactive-battery-type = "nothing";
+      };
+      "org/gnome/desktop/peripherals/mouse".accel-profile = "flat";
+      "org/gnome/desktop/peripherals/touchpad".tap-to-click = true;
     };
   }];
 
