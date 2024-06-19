@@ -29,9 +29,10 @@ rec {
     fonts
     multimedia # bluetooth only atm
     xdg
-    # wayland
-    # displayManager.gdm # NOTE: works with hyprland
-    displayManager.lightdm
+    wayland
+    displayManager.gdm # NOTE: works with hyprland
+
+    # displayManager.lightdm
   ])
     ++ [ ({ pkgs, ... }: { environment.systemPackages = with pkgs; [ networkmanagerapplet ]; }) ];
 

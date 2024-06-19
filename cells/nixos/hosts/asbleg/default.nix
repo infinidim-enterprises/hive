@@ -16,7 +16,7 @@ rec {
         base
         ++ desktop
         ++ emacs
-        # FIXME: ++ wayland
+        ++ wayland
         ++ vscode;
     };
   };

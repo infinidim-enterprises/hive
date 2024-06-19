@@ -23,15 +23,18 @@
       stumpwm
     ];
 
-  # FIXME: wayland = [
-  #   inputs.waybar.overlays.default
-  #   inputs.hyprland.overlays.default
-  #   inputs.hyprland.overlays.xwayland
-  #   inputs.hyprland-plugins.overlays.default
-  #   (final: prev: {
-  #     hyprlandPlugins = prev.hyprlandPlugins // { hy3 = inputs.hyprland-hy3.packages.${prev.system}.default; };
-  #   })
-  # ];
+  wayland = [
+    inputs.waybar.overlays.default
+    inputs.hyprland.overlays.default
+    inputs.hyprland-plugins.overlays.default
+
+    (final: prev: {
+      hyprlandPlugins = prev.hyprlandPlugins // {
+        hy3 = inputs.hyprland-hy3.packages.${prev.system}.default;
+        hych = inputs.hyprland-hych.packages.${prev.system}.hych;
+      };
+    })
+  ];
 
   emacs = [
     inputs.cells.emacs.overlays.sources

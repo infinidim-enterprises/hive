@@ -20,7 +20,13 @@ mkMerge [
     # imports = [ ];
 
     programs.hyprland.enable = true;
-    programs.hyprland.systemd.setPath.enable = true;
+    # BUG: https://github.com/NixOS/nixpkgs/issues/320734
+    # programs.hyprland.systemd.setPath.enable = true;
+    programs.hyprland.systemd.setPath.enable = false;
+    systemd.user.extraConfig = ''
+      DefaultEnvironment="PATH=/run/wrappers/bin:/etc/profiles/per-user/%u/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin:$PATH"
+    '';
+
     programs.hyprland.xwayland.enable = true;
 
     services.hypridle.enable = true;
@@ -31,6 +37,7 @@ mkMerge [
 
     ### TODO: hyprland plugins:
     # https://github.com/jasper-at-windswept/hypr-ws-switcher
+    # https://github.com/codelif/hyprnotify
     # https://github.com/zakk4223/hyprNStack
     # https://github.com/shezdy/hyprsplit
     # https://github.com/JoaoCostaIFG/hyprtags
