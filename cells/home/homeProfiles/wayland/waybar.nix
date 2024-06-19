@@ -10,6 +10,6 @@
 
     # "hyprland/workspaces" = { };
 
-    clock.format = "{%a %b %d, %H:%M}";
+    clock.format = "{:%a %b %d, %H:%M}";
   };
 }
