@@ -21,8 +21,10 @@
 
       "org/gnome/login-screen".disable-user-list = true;
 
-      "org/gnome/desktop/peripherals/mouse".accel-profile = "flat";
+      "org/gnome/desktop/peripherals/mouse".accel-profile = "adaptive";
       "org/gnome/desktop/peripherals/touchpad".tap-to-click = true;
+
+      "org/gnome/desktop/background".primary-color = "#002b36";
     };
   }];
 
