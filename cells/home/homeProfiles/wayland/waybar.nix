@@ -3,7 +3,7 @@
 {
   programs.waybar.enable = true;
   programs.waybar.systemd.enable = false;
-  programs.waybar.settings = {
+  programs.waybar.settings.masterBar = {
     position = "top";
     modules-left = [ "hyprland/workspaces" ];
     modules-right = [ "hyprland/language" "tray" "battery" "clock" ];
