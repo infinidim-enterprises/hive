@@ -3,8 +3,8 @@
 {
   programs.waybar.enable = true;
   programs.waybar.systemd.enable = false;
+  programs.waybar.style = lib.fileContents ./waybar_solarized-dark.css;
   programs.waybar.settings.masterBar = {
-    style = lib.fileContents ./waybar_solarized-dark.css;
     position = "top";
     modules-left = [ "hyprland/workspaces" ];
     modules-right = [ "hyprland/language" "tray" "battery" "clock" ];
