@@ -49,6 +49,8 @@ mkMerge [
     # https://wiki.hyprland.org/Configuring/Using-hyprctl/#commands
 
     environment.systemPackages = with pkgs; [
+      wev
+
       wofi
       wtype
       wofi-pass
