@@ -1,4 +1,7 @@
 { inputs, cell, ... }:
+let
+  inherit (inputs.cells.common.packages) solarized-dark-gnome-shell;
+in
 {
   firmwares = _: _: cell.firmwares;
 
@@ -41,7 +44,7 @@
       gnome = prev.gnome.overrideScope (gnomeFinal: gnomePrev: {
         gnome-shell = gnomePrev.gnome-shell.overrideAttrs (oldAttrs: {
           postFixup = (oldAttrs.postFixup or "") + ''
-            cp ${inputs.cells.common.packages.solarized-dark-gnome-shell}/share/themes/${theme}/gdm/gnome-shell-theme.gresource \
+            cp ${solarized-dark-gnome-shell}/share/themes/${theme}/gdm/gnome-shell-theme.gresource \
               $out/share/gnome-shell/gnome-shell-theme.gresource
           '';
         });
