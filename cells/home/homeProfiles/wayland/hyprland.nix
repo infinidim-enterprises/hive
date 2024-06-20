@@ -167,7 +167,7 @@
       # mouse movements
       "$mainMod, mouse:272, movewindow"
       "$mainMod, mouse:273, resizewindow"
-      # "$mod ALT, mouse:272, resizewindow"
+      # "$mainMod ALT, mouse:272, resizewindow"
     ];
 
     binds = [

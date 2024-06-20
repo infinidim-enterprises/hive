@@ -51,6 +51,8 @@ mkMerge [
     environment.systemPackages = with pkgs; [
       wev
 
+      grim
+
       wofi
       wtype
       wofi-pass
