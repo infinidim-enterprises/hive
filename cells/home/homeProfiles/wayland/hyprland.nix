@@ -182,8 +182,19 @@
   wayland.windowManager.hyprland.extraConfig = ''
     bind = Control_L, apostrophe, submap, wofi_menu
     submap = wofi_menu
-    bind = ,period,exec,$menu
-    bind = ,period,submap,reset
+    bind = Control_L,period,exec,$menu
+    bind = Control_L,period,submap,reset
     submap = reset
   '';
 }
+/*
+
+  Jun 20 23:15:16 asbleg org.gnome.Shell.desktop[17393]: The XKEYBOARD keymap compiler (xkbcomp) reports:
+  Jun 20 23:15:16 asbleg org.gnome.Shell.desktop[17393]: > Warning:          Unsupported maximum keycode 708, clipping.
+  Jun 20 23:15:16 asbleg org.gnome.Shell.desktop[17393]: >                   X11 cannot support keycodes above 255.
+  Jun 20 23:15:16 asbleg org.gnome.Shell.desktop[17393]: > Warning:          Could not resolve keysym XF86KbdInputAssistPrevgrou
+  Jun 20 23:15:16 asbleg org.gnome.Shell.desktop[17393]: > Warning:          Could not resolve keysym XF86KbdInputAssistNextgrou
+  Jun 20 23:15:16 asbleg org.gnome.Shell.desktop[17393]: Errors from xkbcomp are not fatal to the X server
+  Jun 20 2
+
+*/

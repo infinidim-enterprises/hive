@@ -13,6 +13,7 @@ in
   config = mkMerge [
     {
       home-manager.users.admin.imports = [
+        cell.homeProfiles.wayland.wofi
         cell.homeProfiles.wayland.waybar
         cell.homeProfiles.wayland.dunst
         cell.homeProfiles.wayland.hyprland
