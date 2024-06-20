@@ -179,6 +179,8 @@
     ];
   };
 
+  # (set-prefix-key (kbd "C-'"))
+  # (kbd "C-.")
   wayland.windowManager.hyprland.extraConfig = ''
     bind = Control_L, apostrophe, submap, wofi_menu
     submap = wofi_menu
