@@ -116,11 +116,11 @@
 
     bind = [
       "$mainMod, Q, exec, $terminal"
-      "$mainMod, C, killactive,"
+      # "$mainMod, C, killactive,"
       "$mainMod, M, exec, hyprctl dispatch togglemax"
       "$mainMod, E, exec, $fileManager"
       "$mainMod, V, togglefloating,"
-      "$mainMod, R, exec, $menu"
+      # "$mainMod, R, exec, $menu"
       "$mainMod, P, pseudo,"
       "$mainMod, J, togglesplit,"
 
@@ -180,12 +180,14 @@
   };
 
   # (set-prefix-key (kbd "C-'"))
-  # (kbd "C-.")
+  # (kbd "C-.") "$mainMod, C, killactive,"
   wayland.windowManager.hyprland.extraConfig = ''
     bind = Control_L, apostrophe, submap, wofi_menu
     submap = wofi_menu
     bind = Control_L,period,exec,$menu
     bind = Control_L,period,submap,reset
+    bind = ,k,killactive,
+    bind = ,k,submap,reset
     submap = reset
   '';
 }
