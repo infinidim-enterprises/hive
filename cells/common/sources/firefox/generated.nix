@@ -491,10 +491,10 @@
   };
   "ether-metamask" = rec {
     pname = "ether-metamask";
-    version = "11.16.5";
+    version = "11.16.10";
     addonId = "webextension@metamask.io";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4298695/ether_metamask-11.16.5.xpi";
-    sha256 = "2569556940fdb8504a417ffa24fbca0f53e04558236dd06be340b561d4439690";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4302093/ether_metamask-11.16.10.xpi";
+    sha256 = "e021fae54ea3f29cad5910d93b688ab9e2cbfd00f3496722f5cc7c809b0bfeb1";
     meta = with lib;
       {
         description = "Ethereum Browser Extension";
@@ -676,10 +676,10 @@
   };
   "privacy-badger17" = rec {
     pname = "privacy-badger17";
-    version = "2024.6.3";
+    version = "2024.6.14";
     addonId = "jid1-MnnxcxisBPnSXQ@jetpack";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4298042/privacy_badger17-2024.6.3.xpi";
-    sha256 = "e60101d2c31c80addb9d1e2c6fa4b4a17b4907451ea1b2e907b9bee0871a20f4";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4303450/privacy_badger17-2024.6.14.xpi";
+    sha256 = "2abc0343d14151cadc48ad83d4b945c0b49adf19c802fdc9738ec55f38b98e29";
     meta = with lib;
       {
         homepage = "https://privacybadger.org/";
@@ -1264,10 +1264,10 @@
   };
   "tree-style-tab" = rec {
     pname = "tree-style-tab";
-    version = "4.0.17";
+    version = "4.0.18";
     addonId = "treestyletab@piro.sakura.ne.jp";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4300287/tree_style_tab-4.0.17.xpi";
-    sha256 = "e724fc86e50b5a1defa985a54e9d7a97fb87e585b1470d72ad270fb78dd15de2";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4302180/tree_style_tab-4.0.18.xpi";
+    sha256 = "4e619c4d7ff604a93db483ad66d4b0a9ef5832255541115c0e9d280608ab8f76";
     meta = with lib;
       {
         homepage = "http://piro.sakura.ne.jp/xul/_treestyletab.html.en";

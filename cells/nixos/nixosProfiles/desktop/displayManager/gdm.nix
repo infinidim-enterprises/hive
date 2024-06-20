@@ -11,6 +11,7 @@
   };
 
   services.udev.packages = [ pkgs.gnome.gnome-settings-daemon ];
+  environment.systemPackages = [ inputs.cells.common.packages.solarized-dark-gnome-shell ];
 
   programs.dconf.profiles.gdm.databases = [{
     settings = {
@@ -25,6 +26,9 @@
       "org/gnome/desktop/peripherals/touchpad".tap-to-click = true;
 
       "org/gnome/desktop/background".primary-color = "#002b36";
+
+      "org/gnome/desktop/interface".gtk-theme = "Solarized-Dark-Green-GS-3.36";
+      # "org/gnome/login-screen".logo = "";
     };
   }];
 

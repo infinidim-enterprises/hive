@@ -21,7 +21,7 @@
     },
     "adguard-filters": {
         "cargoLocks": null,
-        "date": "2024-06-15",
+        "date": "2024-06-20",
         "extract": null,
         "name": "adguard-filters",
         "passthru": null,
@@ -31,13 +31,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "834d9d71d3d4936534622d1841eb8661361dddd0",
-            "sha256": "sha256-DbirrPHfHuIx6+Nd7pKm2XV7frGeag4o33f3OW6T2RE=",
+            "rev": "39bc4dc203dd222009110bb1e7c02c7168eb712b",
+            "sha256": "sha256-qd2J6QyZmVgOpG1vHc7wVq53lpGaIqOQvD+4/ZUYB7A=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/AdguardTeam/AdguardFilters"
         },
-        "version": "834d9d71d3d4936534622d1841eb8661361dddd0"
+        "version": "39bc4dc203dd222009110bb1e7c02c7168eb712b"
     },
     "age-plugin-trezor": {
         "cargoLocks": null,
@@ -105,7 +105,7 @@
     },
     "cl-hash-util": {
         "cargoLocks": null,
-        "date": "2024-06-04",
+        "date": "2024-06-17",
         "extract": null,
         "name": "cl-hash-util",
         "passthru": null,
@@ -117,12 +117,12 @@
             "name": null,
             "owner": "orthecreedence",
             "repo": "cl-hash-util",
-            "rev": "e1e065f1f63dfa5d849c1676bd858bdcaf8b52ca",
-            "sha256": "sha256-b63P1AsgdZWPxV0+GtMd5xJYTL75rxvSZngt9gMIAKY=",
+            "rev": "7f88cb7579b2af8c21022554f46dddd6ce6a5fc2",
+            "sha256": "sha256-Neg1WUxhMVAtk3AwlW05jryCyKsYGY50DkRsVcU+S/U=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "e1e065f1f63dfa5d849c1676bd858bdcaf8b52ca"
+        "version": "7f88cb7579b2af8c21022554f46dddd6ce6a5fc2"
     },
     "cl-mount-info": {
         "cargoLocks": null,
@@ -402,7 +402,7 @@
     },
     "ipxe": {
         "cargoLocks": null,
-        "date": "2024-05-31",
+        "date": "2024-06-18",
         "extract": null,
         "name": "ipxe",
         "passthru": null,
@@ -412,13 +412,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "e965f179e1654103eca33feed7a9cc4c51d91be6",
-            "sha256": "sha256-32LYNF+5z5rS4y2iGKA2BnQntXg9Ec9709m6pL5hBdo=",
+            "rev": "76e0933d781474acf52000cba0afaebe32361667",
+            "sha256": "sha256-1AngOQvYB2S5iNnX22jvkKY1M0Prsh/Ip9J2iN/QZ6E=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/ipxe/ipxe"
         },
-        "version": "e965f179e1654103eca33feed7a9cc4c51d91be6"
+        "version": "76e0933d781474acf52000cba0afaebe32361667"
     },
     "iterable-io": {
         "cargoLocks": null,
@@ -449,12 +449,12 @@
             "name": null,
             "owner": "langchain-ai",
             "repo": "langchain",
-            "rev": "langchain-core==0.2.7",
-            "sha256": "sha256-MmWgnpOO+OWUyRUBqIKuIHG2/p8NfSlVJVbUXfF4spg=",
+            "rev": "langchain-core==0.2.9",
+            "sha256": "sha256-/BUn/NxaE9l3VY6dPshr1JJaHTGzn9NMQhSQ2De65Jg=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "langchain-core==0.2.7"
+        "version": "langchain-core==0.2.9"
     },
     "ledger-live-desktop": {
         "cargoLocks": null,
@@ -584,7 +584,7 @@
     },
     "pbkdf2-sha512": {
         "cargoLocks": null,
-        "date": "2024-06-15",
+        "date": "2024-06-20",
         "extract": null,
         "name": "pbkdf2-sha512",
         "passthru": null,
@@ -595,7 +595,7 @@
             "type": "url",
             "url": "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c"
         },
-        "version": "ce18a544fe31be0b0106a61700373e40335d595f"
+        "version": "be3c40456bd895c248ad3fc19bd1fd9da23f37da"
     },
     "pgp-key-generation": {
         "cargoLocks": null,
@@ -695,6 +695,26 @@
             "type": "github"
         },
         "version": "c13b860c763a56fc8b97dbb2e35e7c6f3b950f2c"
+    },
+    "solarized-dark-gnome-shell-2020": {
+        "cargoLocks": null,
+        "date": "2020-11-07",
+        "extract": null,
+        "name": "solarized-dark-gnome-shell-2020",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "667234f6cc1a152197f3128afceb27da91c8b1f2",
+            "sha256": "sha256-PTD7/SULLXeXZ6ztabUYNEQmIiqN1zAe+/gI+6ycb+M=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/rtlewis88/rtl88-Themes"
+        },
+        "version": "667234f6cc1a152197f3128afceb27da91c8b1f2"
     },
     "stumpwm-contrib": {
         "cargoLocks": null,
@@ -871,11 +891,11 @@
             "name": null,
             "owner": "wavetermdev",
             "repo": "waveterm",
-            "rev": "v0.7.5",
-            "sha256": "sha256-JEwFbbHEydB6hQyY77hI3xnbKu7SIG6LIx/VdUq1Ocg=",
+            "rev": "v0.7.6",
+            "sha256": "sha256-cHjBH6oijoAhdk2Ty1sl2GFXUUhfoToTuDUl5VuwKWU=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v0.7.5"
+        "version": "v0.7.6"
     }
 }

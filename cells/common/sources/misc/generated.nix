@@ -17,17 +17,17 @@
   };
   adguard-filters = {
     pname = "adguard-filters";
-    version = "834d9d71d3d4936534622d1841eb8661361dddd0";
+    version = "39bc4dc203dd222009110bb1e7c02c7168eb712b";
     src = fetchgit {
       url = "https://github.com/AdguardTeam/AdguardFilters";
-      rev = "834d9d71d3d4936534622d1841eb8661361dddd0";
+      rev = "39bc4dc203dd222009110bb1e7c02c7168eb712b";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-DbirrPHfHuIx6+Nd7pKm2XV7frGeag4o33f3OW6T2RE=";
+      sha256 = "sha256-qd2J6QyZmVgOpG1vHc7wVq53lpGaIqOQvD+4/ZUYB7A=";
     };
-    date = "2024-06-15";
+    date = "2024-06-20";
   };
   age-plugin-trezor = {
     pname = "age-plugin-trezor";
@@ -70,15 +70,15 @@
   };
   cl-hash-util = {
     pname = "cl-hash-util";
-    version = "e1e065f1f63dfa5d849c1676bd858bdcaf8b52ca";
+    version = "7f88cb7579b2af8c21022554f46dddd6ce6a5fc2";
     src = fetchFromGitHub {
       owner = "orthecreedence";
       repo = "cl-hash-util";
-      rev = "e1e065f1f63dfa5d849c1676bd858bdcaf8b52ca";
+      rev = "7f88cb7579b2af8c21022554f46dddd6ce6a5fc2";
       fetchSubmodules = false;
-      sha256 = "sha256-b63P1AsgdZWPxV0+GtMd5xJYTL75rxvSZngt9gMIAKY=";
+      sha256 = "sha256-Neg1WUxhMVAtk3AwlW05jryCyKsYGY50DkRsVcU+S/U=";
     };
-    date = "2024-06-04";
+    date = "2024-06-17";
   };
   cl-mount-info = {
     pname = "cl-mount-info";
@@ -244,17 +244,17 @@
   };
   ipxe = {
     pname = "ipxe";
-    version = "e965f179e1654103eca33feed7a9cc4c51d91be6";
+    version = "76e0933d781474acf52000cba0afaebe32361667";
     src = fetchgit {
       url = "https://github.com/ipxe/ipxe";
-      rev = "e965f179e1654103eca33feed7a9cc4c51d91be6";
+      rev = "76e0933d781474acf52000cba0afaebe32361667";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-32LYNF+5z5rS4y2iGKA2BnQntXg9Ec9709m6pL5hBdo=";
+      sha256 = "sha256-1AngOQvYB2S5iNnX22jvkKY1M0Prsh/Ip9J2iN/QZ6E=";
     };
-    date = "2024-05-31";
+    date = "2024-06-18";
   };
   iterable-io = {
     pname = "iterable-io";
@@ -266,13 +266,13 @@
   };
   langchain = {
     pname = "langchain";
-    version = "langchain-core==0.2.7";
+    version = "langchain-core==0.2.9";
     src = fetchFromGitHub {
       owner = "langchain-ai";
       repo = "langchain";
-      rev = "langchain-core==0.2.7";
+      rev = "langchain-core==0.2.9";
       fetchSubmodules = false;
-      sha256 = "sha256-MmWgnpOO+OWUyRUBqIKuIHG2/p8NfSlVJVbUXfF4spg=";
+      sha256 = "sha256-/BUn/NxaE9l3VY6dPshr1JJaHTGzn9NMQhSQ2De65Jg=";
     };
   };
   ledger-live-desktop = {
@@ -355,12 +355,12 @@
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "ce18a544fe31be0b0106a61700373e40335d595f";
+    version = "be3c40456bd895c248ad3fc19bd1fd9da23f37da";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";
     };
-    date = "2024-06-15";
+    date = "2024-06-20";
   };
   pgp-key-generation = {
     pname = "pgp-key-generation";
@@ -416,6 +416,20 @@
       sha256 = "sha256-WulvXhAfZsLECFLNhAKswPYL1vDQEAOzQ6UP+3DI6Cw=";
     };
     date = "2024-06-10";
+  };
+  solarized-dark-gnome-shell-2020 = {
+    pname = "solarized-dark-gnome-shell-2020";
+    version = "667234f6cc1a152197f3128afceb27da91c8b1f2";
+    src = fetchgit {
+      url = "https://github.com/rtlewis88/rtl88-Themes";
+      rev = "667234f6cc1a152197f3128afceb27da91c8b1f2";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-PTD7/SULLXeXZ6ztabUYNEQmIiqN1zAe+/gI+6ycb+M=";
+    };
+    date = "2020-11-07";
   };
   stumpwm-contrib = {
     pname = "stumpwm-contrib";
@@ -511,13 +525,13 @@
   };
   waveterm = {
     pname = "waveterm";
-    version = "v0.7.5";
+    version = "v0.7.6";
     src = fetchFromGitHub {
       owner = "wavetermdev";
       repo = "waveterm";
-      rev = "v0.7.5";
+      rev = "v0.7.6";
       fetchSubmodules = false;
-      sha256 = "sha256-JEwFbbHEydB6hQyY77hI3xnbKu7SIG6LIx/VdUq1Ocg=";
+      sha256 = "sha256-cHjBH6oijoAhdk2Ty1sl2GFXUUhfoToTuDUl5VuwKWU=";
     };
   };
 }
