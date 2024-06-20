@@ -22,8 +22,10 @@
 * {
   border: none;
   border-radius: 0;
-  font-family: Hack, Helvetica, Arial, sans-serif;
-  font-size: 13px;
+  font-family:
+    FontAwesome,
+    UbuntuMono Nerd Font Mono;
+  font-size: 18px;
   min-height: 0;
 }
 
