@@ -16,23 +16,16 @@ stdenvNoCC.mkDerivation {
   installPhase = ''
     runHook preInstall
 
-    mkdir -p $out/share/themes/Solarized-Dark-Green-GS-3.36/gnome-shell
-
-    cd $src/Solarized-Dark-Green-GS-3.36/gnome-shell
-    glib-compile-resources --target=$out/share/themes/Solarized-Dark-Green-GS-3.36/gnome-shell/gnome-shell-theme.gresource gnome-shell-theme.gresource.xml
+    for theme in $(find $src -maxdepth 1 -type d ! -path $src); do
+      name=$(basename $theme)
+      target_dir="$out/share/themes/$name"
+      mkdir -p $target_dir
+      cp -r $theme/* $target_dir
+      mkdir -p $target_dir/gdm
+      cd $target_dir/gnome-shell
+      glib-compile-resources --target=$target_dir/gdm/gnome-shell-theme.gresource gnome-shell-theme.gresource.xml
+    done
 
     runHook postInstall
   '';
-  /*
-    mkdir -p $out/share/gnome-shell
-
-     $src/Solarized-Dark-Green-GS-3.36/gnome-shell/
-    cd $src/Solarized-Dark-Green-GS-3.36
-    mkdir -p $out/share/themes/${themeName}
-
-
-    GTK_THEME=$(gsettings get org.gnome.desktop.interface gtk-theme | sed "s/'//g")
-    cd /usr/share/themes/${GTK_THEME}/gnome-shell
-
-  */
 }

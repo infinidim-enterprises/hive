@@ -1,7 +1,6 @@
 { inputs, cell, ... }:
 
 { config, lib, pkgs, ... }:
-
 {
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.displayManager.gdm.wayland = true;
@@ -30,7 +29,7 @@
 
       "org/gnome/desktop/background".primary-color = "#002b36";
 
-      "org/gnome/desktop/interface".gtk-theme = "Dracula";
+      # "org/gnome/desktop/interface".gtk-theme = "Dracula";
       # "org/gnome/login-screen".logo = "";
     };
   }];

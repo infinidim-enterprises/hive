@@ -34,6 +34,17 @@
         hych = inputs.hyprland-hych.packages.${prev.system}.hych;
       };
     })
+
+    (final: prev: {
+      gnome = prev.gnome.overrideScope (gnomeFinal: gnomePrev: {
+        gnome-shell = gnomePrev.gnome-shell.overrideAttrs (oldAttrs: {
+          postFixup = (oldAttrs.postFixup or "") + ''
+            cp ${inputs.cells.common.packages.solarized-dark-gnome-shell}/share/themes/Solarized-Dark-Green-GS-3.36/gdm/gnome-shell-theme.gresource \
+              $out/share/gnome-shell/gnome-shell-theme.gresource
+          '';
+        });
+      });
+    })
   ];
 
   emacs = [
