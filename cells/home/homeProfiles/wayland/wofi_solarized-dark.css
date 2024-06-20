@@ -48,7 +48,7 @@ window {
 }
 
 #entry:selected {
-  background-color: #839496;
+  background-color: #859900;
 }
 
 #entry:selected #text {
