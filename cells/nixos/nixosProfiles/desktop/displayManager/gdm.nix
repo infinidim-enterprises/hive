@@ -25,7 +25,7 @@
       #   sleep-inactive-battery-type = "nothing";
       # };
 
-      "org/gnome/desktop/interface".font-name = "UbuntuMono Nerd Font Mono 22";
+      "org/gnome/desktop/interface".font-name = "UbuntuMono Nerd Font Mono 20";
 
       "org/gnome/login-screen".disable-user-list = true;
       # "org/gnome/login-screen".logo = "";
