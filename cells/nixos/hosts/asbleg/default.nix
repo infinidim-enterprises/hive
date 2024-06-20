@@ -17,6 +17,7 @@ rec {
         ++ desktop
         ++ emacs
         ++ wayland
+        ++ (gdm { theme = "Solarized-Dark-Orange-GS-3.36"; })
         ++ vscode;
     };
   };
