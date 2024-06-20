@@ -11,7 +11,10 @@
   };
 
   services.udev.packages = [ pkgs.gnome.gnome-settings-daemon ];
-  environment.systemPackages = [ inputs.cells.common.packages.solarized-dark-gnome-shell ];
+  environment.systemPackages = [
+    inputs.cells.common.packages.solarized-dark-gnome-shell
+    pkgs.dracula-theme
+  ];
 
   programs.dconf.profiles.gdm.databases = [{
     settings = {
@@ -27,7 +30,7 @@
 
       "org/gnome/desktop/background".primary-color = "#002b36";
 
-      "org/gnome/desktop/interface".gtk-theme = "Solarized-Dark-Green-GS-3.36";
+      "org/gnome/desktop/interface".gtk-theme = "Dracula";
       # "org/gnome/login-screen".logo = "";
     };
   }];
