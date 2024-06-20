@@ -180,10 +180,10 @@
   };
 
   wayland.windowManager.hyprland.extraConfig = ''
-    #bind = SUPER, P, submap, superpsubmap
-    #submap = superpsubmap
-    #bind = ,A,exec,something
-    #bind = ,A,submap,reset
-    #submap = reset
+    bind = Control_L, apostrophe, submap, wofi_menu
+    submap = wofi_menu
+    bind = ,apostrophe,exec,$menu
+    bind = ,apostrophe,submap,reset
+    submap = reset
   '';
 }

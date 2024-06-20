@@ -20,7 +20,7 @@ in
   systemd.coredump.extraConfig = ''
     ProcessSizeMax=32G
     ExternalSizeMax=32G
-    JournalSizeMax=32G
+    JournalSizeMax=64M
   '';
 
   environment.systemPackages = [ pkgs.efibootmgr ];
