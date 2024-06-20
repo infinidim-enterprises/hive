@@ -15,6 +15,7 @@ in
       home-manager.users.admin.imports = [
         cell.homeProfiles.wayland.waybar
         cell.homeProfiles.wayland.dunst
+        cell.homeProfiles.wayland.hyprland
         ({ pkgs, ... }: {
           # FIXME: `home-manager.users.admin.services.gpg-agent.pinentryPackage' is defined multiple times
           # services.gpg-agent.pinentryPackage = pkgs.pinentry-tty;

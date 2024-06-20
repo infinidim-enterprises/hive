@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ lib, ... }:
 
 {
   programs.waybar.enable = true;
@@ -46,7 +46,5 @@
     clock.actions.on-click-backward = "tz_down";
     clock.actions.on-scroll-up = "shift_up";
     clock.actions.on-scroll-down = "shift_down";
-
-
   };
 }
