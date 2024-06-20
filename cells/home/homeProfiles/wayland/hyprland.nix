@@ -182,8 +182,8 @@
   wayland.windowManager.hyprland.extraConfig = ''
     bind = Control_L, apostrophe, submap, wofi_menu
     submap = wofi_menu
-    bind = ,apostrophe,exec,$menu
-    bind = ,apostrophe,submap,reset
+    bind = ,period,exec,$menu
+    bind = ,period,submap,reset
     submap = reset
   '';
 }
