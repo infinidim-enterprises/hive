@@ -1,19 +1,16 @@
-{ osConfig ? { }, config, lib, pkgs, ... }:
-# with lib;
-# hmLib = import <home-manager/modules/lib/stdlib-extended.nix> pkgs.lib
+{ osConfig, config, lib, pkgs, ... }:
 let
-  isHostConfig = osConfig != { };
   inherit (lib) mkIf mkMerge elem;
   inherit (builtins) readFile;
-  # isDircolors = config.programs.dircolors.enable;
-  # xdg = config.xdg;
+  pkgInstalled = pkg:
+    elem pkg (config.home.packages ++ osConfig.environment.systemPackages);
 
   # TODO: *# 00;38;5;240 and empty lines handling
   commonDefaults = { gtk-theme = "NumixSolarizedDarkGreen"; icon-theme = "Numix-Circle"; };
 in
 mkMerge [
   (mkIf config.programs.vscode.enable { programs.vscode.userSettings."workbench.colorTheme" = "Solarized Dark"; })
-  (mkIf (isHostConfig && osConfig.services.xserver.desktopManager.mate.enable) {
+  (mkIf osConfig.services.xserver.desktopManager.mate.enable {
     dconf.settings."org/mate/desktop/peripherals/keyboard/indicator" = {
       foreground-color = "131 148 150";
       background-color = "0 0 0"; ### FIXME: invalid color and 0 43 54 doesnt work
@@ -61,7 +58,7 @@ mkMerge [
   })
 
   (mkIf config.programs.rofi.enable { programs.rofi.theme = "solarized"; })
-  (mkIf (elem pkgs.tilix config.home.packages) {
+  (mkIf (pkgInstalled pkgs.tilix) {
     dconf.settings."com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d" = {
       background-color = "#002b36";
       foreground-color = "#839496";
@@ -88,7 +85,7 @@ mkMerge [
 
     };
   })
-  (mkIf (isHostConfig && (elem pkgs.xterm osConfig.environment.systemPackages)) {
+  (mkIf (pkgInstalled pkgs.xterm) {
     xresources.properties = {
       # just in case xterm is needed!
       "XTerm.termName" = "xterm-256color";

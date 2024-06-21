@@ -12,7 +12,7 @@
     exec-once = [
       "$terminal"
       "nm-applet &"
-      "waybar"
+      # "waybar"
     ];
 
     env = [
