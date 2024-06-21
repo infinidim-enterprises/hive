@@ -10,6 +10,7 @@
     ];
 
     exec-once = [
+      "systemctl --user start graphical-session.target"
       "$terminal"
       "nm-applet &"
       # "waybar"
