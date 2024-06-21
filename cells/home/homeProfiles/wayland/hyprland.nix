@@ -10,7 +10,7 @@
     ];
 
     exec-once = [
-      "systemctl --user start graphical-session.target"
+      "systemctl --user start nixos-fake-graphical-session.target"
       "$terminal"
       "nm-applet &"
       # "waybar"
@@ -23,19 +23,14 @@
 
     general = {
       gaps_in = 1;
-      gaps_out = 3;
-
+      gaps_out = 1;
       border_size = 1;
 
-      # https://wiki.hyprland.org/Configuring/Variables/#variable-types for info about colors
-      "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-      "col.inactive_border" = "rgba(595959aa)";
+      "col.active_border" = "rgba(839496FF)";
+      "col.inactive_border" = "rgba(002b36ff)";
 
       resize_on_border = false;
-
-      # Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
       allow_tearing = false;
-
       layout = "dwindle";
     };
 
