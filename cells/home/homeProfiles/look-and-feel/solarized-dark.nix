@@ -9,6 +9,7 @@ let
   commonDefaults = { gtk-theme = "NumixSolarizedDarkGreen"; icon-theme = "Numix-Circle"; };
 in
 mkMerge [
+  { home.packages = [ pkgs.numix-solarized-gtk-theme ]; }
   (mkIf config.programs.vscode.enable { programs.vscode.userSettings."workbench.colorTheme" = "Solarized Dark"; })
   (mkIf osConfig.services.xserver.desktopManager.mate.enable {
     dconf.settings."org/mate/desktop/peripherals/keyboard/indicator" = {

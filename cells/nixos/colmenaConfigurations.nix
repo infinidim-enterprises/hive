@@ -6,10 +6,10 @@ let
   overrides = {
     asbleg-bootstrap = { deployment.targetHost = "192.168.1.133"; };
     asbleg = { deployment.targetHost = "192.168.1.133"; deployment.allowLocalDeployment = true; };
-    marauder = { nodes, ... }: { deployment.targetHost = "192.168.1.129"; };
+    marauder = { deployment.targetHost = "192.168.1.129"; };
   };
 in
-mapAttrs
+(mapAttrs
   (
     name: value:
     value
@@ -29,5 +29,13 @@ mapAttrs
         )
     )
   )
-  cell.nixosConfigurations
+  cell.nixosConfigurations)
+#   // {
+#   marauder-test = { nodes, ... }: {
+#     inherit (cell.nixosConfigurations.marauder) bee imports;
+#     environment.systemPackages = [ nodes.nixos-asbleg.config.system.build.toplevel ];
+#     # imports = [ nodes.marauder.config ];
+#   };
+# }
+
 #  (filterAttrs (n: _: n != "some_rpi_host") cell.nixosConfigurations)
