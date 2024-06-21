@@ -55,6 +55,7 @@
     numix-cursor-theme
     numix-icon-theme-circle
     numix-icon-theme
+    numix-solarized-gtk-theme
 
     libnotify
 

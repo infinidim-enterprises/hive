@@ -13,9 +13,11 @@
     daemon.IncludeAll = false;
   };
 
+  services.hardware.bolt.enable = true;
   services.udev.packages = [ pkgs.gnome.gnome-settings-daemon ];
   environment.systemPackages = [
     inputs.cells.common.packages.solarized-dark-gnome-shell
+    pkgs.gnome.gnome-shell # HACK: gdm-wayland-session: No schemas installed
   ];
 
   programs.dconf.profiles.gdm.databases = [{
