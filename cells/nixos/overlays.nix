@@ -38,7 +38,18 @@ in
       };
     })
   ];
+  /*
+    mv "$tmp_dir/theme/gdm.css" "$tmp_dir/theme/original.css"
+    echo '@import url("resource:///org/gnome/shell/theme/original.css");
+    .login-dialog {
+    background-color: '"$2"'; }' >"$tmp_dir/theme/gdm.css"
+    CREATE_XML
 
+    glib-compile-resources --sourcedir "$tmp_dir/theme" "$tmp_dir/theme/custom-gdm-background.gresource.xml"
+    mv "$tmp_dir/theme/custom-gdm-background.gresource" "$dest"
+
+    SET_GRESOURCE
+  */
   gdm = { theme ? "Solarized-Dark-Green-GS-3.36" }: [
     (final: prev: {
       gnome = prev.gnome.overrideScope (gnomeFinal: gnomePrev: {

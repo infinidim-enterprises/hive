@@ -22,11 +22,6 @@
 
   programs.dconf.profiles.gdm.databases = [{
     settings = {
-      # "org/gnome/settings-daemon/plugins/power" = {
-      #   sleep-inactive-ac-type = "nothing";
-      #   sleep-inactive-battery-type = "nothing";
-      # };
-
       "org/gnome/desktop/interface".font-name = "UbuntuMono Nerd Font Mono 20";
 
       "org/gnome/login-screen".disable-user-list = true;
@@ -43,7 +38,7 @@
       # };
 
 
-      # "org/gnome/desktop/interface".gtk-theme = "Dracula";
+      "org/gnome/desktop/interface".gtk-theme = "Solarized-Dark-Green-GS-3.36";
     };
   }];
 }
