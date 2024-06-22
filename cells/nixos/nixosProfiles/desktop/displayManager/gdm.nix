@@ -36,7 +36,7 @@
       # "org/gnome/desktop/interface".gtk-theme = "Solarized-Dark-Green-GS-3.36";
       "org/gnome/desktop/interface".gtk-theme = "Solarized-Dark-Green";
       "org/gnome/desktop/interface".cursor-theme = "Numix-Cursor-Light";
-      "org/gnome/desktop/interface".cursor-size = 32;
+      "org/gnome/desktop/interface".cursor-size = lib.gvariant.mkInt32 32;
     };
   }];
 }
