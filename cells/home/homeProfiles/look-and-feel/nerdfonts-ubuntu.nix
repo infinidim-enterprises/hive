@@ -63,8 +63,8 @@ mkMerge [
     (isHostConfig && osConfig.services.xserver.desktopManager.mate.enable)
     {
       dconf.settings = {
-        "org/mate/desktop/peripherals/keyboard/indicator".font-family = fontStr;
-        "org/gnome/desktop/interface".font-name = fontStr;
+        # "org/mate/desktop/peripherals/keyboard/indicator".font-family = fontStr;
+        # "org/gnome/desktop/interface".font-name = fontStr;
         "org/mate/desktop/interface" = {
           font-name = fontStr;
           document-font-name = fontStr;
