@@ -1,10 +1,10 @@
 { inputs, cell, ... }:
 
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   services.tlp = {
-    enable = !pkgs.stdenv.isAarch64;
+    enable = lib.mkDefault (!pkgs.stdenv.isAarch64);
     settings = {
       CPU_SCALING_GOVERNOR_ON_AC = "ondemand";
       CPU_SCALING_GOVERNOR_ON_BAT = "conservative";
