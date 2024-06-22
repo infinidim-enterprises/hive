@@ -94,7 +94,7 @@ in
       inputs.nixos-hardware.nixosModules.gpd-micropc
       cell.nixosProfiles.hardware.common
       cell.nixosProfiles.hardware.bluetooth
-      cell.nixosProfiles.hardware.tlp
+      # cell.nixosProfiles.hardware.tlp
       cell.nixosProfiles.hardware.fwupd
       cell.nixosProfiles.hardware.intel
       cell.nixosProfiles.core.kernel.physical-access-system
