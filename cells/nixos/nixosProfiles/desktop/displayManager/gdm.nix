@@ -6,10 +6,10 @@
   # services.xserver.displayManager.gdm.debug
   # services.xserver.displayManager.gdm.banner
 
-  services.geoclue2.enableDemoAgent = lib.mkForce false;
-  services.tlp.enable = lib.mkForce false;
+  # services.geoclue2.enableDemoAgent = lib.mkForce false;
+  # services.tlp.enable = lib.mkForce false;
 
-  services.xserver.desktopManager.gnome.enable = true;
+  # services.xserver.desktopManager.gnome.enable = true;
 
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.displayManager.gdm.wayland = true;
@@ -20,12 +20,13 @@
 
   services.hardware.bolt.enable = true;
 
-  # services.gnome.gnome-settings-daemon.enable = true;
-  # services.gnome.glib-networking.enable = true;
+  services.gnome.gnome-settings-daemon.enable = true;
+  services.gnome.glib-networking.enable = true;
   # systemd.packages = with pkgs.gnome; [
   #   gnome-session
   #   gnome-shell
   # ];
+
   # environment.pathsToLink = [
   #   "/share" # TODO: https://github.com/NixOS/nixpkgs/issues/47173
   # ];

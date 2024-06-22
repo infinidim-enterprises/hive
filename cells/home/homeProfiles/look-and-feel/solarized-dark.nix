@@ -11,7 +11,7 @@ let
   # TODO: *# 00;38;5;240 and empty lines handling
   # "org/gnome/desktop/interface".gtk-theme = "Solarized-Dark-Green-GS-3.36";
   # commonDefaults = { gtk-theme = "NumixSolarizedDarkGreen"; icon-theme = "Numix-Circle"; };
-  commonDefaults = { gtk-theme = "Solarized-Dark-Green"; icon-theme = "Numix-Circle"; };
+  commonDefaults = { gtk-theme = "Solarized-Dark-Green-3.36"; icon-theme = "Numix-Circle"; };
 in
 mkMerge [
   {
@@ -32,13 +32,63 @@ mkMerge [
     gtk.iconTheme.name = "Numix-Circle";
     gtk.iconTheme.package = pkgs.numix-icon-theme-circle;
 
-    gtk.theme.name = "Solarized-Dark-Green";
+    gtk.theme.name = "Solarized-Dark-Green-3.36";
     gtk.theme.package = inputs.cells.common.packages.solarized-dark-gnome-shell;
 
     # NOTE: https://ghostarchive.org/archive/p2BmM
     # https://github.com/glacambre/firefox-patches/issues/1
     # https://docs.gtk.org/gtk3/class.Settings.html#properties
     # https://docs.gtk.org/gtk4/class.Settings.html
+    /*
+      GTK2:
+      gtk-theme-name="Solarized-Dark-Green-3.36"
+      gtk-icon-theme-name="Adwaita"
+      gtk-cursor-theme-name="Adwaita"
+      gtk-font-name="UbuntuMono Nerd Font Mono 15"
+      gtk-menu-images=0
+      gtk-cursor-theme-size=32
+      gtk-button-images=0
+      gtk-xft-antialias=1
+      gtk-xft-hinting=1
+      gtk-xft-hintstyle="hintslight"
+      gtk-xft-rgba="none"
+      gtk-xft-dpi=98304
+      --------
+      GTK3:
+      gtk-3.0/settings.ini
+      [Settings]
+      gtk-theme-name=Solarized-Dark-Green-3.36
+      gtk-application-prefer-dark-theme=false
+      gtk-icon-theme-name=Adwaita
+      gtk-cursor-theme-name=Adwaita
+      gtk-cursor-theme-size=32
+      gtk-font-name=UbuntuMono Nerd Font Mono 15
+      gtk-xft-antialias=1
+      gtk-xft-hinting=1
+      gtk-xft-hintstyle=hintslight
+      gtk-xft-rgba=none
+      gtk-xft-dpi=98304
+      gtk-overlay-scrolling=true
+      gtk-key-theme-name=Emacs
+      gtk-menu-images=false
+      gtk-button-images=false
+      ------
+      GTK4:
+      [Settings]
+      gtk-theme-name=Solarized-Dark-Green-3.36
+      gtk-application-prefer-dark-theme=false
+      gtk-icon-theme-name=Adwaita
+      gtk-cursor-theme-name=Adwaita
+      gtk-cursor-theme-size=32
+      gtk-font-name=UbuntuMono Nerd Font Mono 15
+      gtk-xft-antialias=1
+      gtk-xft-hinting=1
+      gtk-xft-hintstyle=hintslight
+      gtk-xft-rgba=none
+      gtk-xft-dpi=98304
+      gtk-overlay-scrolling=true
+
+    */
     gtk.gtk2.extraConfig = ''
       gtk-key-theme-name = "Emacs"
       binding "gtk-emacs-text-entry"
