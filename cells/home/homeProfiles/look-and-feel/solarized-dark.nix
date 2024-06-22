@@ -1,7 +1,9 @@
+{ inputs, cell }:
+
 { osConfig, config, lib, localLib, pkgs, ... }:
 let
-  inherit (lib) mkIf mkMerge elem;
-  inherit (localLib) isGui;
+  inherit (lib) mkIf mkMerge elem fileContents;
+  inherit (localLib) isGui fontPkg;
   inherit (builtins) readFile;
   pkgInstalled = pkg:
     elem pkg (config.home.packages ++ osConfig.environment.systemPackages);
@@ -12,6 +14,42 @@ let
   commonDefaults = { gtk-theme = "Solarized-Dark-Green-GS-3.36"; icon-theme = "Numix-Circle"; };
 in
 mkMerge [
+  {
+    qt.enable = true;
+    qt.platformTheme.name = "gtk3";
+    # qt.style.name = "gtk2";
+
+    gtk.enable = true;
+
+    gtk.cursorTheme.size = 32;
+    gtk.cursorTheme.name = "Numix-Cursor-Light";
+    gtk.cursorTheme.package = pkgs.numix-cursor-theme;
+
+    gtk.font.name = "UbuntuMono Nerd Font Mono";
+    gtk.font.size = 18;
+    gtk.font.package = fontPkg { name = "nerdfonts"; inherit osConfig; };
+
+    gtk.iconTheme.name = "Numix-Circle";
+    gtk.iconTheme.package = pkgs.numix-icon-theme-circle;
+
+    gtk.theme.name = "Solarized-Dark-Green-GS-3.36";
+    gtk.theme.package = inputs.cells.common.packages.solarized-dark-gnome-shell;
+
+    # NOTE: https://ghostarchive.org/archive/p2BmM
+    # https://github.com/glacambre/firefox-patches/issues/1
+    # https://docs.gtk.org/gtk3/class.Settings.html#properties
+    # https://docs.gtk.org/gtk4/class.Settings.html
+    gtk.gtk2.extraConfig = ''
+      gtk-key-theme-name = "Emacs"
+      binding "gtk-emacs-text-entry"
+      {
+        bind "<alt>BackSpace" { "delete-from-cursor" (word-ends, -1) }
+      }
+    '';
+
+    # TODO: gtk.gtk3.extraCss = fileContents ./gtk3.gtk_css;
+  }
+
   #  { home.packages = [ pkgs.numix-solarized-gtk-theme ]; }
   (mkIf config.programs.vscode.enable { programs.vscode.userSettings."workbench.colorTheme" = "Solarized Dark"; })
   (mkIf (isGui osConfig) {
@@ -67,7 +105,6 @@ mkMerge [
       background-color = "#002b36";
       foreground-color = "#839496";
 
-      # FIXME: tilix is dead, find something better!
       # palette = lib.hm.gvariant.mkArray "" [
       #   "#063541"
       #   "#DB312E"

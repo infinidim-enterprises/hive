@@ -56,15 +56,6 @@ in
   xdg.userDirs.extraConfig.XDG_PROJ_DIR = "$HOME/Projects";
   home.sessionVariables.XDG_PROJ_DIR = "$HOME/Projects";
 
-  gtk.enable = true;
-  gtk.gtk2.extraConfig = ''
-    gtk-key-theme-name = "Emacs"
-    binding "gtk-emacs-text-entry"
-    {
-      bind "<alt>BackSpace" { "delete-from-cursor" (word-ends, -1) }
-    }
-  '';
-
   dconf.enable = true;
   dconf.settings = {
     "org/mate/desktop/session".idle-delay = 15;

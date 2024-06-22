@@ -19,7 +19,7 @@
 
   qt.enable = true;
   qt.style = "gtk2";
-  qt.platformTheme = "gtk2";
+  qt.platformTheme = "gnome";
 
   programs.light.enable = true;
   programs.light.brightnessKeys.enable = true;

@@ -5,7 +5,9 @@ let
     hasAttr
     flatten
     optional
+    isString
     mkDefault
+    findFirst
     optionals
     filterAttrs
     removeAttrs
@@ -26,8 +28,14 @@ let
       (flatten (mapAttrsToList (_: v: v.files ++ v.directories)
         config.environment.persistence));
 
+  fontPkg = { name, osConfig }:
+    findFirst (e: (!isString e) && hasAttr "pname" e && e.pname == name)
+      null
+      osConfig.fonts.packages;
+
   isZfs = config:
     (filterAttrs (n: v: v.fsType == "zfs") config.fileSystems) != { };
+
   isGui = config:
     let
       dm = removeAttrs config.services.xserver.displayManager
@@ -72,11 +80,12 @@ in
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = {
             # TODO: lib.extend (_: _: { inherit isGui; }) # Do it for the lib, passed into home-manager
-            localLib = { inherit isGui; };
+            localLib = { inherit isGui fontPkg; };
             # NOTE: compatibility layer for old, digga based config
             # TODO: refactor and remove compatibility layer!
             inherit inputs;
             inherit (inputs) self;
+            # inherit (inputs.nixpkgs-lib) lib;
             suites = inputs.cells.home.homeSuites;
             profiles =
               inputs.cells.home.homeProfiles //
