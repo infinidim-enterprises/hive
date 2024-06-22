@@ -16,7 +16,7 @@ stdenvNoCC.mkDerivation {
   installPhase = ''
     runHook preInstall
 
-    for theme in $(find $src -maxdepth 1 -type d ! -path $src); do
+    for theme in $(find $src -maxdepth 1 -type d -name "*-3.36" ! -path $src); do
       name=$(basename $theme)
       target_dir="$out/share/themes/$name"
       mkdir -p $target_dir

@@ -135,11 +135,11 @@
   };
   gpt-pilot-vs-code = {
     pname = "gpt-pilot-vs-code";
-    version = "0.2.5";
+    version = "0.2.6";
     src = fetchurl {
-      url = "https://PythagoraTechnologies.gallery.vsassets.io/_apis/public/gallery/publisher/PythagoraTechnologies/extension/gpt-pilot-vs-code/0.2.5/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "gpt-pilot-vs-code-0.2.5.zip";
-      sha256 = "sha256-qnRHJg56ILvdsti+HUUHCxBRbb4PXqtbJw+pisaoJNU=";
+      url = "https://PythagoraTechnologies.gallery.vsassets.io/_apis/public/gallery/publisher/PythagoraTechnologies/extension/gpt-pilot-vs-code/0.2.6/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "gpt-pilot-vs-code-0.2.6.zip";
+      sha256 = "sha256-A8TuBtKNM8LvPMCCxjT92nB+sWH3dNFXiPofOECNPWg=";
     };
     publisher = "PythagoraTechnologies";
     name = "gpt-pilot-vs-code";

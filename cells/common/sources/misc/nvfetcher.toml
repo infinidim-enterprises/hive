@@ -11,9 +11,15 @@ fetch.git = "https://github.com/Ferdi265/numix-solarized-gtk-theme"
 
 # Newer gtk theme for gnome-shell and gtk3+
 [solarized-dark-gnome-shell-2020]
-src.branch = "Solarized-Dark-GNOME-Shell-2020"
+src.branch = "Solarized-Dark-gtk-theme-colorpack"
+# src.branch = "Solarized-Dark-GNOME-Shell-2020"
 src.git = "https://github.com/rtlewis88/rtl88-Themes"
 fetch.git = "https://github.com/rtlewis88/rtl88-Themes"
+
+[solarized-darkarc]
+src.branch = "Solarized-DarkArc-COLORPACK"
+src.git = "https://github.com/rtlewis1/GTK"
+fetch.git = "https://github.com/rtlewis1/GTK"
 
 [base16-schemes]
 src.git = "https://github.com/tinted-theming/schemes"

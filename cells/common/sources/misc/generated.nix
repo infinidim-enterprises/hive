@@ -17,15 +17,15 @@
   };
   adguard-filters = {
     pname = "adguard-filters";
-    version = "b6ad872358b11fed8016ea425413a37010d9be2e";
+    version = "46965e100717a6680d4293541ec76db699fed708";
     src = fetchgit {
       url = "https://github.com/AdguardTeam/AdguardFilters";
-      rev = "b6ad872358b11fed8016ea425413a37010d9be2e";
+      rev = "46965e100717a6680d4293541ec76db699fed708";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-9hhTaIJuqy7ksmcCEDzKJ5IL9cV7ftQ4wIbTnf0S/sg=";
+      sha256 = "sha256-6PvJBD31DtLMIjh6dgloP+4jz1aDZJwRf+479rce7UY=";
     };
     date = "2024-06-22";
   };
@@ -355,7 +355,7 @@
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "f399afc5ef2305bba871adc253a3549f4eb603c1";
+    version = "205bd6f42b72d3ecb67fb82d50a61f4bdd582929";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";
@@ -419,17 +419,31 @@
   };
   solarized-dark-gnome-shell-2020 = {
     pname = "solarized-dark-gnome-shell-2020";
-    version = "667234f6cc1a152197f3128afceb27da91c8b1f2";
+    version = "fa0ce0fe63ae314938e11843074fe0955f89e9ac";
     src = fetchgit {
       url = "https://github.com/rtlewis88/rtl88-Themes";
-      rev = "667234f6cc1a152197f3128afceb27da91c8b1f2";
+      rev = "fa0ce0fe63ae314938e11843074fe0955f89e9ac";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-PTD7/SULLXeXZ6ztabUYNEQmIiqN1zAe+/gI+6ycb+M=";
+      sha256 = "sha256-Rtaf0LRcWJ/a3yTFPMSPk6vlK0UW6dyStnAVJ24jREg=";
     };
-    date = "2020-11-07";
+    date = "2020-10-20";
+  };
+  solarized-darkarc = {
+    pname = "solarized-darkarc";
+    version = "ab0a4d325b6c3bc34293850abcacc924b2ee2933";
+    src = fetchgit {
+      url = "https://github.com/rtlewis1/GTK";
+      rev = "ab0a4d325b6c3bc34293850abcacc924b2ee2933";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-rBNlEgMyjPqt/e68pYery+puBAbiy0CskBjeKx0Tq/0=";
+    };
+    date = "2023-11-19";
   };
   stumpwm-contrib = {
     pname = "stumpwm-contrib";

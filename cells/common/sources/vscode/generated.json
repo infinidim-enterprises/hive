@@ -226,12 +226,12 @@
         },
         "pinned": false,
         "src": {
-            "name": "gpt-pilot-vs-code-0.2.5.zip",
-            "sha256": "sha256-qnRHJg56ILvdsti+HUUHCxBRbb4PXqtbJw+pisaoJNU=",
+            "name": "gpt-pilot-vs-code-0.2.6.zip",
+            "sha256": "sha256-A8TuBtKNM8LvPMCCxjT92nB+sWH3dNFXiPofOECNPWg=",
             "type": "url",
-            "url": "https://PythagoraTechnologies.gallery.vsassets.io/_apis/public/gallery/publisher/PythagoraTechnologies/extension/gpt-pilot-vs-code/0.2.5/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://PythagoraTechnologies.gallery.vsassets.io/_apis/public/gallery/publisher/PythagoraTechnologies/extension/gpt-pilot-vs-code/0.2.6/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "0.2.5"
+        "version": "0.2.6"
     },
     "haml": {
         "cargoLocks": null,

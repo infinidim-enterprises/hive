@@ -50,7 +50,7 @@ in
 
     SET_GRESOURCE
   */
-  gdm = { theme ? "Solarized-Dark-Green-GS-3.36" }: [
+  gdm = { theme ? "Solarized-Dark-Green-3.36" }: [
     (final: prev: {
       gnome = prev.gnome.overrideScope (gnomeFinal: gnomePrev: {
         gnome-shell = gnomePrev.gnome-shell.overrideAttrs (oldAttrs: {
