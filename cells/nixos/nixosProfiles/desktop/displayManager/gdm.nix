@@ -16,6 +16,7 @@
   services.hardware.bolt.enable = true;
   services.udev.packages = [ pkgs.gnome.gnome-settings-daemon ];
   environment.systemPackages = [
+    pkgs.numix-cursor-theme
     inputs.cells.common.packages.solarized-dark-gnome-shell
     pkgs.gnome.gnome-shell # HACK: gdm-wayland-session: No schemas installed
   ];
@@ -32,13 +33,10 @@
 
       "org/gnome/desktop/background".primary-color = "#002b36";
 
-      # "org/gnome/desktop/interface" = {
-      #   cursor-theme = config.stylix.cursor.name;
-      #   cursor-size = lib.gvariant.mkInt32 config.stylix.cursor.size;
-      # };
-
-
-      "org/gnome/desktop/interface".gtk-theme = "Solarized-Dark-Green-GS-3.36";
+      # "org/gnome/desktop/interface".gtk-theme = "Solarized-Dark-Green-GS-3.36";
+      "org/gnome/desktop/interface".gtk-theme = "Solarized-Dark-Green";
+      "org/gnome/desktop/interface".cursor-theme = "Numix-Cursor-Light";
+      "org/gnome/desktop/interface".cursor-size = 32;
     };
   }];
 }

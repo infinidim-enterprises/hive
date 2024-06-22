@@ -11,7 +11,7 @@ let
   # TODO: *# 00;38;5;240 and empty lines handling
   # "org/gnome/desktop/interface".gtk-theme = "Solarized-Dark-Green-GS-3.36";
   # commonDefaults = { gtk-theme = "NumixSolarizedDarkGreen"; icon-theme = "Numix-Circle"; };
-  commonDefaults = { gtk-theme = "Solarized-Dark-Green-GS-3.36"; icon-theme = "Numix-Circle"; };
+  commonDefaults = { gtk-theme = "Solarized-Dark-Green"; icon-theme = "Numix-Circle"; };
 in
 mkMerge [
   {
@@ -26,13 +26,13 @@ mkMerge [
     gtk.cursorTheme.package = pkgs.numix-cursor-theme;
 
     gtk.font.name = "UbuntuMono Nerd Font Mono";
-    gtk.font.size = 18;
+    gtk.font.size = 15;
     gtk.font.package = fontPkg { name = "nerdfonts"; inherit osConfig; };
 
     gtk.iconTheme.name = "Numix-Circle";
     gtk.iconTheme.package = pkgs.numix-icon-theme-circle;
 
-    gtk.theme.name = "Solarized-Dark-Green-GS-3.36";
+    gtk.theme.name = "Solarized-Dark-Green";
     gtk.theme.package = inputs.cells.common.packages.solarized-dark-gnome-shell;
 
     # NOTE: https://ghostarchive.org/archive/p2BmM
