@@ -21,6 +21,9 @@
     gnome-session
     gnome-shell
   ];
+  environment.pathsToLink = [
+    "/share" # TODO: https://github.com/NixOS/nixpkgs/issues/47173
+  ];
 
   environment.systemPackages = with pkgs; [
     inputs.cells.common.packages.solarized-dark-gnome-shell
