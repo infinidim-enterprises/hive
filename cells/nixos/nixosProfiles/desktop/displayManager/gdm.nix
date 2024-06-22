@@ -14,11 +14,20 @@
   };
 
   services.hardware.bolt.enable = true;
-  services.udev.packages = [ pkgs.gnome.gnome-settings-daemon ];
-  environment.systemPackages = [
-    pkgs.numix-cursor-theme
+
+  services.gnome.gnome-settings-daemon.enable = true;
+  services.gnome.glib-networking.enable = true;
+  systemd.packages = with pkgs.gnome; [
+    gnome-session
+    gnome-shell
+  ];
+
+  environment.systemPackages = with pkgs; [
     inputs.cells.common.packages.solarized-dark-gnome-shell
-    pkgs.gnome.gnome-shell # HACK: gdm-wayland-session: No schemas installed
+
+    numix-cursor-theme
+    gnome.gnome-shell # HACK: gdm-wayland-session: No schemas installed
+    gsettings-desktop-schemas
   ];
 
   programs.dconf.profiles.gdm.databases = [{
