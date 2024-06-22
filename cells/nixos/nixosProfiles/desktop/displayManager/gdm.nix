@@ -6,6 +6,9 @@
   # services.xserver.displayManager.gdm.debug
   # services.xserver.displayManager.gdm.banner
 
+  services.geoclue2.enableDemoAgent = lib.mkForce false;
+  services.tlp.enable = lib.mkForce false;
+
   services.xserver.desktopManager.gnome.enable = true;
 
   services.xserver.displayManager.gdm.enable = true;
