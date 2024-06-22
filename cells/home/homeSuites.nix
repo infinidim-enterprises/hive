@@ -23,7 +23,6 @@ rec {
     terminals.tilix
     terminals.kitty
     conky
-    qt
   ];
 
   office = with cell.homeProfiles.office; [
