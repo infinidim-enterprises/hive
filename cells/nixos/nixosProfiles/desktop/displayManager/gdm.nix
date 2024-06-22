@@ -6,6 +6,8 @@
   # services.xserver.displayManager.gdm.debug
   # services.xserver.displayManager.gdm.banner
 
+  services.xserver.desktopManager.gnome.enable = true;
+
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.displayManager.gdm.wayland = true;
   services.xserver.displayManager.gdm.autoSuspend = false;
@@ -15,18 +17,20 @@
 
   services.hardware.bolt.enable = true;
 
-  services.gnome.gnome-settings-daemon.enable = true;
-  services.gnome.glib-networking.enable = true;
-  systemd.packages = with pkgs.gnome; [
-    gnome-session
-    gnome-shell
-  ];
-  environment.pathsToLink = [
-    "/share" # TODO: https://github.com/NixOS/nixpkgs/issues/47173
-  ];
+  # services.gnome.gnome-settings-daemon.enable = true;
+  # services.gnome.glib-networking.enable = true;
+  # systemd.packages = with pkgs.gnome; [
+  #   gnome-session
+  #   gnome-shell
+  # ];
+  # environment.pathsToLink = [
+  #   "/share" # TODO: https://github.com/NixOS/nixpkgs/issues/47173
+  # ];
 
   environment.systemPackages = with pkgs; [
     inputs.cells.common.packages.solarized-dark-gnome-shell
+
+    themechanger
 
     numix-cursor-theme
     gnome.gnome-shell # HACK: gdm-wayland-session: No schemas installed
