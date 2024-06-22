@@ -47,11 +47,11 @@
   };
   copilot = {
     pname = "copilot";
-    version = "1.204.942";
+    version = "1.206.0";
     src = fetchurl {
-      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.204.942/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "copilot-1.204.942.zip";
-      sha256 = "sha256-wEMuxeTHJGRKEoZWb0n68MzNN+icDtyW2VhpFtX2PQ4=";
+      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.206.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "copilot-1.206.0.zip";
+      sha256 = "sha256-XuEMeNFFHI3Fukk0z34uFbiRWXtSCEwAPuUh7vh3T1M=";
     };
     publisher = "GitHub";
     name = "copilot";
@@ -124,22 +124,22 @@
   };
   gitlens = {
     pname = "gitlens";
-    version = "2024.6.1905";
+    version = "2024.6.2205";
     src = fetchurl {
-      url = "https://eamodio.gallery.vsassets.io/_apis/public/gallery/publisher/eamodio/extension/gitlens/2024.6.1905/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "gitlens-2024.6.1905.zip";
-      sha256 = "sha256-6zCWBP0rINvCNHFIZd0COiFDMXeIjZLJrqi4hS0D7cE=";
+      url = "https://eamodio.gallery.vsassets.io/_apis/public/gallery/publisher/eamodio/extension/gitlens/2024.6.2205/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "gitlens-2024.6.2205.zip";
+      sha256 = "sha256-+MZ0sY7xWOQnNaG1jVp92bpuUqlBFeL8FxPzxgOBAOM=";
     };
     publisher = "eamodio";
     name = "gitlens";
   };
   gpt-pilot-vs-code = {
     pname = "gpt-pilot-vs-code";
-    version = "0.2.3";
+    version = "0.2.5";
     src = fetchurl {
-      url = "https://PythagoraTechnologies.gallery.vsassets.io/_apis/public/gallery/publisher/PythagoraTechnologies/extension/gpt-pilot-vs-code/0.2.3/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "gpt-pilot-vs-code-0.2.3.zip";
-      sha256 = "sha256-1cJaNTFL6RKg4P58UDPM8pGWVEL0V+8xEt/Qc1+BLU8=";
+      url = "https://PythagoraTechnologies.gallery.vsassets.io/_apis/public/gallery/publisher/PythagoraTechnologies/extension/gpt-pilot-vs-code/0.2.5/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "gpt-pilot-vs-code-0.2.5.zip";
+      sha256 = "sha256-qnRHJg56ILvdsti+HUUHCxBRbb4PXqtbJw+pisaoJNU=";
     };
     publisher = "PythagoraTechnologies";
     name = "gpt-pilot-vs-code";

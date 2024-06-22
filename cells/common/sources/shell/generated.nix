@@ -53,15 +53,15 @@
   };
   shellspec = {
     pname = "shellspec";
-    version = "36705768b0560dd86c3c96f1cab9267a6380d98d";
+    version = "8ece5a722faeb3501e7892997a7efc85ae25fd90";
     src = fetchFromGitHub {
       owner = "shellspec";
       repo = "shellspec";
-      rev = "36705768b0560dd86c3c96f1cab9267a6380d98d";
+      rev = "8ece5a722faeb3501e7892997a7efc85ae25fd90";
       fetchSubmodules = false;
-      sha256 = "sha256-ZwCIsY8q44tKfKY/pFOKu6BxbU7lxo8x0G3KdMAbKUk=";
+      sha256 = "sha256-rBYkABlAJ2h1F+rp1ExW8b5Sy+pp59mLfHw83QNYXb0=";
     };
-    date = "2024-06-18";
+    date = "2024-06-22";
   };
   shflags = {
     pname = "shflags";
@@ -167,17 +167,17 @@
   };
   zsh-plugin_oh-my-zsh = {
     pname = "zsh-plugin_oh-my-zsh";
-    version = "c432ca09932bb0c2f2f7f8862b949b0875615724";
+    version = "a87e9c715b2d3249681f9cc8f8d9718030674d50";
     src = fetchgit {
       url = "https://github.com/robbyrussell/oh-my-zsh";
-      rev = "c432ca09932bb0c2f2f7f8862b949b0875615724";
+      rev = "a87e9c715b2d3249681f9cc8f8d9718030674d50";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-bOwWcz9ss19I2fXuM5FYbAp46nGgjCOGfcKppbQ1oXo=";
+      sha256 = "sha256-5eE3tBYBw8nkmmSR32SM8z0I01MSQAtIP2pEkE3bgRs=";
     };
-    date = "2024-06-18";
+    date = "2024-06-20";
   };
   zsh-plugin_tipz = {
     pname = "zsh-plugin_tipz";

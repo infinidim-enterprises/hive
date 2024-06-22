@@ -17,17 +17,17 @@
   };
   adguard-filters = {
     pname = "adguard-filters";
-    version = "39bc4dc203dd222009110bb1e7c02c7168eb712b";
+    version = "b6ad872358b11fed8016ea425413a37010d9be2e";
     src = fetchgit {
       url = "https://github.com/AdguardTeam/AdguardFilters";
-      rev = "39bc4dc203dd222009110bb1e7c02c7168eb712b";
+      rev = "b6ad872358b11fed8016ea425413a37010d9be2e";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-qd2J6QyZmVgOpG1vHc7wVq53lpGaIqOQvD+4/ZUYB7A=";
+      sha256 = "sha256-9hhTaIJuqy7ksmcCEDzKJ5IL9cV7ftQ4wIbTnf0S/sg=";
     };
-    date = "2024-06-20";
+    date = "2024-06-22";
   };
   age-plugin-trezor = {
     pname = "age-plugin-trezor";
@@ -44,17 +44,17 @@
   };
   base16-schemes = {
     pname = "base16-schemes";
-    version = "abcf2a055ae69f1bf047463332f83db3125aa8a5";
+    version = "ef9a4c3c384624694608adebf0993d7a3bed3cf2";
     src = fetchgit {
       url = "https://github.com/tinted-theming/schemes";
-      rev = "abcf2a055ae69f1bf047463332f83db3125aa8a5";
+      rev = "ef9a4c3c384624694608adebf0993d7a3bed3cf2";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-wcotm0Ek2ISn8iJBzEujJQdcPLKWrPAOZ/dS/DLKafw=";
+      sha256 = "sha256-9i9IjZcjvinb/214x5YShUDBZBC2189HYs26uGy/Hck=";
     };
-    date = "2024-04-17";
+    date = "2024-06-21";
   };
   chatgpt-wrapper = {
     pname = "chatgpt-wrapper";
@@ -244,17 +244,17 @@
   };
   ipxe = {
     pname = "ipxe";
-    version = "76e0933d781474acf52000cba0afaebe32361667";
+    version = "821bb326f87fbc000376fdc5371e9e53f666267a";
     src = fetchgit {
       url = "https://github.com/ipxe/ipxe";
-      rev = "76e0933d781474acf52000cba0afaebe32361667";
+      rev = "821bb326f87fbc000376fdc5371e9e53f666267a";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-1AngOQvYB2S5iNnX22jvkKY1M0Prsh/Ip9J2iN/QZ6E=";
+      sha256 = "sha256-sf71VdBNc+lc94tQl6cIdE3vqIhuN9+qP7KYzBQwIBA=";
     };
-    date = "2024-06-18";
+    date = "2024-06-21";
   };
   iterable-io = {
     pname = "iterable-io";
@@ -355,12 +355,12 @@
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "be3c40456bd895c248ad3fc19bd1fd9da23f37da";
+    version = "f399afc5ef2305bba871adc253a3549f4eb603c1";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";
     };
-    date = "2024-06-20";
+    date = "2024-06-22";
   };
   pgp-key-generation = {
     pname = "pgp-key-generation";
@@ -469,6 +469,17 @@
     };
     system = "stumpwm";
     asd = "stumpwm";
+  };
+  sublimeSolarized = {
+    pname = "sublimeSolarized";
+    version = "2.7.5";
+    src = fetchFromGitHub {
+      owner = "braver";
+      repo = "Solarized";
+      rev = "2.7.5";
+      fetchSubmodules = false;
+      sha256 = "sha256-5T8Ga6QHliA0+rGf23peBjoSNtxVlqZLltMx1OKdQFc=";
+    };
   };
   tfenv = {
     pname = "tfenv";

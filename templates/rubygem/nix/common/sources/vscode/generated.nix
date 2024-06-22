@@ -25,11 +25,11 @@
   };
   copilot = {
     pname = "copilot";
-    version = "1.203.0";
+    version = "1.206.0";
     src = fetchurl {
-      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.203.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "copilot-1.203.0.zip";
-      sha256 = "sha256-qCBmbkCOenEiE/NC+PRGvuIp+xlV3ITq4E3RAuJPHw0=";
+      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.206.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "copilot-1.206.0.zip";
+      sha256 = "sha256-XuEMeNFFHI3Fukk0z34uFbiRWXtSCEwAPuUh7vh3T1M=";
     };
     publisher = "GitHub";
     name = "copilot";
@@ -201,11 +201,11 @@
   };
   ruby-lsp = {
     pname = "ruby-lsp";
-    version = "0.7.4";
+    version = "0.7.5";
     src = fetchurl {
-      url = "https://Shopify.gallery.vsassets.io/_apis/public/gallery/publisher/Shopify/extension/ruby-lsp/0.7.4/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "ruby-lsp-0.7.4.zip";
-      sha256 = "sha256-BnGLKVkX5CyK/XjyqhLaptHspuY0gfV54CFIVaDawGo=";
+      url = "https://Shopify.gallery.vsassets.io/_apis/public/gallery/publisher/Shopify/extension/ruby-lsp/0.7.5/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "ruby-lsp-0.7.5.zip";
+      sha256 = "sha256-fw6wFXbmfsPqjeDK61ZY0DiKefpttqiY4fvDEy5bOu0=";
     };
     publisher = "Shopify";
     name = "ruby-lsp";

@@ -251,13 +251,11 @@ fetch.git = "https://codeberg.org/cage/cl-mount-info"
 # cargo_locks = [ "Cargo.lock" ]
 # passthru = { cargoSha256 = "0000000000000000000000000000000000000000000000000000" }
 # themes
-# [sublimeSolarized]
-# src.github = "braver/Solarized"
-# fetch.github = "braver/Solarized"
-# [numix-solarized-gtk-theme-bin]
-# src.github = "Ferdi265/numix-solarized-gtk-theme"
-# src.use_latest_release = true
-# fetch.url = "https://github.com/Ferdi265/numix-solarized-gtk-theme/releases/download/20210831/NumixSolarized-20210831.tar.gz"
+
+[sublimeSolarized]
+src.github = "braver/Solarized"
+fetch.github = "braver/Solarized"
+
 # Office apps
 [masterpdfeditor]
 src.manual = "5.9.82"
