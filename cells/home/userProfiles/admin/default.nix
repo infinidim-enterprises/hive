@@ -19,10 +19,13 @@ in
         cell.homeProfiles.wayland.hyprland
 
         cell.homeProfiles.security.gpg
+
+        cell.homeProfiles.terminals.tilix
+        cell.homeProfiles.terminals.kitty
+
+        cell.homeProfiles.look-and-feel.solarized-dark
         ({ pkgs, ... }: {
-          # FIXME: `home-manager.users.admin.services.gpg-agent.pinentryPackage' is defined multiple times
-          # services.gpg-agent.pinentryPackage = pkgs.pinentry-tty;
-          # home.packages = [ inputs.cells.nixos.containers.keygen_script ];
+          programs.bat.enable = true;
           services.gpg-agent.pinentryPackage = pkgs.pinentry-gnome3;
         })
       ];

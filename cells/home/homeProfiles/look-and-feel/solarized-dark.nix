@@ -1,17 +1,20 @@
-{ osConfig, config, lib, pkgs, ... }:
+{ osConfig, config, lib, localLib, pkgs, ... }:
 let
   inherit (lib) mkIf mkMerge elem;
+  inherit (localLib) isGui;
   inherit (builtins) readFile;
   pkgInstalled = pkg:
     elem pkg (config.home.packages ++ osConfig.environment.systemPackages);
 
   # TODO: *# 00;38;5;240 and empty lines handling
-  commonDefaults = { gtk-theme = "NumixSolarizedDarkGreen"; icon-theme = "Numix-Circle"; };
+  # "org/gnome/desktop/interface".gtk-theme = "Solarized-Dark-Green-GS-3.36";
+  # commonDefaults = { gtk-theme = "NumixSolarizedDarkGreen"; icon-theme = "Numix-Circle"; };
+  commonDefaults = { gtk-theme = "Solarized-Dark-Green-GS-3.36"; icon-theme = "Numix-Circle"; };
 in
 mkMerge [
   #  { home.packages = [ pkgs.numix-solarized-gtk-theme ]; }
   (mkIf config.programs.vscode.enable { programs.vscode.userSettings."workbench.colorTheme" = "Solarized Dark"; })
-  (mkIf osConfig.services.xserver.desktopManager.mate.enable {
+  (mkIf (isGui osConfig) {
     dconf.settings."org/mate/desktop/peripherals/keyboard/indicator" = {
       foreground-color = "131 148 150";
       background-color = "0 0 0"; ### FIXME: invalid color and 0 43 54 doesnt work
