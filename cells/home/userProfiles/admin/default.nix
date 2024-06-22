@@ -17,6 +17,8 @@ in
         cell.homeProfiles.wayland.waybar
         cell.homeProfiles.wayland.dunst
         cell.homeProfiles.wayland.hyprland
+
+        cell.homeProfiles.security.gpg
         ({ pkgs, ... }: {
           # FIXME: `home-manager.users.admin.services.gpg-agent.pinentryPackage' is defined multiple times
           # services.gpg-agent.pinentryPackage = pkgs.pinentry-tty;
