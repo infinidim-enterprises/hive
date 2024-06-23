@@ -63,7 +63,7 @@ mkMerge [
     environment.systemPackages = with pkgs; [
       wev
 
-      grim
+      grim # wayland screenshot
 
       wofi
       wtype

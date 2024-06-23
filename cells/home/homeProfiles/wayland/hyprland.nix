@@ -1,6 +1,17 @@
 { config, lib, pkgs, ... }:
 
 {
+  services.wlsunset.enable = true;
+  services.wlsunset.temperature.day = 4200;
+  services.wlsunset.temperature.night = 3600;
+  services.wlsunset.sunrise = "07:30";
+  services.wlsunset.sunset = "19:30";
+
+  services.flameshot.enable = true;
+  services.flameshot.settings = {
+    General.showStartupLaunchMessage = false;
+  };
+
   services.xsettingsd.enable = true;
   # services.xsettingsd.settings = {};
 
