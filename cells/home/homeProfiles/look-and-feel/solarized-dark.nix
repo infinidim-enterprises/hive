@@ -11,7 +11,7 @@ let
   # TODO: *# 00;38;5;240 and empty lines handling
   # "org/gnome/desktop/interface".gtk-theme = "Solarized-Dark-Green-GS-3.36";
   # commonDefaults = { gtk-theme = "NumixSolarizedDarkGreen"; icon-theme = "Numix-Circle"; };
-  commonDefaults = { gtk-theme = "Solarized-Dark-Green-3.36"; icon-theme = "Numix-Circle"; };
+  commonDefaults = { gtk-theme = "Material-Solarized"; icon-theme = "Numix-Circle"; };
 in
 mkMerge [
   {
@@ -32,8 +32,10 @@ mkMerge [
     gtk.iconTheme.name = "Numix-Circle";
     gtk.iconTheme.package = pkgs.numix-icon-theme-circle;
 
-    gtk.theme.name = "Solarized-Dark-Green-3.36";
-    gtk.theme.package = inputs.cells.common.packages.solarized-dark-gnome-shell;
+    # gtk.theme.name = "Solarized-Dark-Green-3.36";
+    # gtk.theme.package = inputs.cells.common.packages.solarized-dark-gnome-shell;
+    gtk.theme.name = "Material-Solarized";
+    gtk.theme.package = inputs.cells.common.packages.solarized-material;
 
     # NOTE: https://ghostarchive.org/archive/p2BmM
     # https://github.com/glacambre/firefox-patches/issues/1
@@ -89,6 +91,7 @@ mkMerge [
       gtk-overlay-scrolling=true
 
     */
+    gtk.gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
     gtk.gtk2.extraConfig = ''
       gtk-key-theme-name = "Emacs"
       binding "gtk-emacs-text-entry"

@@ -622,12 +622,12 @@
         },
         "pinned": false,
         "src": {
-            "name": "tabnine-vscode-3.112.0.zip",
-            "sha256": "sha256-O5Twttnlb5bZEviMVbAOijdClBQH8x12yNfCAzmd8ko=",
+            "name": "tabnine-vscode-3.113.0.zip",
+            "sha256": "sha256-tsyT6rz1Y2fQ5a9WoRQnTNYjfXmod4lAkhyiNByGSss=",
             "type": "url",
-            "url": "https://TabNine.gallery.vsassets.io/_apis/public/gallery/publisher/TabNine/extension/tabnine-vscode/3.112.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://TabNine.gallery.vsassets.io/_apis/public/gallery/publisher/TabNine/extension/tabnine-vscode/3.113.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "3.112.0"
+        "version": "3.113.0"
     },
     "tokyo-night": {
         "cargoLocks": null,

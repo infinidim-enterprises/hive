@@ -6,11 +6,6 @@
   # services.xserver.displayManager.gdm.debug
   # services.xserver.displayManager.gdm.banner
 
-  # services.geoclue2.enableDemoAgent = lib.mkForce false;
-  # services.tlp.enable = lib.mkForce false;
-
-  # services.xserver.desktopManager.gnome.enable = true;
-
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.displayManager.gdm.wayland = true;
   services.xserver.displayManager.gdm.autoSuspend = false;
@@ -22,17 +17,10 @@
 
   services.gnome.gnome-settings-daemon.enable = true;
   services.gnome.glib-networking.enable = true;
-  # systemd.packages = with pkgs.gnome; [
-  #   gnome-session
-  #   gnome-shell
-  # ];
-
-  # environment.pathsToLink = [
-  #   "/share" # TODO: https://github.com/NixOS/nixpkgs/issues/47173
-  # ];
 
   environment.systemPackages = with pkgs; [
     inputs.cells.common.packages.solarized-dark-gnome-shell
+    inputs.cells.common.packages.solarized-material
 
     themechanger
 
@@ -54,7 +42,7 @@
       "org/gnome/desktop/background".primary-color = "#002b36";
 
       # "org/gnome/desktop/interface".gtk-theme = "Solarized-Dark-Green-GS-3.36";
-      "org/gnome/desktop/interface".gtk-theme = "Solarized-Dark-Green";
+      "org/gnome/desktop/interface".gtk-theme = "Material-Solarized";
       "org/gnome/desktop/interface".cursor-theme = "Numix-Cursor-Light";
       "org/gnome/desktop/interface".cursor-size = lib.gvariant.mkInt32 32;
     };

@@ -20,14 +20,13 @@ mkMerge [
     # imports = [ ];
 
     programs.hyprland.enable = true;
+    programs.hyprland.xwayland.enable = true;
     # BUG: https://github.com/NixOS/nixpkgs/issues/320734
     # programs.hyprland.systemd.setPath.enable = true;
     programs.hyprland.systemd.setPath.enable = false;
     systemd.user.extraConfig = ''
       DefaultEnvironment="PATH=/run/wrappers/bin:/etc/profiles/per-user/%u/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin:$PATH"
     '';
-
-    programs.hyprland.xwayland.enable = true;
 
     services.hypridle.enable = true;
     programs.hyprlock.enable = true;
@@ -70,7 +69,9 @@ mkMerge [
       wtype
       wofi-pass
       wofi-emoji
+
       wl-clipboard
+      wlrctl
 
       kitty
       waybar
@@ -78,7 +79,6 @@ mkMerge [
       wayvnc
     ];
 
-    programs.waybar.enable = true;
   }
 ]
 /*

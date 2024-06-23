@@ -1,6 +1,8 @@
 { inputs, cell, ... }:
 let
-  inherit (inputs.cells.common.packages) solarized-dark-gnome-shell;
+  inherit (inputs.cells.common.packages)
+    solarized-dark-gnome-shell
+    solarized-material;
 in
 {
   firmwares = _: _: cell.firmwares;
@@ -50,18 +52,21 @@ in
 
     SET_GRESOURCE
   */
-  gdm = { theme ? "Solarized-Dark-Green-3.36" }: [
-    (final: prev: {
-      gnome = prev.gnome.overrideScope (gnomeFinal: gnomePrev: {
-        gnome-shell = gnomePrev.gnome-shell.overrideAttrs (oldAttrs: {
-          postFixup = (oldAttrs.postFixup or "") + ''
-            cp ${solarized-dark-gnome-shell}/share/themes/${theme}/gdm/gnome-shell-theme.gresource \
-              $out/share/gnome-shell/gnome-shell-theme.gresource
-          '';
+  gdm =
+    { theme ? "Material-Solarized-LW" # "Solarized-Dark-Green-3.36"
+    , pkg ? solarized-material
+    }: [
+      (final: prev: {
+        gnome = prev.gnome.overrideScope (gnomeFinal: gnomePrev: {
+          gnome-shell = gnomePrev.gnome-shell.overrideAttrs (oldAttrs: {
+            postFixup = (oldAttrs.postFixup or "") + ''
+              cp ${pkg}/share/themes/${theme}/gdm/gnome-shell-theme.gresource \
+                $out/share/gnome-shell/gnome-shell-theme.gresource
+            '';
+          });
         });
-      });
-    })
-  ];
+      })
+    ];
 
   emacs = [
     inputs.cells.emacs.overlays.sources

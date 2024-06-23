@@ -16,6 +16,11 @@ src.branch = "Solarized-Dark-gtk-theme-colorpack"
 src.git = "https://github.com/rtlewis88/rtl88-Themes"
 fetch.git = "https://github.com/rtlewis88/rtl88-Themes"
 
+[solarized-material]
+src.branch = "Material-Solarized-Complete-Desktop"
+src.git = "https://github.com/rtlewis1/GTK"
+fetch.git = "https://github.com/rtlewis1/GTK"
+
 [solarized-darkarc]
 src.branch = "Solarized-DarkArc-COLORPACK"
 src.git = "https://github.com/rtlewis1/GTK"

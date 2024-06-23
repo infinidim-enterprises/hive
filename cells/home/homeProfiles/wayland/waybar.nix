@@ -2,7 +2,7 @@
 
 {
   programs.waybar.enable = true;
-  programs.waybar.systemd.enable = false;
+  programs.waybar.systemd.enable = true;
   programs.waybar.style = lib.fileContents ./waybar_solarized-dark.css;
   programs.waybar.settings.masterBar = {
     position = "top";

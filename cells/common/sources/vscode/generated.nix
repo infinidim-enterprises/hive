@@ -377,11 +377,11 @@
   };
   tabnine-vscode = {
     pname = "tabnine-vscode";
-    version = "3.112.0";
+    version = "3.113.0";
     src = fetchurl {
-      url = "https://TabNine.gallery.vsassets.io/_apis/public/gallery/publisher/TabNine/extension/tabnine-vscode/3.112.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "tabnine-vscode-3.112.0.zip";
-      sha256 = "sha256-O5Twttnlb5bZEviMVbAOijdClBQH8x12yNfCAzmd8ko=";
+      url = "https://TabNine.gallery.vsassets.io/_apis/public/gallery/publisher/TabNine/extension/tabnine-vscode/3.113.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "tabnine-vscode-3.113.0.zip";
+      sha256 = "sha256-tsyT6rz1Y2fQ5a9WoRQnTNYjfXmod4lAkhyiNByGSss=";
     };
     publisher = "TabNine";
     name = "tabnine-vscode";

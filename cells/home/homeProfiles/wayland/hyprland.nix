@@ -1,13 +1,16 @@
 { config, lib, pkgs, ... }:
 
 {
+  services.xsettingsd.enable = true;
+  # services.xsettingsd.settings = {};
+
   wayland.windowManager.hyprland.enable = true;
-  wayland.windowManager.hyprland.systemd.enable = false;
+  wayland.windowManager.hyprland.systemd.enable = true;
+  wayland.windowManager.hyprland.systemd.variables = [ "--all" ];
+  wayland.windowManager.hyprland.systemd.enableXdgAutostart = true;
   wayland.windowManager.hyprland.settings = {
 
-    monitor = [
-      ",preferred,auto,1,transform,3"
-    ];
+    monitor = [ ",preferred,auto,1,transform,3" ];
 
     exec-once = [
       "systemctl --user start nixos-fake-graphical-session.target"
@@ -96,7 +99,7 @@
 
     # TODO: $fileManager = dolphin
     "$mainMod" = "SUPER";
-    "$terminal" = "kitty";
+    "$terminal" = "tilix";
     "$menu" = "wofi --show drun";
 
     bind = [
@@ -157,6 +160,7 @@
 
     binds = [
       "Control_L&Shift_L, Q, exit"
+      "Control_L&Shift_L, Return, $terminal"
     ];
 
     windowrulev2 = [

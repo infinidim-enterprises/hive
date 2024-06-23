@@ -17,15 +17,15 @@
   };
   adguard-filters = {
     pname = "adguard-filters";
-    version = "46965e100717a6680d4293541ec76db699fed708";
+    version = "2ccea63b64c7e5eb67b273ac402ac366d48f8800";
     src = fetchgit {
       url = "https://github.com/AdguardTeam/AdguardFilters";
-      rev = "46965e100717a6680d4293541ec76db699fed708";
+      rev = "2ccea63b64c7e5eb67b273ac402ac366d48f8800";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-6PvJBD31DtLMIjh6dgloP+4jz1aDZJwRf+479rce7UY=";
+      sha256 = "sha256-8Hvg90UO7jQoGZuc8CGIzDxRecSzZi9sXLLEr7uJiXE=";
     };
     date = "2024-06-22";
   };
@@ -58,15 +58,15 @@
   };
   chatgpt-wrapper = {
     pname = "chatgpt-wrapper";
-    version = "6c128bb2468a8fc16d595416c426d913e853cda9";
+    version = "e98831f5a8780f859319903a12a379b336385faf";
     src = fetchFromGitHub {
       owner = "llm-workflow-engine";
       repo = "llm-workflow-engine";
-      rev = "6c128bb2468a8fc16d595416c426d913e853cda9";
+      rev = "e98831f5a8780f859319903a12a379b336385faf";
       fetchSubmodules = false;
-      sha256 = "sha256-A4O1qZ/EKIhInuMdA5SlG1oKbLiv+vhUa2JBm4ipcp4=";
+      sha256 = "sha256-HMzah6F9n29mXN2oW2DXp+qf8s7Pe6FowR0YnmotTZY=";
     };
-    date = "2024-06-07";
+    date = "2024-06-22";
   };
   cl-hash-util = {
     pname = "cl-hash-util";
@@ -355,12 +355,12 @@
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "205bd6f42b72d3ecb67fb82d50a61f4bdd582929";
+    version = "420c9a60c0a3e672dc3776916ab4b1892a066feb";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";
     };
-    date = "2024-06-22";
+    date = "2024-06-23";
   };
   pgp-key-generation = {
     pname = "pgp-key-generation";
@@ -444,6 +444,20 @@
       sha256 = "sha256-rBNlEgMyjPqt/e68pYery+puBAbiy0CskBjeKx0Tq/0=";
     };
     date = "2023-11-19";
+  };
+  solarized-material = {
+    pname = "solarized-material";
+    version = "93ab6a4b7683795ee9da42f39c1ad28a23ac8b3c";
+    src = fetchgit {
+      url = "https://github.com/rtlewis1/GTK";
+      rev = "93ab6a4b7683795ee9da42f39c1ad28a23ac8b3c";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-MDAewKv1DRoCxWfSCj6+EEtkFFYjm9z5iPZQ3xCjpqM=";
+    };
+    date = "2023-11-26";
   };
   stumpwm-contrib = {
     pname = "stumpwm-contrib";
