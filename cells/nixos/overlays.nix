@@ -53,7 +53,7 @@ in
     SET_GRESOURCE
   */
   gdm =
-    { theme ? "Material-Solarized-LW" # "Solarized-Dark-Green-3.36"
+    { theme ? "Material-Solarized" # "Solarized-Dark-Green-3.36"
     , pkg ? solarized-material
     }: [
       (final: prev: {

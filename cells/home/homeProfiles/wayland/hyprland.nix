@@ -103,7 +103,6 @@
     "$menu" = "wofi --show drun";
 
     bind = [
-      "$mainMod, Q, exec, $terminal"
       # "$mainMod, C, killactive,"
       "$mainMod, M, exec, hyprctl dispatch togglemax"
       "$mainMod, E, exec, $fileManager"
@@ -160,7 +159,7 @@
 
     binds = [
       "Control_L&Shift_L, Q, exit"
-      "Control_L&Shift_L, Return, $terminal"
+      "Control_L&Shift_L, Return, exec, $terminal"
     ];
 
     windowrulev2 = [
