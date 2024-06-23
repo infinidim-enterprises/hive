@@ -64,6 +64,9 @@ mkMerge [
       wev
 
       grim # wayland screenshot
+      slurp # Select a region in a Wayland compositor
+      grimblast
+      hyprpicker
 
       wofi
       wtype
@@ -77,6 +80,9 @@ mkMerge [
       waybar
       networkmanagerapplet
       wayvnc
+
+      hdrop
+      hyprprop
     ];
 
   }

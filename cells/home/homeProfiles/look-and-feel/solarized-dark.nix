@@ -16,8 +16,8 @@ in
 mkMerge [
   {
     qt.enable = true;
-    qt.platformTheme.name = "gtk3";
-    # qt.style.name = "gtk2";
+    qt.platformTheme.name = "gtk";
+    qt.style.name = "gtk2";
 
     gtk.enable = true;
 

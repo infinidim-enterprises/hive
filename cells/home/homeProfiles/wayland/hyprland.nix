@@ -7,10 +7,11 @@
   services.wlsunset.sunrise = "07:30";
   services.wlsunset.sunset = "19:30";
 
-  services.flameshot.enable = true;
-  services.flameshot.settings = {
-    General.showStartupLaunchMessage = false;
-  };
+  # NOTE: incompatible with hyprland
+  # services.flameshot.enable = true;
+  # services.flameshot.settings = {
+  #   General.showStartupLaunchMessage = false;
+  # };
 
   services.xsettingsd.enable = true;
   # services.xsettingsd.settings = {};

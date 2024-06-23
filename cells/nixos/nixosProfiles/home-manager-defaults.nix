@@ -23,7 +23,6 @@
         programs.starship.enable = true;
         programs.command-not-found.enable = !config.programs.command-not-found.enable;
 
-        # TODO: home.sessionVariables.HM_FONT_ use stylix instead!
         home.sessionVariables.HM_FONT_NAME = "UbuntuMono Nerd Font Mono";
         home.sessionVariables.HM_FONT_SIZE = "15";
       }
@@ -32,6 +31,7 @@
         lib.mkIf config.xdg.enable
           {
             xdg.userDirs.extraConfig.XDG_LOGS_DIR = "${config.home.homeDirectory}/Logs";
+            xdg.userDirs.extraConfig.XDG_SCREENSHOTS_DIR = "${xdg.userDirs.pictures}/screenshots";
             xdg.configFile."nix/registry.json".text = osConfig.environment.etc."nix/registry.json".text;
           })
     ];

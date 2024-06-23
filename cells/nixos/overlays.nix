@@ -32,6 +32,8 @@ in
     inputs.waybar.overlays.default
     inputs.hyprland.overlays.default
     inputs.hyprland-plugins.overlays.default
+    inputs.hyprland-hyprpicker.overlays.default
+    inputs.hyprland-contrib.overlays.default
 
     (final: prev: {
       hyprlandPlugins = prev.hyprlandPlugins // {

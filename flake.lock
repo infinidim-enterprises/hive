@@ -1372,6 +1372,26 @@
         "url": "https://github.com/hyprwm/Hyprland"
       }
     },
+    "hyprland-contrib": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs-unstable"
+        ]
+      },
+      "locked": {
+        "lastModified": 1718476555,
+        "narHash": "sha256-fuWpgh8KasByIJWE+xVd37Al0LV5YAn6s871T50qVY0=",
+        "ref": "refs/heads/main",
+        "rev": "29a8374f4b9206d5c4af84aceb7fb5dff441ea60",
+        "revCount": 104,
+        "type": "git",
+        "url": "https://github.com/hyprwm/contrib"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://github.com/hyprwm/contrib"
+      }
+    },
     "hyprland-hy3": {
       "inputs": {
         "hyprland": [
@@ -1410,6 +1430,26 @@
         "owner": "DreamMaoMao",
         "repo": "hych",
         "type": "github"
+      }
+    },
+    "hyprland-hyprpicker": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs-unstable"
+        ]
+      },
+      "locked": {
+        "lastModified": 1718119103,
+        "narHash": "sha256-Ghtstc1LV2RkaQDwThGS2VfjHgYSvgk4+jsytDKYog0=",
+        "ref": "refs/heads/main",
+        "rev": "67e0f34e2760a80d74ab5d8ec8d2acae692d307f",
+        "revCount": 69,
+        "type": "git",
+        "url": "https://github.com/hyprwm/hyprpicker"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://github.com/hyprwm/hyprpicker"
       }
     },
     "hyprland-plugins": {
@@ -2841,8 +2881,10 @@
         "home": "home",
         "home-unstable": "home-unstable",
         "hyprland": "hyprland",
+        "hyprland-contrib": "hyprland-contrib",
         "hyprland-hy3": "hyprland-hy3",
         "hyprland-hych": "hyprland-hych",
+        "hyprland-hyprpicker": "hyprland-hyprpicker",
         "hyprland-plugins": "hyprland-plugins",
         "hyprland-systems": "hyprland-systems",
         "impermanence": "impermanence",
