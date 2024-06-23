@@ -3,7 +3,7 @@
 {
   programs.waybar.enable = true;
   programs.waybar.systemd.enable = true;
-  programs.waybar.style = lib.fileContents ./waybar_solarized-dark.css;
+  # programs.waybar.style = lib.fileContents ./waybar_solarized-dark.css;
   programs.waybar.settings.masterBar = {
     position = "top";
     modules-left = [ "hyprland/workspaces" ];
@@ -34,11 +34,11 @@
       mode-mon-col = 3;
       weeks-pos = "right";
       on-scroll = 1;
-      format.months = "<span color='#ffead3'><b>{}</b></span>";
-      format.days = "<span color='#ecc6d9'><b>{}</b></span>";
-      format.weeks = "<span color='#99ffdd'><b>W{}</b></span>";
-      format.weekdays = "<span color='#ffcc66'><b>{}</b></span>";
-      format.today = "<span color='#ff6699'><b><u>{}</u></b></span>";
+      format.months = "<span color='#657b83'><b>{}</b></span>";
+      format.days = "<span color='#657b83'><b>{}</b></span>";
+      format.weeks = "<span color='#657b83'><b>W{}</b></span>";
+      format.weekdays = "<span color='#657b83'><b>{}</b></span>";
+      format.today = "<span color='#657b83'><b><u>{}</u></b></span>";
     };
 
     clock.actions.on-click-right = "mode";
