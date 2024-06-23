@@ -23,8 +23,8 @@
   border: none;
   border-radius: 0;
   font-family:
-    FontAwesome,
-    UbuntuMono Nerd Font Mono;
+    UbuntuMono Nerd Font Mono,
+    FontAwesome;
   font-size: 18px;
   min-height: 0;
 }

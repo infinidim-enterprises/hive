@@ -3,7 +3,25 @@
 {
   programs.waybar.enable = true;
   programs.waybar.systemd.enable = true;
-  # programs.waybar.style = lib.fileContents ./waybar_solarized-dark.css;
+  programs.waybar.style =
+    # lib.fileContents ./waybar_solarized-dark.css;
+    # NOTE: https://gitlab.gnome.org/GNOME/gtk/-/blob/gtk-3-24/gtk/theme/Adwaita/_colors-public.scss
+    ''
+      * {
+        border: none;
+        border-radius: 0;
+        font-family:
+          UbuntuMono Nerd Font Mono, FontAwesome;
+        font-size: 18px;
+        min-height: 0;
+      }
+
+      window#waybar {
+          background: @theme_base_color;
+          border-bottom: 1px solid @unfocused_borders;
+          color: @theme_text_color;
+      }
+    '';
   programs.waybar.settings.masterBar = {
     position = "top";
     modules-left = [ "hyprland/workspaces" ];
@@ -30,7 +48,7 @@
     ];
 
     clock.calendar = {
-      mode = "year";
+      mode = "month";
       mode-mon-col = 3;
       weeks-pos = "right";
       on-scroll = 1;
