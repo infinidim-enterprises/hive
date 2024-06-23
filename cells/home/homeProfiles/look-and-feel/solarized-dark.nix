@@ -91,7 +91,8 @@ mkMerge [
       gtk-overlay-scrolling=true
 
     */
-    gtk.gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
+    # NOTE: GTK2_RC_FILES aren't always respected!
+    # gtk.gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
     gtk.gtk2.extraConfig = ''
       gtk-key-theme-name = "Emacs"
       binding "gtk-emacs-text-entry"

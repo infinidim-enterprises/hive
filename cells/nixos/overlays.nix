@@ -53,8 +53,8 @@ in
     SET_GRESOURCE
   */
   gdm =
-    { theme ? "Material-Solarized" # "Solarized-Dark-Green-3.36"
-    , pkg ? solarized-material
+    { theme ? "Solarized-Dark-Green-3.36"
+    , pkg ? solarized-dark-gnome-shell
     }: [
       (final: prev: {
         gnome = prev.gnome.overrideScope (gnomeFinal: gnomePrev: {
