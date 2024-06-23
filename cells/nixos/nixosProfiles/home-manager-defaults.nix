@@ -31,7 +31,7 @@
         lib.mkIf config.xdg.enable
           {
             xdg.userDirs.extraConfig.XDG_LOGS_DIR = "${config.home.homeDirectory}/Logs";
-            xdg.userDirs.extraConfig.XDG_SCREENSHOTS_DIR = "${xdg.userDirs.pictures}/screenshots";
+            xdg.userDirs.extraConfig.XDG_SCREENSHOTS_DIR = "${config.xdg.userDirs.pictures}/screenshots";
             xdg.configFile."nix/registry.json".text = osConfig.environment.etc."nix/registry.json".text;
           })
     ];

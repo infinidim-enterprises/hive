@@ -1,5 +1,11 @@
-{ lib, osConfig, ... }:
-
+{ lib, config, ... }:
+let
+  inherit (lib // builtins) toInt toString;
+  inherit (config.home.sessionVariables)
+    HM_FONT_NAME
+    HM_FONT_SIZE;
+  font-size = toString ((toInt HM_FONT_SIZE) + 3);
+in
 {
   programs.waybar.enable = true;
   programs.waybar.systemd.enable = true;
@@ -11,8 +17,8 @@
         border: none;
         border-radius: 0;
         font-family:
-          UbuntuMono Nerd Font Mono, FontAwesome;
-        font-size: 18px;
+          ${HM_FONT_NAME}, FontAwesome;
+        font-size: ${font-size}px;
         min-height: 0;
       }
 

@@ -2,7 +2,7 @@
 
 { osConfig, config, lib, localLib, pkgs, ... }:
 let
-  inherit (lib) mkIf mkMerge elem fileContents;
+  inherit (lib) mkIf mkMerge elem fileContents toInt;
   inherit (localLib) isGui fontPkg;
   inherit (builtins) readFile;
   pkgInstalled = pkg:
@@ -25,8 +25,8 @@ mkMerge [
     gtk.cursorTheme.name = "Numix-Cursor-Light";
     gtk.cursorTheme.package = pkgs.numix-cursor-theme;
 
-    gtk.font.name = "UbuntuMono Nerd Font Mono";
-    gtk.font.size = 15;
+    gtk.font.name = config.home.sessionVariables.HM_FONT_NAME;
+    gtk.font.size = toInt config.home.sessionVariables.HM_FONT_SIZE;
     gtk.font.package = fontPkg { name = "nerdfonts"; inherit osConfig; };
 
     gtk.iconTheme.name = "Numix-Circle";
