@@ -89,7 +89,7 @@ in
             # NOTE: compatibility layer for old, digga based config
             # TODO: refactor and remove compatibility layer!
             inherit inputs;
-            # inherit (inputs) self;
+            inherit (inputs) self;
             suites = inputs.cells.home.homeSuites;
             profiles =
               inputs.cells.home.homeProfiles //
