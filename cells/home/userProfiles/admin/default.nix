@@ -13,6 +13,9 @@ in
   config = mkMerge [
     {
       home-manager.users.admin.imports = [
+        inputs.nix-doom-emacs.hmModule
+        ../vod/home/emacs.nix # FIXME: for testing
+
         cell.homeProfiles.wayland.wofi
         cell.homeProfiles.wayland.waybar
         cell.homeProfiles.wayland.dunst
