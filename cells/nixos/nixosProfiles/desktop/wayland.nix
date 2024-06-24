@@ -28,10 +28,9 @@ mkMerge [
       DefaultEnvironment="PATH=/run/wrappers/bin:/etc/profiles/per-user/%u/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin:$PATH"
     '';
 
-    services.hypridle.enable = true;
-    programs.hyprlock.enable = true;
-
     programs.xwayland.enable = true;
+    security.pam.services.hyprlock = { };
+
     xdg.portal.enable = true;
     xdg.portal.wlr.enable = true;
 

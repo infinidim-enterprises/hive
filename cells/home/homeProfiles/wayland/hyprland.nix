@@ -16,6 +16,29 @@ in
   services.xsettingsd.enable = true;
   # services.xsettingsd.settings = {};
 
+  services.hypridle.enable = true;
+  services.hypridle.settings = {
+    general = {
+      after_sleep_cmd = "hyprctl dispatch dpms on";
+      ignore_dbus_inhibit = false;
+      lock_cmd = "hyprlock";
+    };
+
+    listener = [
+      {
+        timeout = 900;
+        on-timeout = "hyprlock";
+      }
+      {
+        timeout = 1800;
+        on-timeout = "hyprctl dispatch dpms off";
+        on-resume = "hyprctl dispatch dpms on";
+      }
+    ];
+  };
+
+  programs.hyprlock.enable = true;
+
   wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.systemd.enable = true;
   wayland.windowManager.hyprland.systemd.variables = [ "--all" ];

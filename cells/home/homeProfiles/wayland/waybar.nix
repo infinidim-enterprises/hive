@@ -48,7 +48,6 @@ in
       mode-mon-col = 3;
       weeks-pos = "right";
       on-scroll = 1;
-      # background='#002b36'
       format.months = "<span color='#fdf6e3'><b>{}</b></span>";
       format.days = "<span color='#657b83'><b>{}</b></span>";
       format.weeks = "<span color='#268bd2'><b>{}</b></span>";
