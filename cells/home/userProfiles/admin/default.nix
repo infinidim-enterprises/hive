@@ -15,6 +15,7 @@ in
       home-manager.users.admin.imports = [
         inputs.nix-doom-emacs.hmModule
         cell.homeProfiles.developer.git
+        cell.homeProfiles.developer.direnv
 
         ../vod/home/emacs.nix # FIXME: for testing
         ../vod/home/gitconfig.nix # FIXME: for testing
