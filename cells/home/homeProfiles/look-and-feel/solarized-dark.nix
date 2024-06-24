@@ -94,18 +94,6 @@ mkMerge [
     # TODO: gtk.gtk3.extraCss = fileContents ./gtk3.gtk_css;
   }
 
-  (mkIf config.programs.wlogout.enable {
-    # color: #D3C6AA;
-    # background-color: rgba(45, 53, 59, 0.7);
-
-    programs.wlogout.style = mkAfter ''
-      window {
-          background: @theme_base_color;
-          color: @theme_text_color;
-      }
-    '';
-  })
-
   (mkIf config.programs.waybar.enable {
     programs.waybar.style = mkAfter ''
       window#waybar {
