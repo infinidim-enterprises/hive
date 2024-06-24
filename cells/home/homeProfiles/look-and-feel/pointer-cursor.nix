@@ -1,4 +1,4 @@
-{ pkgs, lib, localLib, osConfig, ... }:
+{ pkgs, lib, config, localLib, osConfig, ... }:
 let
   inherit (localLib) isGui;
   inherit (lib) mkMerge mkIf;
