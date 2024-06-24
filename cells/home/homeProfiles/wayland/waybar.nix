@@ -17,10 +17,11 @@ in
     # "hyprland/workspaces" = { };
 
     "clock#time".timezone = osConfig.time.timeZone;
+    "clock#date".timezone = osConfig.time.timeZone;
 
     clock.format = "{:%a %b %d, %H:%M (%Z)}";
     clock.tooltip = true;
-    clock.tooltip-format = "<tt><small>{calendar}</small></tt>\n{tz_list}";
+    clock.tooltip-format = "<tt><small>{calendar}</small></tt>\n\n{tz_list}";
     clock.timezones = [
       # FIXME: clock.timezones
       "Etc/UTC"
@@ -42,8 +43,8 @@ in
       weeks-pos = "right";
       on-scroll = 1;
       format.months = "<span background='#002b36' color='#657b83'><b>{}</b></span>";
-      format.days = "<span background='#002b36' color='#657b83'><b>{}</b></span>";
-      format.weeks = "<span background='#002b36' color='#657b83'><b>W{}</b></span>";
+      format.days = "<span background='#002b36' color='#b58900'><b>{}</b></span>";
+      format.weeks = "<span background='#002b36' color='#268bd2'><b>W{}</b></span>";
       format.weekdays = "<span background='#002b36' color='#657b83'><b>{}</b></span>";
       format.today = "<span background='#002b36' color='#cb4b16'><b><u>{}</u></b></span>";
     };

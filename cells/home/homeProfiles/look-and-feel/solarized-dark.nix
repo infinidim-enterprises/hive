@@ -101,6 +101,10 @@ mkMerge [
           border-bottom: 1px solid @unfocused_borders;
           color: @theme_text_color;
       }
+
+      label#clock {
+          background: @theme_base_color;
+      }
     '';
   })
 
