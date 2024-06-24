@@ -234,7 +234,7 @@ in
     bind = Control_L,period,submap,reset
     bind = ,k,killactive,
     bind = ,k,submap,reset
-    bind = ,e,exec,emacsclient
+    bind = ,e,exec,emacsclient -c
     bind = ,e,submap,reset
     submap = reset
   '';
