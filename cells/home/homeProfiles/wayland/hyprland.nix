@@ -7,6 +7,8 @@ let
     else "24";
 in
 {
+  # TODO: https://github.com/sentriz/cliphist
+
   services.wlsunset.enable = true;
   services.wlsunset.temperature.day = 4200;
   services.wlsunset.temperature.night = 3600;
@@ -15,6 +17,9 @@ in
 
   services.xsettingsd.enable = true;
   # services.xsettingsd.settings = {};
+
+  # TODO: https://github.com/cbr4l0k/.dotfiles/blob/master/config/wlogout/layout
+  programs.wlogout.enable = true;
 
   services.hypridle.enable = true;
   services.hypridle.settings = {
@@ -27,12 +32,11 @@ in
 
     listener = [
       {
-        #timeout = 900;
-        timeout = 30;
+        timeout = 900; # 15 min
         on-timeout = "loginctl lock-session";
       }
       {
-        timeout = 1800;
+        timeout = 1800; # 20 min
         on-timeout = "hyprctl dispatch dpms off";
         on-resume = "hyprctl dispatch dpms on";
       }

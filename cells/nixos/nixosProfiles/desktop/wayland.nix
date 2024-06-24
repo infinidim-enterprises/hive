@@ -72,6 +72,7 @@ mkMerge [
       wofi-pass
       wofi-emoji
 
+      wlogout
       wl-clipboard
       wlrctl
 

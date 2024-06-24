@@ -13,11 +13,25 @@ in
     position = "top";
     modules-left = [ "hyprland/workspaces" ];
     # modules-center = [ ];
-    modules-right = [ "hyprland/language" "temperature" "battery" "tray" "clock" ];
+    modules-right = [
+      "hyprland/language"
+      "temperature"
+      "battery"
+      "tray"
+      "clock"
+      "custom/wlogout"
+    ];
 
-    # "hyprland/language".format = "{}";
-    "hyprland/language".format-en = "en";
-    "hyprland/language".format-ru-phonetic_YAZHERTY = "ru";
+    "custom/wlogout" = {
+      format = "⏻";
+      on-click = "wlogout";
+      tooltip = false;
+    };
+
+    "hyprland/language".format = "󰌌 {short}";
+
+    "hyprland/window".format = " {}";
+    "hyprland/window".max-length = 100;
 
     # "hyprland/workspaces" = { };
 
@@ -27,21 +41,22 @@ in
     clock.format = "{:L%a %b %d, %H:%M}"; # (%Z)
     clock.tooltip = true;
     clock.tooltip-format = "<tt>{calendar}</tt>"; # \n\n{tz_list}
-    # clock.timezone = osConfig.time.timeZone;
-    clock.timezones = [
-      # FIXME: clock.timezones
-      "Etc/UTC"
-      "Europe/London"
-      "Europe/Berlin"
-      "Europe/Moscow"
-      "Europe/Kiev"
-      "Asia/Tel_Aviv"
-      "America/New_York"
-      "America/Los_Angeles"
-      "Asia/Tokyo"
-      "Asia/Hong_Kong"
-      "Australia/Melbourne"
-    ];
+    clock.timezone = osConfig.time.timeZone;
+
+    # clock.timezones = [
+    #   # FIXME: clock.timezones
+    #   "Etc/UTC"
+    #   "Europe/London"
+    #   "Europe/Berlin"
+    #   "Europe/Moscow"
+    #   "Europe/Kiev"
+    #   "Asia/Tel_Aviv"
+    #   "America/New_York"
+    #   "America/Los_Angeles"
+    #   "Asia/Tokyo"
+    #   "Asia/Hong_Kong"
+    #   "Australia/Melbourne"
+    # ];
 
     clock.calendar = {
       mode = "month";
@@ -60,5 +75,17 @@ in
     # clock.actions.on-click-backward = "tz_down";
     # clock.actions.on-scroll-up = "shift_up";
     # clock.actions.on-scroll-down = "shift_down";
+
+    battery = {
+      states.good = 95;
+      states.warning = 30;
+      states.critical = 15;
+      format = "<span weight='bold'>{icon}</span> {capacity}%";
+      format-charging = " {capacity}%";
+      format-plugged = " {capacity}%";
+      format-discharging = "{icon}  {capacity}%";
+      format-alt = "{icon} {time}";
+      format-icons = [ "" "" "" "" "" ];
+    };
   };
 }
