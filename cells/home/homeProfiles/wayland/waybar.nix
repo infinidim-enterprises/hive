@@ -19,7 +19,7 @@ in
     # "clock#time".timezone = osConfig.time.timeZone;
     # "clock#date".timezone = osConfig.time.timeZone;
 
-    clock.format = "{:%a %b %d, %H:%M (%Z)}";
+    clock.format = "{:%a %b %d, %H:%M}"; # (%Z)
     clock.tooltip = true;
     clock.tooltip-format = "<tt>{calendar}</tt>"; # \n\n{tz_list}
     clock.timezone = osConfig.time.timeZone;
@@ -43,11 +43,12 @@ in
       mode-mon-col = 3;
       weeks-pos = "right";
       on-scroll = 1;
-      format.months = "<span background='#002b36' color='#657b83'><b>{}</b></span>";
-      format.days = "<span background='#002b36' color='#657b83'><b>{}</b></span>";
-      format.weeks = "<span background='#002b36' color='#268bd2'><b>W{}</b></span>";
-      format.weekdays = "<span background='#002b36' color='#b58900'><b>{}</b></span>";
-      format.today = "<span background='#002b36' color='#cb4b16'><b><u>{}</u></b></span>";
+      # background='#002b36'
+      format.months = "<span color='#fdf6e3'><b>{}</b></span>";
+      format.days = "<span color='#657b83'><b>{}</b></span>";
+      format.weeks = "<span color='#268bd2'><b>{}</b></span>";
+      format.weekdays = "<span color='#b58900'><b>{}</b></span>";
+      format.today = "<span color='#cb4b16'><b><u>{}</u></b></span>";
     };
 
     clock.actions.on-click-right = "mode";
