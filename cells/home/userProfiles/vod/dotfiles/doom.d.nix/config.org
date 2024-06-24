@@ -157,7 +157,7 @@
         +gnuplot
         +pandoc
         +journal
-        +jupyter
+        ;; +jupyter
         +roam2
         +noter
         +present
