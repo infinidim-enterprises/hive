@@ -1,17 +1,17 @@
 { config, lib, pkgs, ... }:
-
+let
+  inherit (lib // builtins) isInt toString;
+  cursorsize =
+    if config.gtk.enable && (isInt config.gtk.cursorTheme.size)
+    then toString config.gtk.cursorTheme.size
+    else "24";
+in
 {
   services.wlsunset.enable = true;
   services.wlsunset.temperature.day = 4200;
   services.wlsunset.temperature.night = 3600;
   services.wlsunset.sunrise = "07:30";
   services.wlsunset.sunset = "19:30";
-
-  # NOTE: incompatible with hyprland
-  services.flameshot.enable = true;
-  services.flameshot.settings = {
-    General.showStartupLaunchMessage = false;
-  };
 
   services.xsettingsd.enable = true;
   # services.xsettingsd.settings = {};
@@ -32,18 +32,14 @@
     ];
 
     env = [
-      "XCURSOR_SIZE,24"
-      "HYPRCURSOR_SIZE,24"
+      "XCURSOR_SIZE,${cursorsize}"
+      "HYPRCURSOR_SIZE,${cursorsize}"
     ];
 
     general = {
       gaps_in = 1;
       gaps_out = 1;
       border_size = 1;
-
-      "col.active_border" = "rgba(839496FF)";
-      "col.inactive_border" = "rgba(002b36ff)";
-
       resize_on_border = false;
       allow_tearing = false;
       layout = "dwindle";
@@ -55,30 +51,12 @@
       # Change transparency of focused and unfocused windows
       active_opacity = 1.0;
       inactive_opacity = 1.0;
-
       drop_shadow = false;
-      # shadow_range = 4;
-      # shadow_render_power = 3;
-      # "col.shadow" = "rgba(1a1a1aee)";
-
       blur.enabled = false;
-      # blur.size = 3;
-      # blur.passes = 1;
-      # blur.vibrancy = 0.1696;
-
     };
 
     animations.enabled = false;
     animations.first_launch_animation = false;
-    # animations.bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
-    # animations.animation = [
-    #   "windows, 1, 7, myBezier"
-    #   "windowsOut, 1, 7, default, popin 80%"
-    #   "border, 1, 10, default"
-    #   "borderangle, 1, 8, default"
-    #   "fade, 1, 7, default"
-    #   "workspaces, 1, 6, default"
-    # ];
 
     dwindle.pseudotile = true;
     dwindle.preserve_split = true; # You probably want this
@@ -91,23 +69,18 @@
 
     cursor.hide_on_key_press = true;
 
-    input = {
-      kb_layout = "us, ru";
-      kb_variant = ",phonetic_YAZHERTY";
-      kb_options = "grp:shifts_toggle";
+    input.kb_layout = "us, ru";
+    input.kb_variant = ",phonetic_YAZHERTY";
+    input.kb_options = "grp:shifts_toggle";
 
-      follow_mouse = 1;
+    input.follow_mouse = 1;
 
-      sensitivity = 0; # -1.0 - 1.0, 0 means no modification.
-      accel_profile = "adaptive";
-      touchpad = {
-        natural_scroll = false;
-      };
-    };
+    input.sensitivity = 0; # -1.0 - 1.0, 0 means no modification.
+    input.accel_profile = "adaptive";
+    input.touchpad.natural_scroll = true;
 
     # https://wiki.hyprland.org/Configuring/Variables/#gestures
     gestures.workspace_swipe = false;
-
 
     # TODO: $fileManager = dolphin
     "$mainMod" = "SUPER";
@@ -115,11 +88,9 @@
     "$menu" = "wofi --show drun";
 
     bind = [
-      # "$mainMod, C, killactive,"
-      "$mainMod, M, exec, hyprctl dispatch togglemax"
+      "$mainMod, Return, fullscreen, 0"
       "$mainMod, E, exec, $fileManager"
       "$mainMod, V, togglefloating,"
-      # "$mainMod, R, exec, $menu"
       "$mainMod, P, pseudo,"
       "$mainMod, J, togglesplit,"
 
@@ -128,6 +99,15 @@
       "$mainMod, right, movefocus, r"
       "$mainMod, up, movefocus, u"
       "$mainMod, down, movefocus, d"
+
+      # Move the window itself
+      "$mainMod Alt_L, Left, movewindow, l"
+      "$mainMod Alt_L, Right, movewindow, r"
+      "$mainMod Alt_L, Up, movewindow, u"
+      "$mainMod Alt_L, Down, movewindow, d"
+
+      "Alt_L, Tab, cyclenext"
+      "$mainMod, Tab, focuscurrentorlast"
 
       # Switch workspaces with mainMod + [0-9]
       "$mainMod, 1, workspace, 1"
@@ -170,6 +150,9 @@
     ];
 
     binds = [
+      "Control_L&Alt_L, Right, workspace, +1"
+      "Control_L&Alt_L, Left, workspace, -1"
+
       "Control_L&Shift_L, Q, exit"
       "Control_L&Shift_L, Return, exec, $terminal"
     ];

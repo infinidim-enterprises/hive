@@ -1,6 +1,7 @@
 { inputs, cell, ... }:
 let
   inherit (inputs.nixpkgs-lib.lib // builtins)
+    elem
     mkForce
     hasAttr
     flatten
@@ -27,39 +28,43 @@ let
         else e.dirPath)
       (flatten (mapAttrsToList (_: v: v.files ++ v.directories)
         config.environment.persistence));
-
-  fontPkg = { name, osConfig }:
-    findFirst (e: (!isString e) && hasAttr "pname" e && e.pname == name)
-      null
-      osConfig.fonts.packages;
-
   isZfs = config:
     (filterAttrs (n: v: v.fsType == "zfs") config.fileSystems) != { };
 
-  isGui = config:
-    let
-      dm = removeAttrs config.services.xserver.displayManager
-        [
-          "auto"
-          "desktopManagerHandlesLidAndPower"
-          "slim"
-          "sddm"
-          "autoLogin"
-          "defaultSession"
-          "extraSessionFilesPackages"
-          "hiddenUsers"
-          "logToJournal"
-          "sessionData"
-          "sessionPackages"
-        ];
-    in
-    # TODO: replace with hasAttr and don't removeAttrs
-    (filterAttrs (k: v: v ? enable && v.enable) dm) != { };
+  localLib = {
+    pkgInstalled = { pkg, combinedPkgs }:
+      elem pkg combinedPkgs;
+
+    fontPkg = { name, osConfig }:
+      findFirst (e: (!isString e) && hasAttr "pname" e && e.pname == name)
+        null
+        osConfig.fonts.packages;
+    isGui = config:
+      let
+        dm = removeAttrs config.services.xserver.displayManager
+          [
+            "auto"
+            "desktopManagerHandlesLidAndPower"
+            "slim"
+            "sddm"
+            "autoLogin"
+            "defaultSession"
+            "extraSessionFilesPackages"
+            "hiddenUsers"
+            "logToJournal"
+            "sessionData"
+            "sessionPackages"
+          ];
+      in
+      # TODO: replace with hasAttr and don't removeAttrs
+      (filterAttrs (k: v: v ? enable && v.enable) dm) != { };
+  };
+
 in
 {
+  inherit (localLib) isGui;
   inherit
     isZfs
-    isGui
     isImpermanence
     impermanenceMounts;
 
@@ -80,12 +85,11 @@ in
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = {
             # TODO: lib.extend (_: _: { inherit isGui; }) # Do it for the lib, passed into home-manager
-            localLib = { inherit isGui fontPkg; };
+            inherit localLib;
             # NOTE: compatibility layer for old, digga based config
             # TODO: refactor and remove compatibility layer!
             inherit inputs;
-            inherit (inputs) self;
-            # inherit (inputs.nixpkgs-lib) lib;
+            # inherit (inputs) self;
             suites = inputs.cells.home.homeSuites;
             profiles =
               inputs.cells.home.homeProfiles //

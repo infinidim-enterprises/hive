@@ -53,8 +53,7 @@ in
   services.kdeconnect.enable = true;
   services.kdeconnect.indicator = true;
 
-  xdg.userDirs.extraConfig.XDG_PROJ_DIR = "$HOME/Projects";
-  home.sessionVariables.XDG_PROJ_DIR = "$HOME/Projects";
+  xdg.userDirs.extraConfig.XDG_PROJ_DIR = "${config.home.homeDirectory}/Projects";
 
   dconf.enable = true;
   dconf.settings = {

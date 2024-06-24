@@ -1,11 +1,22 @@
-{ lib, pkgs, config, osConfig ? { }, ... }:
+{ lib, pkgs, config, osConfig, localLib, ... }:
 let
-  isHostConfig = osConfig != { };
+  inherit (config.home.sessionVariables)
+    HM_FONT_NAME
+    HM_FONT_SIZE;
+  inherit (lib // builtins)
+    mkMerge
+    mkIf
+    mkBefore
+    elem
+    toInt
+    toString;
+  inherit (localLib)
+    pkgInstalled
+    fontPkg
+    isGui;
 
-  inherit (config.home.sessionVariables) HM_FONT_NAME HM_FONT_SIZE;
-  inherit (lib) mkMerge mkIf elem toInt;
-  inherit (builtins) toString;
-
+  font-size = toString ((toInt HM_FONT_SIZE) + 3);
+  combinedPkgs = config.home.packages ++ osConfig.environment.systemPackages;
   fontStr = HM_FONT_NAME + " " + HM_FONT_SIZE;
   fontStrXterm = "xft:${HM_FONT_NAME}:pixelsize=${toString ((toInt HM_FONT_SIZE) + 5)}:antialias=true:hinting=true";
 in
@@ -19,12 +30,35 @@ mkMerge [
     xresources.properties."Xft.rgba" = "rgb";
   }
 
+  (mkIf config.programs.waybar.enable {
+    programs.waybar.style = mkBefore ''
+      * {
+        border: none;
+        border-radius: 0;
+        font-family:
+          ${HM_FONT_NAME}, FontAwesome;
+        font-size: ${font-size}px;
+        min-height: 0;
+      }
+    '';
+  })
+
+  (mkIf config.services.dunst.enable {
+    services.dunst.settings.global.font = fontStr;
+  })
+
   (mkIf config.programs.vscode.enable
     {
       programs.vscode.userSettings."editor.fontFamily" = HM_FONT_NAME;
       programs.vscode.userSettings."editor.fontSize" = (toInt HM_FONT_SIZE);
     }
   )
+
+  (mkIf config.gtk.enable {
+    gtk.font.name = HM_FONT_NAME;
+    gtk.font.size = toInt HM_FONT_SIZE;
+    gtk.font.package = fontPkg { name = "nerdfonts"; inherit osConfig; };
+  })
 
   (mkIf config.programs.firefox.enable {
     programs.firefox.profiles.default.settings = {
@@ -46,12 +80,13 @@ mkMerge [
       else fontStr;
   })
 
-  (mkIf (elem pkgs.tilix config.home.packages) { dconf.settings."com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d".font = fontStr; })
+  (mkIf (pkgInstalled { pkg = pkgs.tilix;inherit combinedPkgs; }) { dconf.settings."com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d".font = fontStr; })
   (mkIf config.programs.kitty.enable {
     programs.kitty.font.name = HM_FONT_NAME;
     programs.kitty.font.size = toInt HM_FONT_SIZE;
   })
-  (mkIf (isHostConfig && (elem pkgs.xterm osConfig.environment.systemPackages)) {
+
+  (mkIf (pkgInstalled { pkg = pkgs.xterm; inherit combinedPkgs; }) {
     xresources.properties."XTerm*utf8" = "1";
     xresources.properties."XTerm*utf8Title" = "true";
     xresources.properties."XTerm*utf8Fonts" = "true";
@@ -59,22 +94,24 @@ mkMerge [
     xresources.properties."XTerm*faceName" = fontStrXterm;
     xresources.properties."XTerm*faceNameDoublesize" = fontStrXterm;
   })
-  (mkIf
-    (isHostConfig && osConfig.services.xserver.desktopManager.mate.enable)
-    {
-      dconf.settings = {
-        # "org/mate/desktop/peripherals/keyboard/indicator".font-family = fontStr;
-        # "org/gnome/desktop/interface".font-name = fontStr;
-        "org/mate/desktop/interface" = {
-          font-name = fontStr;
-          document-font-name = fontStr;
-          monospace-font-name = fontStr;
-        };
-        "org/mate/desktop/font-rendering" = {
-          antialiasing = "rgba";
-          hinting = "slight";
-        };
-        "org/mate/marco/general".titlebar-font = HM_FONT_NAME + " " + (toString ((toInt HM_FONT_SIZE) - 6));
+
+  (mkIf (isGui osConfig) {
+    dconf.settings = {
+      # "org/mate/desktop/peripherals/keyboard/indicator".font-family = fontStr;
+      # "org/gnome/desktop/interface".font-name = fontStr;
+      "org/mate/desktop/interface" = {
+        font-name = fontStr;
+        document-font-name = fontStr;
+        monospace-font-name = fontStr;
       };
-    })
+      "org/mate/desktop/font-rendering" = {
+        antialiasing = "rgba";
+        hinting = "slight";
+      };
+      "org/mate/marco/general".titlebar-font =
+        HM_FONT_NAME
+        + " "
+        + (toString ((toInt HM_FONT_SIZE) - 6));
+    };
+  })
 ]

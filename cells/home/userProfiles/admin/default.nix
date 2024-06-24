@@ -24,6 +24,7 @@ in
         cell.homeProfiles.terminals.kitty
 
         cell.homeProfiles.look-and-feel.solarized-dark
+        cell.homeProfiles.look-and-feel.nerdfonts-ubuntu
         ({ pkgs, ... }: {
           programs.bat.enable = true;
           services.gpg-agent.pinentryPackage = pkgs.pinentry-gnome3;

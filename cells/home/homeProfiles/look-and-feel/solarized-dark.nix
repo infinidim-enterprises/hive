@@ -2,16 +2,12 @@
 
 { osConfig, config, lib, localLib, pkgs, ... }:
 let
-  inherit (lib) mkIf mkMerge elem fileContents toInt;
-  inherit (localLib) isGui fontPkg;
+  inherit (lib) mkIf mkMerge elem fileContents toInt mkAfter;
+  inherit (localLib) isGui pkgInstalled;
   inherit (builtins) readFile;
-  pkgInstalled = pkg:
-    elem pkg (config.home.packages ++ osConfig.environment.systemPackages);
-
-  # TODO: *# 00;38;5;240 and empty lines handling
-  # "org/gnome/desktop/interface".gtk-theme = "Solarized-Dark-Green-GS-3.36";
-  # commonDefaults = { gtk-theme = "NumixSolarizedDarkGreen"; icon-theme = "Numix-Circle"; };
+  combinedPkgs = config.home.packages ++ osConfig.environment.systemPackages;
   commonDefaults = { gtk-theme = "NumixSolarizedDarkGreen"; icon-theme = "Numix-Circle"; };
+  # NOTE: https://gitlab.gnome.org/GNOME/gtk/-/blob/gtk-3-24/gtk/theme/Adwaita/_colors-public.scss
 in
 mkMerge [
   {
@@ -25,15 +21,9 @@ mkMerge [
     gtk.cursorTheme.name = "Numix-Cursor-Light";
     gtk.cursorTheme.package = pkgs.numix-cursor-theme;
 
-    gtk.font.name = config.home.sessionVariables.HM_FONT_NAME;
-    gtk.font.size = toInt config.home.sessionVariables.HM_FONT_SIZE;
-    gtk.font.package = fontPkg { name = "nerdfonts"; inherit osConfig; };
-
     gtk.iconTheme.name = "Numix-Circle";
     gtk.iconTheme.package = pkgs.numix-icon-theme-circle;
 
-    # gtk.theme.name = "Solarized-Dark-Green-3.36";
-    # gtk.theme.package = inputs.cells.common.packages.solarized-dark-gnome-shell;
     gtk.theme.name = "NumixSolarizedDarkGreen";
     gtk.theme.package = pkgs.numix-solarized-gtk-theme;
 
@@ -104,8 +94,29 @@ mkMerge [
     # TODO: gtk.gtk3.extraCss = fileContents ./gtk3.gtk_css;
   }
 
-  #  { home.packages = [ pkgs.numix-solarized-gtk-theme ]; }
+  (mkIf config.programs.waybar.enable {
+    programs.waybar.style = mkAfter ''
+      window#waybar {
+          background: @theme_base_color;
+          border-bottom: 1px solid @unfocused_borders;
+          color: @theme_text_color;
+      }
+    '';
+  })
+
+  (mkIf config.services.dunst.enable {
+    services.dunst.settings.global.icon_theme = config.gtk.iconTheme.name;
+  })
+
+  (mkIf config.wayland.windowManager.hyprland.enable {
+    wayland.windowManager.hyprland.settings.general = {
+      "col.active_border" = "rgba(839496FF)";
+      "col.inactive_border" = "rgba(002b36ff)";
+    };
+  })
+
   (mkIf config.programs.vscode.enable { programs.vscode.userSettings."workbench.colorTheme" = "Solarized Dark"; })
+
   (mkIf (isGui osConfig) {
     dconf.settings."org/mate/desktop/peripherals/keyboard/indicator" = {
       foreground-color = "131 148 150";
@@ -114,7 +125,6 @@ mkMerge [
     dconf.settings."org/gnome/desktop/interface" = commonDefaults;
     dconf.settings."org/mate/desktop/interface" = commonDefaults;
     # dconf.settings."org/mate/desktop/background"
-    # NOTE: https://wiki.archlinux.org/title/Cursor_themes#Desktop_environments
   })
 
   (mkIf config.programs.bat.enable {
@@ -154,7 +164,8 @@ mkMerge [
   })
 
   (mkIf config.programs.rofi.enable { programs.rofi.theme = "solarized"; })
-  (mkIf (pkgInstalled pkgs.tilix) {
+
+  (mkIf (pkgInstalled { pkg = pkgs.tilix; inherit combinedPkgs; }) {
     dconf.settings."com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d" = {
       background-color = "#002b36";
       foreground-color = "#839496";
@@ -180,7 +191,8 @@ mkMerge [
 
     };
   })
-  (mkIf (pkgInstalled pkgs.xterm) {
+
+  (mkIf (pkgInstalled { pkg = pkgs.xterm; inherit combinedPkgs; }) {
     xresources.properties = {
       # just in case xterm is needed!
       "XTerm.termName" = "xterm-256color";

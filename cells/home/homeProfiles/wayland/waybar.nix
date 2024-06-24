@@ -1,33 +1,14 @@
-{ lib, config, ... }:
+{ lib, config, osConfig, ... }:
 let
   inherit (lib // builtins) toInt toString;
   inherit (config.home.sessionVariables)
     HM_FONT_NAME
     HM_FONT_SIZE;
-  font-size = toString ((toInt HM_FONT_SIZE) + 3);
 in
 {
   programs.waybar.enable = true;
   programs.waybar.systemd.enable = true;
-  programs.waybar.style =
-    # lib.fileContents ./waybar_solarized-dark.css;
-    # NOTE: https://gitlab.gnome.org/GNOME/gtk/-/blob/gtk-3-24/gtk/theme/Adwaita/_colors-public.scss
-    ''
-      * {
-        border: none;
-        border-radius: 0;
-        font-family:
-          ${HM_FONT_NAME}, FontAwesome;
-        font-size: ${font-size}px;
-        min-height: 0;
-      }
 
-      window#waybar {
-          background: @theme_base_color;
-          border-bottom: 1px solid @unfocused_borders;
-          color: @theme_text_color;
-      }
-    '';
   programs.waybar.settings.masterBar = {
     position = "top";
     modules-left = [ "hyprland/workspaces" ];
@@ -35,9 +16,11 @@ in
 
     # "hyprland/workspaces" = { };
 
+    "clock#time".timezone = osConfig.time.timeZone;
+
     clock.format = "{:%a %b %d, %H:%M (%Z)}";
     clock.tooltip = true;
-    clock.tooltip-format = "<tt><small>{calendar}</small></tt>"; # {tz_list}
+    clock.tooltip-format = "<tt><small>{calendar}</small></tt>\n{tz_list}";
     clock.timezones = [
       # FIXME: clock.timezones
       "Etc/UTC"
@@ -58,11 +41,11 @@ in
       mode-mon-col = 3;
       weeks-pos = "right";
       on-scroll = 1;
-      format.months = "<span color='#657b83'><b>{}</b></span>";
-      format.days = "<span color='#657b83'><b>{}</b></span>";
-      format.weeks = "<span color='#657b83'><b>W{}</b></span>";
-      format.weekdays = "<span color='#657b83'><b>{}</b></span>";
-      format.today = "<span color='#657b83'><b><u>{}</u></b></span>";
+      format.months = "<span background='#002b36' color='#657b83'><b>{}</b></span>";
+      format.days = "<span background='#002b36' color='#657b83'><b>{}</b></span>";
+      format.weeks = "<span background='#002b36' color='#657b83'><b>W{}</b></span>";
+      format.weekdays = "<span background='#002b36' color='#657b83'><b>{}</b></span>";
+      format.today = "<span background='#002b36' color='#cb4b16'><b><u>{}</u></b></span>";
     };
 
     clock.actions.on-click-right = "mode";
