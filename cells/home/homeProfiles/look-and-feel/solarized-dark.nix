@@ -102,7 +102,12 @@ mkMerge [
           color: @theme_text_color;
       }
 
-      label#clock {
+
+      #clock.calendar, #calendar {
+          background: @theme_base_color;
+      }
+
+      tooltip {
           background: @theme_base_color;
       }
     '';
