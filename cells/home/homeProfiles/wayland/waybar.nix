@@ -12,31 +12,36 @@ in
   programs.waybar.settings.masterBar = {
     position = "top";
     modules-left = [ "hyprland/workspaces" ];
-    modules-right = [ "hyprland/language" "tray" "battery" "clock" ];
+    # modules-center = [ ];
+    modules-right = [ "hyprland/language" "temperature" "battery" "tray" "clock" ];
+
+    # "hyprland/language".format = "{}";
+    "hyprland/language".format-en = "en";
+    "hyprland/language".format-ru = "ru";
 
     # "hyprland/workspaces" = { };
 
-    # "clock#time".timezone = osConfig.time.timeZone;
-    # "clock#date".timezone = osConfig.time.timeZone;
+    temperature.format = "{temperatureC}°C ";
 
-    clock.format = "{:%a %b %d, %H:%M}"; # (%Z)
+    # NOTE: https://github.com/Alexays/Waybar/issues/2982
+    clock.format = "{:L%a %b %d, %H:%M}"; # (%Z)
     clock.tooltip = true;
     clock.tooltip-format = "<tt>{calendar}</tt>"; # \n\n{tz_list}
-    clock.timezone = osConfig.time.timeZone;
-    # clock.timezones = [
-    #   # FIXME: clock.timezones
-    #   "Etc/UTC"
-    #   "Europe/London"
-    #   "Europe/Berlin"
-    #   "Europe/Moscow"
-    #   "Europe/Kiev"
-    #   "Asia/Tel_Aviv"
-    #   "America/New_York"
-    #   "America/Los_Angeles"
-    #   "Asia/Tokyo"
-    #   "Asia/Hong_Kong"
-    #   "Australia/Melbourne"
-    # ];
+    # clock.timezone = osConfig.time.timeZone;
+    clock.timezones = [
+      # FIXME: clock.timezones
+      "Etc/UTC"
+      "Europe/London"
+      "Europe/Berlin"
+      "Europe/Moscow"
+      "Europe/Kiev"
+      "Asia/Tel_Aviv"
+      "America/New_York"
+      "America/Los_Angeles"
+      "Asia/Tokyo"
+      "Asia/Hong_Kong"
+      "Australia/Melbourne"
+    ];
 
     clock.calendar = {
       mode = "month";
@@ -52,9 +57,9 @@ in
     };
 
     clock.actions.on-click-right = "mode";
-    clock.actions.on-click-forward = "tz_up";
-    clock.actions.on-click-backward = "tz_down";
-    clock.actions.on-scroll-up = "shift_up";
-    clock.actions.on-scroll-down = "shift_down";
+    # clock.actions.on-click-forward = "tz_up";
+    # clock.actions.on-click-backward = "tz_down";
+    # clock.actions.on-scroll-up = "shift_up";
+    # clock.actions.on-scroll-down = "shift_down";
   };
 }
