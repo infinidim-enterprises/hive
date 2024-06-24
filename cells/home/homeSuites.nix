@@ -23,7 +23,18 @@ rec {
     terminals.tilix
     terminals.kitty
     conky
+
+    look-and-feel.solarized-dark
+    look-and-feel.nerdfonts-ubuntu
   ];
+
+  wayland = with cell.homeProfiles.wayland; [
+    wofi
+    waybar
+    wlogout
+    dunst
+    hyprland
+  ] ++ desktop;
 
   office = with cell.homeProfiles.office; [
     pdf
@@ -34,5 +45,5 @@ rec {
     onlyoffice
   ];
 
-  developer.default = [ cell.homeProfiles.developer.git ];
+  developer.default = with cell.homeProfiles.developer; [ git direnv ];
 }

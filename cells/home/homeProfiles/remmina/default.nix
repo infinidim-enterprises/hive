@@ -2,11 +2,8 @@
 
 lib.mkMerge [
   {
-    home.packages = with pkgs;[
-      remmina
-      nx-libs
-      # xorg.xorgserver
-    ];
+    services.remmina.enable = true;
+    home.packages = with pkgs; [ nx-libs ];
   }
 
   (lib.mkIf config.xdg.mimeApps.enable {

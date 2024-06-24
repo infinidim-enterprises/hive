@@ -9,6 +9,14 @@ in
   deploy.params.gpu = "intel";
   deploy.params.ram = 8;
 
+  home-manager.sharedModules = [
+    ({ config, lib, ... }: {
+      config = lib.mkIf config.wayland.windowManager.hyprland.enable {
+        wayland.windowManager.hyprland.settings.monitor = [ "DSI-1,preferred,auto,1,transform,3" ];
+      };
+    })
+  ];
+
   # boot.plymouth.enable = true;
   # pkgs.plymouth-matrix-theme
   # NOTE: i915 *ERROR* GPIO index request failed (-ENOENT)

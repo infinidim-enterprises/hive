@@ -18,9 +18,6 @@ in
   services.xsettingsd.enable = true;
   # services.xsettingsd.settings = {};
 
-  # TODO: https://github.com/cbr4l0k/.dotfiles/blob/master/config/wlogout/layout
-  programs.wlogout.enable = true;
-
   services.hypridle.enable = true;
   services.hypridle.settings = {
     general = {
@@ -85,13 +82,10 @@ in
   wayland.windowManager.hyprland.systemd.enableXdgAutostart = true;
   wayland.windowManager.hyprland.settings = {
 
-    monitor = [ ",preferred,auto,1,transform,3" ];
-
     exec-once = [
       "systemctl --user start nixos-fake-graphical-session.target"
       "$terminal"
       "nm-applet &"
-      # "waybar"
     ];
 
     env = [

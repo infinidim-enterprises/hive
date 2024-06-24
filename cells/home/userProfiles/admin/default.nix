@@ -12,31 +12,22 @@ in
 
   config = mkMerge [
     {
-      home-manager.users.admin.imports = [
-        inputs.nix-doom-emacs.hmModule
-        cell.homeProfiles.developer.git
-        cell.homeProfiles.developer.direnv
+      home-manager.users.admin.imports =
+        cell.homeSuites.wayland
+        ++ cell.homeSuites.developer.default
+        ++ [
+          inputs.nix-doom-emacs.hmModule
 
-        ../vod/home/emacs.nix # FIXME: for testing
-        ../vod/home/gitconfig.nix # FIXME: for testing
+          ../vod/home/emacs.nix # FIXME: for testing
+          ../vod/home/gitconfig.nix # FIXME: for testing
 
-        cell.homeProfiles.wayland.wofi
-        cell.homeProfiles.wayland.waybar
-        cell.homeProfiles.wayland.dunst
-        cell.homeProfiles.wayland.hyprland
+          cell.homeProfiles.security.gpg
 
-        cell.homeProfiles.security.gpg
-
-        cell.homeProfiles.terminals.tilix
-        cell.homeProfiles.terminals.kitty
-
-        cell.homeProfiles.look-and-feel.solarized-dark
-        cell.homeProfiles.look-and-feel.nerdfonts-ubuntu
-        ({ pkgs, ... }: {
-          programs.bat.enable = true;
-          services.gpg-agent.pinentryPackage = pkgs.pinentry-gnome3;
-        })
-      ];
+          ({ pkgs, ... }: {
+            programs.bat.enable = true;
+            services.gpg-agent.pinentryPackage = pkgs.pinentry-gnome3;
+          })
+        ];
     }
     { users.users.admin.extraGroups = [ "wheel" ]; }
     {

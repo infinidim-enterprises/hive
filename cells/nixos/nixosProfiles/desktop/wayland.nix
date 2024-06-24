@@ -62,6 +62,7 @@ mkMerge [
     environment.systemPackages = with pkgs; [
       wev
 
+      nitch # system fetch # TODO: https://github.com/ssleert/nitch/pull/20
       grim # wayland screenshot
       slurp # Select a region in a Wayland compositor
       grimblast

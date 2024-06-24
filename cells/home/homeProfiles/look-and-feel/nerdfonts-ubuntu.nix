@@ -30,6 +30,16 @@ mkMerge [
     xresources.properties."Xft.rgba" = "rgb";
   }
 
+  (mkIf config.programs.wlogout.enable {
+    programs.wlogout.style = mkBefore ''
+      * {
+          font-family: ${HM_FONT_NAME};
+          font-weight: bold;
+          font-size: ${font-size}px;
+      }
+    '';
+  })
+
   (mkIf config.programs.waybar.enable {
     # border-radius: 20px;
     programs.waybar.style = mkBefore ''
