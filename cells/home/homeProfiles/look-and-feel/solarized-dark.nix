@@ -102,12 +102,6 @@ mkMerge [
           color: @theme_text_color;
       }
 
-      #language {
-          border-radius: 20px;
-          padding-left: 10px;
-          padding-right: 10px;
-      }
-
       #clock.calendar, #calendar {
           background: @theme_base_color;
       }

@@ -17,7 +17,7 @@ in
 
     # "hyprland/language".format = "{}";
     "hyprland/language".format-en = "en";
-    "hyprland/language".format-ru = "ru";
+    "hyprland/language".format-ru-phonetic_YAZHERTY = "ru";
 
     # "hyprland/workspaces" = { };
 
