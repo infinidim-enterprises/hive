@@ -207,6 +207,8 @@ in
     ];
 
     binds = [
+      "Control_L&Alt_L, Delete, exec, wlogout"
+
       "Control_L&Alt_L, Right, workspace, +1"
       "Control_L&Alt_L, Left, workspace, -1"
 
