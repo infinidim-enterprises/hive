@@ -31,12 +31,12 @@ mkMerge [
   }
 
   (mkIf config.programs.waybar.enable {
-    #         border: none;
+    # border-radius: 20px;
     programs.waybar.style = mkBefore ''
       * {
-        border-radius: 20px;
-        padding-left: 10px;
-        padding-right: 10px;
+        border: none;
+        padding-left: 5px;
+        padding-right: 5px;
 
         font-family:
           ${HM_FONT_NAME}, FontAwesome;
