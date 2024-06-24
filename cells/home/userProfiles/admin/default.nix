@@ -14,7 +14,10 @@ in
     {
       home-manager.users.admin.imports = [
         inputs.nix-doom-emacs.hmModule
+        cell.homeProfiles.developer.git
+
         ../vod/home/emacs.nix # FIXME: for testing
+        ../vod/home/gitconfig.nix # FIXME: for testing
 
         cell.homeProfiles.wayland.wofi
         cell.homeProfiles.wayland.waybar
