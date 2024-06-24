@@ -34,7 +34,7 @@ in
     "hyprland/window".max-length = 100;
 
     # "hyprland/workspaces" = { };
-
+    tray.spacing = 7;
     temperature.format = "{temperatureC}°C ";
 
     # NOTE: https://github.com/Alexays/Waybar/issues/2982

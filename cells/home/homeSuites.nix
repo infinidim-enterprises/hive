@@ -22,10 +22,11 @@ rec {
     remmina
     terminals.tilix
     terminals.kitty
-    conky
+    # conky
 
     look-and-feel.solarized-dark
     look-and-feel.nerdfonts-ubuntu
+    look-and-feel.pointer-cursor
   ];
 
   wayland = with cell.homeProfiles.wayland; [

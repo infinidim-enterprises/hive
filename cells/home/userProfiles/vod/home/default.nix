@@ -18,14 +18,7 @@ in
       # FIXME: profiles.activitywatch
       profiles.browsers.firefox
       # profiles.browsers.floorp
-    ] ++
-    (with profiles.look-and-feel;
-    [
-      solarized-dark
-      nerdfonts-ubuntu
-      starship-prompt
-      # pointer-cursor
-    ]) ++ (with profiles.developer; [
+    ] ++ (with profiles.developer; [
       # FIXME: extensions - vscode
       ruby
       nix
