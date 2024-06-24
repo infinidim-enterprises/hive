@@ -228,12 +228,14 @@ in
   # (set-prefix-key (kbd "C-'"))
   # (kbd "C-.") "$mainMod, C, killactive,"
   wayland.windowManager.hyprland.extraConfig = ''
-    bind = Control_L, apostrophe, submap, wofi_menu
-    submap = wofi_menu
+    bind = Control_L, apostrophe, submap, keychords
+    submap = keychords
     bind = Control_L,period,exec,$menu
     bind = Control_L,period,submap,reset
     bind = ,k,killactive,
     bind = ,k,submap,reset
+    bind = ,e,exec,emacsclient
+    bind = ,e,submap,reset
     submap = reset
   '';
 }
