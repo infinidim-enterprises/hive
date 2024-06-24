@@ -280,6 +280,14 @@
     hyprland.inputs.nixpkgs.follows = "nixpkgs-unstable";
     hyprland.inputs.systems.follows = "hyprland-systems";
 
+    hyprland-hyprlock.url = "git+https://github.com/hyprwm/hyprlock";
+    hyprland-hyprlock.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    hyprland-hyprlock.inputs.systems.follows = "hyprland/systems";
+
+    hyprland-hypridle.url = "git+https://github.com/hyprwm/hypridle";
+    hyprland-hypridle.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    hyprland-hypridle.inputs.systems.follows = "hyprland/systems";
+
     hyprland-contrib.url = "git+https://github.com/hyprwm/contrib";
     hyprland-contrib.inputs.nixpkgs.follows = "nixpkgs-unstable";
 

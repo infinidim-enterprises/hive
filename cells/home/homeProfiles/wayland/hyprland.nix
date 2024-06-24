@@ -19,15 +19,16 @@ in
   services.hypridle.enable = true;
   services.hypridle.settings = {
     general = {
+      before_sleep_cmd = "loginctl lock-session";
       after_sleep_cmd = "hyprctl dispatch dpms on";
+      lock_cmd = "pidof hyprlock || hyprlock";
       ignore_dbus_inhibit = false;
-      lock_cmd = "hyprlock";
     };
 
     listener = [
       {
         timeout = 900;
-        on-timeout = "hyprlock";
+        on-timeout = "loginctl lock-session";
       }
       {
         timeout = 1800;
@@ -40,8 +41,9 @@ in
   programs.hyprlock.enable = true;
   programs.hyprlock.settings = {
     general = {
+      ignore_empty_input = true;
       disable_loading_bar = true;
-      grace = 300;
+      grace = 0;
       hide_cursor = true;
       no_fade_in = false;
     };
@@ -61,10 +63,11 @@ in
         monitor = "";
         dots_center = true;
         fade_on_empty = false;
-        font_color = "rgb(202, 211, 245)";
-        inner_color = "rgb(91, 96, 120)";
-        outer_color = "rgb(24, 25, 38)";
+        font_color = "rgb(131, 148, 150)";
+        inner_color = "rgb(0, 43, 54)";
+        outer_color = "rgb(131, 148, 150)";
         outline_thickness = 5;
+        hide_input = false;
         placeholder_text = "Password...";
         shadow_passes = 2;
       }
