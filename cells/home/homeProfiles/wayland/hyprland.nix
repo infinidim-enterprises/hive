@@ -84,7 +84,7 @@ in
 
     exec-once = [
       "systemctl --user start nixos-fake-graphical-session.target"
-      "$terminal"
+      "hdrop -b $terminal"
       "nm-applet &"
     ];
 
@@ -205,6 +205,11 @@ in
 
       "Control_L&Shift_L, Q, exit"
       "Control_L&Shift_L, Return, exec, $terminal"
+
+      "$mainMod&Control_L&Alt_L, Right, movetoworkspace, +1"
+      "$mainMod&Control_L&Alt_L, Left, movetoworkspace, -1"
+
+      "Control_L, grave, exec, hdrop -b tilix"
     ];
 
     bindm = [
