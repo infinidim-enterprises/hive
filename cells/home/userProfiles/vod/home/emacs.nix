@@ -1,7 +1,7 @@
 { pkgs, profiles, ... }:
 let
   # vodEmacsPkg = pkgs.emacs;
-  vodEmacsPkg = pkgs.emacs28-gtk3; #emacs29-pgtk; #emacs-gtk; #.emacs29; #29-gtk3;
+  vodEmacsPkg = pkgs.emacs29-pgtk; #emacs-gtk; #.emacs29; #29-gtk3;
   vodEmacsExtraPkgs =
     let
       emacsPackages = pkgs.emacsPackagesFor vodEmacsPkg;
