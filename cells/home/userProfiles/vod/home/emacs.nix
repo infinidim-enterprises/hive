@@ -59,12 +59,12 @@ in
   programs.doom-emacs.doomPrivateDir = pkgs.callPackage ../dotfiles/doom.d.nix { };
   programs.doom-emacs.emacsPackagesOverlay = self: super: {
 
-    vterm = super.vterm.overrideAttrs (oldAttrs: {
-      cmakeFlags = [
-        "-DEMACS_SOURCE=${vodEmacsPkg.src}"
-        "-DUSE_SYSTEM_LIBVTERM=ON"
-      ];
-    });
+    # vterm = super.vterm.overrideAttrs (oldAttrs: {
+    #   cmakeFlags = [
+    #     "-DEMACS_SOURCE=${vodEmacsPkg.src}"
+    #     "-DUSE_SYSTEM_LIBVTERM=ON"
+    #   ];
+    # });
 
     org-pretty-table = self.trivialBuild {
       inherit (pkgs.sources-emacs.org-pretty-table) pname version src;

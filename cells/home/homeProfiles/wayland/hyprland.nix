@@ -197,6 +197,14 @@ in
       # Scroll through existing workspaces with mainMod + scroll
       "$mainMod, mouse_down, workspace, e+1"
       "$mainMod, mouse_up, workspace, e-1"
+
+      "Control_L&Alt_L, Delete, exec, wlogout"
+
+      "Control_L&Alt_L, Right, workspace, +1"
+      "Control_L&Alt_L, Left, workspace, -1"
+
+      "Control_L&Shift_L, Q, exit"
+      "Control_L&Shift_L, Return, exec, $terminal"
     ];
 
     bindm = [
@@ -206,15 +214,15 @@ in
       # "$mainMod ALT, mouse:272, resizewindow"
     ];
 
-    binds = [
-      "Control_L&Alt_L, Delete, exec, wlogout"
+    # binds = [
+    #   "Control_L&Alt_L, Delete, exec, wlogout"
 
-      "Control_L&Alt_L, Right, workspace, +1"
-      "Control_L&Alt_L, Left, workspace, -1"
+    #   "Control_L&Alt_L, Right, workspace, +1"
+    #   "Control_L&Alt_L, Left, workspace, -1"
 
-      "Control_L&Shift_L, Q, exit"
-      "Control_L&Shift_L, Return, exec, $terminal"
-    ];
+    #   "Control_L&Shift_L, Q, exit"
+    #   "Control_L&Shift_L, Return, exec, $terminal"
+    # ];
 
     windowrulev2 = [
       "suppressevent maximize, class:.*"

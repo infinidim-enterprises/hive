@@ -253,9 +253,9 @@
     nix-straight-fix-emacs29.flake = false;
 
     # a99c6b9036bde2f60697ce9f2ac259dfa2266dbf
-    # TODO: nix-doom-emacs.inputs.doom-emacs.follows = "doom-emacs";
-    # doom-emacs.url = "github:doomemacs/doomemacs";
-    # doom-emacs.flake = false;
+    nix-doom-emacs.inputs.doom-emacs.follows = "doom-emacs";
+    doom-emacs.url = "github:doomemacs/doomemacs";
+    doom-emacs.flake = false;
 
     # emacs-overlay.url = "github:nix-community/emacs-overlay";
     # emacs-overlay.inputs.nixpkgs.follows = "nixos";

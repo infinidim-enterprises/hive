@@ -461,11 +461,11 @@
     "doom-emacs": {
       "flake": false,
       "locked": {
-        "lastModified": 1677272798,
-        "narHash": "sha256-MAi2897ktQuW6n7urziFN+nzy/HvsLldGs0qDy3HtNQ=",
+        "lastModified": 1719177351,
+        "narHash": "sha256-7NwEb9wMIDm/tF1PBkt1+fN5z23jDDgwyiHfdOvidug=",
         "owner": "doomemacs",
         "repo": "doomemacs",
-        "rev": "f5f9c7222ab266f36ee1273b386a35a880f8f299",
+        "rev": "a99c6b9036bde2f60697ce9f2ac259dfa2266dbf",
         "type": "github"
       },
       "original": {
@@ -1986,7 +1986,9 @@
     },
     "nix-doom-emacs": {
       "inputs": {
-        "doom-emacs": "doom-emacs",
+        "doom-emacs": [
+          "doom-emacs"
+        ],
         "doom-snippets": "doom-snippets",
         "emacs-overlay": "emacs-overlay",
         "emacs-so-long": "emacs-so-long",
@@ -2980,6 +2982,7 @@
         "devshell": "devshell_2",
         "disko": "disko",
         "dmerge": "dmerge_2",
+        "doom-emacs": "doom-emacs",
         "flake-compat": "flake-compat_3",
         "flake-schemas": "flake-schemas",
         "flake-utils": "flake-utils_4",
