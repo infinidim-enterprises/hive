@@ -221,7 +221,7 @@ Maybe use (package! maple-iedit :recipe (:host github :repo "honmaple/emacs-mapl
 
 #+begin_src emacs-lisp :tangle packages.el
 (package! discover :recipe (:host github :repo "mickeynp/discover.el"))
-;; (unpin! magit)
+(unpin! magit)
 #+end_src
 
 [[https://github.com/doomemacs/doomemacs/issues/6463][emmet-mode conflicts with copilot]]
