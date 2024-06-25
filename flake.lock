@@ -474,6 +474,22 @@
         "type": "github"
       }
     },
+    "doom-emacs_2": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1677272798,
+        "narHash": "sha256-MAi2897ktQuW6n7urziFN+nzy/HvsLldGs0qDy3HtNQ=",
+        "owner": "doomemacs",
+        "repo": "doomemacs",
+        "rev": "f5f9c7222ab266f36ee1273b386a35a880f8f299",
+        "type": "github"
+      },
+      "original": {
+        "owner": "doomemacs",
+        "repo": "doomemacs",
+        "type": "github"
+      }
+    },
     "doom-snippets": {
       "flake": false,
       "locked": {
@@ -1986,9 +2002,7 @@
     },
     "nix-doom-emacs": {
       "inputs": {
-        "doom-emacs": [
-          "doom-emacs"
-        ],
+        "doom-emacs": "doom-emacs_2",
         "doom-snippets": "doom-snippets",
         "emacs-overlay": "emacs-overlay",
         "emacs-so-long": "emacs-so-long",

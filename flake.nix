@@ -253,7 +253,7 @@
     nix-straight-fix-emacs29.flake = false;
 
     # a99c6b9036bde2f60697ce9f2ac259dfa2266dbf
-    nix-doom-emacs.inputs.doom-emacs.follows = "doom-emacs";
+    # nix-doom-emacs.inputs.doom-emacs.follows = "doom-emacs";
     doom-emacs.url = "github:doomemacs/doomemacs";
     doom-emacs.flake = false;
 
