@@ -359,7 +359,7 @@
             (functions "lib")
 
             # FIXME: rename to something usefull
-            # (functions "ledger-openpgp")
+            # (functions "ledger-openpgp") no more ledger
 
             (files "files")
             (installables "packages" { ci.build = true; })
