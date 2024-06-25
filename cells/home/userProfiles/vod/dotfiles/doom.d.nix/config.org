@@ -23,7 +23,7 @@
        :ui
        deft              ; notational velocity for Emacs
        doom              ; what makes DOOM look the way it does
-       doom-dashboard    ; a nifty splash screen for Emacs
+       ;; doom-dashboard    ; a nifty splash screen for Emacs
        ;; doom-quit         ; DOOM quit-message prompts when you quit Emacs
        ;;(emoji +unicode)  ; 🙂
        hl-todo           ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
@@ -112,15 +112,15 @@
        ;;beancount         ; mind the GAAP
        ;;cc                ; C > C++ == 1
        ;;clojure           ; java with a lisp
-       common-lisp       ; if you've seen one lisp, you've seen them all
+       ;; common-lisp       ; if you've seen one lisp, you've seen them all
        ;;coq               ; proofs-as-programs
        crystal           ; ruby at the speed of c
        ;;csharp            ; unity, .NET, and mono shenanigans
        data              ; config/data formats
        ;;(dart +flutter)   ; paint ui and not much else
-       dhall
+       ;; dhall
        ;;elixir            ; erlang done right
-       elm               ; care for a cup of TEA?
+       ;; elm               ; care for a cup of TEA?
        emacs-lisp        ; drown in parentheses
        ;;erlang            ; an elegant language for a more civilized age
        ;;ess               ; emacs speaks statistics
@@ -130,15 +130,15 @@
        ;;fstar             ; (dependent) types and (monadic) effects and Z3
        ;;gdscript          ; the language you waited for
        (go +lsp)         ; the hipster dialect
-       (graphql +lsp)
+       ;; (graphql +lsp)
        ;;(haskell +lsp)    ; a language that's lazier than I am
        ;;hy                ; readability of scheme w/ speed of python
        ;;idris             ; a language you can depend on
        (json
         +lsp)              ; At least it ain't XML
-       (java
-        +lsp
-        +meghanada) ; the poster child for carpal tunnel syndrome
+       ;; (java
+       ;;  +lsp
+       ;;  +meghanada) ; the poster child for carpal tunnel syndrome
        ;;javascript        ; all(hope(abandon(ye(who(enter(here))))))
        ;;julia             ; a better, faster MATLAB
        ;;kotlin            ; a better, slicker Java(Script)
@@ -180,13 +180,13 @@
        ;; (rust
        ;;  +lsp) ;Fe2O3.unwrap().unwrap().unwrap().unwrap()
        ;;scala             ; java, but good
-       (scheme +guile)   ; a fully conniving family of lisps
+       ;; (scheme +guile)   ; a fully conniving family of lisps
        (sh +lsp)                ; she sells {ba,z,fi}sh shells on the C xor
        ;;sml
        ;;solidity          ; do you need a blockchain? No.
        ;;swift             ; who asked for emoji variables?
        ;;terra             ; Earth and Moon in alignment for performance.
-       (web +lsp)               ; the tubes
+       ;; (web +lsp)               ; the tubes
        (yaml +lsp)              ; JSON, but readable
        ;;zig               ; C, but simpler
 
@@ -221,7 +221,7 @@ Maybe use (package! maple-iedit :recipe (:host github :repo "honmaple/emacs-mapl
 
 #+begin_src emacs-lisp :tangle packages.el
 (package! discover :recipe (:host github :repo "mickeynp/discover.el"))
-(unpin! magit)
+;; (unpin! magit)
 #+end_src
 
 [[https://github.com/doomemacs/doomemacs/issues/6463][emmet-mode conflicts with copilot]]
@@ -960,8 +960,9 @@ savehist-file persp workspaces
 
 * Stumpwm integration
 ** Sly
-
-#+begin_src emacs-lisp :tangle "config.el"
+Not doing much lisp, switched to hyprland from stumpwm
+:tangle "config.el"
+#+begin_src emacs-lisp
 (use-package! sly
   :init (setq sly-ignore-protocol-mismatches t
               sly-compile-file-options (list :fasl-directory "/tmp")))

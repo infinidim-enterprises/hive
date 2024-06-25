@@ -47,8 +47,8 @@ mkMerge [
     programs.waybar.style = mkBefore ''
       * {
         border: none;
-        padding-left: 5px;
-        padding-right: 5px;
+        padding-left: 7px;
+        padding-right: 7px;
 
         font-family:
           ${HM_FONT_NAME}, FontAwesome;

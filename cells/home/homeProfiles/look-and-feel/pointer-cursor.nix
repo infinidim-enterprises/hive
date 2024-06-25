@@ -5,7 +5,6 @@ let
 in
 mkMerge [
   (mkIf (isGui osConfig) {
-    home.pointerCursor.x11.enable = true;
     home.pointerCursor.name = "Numix-Cursor-Light";
     home.pointerCursor.size = 32;
     home.pointerCursor.package = pkgs.numix-cursor-theme;
@@ -15,6 +14,7 @@ mkMerge [
   })
 
   (mkIf (!config.wayland.windowManager.hyprland.enable) {
+    home.pointerCursor.x11.enable = true;
     services.unclutter.enable = true;
     services.unclutter.timeout = 3;
   })
