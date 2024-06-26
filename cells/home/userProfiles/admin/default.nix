@@ -15,10 +15,10 @@ in
         cell.homeSuites.wayland
         ++ cell.homeSuites.developer.default
         ++ [
-          inputs.nix-doom-emacs.hmModule
+          # inputs.nix-doom-emacs.hmModule
 
-          ../vod/home/emacs.nix # FIXME: for testing
-          ../vod/home/gitconfig.nix # FIXME: for testing
+          # ../vod/home/emacs.nix # FIXME: for testing
+          # ../vod/home/gitconfig.nix # FIXME: for testing
 
           cell.homeProfiles.security.gpg
 
