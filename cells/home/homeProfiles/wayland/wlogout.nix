@@ -10,6 +10,19 @@
       text = "Lock";
       keybind = "l";
     }
+    {
+      label = "reboot";
+      action = "systemctl reboot";
+      text = "Reboot";
+      keybind = "r";
+    }
+
+    {
+      label = "shutdown";
+      action = "systemctl poweroff";
+      text = "Shutdown";
+      keybind = "s";
+    }
     # {
     #   label = "hibernate";
     #   action = "systemctl hibernate";
@@ -23,22 +36,10 @@
       keybind = "e";
     }
     {
-      label = "shutdown";
-      action = "systemctl poweroff";
-      text = "Shutdown";
-      keybind = "s";
-    }
-    {
       label = "suspend";
       action = "systemctl suspend";
       text = "Suspend";
       keybind = "u";
-    }
-    {
-      label = "reboot";
-      action = "systemctl reboot";
-      text = "Reboot";
-      keybind = "r";
     }
   ];
 }
