@@ -287,6 +287,10 @@
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     hyprland.inputs.nixpkgs.follows = "nixpkgs-unstable";
     hyprland.inputs.systems.follows = "hyprland-systems";
+    hyprland.inputs.hyprutils.follows = "hyprland-hyprutils";
+
+    hyprland-hyprutils.url = "git+https://github.com/hyprwm/hyprutils";
+    hyprland-hyprutils.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
     hyprland-hyprlock.url = "git+https://github.com/hyprwm/hyprlock";
     hyprland-hyprlock.inputs.nixpkgs.follows = "nixpkgs-unstable";

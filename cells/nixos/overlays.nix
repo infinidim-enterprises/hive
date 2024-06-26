@@ -36,6 +36,7 @@ in
     inputs.hyprland-contrib.overlays.default
     inputs.hyprland-hyprlock.overlays.default
     inputs.hyprland-hypridle.overlays.default
+    inputs.hyprland-hyprutils.overlays.default
 
     (final: prev: {
       hyprlandPlugins = prev.hyprlandPlugins // {
