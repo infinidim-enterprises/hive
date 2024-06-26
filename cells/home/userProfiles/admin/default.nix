@@ -6,7 +6,6 @@ let
 in
 {
   imports = [
-    inputs.cells.nixos.nixosProfiles.hardware.cryptography
     # (inputs.cells.nixos.nixosProfiles.backups.restic { user = "admin"; extraDirs = [ "tmp" ]; })
   ];
 

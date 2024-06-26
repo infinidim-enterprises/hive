@@ -48,7 +48,7 @@ let
 in
 
 {
-  imports = [ profiles.emacs ];
+  imports = [ profiles.emacs inputs.nix-doom-emacs.hmModule ];
 
   # FIXME: programs.promnesia.enable = true;
   # programs.promnesia.configFile = ../dotfiles/promnesia/config.py;

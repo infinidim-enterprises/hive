@@ -5,25 +5,21 @@
 {
   imports =
     [
-      # (inputs.cells.nixos.nixosProfiles.backups.restic { user = "vod"; extraDirs = [ "tmp" ]; })
-      inputs.cells.nixos.nixosModules.services.x11.window-managers.stumpwm
-      # inputs.cells.nixos.nixosModules.services.security.opensnitch
-    ] ++
-    (with inputs.cells.nixos.nixosProfiles; [
-      desktop.stumpwm
-      desktop.chromium-browser
-      hardware.cryptography
-    ]);
+      # TODO: (inputs.cells.nixos.nixosProfiles.backups.restic { user = "vod"; extraDirs = [ "tmp" ]; })
+    ];
 
-  services.xserver.windowManager.stumpwm.enable = true;
-
-  home-manager.users.vod.imports =
-    cell.homeSuites.developer.default ++
-    [ ./home ] ++
-    [{
-      services.xserver.windowManager.stumpwm.confDir = ./dotfiles/stumpwm.d;
-      services.xserver.windowManager.stumpwm.enable = true;
-    }];
+  home-manager.users.vod.imports = [ ./home ]
+    ++ cell.homeSuites.wayland
+    ++ cell.homeSuites.office
+    ++ cell.homeSuites.developer.default
+    ++ [
+    cell.homeProfiles.security.gpg
+    cell.homeProfiles.security.keybase
+    cell.homeProfiles.security.password-store
+    cell.homeProfiles.browsers.firefox
+    cell.homeProfiles.messengers
+    cell.homeProfiles.multimedia.players
+  ];
 
   sops.secrets.vod-password = {
     key = "vod-password";

@@ -36,6 +36,7 @@ let
 
 in
 {
+  programs.bat.enable = true;
   home.packages = with pkgs; [
     tmate #TODO: make a home-manager module - https://tmate.io/ Instant terminal sharing
     tty-share # Secure terminal-session sharing

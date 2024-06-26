@@ -25,7 +25,7 @@ in
       make-desktopitem
       # NOTE: obsolete masterpdfeditor
       firefox-addons
-      stumpwm
+      # stumpwm
     ];
 
   wayland = [
