@@ -12,7 +12,10 @@ in
   home-manager.sharedModules = [
     ({ config, lib, ... }: {
       config = lib.mkIf config.wayland.windowManager.hyprland.enable {
-        wayland.windowManager.hyprland.settings.monitor = [ "DSI-1,preferred,auto,1,transform,3" ];
+        wayland.windowManager.hyprland.settings.monitor = [
+          "DSI-1,preferred,auto,1,transform,3"
+          # HDMI-A-1
+        ];
       };
     })
   ];
