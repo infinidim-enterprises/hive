@@ -1,6 +1,7 @@
 { osConfig, config, lib, pkgs, ... }:
+
 let
-  inherit (lib / builtins)
+  inherit (lib)
     mkIf
     mkMerge
     hasAttr;

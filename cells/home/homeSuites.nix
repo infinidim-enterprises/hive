@@ -46,5 +46,9 @@ rec {
     onlyoffice
   ];
 
-  developer.default = with cell.homeProfiles.developer; [ git direnv nix ];
+  developer.default = with cell.homeProfiles.developer; [
+    git
+    direnv
+    nix
+  ];
 }

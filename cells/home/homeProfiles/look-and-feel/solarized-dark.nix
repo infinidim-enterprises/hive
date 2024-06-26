@@ -137,7 +137,10 @@ mkMerge [
 
   (mkIf config.programs.bat.enable {
     programs.bat.config.theme = "Solarized (dark)";
-    programs.bat.themes.solarized = readFile "${pkgs.sources.sublimeSolarized.src}/Solarized (dark).sublime-color-scheme";
+    programs.bat.themes.solarized = {
+      inherit (pkgs.sources.sublimeSolarized) src;
+      file = "Solarized (dark).sublime-color-scheme";
+    };
   })
 
   (mkIf config.programs.git.delta.enable {

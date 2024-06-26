@@ -18,12 +18,11 @@ in
           # inputs.nix-doom-emacs.hmModule
 
           # ../vod/home/emacs.nix # FIXME: for testing
-          # ../vod/home/gitconfig.nix # FIXME: for testing
+          ../vod/home/gitconfig.nix # FIXME: for testing
 
           cell.homeProfiles.security.gpg
 
           ({ pkgs, ... }: {
-            programs.bat.enable = true;
             services.gpg-agent.pinentryPackage = pkgs.pinentry-gnome3;
           })
         ];
