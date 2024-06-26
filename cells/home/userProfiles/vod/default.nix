@@ -8,11 +8,14 @@
       # TODO: (inputs.cells.nixos.nixosProfiles.backups.restic { user = "vod"; extraDirs = [ "tmp" ]; })
     ];
 
-  home-manager.users.vod.imports = [ ./home ]
-    ++ cell.homeSuites.wayland
-    ++ cell.homeSuites.office
-    ++ cell.homeSuites.developer.default
-    ++ [
+  home-manager.users.vod.imports = [
+    ./home
+    inputs.nix-doom-emacs.hmModule
+  ]
+  ++ cell.homeSuites.wayland
+  ++ cell.homeSuites.office
+  ++ cell.homeSuites.developer.default
+  ++ [
     cell.homeProfiles.security.gpg
     cell.homeProfiles.security.keybase
     cell.homeProfiles.security.password-store

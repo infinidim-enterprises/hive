@@ -1,4 +1,4 @@
-{ pkgs, profiles, inputs, ... }:
+{ pkgs, profiles, ... }:
 let
   # vodEmacsPkg = pkgs.emacs;
   vodEmacsPkg = pkgs.emacs29-pgtk; #emacs-gtk; #.emacs29; #29-gtk3;
@@ -48,7 +48,7 @@ let
 in
 
 {
-  imports = [ profiles.emacs inputs.nix-doom-emacs.hmModule ];
+  imports = [ profiles.emacs ];
 
   # FIXME: programs.promnesia.enable = true;
   # programs.promnesia.configFile = ../dotfiles/promnesia/config.py;
