@@ -1,10 +1,9 @@
-{ osConfig ? { }, config, lib, pkgs, ... }:
+{ osConfig, config, lib, pkgs, ... }:
 let
   inherit (lib / builtins)
     mkIf
     mkMerge
     hasAttr;
-  isHostConfig = osConfig != { };
 in
 mkMerge [
   (mkIf
@@ -126,7 +125,7 @@ mkMerge [
     systemd.user.services.lorri.Service.Environment =
       let
         path = with pkgs; lib.makeSearchPath "bin" [
-          (if isHostConfig then osConfig.nix.package else nix)
+          osConfig.nix.package
           gitMinimal
           gnutar
           xz
