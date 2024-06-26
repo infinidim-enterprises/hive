@@ -33,6 +33,10 @@ mkMerge [
   (mkIf config.programs.wlogout.enable {
     programs.wlogout.style = mkBefore ''
       * {
+          border-style: solid;
+          border-width: 1px;
+          border-color: @unfocused_borders;
+          background-size: 25%;
           background: @theme_base_color;
           color: @theme_text_color;
           font-family: ${HM_FONT_NAME};
