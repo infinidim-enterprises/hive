@@ -1,13 +1,16 @@
 { osConfig ? { }, config, lib, pkgs, ... }:
 let
-  inherit (lib) mkIf mkMerge;
+  inherit (lib / builtins)
+    mkIf
+    mkMerge
+    hasAttr;
   isHostConfig = osConfig != { };
 in
 mkMerge [
   (mkIf
     (
       config.services.emacs.enable
-      || config.programs.doom-emacs.enable
+      || (hasAttr "doom-emacs" config.programs && config.programs.doom-emacs.enable)
       || config.programs.emacs.enable
     )
 
