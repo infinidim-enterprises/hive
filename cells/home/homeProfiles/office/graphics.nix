@@ -1,21 +1,21 @@
 { pkgs, config, ... }:
 {
-  services.flameshot.enable = true;
-  services.flameshot.package = pkgs.flameshot;
-  services.flameshot.settings = {
-    # NOTE: https://github.com/flameshot-org/flameshot/blob/master/flameshot.example.ini
-    General = {
-      savePath = "${config.xdg.userDirs.pictures}/screenshots";
-      saveAsFileExtension = ".jpg";
-      useJpgForClipboard = true;
-      jpegQuality = 75;
-      showHelp = false;
-      showDesktopNotification = true;
-      filenamePattern = "%F_%H-%M";
-      disabledTrayIcon = false;
-      showStartupLaunchMessage = false;
-    };
-  };
+  # services.flameshot.enable = true;
+  # services.flameshot.package = pkgs.flameshot;
+  # services.flameshot.settings = {
+  #   # NOTE: https://github.com/flameshot-org/flameshot/blob/master/flameshot.example.ini
+  #   General = {
+  #     savePath = "${config.xdg.userDirs.pictures}/screenshots";
+  #     saveAsFileExtension = ".jpg";
+  #     useJpgForClipboard = true;
+  #     jpegQuality = 75;
+  #     showHelp = false;
+  #     showDesktopNotification = true;
+  #     filenamePattern = "%F_%H-%M";
+  #     disabledTrayIcon = false;
+  #     showStartupLaunchMessage = false;
+  #   };
+  # };
 
   home.packages = with pkgs; [
     nomacs # Qt-based image viewer
