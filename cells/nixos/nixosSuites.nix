@@ -35,8 +35,8 @@ rec {
     multimedia # bluetooth only atm
     xdg
     wayland
-    displayManager.gdm # NOTE: works with hyprland
-
+    # displayManager.gdm # NOTE: works with hyprland
+    displayManager.sddm
     # displayManager.lightdm
   ])
     ++ [ ({ pkgs, ... }: { environment.systemPackages = with pkgs; [ networkmanagerapplet ]; }) ];
