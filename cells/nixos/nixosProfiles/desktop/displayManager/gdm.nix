@@ -3,7 +3,7 @@
 { config, lib, pkgs, ... }:
 {
 
-  # services.xserver.displayManager.gdm.debug
+  services.xserver.displayManager.gdm.debug = true;
   # services.xserver.displayManager.gdm.banner
 
   services.xserver.displayManager.gdm.enable = true;
@@ -15,14 +15,14 @@
 
   services.hardware.bolt.enable = true;
 
-  services.gnome.gnome-settings-daemon.enable = true;
+  # services.gnome.gnome-settings-daemon.enable = true;
   services.gnome.glib-networking.enable = true;
 
   environment.systemPackages = with pkgs; [
     inputs.cells.common.packages.solarized-dark-gnome-shell
     inputs.cells.common.packages.solarized-material
 
-    themechanger
+    # themechanger
 
     numix-cursor-theme
     gnome.gnome-shell # HACK: gdm-wayland-session: No schemas installed
