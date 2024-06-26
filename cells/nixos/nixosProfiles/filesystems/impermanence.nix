@@ -36,8 +36,8 @@ rec {
           (mkIf hardware.bluetooth.enable
             "/var/lib/bluetooth")
 
-          (mkIf services.xserver.displayManager.lightdm.enable
-            "/var/cache/lightdm")
+          # (mkIf services.xserver.displayManager.lightdm.enable
+          #   "/var/cache/lightdm")
 
           (mkIf services.opensnitch.enable
             "/etc/opensnitchd/rules")

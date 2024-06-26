@@ -1,4 +1,4 @@
-{ pkgs, lib, osConfig, ... }:
+{ pkgs, lib, osConfig, localLib, ... }:
 with lib;
 
 mkMerge [
@@ -9,7 +9,7 @@ mkMerge [
     ];
   }
 
-  (mkIf osConfig.services.xserver.displayManager.lightdm.enable {
+  (mkIf (localLib.isGui osConfig) {
     home.packages = with pkgs; [ d-spy bustle ];
   })
 ]
