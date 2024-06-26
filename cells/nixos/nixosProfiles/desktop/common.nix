@@ -1,70 +1,76 @@
 { inputs, cell, ... }:
 
-{ pkgs, lib, ... }:
-{
-  home-manager.sharedModules = [{
-    programs.zsh.enableVteIntegration = true;
-    programs.bash.enableVteIntegration = true;
-  }];
+{ pkgs, lib, config, ... }:
 
-  services.displayManager.logToFile = false;
-  services.displayManager.logToJournal = false;
-  security.polkit.enable = true;
-  # security.pam.services.login.enableGnomeKeyring = lib.mkForce false;
+let
+  inherit (lib) mkMerge mkIf;
+in
+mkMerge [
+  # (mkIf {
 
-  programs.nix-ld.enable = true;
-  programs.droidcam.enable = true;
+  #   services.redshift.enable = true;
+  #   # services.redshift.brightness.day = "10";
+  #   services.redshift.temperature.day = 4200;
+  #   # services.redshift.brightness.night = "10";
+  #   services.redshift.temperature.night = 3600;
 
-  xdg.mime.enable = true;
+  # })
 
-  # qt.enable = true;
-  # qt.style = "gtk2";
-  # qt.platformTheme = "gnome";
+  {
+    home-manager.sharedModules = [{
+      programs.zsh.enableVteIntegration = true;
+      programs.bash.enableVteIntegration = true;
+    }];
 
-  programs.light.enable = true;
-  programs.light.brightnessKeys.enable = true;
+    services.displayManager.logToFile = false;
+    services.displayManager.logToJournal = false;
+    security.polkit.enable = true;
+    # security.pam.services.login.enableGnomeKeyring = lib.mkForce false;
 
-  hardware.sane.enable = true;
-  hardware.acpilight.enable = true;
-  hardware.pulseaudio.enable = true;
+    programs.nix-ld.enable = true;
+    programs.droidcam.enable = true;
 
-  services.opensnitch.enable = false; # NOTE: opensnitch SUCKS!
+    xdg.mime.enable = true;
 
-  services.colord.enable = true;
-  # services.devmon.enable = true;
-  services.gvfs.enable = true;
-  services.udisks2.enable = true;
-  services.accounts-daemon.enable = true;
-  services.packagekit.enable = true;
-  services.gnome.gnome-keyring.enable = lib.mkForce false;
-  services.gnome.at-spi2-core.enable = true;
-  services.gnome.glib-networking.enable = true;
+    programs.light.enable = true;
+    programs.light.brightnessKeys.enable = true;
 
-  services.redshift.enable = true;
-  # services.redshift.brightness.day = "10";
-  services.redshift.temperature.day = 4200;
-  # services.redshift.brightness.night = "10";
-  services.redshift.temperature.night = 3600;
+    hardware.sane.enable = true;
+    hardware.acpilight.enable = true;
+    hardware.pulseaudio.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    pulseaudio-ctl
+    services.opensnitch.enable = false; # NOTE: opensnitch SUCKS!
 
-    gnome.adwaita-icon-theme
-    gnome.dconf-editor
+    services.colord.enable = true;
+    # services.devmon.enable = true;
+    services.gvfs.enable = true;
+    services.udisks2.enable = true;
+    services.accounts-daemon.enable = true;
+    services.packagekit.enable = true;
+    services.gnome.gnome-keyring.enable = lib.mkForce false;
+    services.gnome.at-spi2-core.enable = true;
+    services.gnome.glib-networking.enable = true;
 
-    numix-cursor-theme
-    numix-icon-theme-circle
-    numix-icon-theme
-    numix-solarized-gtk-theme
+    environment.systemPackages = with pkgs; [
+      pulseaudio-ctl
 
-    libnotify
+      gnome.adwaita-icon-theme
+      gnome.dconf-editor
 
-    desktop-file-utils
+      numix-cursor-theme
+      numix-icon-theme-circle
+      numix-icon-theme
+      numix-solarized-gtk-theme
 
-    # Misc utils
-    xfontsel
-    xdotool
-    xsel
-    evtest
-  ];
-}
+      libnotify
+
+      desktop-file-utils
+
+      # Misc utils
+      xfontsel
+      xdotool
+      xsel
+      evtest
+    ];
+  }
+]

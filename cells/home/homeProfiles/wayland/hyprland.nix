@@ -16,7 +16,12 @@ in
   services.wlsunset.sunset = "19:30";
 
   services.xsettingsd.enable = true;
-  # services.xsettingsd.settings = {};
+  services.xsettingsd.settings = {
+    "Net/ThemeName" = "NumixSolarizedDarkGreen";
+    "Xft/Antialias" = true;
+    "Xft/Hinting" = true;
+    # "Xft/RGBA" = "rgb";
+  };
 
   services.hypridle.enable = true;
   services.hypridle.settings = {
