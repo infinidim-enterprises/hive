@@ -7,20 +7,20 @@
     {
       label = "lock";
       action = "hyprlock";
-      text = "Lock";
+      text = "Lock [l]";
       keybind = "l";
     }
     {
       label = "reboot";
       action = "systemctl reboot";
-      text = "Reboot";
+      text = "Reboot [r]";
       keybind = "r";
     }
 
     {
       label = "shutdown";
       action = "systemctl poweroff";
-      text = "Shutdown";
+      text = "Shutdown [s]";
       keybind = "s";
     }
     # {
@@ -32,13 +32,13 @@
     {
       label = "logout";
       action = "loginctl terminate-user $USER";
-      text = "Logout";
-      keybind = "e";
+      text = "Logout [o]";
+      keybind = "o";
     }
     {
       label = "suspend";
       action = "systemctl suspend";
-      text = "Suspend";
+      text = "Suspend [u]";
       keybind = "u";
     }
   ];

@@ -43,18 +43,6 @@ mkMerge [
           font-weight: bold;
           font-size: ${font-size}px;
       }
-
-      button:focus {
-          background-size: 20%;
-          border-radius: 10px;
-          transition: all 0.3s cubic-bezier(0.55, 0, 0.28, 1.682);
-      }
-
-      button:hover {
-          background-size: 20%;
-          border-radius: 10px;
-          transition: all 0.3s cubic-bezier(0.55, 0, 0.28, 1.682);
-      }
     '';
   })
 
