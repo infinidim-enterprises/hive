@@ -1,4 +1,4 @@
-{ pkgs, profiles, ... }:
+{ pkgs, profiles, inputs, ... }:
 let
   # vodEmacsPkg = pkgs.emacs;
   vodEmacsPkg = pkgs.emacs29-pgtk; #emacs-gtk; #.emacs29; #29-gtk3;
