@@ -15,16 +15,16 @@
   };
   lorri = {
     pname = "lorri";
-    version = "fd13e5466517c8be0369b950d356e0823ed382a4";
+    version = "8c2350caa712211438de7593975d995b1c2b7391";
     src = fetchFromGitHub {
       owner = "nix-community";
       repo = "lorri";
-      rev = "fd13e5466517c8be0369b950d356e0823ed382a4";
+      rev = "8c2350caa712211438de7593975d995b1c2b7391";
       fetchSubmodules = false;
-      sha256 = "sha256-Dz829CB8MqHuHma9+9Yj1nfMMJU5pwjKUaTo60tCPGo=";
+      sha256 = "sha256-PBVVpeZ2ejscIR7JXIaOvWSF05iTuVbkI78EfUWYEIQ=";
     };
     cargoSha256 = "0000000000000000000000000000000000000000000000000000";
-    date = "2024-05-02";
+    date = "2024-06-24";
   };
   nix-index = {
     pname = "nix-index";
@@ -237,17 +237,17 @@
   };
   zsh-plugin_zsh-completions = {
     pname = "zsh-plugin_zsh-completions";
-    version = "978e79e12c44b5b1d3e1e2920c537002087b82c2";
+    version = "7a884c75b4f3ce2d8d24df8e55dcc359a020be3f";
     src = fetchgit {
       url = "https://github.com/zsh-users/zsh-completions";
-      rev = "978e79e12c44b5b1d3e1e2920c537002087b82c2";
+      rev = "7a884c75b4f3ce2d8d24df8e55dcc359a020be3f";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-J2L/jO8lWNGC4Bob+2mH7OEJ+U2g+NVkbPA1OdnIrp0=";
+      sha256 = "sha256-ZMkGQT27PKi5yYT9eIF2yj8Hlk2oRIQTkY+J+aXZZ5E=";
     };
-    date = "2024-05-21";
+    date = "2024-06-26";
   };
   zsh-plugin_zsh-history-substring-search = {
     pname = "zsh-plugin_zsh-history-substring-search";

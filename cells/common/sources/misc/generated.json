@@ -21,7 +21,7 @@
     },
     "adguard-filters": {
         "cargoLocks": null,
-        "date": "2024-06-22",
+        "date": "2024-06-26",
         "extract": null,
         "name": "adguard-filters",
         "passthru": null,
@@ -31,13 +31,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "2ccea63b64c7e5eb67b273ac402ac366d48f8800",
-            "sha256": "sha256-8Hvg90UO7jQoGZuc8CGIzDxRecSzZi9sXLLEr7uJiXE=",
+            "rev": "6745b6908238d0103e59148c31ab8a49eb2b6d70",
+            "sha256": "sha256-9+zmapV9ks1rweDtsSqY8djpogO7xIl/pyq2+eurC6k=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/AdguardTeam/AdguardFilters"
         },
-        "version": "2ccea63b64c7e5eb67b273ac402ac366d48f8800"
+        "version": "6745b6908238d0103e59148c31ab8a49eb2b6d70"
     },
     "age-plugin-trezor": {
         "cargoLocks": null,
@@ -84,7 +84,7 @@
     },
     "chatgpt-wrapper": {
         "cargoLocks": null,
-        "date": "2024-06-22",
+        "date": "2024-06-25",
         "extract": null,
         "name": "chatgpt-wrapper",
         "passthru": null,
@@ -96,12 +96,12 @@
             "name": null,
             "owner": "llm-workflow-engine",
             "repo": "llm-workflow-engine",
-            "rev": "e98831f5a8780f859319903a12a379b336385faf",
-            "sha256": "sha256-HMzah6F9n29mXN2oW2DXp+qf8s7Pe6FowR0YnmotTZY=",
+            "rev": "1d7a06c63d5292fb10608fe48cae8ca5071b3013",
+            "sha256": "sha256-SWrckf1+MqE6VH5j+UsdjHL/O3ADmFB8XWgPq9Nmmzs=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "e98831f5a8780f859319903a12a379b336385faf"
+        "version": "1d7a06c63d5292fb10608fe48cae8ca5071b3013"
     },
     "cl-hash-util": {
         "cargoLocks": null,
@@ -402,7 +402,7 @@
     },
     "ipxe": {
         "cargoLocks": null,
-        "date": "2024-06-21",
+        "date": "2024-06-26",
         "extract": null,
         "name": "ipxe",
         "passthru": null,
@@ -412,13 +412,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "821bb326f87fbc000376fdc5371e9e53f666267a",
-            "sha256": "sha256-sf71VdBNc+lc94tQl6cIdE3vqIhuN9+qP7KYzBQwIBA=",
+            "rev": "77acf6b41f705384593a057c2bea057283bf429b",
+            "sha256": "sha256-vTZkyBi1wO4KrOf4ieqk9B9TXvKD9XRkhZN0BXmfVow=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/ipxe/ipxe"
         },
-        "version": "821bb326f87fbc000376fdc5371e9e53f666267a"
+        "version": "77acf6b41f705384593a057c2bea057283bf429b"
     },
     "iterable-io": {
         "cargoLocks": null,
@@ -449,12 +449,12 @@
             "name": null,
             "owner": "langchain-ai",
             "repo": "langchain",
-            "rev": "langchain-core==0.2.9",
-            "sha256": "sha256-/BUn/NxaE9l3VY6dPshr1JJaHTGzn9NMQhSQ2De65Jg=",
+            "rev": "langchain-core==0.2.10",
+            "sha256": "sha256-tEw1Yaobn3qM2dS0igSTOKtZO/xYHSSeXa9qFg53PaQ=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "langchain-core==0.2.9"
+        "version": "langchain-core==0.2.10"
     },
     "ledger-live-desktop": {
         "cargoLocks": null,
@@ -584,7 +584,7 @@
     },
     "pbkdf2-sha512": {
         "cargoLocks": null,
-        "date": "2024-06-23",
+        "date": "2024-06-26",
         "extract": null,
         "name": "pbkdf2-sha512",
         "passthru": null,
@@ -595,7 +595,7 @@
             "type": "url",
             "url": "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c"
         },
-        "version": "420c9a60c0a3e672dc3776916ab4b1892a066feb"
+        "version": "876d59bacef801bb938683100bbdcf0695f7197f"
     },
     "pgp-key-generation": {
         "cargoLocks": null,
@@ -755,6 +755,26 @@
             "url": "https://github.com/rtlewis1/GTK"
         },
         "version": "93ab6a4b7683795ee9da42f39c1ad28a23ac8b3c"
+    },
+    "solarized-sddm": {
+        "cargoLocks": null,
+        "date": "2019-01-03",
+        "extract": null,
+        "name": "solarized-sddm",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "2b5bdf1045f2a5c8b880b482840be8983ca06191",
+            "sha256": "sha256-uVNYmpPM2o9Fq3A1gP04ffXeWdc7y2HP1g7vkiuJZtg=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/MalditoBarbudo/solarized_sddm_theme"
+        },
+        "version": "2b5bdf1045f2a5c8b880b482840be8983ca06191"
     },
     "stumpwm-contrib": {
         "cargoLocks": null,

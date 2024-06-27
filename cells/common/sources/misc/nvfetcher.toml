@@ -26,6 +26,10 @@ src.branch = "Solarized-DarkArc-COLORPACK"
 src.git = "https://github.com/rtlewis1/GTK"
 fetch.git = "https://github.com/rtlewis1/GTK"
 
+[solarized-sddm]
+src.git = "https://github.com/MalditoBarbudo/solarized_sddm_theme"
+fetch.git = "https://github.com/MalditoBarbudo/solarized_sddm_theme"
+
 [base16-schemes]
 src.git = "https://github.com/tinted-theming/schemes"
 fetch.git = "https://github.com/tinted-theming/schemes"

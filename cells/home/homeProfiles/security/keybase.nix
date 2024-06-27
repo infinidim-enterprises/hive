@@ -10,5 +10,6 @@
     keybase.Service.StandardOutput = "null";
   };
 
+  # FIXME: keybase-gui doesn't seem to have a desktop file and isn't on path either!
   home.packages = lib.mkIf (localLib.isGui osConfig) [ pkgs.keybase-gui ];
 }

@@ -31,7 +31,8 @@
     # }
     {
       label = "logout";
-      action = "loginctl terminate-user $USER";
+      action = "hyprctl dispatch exit 0";
+      # action = "loginctl terminate-user $USER";
       text = "Logout [o]";
       keybind = "o";
     }

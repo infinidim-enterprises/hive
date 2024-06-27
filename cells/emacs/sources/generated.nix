@@ -29,17 +29,17 @@
   };
   all-the-icons = {
     pname = "all-the-icons";
-    version = "ee414384938ccf2ce93c77d717b85dc5538a257d";
+    version = "39ef44f810c34e8900978788467cc675870bcd19";
     src = fetchgit {
       url = "https://github.com/domtronn/all-the-icons.el";
-      rev = "ee414384938ccf2ce93c77d717b85dc5538a257d";
+      rev = "39ef44f810c34e8900978788467cc675870bcd19";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-Da+luefWlhANKNNLa29pJpCez+O2IOYUNDUlqF0486E=";
+      sha256 = "sha256-SlqJ8erFtiydEdgZFGJ23DQ9fZH4FF09iO6t3gf5pwE=";
     };
-    date = "2024-01-08";
+    date = "2024-06-23";
   };
   chemacs = {
     pname = "chemacs";
@@ -85,17 +85,17 @@
   };
   doom-emacs = {
     pname = "doom-emacs";
-    version = "62248f836674dcae71c36036276193ad103d070f";
+    version = "cc7a509e10785dba94f899a0d428d01e6b8bb078";
     src = fetchgit {
       url = "https://github.com/hlissner/doom-emacs";
-      rev = "62248f836674dcae71c36036276193ad103d070f";
+      rev = "cc7a509e10785dba94f899a0d428d01e6b8bb078";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = true;
       sparseCheckout = [ ];
-      sha256 = "sha256-SaN50DWR84E7ZrJUZxcvLHs9E/uetkcYY155g5Rf5mg=";
+      sha256 = "sha256-UgCITImZrzKwJUopfnY0qCQ7U8obLBXepokNWTk/mIs=";
     };
-    date = "2024-06-21";
+    date = "2024-06-25";
   };
   grip = {
     pname = "grip";
@@ -125,15 +125,15 @@
   };
   lsp-bridge = {
     pname = "lsp-bridge";
-    version = "4bfbbe4e6c44d80b15cb501fa3444ad03dba2824";
+    version = "33e92a97e473a1ca0c980310bbde7c8338c0f086";
     src = fetchFromGitHub {
       owner = "manateelazycat";
       repo = "lsp-bridge";
-      rev = "4bfbbe4e6c44d80b15cb501fa3444ad03dba2824";
+      rev = "33e92a97e473a1ca0c980310bbde7c8338c0f086";
       fetchSubmodules = false;
-      sha256 = "sha256-rzaUtUYDEZAuRjSgThHKxrQ7U8ZIO0k750aH08VpA08=";
+      sha256 = "sha256-AtB2QOrl8uxtTnyLb5QR9G11i2vs8IlocpK6YQ6nq1A=";
     };
-    date = "2024-06-22";
+    date = "2024-06-25";
   };
   nix-mode = {
     pname = "nix-mode";
