@@ -18,7 +18,7 @@ stdenvNoCC.mkDerivation rec {
 
   buildInputs = [ rsync ];
   propagatedBuildInputs = [ qt5.qtgraphicaleffects ];
-
+  dontWrapQtApps = true;
   installPhase = ''
     runHook preInstall
 
@@ -30,8 +30,6 @@ stdenvNoCC.mkDerivation rec {
 
     runHook postInstall
   '';
-
-  dontWrapQtApps = true;
 
   postFixup = ''
     mkdir -p $out/nix-support
