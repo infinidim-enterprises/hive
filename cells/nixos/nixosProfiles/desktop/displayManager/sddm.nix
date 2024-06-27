@@ -10,7 +10,7 @@
     (inputs.cells.common.packages.solarized-sddm.override
       {
         themeConfig.General.background = "background.png";
-        themeConfig.General.displayFont = "UbuntuMono Nerd Font Mono 35";
+        themeConfig.General.displayFont = "UbuntuMono Nerd Font Mono";
       })
   ];
 }
