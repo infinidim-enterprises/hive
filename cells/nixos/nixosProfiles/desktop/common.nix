@@ -51,6 +51,8 @@ mkMerge [
     services.gnome.at-spi2-core.enable = true;
     services.gnome.glib-networking.enable = true;
 
+    programs.system-config-printer.enable = true;
+
     environment.systemPackages = with pkgs; [
       pulseaudio-ctl
 
@@ -65,6 +67,8 @@ mkMerge [
       libnotify
 
       desktop-file-utils
+      shared-mime-info
+      xdg-user-dirs
 
       # Misc utils
       xfontsel

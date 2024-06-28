@@ -7,6 +7,24 @@ let
     else "24";
 in
 {
+  # TODO: investigate mate-wayland-session with hyprland
+
+  # NOTE: kinda need a filemanager
+  home.packages = with pkgs; [ mate.caja-with-extensions ];
+
+  xdg.mimeApps.defaultApplications = {
+    "inode/directory" = "caja-folder-handler.desktop";
+    "application/x-mate-saved-search" = "caja-folder-handler.desktop";
+  };
+
+  dconf.settings = {
+    # NOTE: https://github.com/mate-desktop/caja/blob/1.28/libcaja-private/org.mate.caja.gschema.xml
+    "org/mate/caja/preferences".enable-delete = true;
+    "org/mate/caja/preferences".confirm-trash = false;
+    "org/mate/caja/preferences".default-folder-viewer = "list-view";
+    "org/mate/caja/preferences".ctrl-tab-switch-tabs = true;
+  };
+
   # TODO: https://github.com/sentriz/cliphist
 
   services.wlsunset.enable = true;
@@ -17,10 +35,52 @@ in
 
   services.xsettingsd.enable = true;
   services.xsettingsd.settings = {
+    /*
+      Gdk/UnscaledDPI 98433
+      Gdk/WindowScalingFactor 1
+      Gtk/AutoMnemonics 1
+      Gtk/ButtonImages 1
+      Gtk/ColorScheme ""
+      Gtk/CursorThemeName "Numix-Cursor-Light"
+      Gtk/CursorThemeSize 32
+      Gtk/DecorationLayout "menu:minimize,maximize,close"
+      Gtk/DialogsUseHeader 0
+      Gtk/EnableAnimations 1
+      Gtk/EnablePrimaryPaste 1
+      Gtk/FileChooserBackend "gio"
+      Gtk/FontName "UbuntuMono Nerd Font Mono 15"
+      Gtk/IMModule ""
+      Gtk/IMPreeditStyle "callback"
+      Gtk/IMStatusStyle "callback"
+      Gtk/KeyThemeName "Default"
+      Gtk/MenuBarAccel "F10"
+      Gtk/MenuImages 1
+      Gtk/ShellShowsAppMenu 0
+      Gtk/ShellShowsMenubar 0
+      Gtk/ShowInputMethodMenu 1
+      Gtk/ShowUnicodeMenu 1
+      Gtk/ToolbarIconSize "large-toolbar"
+      Gtk/ToolbarStyle "both-horiz"
+      Net/CursorBlink 1
+      Net/CursorBlinkTime 1200
+      Net/DndDragThreshold 8
+      Net/DoubleClickTime 400
+      Net/EnableEventSounds 0
+      Net/EnableInputFeedbackSounds 0
+      Net/FallbackIconTheme "mate"
+      Net/IconThemeName "Numix-Circle"
+      Net/SoundThemeName "__no_sounds"
+      Net/ThemeName "NumixSolarizedDarkGreen"
+
+      Xft/DPI 98433
+
+    */
     "Net/ThemeName" = "NumixSolarizedDarkGreen";
     "Xft/Antialias" = true;
+    "Xft/HintStyle" = "hintslight";
     "Xft/Hinting" = true;
-    # "Xft/RGBA" = "rgb";
+    "Xft/RGBA" = "rgb";
+    "Xft/lcdfilter" = "lcddefault";
   };
 
   services.hypridle.enable = true;
