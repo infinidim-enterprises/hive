@@ -103,7 +103,7 @@ mkMerge [
       nix-template
       # FIXME: nix-template-rpm
       dpkg
-      nix-top
+      # nix-top # unmaintained and dropped from nixpkgs
       nix-tree
       nix-universal-prefetch
       nix-update
