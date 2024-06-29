@@ -33,7 +33,7 @@ in
   '';
 
   boot.consoleLogLevel = 0;
-  boot.kernelPackages = pkgs.linuxPackages_xanmod; # _stable;
+  boot.kernelPackages = pkgs.linuxPackages_xanmod_stable;
   boot.kernelPatches = [
     {
       # NOTE: https://superuser.com/questions/610581/iotop-complains-config-task-delay-acct-not-enabled-in-kernel-only-for-specific
@@ -44,11 +44,11 @@ in
         TASKSTATS y
       '';
     }
-    # {
-    #   # NOTE: annoying messages removed on gpd micro-pc
-    #   name = "disable showing '*ERROR* GPIO index request failed'";
-    #   patch = ./intel_dsi_vbt.patch;
-    # }
+    {
+      # NOTE: annoying messages removed on gpd micro-pc
+      name = "disable showing '*ERROR* GPIO index request failed'";
+      patch = ./intel_dsi_vbt.patch;
+    }
   ];
 
   boot.blacklistedKernelModules = [ "nouveau" ];
