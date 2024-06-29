@@ -105,7 +105,7 @@ mkMerge [
       dpkg
       # nix-top # unmaintained and dropped from nixpkgs
       nix-tree
-      nix-universal-prefetch
+      # nix-universal-prefetch # unmaintained and dropped from nixpkgs
       nix-update
       nix-update-source
       nixbang
