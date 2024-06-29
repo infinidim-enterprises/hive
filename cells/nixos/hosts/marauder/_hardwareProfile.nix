@@ -3,6 +3,7 @@
 { config, lib, pkgs, ... }:
 
 {
+  home-manager.backupFileExtension = "bkp";
   # NOTE: https://askubuntu.com/questions/1418992/sgx-disabled-by-bios-message-on-ubuntu-20-04-booting
   boot.kernelParams = [ "nosgx" ];
   boot.kernelPackages = pkgs.linuxPackages_xanmod_stable;
