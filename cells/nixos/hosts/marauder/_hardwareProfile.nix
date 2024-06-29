@@ -25,7 +25,7 @@
       cell.nixosProfiles.hardware.tlp
       cell.nixosProfiles.hardware.fwupd
       cell.nixosProfiles.core.kernel.physical-access-system
-      cell.nixosProfiles.filesystems.zfs
+      # cell.nixosProfiles.filesystems.zfs
       cell.nixosProfiles.boot.systemd-boot
 
       # FIXME: error: cannot call 'getFlake' on unlocked flake reference (use --impure to override)
