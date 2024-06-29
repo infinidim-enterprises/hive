@@ -65,16 +65,6 @@ in
   services.logind.lidSwitchExternalPower = "ignore";
   services.logind.lidSwitch = "ignore";
 
-  hardware.bluetooth.disabledPlugins = [
-    "bap"
-    "bass"
-    "mcp"
-    "vcp"
-    "micp"
-    "ccp"
-    "csip"
-  ];
-
   # NOTE: https://github.com/systemd/systemd/issues/25269
   # services.logind.lidSwitch = "suspend-then-hibernate";
   # systemd.sleep.extraConfig = ''
