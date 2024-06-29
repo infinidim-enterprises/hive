@@ -21,7 +21,7 @@
     },
     "adguard-filters": {
         "cargoLocks": null,
-        "date": "2024-06-22",
+        "date": "2024-06-28",
         "extract": null,
         "name": "adguard-filters",
         "passthru": null,
@@ -31,13 +31,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "2ccea63b64c7e5eb67b273ac402ac366d48f8800",
-            "sha256": "sha256-8Hvg90UO7jQoGZuc8CGIzDxRecSzZi9sXLLEr7uJiXE=",
+            "rev": "cbb900575c6ece697e1a24ee34483cfbe84a069a",
+            "sha256": "sha256-SctP8l7FZiXso3pP4csQ54vobt50uz+9htTYPvRNDiM=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/AdguardTeam/AdguardFilters"
         },
-        "version": "2ccea63b64c7e5eb67b273ac402ac366d48f8800"
+        "version": "cbb900575c6ece697e1a24ee34483cfbe84a069a"
     },
     "age-plugin-trezor": {
         "cargoLocks": null,
@@ -84,7 +84,7 @@
     },
     "chatgpt-wrapper": {
         "cargoLocks": null,
-        "date": "2024-06-22",
+        "date": "2024-06-25",
         "extract": null,
         "name": "chatgpt-wrapper",
         "passthru": null,
@@ -96,12 +96,12 @@
             "name": null,
             "owner": "llm-workflow-engine",
             "repo": "llm-workflow-engine",
-            "rev": "e98831f5a8780f859319903a12a379b336385faf",
-            "sha256": "sha256-HMzah6F9n29mXN2oW2DXp+qf8s7Pe6FowR0YnmotTZY=",
+            "rev": "1d7a06c63d5292fb10608fe48cae8ca5071b3013",
+            "sha256": "sha256-SWrckf1+MqE6VH5j+UsdjHL/O3ADmFB8XWgPq9Nmmzs=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "e98831f5a8780f859319903a12a379b336385faf"
+        "version": "1d7a06c63d5292fb10608fe48cae8ca5071b3013"
     },
     "cl-hash-util": {
         "cargoLocks": null,
@@ -402,7 +402,7 @@
     },
     "ipxe": {
         "cargoLocks": null,
-        "date": "2024-06-21",
+        "date": "2024-06-27",
         "extract": null,
         "name": "ipxe",
         "passthru": null,
@@ -412,13 +412,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "821bb326f87fbc000376fdc5371e9e53f666267a",
-            "sha256": "sha256-sf71VdBNc+lc94tQl6cIdE3vqIhuN9+qP7KYzBQwIBA=",
+            "rev": "b66e27d9b29a172a097c737ab4d378d60fe01b05",
+            "sha256": "sha256-TKZ4WjNV2oZIYNefch7E7m1JpeoC/d7O1kofoNv8G40=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/ipxe/ipxe"
         },
-        "version": "821bb326f87fbc000376fdc5371e9e53f666267a"
+        "version": "b66e27d9b29a172a097c737ab4d378d60fe01b05"
     },
     "iterable-io": {
         "cargoLocks": null,
@@ -449,12 +449,12 @@
             "name": null,
             "owner": "langchain-ai",
             "repo": "langchain",
-            "rev": "langchain-core==0.2.9",
-            "sha256": "sha256-/BUn/NxaE9l3VY6dPshr1JJaHTGzn9NMQhSQ2De65Jg=",
+            "rev": "langchain-core==0.2.10",
+            "sha256": "sha256-tEw1Yaobn3qM2dS0igSTOKtZO/xYHSSeXa9qFg53PaQ=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "langchain-core==0.2.9"
+        "version": "langchain-core==0.2.10"
     },
     "ledger-live-desktop": {
         "cargoLocks": null,
@@ -584,7 +584,7 @@
     },
     "pbkdf2-sha512": {
         "cargoLocks": null,
-        "date": "2024-06-23",
+        "date": "2024-06-29",
         "extract": null,
         "name": "pbkdf2-sha512",
         "passthru": null,
@@ -595,7 +595,7 @@
             "type": "url",
             "url": "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c"
         },
-        "version": "420c9a60c0a3e672dc3776916ab4b1892a066feb"
+        "version": "490e56703fe3225772ea112e6ba9404ed4f7ece2"
     },
     "pgp-key-generation": {
         "cargoLocks": null,
