@@ -4,8 +4,14 @@ let
     solarized-dark-gnome-shell
     solarized-material;
 in
-{
+rec {
   firmwares = _: _: cell.firmwares;
+
+  default_desktop = base
+    ++ desktop
+    ++ emacs
+    ++ wayland
+    ++ vscode;
 
   base = with inputs.cells.common.overlays; [
     inputs.nix-filter.overlays.default

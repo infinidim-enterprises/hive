@@ -33,7 +33,8 @@ in
     "hyprland/window".format = " {}";
     "hyprland/window".max-length = 100;
 
-    # "hyprland/workspaces" = { };
+    "hyprland/workspaces".format = "{name}";
+
     tray.spacing = 5;
     temperature.format = "{temperatureC}°C ";
 

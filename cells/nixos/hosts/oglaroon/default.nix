@@ -11,11 +11,7 @@ rec {
     pkgs = import inputs.nixpkgs-unstable {
       inherit (inputs.nixpkgs) system;
       config.allowUnfree = true;
-      overlays = with cell.overlays;
-        base ++
-        desktop ++
-        emacs ++
-        vscode;
+      overlays = cell.overlays.default_desktop;
     };
   };
 
@@ -34,7 +30,6 @@ rec {
         systemd.network.networks.local-eth.matchConfig.Name = "eno1";
         networking.wireless.enable = false;
         networking.networkmanager.enable = true;
-        environment.systemPackages = with pkgs; [ networkmanagerapplet ];
       })
       {
         deploy.enable = true;

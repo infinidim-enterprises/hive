@@ -12,13 +12,7 @@ rec {
     pkgs = import inputs.nixpkgs-unstable {
       inherit system;
       config.allowUnfree = true;
-      overlays = with cell.overlays;
-        base
-        ++ desktop
-        ++ emacs
-        ++ wayland
-        ++ (gdm { })
-        ++ vscode;
+      overlays = cell.overlays.default_desktop;
     };
   };
 
@@ -50,9 +44,6 @@ rec {
 
         networking.hostName = baseNameOf ./.;
         networking.hostId = "23d7e1ff";
-
-        # services.redshift.brightness.night = "0.85";
-        # services.redshift.brightness.day = "0.85";
       }
 
       ({ lib, config, ... }: {

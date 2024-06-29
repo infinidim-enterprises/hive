@@ -17,17 +17,17 @@
   };
   adguard-filters = {
     pname = "adguard-filters";
-    version = "6745b6908238d0103e59148c31ab8a49eb2b6d70";
+    version = "c21ab70dabc8f35009386b0e2a8c1de61d322c7e";
     src = fetchgit {
       url = "https://github.com/AdguardTeam/AdguardFilters";
-      rev = "6745b6908238d0103e59148c31ab8a49eb2b6d70";
+      rev = "c21ab70dabc8f35009386b0e2a8c1de61d322c7e";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-9+zmapV9ks1rweDtsSqY8djpogO7xIl/pyq2+eurC6k=";
+      sha256 = "sha256-w6hIdWImS4aIIdTLzoK5cTxOyfPEUd4/wNOeol8Sxtw=";
     };
-    date = "2024-06-26";
+    date = "2024-06-29";
   };
   age-plugin-trezor = {
     pname = "age-plugin-trezor";
@@ -244,17 +244,17 @@
   };
   ipxe = {
     pname = "ipxe";
-    version = "77acf6b41f705384593a057c2bea057283bf429b";
+    version = "b66e27d9b29a172a097c737ab4d378d60fe01b05";
     src = fetchgit {
       url = "https://github.com/ipxe/ipxe";
-      rev = "77acf6b41f705384593a057c2bea057283bf429b";
+      rev = "b66e27d9b29a172a097c737ab4d378d60fe01b05";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-vTZkyBi1wO4KrOf4ieqk9B9TXvKD9XRkhZN0BXmfVow=";
+      sha256 = "sha256-TKZ4WjNV2oZIYNefch7E7m1JpeoC/d7O1kofoNv8G40=";
     };
-    date = "2024-06-26";
+    date = "2024-06-27";
   };
   iterable-io = {
     pname = "iterable-io";
@@ -355,12 +355,12 @@
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "876d59bacef801bb938683100bbdcf0695f7197f";
+    version = "7de69e22aba1b4887306f05cf276f39798a45a28";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";
     };
-    date = "2024-06-26";
+    date = "2024-06-29";
   };
   pgp-key-generation = {
     pname = "pgp-key-generation";

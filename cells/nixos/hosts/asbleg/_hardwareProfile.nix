@@ -33,7 +33,7 @@ in
   '';
 
   boot.consoleLogLevel = 0;
-  boot.kernelPackages = pkgs.linuxPackages_xanmod_stable;
+  boot.kernelPackages = pkgs.linuxPackages_xanmod; # _stable;
   boot.kernelPatches = [
     {
       # NOTE: https://superuser.com/questions/610581/iotop-complains-config-task-delay-acct-not-enabled-in-kernel-only-for-specific

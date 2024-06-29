@@ -22,7 +22,7 @@
     },
     "lorri": {
         "cargoLocks": null,
-        "date": "2024-06-24",
+        "date": "2024-06-26",
         "extract": null,
         "name": "lorri",
         "passthru": {
@@ -36,12 +36,12 @@
             "name": null,
             "owner": "nix-community",
             "repo": "lorri",
-            "rev": "8c2350caa712211438de7593975d995b1c2b7391",
-            "sha256": "sha256-PBVVpeZ2ejscIR7JXIaOvWSF05iTuVbkI78EfUWYEIQ=",
+            "rev": "cdf37d71b4e18b9c1c413029633ab32f809bbc56",
+            "sha256": "sha256-A8I6QJkZT2jPL5CMFPmnRRIp4jSLrKtgmDduFGUxvMk=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "8c2350caa712211438de7593975d995b1c2b7391"
+        "version": "cdf37d71b4e18b9c1c413029633ab32f809bbc56"
     },
     "nix-index": {
         "cargoLocks": null,
@@ -89,7 +89,7 @@
     },
     "shellspec": {
         "cargoLocks": null,
-        "date": "2024-06-22",
+        "date": "2024-06-29",
         "extract": null,
         "name": "shellspec",
         "passthru": null,
@@ -101,12 +101,12 @@
             "name": null,
             "owner": "shellspec",
             "repo": "shellspec",
-            "rev": "8ece5a722faeb3501e7892997a7efc85ae25fd90",
-            "sha256": "sha256-rBYkABlAJ2h1F+rp1ExW8b5Sy+pp59mLfHw83QNYXb0=",
+            "rev": "0bc183abe653374d66dca24c69a9bf54ef1a1843",
+            "sha256": "sha256-A8I6QJkZT2jPL5CMFPmnRRIp4jSLrKtgmDduFGUxvMk=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "8ece5a722faeb3501e7892997a7efc85ae25fd90"
+        "version": "0bc183abe653374d66dca24c69a9bf54ef1a1843"
     },
     "shflags": {
         "cargoLocks": null,
@@ -275,7 +275,7 @@
     },
     "zsh-plugin_oh-my-zsh": {
         "cargoLocks": null,
-        "date": "2024-06-20",
+        "date": "2024-06-28",
         "extract": null,
         "name": "zsh-plugin_oh-my-zsh",
         "passthru": null,
@@ -285,13 +285,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "a87e9c715b2d3249681f9cc8f8d9718030674d50",
-            "sha256": "sha256-5eE3tBYBw8nkmmSR32SM8z0I01MSQAtIP2pEkE3bgRs=",
+            "rev": "dd4be1b6fb9973d63eba334d8bd92b3da30b3e72",
+            "sha256": "sha256-d6gqfBxAm4Y1xt204GhPhhEBOwP97K7qCeIf6I6Wbfg=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/robbyrussell/oh-my-zsh"
         },
-        "version": "a87e9c715b2d3249681f9cc8f8d9718030674d50"
+        "version": "dd4be1b6fb9973d63eba334d8bd92b3da30b3e72"
     },
     "zsh-plugin_tipz": {
         "cargoLocks": null,

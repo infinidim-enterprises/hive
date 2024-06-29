@@ -451,10 +451,10 @@
   };
   "duckduckgo-for-firefox" = rec {
     pname = "duckduckgo-for-firefox";
-    version = "2024.4.26";
+    version = "2024.6.13";
     addonId = "jid1-ZAdIEUB7XOzOJw@jetpack";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4286002/duckduckgo_for_firefox-2024.4.26.xpi";
-    sha256 = "41b607ab971bcf5ef66ac2d84f1d932ad53a95214d421bea08946cbb1aee5bb1";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4302639/duckduckgo_for_firefox-2024.6.13.xpi";
+    sha256 = "4273dee23f6cb785f38f12982d6c856fe1b62d42008d873f9e1228b230d6bd84";
     meta = with lib;
       {
         homepage = "https://duckduckgo.com/app";
@@ -1264,10 +1264,10 @@
   };
   "tree-style-tab" = rec {
     pname = "tree-style-tab";
-    version = "4.0.18";
+    version = "4.0.19";
     addonId = "treestyletab@piro.sakura.ne.jp";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4302180/tree_style_tab-4.0.18.xpi";
-    sha256 = "4e619c4d7ff604a93db483ad66d4b0a9ef5832255541115c0e9d280608ab8f76";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4308656/tree_style_tab-4.0.19.xpi";
+    sha256 = "c84299d40ca8c274f5e979d875a6384f4eea7dd630b8a4ba3f27e5278c231eda";
     meta = with lib;
       {
         homepage = "http://piro.sakura.ne.jp/xul/_treestyletab.html.en";
