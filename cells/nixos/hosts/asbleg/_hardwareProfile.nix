@@ -44,11 +44,11 @@ in
         TASKSTATS y
       '';
     }
-    {
-      # NOTE: annoying messages removed on gpd micro-pc
-      name = "disable showing '*ERROR* GPIO index request failed'";
-      patch = ./intel_dsi_vbt.patch;
-    }
+    # {
+    #   # NOTE: annoying messages removed on gpd micro-pc
+    #   name = "disable showing '*ERROR* GPIO index request failed'";
+    #   patch = ./intel_dsi_vbt.patch;
+    # }
   ];
 
   boot.blacklistedKernelModules = [ "nouveau" ];
