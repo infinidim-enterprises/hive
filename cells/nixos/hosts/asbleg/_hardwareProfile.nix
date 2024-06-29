@@ -33,26 +33,24 @@ in
   '';
 
   boot.consoleLogLevel = 0;
-  boot.kernelPackages = pkgs.linuxPackages_xanmod; #_stable; NOTE: zfs broken on 6.94
-  boot.kernelPatches = [
-    {
-      # NOTE: https://superuser.com/questions/610581/iotop-complains-config-task-delay-acct-not-enabled-in-kernel-only-for-specific
-      name = "iotop CONFIG_TASK_DELAY_ACCT";
-      patch = null;
-      extraConfig = ''
-        TASK_DELAY_ACCT y
-        TASKSTATS y
-      '';
-    }
-    # {
-    #   # NOTE: annoying messages removed on gpd micro-pc
-    #   name = "disable showing '*ERROR* GPIO index request failed'";
-    #   patch = ./intel_dsi_vbt.patch;
-    # }
-  ];
+  boot.kernelPackages = pkgs.linuxPackages_xanmod_stable; # NOTE: zfs_stable broken on 6.94
+  boot.zfs.package = pkgs.zfs_unstable;
 
-
-  # boot.initrd.kernelModules = [ "drm" "intel_agp" "i915" ];
+  # boot.kernelPatches = [
+  #   {
+  #     name = "iotop CONFIG_TASK_DELAY_ACCT";
+  #     patch = null;
+  #     extraConfig = ''
+  #       TASK_DELAY_ACCT y
+  #       TASKSTATS y
+  #     '';
+  #   }
+  #   {
+  #     # NOTE: annoying messages removed on gpd micro-pc
+  #     name = "disable showing '*ERROR* GPIO index request failed'";
+  #     patch = ./intel_dsi_vbt.patch;
+  #   }
+  # ];
 
   boot.blacklistedKernelModules = [ "nouveau" ];
   hardware.graphics.enable = true;
