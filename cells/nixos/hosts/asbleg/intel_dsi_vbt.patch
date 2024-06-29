@@ -1,5 +1,5 @@
 diff --git a/drivers/gpu/drm/i915/display/intel_dsi_vbt.c b/drivers/gpu/drm/i915/display/intel_dsi_vbt.c
-index a5d7fc841..92d1f9be1 100644
+index a5d7fc8418c9..92d1f9be1262 100644
 --- a/drivers/gpu/drm/i915/display/intel_dsi_vbt.c
 +++ b/drivers/gpu/drm/i915/display/intel_dsi_vbt.c
 @@ -207,9 +207,6 @@ static void soc_gpio_set_value(struct intel_connector *connector, u8 gpio_index,

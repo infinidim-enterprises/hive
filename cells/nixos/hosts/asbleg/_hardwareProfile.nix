@@ -22,39 +22,26 @@ in
 
   # boot.plymouth.enable = true;
   # pkgs.plymouth-matrix-theme
-  # NOTE: i915 *ERROR* GPIO index request failed (-ENOENT)
+
+  boot.consoleLogLevel = 0;
   boot.kernelParams = [ "drm.debug=0" "modeset=1" ];
   # NOTE: tradeoff - get lower wifi speeds, but at least no interruptions
   # NOTE: iwlmvm doesn't allow to disable BT Coex, check bt_coex_active module parameter
   # bt_coex_active=0
+  # options iwlwifi 11n_disable=1
   boot.extraModprobeConfig = ''
-    options iwlwifi 11n_disable=1
     options i915 verbose_state_checks=0 guc_log_level=0
   '';
-
-  boot.consoleLogLevel = 0;
-  boot.kernelPackages = pkgs.linuxPackages_xanmod_stable; # NOTE: zfs_stable broken on 6.94
-  boot.zfs.package = pkgs.zfs_unstable;
-
-  # boot.kernelPatches = [
-  #   {
-  #     name = "iotop CONFIG_TASK_DELAY_ACCT";
-  #     patch = null;
-  #     extraConfig = ''
-  #       TASK_DELAY_ACCT y
-  #       TASKSTATS y
-  #     '';
-  #   }
-  #   {
-  #     # NOTE: annoying messages removed on gpd micro-pc
-  #     name = "disable showing '*ERROR* GPIO index request failed'";
-  #     patch = ./intel_dsi_vbt.patch;
-  #   }
-  # ];
-
   boot.blacklistedKernelModules = [ "nouveau" ];
-  hardware.graphics.enable = true;
-  hardware.graphics.extraPackages = with pkgs; [ intel-media-driver intel-ocl ];
+  boot.kernelPackages = pkgs.linuxPackages_xanmod_stable;
+  boot.kernelPatches = [
+    {
+      # NOTE: annoying messages removed on gpd micro-pc
+      # i915 *ERROR* GPIO index request failed (-ENOENT)
+      name = "disable showing '*ERROR* GPIO index request failed'";
+      patch = ./intel_dsi_vbt.patch;
+    }
+  ];
 
   # services.xserver.deviceSection = ''
   #   Option "AccelMethod" "glamor"
@@ -65,14 +52,14 @@ in
   #   Load "glamoregl"
   # '';
 
-  services.xserver.monitorSection = ''
-    Option "Rotate" "right"
-  '';
+  # services.xserver.monitorSection = ''
+  #   Option "Rotate" "right"
+  # '';
 
-  services.xserver.videoDrivers = lib.mkIf config.services.xserver.enable [
-    # "modesetting"
-    "intel"
-  ];
+  # services.xserver.videoDrivers = lib.mkIf config.services.xserver.enable [
+  #   # "modesetting"
+  #   "intel"
+  # ];
 
   services.logind.powerKeyLongPress = "suspend";
   services.logind.lidSwitchExternalPower = "ignore";
@@ -88,9 +75,6 @@ in
     "csip"
   ];
 
-  # loaded firmware version 29.4063824552.0 7265D-29.ucode
-
-  #
   # NOTE: https://github.com/systemd/systemd/issues/25269
   # services.logind.lidSwitch = "suspend-then-hibernate";
   # systemd.sleep.extraConfig = ''
@@ -101,9 +85,11 @@ in
 
   disko.devices = cell.diskoConfigurations.${baseNameOf ./.} { inherit lib; };
   imports =
-    [ inputs.disko.nixosModules.disko ] ++
     [
+      inputs.disko.nixosModules.disko
       inputs.nixos-hardware.nixosModules.gpd-micropc
+
+      cell.nixosProfiles.hardware.opengl
       cell.nixosProfiles.hardware.common
       cell.nixosProfiles.hardware.bluetooth
       cell.nixosProfiles.hardware.tlp
@@ -111,7 +97,6 @@ in
       cell.nixosProfiles.hardware.intel
       cell.nixosProfiles.core.kernel.physical-access-system
       cell.nixosProfiles.filesystems.zfs
-      # cell.nixosProfiles.boot.systemd-grub-zfs-luks-gpg
       cell.nixosProfiles.boot.systemd-boot
       cell.nixosProfiles.filesystems.impermanence.default
     ];

@@ -4,6 +4,14 @@
 {
   boot.kernel.sysctl."vm.swappiness" = 1;
 
+  boot.zfs.package = with config.boot.kernelPackages;
+    if (zfs.meta.broken && zfs_unstable.meta.broken)
+    then (abort "kernel v${kernel.version} has no zfs userland!")
+    else
+      if zfs.meta.broken
+      then pkgs.zfs_unstable
+      else pkgs.zfs;
+
   # NOTE: Multiple issues with zfs and hibernation:
   # https://github.com/openzfs/zfs/issues/12842
   # https://github.com/openzfs/zfs/issues/260

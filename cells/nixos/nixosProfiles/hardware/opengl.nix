@@ -2,12 +2,15 @@
 
 { pkgs, ... }:
 {
-  hardware.opengl.driSupport = true;
-  hardware.opengl.driSupport32Bit = true;
-  hardware.opengl.extraPackages = with pkgs; [
-    # vaapiIntel
-    # vaapiVdpau
-    # libvdpau-va-gl
-    intel-media-driver
-  ];
+  hardware.graphics.enable = true;
+  hardware.graphics.extraPackages = with pkgs; [ intel-media-driver intel-ocl ];
+
+  # hardware.opengl.driSupport = true;
+  # hardware.opengl.driSupport32Bit = true;
+  # hardware.opengl.extraPackages = with pkgs; [
+  #   # vaapiIntel
+  #   # vaapiVdpau
+  #   # libvdpau-va-gl
+  #   intel-media-driver
+  # ];
 }
