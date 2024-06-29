@@ -11,7 +11,7 @@ rec {
     pkgs = import inputs.nixpkgs-unstable {
       inherit (inputs.nixpkgs) system;
       config.allowUnfree = true;
-      overlays = cell.overlays.base;
+      overlays = cell.overlays.default_desktop;
     };
   };
 
@@ -20,10 +20,11 @@ rec {
       baseReqs = [
         bee.home.nixosModules.home-manager
         (import ./_hardwareProfile.nix { inherit inputs cell; })
+        (cell.lib.mkHome "vod" "zsh")
       ];
     in
 
-    cell.nixosSuites.base
+    cell.nixosSuites.desktop
     ++ cell.nixosSuites.networking
     ++ baseReqs
     ++ [{

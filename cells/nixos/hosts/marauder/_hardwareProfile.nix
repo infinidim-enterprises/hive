@@ -15,10 +15,16 @@
 
   imports =
     [
-      cell.nixosProfiles.hardware.common
-      cell.nixosProfiles.core.kernel.physical-access-system
-
       inputs.disko.nixosModules.disko
+
+      cell.nixosProfiles.hardware.intel
+      cell.nixosProfiles.hardware.amd
+      cell.nixosProfiles.hardware.opengl
+      cell.nixosProfiles.hardware.common
+      cell.nixosProfiles.hardware.bluetooth
+      cell.nixosProfiles.hardware.tlp
+      cell.nixosProfiles.hardware.fwupd
+      cell.nixosProfiles.core.kernel.physical-access-system
       cell.nixosProfiles.filesystems.zfs
       cell.nixosProfiles.boot.systemd-boot
 
