@@ -3,6 +3,7 @@ keys:
   - &vod_new 382A371CFB344166F69076BE8587AB791475DF76
   # - &oglaroon
   - &asbleg 383717918D3D86D5AC5687AA3E7793D3B1830782
+  - &marauder F000AE3CA8A68C0F4392D3D3E19E70EE13C86ECD
 creation_rules:
   - path_regex: cells/secrets/sops/envs.yaml
     key_groups:
@@ -16,6 +17,7 @@ creation_rules:
           - *vod
           - *vod_new
           - *asbleg
+          - *marauder
       # - age:
       #     - *oglaroon
 
@@ -25,6 +27,7 @@ creation_rules:
           - *vod
           - *vod_new
           - *asbleg
+          - *marauder
 
   - path_regex: cells/secrets/sops/rclone.conf
     key_groups:
@@ -32,6 +35,7 @@ creation_rules:
           - *vod
           - *vod_new
           - *asbleg
+          - *marauder
 
   - path_regex: cells/secrets/sops/wifi.yaml
     key_groups:
