@@ -145,6 +145,7 @@ in
   wayland.windowManager.hyprland.systemd.enable = true;
   wayland.windowManager.hyprland.systemd.variables = [ "--all" ];
   wayland.windowManager.hyprland.systemd.enableXdgAutostart = true;
+  wayland.windowManager.hyprland.xwayland.enable = true;
   wayland.windowManager.hyprland.settings = {
 
     exec-once = [

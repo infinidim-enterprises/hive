@@ -8,4 +8,6 @@
 
   # [General]
   # app_style=Default
+  #
+  # MimeType=application/pdf;application/x-bzpdf;application/x-gzpdf;
 }
