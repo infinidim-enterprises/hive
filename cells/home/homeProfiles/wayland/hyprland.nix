@@ -157,8 +157,16 @@ in
     env = [
       "XCURSOR_SIZE,${cursorsize}"
       "HYPRCURSOR_SIZE,${cursorsize}"
+      "WLR_XWAYLAND,${pkgs.xwayland}/bin/Xwayland"
+      "GDK_BACKEND,wayland,x11,*"
+      "QT_QPA_PLATFORM,wayland;xcb"
+      "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
+      "SDL_VIDEODRIVER,waylan"
+      "CLUTTER_BACKEND,wayland"
     ];
 
+    xwayland.force_zero_scaling = true;
+    # xwayland:use_nearest_neighbor
     general = {
       gaps_in = 1;
       gaps_out = 1;
