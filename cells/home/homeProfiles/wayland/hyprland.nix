@@ -108,6 +108,7 @@ in
 
   programs.hyprlock.enable = true;
   programs.hyprlock.settings = {
+    # https://github.com/didactiklabs/nixbook/blob/main/homeManagerModules/hyprland/hyprlockConfig.nix
     general = {
       ignore_empty_input = true;
       disable_loading_bar = true;
@@ -124,20 +125,40 @@ in
       }
     ];
 
-    input-field = [
+    input-field = [{
+      size = "400, 50";
+      position = "0, -80";
+      monitor = "";
+      dots_center = true;
+      fade_on_empty = false;
+      font_family = "UbuntuMono Nerd Font Mono";
+      font_color = "rgb(131, 148, 150)";
+      inner_color = "rgb(0, 43, 54)";
+      outer_color = "rgb(131, 148, 150)";
+      outline_thickness = 1;
+      hide_input = false;
+      placeholder_text = "...";
+      shadow_passes = 2;
+    }];
+
+    label = [
       {
-        size = "200, 50";
-        position = "0, -80";
-        monitor = "";
-        dots_center = true;
-        fade_on_empty = false;
+        text = ''cmd[update:1000] date +"%T %:z"'';
+        position = "0, -300";
         font_color = "rgb(131, 148, 150)";
-        inner_color = "rgb(0, 43, 54)";
-        outer_color = "rgb(131, 148, 150)";
-        outline_thickness = 5;
-        hide_input = false;
-        placeholder_text = "Password...";
-        shadow_passes = 2;
+        font_size = 120;
+        font_family = "UbuntuMono Nerd Font Mono";
+        halign = "center";
+        valign = "top";
+      }
+      {
+        text = "$USER@$HOST";
+        font_color = "rgb(131, 148, 150)";
+        font_size = 25;
+        font_family = "UbuntuMono Nerd Font Mono";
+        position = "0, -40";
+        halign = "center";
+        valign = "center";
       }
     ];
   };

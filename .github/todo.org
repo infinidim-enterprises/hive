@@ -24,6 +24,7 @@ https://github.com/nix-community/authentik-nix
 ** filesystems
 https://github.com/netheril96/securefs
 ** shell things
+https://github.com/fastfetch-cli/fastfetch
 https://github.com/charmbracelet/gum
 https://github.com/DannyBen/bashly
 ** use modules in nixos
