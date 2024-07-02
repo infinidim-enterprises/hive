@@ -230,10 +230,10 @@ in
       "$mainMod, J, togglesplit,"
 
       # Move focus with mainMod + arrow keys
-      "$mainMod, left, movefocus, l"
-      "$mainMod, right, movefocus, r"
-      "$mainMod, up, movefocus, u"
-      "$mainMod, down, movefocus, d"
+      "$mainMod, Left, movefocus, l"
+      "$mainMod, Right, movefocus, r"
+      "$mainMod, Up, movefocus, u"
+      "$mainMod, Down, movefocus, d"
 
       # Move the window itself
       "$mainMod Alt_L, Left, movewindow, l"
@@ -281,7 +281,7 @@ in
       "Control_L&Alt_L, Right, workspace, +1"
       "Control_L&Alt_L, Left, workspace, -1"
 
-      "Control_L&Shift_L, Q, exit"
+      # "Control_L&Shift_L, Q, exit"
       "Control_L&Shift_L, Return, exec, $terminal"
 
       "$mainMod&Control_L&Alt_L, Right, movetoworkspace, +1"

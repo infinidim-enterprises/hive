@@ -27,6 +27,10 @@ https://github.com/netheril96/securefs
 https://github.com/charmbracelet/gum
 https://github.com/DannyBen/bashly
 ** use modules in nixos
+https://docs.searxng.org/
+#+begin_src nix
+{ services.searx.enable = true; }
+#+end_src
 https://git.sr.ht/~whynothugo/systemd-lock-handler/
 https://github.com/dutchcoders/transfer.sh
 https://github.com/Vladimir-csp/xdg-terminal-exec

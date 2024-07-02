@@ -3,7 +3,12 @@ with lib;
 
 mkMerge [
   {
-    home.packages = with pkgs; [ vlc ];
+    home.packages = with pkgs; [
+      vlc
+      v4l-utils
+      lollypop
+      id3v2
+    ];
   }
 
   {

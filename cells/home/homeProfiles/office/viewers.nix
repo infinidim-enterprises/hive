@@ -11,8 +11,6 @@ lib.mkMerge
         font-manager # Simple font management for GTK desktop environments
         foliate # A simple and modern GTK eBook reader
         evince # GNOME's document viewer
-
-        # REVIEW: okular # KDE thing, maybe? pdf reader
       ];
     }
   ]

@@ -11,7 +11,7 @@ in
 
   home-manager.sharedModules = [
     ({ config, lib, ... }: lib.mkIf config.services.kanshi.enable {
-      services.kanshi.profiles =
+      services.kanshi.settings =
         let
           output_DSI-1 = {
             criteria = "DSI-1";
@@ -27,30 +27,32 @@ in
             scale = 1.0;
           };
         in
-        {
-          single = {
-            name = "builtin_panel";
-            outputs = [ (output_DSI-1 // { position = "0,0"; }) ];
-          };
-          dual = {
-            name = "panel_and_hdmi";
-            outputs = [
+        [
+          {
+            profile.name = "builtin_panel";
+            profile.outputs = [ (output_DSI-1 // { position = "0,0"; }) ];
+
+          }
+          {
+            profile.name = "panel_and_hdmi";
+            profile.outputs = [
               (output_HDMI-A-1 // { position = "0,0"; })
               (output_DSI-1 // { position = "320,1080"; })
             ];
-          };
-
-        };
+          }
+        ];
     })
 
-    # ({ config, lib, ... }: {
-    #   config = lib.mkIf config.wayland.windowManager.hyprland.enable {
-    #     wayland.windowManager.hyprland.settings.monitor = [
-    #       "DSI-1,preferred,auto,1,transform,3"
-    #       # HDMI-A-1
-    #     ];
-    #   };
-    # })
+    ({ config, lib, ... }: {
+      config = lib.mkIf
+        (config.wayland.windowManager.hyprland.enable
+          && !config.services.kanshi.enable)
+        {
+          wayland.windowManager.hyprland.settings.monitor = [
+            "DSI-1,preferred,auto,1,transform,3"
+          ];
+        };
+    })
   ];
 
   # boot.plymouth.enable = true;

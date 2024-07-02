@@ -5,6 +5,7 @@ let
     HM_FONT_NAME
     HM_FONT_SIZE;
 in
+# TODO: https://github.com/thiagokokada/nix-configs/blob/master/home-manager/desktop/sway/waybar.nix
 {
   programs.waybar.enable = true;
   programs.waybar.systemd.enable = true;
