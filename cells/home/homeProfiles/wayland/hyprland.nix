@@ -132,33 +132,25 @@ in
       dots_center = true;
       fade_on_empty = false;
       font_family = "UbuntuMono Nerd Font Mono";
+      font_size = 20;
       font_color = "rgb(131, 148, 150)";
       inner_color = "rgb(0, 43, 54)";
       outer_color = "rgb(131, 148, 150)";
       outline_thickness = 1;
       hide_input = false;
-      placeholder_text = "...";
+      placeholder_text = "$USER";
       shadow_passes = 2;
     }];
 
     label = [
       {
         text = ''cmd[update:1000] date +"%T %:z"'';
-        position = "0, -300";
+        position = "0, -400";
+        font_size = 50;
         font_color = "rgb(131, 148, 150)";
-        font_size = 120;
         font_family = "UbuntuMono Nerd Font Mono";
         halign = "center";
         valign = "top";
-      }
-      {
-        text = "$USER@$HOST";
-        font_color = "rgb(131, 148, 150)";
-        font_size = 25;
-        font_family = "UbuntuMono Nerd Font Mono";
-        position = "0, -40";
-        halign = "center";
-        valign = "center";
       }
     ];
   };
