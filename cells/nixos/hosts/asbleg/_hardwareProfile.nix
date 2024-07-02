@@ -11,6 +11,7 @@ in
 
   home-manager.sharedModules = [
     ({ config, lib, ... }: lib.mkIf config.services.kanshi.enable {
+      services.kanshi.systemdTarget = "hyprland-session.target";
       services.kanshi.profiles.single = {
         name = "builtin_panel";
         outputs = [{
