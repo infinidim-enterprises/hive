@@ -11,18 +11,36 @@ in
 
   home-manager.sharedModules = [
     ({ config, lib, ... }: lib.mkIf config.services.kanshi.enable {
-      services.kanshi.systemdTarget = "hyprland-session.target";
-      services.kanshi.profiles.single = {
-        name = "builtin_panel";
-        outputs = [{
-          criteria = "DSI-1";
-          mode = "720x1280";
-          status = "enable";
-          position = "0,0";
-          transform = "270";
-          scale = 1.0;
-        }];
-      };
+      services.kanshi.profiles =
+        let
+          output_DSI-1 = {
+            criteria = "DSI-1";
+            mode = "720x1280";
+            status = "enable";
+            transform = "270";
+            scale = 1.0;
+          };
+          output_HDMI-A-1 = {
+            criteria = "HDMI-A-1";
+            mode = "1920x1080";
+            status = "enable";
+            scale = 1.0;
+          };
+        in
+        {
+          single = {
+            name = "builtin_panel";
+            outputs = [ (output_DSI-1 // { position = "0,0"; }) ];
+          };
+          dual = {
+            name = "panel_and_hdmi";
+            outputs = [
+              (output_HDMI-A-1 // { position = "0,0"; })
+              (output_DSI-1 // { position = "320,1080"; })
+            ];
+          };
+
+        };
     })
 
     # ({ config, lib, ... }: {

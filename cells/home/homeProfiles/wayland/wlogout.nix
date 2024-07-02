@@ -1,5 +1,11 @@
 { config, lib, pkgs, ... }:
-
+let
+  logout_script = pkgs.writeScript "wl_logout" ''
+    hyprctl dispatch exit 0
+    systemctl --user stop hyprland-session.target
+    systemctl --user stop graphical-session.target
+  '';
+in
 {
   # TODO: https://github.com/cbr4l0k/.dotfiles/blob/master/config/wlogout/layout
   programs.wlogout.enable = true;
@@ -31,8 +37,9 @@
     # }
     {
       label = "logout";
-      action = "hyprctl dispatch exit 0";
-      # action = "loginctl terminate-user $USER";
+      # action = "hyprctl dispatch exit 0";
+      # action = "loginctl terminate-session self";
+      action = wl_logout;
       text = "Logout [o]";
       keybind = "o";
     }

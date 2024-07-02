@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ osConfig, config, lib, pkgs, ... }:
 let
   inherit (lib // builtins) isInt toString;
   cursorsize =
@@ -7,6 +7,7 @@ let
     else "24";
 in
 {
+  services.network-manager-applet.enable = osConfig.networking.networkmanager.enable;
   # TODO: investigate mate-wayland-session with hyprland
 
   # NOTE: kinda need a filemanager
@@ -151,7 +152,6 @@ in
     exec-once = [
       "systemctl --user start nixos-fake-graphical-session.target"
       "hdrop -b $terminal"
-      "nm-applet &"
     ];
 
     env = [
