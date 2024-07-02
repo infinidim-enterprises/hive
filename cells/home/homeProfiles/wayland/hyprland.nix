@@ -127,7 +127,7 @@ in
 
     input-field = [{
       size = "400, 50";
-      position = "0, -80";
+      position = "0, -40";
       monitor = "";
       dots_center = true;
       fade_on_empty = false;
@@ -145,7 +145,7 @@ in
     label = [
       {
         text = ''cmd[update:1000] date +"%T %:z"'';
-        position = "0, -400";
+        position = "0, 0";
         font_size = 50;
         font_color = "rgb(131, 148, 150)";
         font_family = "UbuntuMono Nerd Font Mono";
