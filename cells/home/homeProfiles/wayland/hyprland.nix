@@ -126,7 +126,7 @@ in
     ];
 
     input-field = [{
-      size = "300, 50";
+      size = "500, 50";
       position = "0, -20";
       monitor = "";
       dots_center = true;
@@ -138,7 +138,7 @@ in
       outer_color = "rgb(131, 148, 150)";
       outline_thickness = 1;
       hide_input = false;
-      placeholder_text = "$USER";
+      placeholder_text = "$USER@${osConfig.networking.fqdn}";
       shadow_passes = 2;
     }];
 
