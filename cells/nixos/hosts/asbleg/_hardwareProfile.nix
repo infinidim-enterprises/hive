@@ -10,14 +10,28 @@ in
   deploy.params.ram = 8;
 
   home-manager.sharedModules = [
-    ({ config, lib, ... }: {
-      config = lib.mkIf config.wayland.windowManager.hyprland.enable {
-        wayland.windowManager.hyprland.settings.monitor = [
-          "DSI-1,preferred,auto,1,transform,3"
-          # HDMI-A-1
-        ];
+    ({ config, lib, ... }: lib.mkIf config.services.kanshi.enable {
+      services.kanshi.profiles.single = {
+        name = "builtin_panel";
+        outputs = [{
+          criteria = "DSI-1";
+          mode = "720x1280";
+          status = "enable";
+          position = "0,0";
+          transform = "270";
+          scale = 1.0;
+        }];
       };
     })
+
+    # ({ config, lib, ... }: {
+    #   config = lib.mkIf config.wayland.windowManager.hyprland.enable {
+    #     wayland.windowManager.hyprland.settings.monitor = [
+    #       "DSI-1,preferred,auto,1,transform,3"
+    #       # HDMI-A-1
+    #     ];
+    #   };
+    # })
   ];
 
   # boot.plymouth.enable = true;

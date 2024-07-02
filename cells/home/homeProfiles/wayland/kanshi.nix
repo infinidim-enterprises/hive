@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 
 {
-  # TODO: wayland kanshi
+  # FIXME: killall -SIGUSR2 waybar after kanshi runs!
   services.kanshi.enable = true;
 }

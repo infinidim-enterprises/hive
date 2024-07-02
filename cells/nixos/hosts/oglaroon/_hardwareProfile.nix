@@ -7,6 +7,16 @@
   deploy.params.ram = 64;
   # deploy.params.zfsCacheMax = 8;
 
+  home-manager.sharedModules = [
+    ({ config, lib, ... }: {
+      config = lib.mkIf config.wayland.windowManager.hyprland.enable {
+        wayland.windowManager.hyprland.settings.monitor = [
+          "eDP-1,preferred,auto,1"
+        ];
+      };
+    })
+  ];
+
   services.logind.powerKeyLongPress = "suspend";
   services.logind.lidSwitchExternalPower = "ignore";
   services.logind.lidSwitch = "ignore";

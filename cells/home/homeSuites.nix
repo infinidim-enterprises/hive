@@ -35,6 +35,7 @@ rec {
     wlogout
     dunst
     hyprland
+    kanshi
   ] ++ desktop;
 
   office = with cell.homeProfiles.office; [
