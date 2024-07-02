@@ -3,6 +3,8 @@ let
   logout_script = pkgs.writeScript "wl_logout" ''
     hyprctl dispatch exit 0
     systemctl --user stop hyprland-session.target
+    systemctl --user stop nixos-fake-graphical-session.target
+    systemctl --user stop graphical-session-pre.target
     systemctl --user stop graphical-session.target
   '';
 in

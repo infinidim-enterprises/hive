@@ -145,12 +145,16 @@ in
   wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.systemd.enable = true;
   wayland.windowManager.hyprland.systemd.variables = [ "--all" ];
+  wayland.windowManager.hyprland.systemd.extraCommands = [
+    "systemctl --user stop hyprland-session.target"
+    "systemctl --user start hyprland-session.target"
+    "systemctl --user start nixos-fake-graphical-session.target"
+  ];
   wayland.windowManager.hyprland.systemd.enableXdgAutostart = true;
   wayland.windowManager.hyprland.xwayland.enable = true;
   wayland.windowManager.hyprland.settings = {
 
     exec-once = [
-      "systemctl --user start nixos-fake-graphical-session.target"
       "hdrop -b $terminal"
     ];
 
