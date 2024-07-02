@@ -43,16 +43,14 @@ in
         ];
     })
 
-    ({ config, lib, ... }: {
-      config = lib.mkIf
-        (config.wayland.windowManager.hyprland.enable
-          && !config.services.kanshi.enable)
-        {
-          wayland.windowManager.hyprland.settings.monitor = [
-            "DSI-1,preferred,auto,1,transform,3"
-          ];
-        };
-    })
+    ({ config, lib, ... }: lib.mkIf
+      (config.wayland.windowManager.hyprland.enable
+        && !config.services.kanshi.enable)
+      {
+        wayland.windowManager.hyprland.settings.monitor = [
+          "DSI-1,preferred,auto,1,transform,3"
+        ];
+      })
   ];
 
   # boot.plymouth.enable = true;
