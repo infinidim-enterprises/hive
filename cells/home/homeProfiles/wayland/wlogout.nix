@@ -39,7 +39,7 @@ in
       label = "logout";
       # action = "hyprctl dispatch exit 0";
       # action = "loginctl terminate-session self";
-      action = wl_logout;
+      action = logout_script;
       text = "Logout [o]";
       keybind = "o";
     }
