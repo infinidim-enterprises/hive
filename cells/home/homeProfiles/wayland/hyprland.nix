@@ -126,13 +126,13 @@ in
     ];
 
     input-field = [{
-      size = "400, 50";
-      position = "0, -40";
+      size = "300, 50";
+      position = "0, -20";
       monitor = "";
       dots_center = true;
       fade_on_empty = false;
       font_family = "UbuntuMono Nerd Font Mono";
-      font_size = 20;
+      font_size = 30;
       font_color = "rgb(131, 148, 150)";
       inner_color = "rgb(0, 43, 54)";
       outer_color = "rgb(131, 148, 150)";
@@ -144,7 +144,7 @@ in
 
     label = [
       {
-        text = ''cmd[update:1000] date +"%T %:z"'';
+        text = ''cmd[update:1000] date +"%T"''; #  %:z
         position = "0, 0";
         font_size = 50;
         font_color = "rgb(131, 148, 150)";
