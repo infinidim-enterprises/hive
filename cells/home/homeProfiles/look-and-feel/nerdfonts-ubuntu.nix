@@ -55,7 +55,7 @@ mkMerge [
 
       button {
           margin: 5px;
-          color: #D3C6AA;
+          color: @theme_text_color;
           background-color: @theme_base_color;
           background-size: 20%;
           background-repeat: no-repeat;
@@ -69,8 +69,8 @@ mkMerge [
       }
 
       button:focus, button:active, button:hover {
-          color: #2D353B;
-          background-color: #A7C080;
+          color: @theme_base_color;
+          background-color: @theme_text_color;
           text-shadow: none;
       }
 
