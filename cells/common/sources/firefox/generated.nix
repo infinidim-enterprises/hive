@@ -381,10 +381,10 @@
   };
   "darkreader" = rec {
     pname = "darkreader";
-    version = "4.9.86";
+    version = "4.9.87";
     addonId = "addon@darkreader.org";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4295557/darkreader-4.9.86.xpi";
-    sha256 = "dde9896751858d0179f3d724a59f2bd4a0d61e599cb8822dc8ed2de320510714";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4310627/darkreader-4.9.87.xpi";
+    sha256 = "0327d42e507979b0a0443b6aad24d011fea50dd020bcfd07b326bd3df285c79b";
     meta = with lib;
       {
         homepage = "https://darkreader.org/";
@@ -476,10 +476,10 @@
   };
   "enterprise-policy-generator" = rec {
     pname = "enterprise-policy-generator";
-    version = "5.1.0";
+    version = "6.0.0";
     addonId = "enterprise-policy-generator@agenedia.com";
-    url = "https://addons.mozilla.org/firefox/downloads/file/3515849/enterprise_policy_generator-5.1.0.xpi";
-    sha256 = "84eaf6e2f318619b5c76b5e65b3be0d4006b16323ddf7870417b0100674e2659";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4311868/enterprise_policy_generator-6.0.0.xpi";
+    sha256 = "00ea090fc92c84f2754e11688cd5126fbe1d07b35fb2db8ec8d30e4040821a7c";
     meta = with lib;
       {
         homepage = "https://www.soeren-hentzschel.at/firefox-webextensions/enterprise-policy-generator/";
@@ -491,10 +491,10 @@
   };
   "ether-metamask" = rec {
     pname = "ether-metamask";
-    version = "11.16.10";
+    version = "11.16.13";
     addonId = "webextension@metamask.io";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4302093/ether_metamask-11.16.10.xpi";
-    sha256 = "e021fae54ea3f29cad5910d93b688ab9e2cbfd00f3496722f5cc7c809b0bfeb1";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4307737/ether_metamask-11.16.13.xpi";
+    sha256 = "84dc9c396677b2a983f032646b0467479dda66aa3638c2132d69e9a4afbc18a7";
     meta = with lib;
       {
         description = "Ethereum Browser Extension";
@@ -1264,10 +1264,10 @@
   };
   "tree-style-tab" = rec {
     pname = "tree-style-tab";
-    version = "4.0.19";
+    version = "4.0.20";
     addonId = "treestyletab@piro.sakura.ne.jp";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4308656/tree_style_tab-4.0.19.xpi";
-    sha256 = "c84299d40ca8c274f5e979d875a6384f4eea7dd630b8a4ba3f27e5278c231eda";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4310845/tree_style_tab-4.0.20.xpi";
+    sha256 = "1c1588dc4cafff49344cfc97df40d763651aea3964de774c925e460e8e307552";
     meta = with lib;
       {
         homepage = "http://piro.sakura.ne.jp/xul/_treestyletab.html.en";

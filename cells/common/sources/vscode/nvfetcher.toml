@@ -95,10 +95,10 @@ src.vsmarketplace = "activitywatch.aw-watcher-vscode"
 fetch.vsmarketplace = "activitywatch.aw-watcher-vscode"
 passthru = { publisher = "activitywatch", name = "aw-watcher-vscode"}
 
-[ballerina]
-src.vsmarketplace = "WSO2.ballerina"
-fetch.vsmarketplace = "WSO2.ballerina"
-passthru = { publisher = "WSO2", name = "ballerina"}
+# [ballerina]
+# src.vsmarketplace = "WSO2.ballerina"
+# fetch.vsmarketplace = "WSO2.ballerina"
+# passthru = { publisher = "WSO2", name = "ballerina"}
 
 #
 [codium]

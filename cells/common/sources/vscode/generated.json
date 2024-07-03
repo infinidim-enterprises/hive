@@ -17,24 +17,6 @@
         },
         "version": "0.5.0"
     },
-    "ballerina": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "ballerina",
-        "passthru": {
-            "name": "ballerina",
-            "publisher": "WSO2"
-        },
-        "pinned": false,
-        "src": {
-            "name": "ballerina-4.7.1.zip",
-            "sha256": "sha256-H37JZE7g+3n2/wkavMrj3vRGhfqYKUFT2i02TH00cAg=",
-            "type": "url",
-            "url": "https://WSO2.gallery.vsassets.io/_apis/public/gallery/publisher/WSO2/extension/ballerina/4.7.1/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
-        },
-        "version": "4.7.1"
-    },
     "bash-ide-vscode": {
         "cargoLocks": null,
         "date": null,
@@ -82,12 +64,12 @@
         },
         "pinned": false,
         "src": {
-            "name": "copilot-1.208.960.zip",
-            "sha256": "sha256-hFSJuVtAA8odXmn5vmOPBrgO6Pm56YZpJHogApSJlro=",
+            "name": "copilot-1.209.0.zip",
+            "sha256": "sha256-o/ePFoZddMDWtDpYnZMeRpOKJD86IdeZsMcUw5NA6Bw=",
             "type": "url",
-            "url": "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.208.960/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.209.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "1.208.960"
+        "version": "1.209.0"
     },
     "crystal-lang": {
         "cargoLocks": null,
@@ -226,12 +208,12 @@
         },
         "pinned": false,
         "src": {
-            "name": "gpt-pilot-vs-code-0.2.6.zip",
-            "sha256": "sha256-A8TuBtKNM8LvPMCCxjT92nB+sWH3dNFXiPofOECNPWg=",
+            "name": "gpt-pilot-vs-code-0.2.10.zip",
+            "sha256": "sha256-kd7CDVSBmFNLkYnh4jgs52zfAK0/WkHau5i++IfuvyE=",
             "type": "url",
-            "url": "https://PythagoraTechnologies.gallery.vsassets.io/_apis/public/gallery/publisher/PythagoraTechnologies/extension/gpt-pilot-vs-code/0.2.6/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://PythagoraTechnologies.gallery.vsassets.io/_apis/public/gallery/publisher/PythagoraTechnologies/extension/gpt-pilot-vs-code/0.2.10/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "0.2.6"
+        "version": "0.2.10"
     },
     "haml": {
         "cargoLocks": null,
@@ -298,12 +280,12 @@
         },
         "pinned": false,
         "src": {
-            "name": "language-julia-1.83.2.zip",
-            "sha256": "sha256-yaPuTOe0PKTMSggKWhfxPypJbSFE+fPJOtHpApJ+ARI=",
+            "name": "language-julia-1.86.1.zip",
+            "sha256": "sha256-Lk9TBbvHbZ6L8hVJnX01XnKtTtSALpr0O4lLbAl6NC8=",
             "type": "url",
-            "url": "https://julialang.gallery.vsassets.io/_apis/public/gallery/publisher/julialang/extension/language-julia/1.83.2/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://julialang.gallery.vsassets.io/_apis/public/gallery/publisher/julialang/extension/language-julia/1.86.1/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "1.83.2"
+        "version": "1.86.1"
     },
     "markdown-preview-enhanced": {
         "cargoLocks": null,
@@ -622,12 +604,12 @@
         },
         "pinned": false,
         "src": {
-            "name": "tabnine-vscode-3.116.0.zip",
-            "sha256": "sha256-tmo41/jhkCu486u9etpK+p5iyMwqw5ZrnHmRIJrygdg=",
+            "name": "tabnine-vscode-3.121.0.zip",
+            "sha256": "sha256-O4Ub+U9vSvFeWRyHVJYdls3ULoU9cMRGcptc331gCe4=",
             "type": "url",
-            "url": "https://TabNine.gallery.vsassets.io/_apis/public/gallery/publisher/TabNine/extension/tabnine-vscode/3.116.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://TabNine.gallery.vsassets.io/_apis/public/gallery/publisher/TabNine/extension/tabnine-vscode/3.121.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "3.116.0"
+        "version": "3.121.0"
     },
     "tokyo-night": {
         "cargoLocks": null,

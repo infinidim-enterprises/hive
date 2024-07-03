@@ -12,17 +12,6 @@
     publisher = "activitywatch";
     name = "aw-watcher-vscode";
   };
-  ballerina = {
-    pname = "ballerina";
-    version = "4.7.1";
-    src = fetchurl {
-      url = "https://WSO2.gallery.vsassets.io/_apis/public/gallery/publisher/WSO2/extension/ballerina/4.7.1/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "ballerina-4.7.1.zip";
-      sha256 = "sha256-H37JZE7g+3n2/wkavMrj3vRGhfqYKUFT2i02TH00cAg=";
-    };
-    publisher = "WSO2";
-    name = "ballerina";
-  };
   bash-ide-vscode = {
     pname = "bash-ide-vscode";
     version = "1.41.0";
@@ -47,11 +36,11 @@
   };
   copilot = {
     pname = "copilot";
-    version = "1.208.960";
+    version = "1.209.0";
     src = fetchurl {
-      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.208.960/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "copilot-1.208.960.zip";
-      sha256 = "sha256-hFSJuVtAA8odXmn5vmOPBrgO6Pm56YZpJHogApSJlro=";
+      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.209.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "copilot-1.209.0.zip";
+      sha256 = "sha256-o/ePFoZddMDWtDpYnZMeRpOKJD86IdeZsMcUw5NA6Bw=";
     };
     publisher = "GitHub";
     name = "copilot";
@@ -135,11 +124,11 @@
   };
   gpt-pilot-vs-code = {
     pname = "gpt-pilot-vs-code";
-    version = "0.2.6";
+    version = "0.2.10";
     src = fetchurl {
-      url = "https://PythagoraTechnologies.gallery.vsassets.io/_apis/public/gallery/publisher/PythagoraTechnologies/extension/gpt-pilot-vs-code/0.2.6/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "gpt-pilot-vs-code-0.2.6.zip";
-      sha256 = "sha256-A8TuBtKNM8LvPMCCxjT92nB+sWH3dNFXiPofOECNPWg=";
+      url = "https://PythagoraTechnologies.gallery.vsassets.io/_apis/public/gallery/publisher/PythagoraTechnologies/extension/gpt-pilot-vs-code/0.2.10/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "gpt-pilot-vs-code-0.2.10.zip";
+      sha256 = "sha256-kd7CDVSBmFNLkYnh4jgs52zfAK0/WkHau5i++IfuvyE=";
     };
     publisher = "PythagoraTechnologies";
     name = "gpt-pilot-vs-code";
@@ -179,11 +168,11 @@
   };
   language-julia = {
     pname = "language-julia";
-    version = "1.83.2";
+    version = "1.86.1";
     src = fetchurl {
-      url = "https://julialang.gallery.vsassets.io/_apis/public/gallery/publisher/julialang/extension/language-julia/1.83.2/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "language-julia-1.83.2.zip";
-      sha256 = "sha256-yaPuTOe0PKTMSggKWhfxPypJbSFE+fPJOtHpApJ+ARI=";
+      url = "https://julialang.gallery.vsassets.io/_apis/public/gallery/publisher/julialang/extension/language-julia/1.86.1/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "language-julia-1.86.1.zip";
+      sha256 = "sha256-Lk9TBbvHbZ6L8hVJnX01XnKtTtSALpr0O4lLbAl6NC8=";
     };
     publisher = "julialang";
     name = "language-julia";
@@ -377,11 +366,11 @@
   };
   tabnine-vscode = {
     pname = "tabnine-vscode";
-    version = "3.116.0";
+    version = "3.121.0";
     src = fetchurl {
-      url = "https://TabNine.gallery.vsassets.io/_apis/public/gallery/publisher/TabNine/extension/tabnine-vscode/3.116.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "tabnine-vscode-3.116.0.zip";
-      sha256 = "sha256-tmo41/jhkCu486u9etpK+p5iyMwqw5ZrnHmRIJrygdg=";
+      url = "https://TabNine.gallery.vsassets.io/_apis/public/gallery/publisher/TabNine/extension/tabnine-vscode/3.121.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "tabnine-vscode-3.121.0.zip";
+      sha256 = "sha256-O4Ub+U9vSvFeWRyHVJYdls3ULoU9cMRGcptc331gCe4=";
     };
     publisher = "TabNine";
     name = "tabnine-vscode";

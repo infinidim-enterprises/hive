@@ -71,31 +71,31 @@
   };
   copilot-el = {
     pname = "copilot-el";
-    version = "c6b31f640eca89bb68d3c5005f22c27d033cc92e";
+    version = "e15bafa95b39091dbb2a99ad62e42f03a8d78f01";
     src = fetchgit {
       url = "https://github.com/zerolfx/copilot.el.git";
-      rev = "c6b31f640eca89bb68d3c5005f22c27d033cc92e";
+      rev = "e15bafa95b39091dbb2a99ad62e42f03a8d78f01";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-0Ut4yM6t4aMix7hJqTW+AWoboZr13OFTqnVthapyxQ4=";
+      sha256 = "sha256-jKm+oVMadHyeG93VFU3JG3qNROOJPDXs7w2pIO/2IyM=";
     };
-    date = "2024-06-29";
+    date = "2024-07-03";
   };
   doom-emacs = {
     pname = "doom-emacs";
-    version = "d3d50474888195ab43db03c7607f356424b09d18";
+    version = "d7f5e7033e1baf9ad85614443c6532095473cbfb";
     src = fetchgit {
       url = "https://github.com/hlissner/doom-emacs";
-      rev = "d3d50474888195ab43db03c7607f356424b09d18";
+      rev = "d7f5e7033e1baf9ad85614443c6532095473cbfb";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = true;
       sparseCheckout = [ ];
-      sha256 = "sha256-VAFilRWhPHTM3GO9bsOfcoWGsd1KpRwB3VXnSmVeJGI=";
+      sha256 = "sha256-eTmnAWyf+9zEkeXWTGettr7HZdVzVrbn/6tzf7DnI00=";
     };
-    date = "2024-06-29";
+    date = "2024-07-02";
   };
   grip = {
     pname = "grip";
@@ -125,15 +125,15 @@
   };
   lsp-bridge = {
     pname = "lsp-bridge";
-    version = "4f0cd01281c9c73c1a2f0d98f42b8efa66343e5e";
+    version = "0babcae1bb1fba67257916011a638675e07ec753";
     src = fetchFromGitHub {
       owner = "manateelazycat";
       repo = "lsp-bridge";
-      rev = "4f0cd01281c9c73c1a2f0d98f42b8efa66343e5e";
+      rev = "0babcae1bb1fba67257916011a638675e07ec753";
       fetchSubmodules = false;
-      sha256 = "sha256-vaRwIt0jdckrMvMmmgXWXPUunJcSRuntGuZTDCUSs1o=";
+      sha256 = "sha256-m9N3XDFXTiNb5h7D2LpFC/LPFIsmg+XEn7LrtZbWi04=";
     };
-    date = "2024-06-29";
+    date = "2024-07-02";
   };
   nix-mode = {
     pname = "nix-mode";

@@ -21,7 +21,7 @@
     },
     "adguard-filters": {
         "cargoLocks": null,
-        "date": "2024-06-29",
+        "date": "2024-07-03",
         "extract": null,
         "name": "adguard-filters",
         "passthru": null,
@@ -31,13 +31,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "c21ab70dabc8f35009386b0e2a8c1de61d322c7e",
-            "sha256": "sha256-w6hIdWImS4aIIdTLzoK5cTxOyfPEUd4/wNOeol8Sxtw=",
+            "rev": "611371d3c5932749fd9b4cbb5b76e424ccb11f3b",
+            "sha256": "sha256-gYcztiZ2r2AZpuqnhuoK9CG/5UnSFlFuQn+peDkcY08=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/AdguardTeam/AdguardFilters"
         },
-        "version": "c21ab70dabc8f35009386b0e2a8c1de61d322c7e"
+        "version": "611371d3c5932749fd9b4cbb5b76e424ccb11f3b"
     },
     "age-plugin-trezor": {
         "cargoLocks": null,
@@ -449,12 +449,12 @@
             "name": null,
             "owner": "langchain-ai",
             "repo": "langchain",
-            "rev": "langchain-core==0.2.10",
-            "sha256": "sha256-tEw1Yaobn3qM2dS0igSTOKtZO/xYHSSeXa9qFg53PaQ=",
+            "rev": "langchain-core==0.2.11",
+            "sha256": "sha256-5Ha63vWbX/cBhb/ag2epU1P4gux+4dEZapThKzEJhNU=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "langchain-core==0.2.10"
+        "version": "langchain-core==0.2.11"
     },
     "ledger-live-desktop": {
         "cargoLocks": null,
@@ -584,7 +584,7 @@
     },
     "pbkdf2-sha512": {
         "cargoLocks": null,
-        "date": "2024-06-29",
+        "date": "2024-07-04",
         "extract": null,
         "name": "pbkdf2-sha512",
         "passthru": null,
@@ -595,7 +595,7 @@
             "type": "url",
             "url": "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c"
         },
-        "version": "7de69e22aba1b4887306f05cf276f39798a45a28"
+        "version": "0b5665868a2b398d28ec5fbf56d73c58aed28222"
     },
     "pgp-key-generation": {
         "cargoLocks": null,
