@@ -1,11 +1,13 @@
 { inputs, cell, ... }:
 
-{ pkgs, ... }:
+{ modulesPath, pkgs, ... }:
 let
   # NOTE: older nixos had it named differently
   utilLinux = if pkgs ? utillinux then pkgs.utillinux else pkgs.util-linux;
 in
 {
+  # FIXME: https://github.com/Mic92/sops-nix/issues/475
+  # imports = [ "${modulesPath}/profiles/perlless.nix" ];
   environment.systemPackages = with pkgs; [
     smem # mem usage with shared mem
 

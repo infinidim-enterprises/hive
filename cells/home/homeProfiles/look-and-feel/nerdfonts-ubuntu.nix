@@ -43,6 +43,50 @@ mkMerge [
           font-weight: bold;
           font-size: ${font-size}px;
       }
+
+      #lock {
+          background-image: image(url("${./wlogout_icons/lock.png}"));
+      }
+
+      #lock:hover, #lock:focus {
+          background-image: image(url("${./wlogout_icons/lock-hover.png}"));
+      }
+
+      #logout {
+          background-image: image(url("${./wlogout_icons/logout.png}"));
+      }
+      #logout:hover, #logout:focus {
+          background-image: image(url("${./wlogout_icons/logout-hover.png}"));
+      }
+
+      #suspend {
+          background-image: image(url("${./wlogout_icons/suspend.png}"));
+      }
+      #suspend:hover, #suspend:focus {
+          background-image: image(url("${./wlogout_icons/suspend-hover.png}"));
+      }
+
+      #hibernate {
+          background-image: image(url("${./wlogout_icons/hibernate.png}"));
+      }
+      #hibernate:hover, #hibernate:focus {
+          background-image: image(url("${./wlogout_icons/hibernate-hover.png}"));
+      }
+
+      #shutdown {
+          background-image: image(url("${./wlogout_icons/shutdown.png}"));
+      }
+      #shutdown:hover, #shutdown:focus {
+          background-image: image(url("${./wlogout_icons/shutdown-hover.png}"));
+      }
+
+      #reboot {
+          background-image: image(url("${./wlogout_icons/reboot.png}"));
+      }
+      #reboot:hover, #reboot:focus {
+          background-image: image(url("${./wlogout_icons/reboot-hover.png}"));
+      }
+
     '';
   })
 

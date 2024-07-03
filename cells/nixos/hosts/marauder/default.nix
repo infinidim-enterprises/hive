@@ -28,6 +28,7 @@ rec {
     ++ cell.nixosSuites.networking
     ++ baseReqs
     ++ [{
+
       deploy.enable = true;
       deploy.params.hidpi.enable = false;
       deploy.params.lan.mac = "16:07:77:ff:bf:ff";
