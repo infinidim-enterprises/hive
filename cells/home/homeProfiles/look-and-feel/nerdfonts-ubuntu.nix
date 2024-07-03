@@ -31,17 +31,44 @@ mkMerge [
   }
 
   (mkIf config.programs.wlogout.enable {
+    #           background-size: 15%;
     programs.wlogout.style = mkBefore ''
       * {
           border-style: solid;
           border-width: 1px;
           border-color: @borders;
-          background-size: 15%;
           background: @theme_base_color;
           color: @theme_text_color;
           font-family: ${HM_FONT_NAME};
           font-weight: bold;
           font-size: ${font-size}px;
+      }
+
+      window {
+          color: @theme_text_color;
+          background-color: @theme_base_color;
+          font-size: 20px;
+      }
+
+      button {
+          margin: 5px;
+          color: #D3C6AA;
+          background-color: @theme_base_color;
+          background-size: 20%;
+          background-repeat: no-repeat;
+          background-position: center;
+          border: 5px solid @borders;
+          border-radius: 15px;
+          box-shadow: none;
+          text-shadow: none;
+          opacity: 0.9;
+          transition: background-color 0.2s ease-in-out;
+      }
+
+      button:focus, button:active, button:hover {
+          color: #2D353B;
+          background-color: #A7C080;
+          text-shadow: none;
       }
 
       #lock {
