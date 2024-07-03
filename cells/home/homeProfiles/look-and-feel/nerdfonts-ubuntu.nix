@@ -50,7 +50,6 @@ mkMerge [
           background-color: @theme_base_color;
           font-family: ${HM_FONT_NAME};
           font-size: ${font-size}px;
-          font-weight: bold;
       }
 
       button {
@@ -72,6 +71,7 @@ mkMerge [
           color: @theme_base_color;
           background-color: @theme_text_color;
           text-shadow: none;
+          font-weight: bold;
       }
 
       #lock {
