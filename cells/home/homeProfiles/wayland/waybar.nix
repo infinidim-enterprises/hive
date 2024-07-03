@@ -25,7 +25,7 @@ in
 
     "custom/wlogout" = {
       format = "⏻";
-      on-click = "wlogout";
+      on-click = config.programs.wlogout.command;
       tooltip = false;
     };
 

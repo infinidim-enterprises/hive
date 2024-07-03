@@ -289,7 +289,7 @@ in
       "$mainMod, mouse_down, workspace, e+1"
       "$mainMod, mouse_up, workspace, e-1"
 
-      "Control_L&Alt_L, Delete, exec, wlogout"
+      "Control_L&Alt_L, Delete, exec, ${config.programs.wlogout.command}"
 
       "Control_L&Alt_L, Right, workspace, +1"
       "Control_L&Alt_L, Left, workspace, -1"

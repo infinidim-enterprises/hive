@@ -41,7 +41,6 @@ mkMerge [
           color: @theme_text_color;
           font-family: ${HM_FONT_NAME};
           font-weight: bold;
-          font-size: ${font-size}px;
       }
 
     */
@@ -50,8 +49,8 @@ mkMerge [
           color: @theme_text_color;
           background-color: @theme_base_color;
           font-family: ${HM_FONT_NAME};
+          font-size: ${font-size}px;
           font-weight: bold;
-          font-size: 30px;
       }
 
       button {
