@@ -32,7 +32,7 @@ mkMerge [
 
   (mkIf config.programs.wlogout.enable {
     #           background-size: 15%;
-    programs.wlogout.style = mkBefore ''
+    /*
       * {
           border-style: solid;
           border-width: 1px;
@@ -44,10 +44,14 @@ mkMerge [
           font-size: ${font-size}px;
       }
 
+    */
+    programs.wlogout.style = mkBefore ''
       window {
           color: @theme_text_color;
           background-color: @theme_base_color;
-          font-size: 20px;
+          font-family: ${HM_FONT_NAME};
+          font-weight: bold;
+          font-size: 30px;
       }
 
       button {
