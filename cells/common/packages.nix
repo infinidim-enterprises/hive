@@ -42,6 +42,8 @@ cell.lib.importers.importPackagesRakeleaves
     "okteto"
     "roadrunner"
 
+    "shellspec"
+
     "zeronsd"
     "ztncui"
     "git-get"
