@@ -46,7 +46,11 @@ in
     in
     mkOption {
       type = lib.types.str;
-      default = "${cfg.package}/bin/wlogout --buttons-per-row ${toString (length cfg.layout)} --margin ${toString margin} --primary-monitor 0";
+      default = "${cfg.package}/bin/wlogout --buttons-per-row "
+        + (toString (length cfg.layout))
+        + " --margin ${toString margin}"
+        + " --primary-monitor 0"
+        + " --no-span";
     };
 
   config = {
@@ -55,7 +59,7 @@ in
       {
         label = "lock";
         action = "hyprlock";
-        text = "[l]ock";
+        # text = "[l]ock";
         keybind = "l";
       }
       {
@@ -63,32 +67,32 @@ in
         # action = "hyprctl dispatch exit 0";
         # action = "loginctl terminate-session self";
         action = logout_script;
-        text = "l[o]gout";
+        # text = "l[o]gout";
         keybind = "o";
       }
       {
         label = "suspend";
         action = "systemctl suspend";
-        text = "s[u]spend";
+        # text = "s[u]spend";
         keybind = "u";
       }
       {
         label = "reboot";
         action = "systemctl reboot";
-        text = "[r]eboot";
+        # text = "[r]eboot";
         keybind = "r";
       }
 
       {
         label = "shutdown";
         action = "systemctl poweroff";
-        text = "[s]hutdown";
+        # text = "[s]hutdown";
         keybind = "s";
       }
       (mkIf (!elem "nohibernate" osConfig.boot.kernelParams) {
         label = "hibernate";
         action = "systemctl hibernate";
-        text = "Hibernate";
+        # text = "[h]ibernate";
         keybind = "h";
       })
     ];
