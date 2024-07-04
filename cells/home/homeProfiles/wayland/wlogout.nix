@@ -25,7 +25,7 @@ in
 {
   options.programs.wlogout.command =
     let
-      part = { total, rate, base ? 100 }: (rate * total) / base;
+      part = { total, rate ? 42, base ? 100 }: (rate * total) / base;
       height = outputAttrs:
         if hasAttr "transform" outputAttrs && elem outputAttrs.transform [ "90" "270" ]
         then toInt (head (splitString "x" outputAttrs.mode))
@@ -40,9 +40,9 @@ in
         else null;
       margin =
         if primary_output != null
-        then part { total = height primary_output; rate = 42; }
+        then part { total = height primary_output; }
         # 42% default margin, assuming 1080 height without output config
-        else part { total = 1080; rate = 42; };
+        else part { total = 1080; };
     in
     mkOption {
       type = lib.types.str;
