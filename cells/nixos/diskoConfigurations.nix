@@ -1,3 +1,117 @@
+{ inputs, cell }:
+let
+  inherit (inputs.nixpkgs-lib.lib)
+    listToAttrs
+    nameValuePair
+    removePrefix;
+
+  mkPartitions = { disks, swapSize ? "8G" }: listToAttrs (map
+    (device: nameValuePair (removePrefix "/dev/disk/by-id/" device) {
+      inherit device;
+      type = "disk";
+      content.type = "gpt";
+      content.partitions = {
+        ESP = {
+          size = "1G";
+          type = "EF00";
+          content = {
+            type = "filesystem";
+            format = "vfat";
+            mountpoint = "/boot";
+            mountOptions = [ "umask=0077" ];
+          };
+        };
+
+        encryptedSwap = {
+          size = swapSize;
+          content = {
+            type = "luks";
+            name = "cryptoswap";
+            inherit settings;
+            content = {
+              type = "swap";
+              resumeDevice = true;
+            };
+          };
+        };
+
+        encryptedRoot = {
+          size = "100%";
+          content = {
+            type = "luks";
+            name = "cryptoroot";
+            inherit settings;
+            content = {
+              type = "zfs";
+              pool = "rpool";
+            };
+          };
+        };
+      };
+
+    })
+    disks);
+
+  settings = {
+    bypassWorkqueues = true;
+    allowDiscards = false;
+    fallbackToPassword = true;
+    # preLVM = true;
+    # NOTE: https://github.com/sgillespie/nixos-yubikey-luks
+    # gpgCard = {
+    #   gracePeriod = 25;
+    #   encryptedPass = "/boot/luks/decryption-key.gpg";
+    #   publicKey = "/boot/luks/public-key.asc";
+    # };
+  };
+
+  zpool = {
+    rpool = {
+      type = "zpool";
+      rootFsOptions = {
+        compression = "lz4";
+        mountpoint = "none";
+        acltype = "posixacl";
+        xattr = "sa";
+      };
+
+      datasets = {
+        root = {
+          type = "zfs_fs";
+          mountpoint = "/";
+          options.mountpoint = "legacy";
+          postCreateHook = "zfs snapshot rpool/root@blank";
+        };
+
+        nix = {
+          type = "zfs_fs";
+          mountpoint = "/nix";
+          options.mountpoint = "legacy";
+        };
+
+        home = {
+          type = "zfs_fs";
+          mountpoint = "/home";
+          options.mountpoint = "legacy";
+          options."com.sun:auto-snapshot" = "true";
+        };
+
+        persist = {
+          type = "zfs_fs";
+          mountpoint = "/persist";
+          options.mountpoint = "legacy";
+        };
+
+        reserved = {
+          type = "zfs_fs";
+          options.mountpoint = "none";
+          options.refreservation = "1G";
+        };
+      };
+    };
+  };
+
+in
 {
   desktop = { disks ? [ "/dev/nvme0" "/dev/nvme1" "/dev/nvme2" ], ... }: {
     disk.nvme0 = {
@@ -320,134 +434,19 @@
 
     };
 
-  oglaroon = { disks ? [ "/dev/disk/by-id/nvme-CT1000P2SSD8_2228E648DC10" ], lib, ... }:
-    let
-      inherit (lib) listToAttrs nameValuePair removePrefix;
-      disk = listToAttrs (map
-        (device: nameValuePair (removePrefix "/dev/disk/by-id/" device) {
-          inherit device;
-          type = "disk";
-          content.type = "gpt";
-          content.partitions = {
-            ESP = {
-              size = "1G";
-              type = "EF00";
-              content = {
-                type = "filesystem";
-                format = "vfat";
-                mountpoint = "/boot";
-              };
-            };
-            zfs = {
-              size = "100%";
-              content = {
-                type = "zfs";
-                pool = "rpool";
-              };
-            };
-          };
-
-        })
-        disks);
-    in
+  oglaroon =
+    { disks ? [ "/dev/disk/by-id/nvme-CT1000P2SSD8_2228E648DC10" ], ... }:
     {
-      inherit disk;
-
-      zpool = {
-        rpool = {
-          type = "zpool";
-          rootFsOptions = {
-            compression = "lz4";
-            mountpoint = "none";
-            acltype = "posixacl";
-            xattr = "sa";
-          };
-
-          datasets = {
-            root = {
-              type = "zfs_fs";
-              mountpoint = "/";
-              options.mountpoint = "legacy";
-              postCreateHook = "zfs snapshot rpool/root@blank";
-            };
-
-            nix = {
-              type = "zfs_fs";
-              mountpoint = "/nix";
-              options.mountpoint = "legacy";
-            };
-
-            home = {
-              type = "zfs_fs";
-              mountpoint = "/home";
-              options.mountpoint = "legacy";
-              options."com.sun:auto-snapshot" = "true";
-            };
-
-            persist = {
-              type = "zfs_fs";
-              mountpoint = "/persist";
-              options.mountpoint = "legacy";
-            };
-
-            reserved = {
-              type = "zfs_fs";
-              options.mountpoint = "none";
-              options.refreservation = "1G";
-            };
-          };
-        };
-      };
+      inherit zpool;
+      disk = mkPartitions { inherit disks; swapSize = "64G"; };
     };
 
-  asbleg = { disks ? [ "/dev/disk/by-id/ata-BIWIN_SSD_2051028801186" ], lib, ... }:
+  asbleg =
+    { disks ? [ "/dev/disk/by-id/ata-BIWIN_SSD_2051028801186" ]
+    , lib ? inputs.nixpkgs-lib.lib
+    , ...
+    }:
     let
-      zpool = {
-        rpool = {
-          type = "zpool";
-          rootFsOptions = {
-            compression = "lz4";
-            mountpoint = "none";
-            acltype = "posixacl";
-            xattr = "sa";
-          };
-
-          datasets = {
-            root = {
-              type = "zfs_fs";
-              mountpoint = "/";
-              options.mountpoint = "legacy";
-              postCreateHook = "zfs snapshot rpool/root@blank";
-            };
-
-            nix = {
-              type = "zfs_fs";
-              mountpoint = "/nix";
-              options.mountpoint = "legacy";
-            };
-
-            home = {
-              type = "zfs_fs";
-              mountpoint = "/home";
-              options.mountpoint = "legacy";
-              options."com.sun:auto-snapshot" = "true";
-            };
-
-            persist = {
-              type = "zfs_fs";
-              mountpoint = "/persist";
-              options.mountpoint = "legacy";
-            };
-
-            reserved = {
-              type = "zfs_fs";
-              options.mountpoint = "none";
-              options.refreservation = "1G";
-            };
-          };
-        };
-      };
-
       settings = {
         bypassWorkqueues = true;
         allowDiscards = false;
