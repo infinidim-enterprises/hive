@@ -16,7 +16,7 @@ mkMerge [
   {
     # NOTE: caja will be able to use net usershare
     services.samba.enable = true;
-    services.samba.package = [ pkgs.sambaFull ];
+    services.samba.package = pkgs.sambaFull;
     services.samba.openFirewall = true;
     services.samba.extraConfig = ''
       usershare max shares = 100
