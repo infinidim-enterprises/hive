@@ -24,6 +24,9 @@ rec {
         directories = with config; [
           "/var/log"
 
+          (mkIf services.samba.enable
+            "/var/lib/samba/usershares")
+
           (mkIf sound.enable
             "/var/lib/alsa")
 

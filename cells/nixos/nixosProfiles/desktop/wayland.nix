@@ -19,10 +19,12 @@ mkMerge [
     services.samba.package = pkgs.sambaFull;
     services.samba.openFirewall = true;
     services.samba.extraConfig = ''
+      usershare path = /var/lib/samba/usershares
       usershare max shares = 100
       usershare allow guests = yes
       usershare owner only = yes
     '';
+    systemd.services.samba-smbd.serviceConfig.ExecStartPre = "${pkgs.coreutils}/bin/mkdir -m +t -p /var/lib/samba/usershares";
   }
 
   {

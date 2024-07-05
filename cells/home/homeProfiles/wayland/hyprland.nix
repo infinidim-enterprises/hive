@@ -169,6 +169,7 @@ in
   wayland.windowManager.hyprland.xwayland.enable = true;
   wayland.windowManager.hyprland.plugins = with pkgs.hyprlandPlugins; [
     hyprexpo
+    hycov
   ];
   wayland.windowManager.hyprland.settings = {
 
@@ -248,6 +249,30 @@ in
       enable_gesture = false; # laptop touchpad
     };
 
+    plugin.hycov = {
+      overview_gappo = 10; # gaps width from screen edge
+      overview_gappi = 10; # gaps width from clients
+      enable_click_action = 1; # enable mouse left button jump and right button kill in overview mode
+      # enable_hotarea = 1; # enable mouse cursor hotarea, when cursor enter hotarea, it will toggle overview
+      # hotarea_monitor = "all"; # monitor name which hotarea is in, default is all
+      # hotarea_pos = 1; # position of hotarea (1: bottom left, 2: bottom right, 3: top left, 4: top right)
+      # hotarea_size = 10; # hotarea size, 10x10
+      # swipe_fingers = 4; # finger number of gesture,move any directory
+      # move_focus_distance = 100; # distance for movefocus,only can use 3 finger to move
+      enable_gesture = 0; # enable gesture
+      auto_exit = 1; # enable auto exit when no client in overview
+      auto_fullscreen = 0; # auto make active window maximize after exit overview
+      only_active_workspace = 0; # only overview the active workspace
+      only_active_monitor = 0; # only overview the active monitor
+      enable_alt_release_exit = 0; # alt swith mode arg,see readme for detail
+      alt_replace_key = "Alt_L"; # alt swith mode arg,see readme for detail
+      alt_toggle_auto_next = 0; # auto focus next window when toggle overview in alt swith mode
+      click_in_cursor = 1; # when click to jump,the target windwow is find by cursor, not the current foucus window.
+      hight_of_titlebar = 0; # height deviation of title bar height
+      show_special = 0; # show windwos in special workspace in overview.
+      raise_float_to_top = 1; # raise the window that is floating before to top after leave overview mode
+    };
+
     workspace = [
       "1, defaultName:Master"
       "2, defaultName:Emacs"
@@ -275,7 +300,10 @@ in
       "$mainMod Alt_L, Up, movewindow, u"
       "$mainMod Alt_L, Down, movewindow, d"
 
-      "Alt_L, Tab, cyclenext"
+      "ALT,tab,hycov:toggleoverview"
+
+      # "Alt_L, Tab, cyclenext"
+
       "$mainMod, Tab, focuscurrentorlast"
 
       # Switch workspaces with mainMod + [0-9]
