@@ -437,78 +437,16 @@ in
   oglaroon =
     { disks ? [ "/dev/disk/by-id/nvme-CT1000P2SSD8_2228E648DC10" ], ... }:
     {
-      inherit zpool;
       disk = mkPartitions { inherit disks; swapSize = "64G"; };
+      inherit zpool;
     };
 
   asbleg =
-    { disks ? [ "/dev/disk/by-id/ata-BIWIN_SSD_2051028801186" ]
-    , lib ? inputs.nixpkgs-lib.lib
-    , ...
-    }:
-    let
-      settings = {
-        bypassWorkqueues = true;
-        allowDiscards = false;
-        fallbackToPassword = true;
-        # preLVM = true;
-        # NOTE: https://github.com/sgillespie/nixos-yubikey-luks
-        # gpgCard = {
-        #   gracePeriod = 25;
-        #   encryptedPass = "/boot/luks/decryption-key.gpg";
-        #   publicKey = "/boot/luks/public-key.asc";
-        # };
-      };
-
-      inherit (lib) listToAttrs nameValuePair removePrefix;
-      disk = listToAttrs (map
-        (device: nameValuePair (removePrefix "/dev/disk/by-id/" device) {
-          inherit device;
-          type = "disk";
-          content.type = "gpt";
-          content.partitions = {
-            ESP = {
-              size = "1G";
-              type = "EF00";
-              content = {
-                type = "filesystem";
-                format = "vfat";
-                mountpoint = "/boot";
-                mountOptions = [ "umask=0077" ];
-              };
-            };
-
-            encryptedSwap = {
-              size = "8G";
-              content = {
-                type = "luks";
-                name = "cryptoswap";
-                inherit settings;
-                content = {
-                  type = "swap";
-                  resumeDevice = true;
-                };
-              };
-            };
-
-            encryptedRoot = {
-              size = "100%";
-              content = {
-                type = "luks";
-                name = "cryptoroot";
-                inherit settings;
-                content = {
-                  type = "zfs";
-                  pool = "rpool";
-                };
-              };
-            };
-          };
-
-        })
-        disks);
-    in
-    { inherit disk zpool; };
+    { disks ? [ "/dev/disk/by-id/ata-BIWIN_SSD_2051028801186" ], ... }:
+    {
+      disk = mkPartitions { inherit disks; };
+      inherit zpool;
+    };
 
   folfanga = { disks ? [ "/dev/disk/by-id/mmc-DF4064_0x33157f7a" ], lib, ... }:
     let
