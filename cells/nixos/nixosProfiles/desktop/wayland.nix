@@ -54,7 +54,6 @@ mkMerge [
     # https://github.com/JoaoCostaIFG/hyprtags
     # https://github.com/VortexCoyote/hyprfocus
     # https://github.com/horriblename/hyprgrass
-    # https://github.com/DreamMaoMao/hycov
     ###
     # hyprctl output create headless test
     # https://wiki.hyprland.org/Configuring/Using-hyprctl/#commands
@@ -62,7 +61,7 @@ mkMerge [
     environment.systemPackages = with pkgs; [
       wev
 
-      nitch # system fetch # TODO: https://github.com/ssleert/nitch/pull/20
+      # nitch # system fetch # TODO: https://github.com/ssleert/nitch/pull/20
       grim # wayland screenshot
       slurp # Select a region in a Wayland compositor
       grimblast

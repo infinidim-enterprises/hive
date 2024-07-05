@@ -43,11 +43,11 @@ rec {
     inputs.hyprland-hyprlock.overlays.default
     inputs.hyprland-hypridle.overlays.default
     inputs.hyprland-hyprutils.overlays.default
+    inputs.hyprland-hycov.overlays.default
 
     (final: prev: {
       hyprlandPlugins = prev.hyprlandPlugins // {
         hy3 = inputs.hyprland-hy3.packages.${prev.system}.default;
-        hych = inputs.hyprland-hych.packages.${prev.system}.hych;
       };
     })
   ];

@@ -283,7 +283,6 @@
     # hyprland.url = "github:hyprwm/Hyprland?submodules=1&ref=v0.41.1";
     # https://github.com/hyprwm/Hyprland/issues/5891
 
-    # TODO: https://github.com/hyprland-community/hyprnix
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     hyprland.inputs.nixpkgs.follows = "nixpkgs-unstable";
     hyprland.inputs.systems.follows = "hyprland-systems";
@@ -315,8 +314,14 @@
     hyprland-hy3.inputs.hyprland.follows = "hyprland";
     # hyprland-hy3.url = "github:outfoxxed/hy3?ref=hl0.41.0";
 
-    hyprland-hych.url = "github:DreamMaoMao/hych";
-    hyprland-hych.inputs.hyprland.follows = "hyprland";
+    # hyprland-hych.url = "github:DreamMaoMao/hych";
+    # hyprland-hych.inputs.hyprland.follows = "hyprland";
+
+    hyprland-hycov.url = "github:DreamMaoMao/hycov";
+    hyprland-hycov.inputs.hyprland.follows = "hyprland";
+    hyprland-hycov.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    hyprland-hycov.inputs.systems.follows = "hyprland/systems";
+
   };
 
   outputs =

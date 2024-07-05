@@ -1424,23 +1424,30 @@
         "type": "github"
       }
     },
-    "hyprland-hych": {
+    "hyprland-hycov": {
       "inputs": {
         "hyprland": [
           "hyprland"
+        ],
+        "nixpkgs": [
+          "nixpkgs-unstable"
+        ],
+        "systems": [
+          "hyprland",
+          "systems"
         ]
       },
       "locked": {
-        "lastModified": 1713858717,
-        "narHash": "sha256-PbG0APgWRSIyHjjkcb7KAhGM347reDs0ze8ofvjVje4=",
+        "lastModified": 1719328349,
+        "narHash": "sha256-upIUl8IE5ow+CJKa2SIo3OL/djarGVr8pNe1j05uW1A=",
         "owner": "DreamMaoMao",
-        "repo": "hych",
-        "rev": "c7b173aedfcb4a491b8b93044b7d1892bafc7dfe",
+        "repo": "hycov",
+        "rev": "de15cdd6bf2e46cbc69735307f340b57e2ce3dd0",
         "type": "github"
       },
       "original": {
         "owner": "DreamMaoMao",
-        "repo": "hych",
+        "repo": "hycov",
         "type": "github"
       }
     },
@@ -3007,7 +3014,7 @@
         "hyprland": "hyprland",
         "hyprland-contrib": "hyprland-contrib",
         "hyprland-hy3": "hyprland-hy3",
-        "hyprland-hych": "hyprland-hych",
+        "hyprland-hycov": "hyprland-hycov",
         "hyprland-hypridle": "hyprland-hypridle",
         "hyprland-hyprlock": "hyprland-hyprlock",
         "hyprland-hyprpicker": "hyprland-hyprpicker",
