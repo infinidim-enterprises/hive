@@ -11,7 +11,10 @@ in
   # TODO: investigate mate-wayland-session with hyprland
 
   # NOTE: kinda need a filemanager
-  home.packages = with pkgs; [ mate.caja-with-extensions ];
+  home.packages = with pkgs; [
+    mate.caja-with-extensions
+    sambaFull # net usershare for caja
+  ];
 
   xdg.mimeApps.defaultApplications = {
     "inode/directory" = "caja-folder-handler.desktop";
@@ -233,26 +236,11 @@ in
     # https://wiki.hyprland.org/Configuring/Variables/#gestures
     gestures.workspace_swipe = false;
 
-    # TODO: $fileManager = dolphin
     "$mainMod" = "SUPER";
     "$terminal" = "tilix";
     "$menu" = "wofi --show drun";
-    /*
-      plugin {
-      hyprexpo {
-        columns = 3
-        gap_size = 5
-        bg_col = rgb(111111)
-        workspace_method = center current # [center/first] [workspace] e.g. first 1 or center m+1
+    "$fileManager" = "caja --no-desktop";
 
-        enable_gesture = true # laptop touchpad
-        gesture_fingers = 3  # 3 or 4
-        gesture_distance = 300 # how far is the "max"
-        gesture_positive = true # positive = swipe down. Negative = swipe up.
-      }
-      }
-
-    */
     plugin.hyprexpo = {
       columns = 3;
       gap_size = 5;
@@ -261,10 +249,14 @@ in
       enable_gesture = false; # laptop touchpad
     };
 
+    workspace = [
+      "1, defaultName:Master"
+    ];
+
     bind = [
       "$mainMod, Return, fullscreen, 0"
-      "$mainMod, E, exec, $fileManager"
-      "$mainMod, V, togglefloating,"
+      "$mainMod, F, exec, $fileManager"
+      "$mainMod Alt_L, F, togglefloating,"
       "$mainMod, P, pseudo,"
       "$mainMod, J, togglesplit,"
 

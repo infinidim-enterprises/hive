@@ -12,9 +12,13 @@ in
 
   programs.waybar.settings.masterBar = {
     position = "top";
-    modules-left = [ "hyprland/workspaces" ];
-    # modules-center = [ ];
+    modules-left = [
+      "hyprland/workspaces"
+      "hyprland/window"
+    ];
+    # modules-center = [  ];
     modules-right = [
+      "hyprland/submap"
       "hyprland/language"
       "temperature"
       "battery"
@@ -25,7 +29,7 @@ in
 
     "custom/wlogout" = {
       format = "⏻";
-      on-click = config.programs.wlogout.command;
+      on-click = "hyprctl dispatch movecursor 0 0 && ${config.programs.wlogout.command}";
       tooltip = false;
     };
 
@@ -33,8 +37,15 @@ in
 
     "hyprland/window".format = " {}";
     "hyprland/window".max-length = 100;
+    "hyprland/window".icon = true;
 
     "hyprland/workspaces".format = "{name}";
+
+    "hyprland/submap" = {
+      "format" = "✌️ {}";
+      "max-length" = 10;
+      "tooltip" = false;
+    };
 
     tray.spacing = 5;
     temperature.format = "{temperatureC}°C ";
