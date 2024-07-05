@@ -46,7 +46,8 @@ in
     in
     mkOption {
       type = lib.types.str;
-      default = "${cfg.package}/bin/wlogout --buttons-per-row "
+      default = "hyprctl dispatch movecursor 0 0 && "
+        + "${cfg.package}/bin/wlogout --buttons-per-row "
         + (toString (length cfg.layout))
         + " --margin ${toString margin}"
         + " --primary-monitor 0"

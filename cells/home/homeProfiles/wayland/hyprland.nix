@@ -13,7 +13,6 @@ in
   # NOTE: kinda need a filemanager
   home.packages = with pkgs; [
     mate.caja-with-extensions
-    sambaFull # net usershare for caja
   ];
 
   xdg.mimeApps.defaultApplications = {
@@ -251,6 +250,8 @@ in
 
     workspace = [
       "1, defaultName:Master"
+      "2, defaultName:Emacs"
+      "3, defaultName:Web"
     ];
 
     bind = [

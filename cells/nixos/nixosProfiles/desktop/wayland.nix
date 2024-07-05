@@ -8,17 +8,24 @@ let
     hasAttr;
 in
 mkMerge [
-  (mkIf (hasAttr "home-manager" config) {
-    home-manager.sharedModules = [
+  # (mkIf (hasAttr "home-manager" config) {
+  #   home-manager.sharedModules = [
 
-    ];
-  })
+  #   ];
+  # })
   {
-    # programs.hyprland.package
-    # programs.hyprland.portalPackage
+    # NOTE: caja will be able to use net usershare
+    services.samba.enable = true;
+    services.samba.package = [ pkgs.sambaFull ];
+    services.samba.openFirewall = true;
+    services.samba.extraConfig = ''
+      usershare max shares = 100
+      usershare allow guests = yes
+      usershare owner only = yes
+    '';
+  }
 
-    # imports = [ ];
-
+  {
     programs.hyprland.enable = true;
     programs.hyprland.xwayland.enable = true;
     # BUG: https://github.com/NixOS/nixpkgs/issues/320734

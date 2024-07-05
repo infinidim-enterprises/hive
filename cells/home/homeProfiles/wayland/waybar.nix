@@ -29,7 +29,7 @@ in
 
     "custom/wlogout" = {
       format = "⏻";
-      on-click = "hyprctl dispatch movecursor 0 0 && ${config.programs.wlogout.command}";
+      on-click = "${config.programs.wlogout.command}";
       tooltip = false;
     };
 
@@ -43,7 +43,7 @@ in
 
     "hyprland/submap" = {
       "format" = "✌️ {}";
-      "max-length" = 10;
+      "max-length" = 30;
       "tooltip" = false;
     };
 
