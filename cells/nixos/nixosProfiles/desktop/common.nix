@@ -56,8 +56,8 @@ mkMerge [
     environment.systemPackages = with pkgs; [
       pulseaudio-ctl
 
-      gnome.adwaita-icon-theme
-      gnome.dconf-editor
+      adwaita-icon-theme
+      dconf-editor
 
       numix-cursor-theme
       numix-icon-theme-circle

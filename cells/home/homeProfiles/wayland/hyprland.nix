@@ -180,9 +180,9 @@ in
     # exec-once = [ "hdrop -b $terminal" ]; # NOTE: conflicts with hy3
 
     env = [
-      "XCURSOR_THEME,${config.home.pointerCursor.name}"
-      "XCURSOR_SIZE,${config.home.pointerCursor.size}"
-      "HYPRCURSOR_SIZE,${cursorsize}"
+      "XCURSOR_THEME,${config.gtk.cursorTheme.name}"
+      "XCURSOR_SIZE,${cursorsize}"
+      # "HYPRCURSOR_SIZE,${cursorsize}"
       "WLR_XWAYLAND,${pkgs.xwayland}/bin/Xwayland"
       "GDK_BACKEND,wayland,x11,*"
       "QT_QPA_PLATFORM,wayland;xcb"
@@ -230,7 +230,7 @@ in
     input.kb_variant = ",phonetic_YAZHERTY";
     input.kb_options = "grp:shifts_toggle";
 
-    input.follow_mouse = 1;
+    input.follow_mouse = 0;
 
     input.sensitivity = 0; # -1.0 - 1.0, 0 means no modification.
     input.accel_profile = "adaptive";
@@ -419,7 +419,6 @@ in
       # TODO: "ALT,tab,hycov:toggleoverview"
 
       "Alt_L, Tab, cyclenext"
-
       "$masterMod, Tab, focuscurrentorlast"
 
       # Switch workspaces with mainMod + [0-9]
