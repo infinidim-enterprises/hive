@@ -28,7 +28,10 @@ in
     "org/mate/caja/preferences".ctrl-tab-switch-tabs = true;
   };
 
-  # TODO: https://github.com/sentriz/cliphist
+  # TODO: maybe this instead? https://github.com/savedra1/clipse
+  services.cliphist.enable = true;
+  services.cliphist.allowImages = true;
+  services.cliphist.systemdTarget = "graphical-session.target";
 
   services.wlsunset.enable = true;
   services.wlsunset.temperature.day = 4200;
@@ -196,7 +199,7 @@ in
       border_size = 1;
       resize_on_border = false;
       allow_tearing = false;
-      layout = "dwindle";
+      layout = "hy3"; # "dwindle";
     };
 
     decoration = {
@@ -236,7 +239,7 @@ in
     # https://wiki.hyprland.org/Configuring/Variables/#gestures
     gestures.workspace_swipe = false;
 
-    "$mainMod" = "SUPER";
+    "$masterMod" = "SUPER";
     "$terminal" = "tilix";
     "$menu" = "wofi --show drun";
     "$fileManager" = "caja --no-desktop";
@@ -273,6 +276,102 @@ in
       raise_float_to_top = 1; # raise the window that is floating before to top after leave overview mode
     };
 
+    plugin.hy3 = {
+      # disable gaps when only one window is onscreen
+      # 0 - always show gaps
+      # 1 - hide gaps with a single window onscreen
+      # 2 - 1 but also show the window border
+      no_gaps_when_only = 2; # default: 0
+
+      # policy controlling what happens when a node is removed from a group,
+      # leaving only a group
+      # 0 = remove the nested group
+      # 1 = keep the nested group
+      # 2 = keep the nested group only if its parent is a tab group
+      node_collapse_policy = 2; # default: 2
+
+      # offset from group split direction when only one window is in a group
+      group_inset = 10; # default: 10
+
+      # if a tab group will automatically be created for the first window spawned in a workspace
+      tab_first_window = false;
+
+      # tab group settings
+      tabs = {
+        # height of the tab bar
+        height = 15; # default: 15
+
+        # padding between the tab bar and its focused node
+        padding = 5; # default: 5
+
+        # the tab bar should animate in/out from the top instead of below the window
+        from_top = false; # default: false
+
+        # rounding of tab bar corners
+        rounding = 3; # default: 3
+
+        # render the window title on the bar
+        render_text = true; # default: true
+
+        # center the window title
+        text_center = false; # default: false
+
+        # font to render the window title with
+        # text_font = <string> # default: Sans
+
+        # height of the window title
+        # text_height = <int> # default: 8
+
+        # left padding of the window title
+        text_padding = 3; # default: 3
+
+        # active tab bar segment color
+        # "col.active" = "<color>"; # default: 0xff32b4ff
+
+        # urgent tab bar segment color
+        # "col.urgent" = "<color>"; # default: 0xffff4f4f
+
+        # inactive tab bar segment color
+        # "col.inactive" = "<color>"; # default: 0x80808080
+
+        # active tab bar text color
+        # "col.text.active" = "<color>"; # default: 0xff000000
+
+        # urgent tab bar text color
+        # "col.text.urgent" = "<color>"; # default: 0xff000000
+
+        # inactive tab bar text color
+        # "col.text.inactive" = "<color>"; # default: 0xff000000
+      };
+
+      # autotiling settings
+      autotile = {
+        # enable autotile
+        enable = false; # default: false
+
+        # make autotile-created groups ephemeral
+        ephemeral_groups = true; # default: true
+
+        # if a window would be squished smaller than this width, a vertical split will be created
+        # -1 = never automatically split vertically
+        # 0 = always automatically split vertically
+        # <number> = pixel height to split at
+        trigger_width = 0; # default: 0
+
+        # if a window would be squished smaller than this height, a horizontal split will be created
+        # -1 = never automatically split horizontally
+        # 0 = always automatically split horizontally
+        # <number> = pixel height to split at
+        trigger_height = 0; # default: 0
+
+        # a space or comma separated list of workspace ids where autotile should be enabled
+        # it's possible to create an exception rule by prefixing the definition with "not:"
+        # workspaces = 1,2 # autotiling will only be enabled on workspaces 1 and 2
+        # workspaces = not:1,2 # autotiling will be enabled on all workspaces except 1 and 2
+        workspaces = "not:1,2,3"; # default: all
+      };
+    };
+
     workspace = [
       "1, defaultName:Master"
       "2, defaultName:Emacs"
@@ -280,63 +379,80 @@ in
     ];
 
     bind = [
-      "$mainMod, Return, fullscreen, 0"
-      "$mainMod, F, exec, $fileManager"
-      "$mainMod Alt_L, F, togglefloating,"
-      "$mainMod, P, pseudo,"
-      "$mainMod, J, togglesplit,"
+      "$masterMod, Return, fullscreen, 0"
+      "$masterMod, F, exec, $fileManager"
+      "$masterMod Alt_L, F, togglefloating"
+      "$masterMod, P, pseudo"
+      "$masterMod, J, togglesplit"
 
-      "$mainMod, grave, hyprexpo:expo, toggle" # hyprexpo plugin
+      "$masterMod, grave, hyprexpo:expo, toggle" # hyprexpo plugin
 
       # Move focus with mainMod + arrow keys
-      "$mainMod, Left, movefocus, l"
-      "$mainMod, Right, movefocus, r"
-      "$mainMod, Up, movefocus, u"
-      "$mainMod, Down, movefocus, d"
+      # "$masterMod, Left, movefocus, l"
+      # "$masterMod, Right, movefocus, r"
+      # "$masterMod, Up, movefocus, u"
+      # "$masterMod, Down, movefocus, d"
+      "$masterMod, Left, hy3:movefocus, left"
+      "$masterMod, Right, hy3:movefocus, right"
+      "$masterMod, Up, hy3:movefocus, up"
+      "$masterMod, Down, hy3:movefocus, down"
+
+      "$masterMod SHIFT, Up, hy3:changefocus, raise"
+      "$masterMod SHIFT, Down, hy3:changefocus, lower"
 
       # Move the window itself
-      "$mainMod Alt_L, Left, movewindow, l"
-      "$mainMod Alt_L, Right, movewindow, r"
-      "$mainMod Alt_L, Up, movewindow, u"
-      "$mainMod Alt_L, Down, movewindow, d"
+      # "$masterMod Alt_L, Left, movewindow, l"
+      # "$masterMod Alt_L, Right, movewindow, r"
+      # "$masterMod Alt_L, Up, movewindow, u"
+      # "$masterMod Alt_L, Down, movewindow, d"
 
-      "ALT,tab,hycov:toggleoverview"
+      "$masterMod Alt_L, Left, hy3:movewindow, left, once"
+      "$masterMod Alt_L, Right, hy3:movewindow, right, once"
+      "$masterMod Alt_L, Up, hy3:movewindow, up, once"
+      "$masterMod Alt_L, Down, hy3:movewindow, down, once"
 
-      # "Alt_L, Tab, cyclenext"
+      "$masterMod Alt_L SHIFT, Left, hy3:movewindow, left, once, visible"
+      "$masterMod Alt_L SHIFT, Right, hy3:movewindow, right, once, visible"
+      "$masterMod Alt_L SHIFT, Up, hy3:movewindow, up, once, visible"
+      "$masterMod Alt_L SHIFT, Down, hy3:movewindow, down, once, visible"
 
-      "$mainMod, Tab, focuscurrentorlast"
+      # TODO: "ALT,tab,hycov:toggleoverview"
+
+      "Alt_L, Tab, cyclenext"
+
+      "$masterMod, Tab, focuscurrentorlast"
 
       # Switch workspaces with mainMod + [0-9]
-      "$mainMod, 1, workspace, 1"
-      "$mainMod, 2, workspace, 2"
-      "$mainMod, 3, workspace, 3"
-      "$mainMod, 4, workspace, 4"
-      "$mainMod, 5, workspace, 5"
-      "$mainMod, 6, workspace, 6"
-      "$mainMod, 7, workspace, 7"
-      "$mainMod, 8, workspace, 8"
-      "$mainMod, 9, workspace, 9"
-      "$mainMod, 0, workspace, 10"
+      # "$masterMod, 1, workspace, 1"
+      # "$masterMod, 2, workspace, 2"
+      # "$masterMod, 3, workspace, 3"
+      # "$masterMod, 4, workspace, 4"
+      # "$masterMod, 5, workspace, 5"
+      # "$masterMod, 6, workspace, 6"
+      # "$masterMod, 7, workspace, 7"
+      # "$masterMod, 8, workspace, 8"
+      # "$masterMod, 9, workspace, 9"
+      # "$masterMod, 0, workspace, 10"
 
       # Move active window to a workspace with mainMod + SHIFT + [0-9]
-      "$mainMod SHIFT, 1, movetoworkspace, 1"
-      "$mainMod SHIFT, 2, movetoworkspace, 2"
-      "$mainMod SHIFT, 3, movetoworkspace, 3"
-      "$mainMod SHIFT, 4, movetoworkspace, 4"
-      "$mainMod SHIFT, 5, movetoworkspace, 5"
-      "$mainMod SHIFT, 6, movetoworkspace, 6"
-      "$mainMod SHIFT, 7, movetoworkspace, 7"
-      "$mainMod SHIFT, 8, movetoworkspace, 8"
-      "$mainMod SHIFT, 9, movetoworkspace, 9"
-      "$mainMod SHIFT, 0, movetoworkspace, 10"
+      # "$masterMod SHIFT, 1, movetoworkspace, 1"
+      # "$masterMod SHIFT, 2, movetoworkspace, 2"
+      # "$masterMod SHIFT, 3, movetoworkspace, 3"
+      # "$masterMod SHIFT, 4, movetoworkspace, 4"
+      # "$masterMod SHIFT, 5, movetoworkspace, 5"
+      # "$masterMod SHIFT, 6, movetoworkspace, 6"
+      # "$masterMod SHIFT, 7, movetoworkspace, 7"
+      # "$masterMod SHIFT, 8, movetoworkspace, 8"
+      # "$masterMod SHIFT, 9, movetoworkspace, 9"
+      # "$masterMod SHIFT, 0, movetoworkspace, 10"
 
       # Example special workspace (scratchpad)
-      "$mainMod, S, togglespecialworkspace, magic"
-      "$mainMod SHIFT, S, movetoworkspace, special:magic"
+      "$masterMod, S, togglespecialworkspace, magic"
+      "$masterMod SHIFT, S, movetoworkspace, special:magic"
 
       # Scroll through existing workspaces with mainMod + scroll
-      "$mainMod, mouse_down, workspace, e+1"
-      "$mainMod, mouse_up, workspace, e-1"
+      # "$masterMod, mouse_down, workspace, e+1"
+      # "$masterMod, mouse_up, workspace, e-1"
 
       "Control_L&Alt_L, Delete, exec, ${config.programs.wlogout.command}"
 
@@ -346,17 +462,17 @@ in
       # "Control_L&Shift_L, Q, exit"
       "Control_L&Shift_L, Return, exec, $terminal"
 
-      "$mainMod&Control_L&Alt_L, Right, movetoworkspace, +1"
-      "$mainMod&Control_L&Alt_L, Left, movetoworkspace, -1"
+      "$masterMod&Control_L&Alt_L, Right, movetoworkspace, +1"
+      "$masterMod&Control_L&Alt_L, Left, movetoworkspace, -1"
 
       "Control_L, grave, exec, hdrop -b tilix"
     ];
 
     bindm = [
       # mouse movements
-      "$mainMod, mouse:272, movewindow"
-      "$mainMod, mouse:273, resizewindow"
-      # "$mainMod ALT, mouse:272, resizewindow"
+      "$masterMod, mouse:272, movewindow"
+      "$masterMod, mouse:273, resizewindow"
+      # "$masterMod ALT, mouse:272, resizewindow"
     ];
 
     # binds = [
@@ -371,31 +487,45 @@ in
 
     windowrulev2 = [
       "suppressevent maximize, class:.*"
+      "float, class:^(gcr-prompter)$"
+      "dimaround, class:^(gcr-prompter)$"
     ];
   };
 
-  # (set-prefix-key (kbd "C-'"))
-  # (kbd "C-.") "$mainMod, C, killactive,"
   wayland.windowManager.hyprland.extraConfig = ''
     bind = Control_L, apostrophe, submap, keychords
     submap = keychords
-    bind = Control_L,period,exec,$menu
-    bind = Control_L,period,submap,reset
-    bind = ,k,killactive,
-    bind = ,k,submap,reset
-    bind = ,e,exec,emacsclient -c
-    bind = ,e,submap,reset
+    bind = Control_L, period, exec, $menu
+    bind = Control_L, period, submap, reset
+
+    bind = , K, hy3:killactive
+    bind = , K, submap, reset
+
+    bind = , S, hy3:makegroup, h
+    bind = , S, submap, reset
+    bind = , s, hy3:makegroup, v
+    bind = , s, submap, reset
+    bind = , Tab, hy3:makegroup, tab
+    bind = , Tab, submap, reset
+    bind = Control_L, s, hy3:changegroup, opposite
+    bind = Control_L, s, submap, reset
+    bind = , Q, hy3:expand, expand
+    bind = , Q, submap, reset
+    bind = , q, hy3:expand, base
+    bind = , q, submap, reset
+
+    bind = , k, killactive
+    bind = , k, submap, reset
+    bind = , e, exec, emacsclient -c
+    bind = , e, submap, reset
+    submap = reset
+
+    bind = $masterMod, apostrophe, submap, clipboard
+    submap = clipboard
+    bind = $masterMod, y, exec, cliphist list | wofi --show dmenu | cliphist decode | xargs wtype
+    bind = $masterMod, y, submap, reset
+    bind = , y, exec, cliphist list | wofi --show dmenu | cliphist decode | wl-copy
+    bind = , y, submap, reset
     submap = reset
   '';
 }
-/*
-
-  Jun 20 23:15:16 asbleg org.gnome.Shell.desktop[17393]: The XKEYBOARD keymap compiler (xkbcomp) reports:
-  Jun 20 23:15:16 asbleg org.gnome.Shell.desktop[17393]: > Warning:          Unsupported maximum keycode 708, clipping.
-  Jun 20 23:15:16 asbleg org.gnome.Shell.desktop[17393]: >                   X11 cannot support keycodes above 255.
-  Jun 20 23:15:16 asbleg org.gnome.Shell.desktop[17393]: > Warning:          Could not resolve keysym XF86KbdInputAssistPrevgrou
-  Jun 20 23:15:16 asbleg org.gnome.Shell.desktop[17393]: > Warning:          Could not resolve keysym XF86KbdInputAssistNextgrou
-  Jun 20 23:15:16 asbleg org.gnome.Shell.desktop[17393]: Errors from xkbcomp are not fatal to the X server
-  Jun 20 2
-
-*/

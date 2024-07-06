@@ -206,6 +206,12 @@
     # nixvim.inputs.nixpkgs.follows = "nixpkgs-unstable";
     # nixvim.inputs.home-manager.follows = "home-unstable";
 
+    /*radicle = {
+      url = "git+https://seed.radicle.xyz/z3gqcJUoA1n9HaHKufZs5FCSGazv5.git";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+    };*/
+
     # TODO: rewrite auto-cpufreq in crystal
     # auto-cpufreq.url = "github:AdnanHodzic/auto-cpufreq";
     # auto-cpufreq.inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -312,10 +318,8 @@
 
     hyprland-hy3.url = "github:outfoxxed/hy3";
     hyprland-hy3.inputs.hyprland.follows = "hyprland";
-    # hyprland-hy3.url = "github:outfoxxed/hy3?ref=hl0.41.0";
 
-    # hyprland-hych.url = "github:DreamMaoMao/hych";
-    # hyprland-hych.inputs.hyprland.follows = "hyprland";
+    # TODO: https://github.com/levnikmyskin/hyprland-virtual-desktops
 
     hyprland-hycov.url = "github:DreamMaoMao/hycov";
     hyprland-hycov.inputs.hyprland.follows = "hyprland";
