@@ -379,6 +379,8 @@ in
       "3, defaultName:Web"
     ];
 
+    debug.disable_logs = false;
+
     bind = [
       "$masterMod, Return, fullscreen, 0"
       "$masterMod, F, exec, $fileManager"
@@ -499,19 +501,19 @@ in
     bind = Control_L, period, exec, $menu
     bind = Control_L, period, submap, reset
 
-    bind = , K, hy3:killactive
-    bind = , K, submap, reset
+    bind = SHIFT, k, hy3:killactive
+    bind = SHIFT, k, submap, reset
 
-    bind = , S, hy3:makegroup, h
-    bind = , S, submap, reset
+    bind = SHIFT, s, hy3:makegroup, h
+    bind = SHIFT, s, submap, reset
     bind = , s, hy3:makegroup, v
     bind = , s, submap, reset
     bind = , Tab, hy3:makegroup, tab
     bind = , Tab, submap, reset
     bind = Control_L, s, hy3:changegroup, opposite
     bind = Control_L, s, submap, reset
-    bind = , Q, hy3:expand, expand
-    bind = , Q, submap, reset
+    bind = SHIFT, q, hy3:expand, expand
+    bind = SHIFT, q, submap, reset
     bind = , q, hy3:expand, base
     bind = , q, submap, reset
 
