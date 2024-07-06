@@ -172,17 +172,16 @@ in
   wayland.windowManager.hyprland.xwayland.enable = true;
   wayland.windowManager.hyprland.plugins = with pkgs.hyprlandPlugins; [
     hyprexpo
-    hycov
+    # hycov
     hy3
   ];
   wayland.windowManager.hyprland.settings = {
 
-    exec-once = [
-      "hdrop -b $terminal"
-    ];
+    # exec-once = [ "hdrop -b $terminal" ]; # NOTE: conflicts with hy3
 
     env = [
-      "XCURSOR_SIZE,${cursorsize}"
+      "XCURSOR_THEME,${config.home.pointerCursor.name}"
+      "XCURSOR_SIZE,${config.home.pointerCursor.size}"
       "HYPRCURSOR_SIZE,${cursorsize}"
       "WLR_XWAYLAND,${pkgs.xwayland}/bin/Xwayland"
       "GDK_BACKEND,wayland,x11,*"
@@ -216,8 +215,8 @@ in
     animations.enabled = false;
     animations.first_launch_animation = false;
 
-    dwindle.pseudotile = true;
-    dwindle.preserve_split = true; # You probably want this
+    # dwindle.pseudotile = true;
+    # dwindle.preserve_split = true; # You probably want this
 
     misc.force_default_wallpaper = 0;
     misc.disable_hyprland_logo = true;
@@ -245,37 +244,35 @@ in
     "$menu" = "wofi --show drun";
     "$fileManager" = "caja --no-desktop";
 
-    plugin.hyprexpo = {
-      columns = 3;
-      gap_size = 5;
-      bg_col = "rgb(0, 43, 54)";
-      workspace_method = "center current"; # [center/first] [workspace] e.g. first 1 or center m+1
-      enable_gesture = false; # laptop touchpad
-    };
+    plugin.hyprexpo.columns = 3;
+    plugin.hyprexpo.gap_size = 5;
+    plugin.hyprexpo.bg_col = "rgb(0, 43, 54)";
+    plugin.hyprexpo.workspace_method = "center current"; # [center/first] [workspace] e.g. first 1 or center m+1
+    plugin.hyprexpo.enable_gesture = false; # laptop touchpad
 
-    plugin.hycov = {
-      overview_gappo = 10; # gaps width from screen edge
-      overview_gappi = 10; # gaps width from clients
-      enable_click_action = 1; # enable mouse left button jump and right button kill in overview mode
-      # enable_hotarea = 1; # enable mouse cursor hotarea, when cursor enter hotarea, it will toggle overview
-      # hotarea_monitor = "all"; # monitor name which hotarea is in, default is all
-      # hotarea_pos = 1; # position of hotarea (1: bottom left, 2: bottom right, 3: top left, 4: top right)
-      # hotarea_size = 10; # hotarea size, 10x10
-      # swipe_fingers = 4; # finger number of gesture,move any directory
-      # move_focus_distance = 100; # distance for movefocus,only can use 3 finger to move
-      enable_gesture = 0; # enable gesture
-      auto_exit = 1; # enable auto exit when no client in overview
-      auto_fullscreen = 0; # auto make active window maximize after exit overview
-      only_active_workspace = 0; # only overview the active workspace
-      only_active_monitor = 0; # only overview the active monitor
-      enable_alt_release_exit = 0; # alt swith mode arg,see readme for detail
-      alt_replace_key = "Alt_L"; # alt swith mode arg,see readme for detail
-      alt_toggle_auto_next = 0; # auto focus next window when toggle overview in alt swith mode
-      click_in_cursor = 1; # when click to jump,the target windwow is find by cursor, not the current foucus window.
-      hight_of_titlebar = 0; # height deviation of title bar height
-      show_special = 0; # show windwos in special workspace in overview.
-      raise_float_to_top = 1; # raise the window that is floating before to top after leave overview mode
-    };
+    # plugin.hycov = {
+    #   overview_gappo = 10; # gaps width from screen edge
+    #   overview_gappi = 10; # gaps width from clients
+    #   enable_click_action = 1; # enable mouse left button jump and right button kill in overview mode
+    #   # enable_hotarea = 1; # enable mouse cursor hotarea, when cursor enter hotarea, it will toggle overview
+    #   # hotarea_monitor = "all"; # monitor name which hotarea is in, default is all
+    #   # hotarea_pos = 1; # position of hotarea (1: bottom left, 2: bottom right, 3: top left, 4: top right)
+    #   # hotarea_size = 10; # hotarea size, 10x10
+    #   # swipe_fingers = 4; # finger number of gesture,move any directory
+    #   # move_focus_distance = 100; # distance for movefocus,only can use 3 finger to move
+    #   enable_gesture = 0; # enable gesture
+    #   auto_exit = 1; # enable auto exit when no client in overview
+    #   auto_fullscreen = 0; # auto make active window maximize after exit overview
+    #   only_active_workspace = 0; # only overview the active workspace
+    #   only_active_monitor = 0; # only overview the active monitor
+    #   enable_alt_release_exit = 0; # alt swith mode arg,see readme for detail
+    #   alt_replace_key = "Alt_L"; # alt swith mode arg,see readme for detail
+    #   alt_toggle_auto_next = 0; # auto focus next window when toggle overview in alt swith mode
+    #   click_in_cursor = 1; # when click to jump,the target windwow is find by cursor, not the current foucus window.
+    #   hight_of_titlebar = 0; # height deviation of title bar height
+    #   show_special = 0; # show windwos in special workspace in overview.
+    #   raise_float_to_top = 1; # raise the window that is floating before to top after leave overview mode
+    # };
 
     plugin.hy3 = {
       # disable gaps when only one window is onscreen
@@ -300,10 +297,10 @@ in
       # tab group settings
       tabs = {
         # height of the tab bar
-        height = 15; # default: 15
+        height = 10; # default: 15
 
         # padding between the tab bar and its focused node
-        padding = 5; # default: 5
+        padding = 3; # default: 5
 
         # the tab bar should animate in/out from the top instead of below the window
         from_top = false; # default: false
@@ -312,7 +309,7 @@ in
         rounding = 3; # default: 3
 
         # render the window title on the bar
-        render_text = true; # default: true
+        render_text = false; # default: true
 
         # center the window title
         text_center = false; # default: false
@@ -385,8 +382,8 @@ in
       "$masterMod, Return, fullscreen, 0"
       "$masterMod, F, exec, $fileManager"
       "$masterMod Alt_L, F, togglefloating"
-      "$masterMod, P, pseudo"
-      "$masterMod, J, togglesplit"
+      # "$masterMod, P, pseudo"
+      # "$masterMod, J, togglesplit"
 
       "$masterMod, grave, hyprexpo:expo, toggle" # hyprexpo plugin
 
@@ -450,25 +447,25 @@ in
       # "$masterMod SHIFT, 0, movetoworkspace, 10"
 
       # Example special workspace (scratchpad)
-      "$masterMod, S, togglespecialworkspace, magic"
-      "$masterMod SHIFT, S, movetoworkspace, special:magic"
+      # "$masterMod, S, togglespecialworkspace, magic"
+      # "$masterMod SHIFT, S, movetoworkspace, special:magic"
 
       # Scroll through existing workspaces with mainMod + scroll
       # "$masterMod, mouse_down, workspace, e+1"
       # "$masterMod, mouse_up, workspace, e-1"
 
-      "Control_L&Alt_L, Delete, exec, ${config.programs.wlogout.command}"
+      "Control_L Alt_L, Delete, exec, ${config.programs.wlogout.command}"
 
-      "Control_L&Alt_L, Right, workspace, +1"
-      "Control_L&Alt_L, Left, workspace, -1"
+      "Control_L Alt_L, Right, workspace, +1"
+      "Control_L Alt_L, Left, workspace, -1"
 
       # "Control_L&Shift_L, Q, exit"
-      "Control_L&Shift_L, Return, exec, $terminal"
+      "Control_L Shift_L, Return, exec, $terminal"
 
-      "$masterMod&Control_L&Alt_L, Right, movetoworkspace, +1"
-      "$masterMod&Control_L&Alt_L, Left, movetoworkspace, -1"
+      "$masterMod Control_L Alt_L, Right, movetoworkspace, +1"
+      "$masterMod Control_L Alt_L, Left, movetoworkspace, -1"
 
-      "Control_L, grave, exec, hdrop -b tilix"
+      # "Control_L, grave, exec, hdrop -b tilix"
     ];
 
     bindm = [
@@ -498,18 +495,27 @@ in
   wayland.windowManager.hyprland.extraConfig = ''
     bind = Control_L, apostrophe, submap, keychords
     submap = keychords
+
     bind = Control_L, period, exec, $menu
     bind = Control_L, period, submap, reset
 
     bind = SHIFT, k, hy3:killactive
     bind = SHIFT, k, submap, reset
 
-    bind = SHIFT, s, hy3:makegroup, h
-    bind = SHIFT, s, submap, reset
-    bind = , s, hy3:makegroup, v
-    bind = , s, submap, reset
+    bind = , 3, hy3:makegroup, h
+    bind = , 3, submap, reset
+    bind = , 2, hy3:makegroup, v
+    bind = , 2, submap, reset
     bind = , Tab, hy3:makegroup, tab
     bind = , Tab, submap, reset
+    bind = Control_L, Tab, hy3:changegroup, toggletab
+    bind = Control_L, Tab, submap, reset
+
+    bind = , Return, hy3:setephemeral, false
+    bind = , Return, submap, reset
+    bind = Control_L, Return, hy3:setephemeral, true
+    bind = Control_L, Return, submap, reset
+
     bind = Control_L, s, hy3:changegroup, opposite
     bind = Control_L, s, submap, reset
     bind = SHIFT, q, hy3:expand, expand

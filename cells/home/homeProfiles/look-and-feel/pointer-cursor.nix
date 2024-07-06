@@ -11,6 +11,9 @@ mkMerge [
 
     dconf.settings."org/mate/desktop/peripherals/mouse".cursor-size = 32;
     dconf.settings."org/mate/desktop/peripherals/mouse".cursor-theme = "Numix-Cursor-Light";
+
+    dconf.settings."org/gnome/desktop/interface".cursor-size = 32;
+    dconf.settings."org/gnome/desktop/interface".cursor-theme = "Numix-Cursor-Light";
   })
 
   (mkIf (!config.wayland.windowManager.hyprland.enable) {
