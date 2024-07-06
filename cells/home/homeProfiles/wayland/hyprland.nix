@@ -173,6 +173,7 @@ in
   wayland.windowManager.hyprland.plugins = with pkgs.hyprlandPlugins; [
     hyprexpo
     hycov
+    hy3
   ];
   wayland.windowManager.hyprland.settings = {
 
