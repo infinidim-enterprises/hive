@@ -23,6 +23,9 @@ mkMerge [
       usershare max shares = 100
       usershare allow guests = yes
       usershare owner only = yes
+
+      disable netbios = yes
+      smb ports = 445
     '';
     systemd.services.samba-smbd.serviceConfig.ExecStartPre = "${pkgs.coreutils}/bin/mkdir -m +t -p /var/lib/samba/usershares";
   }
