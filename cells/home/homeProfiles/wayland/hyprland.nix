@@ -376,7 +376,7 @@ in
       "3, defaultName:Web"
     ];
 
-    debug.disable_logs = false;
+    # debug.disable_logs = false;
 
     bind = [
       "$masterMod, Return, fullscreen, 0"
