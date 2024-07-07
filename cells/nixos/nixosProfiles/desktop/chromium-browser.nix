@@ -14,9 +14,10 @@ lib.mkMerge [
       # "nglaklhklhcoonedhgnpgddginnjdadi" # TODO: mkIf hmModule activitywatch enabled.
       "nkbihfbeogaeaoehlefnkodbefgpgknn" # metamask
       "kcgpggonjhmeaejebeoeomdlohicfhce" # Removes cookies for the current site
-      "ldpochfccmkkmhdbclfhpagapcfdljkj" # Decentraleyes
+      # "ldpochfccmkkmhdbclfhpagapcfdljkj" # Decentraleyes
       "maekfnoeejhpjfkfmdlckioggdcdofpg" # Adblocker for Youtube™
       "jappgmhllahigjolfpgbjdfhciabdnde" # Link Map - Professional Tab Manager
+      "edacconmaakjimmfgnblocblbcdcpbko" # session-buddy
       # "jpefmbpcbebpjpmelobfakahfdcgcmkl" # adblock for youtube
       # "kbbdabhdfibnancpjfhlkhafgdilcnji" # Screenity
       # "kkkjlfejijcjgjllecmnejhogpbcigdc" # org-capture

@@ -1489,11 +1489,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1720027876,
-        "narHash": "sha256-s+ys9AfKUjWp8jGqDkjlOHes3UfOLSzdbVAEcZcnW68=",
+        "lastModified": 1720261469,
+        "narHash": "sha256-A+YZ+J5XgbbDLVva63ASrIWkRjPJwHwt8R7CFhJ5yxA=",
         "ref": "refs/heads/main",
-        "rev": "9873ec58b7302ce65eee04d6bb5210ee99c56615",
-        "revCount": 208,
+        "rev": "7fb3c03500761b576257aafe64181bfe29d66a26",
+        "revCount": 215,
         "type": "git",
         "url": "https://github.com/hyprwm/hyprlock"
       },
