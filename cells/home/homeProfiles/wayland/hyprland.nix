@@ -292,7 +292,7 @@ in
       group_inset = 10; # default: 10
 
       # if a tab group will automatically be created for the first window spawned in a workspace
-      tab_first_window = false;
+      tab_first_window = true;
 
       # tab group settings
       tabs = {
