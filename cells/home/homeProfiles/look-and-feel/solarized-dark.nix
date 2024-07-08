@@ -113,7 +113,8 @@ mkMerge [
   })
 
   (mkIf config.services.dunst.enable {
-    services.dunst.settings.global.icon_theme = config.gtk.iconTheme.name;
+    services.dunst.iconTheme.name = config.gtk.iconTheme.name;
+    services.dunst.iconTheme.package = config.gtk.iconTheme.package;
   })
 
   (mkIf config.wayland.windowManager.hyprland.enable {
