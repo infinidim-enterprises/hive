@@ -172,7 +172,7 @@ in
   wayland.windowManager.hyprland.xwayland.enable = true;
   wayland.windowManager.hyprland.plugins = with pkgs.hyprlandPlugins; [
     # hycov
-    virtual-desktops
+    # virtual-desktops
     hyprexpo
     hy3
   ];
@@ -371,19 +371,19 @@ in
       };
     };
 
-    plugin.virtual-desktops = {
-      names = "1:master, 2:emacs, 3:web";
-      cycleworkspaces = 1;
-      rememberlayout = "size";
-      notifyinit = 0;
-      verbose_logging = 0;
-    };
+    # plugin.virtual-desktops = {
+    #   names = "1:master, 2:emacs, 3:web";
+    #   cycleworkspaces = 1;
+    #   rememberlayout = "size";
+    #   notifyinit = 0;
+    #   verbose_logging = 0;
+    # };
 
-    # workspace = [
-    #   "1, defaultName:Master"
-    #   "2, defaultName:Emacs"
-    #   "3, defaultName:Web"
-    # ];
+    workspace = [
+      "1, defaultName:Master"
+      "2, defaultName:Emacs"
+      "3, defaultName:Web"
+    ];
 
     # debug.disable_logs = false;
 
@@ -430,30 +430,6 @@ in
       "Alt_L, Tab, cyclenext"
       "$masterMod, Tab, focuscurrentorlast"
 
-      # Switch workspaces with mainMod + [0-9]
-      # "$masterMod, 1, workspace, 1"
-      # "$masterMod, 2, workspace, 2"
-      # "$masterMod, 3, workspace, 3"
-      # "$masterMod, 4, workspace, 4"
-      # "$masterMod, 5, workspace, 5"
-      # "$masterMod, 6, workspace, 6"
-      # "$masterMod, 7, workspace, 7"
-      # "$masterMod, 8, workspace, 8"
-      # "$masterMod, 9, workspace, 9"
-      # "$masterMod, 0, workspace, 10"
-
-      # Move active window to a workspace with mainMod + SHIFT + [0-9]
-      # "$masterMod SHIFT, 1, movetoworkspace, 1"
-      # "$masterMod SHIFT, 2, movetoworkspace, 2"
-      # "$masterMod SHIFT, 3, movetoworkspace, 3"
-      # "$masterMod SHIFT, 4, movetoworkspace, 4"
-      # "$masterMod SHIFT, 5, movetoworkspace, 5"
-      # "$masterMod SHIFT, 6, movetoworkspace, 6"
-      # "$masterMod SHIFT, 7, movetoworkspace, 7"
-      # "$masterMod SHIFT, 8, movetoworkspace, 8"
-      # "$masterMod SHIFT, 9, movetoworkspace, 9"
-      # "$masterMod SHIFT, 0, movetoworkspace, 10"
-
       # Example special workspace (scratchpad)
       # "$masterMod, S, togglespecialworkspace, magic"
       # "$masterMod SHIFT, S, movetoworkspace, special:magic"
@@ -466,12 +442,16 @@ in
 
       "Control_L Alt_L, Right, workspace, +1"
       "Control_L Alt_L, Left, workspace, -1"
+      "Control_L Alt_L, Up, workspace, +1"
+      "Control_L Alt_L, Down, workspace, -1"
 
       # "Control_L&Shift_L, Q, exit"
       "Control_L Shift_L, Return, exec, $terminal"
 
       "$masterMod Control_L Alt_L, Right, movetoworkspace, +1"
       "$masterMod Control_L Alt_L, Left, movetoworkspace, -1"
+      "$masterMod Control_L Alt_L, Up, movetoworkspace, +1"
+      "$masterMod Control_L Alt_L, Down, movetoworkspace, -1"
 
       # "Control_L, grave, exec, hdrop -b tilix"
     ];
@@ -501,14 +481,19 @@ in
   };
 
   wayland.windowManager.hyprland.extraConfig = ''
-    bind = Control_L, apostrophe, submap, keychords
-    submap = keychords
+    bind = Control_L, apostrophe, submap, chords
+    submap = chords
 
     bind = Control_L, period, exec, $menu
     bind = Control_L, period, submap, reset
 
     bind = SHIFT, k, hy3:killactive
     bind = SHIFT, k, submap, reset
+
+    bind = Control_L, y, exec, cliphist list | wofi --show dmenu | cliphist decode | xargs wtype
+    bind = Control_L, y, submap, reset
+    bind = , y, exec, cliphist list | wofi --show dmenu | cliphist decode | wl-copy
+    bind = , y, submap, reset
 
     bind = , 3, hy3:makegroup, h
     bind = , 3, submap, reset
@@ -533,16 +518,11 @@ in
 
     bind = , k, killactive
     bind = , k, submap, reset
-    bind = , e, exec, emacsclient -c
+    bind = , e, exec, [workspace 2 silent] emacsclient -c
     bind = , e, submap, reset
     submap = reset
-
-    bind = $masterMod, apostrophe, submap, clipboard
-    submap = clipboard
-    bind = $masterMod, y, exec, cliphist list | wofi --show dmenu | cliphist decode | xargs wtype
-    bind = $masterMod, y, submap, reset
-    bind = , y, exec, cliphist list | wofi --show dmenu | cliphist decode | wl-copy
-    bind = , y, submap, reset
-    submap = reset
   '';
+  #   bind = $masterMod, apostrophe, submap, clipboard
+  # submap = clipboard
+  # submap = reset
 }
