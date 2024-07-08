@@ -151,16 +151,18 @@ lib.mkMerge [
       # NOTE: https://bugzilla.mozilla.org/show_bug.cgi?id=259356
       # NOTE: fuck you mozilla devs, you're a bunch of stupid wankers! - a 20 years old bug
       extensions = with pkgs.firefox-addons; [
-        ublock-origin
-        skip-redirect
+        # ublock-origin
+        # skip-redirect
+        # privacy-badger17
+        # umatrix
+
         multi-account-containers
 
         istilldontcareaboutcookies
         # MAYBE: privacy-redirect
-        umatrix
         tree-style-tab
         auto-tab-discard
-        temporary-containers
+        # temporary-containers
 
         # ether-metamask
         ugetintegration
@@ -169,7 +171,7 @@ lib.mkMerge [
         export-tabs-urls-and-titles
         swisscows-search
         darkreader
-        privacy-badger17
+
         absolute-enable-right-click
         # aw-watcher-web
         # NOTE: makes everything very slow - decentraleyes

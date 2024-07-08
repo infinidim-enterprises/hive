@@ -171,8 +171,9 @@ in
   wayland.windowManager.hyprland.systemd.enableXdgAutostart = true;
   wayland.windowManager.hyprland.xwayland.enable = true;
   wayland.windowManager.hyprland.plugins = with pkgs.hyprlandPlugins; [
-    hyprexpo
     # hycov
+    virtual-desktops
+    hyprexpo
     hy3
   ];
   wayland.windowManager.hyprland.settings = {
@@ -292,7 +293,7 @@ in
       group_inset = 10; # default: 10
 
       # if a tab group will automatically be created for the first window spawned in a workspace
-      tab_first_window = true;
+      tab_first_window = false;
 
       # tab group settings
       tabs = {
@@ -368,6 +369,14 @@ in
         # workspaces = not:1,2 # autotiling will be enabled on all workspaces except 1 and 2
         workspaces = "not:1,2,3"; # default: all
       };
+    };
+
+    plugin.virtual-desktops = {
+      names = "1:master, 2:emacs, 3:web";
+      cycleworkspaces = 1;
+      rememberlayout = "size";
+      notifyinit = 0;
+      verbose_logging = 0;
     };
 
     workspace = [

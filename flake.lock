@@ -1613,6 +1613,29 @@
         "type": "github"
       }
     },
+    "hyprland-virtual-desktops": {
+      "inputs": {
+        "hyprland": [
+          "hyprland"
+        ],
+        "nixpkgs": [
+          "nixpkgs-unstable"
+        ]
+      },
+      "locked": {
+        "lastModified": 1719587418,
+        "narHash": "sha256-d9aTS1EVgS09is3U7T/q5kdZdZjHHpZsVcPTzE8GnZY=",
+        "owner": "levnikmyskin",
+        "repo": "hyprland-virtual-desktops",
+        "rev": "0333eb144ef4f517d4a70595b5db68983467023c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "levnikmyskin",
+        "repo": "hyprland-virtual-desktops",
+        "type": "github"
+      }
+    },
     "hyprlang": {
       "inputs": {
         "hyprutils": [
@@ -3021,6 +3044,7 @@
         "hyprland-hyprutils": "hyprland-hyprutils",
         "hyprland-plugins": "hyprland-plugins",
         "hyprland-systems": "hyprland-systems",
+        "hyprland-virtual-desktops": "hyprland-virtual-desktops",
         "impermanence": "impermanence",
         "incl": "incl_2",
         "k8s": "k8s",

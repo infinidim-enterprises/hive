@@ -48,6 +48,7 @@ rec {
     (final: prev: {
       hyprlandPlugins = prev.hyprlandPlugins // {
         hy3 = inputs.hyprland-hy3.packages.${prev.system}.default;
+        virtual-desktops = inputs.hyprland-virtual-desktops.packages.${prev.system}.default;
       };
     })
   ];

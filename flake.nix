@@ -326,6 +326,9 @@
     hyprland-hycov.inputs.nixpkgs.follows = "nixpkgs-unstable";
     hyprland-hycov.inputs.systems.follows = "hyprland/systems";
 
+    hyprland-virtual-desktops.url = "github:levnikmyskin/hyprland-virtual-desktops";
+    hyprland-virtual-desktops.inputs.hyprland.follows = "hyprland";
+    hyprland-virtual-desktops.inputs.nixpkgs.follows = "nixpkgs-unstable";
   };
 
   outputs =
