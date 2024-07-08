@@ -13,7 +13,7 @@ in
     ({ config, lib, ... }: lib.mkIf config.services.kanshi.enable {
       services.kanshi.settings =
         let
-          output_DSI-1 = {
+          output_panel = {
             criteria = "DSI-1";
             mode = "720x1280";
             status = "enable";
@@ -30,14 +30,14 @@ in
         [
           {
             profile.name = "builtin_panel";
-            profile.outputs = [ (output_DSI-1 // { position = "0,0"; }) ];
+            profile.outputs = [ (output_panel // { position = "0,0"; }) ];
 
           }
           {
             profile.name = "panel_and_hdmi";
             profile.outputs = [
               (output_HDMI-A-1 // { position = "0,0"; })
-              (output_DSI-1 // { position = "320,1080"; })
+              (output_panel // { position = "320,1080"; })
             ];
           }
         ];
