@@ -440,6 +440,7 @@ in
 
       "Control_L Alt_L, Delete, exec, ${config.programs.wlogout.command}"
 
+      # focusworkspaceoncurrentmonitor ?
       "Control_L Alt_L, Right, workspace, +1"
       "Control_L Alt_L, Left, workspace, -1"
       "Control_L Alt_L, Up, workspace, +1"

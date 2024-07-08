@@ -23,6 +23,8 @@ let
           services.gpg-agent.enable = mkDefault true;
           services.gpg-agent.enableSshSupport = mkDefault true;
           services.gpg-agent.enableExtraSocket = mkDefault true;
+          services.gpg-agent.defaultCacheTtl = 3 * 60 * 60; # 3 hours
+          services.gpg-agent.defaultCacheTtlSsh = 3 * 60 * 60; # 3 hours
           # services.gpg-agent.pinentryPackage = mkDefault pkgs.pinentry-gnome3;
           services.gpg-agent.extraConfig = ''
             allow-emacs-pinentry
