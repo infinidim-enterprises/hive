@@ -234,7 +234,7 @@ in
 
     input.sensitivity = 0; # -1.0 - 1.0, 0 means no modification.
     input.accel_profile = "adaptive";
-    input.touchpad.natural_scroll = true;
+    input.touchpad.natural_scroll = false;
 
     # https://wiki.hyprland.org/Configuring/Variables/#gestures
     gestures.workspace_swipe = false;
