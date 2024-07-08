@@ -379,11 +379,11 @@ in
       verbose_logging = 0;
     };
 
-    workspace = [
-      "1, defaultName:Master"
-      "2, defaultName:Emacs"
-      "3, defaultName:Web"
-    ];
+    # workspace = [
+    #   "1, defaultName:Master"
+    #   "2, defaultName:Emacs"
+    #   "3, defaultName:Web"
+    # ];
 
     # debug.disable_logs = false;
 
