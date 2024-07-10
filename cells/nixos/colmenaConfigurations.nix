@@ -7,7 +7,7 @@ let
     asbleg-bootstrap = { deployment.targetHost = "192.168.1.133"; };
     asbleg = { deployment.targetHost = "192.168.1.133"; deployment.allowLocalDeployment = true; };
     marauder = { deployment.targetHost = "192.168.1.129"; };
-    oglaroon = { deployment.targetHost = "192.168.1.130"; };
+    oglaroon = { deployment.targetHost = "localhost"; };
   };
 in
 (mapAttrs

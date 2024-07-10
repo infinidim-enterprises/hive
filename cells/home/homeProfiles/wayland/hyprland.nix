@@ -1,10 +1,22 @@
 { osConfig, config, lib, pkgs, ... }:
 let
-  inherit (lib // builtins) isInt toString;
+  inherit (lib // builtins)
+    isInt
+    toString
+    concatStringsSep
+    splitString
+    fileContents
+    tail;
   cursorsize =
     if config.gtk.enable && (isInt config.gtk.cursorTheme.size)
     then toString config.gtk.cursorTheme.size
     else "24";
+  remove_shebang = txt: concatStringsSep "\n" (tail (splitString "\n" txt));
+  focus_monitor = pkgs.writeShellApplication {
+    name = "focus_monitor";
+    runtimeInputs = with pkgs; [ jq hyprland ];
+    text = remove_shebang (fileContents ./focus_monitor.sh);
+  };
 in
 {
   services.network-manager-applet.enable = osConfig.networking.networkmanager.enable;
@@ -13,6 +25,7 @@ in
   # NOTE: kinda need a filemanager
   home.packages = with pkgs; [
     mate.caja-with-extensions
+    focus_monitor
   ];
 
   xdg.mimeApps.defaultApplications = {
@@ -93,7 +106,7 @@ in
   services.hypridle.settings = {
     general = {
       before_sleep_cmd = "loginctl lock-session";
-      after_sleep_cmd = "hyprctl dispatch dpms on";
+      after_sleep_cmd = "hyprctl dispatch dpms on && systemctl --user restart wlsunset.service";
       lock_cmd = "pidof hyprlock || hyprlock";
       ignore_dbus_inhibit = false;
     };
@@ -117,9 +130,10 @@ in
     general = {
       ignore_empty_input = true;
       disable_loading_bar = true;
-      grace = 0;
+      grace = 10;
       hide_cursor = true;
       no_fade_in = false;
+      no_fade_out = false;
     };
 
     background = [
@@ -445,6 +459,13 @@ in
       "Control_L Alt_L, Left, workspace, -1"
       "Control_L Alt_L, Up, workspace, +1"
       "Control_L Alt_L, Down, workspace, -1"
+
+      # focus monitor
+      "$masterMod Control_L, Right, execr, focus_monitor right"
+      "$masterMod Control_L, Left, execr, focus_monitor left"
+      "$masterMod Control_L, Up, execr, focus_monitor up"
+      "$masterMod Control_L, Down, execr, focus_monitor down"
+
 
       # "Control_L&Shift_L, Q, exit"
       "Control_L Shift_L, Return, exec, $terminal"

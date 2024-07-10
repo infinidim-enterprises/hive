@@ -92,6 +92,7 @@ mkMerge [
       waybar
       networkmanagerapplet
       wayvnc
+      freerdp3 # wlfreerdp
 
       hdrop
       hyprprop
