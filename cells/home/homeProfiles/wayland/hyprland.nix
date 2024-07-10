@@ -46,6 +46,7 @@ in
   services.cliphist.allowImages = true;
   services.cliphist.systemdTarget = "graphical-session.target";
 
+  # TODO: switch to gammastep with geoclue2
   services.wlsunset.enable = true;
   services.wlsunset.temperature.day = 4200;
   services.wlsunset.temperature.night = 3600;

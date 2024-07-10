@@ -48,6 +48,11 @@
           "eDP-1,preferred,auto,1"
         ];
       })
+    ({ config, lib, ... }: lib.mkIf config.programs.waybar.enable
+      {
+        programs.waybar.settings.masterBar.output = [ "eDP-1" ];
+      })
+
   ];
 
   services.logind.powerKeyLongPress = "suspend";
