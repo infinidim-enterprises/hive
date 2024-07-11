@@ -3,7 +3,11 @@
 { self, pkgs, lib, config, ... }:
 let
   env = "TERM=screen CLICOLOR_FORCE=1 COLORTERM=truecolor";
-  duf_impermanence = with lib; " -hide-mp " + "'" + (concatStringsSep "," (cell.lib.impermanenceMounts config)) + "'";
+  duf_impermanence = with lib;
+    " -hide-mp "
+    + "'"
+    + (concatStringsSep "," (cell.lib.impermanenceMounts config))
+    + "'";
   duf = "${env} ${pkgs.duf}/bin/duf " + "-theme ansi -hide binds,special";
 in
 {

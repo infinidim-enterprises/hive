@@ -33,6 +33,12 @@ in
       imports = [ inputs.sops-nix.nixosModules.sops ];
 
       config = mkMerge [
+        (mkIf isImpermanence {
+          system.activationScripts.setupSecretsForUsers.deps = [
+            "persist-files"
+          ];
+        })
+
         (mkIf (isOpenssh && isImpermanence) {
           sops.gnupg.sshKeyPaths = impermanenceSshKeyPaths;
         })

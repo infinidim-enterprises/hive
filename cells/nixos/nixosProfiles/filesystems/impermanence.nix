@@ -16,7 +16,9 @@ rec {
         zfs rollback -r ${config.fileSystems."/".device}@blank
       '';
 
+      fileSystems."/".neededForBoot = true;
       fileSystems."/persist".neededForBoot = true;
+
       imports = [ inputs.impermanence.nixosModules.impermanence ];
       environment.persistence."/persist" = {
         hideMounts = true;
