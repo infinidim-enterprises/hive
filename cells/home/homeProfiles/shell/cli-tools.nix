@@ -52,7 +52,7 @@ in
     ncdu # Disk usage analyzer with an ncurses interface
     rsync # Fast incremental file transfer utility
     lsyncd # A utility that synchronizes local directories with remote targets
-    magic-wormhole # secure file sharing over cli
+    # FIXME: magic-wormhole # secure file sharing over cli
 
     ###
     iotop_task_delayacct # A tool to find out the processes doing the most IO
