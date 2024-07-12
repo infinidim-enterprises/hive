@@ -7,13 +7,13 @@
 let
   baseDir = config.users.users.${user}.home + "/";
   defaultDirs = [
-    "Desktop"
+    # "Desktop"
     "Documents"
-    "Downloads"
+    # "Downloads"
     "Logs"
     "Music"
     "Pictures"
-    "Public"
+    # "Public"
     "Templates"
     "Videos"
     "Projects"

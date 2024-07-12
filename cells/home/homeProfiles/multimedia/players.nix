@@ -6,8 +6,10 @@ mkMerge [
     home.packages = with pkgs; [
       vlc
       v4l-utils
-      lollypop
-      id3v2
+      ffmpeg-full
+
+      lollypop # audio player
+      id3v2 # mp3 tag manipulator
     ];
   }
 

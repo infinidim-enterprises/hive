@@ -5,7 +5,7 @@
 {
   imports =
     [
-      # TODO: (inputs.cells.nixos.nixosProfiles.backups.restic { user = "vod"; extraDirs = [ "tmp" ]; })
+      (inputs.cells.nixos.nixosProfiles.backups.restic { user = "vod"; extraDirs = [ "tmp" ]; })
     ];
 
   home-manager.users.vod.imports = [
