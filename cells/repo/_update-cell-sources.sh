@@ -20,7 +20,8 @@ updateSources() {
   tmpdir=$(mktemp -d nvfetcher-keyfile.XXXXXXXX --tmpdir)
   keyfile="${tmpdir}/keyfile.toml"
 
-  nvfetcher_cmd="nvfetcher --keep-old -j 0 --timing --build-dir ${src_dir} --config ${toml}"
+  # --keep-old
+  nvfetcher_cmd="nvfetcher -j 0 --timing --build-dir ${src_dir} --config ${toml}"
 
   if [[ -n ${GITHUB_TOKEN} ]]; then
     createKeyfile "${keyfile}" && nvfetcher_cmd="${nvfetcher_cmd} --keyfile ${keyfile}"

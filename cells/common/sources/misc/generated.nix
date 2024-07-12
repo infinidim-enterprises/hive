@@ -10,22 +10,20 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sparseCheckout = [ ];
       sha256 = "sha256-CvfiudyBNYQsyPFy05kjbhGVtwl56wKPAllqgi6uZio=";
     };
     date = "2019-07-20";
   };
   adguard-filters = {
     pname = "adguard-filters";
-    version = "1449efa5e309ef76bb9eab0308216394117db78b";
+    version = "070391c201c43e9cb3c05ef4d6ab1adba1c24871";
     src = fetchgit {
       url = "https://github.com/AdguardTeam/AdguardFilters";
-      rev = "1449efa5e309ef76bb9eab0308216394117db78b";
+      rev = "070391c201c43e9cb3c05ef4d6ab1adba1c24871";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sparseCheckout = [ ];
-      sha256 = "sha256-+Vl8OTHJ2Zja1zBEg3JDCr+0JQsaklAXEt+C433da1g=";
+      sha256 = "sha256-sU3G3B4q2zj1F4aYkRHhBD2R+C4wOiUHnKQVS2EOp2o=";
     };
     date = "2024-07-12";
   };
@@ -37,7 +35,7 @@
       repo = "age-plugin-trezor";
       rev = "1a89e1aec4aa6ee85987883146c5decd42a47a39";
       fetchSubmodules = false;
-      sha256 = "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=";
+      sha256 = "sha256-EXhbCjIl5xDfxOZIQEDWHSFnWabwlVC5EYWk4ezAXy8=";
     };
     cargoSha256 = "0000000000000000000000000000000000000000000000000000";
     date = "2021-01-01";
@@ -51,7 +49,6 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sparseCheckout = [ ];
       sha256 = "sha256-9i9IjZcjvinb/214x5YShUDBZBC2189HYs26uGy/Hck=";
     };
     date = "2024-06-21";
@@ -64,7 +61,7 @@
       repo = "llm-workflow-engine";
       rev = "7c5b79fecf5ad7ab6f286c286ba6782f84fe0459";
       fetchSubmodules = false;
-      sha256 = "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=";
+      sha256 = "sha256-xaA4o7eusCKo2PLSsmFHPjc5JR2cCnbEyOtPYH7PTQ8=";
     };
     date = "2024-07-09";
   };
@@ -76,7 +73,7 @@
       repo = "cl-hash-util";
       rev = "7f88cb7579b2af8c21022554f46dddd6ce6a5fc2";
       fetchSubmodules = false;
-      sha256 = "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=";
+      sha256 = "sha256-Neg1WUxhMVAtk3AwlW05jryCyKsYGY50DkRsVcU+S/U=";
     };
     date = "2024-06-17";
   };
@@ -89,7 +86,6 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sparseCheckout = [ ];
       sha256 = "sha256-nFEecXmStgu/ePtNretaCgC1huBr4kKnzvgdoUG+u0Q=";
     };
     date = "2023-06-20";
@@ -102,7 +98,7 @@
       repo = "cl-shellwords";
       rev = "313576b9f6b925cbbc3dcf5e49e8f47c9c1b46bc";
       fetchSubmodules = false;
-      sha256 = "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=";
+      sha256 = "sha256-9hKq54YOOEE3Vc/9LVUnqvcw/1G1rpcUVL+8GKJlqEY=";
     };
     date = "2015-09-20";
   };
@@ -114,7 +110,7 @@
       repo = "cl-strings";
       rev = "93ec4177fc51f403a9f1ef0a8933f36d917f2140";
       fetchSubmodules = false;
-      sha256 = "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=";
+      sha256 = "sha256-UpXjI9KsWvOhsjGSo1zVMNlD1I4Pwu9+cZoD60jREMk=";
     };
     date = "2021-03-08";
   };
@@ -126,7 +122,7 @@
       repo = "cl-syslog";
       rev = "f62d524874616383650e30f7f23320005fd310c1";
       fetchSubmodules = false;
-      sha256 = "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=";
+      sha256 = "sha256-rH0zOgXR3BixtVaqcYPhIfZBjqYgWnqrORQfr1mBqFM=";
     };
     date = "2006-11-28";
   };
@@ -138,7 +134,7 @@
       repo = "console-solarized";
       rev = "26929b5e303703ec527b6f6e4569f351d9831e52";
       fetchSubmodules = false;
-      sha256 = "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=";
+      sha256 = "sha256-QMxhuDuVHgw8+DpQAavtC3Dyg4rBmbrYoA8tKtamy3Y=";
     };
     date = "2018-10-28";
   };
@@ -150,7 +146,7 @@
       repo = "crystalline";
       rev = "v0.13.1";
       fetchSubmodules = false;
-      sha256 = "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=";
+      sha256 = "sha256-Exv83jmSyhJv90Oo4oApZwNgNjy7tOKxLNh7yJIbfws=";
     };
   };
   dbus = {
@@ -162,7 +158,6 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sparseCheckout = [ ];
       sha256 = "sha256-xbg3tPYfRNGJo+9F/58w2bDeZqV33Z871+ClSg4ACPk=";
     };
     date = "2023-11-04";
@@ -176,7 +171,6 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sparseCheckout = [ ];
       sha256 = "sha256-WU3e7F0iNrxiS7WXzNbxnBp4oIru2pLihKbVIR236J4=";
     };
     date = "2022-09-09";
@@ -189,7 +183,7 @@
       repo = "firefox_decrypt";
       rev = "1.1.1";
       fetchSubmodules = false;
-      sha256 = "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=";
+      sha256 = "sha256-HPjOUWusPXoSwwDvW32Uad4gFERvn79ee/WxeX6h3jY=";
     };
   };
   firefox_user_js = {
@@ -211,7 +205,7 @@
       repo = "git-get";
       rev = "8cd27a8f629317bd27432f2e9a4bd00561b3b21e";
       fetchSubmodules = false;
-      sha256 = "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=";
+      sha256 = "sha256-dBZNrhg4df7NDECq8B333dY/7OXEyPIByD7YHdV9moo=";
     };
     vendorHash = "05k6w4knk7fdjm9qm272nlrk47rzjr18g0fp4j57f5ncq26cxr8b";
     date = "2021-08-07";
@@ -224,7 +218,7 @@
       repo = "git-pull-request-mirror";
       rev = "3d342363b0e1f2da4e59ac01baf4601bcf233bf9";
       fetchSubmodules = false;
-      sha256 = "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=";
+      sha256 = "sha256-OMtRSGRB1xRk3L3sIfEpagDQHNWNJBBOE5tuW7ic4Y4=";
     };
     vendorSha256 = "0789v1r6my256pncs0105yji28ifchj6ppfiy8gavglgclq3cgvn";
     date = "2020-05-13";
@@ -237,7 +231,7 @@
       repo = "git-remote-ipfs";
       rev = "12b3f421c19eb5548ae76b8c79c9581a428329e0";
       fetchSubmodules = false;
-      sha256 = "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=";
+      sha256 = "sha256-59zv362KfuW1Lki9vfwe9fJfdm6o0+DTPDbI/L+Ugsk=";
     };
     vendorSha256 = "hkenInaS6PFnu/Z0oz32Y4B4BmM5+l5AB2/K1f/LxqA=";
     date = "2021-01-24";
@@ -251,7 +245,6 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sparseCheckout = [ ];
       sha256 = "sha256-I9Dsze42sg4EhK8/QdQ2XDpWrbfCYVdQDkmHJ75r5mM=";
     };
     date = "2024-07-08";
@@ -272,7 +265,7 @@
       repo = "langchain";
       rev = "langchain-core==0.2.16";
       fetchSubmodules = false;
-      sha256 = "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=";
+      sha256 = "sha256-1AxYBBvU/gnktT8Fl6LYwIGI9KVF3fgwul4kB23pC3g=";
     };
   };
   ledger-live-desktop = {
@@ -291,7 +284,7 @@
       repo = "listopia";
       rev = "2d2a1a3c35580252ca0085e15ebf625f73230d60";
       fetchSubmodules = false;
-      sha256 = "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=";
+      sha256 = "sha256-IEoPmF0QC1S6xF/enlqy1rDX8qi/2bvacxWpCHaro0k=";
     };
     date = "2021-03-17";
   };
@@ -320,7 +313,6 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sparseCheckout = [ ];
       sha256 = "sha256-r5xCe8Ew+/SuCUaZ0yjlumORTy/y1VwbQQjQ6uEyGsY=";
     };
     date = "2023-03-05";
@@ -334,7 +326,6 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sparseCheckout = [ ];
       sha256 = "sha256-oWamrnH8xXXyGIbWgNC4l5/n9KZUOUtttrpafNn9R30=";
     };
     date = "2024-07-08";
@@ -348,14 +339,13 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sparseCheckout = [ ];
       sha256 = "sha256-StmpmszWHzmi8pMd+y3f6+1s2vjW8HM5O6maJiE6Ajc=";
     };
     date = "2024-04-06";
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "1dfd09c688fe8e2b998d347ee2c22e2eb23ae8dd";
+    version = "3e37f9d67e23337dd9037eb18229376bed52dd26";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";
@@ -370,7 +360,7 @@
       repo = "pgp-key-generation";
       rev = "e4549972b1ed686b38da9e2a663106669edddb9b";
       fetchSubmodules = false;
-      sha256 = "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=";
+      sha256 = "sha256-FR6I4jwrF9t+pur0E/z54cgQ8acwtsAsKIp4pO0Ulng=";
     };
     date = "2022-12-02";
   };
@@ -394,7 +384,7 @@
       repo = "python-pass";
       rev = "6f51145a3bc12ee79d2881204b88a82d149f3228";
       fetchSubmodules = false;
-      sha256 = "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=";
+      sha256 = "sha256-iJZe/Ljae9igkpfz9WJQK48wZZJWcOt4Z3kdp5VILqE=";
     };
   };
   quicklisp = {
@@ -413,7 +403,7 @@
       repo = "s5cmd";
       rev = "787bc8805d8a639ca83fb64eda0521d0d43869d8";
       fetchSubmodules = false;
-      sha256 = "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=";
+      sha256 = "sha256-mTEPi2mSOuWzXh5CsseASW5ArIksuBYsIsYBHlzxNMs=";
     };
     date = "2024-07-12";
   };
@@ -426,7 +416,6 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sparseCheckout = [ ];
       sha256 = "sha256-Rtaf0LRcWJ/a3yTFPMSPk6vlK0UW6dyStnAVJ24jREg=";
     };
     date = "2020-10-20";
@@ -440,7 +429,6 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sparseCheckout = [ ];
       sha256 = "sha256-rBNlEgMyjPqt/e68pYery+puBAbiy0CskBjeKx0Tq/0=";
     };
     date = "2023-11-19";
@@ -454,7 +442,6 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sparseCheckout = [ ];
       sha256 = "sha256-MDAewKv1DRoCxWfSCj6+EEtkFFYjm9z5iPZQ3xCjpqM=";
     };
     date = "2023-11-26";
@@ -468,7 +455,6 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sparseCheckout = [ ];
       sha256 = "sha256-uVNYmpPM2o9Fq3A1gP04ffXeWdc7y2HP1g7vkiuJZtg=";
     };
     date = "2019-01-03";
@@ -481,7 +467,7 @@
       repo = "stumpwm-contrib";
       rev = "042a9fcb053839f4b1527d2e6f4baf33e2d16434";
       fetchSubmodules = false;
-      sha256 = "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=";
+      sha256 = "sha256-idSdD/IXPOJXAsZSJgXbpRBH7DelEVz3xUTYh/9ZtLk=";
     };
     date = "2024-04-18";
   };
@@ -493,10 +479,10 @@
       repo = "stumpwm";
       rev = "11be454df8f01f2ed7aa20cffe23f16f1d7b7bd6";
       fetchSubmodules = false;
-      sha256 = "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=";
+      sha256 = "sha256-aEacyvOv0mOCoPyrPOoZHhCsLNCMp+VSLr9mfamuk8A=";
     };
-    system = "stumpwm";
     asd = "stumpwm";
+    system = "stumpwm";
     date = "2024-04-18";
   };
   stumpwm-release = {
@@ -507,10 +493,10 @@
       repo = "stumpwm";
       rev = "23.11";
       fetchSubmodules = false;
-      sha256 = "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=";
+      sha256 = "sha256-sWCr3wm99Hv4LsZ572921wcUnQV40AmWSUVMWnmfeSo=";
     };
-    system = "stumpwm";
     asd = "stumpwm";
+    system = "stumpwm";
   };
   sublimeSolarized = {
     pname = "sublimeSolarized";
@@ -520,7 +506,7 @@
       repo = "Solarized";
       rev = "2.7.5";
       fetchSubmodules = false;
-      sha256 = "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=";
+      sha256 = "sha256-5T8Ga6QHliA0+rGf23peBjoSNtxVlqZLltMx1OKdQFc=";
     };
   };
   tfenv = {
@@ -531,7 +517,7 @@
       repo = "tfenv";
       rev = "39d8c27ad9862ffdec57989b66fd2720cb72e76c";
       fetchSubmodules = false;
-      sha256 = "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=";
+      sha256 = "sha256-h5ZHT4u7oAdwuWpUrL35G8bIAMasx6E81h15lTJSHhQ=";
     };
     date = "2023-12-19";
   };
@@ -551,7 +537,7 @@
       repo = "trezor-agent";
       rev = "v0.14.8";
       fetchSubmodules = false;
-      sha256 = "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=";
+      sha256 = "sha256-tcVott/GlHsICQf640Gm5jx89fZWsCdcYnBxi/Kh2oc=";
     };
   };
   trezor-agent-subkeys = {
@@ -563,7 +549,6 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sparseCheckout = [ ];
       sha256 = "sha256-DA5REsNQNykpbCFb6PJbgEBYiDh1kEq083wRZq+pIQM=";
     };
     date = "2023-06-09";
@@ -584,7 +569,7 @@
       repo = "waveterm";
       rev = "v0.7.6";
       fetchSubmodules = false;
-      sha256 = "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=";
+      sha256 = "sha256-cHjBH6oijoAhdk2Ty1sl2GFXUUhfoToTuDUl5VuwKWU=";
     };
   };
 }

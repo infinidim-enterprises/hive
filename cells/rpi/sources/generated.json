@@ -14,8 +14,7 @@
             "owner": "raspberrypi",
             "repo": "libcamera",
             "rev": "6ddd79b5bdbedc1f61007aed35391f1559f9e29a",
-            "sha256": "sha256-3TnxeUj0OOrLgjwetZbQNlI9xq6bOzoKXEUuXayqArA=",
-            "sparseCheckout": [],
+            "sha256": "sha256-qqEMJzMotybf1nJp1dsz3zc910Qj0TmqCm1CwuSb1VY=",
             "type": "github"
         },
         "version": "6ddd79b5bdbedc1f61007aed35391f1559f9e29a"
@@ -35,8 +34,7 @@
             "owner": "raspberrypi",
             "repo": "libcamera-apps",
             "rev": "4ec534bc10b0d493f4d358bce3cde46853362148",
-            "sha256": "sha256-3TnxeUj0OOrLgjwetZbQNlI9xq6bOzoKXEUuXayqArA=",
-            "sparseCheckout": [],
+            "sha256": "sha256-I+WEv9st8VmWNOivd8/2LIfxoB2pPeV5exZJJEhy3xU=",
             "type": "github"
         },
         "version": "4ec534bc10b0d493f4d358bce3cde46853362148"
@@ -56,8 +54,7 @@
             "owner": "bluenviron",
             "repo": "mediamtx",
             "rev": "3152388c1f5a8edd5b218a1ac5a2a67cecb180d3",
-            "sha256": "sha256-3TnxeUj0OOrLgjwetZbQNlI9xq6bOzoKXEUuXayqArA=",
-            "sparseCheckout": [],
+            "sha256": "sha256-a9X+PpNhF+tf2w5NFVuikfsToLAyEr/NdEw+s7kim7s=",
             "type": "github"
         },
         "version": "3152388c1f5a8edd5b218a1ac5a2a67cecb180d3"

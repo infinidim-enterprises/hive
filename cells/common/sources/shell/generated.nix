@@ -9,7 +9,7 @@
       repo = "getoptions";
       rev = "a6c2df16302a2d0cd4cafb5396ef3421b2c3a1aa";
       fetchSubmodules = false;
-      sha256 = "sha256-8HGgGKiy+EwAWkAK0mDjkyfwd0JACAKRCaaVUqxMznA=";
+      sha256 = "sha256-MJ4UUDmd+yykvRjgxx8MRZwlLNauDb8Bh8lS0QvkG+U=";
     };
     date = "2022-07-03";
   };
@@ -21,7 +21,7 @@
       repo = "lorri";
       rev = "cdf37d71b4e18b9c1c413029633ab32f809bbc56";
       fetchSubmodules = false;
-      sha256 = "sha256-8HGgGKiy+EwAWkAK0mDjkyfwd0JACAKRCaaVUqxMznA=";
+      sha256 = "sha256-pGNhhEBHyWhTaW24dHrxAvpb/qr5RPbHXRwDZx6Rf74=";
     };
     cargoSha256 = "0000000000000000000000000000000000000000000000000000";
     date = "2024-06-26";
@@ -34,7 +34,7 @@
       repo = "nix-index";
       rev = "987b3cc16118f598a667de6c59f6143362b9505b";
       fetchSubmodules = false;
-      sha256 = "sha256-8HGgGKiy+EwAWkAK0mDjkyfwd0JACAKRCaaVUqxMznA=";
+      sha256 = "sha256-zvG3+V5jhZNMG2yTt1u3DnpHCK511aMeWwB9l+m6D90=";
     };
     cargoSha256 = "0000000000000000000000000000000000000000000000000000";
     date = "2024-05-22";
@@ -47,7 +47,7 @@
       repo = "rainbow.sh";
       rev = "1bcf6e44a0d9694da4d3fa637644e5da5a7250ca";
       fetchSubmodules = false;
-      sha256 = "sha256-8HGgGKiy+EwAWkAK0mDjkyfwd0JACAKRCaaVUqxMznA=";
+      sha256 = "sha256-F+Nabc/Fe5ET6lSkdll5YH/mEpKp3OlpaGk+u0rQpPQ=";
     };
     date = "2022-08-24";
   };
@@ -59,7 +59,7 @@
       repo = "shellspec";
       rev = "bf5c49ff630c2b44acf88bb415abeffe7cedf6b0";
       fetchSubmodules = false;
-      sha256 = "sha256-8HGgGKiy+EwAWkAK0mDjkyfwd0JACAKRCaaVUqxMznA=";
+      sha256 = "sha256-yF7hK2wdDu0YIySZAAp0gKYYnCyiyx2gpBymFzcX+SM=";
     };
     date = "2024-07-11";
   };
@@ -71,7 +71,7 @@
       repo = "shflags";
       rev = "96694d58ce92065fdd8f8761d930765cb9a8d066";
       fetchSubmodules = false;
-      sha256 = "sha256-8HGgGKiy+EwAWkAK0mDjkyfwd0JACAKRCaaVUqxMznA=";
+      sha256 = "sha256-IJJEi8xmIco/IuN9LSf6qMacsG6jHQek9F0dPKEwviI=";
     };
     date = "2023-08-24";
   };
@@ -83,7 +83,7 @@
       repo = "spaceship-prompt";
       rev = "35e36d3b8ab1b046be4337c53f844349ce1ec562";
       fetchSubmodules = false;
-      sha256 = "sha256-8HGgGKiy+EwAWkAK0mDjkyfwd0JACAKRCaaVUqxMznA=";
+      sha256 = "sha256-WjeUF8yD3il9DAava/SYv7ID6iM9AbR1ppazJnypgnk=";
     };
     date = "2024-06-19";
   };
@@ -95,7 +95,7 @@
       repo = "any-nix-shell";
       rev = "2537e5c6901ef934f8f44d61bcfe938b0fc9fa71";
       fetchSubmodules = false;
-      sha256 = "sha256-8HGgGKiy+EwAWkAK0mDjkyfwd0JACAKRCaaVUqxMznA=";
+      sha256 = "sha256-j1DE0WTBGLmBLoPmqST9YVj9Jc4Mp8WXQILmPBzRlbM=";
     };
     date = "2023-11-08";
   };
@@ -108,7 +108,6 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sparseCheckout = [ ];
       sha256 = "sha256-72aQ5N5L14mwJ8RB50p/swi6wXhPGYRYJ/Q8CUdP4wE=";
     };
     date = "2023-12-06";
@@ -122,7 +121,6 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sparseCheckout = [ ];
       sha256 = "sha256-FMwQza1WjMShV30uRR6rqmQtoRcwzZ7FwyniatvTGXQ=";
     };
     date = "2024-07-10";
@@ -135,7 +133,7 @@
       repo = "F-Sy-H";
       rev = "3dea11a9018061e6e3a77e529b79e5654679d3a0";
       fetchSubmodules = false;
-      sha256 = "sha256-8HGgGKiy+EwAWkAK0mDjkyfwd0JACAKRCaaVUqxMznA=";
+      sha256 = "sha256-AEeGEx2vyyHVS92Nla7XoqSx3rTpQHYwPMrK1jFH1Mg=";
     };
     date = "2023-12-17";
   };
@@ -148,7 +146,6 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sparseCheckout = [ ];
       sha256 = "sha256-32rJjBzqS2e6w/L78KMNwQRg4E3sqqdAmb87XEhqbRQ=";
     };
     date = "2018-09-09";
@@ -161,23 +158,22 @@
       repo = "nix-zsh-completions";
       rev = "57fb88c6b4b1c261087dd0bd27470e263b23d80d";
       fetchSubmodules = false;
-      sha256 = "sha256-8HGgGKiy+EwAWkAK0mDjkyfwd0JACAKRCaaVUqxMznA=";
+      sha256 = "sha256-B7m+HIoq5ApGZC3zsSD3AFd2VF0UurLmkVAmi1+zF4o=";
     };
     date = "2024-06-08";
   };
   zsh-plugin_oh-my-zsh = {
     pname = "zsh-plugin_oh-my-zsh";
-    version = "5b37e218e5275c11cb5fecc61f943e6cea3e64bf";
+    version = "fa583cfb87b80e3f7d7577c8b62b7d1385c01337";
     src = fetchgit {
       url = "https://github.com/robbyrussell/oh-my-zsh";
-      rev = "5b37e218e5275c11cb5fecc61f943e6cea3e64bf";
+      rev = "fa583cfb87b80e3f7d7577c8b62b7d1385c01337";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sparseCheckout = [ ];
-      sha256 = "sha256-dtt8RthFKz1whMgPOMbSu6K0HmZ10haYBaKQwxRPt+0=";
+      sha256 = "sha256-EwHlPe+UL37ogcnjh4nw9T3BXHw58/CeCkT7VzQ1ro8=";
     };
-    date = "2024-07-08";
+    date = "2024-07-12";
   };
   zsh-plugin_tipz = {
     pname = "zsh-plugin_tipz";
@@ -188,7 +184,6 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sparseCheckout = [ ];
       sha256 = "sha256-oFZJwHYDfK4f53lhcZg6PCw2AgHxFC0CRiqiinKZz8k=";
     };
     date = "2018-05-03";
@@ -202,7 +197,6 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sparseCheckout = [ ];
       sha256 = "sha256-P/pbpDJmsMSZkNi5GjVTDy7R+OxaIVZhb/bEnYQlaLo=";
     };
     date = "2022-09-13";
@@ -216,7 +210,6 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sparseCheckout = [ ];
       sha256 = "sha256-8HznSWSBj1baetvDOIZ+H9mWg5gbbzF52nIEG+u9Di8=";
     };
     date = "2024-06-04";
@@ -230,7 +223,6 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sparseCheckout = [ ];
       sha256 = "sha256-mtDrt4Q5kbddydq/pT554ph0hAd5DGk9jci9auHx0z0=";
     };
     date = "2024-06-04";
@@ -244,7 +236,6 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sparseCheckout = [ ];
       sha256 = "sha256-ZMkGQT27PKi5yYT9eIF2yj8Hlk2oRIQTkY+J+aXZZ5E=";
     };
     date = "2024-06-26";
@@ -258,7 +249,6 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sparseCheckout = [ ];
       sha256 = "sha256-1+w0AeVJtu1EK5iNVwk3loenFuIyVlQmlw8TWliHZGI=";
     };
     date = "2024-06-05";
@@ -272,7 +262,6 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sparseCheckout = [ ];
       sha256 = "sha256-Vt2yKzMRJ34FBFPKrN+GJBZYmBt5ASArrs1dkZcIQmI=";
     };
     date = "2024-01-06";

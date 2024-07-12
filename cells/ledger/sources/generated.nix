@@ -10,7 +10,6 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sparseCheckout = [ ];
       sha256 = "sha256-k7j0S7ukIwkil7KCp4uDfi+rmRfxmJ4XSRLFcajGZbE=";
     };
     date = "2024-05-21";
@@ -23,7 +22,7 @@
       repo = "python-gnupg";
       rev = "0.5.2";
       fetchSubmodules = false;
-      sha256 = "sha256-QYjeUDR6/YZytAz/B5HxWHROHvS7MSkl14DU+tlKup8=";
+      sha256 = "sha256-Z7kdPJ54CxvXWN1WJ9ywH4YsDJRdwvrapkXkDS26sFY=";
     };
   };
 }

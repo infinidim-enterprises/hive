@@ -14,8 +14,7 @@
             "owner": "twlz0ne",
             "repo": "acm-terminal",
             "rev": "1851d8fa2a27d3fd8deeeb29cd21c3002b8351ba",
-            "sha256": "sha256-cNs+e9pi9omCLRo3D5d2P82nFdw7V1sdgR6YXlPgi/s=",
-            "sparseCheckout": [],
+            "sha256": "sha256-EYhFrOo0j0JSNTdcZCbyM0iLxaymUXi1u6jZy8lTOaY=",
             "type": "github"
         },
         "version": "1851d8fa2a27d3fd8deeeb29cd21c3002b8351ba"
@@ -34,7 +33,6 @@
             "name": null,
             "rev": "19aed6ca81a3b1e549f47867c924d180d8536791",
             "sha256": "sha256-FZmWuu64D08kysLa/LU8o3W60s6/0FeQbVL923mJd1k=",
-            "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/pauldub/activity-watch-mode"
         },
@@ -54,7 +52,6 @@
             "name": null,
             "rev": "39ef44f810c34e8900978788467cc675870bcd19",
             "sha256": "sha256-SlqJ8erFtiydEdgZFGJ23DQ9fZH4FF09iO6t3gf5pwE=",
-            "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/domtronn/all-the-icons.el"
         },
@@ -74,7 +71,6 @@
             "name": null,
             "rev": "c2d700b784c793cc82131ef86323801b8d6e67bb",
             "sha256": "sha256-/WtacZPr45lurS0hv+W8UGzsXY3RujkU5oGGGqjqG0Q=",
-            "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/plexus/chemacs2"
         },
@@ -94,7 +90,6 @@
             "name": null,
             "rev": "7281b44bcfbaf1c43e0d326bcf5364f3114fa133",
             "sha256": "sha256-KkeTbC+iqSrwlVkojhxKd0GEh5QW29TqJt9H3jePvIM=",
-            "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/manateelazycat/color-rg"
         },
@@ -114,7 +109,6 @@
             "name": null,
             "rev": "e15bafa95b39091dbb2a99ad62e42f03a8d78f01",
             "sha256": "sha256-jKm+oVMadHyeG93VFU3JG3qNROOJPDXs7w2pIO/2IyM=",
-            "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/zerolfx/copilot.el.git"
         },
@@ -133,8 +127,7 @@
             "leaveDotGit": true,
             "name": null,
             "rev": "b0e1e68e78429659f6fd3b26e6691e921fa0d7e1",
-            "sha256": "sha256-cfDhyIhcQhRdP3bFeFaBgnDtKFcslA0Tx5OfzqWzrjw=",
-            "sparseCheckout": [],
+            "sha256": "sha256-+HLEV9VCk3nXTWYypdWgLcPEW67xX+zedfObkB1oB0U=",
             "type": "git",
             "url": "https://github.com/hlissner/doom-emacs"
         },
@@ -154,7 +147,6 @@
             "name": null,
             "rev": "a3f0ab5c8942ac15cf68f790b80c0a43b3a4c71e",
             "sha256": "sha256-ZOkuzGXgNJw9tj7/MATBojEmDszK7FcYyYKy59Qo19I=",
-            "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/joeyespo/grip"
         },
@@ -175,8 +167,7 @@
             "owner": "minad",
             "repo": "jinx",
             "rev": "e39f2682ea902a1d06bd118d5899b2bbadfb6dce",
-            "sha256": "sha256-cNs+e9pi9omCLRo3D5d2P82nFdw7V1sdgR6YXlPgi/s=",
-            "sparseCheckout": [],
+            "sha256": "sha256-RD2n2AkKJRsQDGDPwl8k41YAfh+nfFzyjquTx57GwjM=",
             "type": "github"
         },
         "version": "e39f2682ea902a1d06bd118d5899b2bbadfb6dce"
@@ -196,8 +187,7 @@
             "owner": "manateelazycat",
             "repo": "lsp-bridge",
             "rev": "212bbf84a6556acc93b47028c771656e3e772196",
-            "sha256": "sha256-cNs+e9pi9omCLRo3D5d2P82nFdw7V1sdgR6YXlPgi/s=",
-            "sparseCheckout": [],
+            "sha256": "sha256-e6BmYsjOCl7c3cbYxxbMU3YlWvDIlMLgsRnxnLd4tUU=",
             "type": "github"
         },
         "version": "212bbf84a6556acc93b47028c771656e3e772196"
@@ -218,7 +208,6 @@
             "name": null,
             "rev": "719feb7868fb567ecfe5578f6119892c771ac5e5",
             "sha256": "sha256-W/bxCAn4cvzKGbhILxtTiWJ5Wln2w6g4TPgk+ziCXsQ=",
-            "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/NixOS/nix-mode"
         },
@@ -239,8 +228,7 @@
             "owner": "remi-gelinas",
             "repo": "nix-ts-mode",
             "rev": "59ad17690576190811e0746c12ad6809596ca3ac",
-            "sha256": "sha256-cNs+e9pi9omCLRo3D5d2P82nFdw7V1sdgR6YXlPgi/s=",
-            "sparseCheckout": [],
+            "sha256": "sha256-DtYAsAeKSYjDzGes504Bq538OUG8HQSiJf+GjeDuMDE=",
             "type": "github"
         },
         "version": "59ad17690576190811e0746c12ad6809596ca3ac"
@@ -259,7 +247,6 @@
             "name": null,
             "rev": "38e4354bbf7a8d08294babd067fac697038119b1",
             "sha256": "sha256-IeHnoB9hpISwuzI+pKiU+5wvGvz9YJrG5amGg6DGgq4=",
-            "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/Fuco1/org-pretty-table"
         },
@@ -279,7 +266,6 @@
             "name": null,
             "rev": "a912aaefae8abdada2b2479aec0ad53fcf0b57bf",
             "sha256": "sha256-X+t8E+0Bxtl6YMU0SwA/vRD8kn1lSXd2PcBhIY001Xo=",
-            "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/alphapapa/org-protocol-capture-html"
         },

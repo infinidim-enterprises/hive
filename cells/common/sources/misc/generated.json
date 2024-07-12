@@ -13,7 +13,6 @@
       "name": null,
       "rev": "cac1d6920998ddcbee8310a873414732e707d8e5",
       "sha256": "sha256-CvfiudyBNYQsyPFy05kjbhGVtwl56wKPAllqgi6uZio=",
-      "sparseCheckout": [],
       "type": "git",
       "url": "https://git.code.sf.net/p/portableaserve/git"
     },
@@ -31,13 +30,12 @@
       "fetchSubmodules": false,
       "leaveDotGit": false,
       "name": null,
-      "rev": "1449efa5e309ef76bb9eab0308216394117db78b",
-      "sha256": "sha256-+Vl8OTHJ2Zja1zBEg3JDCr+0JQsaklAXEt+C433da1g=",
-      "sparseCheckout": [],
+      "rev": "070391c201c43e9cb3c05ef4d6ab1adba1c24871",
+      "sha256": "sha256-sU3G3B4q2zj1F4aYkRHhBD2R+C4wOiUHnKQVS2EOp2o=",
       "type": "git",
       "url": "https://github.com/AdguardTeam/AdguardFilters"
     },
-    "version": "1449efa5e309ef76bb9eab0308216394117db78b"
+    "version": "070391c201c43e9cb3c05ef4d6ab1adba1c24871"
   },
   "age-plugin-trezor": {
     "cargoLocks": null,
@@ -56,8 +54,7 @@
       "owner": "romanz",
       "repo": "age-plugin-trezor",
       "rev": "1a89e1aec4aa6ee85987883146c5decd42a47a39",
-      "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
-      "sparseCheckout": [],
+      "sha256": "sha256-EXhbCjIl5xDfxOZIQEDWHSFnWabwlVC5EYWk4ezAXy8=",
       "type": "github"
     },
     "version": "1a89e1aec4aa6ee85987883146c5decd42a47a39"
@@ -76,7 +73,6 @@
       "name": null,
       "rev": "ef9a4c3c384624694608adebf0993d7a3bed3cf2",
       "sha256": "sha256-9i9IjZcjvinb/214x5YShUDBZBC2189HYs26uGy/Hck=",
-      "sparseCheckout": [],
       "type": "git",
       "url": "https://github.com/tinted-theming/schemes"
     },
@@ -97,8 +93,7 @@
       "owner": "llm-workflow-engine",
       "repo": "llm-workflow-engine",
       "rev": "7c5b79fecf5ad7ab6f286c286ba6782f84fe0459",
-      "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
-      "sparseCheckout": [],
+      "sha256": "sha256-xaA4o7eusCKo2PLSsmFHPjc5JR2cCnbEyOtPYH7PTQ8=",
       "type": "github"
     },
     "version": "7c5b79fecf5ad7ab6f286c286ba6782f84fe0459"
@@ -118,8 +113,7 @@
       "owner": "orthecreedence",
       "repo": "cl-hash-util",
       "rev": "7f88cb7579b2af8c21022554f46dddd6ce6a5fc2",
-      "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
-      "sparseCheckout": [],
+      "sha256": "sha256-Neg1WUxhMVAtk3AwlW05jryCyKsYGY50DkRsVcU+S/U=",
       "type": "github"
     },
     "version": "7f88cb7579b2af8c21022554f46dddd6ce6a5fc2"
@@ -138,7 +132,6 @@
       "name": null,
       "rev": "5a7fbdbfe4ac3810c7f00434d3d6dc7555891705",
       "sha256": "sha256-nFEecXmStgu/ePtNretaCgC1huBr4kKnzvgdoUG+u0Q=",
-      "sparseCheckout": [],
       "type": "git",
       "url": "https://codeberg.org/cage/cl-mount-info"
     },
@@ -159,8 +152,7 @@
       "owner": "jorams",
       "repo": "cl-shellwords",
       "rev": "313576b9f6b925cbbc3dcf5e49e8f47c9c1b46bc",
-      "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
-      "sparseCheckout": [],
+      "sha256": "sha256-9hKq54YOOEE3Vc/9LVUnqvcw/1G1rpcUVL+8GKJlqEY=",
       "type": "github"
     },
     "version": "313576b9f6b925cbbc3dcf5e49e8f47c9c1b46bc"
@@ -180,8 +172,7 @@
       "owner": "diogoalexandrefranco",
       "repo": "cl-strings",
       "rev": "93ec4177fc51f403a9f1ef0a8933f36d917f2140",
-      "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
-      "sparseCheckout": [],
+      "sha256": "sha256-UpXjI9KsWvOhsjGSo1zVMNlD1I4Pwu9+cZoD60jREMk=",
       "type": "github"
     },
     "version": "93ec4177fc51f403a9f1ef0a8933f36d917f2140"
@@ -201,8 +192,7 @@
       "owner": "lhope",
       "repo": "cl-syslog",
       "rev": "f62d524874616383650e30f7f23320005fd310c1",
-      "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
-      "sparseCheckout": [],
+      "sha256": "sha256-rH0zOgXR3BixtVaqcYPhIfZBjqYgWnqrORQfr1mBqFM=",
       "type": "github"
     },
     "version": "f62d524874616383650e30f7f23320005fd310c1"
@@ -222,8 +212,7 @@
       "owner": "adeverteuil",
       "repo": "console-solarized",
       "rev": "26929b5e303703ec527b6f6e4569f351d9831e52",
-      "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
-      "sparseCheckout": [],
+      "sha256": "sha256-QMxhuDuVHgw8+DpQAavtC3Dyg4rBmbrYoA8tKtamy3Y=",
       "type": "github"
     },
     "version": "26929b5e303703ec527b6f6e4569f351d9831e52"
@@ -243,8 +232,7 @@
       "owner": "elbywan",
       "repo": "crystalline",
       "rev": "v0.13.1",
-      "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
-      "sparseCheckout": [],
+      "sha256": "sha256-Exv83jmSyhJv90Oo4oApZwNgNjy7tOKxLNh7yJIbfws=",
       "type": "github"
     },
     "version": "v0.13.1"
@@ -263,7 +251,6 @@
       "name": null,
       "rev": "8bba6a0942232e9d7fa915b33bbe32dfedc5abb9",
       "sha256": "sha256-xbg3tPYfRNGJo+9F/58w2bDeZqV33Z871+ClSg4ACPk=",
-      "sparseCheckout": [],
       "type": "git",
       "url": "https://github.com/death/dbus"
     },
@@ -283,7 +270,6 @@
       "name": null,
       "rev": "e7aeedfbcdc18e3ea2d45cf6931e38d350096f2f",
       "sha256": "sha256-WU3e7F0iNrxiS7WXzNbxnBp4oIru2pLihKbVIR236J4=",
-      "sparseCheckout": [],
       "type": "git",
       "url": "https://github.com/voobscout/dbus-listen"
     },
@@ -304,8 +290,7 @@
       "owner": "unode",
       "repo": "firefox_decrypt",
       "rev": "1.1.1",
-      "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
-      "sparseCheckout": [],
+      "sha256": "sha256-HPjOUWusPXoSwwDvW32Uad4gFERvn79ee/WxeX6h3jY=",
       "type": "github"
     },
     "version": "1.1.1"
@@ -325,8 +310,7 @@
       "owner": "arkenfox",
       "repo": "user.js",
       "rev": "126.1",
-      "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
-      "sparseCheckout": [],
+      "sha256": "sha256-Ex+eSb7tZ428MMJDIF/nqUOtnzjqEIPNaDXJPm9FvuY=",
       "type": "github"
     },
     "version": "126.1"
@@ -348,8 +332,7 @@
       "owner": "grdl",
       "repo": "git-get",
       "rev": "8cd27a8f629317bd27432f2e9a4bd00561b3b21e",
-      "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
-      "sparseCheckout": [],
+      "sha256": "sha256-dBZNrhg4df7NDECq8B333dY/7OXEyPIByD7YHdV9moo=",
       "type": "github"
     },
     "version": "8cd27a8f629317bd27432f2e9a4bd00561b3b21e"
@@ -371,8 +354,7 @@
       "owner": "google",
       "repo": "git-pull-request-mirror",
       "rev": "3d342363b0e1f2da4e59ac01baf4601bcf233bf9",
-      "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
-      "sparseCheckout": [],
+      "sha256": "sha256-OMtRSGRB1xRk3L3sIfEpagDQHNWNJBBOE5tuW7ic4Y4=",
       "type": "github"
     },
     "version": "3d342363b0e1f2da4e59ac01baf4601bcf233bf9"
@@ -394,8 +376,7 @@
       "owner": "bqv",
       "repo": "git-remote-ipfs",
       "rev": "12b3f421c19eb5548ae76b8c79c9581a428329e0",
-      "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
-      "sparseCheckout": [],
+      "sha256": "sha256-59zv362KfuW1Lki9vfwe9fJfdm6o0+DTPDbI/L+Ugsk=",
       "type": "github"
     },
     "version": "12b3f421c19eb5548ae76b8c79c9581a428329e0"
@@ -414,7 +395,6 @@
       "name": null,
       "rev": "5a9f476d4f1395e69cbb845d7379b0e3591028c0",
       "sha256": "sha256-I9Dsze42sg4EhK8/QdQ2XDpWrbfCYVdQDkmHJ75r5mM=",
-      "sparseCheckout": [],
       "type": "git",
       "url": "https://github.com/ipxe/ipxe"
     },
@@ -450,8 +430,7 @@
       "owner": "langchain-ai",
       "repo": "langchain",
       "rev": "langchain-core==0.2.16",
-      "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
-      "sparseCheckout": [],
+      "sha256": "sha256-1AxYBBvU/gnktT8Fl6LYwIGI9KVF3fgwul4kB23pC3g=",
       "type": "github"
     },
     "version": "langchain-core==0.2.16"
@@ -486,8 +465,7 @@
       "owner": "Dimercel",
       "repo": "listopia",
       "rev": "2d2a1a3c35580252ca0085e15ebf625f73230d60",
-      "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
-      "sparseCheckout": [],
+      "sha256": "sha256-IEoPmF0QC1S6xF/enlqy1rDX8qi/2bvacxWpCHaro0k=",
       "type": "github"
     },
     "version": "2d2a1a3c35580252ca0085e15ebf625f73230d60"
@@ -536,7 +514,6 @@
       "name": null,
       "rev": "2c5a85bd79c7b7d509ec14dd00d310cfe9f9afd2",
       "sha256": "sha256-r5xCe8Ew+/SuCUaZ0yjlumORTy/y1VwbQQjQ6uEyGsY=",
-      "sparseCheckout": [],
       "type": "git",
       "url": "https://github.com/Ferdi265/numix-solarized-gtk-theme"
     },
@@ -556,7 +533,6 @@
       "name": null,
       "rev": "a2d14f844d16dc242a46fcae50b77dd83daa86cd",
       "sha256": "sha256-oWamrnH8xXXyGIbWgNC4l5/n9KZUOUtttrpafNn9R30=",
-      "sparseCheckout": [],
       "type": "git",
       "url": "https://github.com/mcdope/pam_usb"
     },
@@ -576,7 +552,6 @@
       "name": null,
       "rev": "f369e81f8723123d89b8ac527f955e4d4c60b7fd",
       "sha256": "sha256-StmpmszWHzmi8pMd+y3f6+1s2vjW8HM5O6maJiE6Ajc=",
-      "sparseCheckout": [],
       "type": "git",
       "url": "https://github.com/nurupo/paper-store"
     },
@@ -595,7 +570,7 @@
       "type": "url",
       "url": "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c"
     },
-    "version": "1dfd09c688fe8e2b998d347ee2c22e2eb23ae8dd"
+    "version": "3e37f9d67e23337dd9037eb18229376bed52dd26"
   },
   "pgp-key-generation": {
     "cargoLocks": null,
@@ -612,8 +587,7 @@
       "owner": "summitto",
       "repo": "pgp-key-generation",
       "rev": "e4549972b1ed686b38da9e2a663106669edddb9b",
-      "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
-      "sparseCheckout": [],
+      "sha256": "sha256-FR6I4jwrF9t+pur0E/z54cgQ8acwtsAsKIp4pO0Ulng=",
       "type": "github"
     },
     "version": "e4549972b1ed686b38da9e2a663106669edddb9b"
@@ -634,7 +608,6 @@
       "repo": "pgp-packet-library",
       "rev": "42b4d08c0cb4b8ee527f729c1674e982eca409a7",
       "sha256": "sha256-DI0vxfbewqlXocrvzPgCM66IuSVxHjFdL3hIPxzFou8=",
-      "sparseCheckout": [],
       "type": "github"
     },
     "version": "42b4d08c0cb4b8ee527f729c1674e982eca409a7"
@@ -654,8 +627,7 @@
       "owner": "aviau",
       "repo": "python-pass",
       "rev": "6f51145a3bc12ee79d2881204b88a82d149f3228",
-      "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
-      "sparseCheckout": [],
+      "sha256": "sha256-iJZe/Ljae9igkpfz9WJQK48wZZJWcOt4Z3kdp5VILqE=",
       "type": "github"
     },
     "version": "6f51145a3bc12ee79d2881204b88a82d149f3228"
@@ -690,8 +662,7 @@
       "owner": "peak",
       "repo": "s5cmd",
       "rev": "787bc8805d8a639ca83fb64eda0521d0d43869d8",
-      "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
-      "sparseCheckout": [],
+      "sha256": "sha256-mTEPi2mSOuWzXh5CsseASW5ArIksuBYsIsYBHlzxNMs=",
       "type": "github"
     },
     "version": "787bc8805d8a639ca83fb64eda0521d0d43869d8"
@@ -710,7 +681,6 @@
       "name": null,
       "rev": "fa0ce0fe63ae314938e11843074fe0955f89e9ac",
       "sha256": "sha256-Rtaf0LRcWJ/a3yTFPMSPk6vlK0UW6dyStnAVJ24jREg=",
-      "sparseCheckout": [],
       "type": "git",
       "url": "https://github.com/rtlewis88/rtl88-Themes"
     },
@@ -730,7 +700,6 @@
       "name": null,
       "rev": "ab0a4d325b6c3bc34293850abcacc924b2ee2933",
       "sha256": "sha256-rBNlEgMyjPqt/e68pYery+puBAbiy0CskBjeKx0Tq/0=",
-      "sparseCheckout": [],
       "type": "git",
       "url": "https://github.com/rtlewis1/GTK"
     },
@@ -750,7 +719,6 @@
       "name": null,
       "rev": "93ab6a4b7683795ee9da42f39c1ad28a23ac8b3c",
       "sha256": "sha256-MDAewKv1DRoCxWfSCj6+EEtkFFYjm9z5iPZQ3xCjpqM=",
-      "sparseCheckout": [],
       "type": "git",
       "url": "https://github.com/rtlewis1/GTK"
     },
@@ -770,7 +738,6 @@
       "name": null,
       "rev": "2b5bdf1045f2a5c8b880b482840be8983ca06191",
       "sha256": "sha256-uVNYmpPM2o9Fq3A1gP04ffXeWdc7y2HP1g7vkiuJZtg=",
-      "sparseCheckout": [],
       "type": "git",
       "url": "https://github.com/MalditoBarbudo/solarized_sddm_theme"
     },
@@ -791,8 +758,7 @@
       "owner": "stumpwm",
       "repo": "stumpwm-contrib",
       "rev": "042a9fcb053839f4b1527d2e6f4baf33e2d16434",
-      "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
-      "sparseCheckout": [],
+      "sha256": "sha256-idSdD/IXPOJXAsZSJgXbpRBH7DelEVz3xUTYh/9ZtLk=",
       "type": "github"
     },
     "version": "042a9fcb053839f4b1527d2e6f4baf33e2d16434"
@@ -815,8 +781,7 @@
       "owner": "stumpwm",
       "repo": "stumpwm",
       "rev": "11be454df8f01f2ed7aa20cffe23f16f1d7b7bd6",
-      "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
-      "sparseCheckout": [],
+      "sha256": "sha256-aEacyvOv0mOCoPyrPOoZHhCsLNCMp+VSLr9mfamuk8A=",
       "type": "github"
     },
     "version": "11be454df8f01f2ed7aa20cffe23f16f1d7b7bd6"
@@ -839,8 +804,7 @@
       "owner": "stumpwm",
       "repo": "stumpwm",
       "rev": "23.11",
-      "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
-      "sparseCheckout": [],
+      "sha256": "sha256-sWCr3wm99Hv4LsZ572921wcUnQV40AmWSUVMWnmfeSo=",
       "type": "github"
     },
     "version": "23.11"
@@ -860,8 +824,7 @@
       "owner": "braver",
       "repo": "Solarized",
       "rev": "2.7.5",
-      "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
-      "sparseCheckout": [],
+      "sha256": "sha256-5T8Ga6QHliA0+rGf23peBjoSNtxVlqZLltMx1OKdQFc=",
       "type": "github"
     },
     "version": "2.7.5"
@@ -881,8 +844,7 @@
       "owner": "tfutils",
       "repo": "tfenv",
       "rev": "39d8c27ad9862ffdec57989b66fd2720cb72e76c",
-      "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
-      "sparseCheckout": [],
+      "sha256": "sha256-h5ZHT4u7oAdwuWpUrL35G8bIAMasx6E81h15lTJSHhQ=",
       "type": "github"
     },
     "version": "39d8c27ad9862ffdec57989b66fd2720cb72e76c"
@@ -917,8 +879,7 @@
       "owner": "romanz",
       "repo": "trezor-agent",
       "rev": "v0.14.8",
-      "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
-      "sparseCheckout": [],
+      "sha256": "sha256-tcVott/GlHsICQf640Gm5jx89fZWsCdcYnBxi/Kh2oc=",
       "type": "github"
     },
     "version": "v0.14.8"
@@ -937,7 +898,6 @@
       "name": null,
       "rev": "eac2f8215f2c11a92faf30170277c57bb7289801",
       "sha256": "sha256-DA5REsNQNykpbCFb6PJbgEBYiDh1kEq083wRZq+pIQM=",
-      "sparseCheckout": [],
       "type": "git",
       "url": "https://github.com/jrruethe/trezor-agent"
     },
@@ -973,8 +933,7 @@
       "owner": "wavetermdev",
       "repo": "waveterm",
       "rev": "v0.7.6",
-      "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
-      "sparseCheckout": [],
+      "sha256": "sha256-cHjBH6oijoAhdk2Ty1sl2GFXUUhfoToTuDUl5VuwKWU=",
       "type": "github"
     },
     "version": "v0.7.6"

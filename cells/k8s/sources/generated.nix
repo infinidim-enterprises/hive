@@ -9,7 +9,7 @@
       repo = "k9s";
       rev = "v0.31.4";
       fetchSubmodules = false;
-      sha256 = "sha256-SB9OuPwRp21FY+cSCf52F6WeWrOqg2bz8rqSaOhRS04=";
+      sha256 = "sha256-M7syAy8Brnh0g4VXXoXM7UjIJLDpvNLA5nqa8yDcxIM=";
     };
   };
 }

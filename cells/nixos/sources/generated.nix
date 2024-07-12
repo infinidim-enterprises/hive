@@ -17,7 +17,7 @@
       repo = "RTL88x2BU-Linux-Driver";
       rev = "bf52727c417343b32b8712a5d0679dd218f324fe";
       fetchSubmodules = false;
-      sha256 = "sha256-JYm2gZNVpK868MCfJu7nZK+h7gjsFO5XuHOGbOVimuA=";
+      sha256 = "sha256-ijtWcOq1eA1UNefcuSAP28NUhQHqK9b3MYBP5X2m2AY=";
     };
     date = "2024-07-11";
   };
@@ -29,7 +29,7 @@
       repo = "rtw89";
       rev = "239cc6670a67a1e7b6f43bd681efdfedf6a53bb1";
       fetchSubmodules = false;
-      sha256 = "sha256-JYm2gZNVpK868MCfJu7nZK+h7gjsFO5XuHOGbOVimuA=";
+      sha256 = "sha256-7rhZs9P9c/z1DcHLw0zhnwf6WvOOxRioJhC3k4h668A=";
     };
     date = "2024-05-07";
   };
