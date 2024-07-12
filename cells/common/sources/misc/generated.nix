@@ -200,7 +200,7 @@
       repo = "user.js";
       rev = "126.1";
       fetchSubmodules = false;
-      sha256 = "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=";
+      sha256 = "sha256-Ex+eSb7tZ428MMJDIF/nqUOtnzjqEIPNaDXJPm9FvuY=";
     };
   };
   git-get = {
