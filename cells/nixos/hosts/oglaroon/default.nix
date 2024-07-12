@@ -10,6 +10,10 @@ rec {
     home = inputs.home-unstable;
     pkgs = import inputs.nixpkgs-unstable {
       inherit (inputs.nixpkgs) system;
+      # FIXME: youtube-dl - which pkg depends on it?
+      config.permittedInsecurePackages = [
+        "python3.12-youtube-dl-2021.12.17"
+      ];
       config.allowUnfree = true;
       overlays = cell.overlays.default_desktop;
     };
@@ -32,11 +36,6 @@ rec {
         networking.networkmanager.enable = true;
       })
       {
-        # FIXME: youtube-dl - which pkg depends on it?
-        nixpkgs.config.permittedInsecurePackages = [
-          "python3.12-youtube-dl-2021.12.17"
-        ];
-
         deploy.enable = true;
         deploy.params.hidpi.enable = false;
         deploy.params.lan.mac = "16:07:77:ff:bf:ff";
