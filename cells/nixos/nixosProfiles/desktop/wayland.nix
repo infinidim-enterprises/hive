@@ -8,14 +8,10 @@ let
     hasAttr;
 in
 mkMerge [
-  # (mkIf (hasAttr "home-manager" config) {
-  #   home-manager.sharedModules = [
-
-  #   ];
-  # })
   {
     # NOTE: caja will be able to use net usershare
     services.samba.enable = true;
+    services.samba.enableNmbd = false;
     services.samba.package = pkgs.sambaFull;
     services.samba.openFirewall = true;
     services.samba.extraConfig = ''
