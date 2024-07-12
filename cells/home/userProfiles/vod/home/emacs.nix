@@ -128,9 +128,9 @@ in
   programs.chemacs.enable = false;
 
   ### FIXME: doomemacs doesn't recognize installed language servers.
-  home.file."bin/json-ls".source = "${pkgs.nodePackages.vscode-json-languageserver-bin}/bin/json-languageserver";
-  home.file."bin/html-ls".source = "${pkgs.nodePackages.vscode-html-languageserver-bin}/bin/html-languageserver";
-  home.file."bin/css-ls".source = "${pkgs.nodePackages.vscode-css-languageserver-bin}/bin/css-languageserver";
+  # home.file."bin/json-ls".source = "${pkgs.nodePackages.vscode-json-languageserver-bin}/bin/json-languageserver";
+  # home.file."bin/html-ls".source = "${pkgs.nodePackages.vscode-html-languageserver-bin}/bin/html-languageserver";
+  # home.file."bin/css-ls".source = "${pkgs.nodePackages.vscode-css-languageserver-bin}/bin/css-languageserver";
 
   home.packages = with pkgs; [
     python3Packages.grip
