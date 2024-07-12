@@ -23,7 +23,7 @@
       repo = "python-gnupg";
       rev = "0.5.2";
       fetchSubmodules = false;
-      sha256 = "sha256-Z7kdPJ54CxvXWN1WJ9ywH4YsDJRdwvrapkXkDS26sFY=";
+      sha256 = "sha256-QYjeUDR6/YZytAz/B5HxWHROHvS7MSkl14DU+tlKup8=";
     };
   };
 }

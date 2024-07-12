@@ -21,7 +21,7 @@
     },
     "adguard-filters": {
         "cargoLocks": null,
-        "date": "2024-07-03",
+        "date": "2024-07-12",
         "extract": null,
         "name": "adguard-filters",
         "passthru": null,
@@ -31,13 +31,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "611371d3c5932749fd9b4cbb5b76e424ccb11f3b",
-            "sha256": "sha256-gYcztiZ2r2AZpuqnhuoK9CG/5UnSFlFuQn+peDkcY08=",
+            "rev": "aab62f03f302e0e0c11079fc45814e1057f44e9f",
+            "sha256": "sha256-hhrgOHtUbosx7tkUrs3ZmtQjqx5bJzP2c6U5YYcmiT8=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/AdguardTeam/AdguardFilters"
         },
-        "version": "611371d3c5932749fd9b4cbb5b76e424ccb11f3b"
+        "version": "aab62f03f302e0e0c11079fc45814e1057f44e9f"
     },
     "age-plugin-trezor": {
         "cargoLocks": null,
@@ -56,7 +56,7 @@
             "owner": "romanz",
             "repo": "age-plugin-trezor",
             "rev": "1a89e1aec4aa6ee85987883146c5decd42a47a39",
-            "sha256": "sha256-EXhbCjIl5xDfxOZIQEDWHSFnWabwlVC5EYWk4ezAXy8=",
+            "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
             "sparseCheckout": [],
             "type": "github"
         },
@@ -84,7 +84,7 @@
     },
     "chatgpt-wrapper": {
         "cargoLocks": null,
-        "date": "2024-06-25",
+        "date": "2024-07-09",
         "extract": null,
         "name": "chatgpt-wrapper",
         "passthru": null,
@@ -96,12 +96,12 @@
             "name": null,
             "owner": "llm-workflow-engine",
             "repo": "llm-workflow-engine",
-            "rev": "1d7a06c63d5292fb10608fe48cae8ca5071b3013",
-            "sha256": "sha256-SWrckf1+MqE6VH5j+UsdjHL/O3ADmFB8XWgPq9Nmmzs=",
+            "rev": "7c5b79fecf5ad7ab6f286c286ba6782f84fe0459",
+            "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "1d7a06c63d5292fb10608fe48cae8ca5071b3013"
+        "version": "7c5b79fecf5ad7ab6f286c286ba6782f84fe0459"
     },
     "cl-hash-util": {
         "cargoLocks": null,
@@ -118,7 +118,7 @@
             "owner": "orthecreedence",
             "repo": "cl-hash-util",
             "rev": "7f88cb7579b2af8c21022554f46dddd6ce6a5fc2",
-            "sha256": "sha256-Neg1WUxhMVAtk3AwlW05jryCyKsYGY50DkRsVcU+S/U=",
+            "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
             "sparseCheckout": [],
             "type": "github"
         },
@@ -159,7 +159,7 @@
             "owner": "jorams",
             "repo": "cl-shellwords",
             "rev": "313576b9f6b925cbbc3dcf5e49e8f47c9c1b46bc",
-            "sha256": "sha256-9hKq54YOOEE3Vc/9LVUnqvcw/1G1rpcUVL+8GKJlqEY=",
+            "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
             "sparseCheckout": [],
             "type": "github"
         },
@@ -180,7 +180,7 @@
             "owner": "diogoalexandrefranco",
             "repo": "cl-strings",
             "rev": "93ec4177fc51f403a9f1ef0a8933f36d917f2140",
-            "sha256": "sha256-UpXjI9KsWvOhsjGSo1zVMNlD1I4Pwu9+cZoD60jREMk=",
+            "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
             "sparseCheckout": [],
             "type": "github"
         },
@@ -201,7 +201,7 @@
             "owner": "lhope",
             "repo": "cl-syslog",
             "rev": "f62d524874616383650e30f7f23320005fd310c1",
-            "sha256": "sha256-rH0zOgXR3BixtVaqcYPhIfZBjqYgWnqrORQfr1mBqFM=",
+            "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
             "sparseCheckout": [],
             "type": "github"
         },
@@ -222,7 +222,7 @@
             "owner": "adeverteuil",
             "repo": "console-solarized",
             "rev": "26929b5e303703ec527b6f6e4569f351d9831e52",
-            "sha256": "sha256-QMxhuDuVHgw8+DpQAavtC3Dyg4rBmbrYoA8tKtamy3Y=",
+            "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
             "sparseCheckout": [],
             "type": "github"
         },
@@ -243,7 +243,7 @@
             "owner": "elbywan",
             "repo": "crystalline",
             "rev": "v0.13.1",
-            "sha256": "sha256-Exv83jmSyhJv90Oo4oApZwNgNjy7tOKxLNh7yJIbfws=",
+            "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
             "sparseCheckout": [],
             "type": "github"
         },
@@ -304,7 +304,7 @@
             "owner": "unode",
             "repo": "firefox_decrypt",
             "rev": "1.1.1",
-            "sha256": "sha256-HPjOUWusPXoSwwDvW32Uad4gFERvn79ee/WxeX6h3jY=",
+            "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
             "sparseCheckout": [],
             "type": "github"
         },
@@ -325,7 +325,7 @@
             "owner": "arkenfox",
             "repo": "user.js",
             "rev": "126.1",
-            "sha256": "sha256-Ex+eSb7tZ428MMJDIF/nqUOtnzjqEIPNaDXJPm9FvuY=",
+            "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
             "sparseCheckout": [],
             "type": "github"
         },
@@ -348,7 +348,7 @@
             "owner": "grdl",
             "repo": "git-get",
             "rev": "8cd27a8f629317bd27432f2e9a4bd00561b3b21e",
-            "sha256": "sha256-dBZNrhg4df7NDECq8B333dY/7OXEyPIByD7YHdV9moo=",
+            "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
             "sparseCheckout": [],
             "type": "github"
         },
@@ -371,7 +371,7 @@
             "owner": "google",
             "repo": "git-pull-request-mirror",
             "rev": "3d342363b0e1f2da4e59ac01baf4601bcf233bf9",
-            "sha256": "sha256-OMtRSGRB1xRk3L3sIfEpagDQHNWNJBBOE5tuW7ic4Y4=",
+            "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
             "sparseCheckout": [],
             "type": "github"
         },
@@ -394,7 +394,7 @@
             "owner": "bqv",
             "repo": "git-remote-ipfs",
             "rev": "12b3f421c19eb5548ae76b8c79c9581a428329e0",
-            "sha256": "sha256-59zv362KfuW1Lki9vfwe9fJfdm6o0+DTPDbI/L+Ugsk=",
+            "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
             "sparseCheckout": [],
             "type": "github"
         },
@@ -402,7 +402,7 @@
     },
     "ipxe": {
         "cargoLocks": null,
-        "date": "2024-06-27",
+        "date": "2024-07-08",
         "extract": null,
         "name": "ipxe",
         "passthru": null,
@@ -412,13 +412,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "b66e27d9b29a172a097c737ab4d378d60fe01b05",
-            "sha256": "sha256-TKZ4WjNV2oZIYNefch7E7m1JpeoC/d7O1kofoNv8G40=",
+            "rev": "5a9f476d4f1395e69cbb845d7379b0e3591028c0",
+            "sha256": "sha256-I9Dsze42sg4EhK8/QdQ2XDpWrbfCYVdQDkmHJ75r5mM=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/ipxe/ipxe"
         },
-        "version": "b66e27d9b29a172a097c737ab4d378d60fe01b05"
+        "version": "5a9f476d4f1395e69cbb845d7379b0e3591028c0"
     },
     "iterable-io": {
         "cargoLocks": null,
@@ -449,12 +449,12 @@
             "name": null,
             "owner": "langchain-ai",
             "repo": "langchain",
-            "rev": "langchain-core==0.2.11",
-            "sha256": "sha256-5Ha63vWbX/cBhb/ag2epU1P4gux+4dEZapThKzEJhNU=",
+            "rev": "langchain-core==0.2.16",
+            "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "langchain-core==0.2.11"
+        "version": "langchain-core==0.2.16"
     },
     "ledger-live-desktop": {
         "cargoLocks": null,
@@ -486,7 +486,7 @@
             "owner": "Dimercel",
             "repo": "listopia",
             "rev": "2d2a1a3c35580252ca0085e15ebf625f73230d60",
-            "sha256": "sha256-IEoPmF0QC1S6xF/enlqy1rDX8qi/2bvacxWpCHaro0k=",
+            "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
             "sparseCheckout": [],
             "type": "github"
         },
@@ -544,7 +544,7 @@
     },
     "pam_usb": {
         "cargoLocks": null,
-        "date": "2024-03-31",
+        "date": "2024-07-08",
         "extract": null,
         "name": "pam_usb",
         "passthru": null,
@@ -554,13 +554,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "09aeaeccfae20a815161467e31e41bb5c6ce2d7f",
-            "sha256": "sha256-KKl1w5+dseRWTxnN0JWIT4owbx0nL3wt9GmWmGowpYk=",
+            "rev": "a2d14f844d16dc242a46fcae50b77dd83daa86cd",
+            "sha256": "sha256-oWamrnH8xXXyGIbWgNC4l5/n9KZUOUtttrpafNn9R30=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/mcdope/pam_usb"
         },
-        "version": "09aeaeccfae20a815161467e31e41bb5c6ce2d7f"
+        "version": "a2d14f844d16dc242a46fcae50b77dd83daa86cd"
     },
     "paper-store": {
         "cargoLocks": null,
@@ -584,7 +584,7 @@
     },
     "pbkdf2-sha512": {
         "cargoLocks": null,
-        "date": "2024-07-04",
+        "date": "2024-07-12",
         "extract": null,
         "name": "pbkdf2-sha512",
         "passthru": null,
@@ -595,7 +595,7 @@
             "type": "url",
             "url": "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c"
         },
-        "version": "0b5665868a2b398d28ec5fbf56d73c58aed28222"
+        "version": "b521675c515be29b61d78194db97563c380a7574"
     },
     "pgp-key-generation": {
         "cargoLocks": null,
@@ -612,7 +612,7 @@
             "owner": "summitto",
             "repo": "pgp-key-generation",
             "rev": "e4549972b1ed686b38da9e2a663106669edddb9b",
-            "sha256": "sha256-FR6I4jwrF9t+pur0E/z54cgQ8acwtsAsKIp4pO0Ulng=",
+            "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
             "sparseCheckout": [],
             "type": "github"
         },
@@ -654,7 +654,7 @@
             "owner": "aviau",
             "repo": "python-pass",
             "rev": "6f51145a3bc12ee79d2881204b88a82d149f3228",
-            "sha256": "sha256-iJZe/Ljae9igkpfz9WJQK48wZZJWcOt4Z3kdp5VILqE=",
+            "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
             "sparseCheckout": [],
             "type": "github"
         },
@@ -677,7 +677,7 @@
     },
     "s5cmd": {
         "cargoLocks": null,
-        "date": "2024-06-10",
+        "date": "2024-07-12",
         "extract": null,
         "name": "s5cmd",
         "passthru": null,
@@ -689,12 +689,12 @@
             "name": null,
             "owner": "peak",
             "repo": "s5cmd",
-            "rev": "c13b860c763a56fc8b97dbb2e35e7c6f3b950f2c",
-            "sha256": "sha256-WulvXhAfZsLECFLNhAKswPYL1vDQEAOzQ6UP+3DI6Cw=",
+            "rev": "787bc8805d8a639ca83fb64eda0521d0d43869d8",
+            "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "c13b860c763a56fc8b97dbb2e35e7c6f3b950f2c"
+        "version": "787bc8805d8a639ca83fb64eda0521d0d43869d8"
     },
     "solarized-dark-gnome-shell-2020": {
         "cargoLocks": null,
@@ -791,7 +791,7 @@
             "owner": "stumpwm",
             "repo": "stumpwm-contrib",
             "rev": "042a9fcb053839f4b1527d2e6f4baf33e2d16434",
-            "sha256": "sha256-idSdD/IXPOJXAsZSJgXbpRBH7DelEVz3xUTYh/9ZtLk=",
+            "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
             "sparseCheckout": [],
             "type": "github"
         },
@@ -815,7 +815,7 @@
             "owner": "stumpwm",
             "repo": "stumpwm",
             "rev": "11be454df8f01f2ed7aa20cffe23f16f1d7b7bd6",
-            "sha256": "sha256-aEacyvOv0mOCoPyrPOoZHhCsLNCMp+VSLr9mfamuk8A=",
+            "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
             "sparseCheckout": [],
             "type": "github"
         },
@@ -839,7 +839,7 @@
             "owner": "stumpwm",
             "repo": "stumpwm",
             "rev": "23.11",
-            "sha256": "sha256-sWCr3wm99Hv4LsZ572921wcUnQV40AmWSUVMWnmfeSo=",
+            "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
             "sparseCheckout": [],
             "type": "github"
         },
@@ -860,7 +860,7 @@
             "owner": "braver",
             "repo": "Solarized",
             "rev": "2.7.5",
-            "sha256": "sha256-5T8Ga6QHliA0+rGf23peBjoSNtxVlqZLltMx1OKdQFc=",
+            "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
             "sparseCheckout": [],
             "type": "github"
         },
@@ -881,7 +881,7 @@
             "owner": "tfutils",
             "repo": "tfenv",
             "rev": "39d8c27ad9862ffdec57989b66fd2720cb72e76c",
-            "sha256": "sha256-h5ZHT4u7oAdwuWpUrL35G8bIAMasx6E81h15lTJSHhQ=",
+            "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
             "sparseCheckout": [],
             "type": "github"
         },
@@ -917,7 +917,7 @@
             "owner": "romanz",
             "repo": "trezor-agent",
             "rev": "v0.14.8",
-            "sha256": "sha256-tcVott/GlHsICQf640Gm5jx89fZWsCdcYnBxi/Kh2oc=",
+            "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
             "sparseCheckout": [],
             "type": "github"
         },
@@ -973,7 +973,7 @@
             "owner": "wavetermdev",
             "repo": "waveterm",
             "rev": "v0.7.6",
-            "sha256": "sha256-cHjBH6oijoAhdk2Ty1sl2GFXUUhfoToTuDUl5VuwKWU=",
+            "sha256": "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=",
             "sparseCheckout": [],
             "type": "github"
         },

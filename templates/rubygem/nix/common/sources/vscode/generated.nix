@@ -14,22 +14,22 @@
   };
   codium = {
     pname = "codium";
-    version = "0.9.3";
+    version = "0.9.4";
     src = fetchurl {
-      url = "https://Codium.gallery.vsassets.io/_apis/public/gallery/publisher/Codium/extension/codium/0.9.3/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "codium-0.9.3.zip";
-      sha256 = "sha256-lWlJHE7nwLgV67HiSsvofDiuxVgRM+X62vTieKoO/UI=";
+      url = "https://Codium.gallery.vsassets.io/_apis/public/gallery/publisher/Codium/extension/codium/0.9.4/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "codium-0.9.4.zip";
+      sha256 = "sha256-tqtiTeb8LnYiB/WFEYnKfT5pOkik5Fe1wBXkCcVB6Xc=";
     };
     publisher = "Codium";
     name = "codium";
   };
   copilot = {
     pname = "copilot";
-    version = "1.209.0";
+    version = "1.213.0";
     src = fetchurl {
-      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.209.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "copilot-1.209.0.zip";
-      sha256 = "sha256-o/ePFoZddMDWtDpYnZMeRpOKJD86IdeZsMcUw5NA6Bw=";
+      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.213.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "copilot-1.213.0.zip";
+      sha256 = "sha256-fpUQdezUAfhQuznSgDb/+tDpcLFHa6SmboLDi9taK40=";
     };
     publisher = "GitHub";
     name = "copilot";
@@ -201,11 +201,11 @@
   };
   ruby-lsp = {
     pname = "ruby-lsp";
-    version = "0.7.5";
+    version = "0.7.11";
     src = fetchurl {
-      url = "https://Shopify.gallery.vsassets.io/_apis/public/gallery/publisher/Shopify/extension/ruby-lsp/0.7.5/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "ruby-lsp-0.7.5.zip";
-      sha256 = "sha256-fw6wFXbmfsPqjeDK61ZY0DiKefpttqiY4fvDEy5bOu0=";
+      url = "https://Shopify.gallery.vsassets.io/_apis/public/gallery/publisher/Shopify/extension/ruby-lsp/0.7.11/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "ruby-lsp-0.7.11.zip";
+      sha256 = "sha256-DfwHLoeW24Cgd+shx6QWrRz0WD1RzGuFk8/UXKVe+7Y=";
     };
     publisher = "Shopify";
     name = "ruby-lsp";
@@ -267,11 +267,11 @@
   };
   tokyo-night = {
     pname = "tokyo-night";
-    version = "1.0.6";
+    version = "1.0.9";
     src = fetchurl {
-      url = "https://enkia.gallery.vsassets.io/_apis/public/gallery/publisher/enkia/extension/tokyo-night/1.0.6/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "tokyo-night-1.0.6.zip";
-      sha256 = "sha256-VWdUAU6SC7/dNDIOJmSGuIeffbwmcfeGhuSDmUE7Dig=";
+      url = "https://enkia.gallery.vsassets.io/_apis/public/gallery/publisher/enkia/extension/tokyo-night/1.0.9/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "tokyo-night-1.0.9.zip";
+      sha256 = "sha256-2EphqiRVFw5cHAfCS+wscUM5eR48W9y96LJZQH4k0l4=";
     };
     publisher = "enkia";
     name = "tokyo-night";

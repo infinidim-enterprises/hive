@@ -9,7 +9,7 @@
       repo = "acm-terminal";
       rev = "1851d8fa2a27d3fd8deeeb29cd21c3002b8351ba";
       fetchSubmodules = false;
-      sha256 = "sha256-EYhFrOo0j0JSNTdcZCbyM0iLxaymUXi1u6jZy8lTOaY=";
+      sha256 = "sha256-cNs+e9pi9omCLRo3D5d2P82nFdw7V1sdgR6YXlPgi/s=";
     };
     date = "2023-12-06";
   };
@@ -85,17 +85,17 @@
   };
   doom-emacs = {
     pname = "doom-emacs";
-    version = "d7f5e7033e1baf9ad85614443c6532095473cbfb";
+    version = "b0e1e68e78429659f6fd3b26e6691e921fa0d7e1";
     src = fetchgit {
       url = "https://github.com/hlissner/doom-emacs";
-      rev = "d7f5e7033e1baf9ad85614443c6532095473cbfb";
+      rev = "b0e1e68e78429659f6fd3b26e6691e921fa0d7e1";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = true;
       sparseCheckout = [ ];
-      sha256 = "sha256-eTmnAWyf+9zEkeXWTGettr7HZdVzVrbn/6tzf7DnI00=";
+      sha256 = "sha256-cfDhyIhcQhRdP3bFeFaBgnDtKFcslA0Tx5OfzqWzrjw=";
     };
-    date = "2024-07-02";
+    date = "2024-07-11";
   };
   grip = {
     pname = "grip";
@@ -113,27 +113,27 @@
   };
   jinx = {
     pname = "jinx";
-    version = "4580aad8a0267bf30c98d210b6bdc1a08b1aad75";
+    version = "e39f2682ea902a1d06bd118d5899b2bbadfb6dce";
     src = fetchFromGitHub {
       owner = "minad";
       repo = "jinx";
-      rev = "4580aad8a0267bf30c98d210b6bdc1a08b1aad75";
+      rev = "e39f2682ea902a1d06bd118d5899b2bbadfb6dce";
       fetchSubmodules = false;
-      sha256 = "sha256-vaRwIt0jdckrMvMmmgXWXPUunJcSRuntGuZTDCUSs1o=";
+      sha256 = "sha256-cNs+e9pi9omCLRo3D5d2P82nFdw7V1sdgR6YXlPgi/s=";
     };
-    date = "2024-06-29";
+    date = "2024-07-08";
   };
   lsp-bridge = {
     pname = "lsp-bridge";
-    version = "0babcae1bb1fba67257916011a638675e07ec753";
+    version = "212bbf84a6556acc93b47028c771656e3e772196";
     src = fetchFromGitHub {
       owner = "manateelazycat";
       repo = "lsp-bridge";
-      rev = "0babcae1bb1fba67257916011a638675e07ec753";
+      rev = "212bbf84a6556acc93b47028c771656e3e772196";
       fetchSubmodules = false;
-      sha256 = "sha256-m9N3XDFXTiNb5h7D2LpFC/LPFIsmg+XEn7LrtZbWi04=";
+      sha256 = "sha256-cNs+e9pi9omCLRo3D5d2P82nFdw7V1sdgR6YXlPgi/s=";
     };
-    date = "2024-07-02";
+    date = "2024-07-10";
   };
   nix-mode = {
     pname = "nix-mode";
@@ -152,15 +152,15 @@
   };
   nix-ts-mode = {
     pname = "nix-ts-mode";
-    version = "c7be3506eb118991507e3ad3274d617ca971a07a";
+    version = "59ad17690576190811e0746c12ad6809596ca3ac";
     src = fetchFromGitHub {
       owner = "remi-gelinas";
       repo = "nix-ts-mode";
-      rev = "c7be3506eb118991507e3ad3274d617ca971a07a";
+      rev = "59ad17690576190811e0746c12ad6809596ca3ac";
       fetchSubmodules = false;
-      sha256 = "sha256-alKfXVltxLyriufvWWRge9R1cq48CSI44dKAmov7wRE=";
+      sha256 = "sha256-cNs+e9pi9omCLRo3D5d2P82nFdw7V1sdgR6YXlPgi/s=";
     };
-    date = "2024-06-18";
+    date = "2024-07-10";
   };
   org-pretty-table = {
     pname = "org-pretty-table";
