@@ -126,7 +126,7 @@ lib.mkMerge [
     home.packages = with pkgs; [
       buku # Private cmdline bookmark manager
       uget # Download manager using GTK and libcurl
-      firefox_decrypt # extract passwords from profiles TODO: make an overlay with git version.
+      # FIXME: firefox_decrypt # extract passwords from profiles TODO: make an overlay with git version.
     ];
 
     programs.firefox.profiles.default = {

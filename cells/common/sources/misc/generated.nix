@@ -17,15 +17,15 @@
   };
   adguard-filters = {
     pname = "adguard-filters";
-    version = "aab62f03f302e0e0c11079fc45814e1057f44e9f";
+    version = "1449efa5e309ef76bb9eab0308216394117db78b";
     src = fetchgit {
       url = "https://github.com/AdguardTeam/AdguardFilters";
-      rev = "aab62f03f302e0e0c11079fc45814e1057f44e9f";
+      rev = "1449efa5e309ef76bb9eab0308216394117db78b";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-hhrgOHtUbosx7tkUrs3ZmtQjqx5bJzP2c6U5YYcmiT8=";
+      sha256 = "sha256-+Vl8OTHJ2Zja1zBEg3JDCr+0JQsaklAXEt+C433da1g=";
     };
     date = "2024-07-12";
   };
@@ -200,7 +200,7 @@
       repo = "user.js";
       rev = "126.1";
       fetchSubmodules = false;
-      sha256 = "sha256-Ex+eSb7tZ428MMJDIF/nqUOtnzjqEIPNaDXJPm9FvuY=";
+      sha256 = "sha256-5LDxnQQq2gvovlMbgKyTS5D51AYUQrlA4RKvjKOLnSw=";
     };
   };
   git-get = {
@@ -355,7 +355,7 @@
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "b521675c515be29b61d78194db97563c380a7574";
+    version = "1dfd09c688fe8e2b998d347ee2c22e2eb23ae8dd";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";

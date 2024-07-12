@@ -10,7 +10,7 @@ rec {
     home = inputs.home-unstable;
     pkgs = import inputs.nixpkgs-unstable {
       inherit (inputs.nixpkgs) system;
-      # FIXME: youtube-dl - which pkg depends on it?
+      # FIXME: lollypop depends on youtube-dl
       config.permittedInsecurePackages = [
         "python3.12-youtube-dl-2021.12.17"
       ];

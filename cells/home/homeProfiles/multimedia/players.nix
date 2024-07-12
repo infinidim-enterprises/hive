@@ -8,7 +8,7 @@ mkMerge [
       v4l-utils
       ffmpeg-full
 
-      lollypop # audio player
+      # FIXME: lollypop # audio player
       id3v2 # mp3 tag manipulator
     ];
   }
