@@ -145,9 +145,9 @@ in
     nodePackages.bash-language-server
     texlab # TeX language-server
     nodePackages.dockerfile-language-server-nodejs
-    nodePackages.vscode-json-languageserver-bin
-    nodePackages.vscode-css-languageserver-bin
-    nodePackages.vscode-html-languageserver-bin
+    # nodePackages.vscode-json-languageserver-bin
+    # nodePackages.vscode-css-languageserver-bin
+    # nodePackages.vscode-html-languageserver-bin
     ocamlPackages.digestif
 
     nodePackages.js-beautify
