@@ -11,12 +11,12 @@ let
     "Documents"
     # "Downloads"
     "Logs"
-    "Music"
+    # "Music"
     "Pictures"
     # "Public"
     "Templates"
-    "Videos"
-    "Projects"
+    # "Videos"
+    # "Projects"
   ];
 
   paths = map (p: baseDir + p) (defaultDirs ++ extraDirs);
