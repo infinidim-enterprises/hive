@@ -40,7 +40,7 @@ in
     "org/mate/caja/preferences".default-folder-viewer = "list-view";
     "org/mate/caja/preferences".ctrl-tab-switch-tabs = true;
 
-    "/org/gnome/system/wsdd".display-mode = "disabled";
+    "org/gnome/system/wsdd".display-mode = "disabled";
   };
 
   # TODO: maybe this instead? https://github.com/savedra1/clipse
