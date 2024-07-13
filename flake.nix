@@ -289,7 +289,9 @@
     # hyprland.url = "github:hyprwm/Hyprland?submodules=1&ref=v0.41.1";
     # https://github.com/hyprwm/Hyprland/issues/5891
 
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    # b03f41efec14273cf25c42d4cef326acc36cb319
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1&rev=b03f41efec14273cf25c42d4cef326acc36cb319";
+    # hyprland.follows = "hyprland-hy3/hyprland";
     hyprland.inputs.nixpkgs.follows = "nixpkgs-unstable";
     hyprland.inputs.systems.follows = "hyprland-systems";
     hyprland.inputs.hyprutils.follows = "hyprland-hyprutils";
@@ -308,15 +310,15 @@
     hyprland-contrib.url = "git+https://github.com/hyprwm/contrib";
     hyprland-contrib.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
-    hyprland-hyprpicker.url = "git+https://github.com/hyprwm/hyprpicker";
-    hyprland-hyprpicker.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    # hyprland-hyprpicker.url = "git+https://github.com/hyprwm/hyprpicker";
+    # hyprland-hyprpicker.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
     hyprland-plugins.url = "github:hyprwm/hyprland-plugins";
     hyprland-plugins.inputs.hyprland.follows = "hyprland";
     hyprland-plugins.inputs.nixpkgs.follows = "hyprland/nixpkgs";
     hyprland-plugins.inputs.systems.follows = "hyprland/systems";
 
-    hyprland-hy3.url = "github:outfoxxed/hy3";
+    hyprland-hy3.url = "github:outfoxxed/hy3"; # FIXME: hy3
     hyprland-hy3.inputs.hyprland.follows = "hyprland";
 
     # TODO: https://github.com/levnikmyskin/hyprland-virtual-desktops

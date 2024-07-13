@@ -73,7 +73,7 @@ mkMerge [
       grim # wayland screenshot
       slurp # Select a region in a Wayland compositor
       grimblast
-      hyprpicker
+      # hyprpicker
 
       wofi
       wtype
