@@ -534,7 +534,12 @@ in
       "suppressevent maximize, class:.*"
       "float, class:^(gcr-prompter)$"
       "dimaround, class:^(gcr-prompter)$"
+      "stayfocused, class:^(gcr-prompter)$"
+      "float, title:^(Open File)$"
+      "size 800 600, title:^(Open File)$"
     ];
+    # "title": "Open File"
+    # "class": "Xdg-desktop-portal-gtk"
   };
 
   wayland.windowManager.hyprland.extraConfig = ''
