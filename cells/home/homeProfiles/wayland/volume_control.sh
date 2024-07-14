@@ -6,22 +6,22 @@ current_volume=$(pactl list sinks | grep -A 15 "$default_sink" | grep 'Volume:' 
 MUTE=$(pactl list sinks | grep -A 15 "$DEFAULT_SINK" | grep "Mute")
 
 case "$1" in
-    raise)
-        pactl -- set-sink-volume @DEFAULT_SINK@ +10%
-        hyprctl notify 6 1000 0 "⬆🎵 ${current_volume}"
-        ;;
+raise)
+  pactl -- set-sink-volume @DEFAULT_SINK@ +10%
+  hyprctl notify 6 1000 0 "🎵⬆ ${current_volume}"
+  ;;
 
-    lower)
-        pactl -- set-sink-volume @DEFAULT_SINK@ -10%
-        hyprctl notify 6 1000 0 " ⬇🎵 ${current_volume}"
-        ;;
+lower)
+  pactl -- set-sink-volume @DEFAULT_SINK@ -10%
+  hyprctl notify 6 1000 0 "🎵⬇ ${current_volume}"
+  ;;
 
-    toggle)
-        pactl -- set-sink-mute @DEFAULT_SINK@ toggle
-        hyprctl notify 6 1500 0 "🎵 $MUTE"
-        ;;
+toggle)
+  pactl -- set-sink-mute @DEFAULT_SINK@ toggle
+  hyprctl notify 6 1500 0 "🎵 $MUTE"
+  ;;
 
-    *)
-        exit 0
-        ;;
+*)
+  exit 0
+  ;;
 esac
