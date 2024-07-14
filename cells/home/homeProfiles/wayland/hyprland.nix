@@ -528,6 +528,7 @@ in
     # ];
 
     # RULES:
+    # animation popin,class:^(kitty)$,title:^(update-sys)$
     # https://github.com/MathisP75/summer-day-and-night/blob/main/hypr/hyprland.conf
 
     windowrulev2 = [
@@ -538,6 +539,7 @@ in
       "float, title:^(Open File)$"
       "size 800 600, title:^(Open File)$"
       "move 100 100, title:^(Open File)$"
+      "float, class:^(pavucontrol)$"
     ];
   };
 

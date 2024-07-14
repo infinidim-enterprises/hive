@@ -1,4 +1,4 @@
-{ lib, config, osConfig, ... }:
+{ lib, config, osConfig, pkgs, ... }:
 let
   inherit (lib // builtins) toInt toString;
   inherit (config.home.sessionVariables)
@@ -23,6 +23,7 @@ in
       "temperature"
       "battery"
       "tray"
+      "pulseaudio"
       "clock"
       "custom/wlogout"
     ];
@@ -32,6 +33,21 @@ in
       on-click = "${config.programs.wlogout.command}";
       tooltip = false;
     };
+
+    pulseaudio.format = "{volume}% {icon} {format_source}";
+    pulseaudio.format-bluetooth = "{volume}% {icon} {format_source}";
+    pulseaudio.format-bluetooth-muted = " {icon} {format_source}";
+    pulseaudio.format-muted = " {format_source}";
+    pulseaudio.format-source = "{volume}% ";
+    pulseaudio.format-source-muted = "";
+    pulseaudio.format-icons.headphone = "";
+    # pulseaudio.format-icons.hands-free = "";
+    # pulseaudio.format-icons.headset = "";
+    # pulseaudio.format-icons.phone = "";
+    # pulseaudio.format-icons.portable = "";
+    pulseaudio.format-icons.car = "";
+    pulseaudio.format-icons.default = [ "" "" ];
+    pulseaudio.on-click = "${pkgs.pavucontrol}/bin/pavucontrol";
 
     "hyprland/language".format = "󰌌 {short}";
 
