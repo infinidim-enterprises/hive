@@ -41,9 +41,6 @@ in
     sops
   ];
 
-  services.kdeconnect.enable = true;
-  services.kdeconnect.indicator = true;
-
   xdg.userDirs.extraConfig.XDG_PROJ_DIR = "${config.home.homeDirectory}/Projects";
 
   # NOTE: PASSWORD_STORE_KEY can use multiple fingerprints separated by a whitespace

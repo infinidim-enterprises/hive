@@ -17,10 +17,16 @@ mkMerge [
   # })
 
   {
-    home-manager.sharedModules = [{
-      programs.zsh.enableVteIntegration = true;
-      programs.bash.enableVteIntegration = true;
-    }];
+    home-manager.sharedModules = [
+      {
+        programs.zsh.enableVteIntegration = true;
+        programs.bash.enableVteIntegration = true;
+      }
+      ({ osConfig, ... }: mkIf osConfig.programs.kdeconnect.enable {
+        services.kdeconnect.enable = true;
+        services.kdeconnect.indicator = true;
+      })
+    ];
 
     services.displayManager.logToFile = false;
     services.displayManager.logToJournal = false;
@@ -29,6 +35,9 @@ mkMerge [
 
     programs.nix-ld.enable = true;
     programs.droidcam.enable = true;
+
+    programs.kdeconnect.enable = true; # NOTE: open firewall ports 1714-1764
+    programs.kdeconnect.package = pkgs.kdeconnect;
 
     xdg.mime.enable = true;
 
