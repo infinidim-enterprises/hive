@@ -537,9 +537,8 @@ in
       "stayfocused, class:^(gcr-prompter)$"
       "float, title:^(Open File)$"
       "size 800 600, title:^(Open File)$"
+      "move 100 100, title:^(Open File)$"
     ];
-    # "title": "Open File"
-    # "class": "Xdg-desktop-portal-gtk"
   };
 
   wayland.windowManager.hyprland.extraConfig = ''
