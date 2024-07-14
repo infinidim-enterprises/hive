@@ -115,8 +115,8 @@ in
   services.hypridle.enable = true;
   services.hypridle.settings = {
     general = {
-      before_sleep_cmd = "loginctl lock-session";
-      after_sleep_cmd = "hyprctl dispatch dpms on && systemctl --user restart wlsunset.service";
+      before_sleep_cmd = "brightnessctl --save && brightnessctl set 1% && loginctl lock-session";
+      after_sleep_cmd = "hyprctl dispatch dpms on && brightnessctl --restore && systemctl --user restart wlsunset.service";
       lock_cmd = "pidof hyprlock || hyprlock";
       ignore_dbus_inhibit = false;
     };
@@ -200,9 +200,12 @@ in
     hyprexpo
     hy3
   ];
+
   wayland.windowManager.hyprland.settings = {
 
     # exec-once = [ "hdrop -b $terminal" ]; # NOTE: conflicts with hy3
+
+    exec-once = [ "brightnessctl set 30%" ];
 
     env = [
       "XCURSOR_THEME,${config.gtk.cursorTheme.name}"
@@ -523,6 +526,9 @@ in
     #   "Control_L&Shift_L, Q, exit"
     #   "Control_L&Shift_L, Return, exec, $terminal"
     # ];
+
+    # RULES:
+    # https://github.com/MathisP75/summer-day-and-night/blob/main/hypr/hyprland.conf
 
     windowrulev2 = [
       "suppressevent maximize, class:.*"

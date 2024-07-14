@@ -42,7 +42,7 @@ in
     "hyprland/workspaces".format = "{name}";
 
     "hyprland/submap" = {
-      "format" = "✌️ {}";
+      "format" = "✌🏻 {}";
       "max-length" = 30;
       "tooltip" = false;
     };
