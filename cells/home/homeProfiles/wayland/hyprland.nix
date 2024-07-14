@@ -17,6 +17,12 @@ let
     runtimeInputs = with pkgs; [ jq hyprland ];
     text = remove_shebang (fileContents ./focus_monitor.sh);
   };
+  volume_control = pkgs.writeShellApplication {
+    name = "volume_control";
+    runtimeInputs = with pkgs; [ hyprland gawk pulseaudio gnugrep ];
+    text = remove_shebang (fileContents ./volume_control.sh);
+  };
+
 in
 {
   services.network-manager-applet.enable = osConfig.networking.networkmanager.enable;
@@ -26,6 +32,7 @@ in
   home.packages = with pkgs; [
     mate.caja-with-extensions
     focus_monitor
+    volume_control
   ];
 
   xdg.mimeApps.defaultApplications = {
@@ -40,7 +47,7 @@ in
     "org/mate/caja/preferences".default-folder-viewer = "list-view";
     "org/mate/caja/preferences".ctrl-tab-switch-tabs = true;
 
-    # "org/gnome/system/wsdd".display-mode = "disabled";
+    # FIXME: "org/gnome/system/wsdd".display-mode = "disabled";
   };
 
   # TODO: maybe this instead? https://github.com/savedra1/clipse
@@ -403,6 +410,24 @@ in
     ];
 
     # debug.disable_logs = false;
+    /*
+      binde =
+      binde = , XF86AudioRaiseVolume, exec, sh /home/mathis_hyprland/.config/hypr/scripts/notify-volume.sh
+
+      binde =
+      binde = , XF86AudioLowerVolume, exec, sh /home/mathis_hyprland/.config/hypr/scripts/notify-volume.sh
+
+      bind = , XF86AudioMute, exec, pactl set-sink-mute @DEFAULT_SINK@ toggle
+      bind = , XF86AudioMute, exec, sh /home/mathis_hyprland/.config/hypr/scripts/notify-volume.sh
+
+    */
+    binde = [
+      ", XF86AudioRaiseVolume, execr, volume_control raise"
+      ", XF86AudioLowerVolume, execr, volume_control lower"
+
+      ", XF86MonBrightnessUp, execr, brightnessctl set 10%+"
+      ", XF86MonBrightnessDown, execr, brightnessctl set 10%-"
+    ];
 
     bind = [
       "$masterMod, Return, fullscreen, 0"
@@ -479,6 +504,7 @@ in
       "$masterMod Control_L Alt_L, Down, movetoworkspace, -1"
 
       # "Control_L, grave, exec, hdrop -b tilix"
+      ", XF86AudioMute, execr, volume_control toggle"
     ];
 
     bindm = [
