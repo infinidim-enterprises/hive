@@ -5,6 +5,7 @@
 {
   imports =
     [
+      # FIXME: restic
       (inputs.cells.nixos.nixosProfiles.backups.restic { user = "vod"; extraDirs = [ "tmp" ]; })
     ];
 

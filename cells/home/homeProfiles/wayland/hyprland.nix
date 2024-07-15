@@ -63,7 +63,9 @@ in
 
   services.gammastep.enable = true;
   services.gammastep.tray = true;
-  services.gammastep.provider = "geoclue2";
+  services.gammastep.provider = "manual";
+  services.gammastep.latitude = 44.4152772;
+  services.gammastep.longitude = 26.0422636;
   services.gammastep.temperature.day = 4200;
   services.gammastep.temperature.night = 3600;
   services.gammastep.settings = {
@@ -125,7 +127,8 @@ in
   services.hypridle.settings = {
     general = {
       before_sleep_cmd = "brightnessctl --save && brightnessctl set 1% && loginctl lock-session";
-      after_sleep_cmd = "hyprctl dispatch dpms on && brightnessctl --restore && systemctl --user restart gammastep.service";
+      # && systemctl --user restart gammastep.service
+      after_sleep_cmd = "hyprctl dispatch dpms on && brightnessctl --restore";
       lock_cmd = "pidof hyprlock || hyprlock";
       ignore_dbus_inhibit = false;
     };
