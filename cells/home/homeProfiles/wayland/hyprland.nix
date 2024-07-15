@@ -56,11 +56,21 @@ in
   services.cliphist.systemdTarget = "graphical-session.target";
 
   # TODO: switch to gammastep with geoclue2
-  services.wlsunset.enable = true;
-  services.wlsunset.temperature.day = 4200;
-  services.wlsunset.temperature.night = 3600;
-  services.wlsunset.sunrise = "07:30";
-  services.wlsunset.sunset = "19:30";
+  # services.wlsunset.enable = true;
+  # services.wlsunset.temperature.day = 4200;
+  # services.wlsunset.temperature.night = 3600;
+  # services.wlsunset.sunrise = "07:30";
+  # services.wlsunset.sunset = "19:30";
+
+  services.gammastep.enable = true;
+  services.gammastep.tray = true;
+  services.gammastep.provider = "geoclue2";
+  services.gammastep.temperature.day = 4200;
+  services.gammastep.temperature.night = 3600;
+  services.gammastep.settings = {
+    general.adjustment-method = "wayland";
+    general.fade = 1;
+  };
 
   services.xsettingsd.enable = true;
   services.xsettingsd.settings = {

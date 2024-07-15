@@ -93,6 +93,7 @@ mkMerge [
       hdrop
       hyprprop
 
+      glib
       gtk4-layer-shell # Lib
       walker # launcher https://github.com/abenz1267/walker TODO: home-manager module for walker
       /*
