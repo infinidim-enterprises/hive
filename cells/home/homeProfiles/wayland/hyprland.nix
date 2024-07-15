@@ -55,7 +55,6 @@ in
   services.cliphist.allowImages = true;
   services.cliphist.systemdTarget = "graphical-session.target";
 
-  # TODO: switch to gammastep with geoclue2
   # services.wlsunset.enable = true;
   # services.wlsunset.temperature.day = 4200;
   # services.wlsunset.temperature.night = 3600;
@@ -126,7 +125,7 @@ in
   services.hypridle.settings = {
     general = {
       before_sleep_cmd = "brightnessctl --save && brightnessctl set 1% && loginctl lock-session";
-      after_sleep_cmd = "hyprctl dispatch dpms on && brightnessctl --restore && systemctl --user restart wlsunset.service";
+      after_sleep_cmd = "hyprctl dispatch dpms on && brightnessctl --restore && systemctl --user restart gammastep.service";
       lock_cmd = "pidof hyprlock || hyprlock";
       ignore_dbus_inhibit = false;
     };
