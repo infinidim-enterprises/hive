@@ -560,52 +560,35 @@ in
     bind = SHIFT, k, hy3:killactive
     bind = SHIFT, k, submap, reset
 
-    bind = Control_L, y, exec, cliphist
-    list | wofi --show
-    dmenu | cliphist
-    decode | xargs
-    wtype
+    bind = Control_L, y, exec, cliphist list | wofi --show dmenu | cliphist decode | xargs wtype
     bind = Control_L, y, submap, reset
-    bind = , y, exec, cliphist
-    list | wofi --show
-    dmenu | cliphist
-    decode | wl-copy
+    bind = , y, exec, cliphist list | wofi --show dmenu | cliphist decode | wl-copy
     bind = , y, submap, reset
 
-    bind = , 3, hy3:makegroup,
-    h
+    bind = , 3, hy3:makegroup, h
     bind = , 3, submap, reset
-    bind = , 2, hy3:makegroup,
-    v
+    bind = , 2, hy3:makegroup, v
     bind = , 2, submap, reset
-    bind = , Tab, hy3:makegroup,
-    tab
+    bind = , Tab, hy3:makegroup, tab
     bind = , Tab, submap, reset
-    bind = Control_L, Tab, hy3:changegroup,
-    toggletab
+    bind = Control_L, Tab, hy3:changegroup, toggletab
     bind = Control_L, Tab, submap, reset
 
-    bind = , Return, hy3:setephemeral,
-    false
+    bind = , Return, hy3:setephemeral, false
     bind = , Return, submap, reset
-    bind = Control_L, Return, hy3:setephemeral,
-    true
+    bind = Control_L, Return, hy3:setephemeral, true
     bind = Control_L, Return, submap, reset
 
-    bind = Control_L, s, hy3:changegroup,
-    opposite
+    bind = Control_L, s, hy3:changegroup, opposite
     bind = Control_L, s, submap, reset
-    bind = SHIFT, q, hy3:expand,
-    expand
+    bind = SHIFT, q, hy3:expand, expand
     bind = SHIFT, q, submap, reset
-    bind = , q, hy3:expand,
-    base
+    bind = , q, hy3:expand, base
     bind = , q, submap, reset
 
     bind = , k, killactive
     bind = , k, submap, reset
-    bind = , e, exec, [ workspace 2 silent ]
-    emacsclient -c
+    bind = , e, exec, [ workspace 2 silent ] emacsclient -c
     bind = , e, submap, reset
     submap = reset
   '';
