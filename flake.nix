@@ -408,12 +408,14 @@
 
         homeModules = hive.pick inputs.self [ [ "home" "homeModules" ] ];
       }
+
       {
         colmenaHive = hive.collect self "colmenaConfigurations";
         nixosConfigurations = hive.collect self "nixosConfigurations";
         diskoConfigurations = hive.collect self "diskoConfigurations";
         homeConfigurations = hive.collect self "homeConfigurations";
       }
+
       {
         debug = hive.harvest inputs.self [ "repo" "debug" ];
       };
