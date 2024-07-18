@@ -73,6 +73,7 @@ mkMerge [
       grim # wayland screenshot
       slurp # Select a region in a Wayland compositor
       grimblast
+      swappy
       # hyprpicker
 
       wofi
@@ -94,8 +95,10 @@ mkMerge [
       hyprprop
 
       glib
+      polkit_gnome
       gtk4-layer-shell # Lib
       walker # launcher https://github.com/abenz1267/walker TODO: home-manager module for walker
+
       /*
 
       walker.url = "github:abenz1267/walker";

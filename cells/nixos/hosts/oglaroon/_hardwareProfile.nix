@@ -55,6 +55,8 @@
 
   ];
 
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+
   services.logind.powerKeyLongPress = "suspend";
   services.logind.lidSwitchExternalPower = "ignore";
   services.logind.lidSwitch = "ignore";

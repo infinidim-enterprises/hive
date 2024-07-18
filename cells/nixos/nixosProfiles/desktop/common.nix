@@ -64,6 +64,8 @@ mkMerge [
 
     environment.systemPackages = with pkgs; [
       pulseaudio-ctl
+      pamixer
+      pavucontrol
 
       adwaita-icon-theme
       dconf-editor

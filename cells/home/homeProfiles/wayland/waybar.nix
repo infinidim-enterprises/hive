@@ -63,7 +63,7 @@ in
       "tooltip" = false;
     };
 
-    tray.spacing = 5;
+    tray.spacing = 4;
     temperature.format = "{temperatureC}°C ";
 
     # NOTE: https://github.com/Alexays/Waybar/issues/2982
