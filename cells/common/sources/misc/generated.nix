@@ -14,16 +14,29 @@
     };
     date = "2019-07-20";
   };
-  adguard-filters = {
-    pname = "adguard-filters";
-    version = "070391c201c43e9cb3c05ef4d6ab1adba1c24871";
+  adguard-filters_adguardteam = {
+    pname = "adguard-filters_adguardteam";
+    version = "2f4d46f461da7e6136f754dfcd3af35ee3fb0ae0";
     src = fetchgit {
       url = "https://github.com/AdguardTeam/AdguardFilters";
-      rev = "070391c201c43e9cb3c05ef4d6ab1adba1c24871";
+      rev = "2f4d46f461da7e6136f754dfcd3af35ee3fb0ae0";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-sU3G3B4q2zj1F4aYkRHhBD2R+C4wOiUHnKQVS2EOp2o=";
+      sha256 = "sha256-uOAdAp2ZnC7kZtwoSVMmkacPfIuxw3Ucd3sRQwN2FIk=";
+    };
+    date = "2024-07-20";
+  };
+  adguard-filters_romania = {
+    pname = "adguard-filters_romania";
+    version = "d7944ea8ba3358e58a3c25071bb72c141f45eaef";
+    src = fetchgit {
+      url = "https://github.com/tcptomato/ROad-Block";
+      rev = "d7944ea8ba3358e58a3c25071bb72c141f45eaef";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sha256 = "sha256-A8qUJlFq698GmVGzWtCd2lFe4+KKbFIjUj/SvGFX+Ls=";
     };
     date = "2024-07-12";
   };
@@ -55,15 +68,15 @@
   };
   chatgpt-wrapper = {
     pname = "chatgpt-wrapper";
-    version = "7c5b79fecf5ad7ab6f286c286ba6782f84fe0459";
+    version = "ada591068e935dcc64a8c964ff8415c6a0051c74";
     src = fetchFromGitHub {
       owner = "llm-workflow-engine";
       repo = "llm-workflow-engine";
-      rev = "7c5b79fecf5ad7ab6f286c286ba6782f84fe0459";
+      rev = "ada591068e935dcc64a8c964ff8415c6a0051c74";
       fetchSubmodules = false;
-      sha256 = "sha256-xaA4o7eusCKo2PLSsmFHPjc5JR2cCnbEyOtPYH7PTQ8=";
+      sha256 = "sha256-XkOuWXlfO3oNjH1c0NAj9ASAQEeqlDNSrj88Su3cn/Q=";
     };
-    date = "2024-07-09";
+    date = "2024-07-18";
   };
   cl-hash-util = {
     pname = "cl-hash-util";
@@ -259,13 +272,13 @@
   };
   langchain = {
     pname = "langchain";
-    version = "langchain-core==0.2.16";
+    version = "langchain-core==0.2.22";
     src = fetchFromGitHub {
       owner = "langchain-ai";
       repo = "langchain";
-      rev = "langchain-core==0.2.16";
+      rev = "langchain-core==0.2.22";
       fetchSubmodules = false;
-      sha256 = "sha256-1AxYBBvU/gnktT8Fl6LYwIGI9KVF3fgwul4kB23pC3g=";
+      sha256 = "sha256-c3lz34Pgy54b2Wbm06QfESc2FjY/dyGqZW1+WBhkKTA=";
     };
   };
   ledger-live-desktop = {
@@ -319,16 +332,16 @@
   };
   pam_usb = {
     pname = "pam_usb";
-    version = "a2d14f844d16dc242a46fcae50b77dd83daa86cd";
+    version = "898cfcff47ca4e5231f3c42c3b6c8c63a60ccf80";
     src = fetchgit {
       url = "https://github.com/mcdope/pam_usb";
-      rev = "a2d14f844d16dc242a46fcae50b77dd83daa86cd";
+      rev = "898cfcff47ca4e5231f3c42c3b6c8c63a60ccf80";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-oWamrnH8xXXyGIbWgNC4l5/n9KZUOUtttrpafNn9R30=";
+      sha256 = "sha256-PEDyuxsZ2C0kKOvXlA6LZdn8eVGdibR8ILyJw+7ruRg=";
     };
-    date = "2024-07-08";
+    date = "2024-07-20";
   };
   paper-store = {
     pname = "paper-store";
@@ -345,12 +358,12 @@
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "3e37f9d67e23337dd9037eb18229376bed52dd26";
+    version = "e4ab7d7d0cfc4500da821ebd769c625bf6bab591";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";
     };
-    date = "2024-07-12";
+    date = "2024-07-20";
   };
   pgp-key-generation = {
     pname = "pgp-key-generation";
@@ -397,15 +410,15 @@
   };
   s5cmd = {
     pname = "s5cmd";
-    version = "787bc8805d8a639ca83fb64eda0521d0d43869d8";
+    version = "89218dc7fd484030367b3139961ba1be061d8b2b";
     src = fetchFromGitHub {
       owner = "peak";
       repo = "s5cmd";
-      rev = "787bc8805d8a639ca83fb64eda0521d0d43869d8";
+      rev = "89218dc7fd484030367b3139961ba1be061d8b2b";
       fetchSubmodules = false;
-      sha256 = "sha256-mTEPi2mSOuWzXh5CsseASW5ArIksuBYsIsYBHlzxNMs=";
+      sha256 = "sha256-o7qL4RQis9YG1PTVHN+h7e8jjZJ2ObhWFLw5uscbdCg=";
     };
-    date = "2024-07-12";
+    date = "2024-07-16";
   };
   solarized-dark-gnome-shell-2020 = {
     pname = "solarized-dark-gnome-shell-2020";

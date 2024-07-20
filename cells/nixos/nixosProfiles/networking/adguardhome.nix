@@ -101,6 +101,11 @@ let
     "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/specific.txt"
     "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/tracking_servers.txt"
     "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/tracking_servers_firstparty.txt"
+
+    # TODO: Romanian adblocker
+    # "https://raw.githubusercontent.com/tcptomato/ROad-Block/master/road-block-filters.txt"
+    # "https://raw.githubusercontent.com/tcptomato/ROad-Block/master/road-ubo.txt"
+    # "https://raw.githubusercontent.com/tcptomato/ROad-Block/master/road-kill-filters.txt"
   ];
 
   fname = with lib; url:
@@ -108,7 +113,7 @@ let
       prefix = "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/";
     in
     removeSuffix ".txt" (replaceStrings [ "/" ] [ "_" ] (removePrefix prefix url));
-  filters = with lib; imap1
+  o_filters = with lib; imap1
     (counter: v: {
       enabled = true;
       id = counter;
@@ -116,6 +121,22 @@ let
       name = fname v;
     })
     all_filters;
+
+  filters = with (lib // builtins);
+    let
+      filter_paths = mapAttrsToList (k: v: v.src.outPath) (filterAttrs (k: v: hasPrefix "adguard-filters" k) pkgs.sources);
+      filter_paths_list = splitString "\n" (fileContents (pkgs.runCommandNoCC "filter_paths" { buildInputs = [ pkgs.findutils ]; } ''
+        for path in ${concatStringsSep " " filter_paths}; do find "$path" -type f -name \*.txt >> $out;done
+      ''));
+    in
+    imap1
+      (counter: v: {
+        enabled = true;
+        id = counter;
+        url = v;
+        name = "filter_" + (toString counter);
+      })
+      filter_paths_list;
 in
 mkMerge
   [

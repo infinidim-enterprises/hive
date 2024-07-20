@@ -381,10 +381,10 @@
   };
   "darkreader" = rec {
     pname = "darkreader";
-    version = "4.9.87";
+    version = "4.9.88";
     addonId = "addon@darkreader.org";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4310627/darkreader-4.9.87.xpi";
-    sha256 = "0327d42e507979b0a0443b6aad24d011fea50dd020bcfd07b326bd3df285c79b";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4317971/darkreader-4.9.88.xpi";
+    sha256 = "7a965d5880be9fbf8be81a106acd1968263b1acc2db0add580b30f2dd71954b3";
     meta = with lib;
       {
         homepage = "https://darkreader.org/";
@@ -451,10 +451,10 @@
   };
   "duckduckgo-for-firefox" = rec {
     pname = "duckduckgo-for-firefox";
-    version = "2024.6.13";
+    version = "2024.7.10";
     addonId = "jid1-ZAdIEUB7XOzOJw@jetpack";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4302639/duckduckgo_for_firefox-2024.6.13.xpi";
-    sha256 = "4273dee23f6cb785f38f12982d6c856fe1b62d42008d873f9e1228b230d6bd84";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4317796/duckduckgo_for_firefox-2024.7.10.xpi";
+    sha256 = "af5a94c1c5bc2564a092e581c06c283b43ca480d037e324e719df1775ba0a9ae";
     meta = with lib;
       {
         homepage = "https://duckduckgo.com/app";
@@ -583,10 +583,10 @@
   };
   "languagetool" = rec {
     pname = "languagetool";
-    version = "8.9.1";
+    version = "8.10.4";
     addonId = "languagetool-webextension@languagetool.org";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4298468/languagetool-8.9.1.xpi";
-    sha256 = "0747fcd4d7066ac746d140b93870a37eb5cf3241c3a5759128c54bf12b14feea";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4317259/languagetool-8.10.4.xpi";
+    sha256 = "cf5fed5704ac8b6d4052fcf5819d1aa46ee61c76811393a7e355064baa32679c";
     meta = with lib;
       {
         homepage = "https://languagetool.org";
@@ -676,10 +676,10 @@
   };
   "privacy-badger17" = rec {
     pname = "privacy-badger17";
-    version = "2024.6.14";
+    version = "2024.7.17";
     addonId = "jid1-MnnxcxisBPnSXQ@jetpack";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4303450/privacy_badger17-2024.6.14.xpi";
-    sha256 = "2abc0343d14151cadc48ad83d4b945c0b49adf19c802fdc9738ec55f38b98e29";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4321653/privacy_badger17-2024.7.17.xpi";
+    sha256 = "f7afc15d305966bafc9215f600acb0815c84402b7b8c763493387d19415deb0d";
     meta = with lib;
       {
         homepage = "https://privacybadger.org/";

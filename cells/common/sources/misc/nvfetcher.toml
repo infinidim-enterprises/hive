@@ -65,9 +65,13 @@ fetch.github = "langchain-ai/langchain"
 # fetch.url = "https://github.com/jgraph/drawio-desktop/releases/download/v$ver/drawio-x86_64-$ver.rpm"
 # src.prefix = "v"
 
-[adguard-filters]
+[adguard-filters_adguardteam]
 src.git = "https://github.com/AdguardTeam/AdguardFilters"
 fetch.git = "https://github.com/AdguardTeam/AdguardFilters"
+
+[adguard-filters_romania]
+src.git = "https://github.com/tcptomato/ROad-Block"
+fetch.git = "https://github.com/tcptomato/ROad-Block"
 
 # [adguardhome]
 # src.github = "AdguardTeam/AdGuardHome"
