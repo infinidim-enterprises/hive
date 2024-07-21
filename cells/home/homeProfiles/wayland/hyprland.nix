@@ -547,6 +547,9 @@ in
       "size 800 600, title:^(Open File)$"
       "move 100 100, title:^(Open File)$"
       "float, class:^(pavucontrol)$"
+      "float, class:^(Vlc)$, title:^(Open Directory|Select one or multiple files)$"
+      "size 800 600, class:^(Vlc)$, title:^(Open Directory|Select one or multiple files)$"
+      "move 100 100, class:^(Vlc)$, title:^(Open Directory|Select one or multiple files)$"
     ];
   };
 
