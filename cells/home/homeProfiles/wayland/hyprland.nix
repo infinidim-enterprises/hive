@@ -550,6 +550,8 @@ in
       "float, class:^(Vlc)$, title:^(Open Directory|Select one or multiple files)$"
       "size 800 600, class:^(Vlc)$, title:^(Open Directory|Select one or multiple files)$"
       "move 100 100, class:^(Vlc)$, title:^(Open Directory|Select one or multiple files)$"
+      "stayfocused, class:^(Vlc)$, title:^(Open Directory|Select one or multiple files)$"
+      "dimaround, class:^(Vlc)$, title:^(Open Directory|Select one or multiple files)$"
     ];
   };
 
