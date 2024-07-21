@@ -17,8 +17,8 @@
   # https://github.com/openzfs/zfs/issues/260
   # TODO: once merged, allows semi-safe hibernation - https://github.com/NixOS/nixpkgs/pull/208037
   boot.zfs.allowHibernation = false;
-  boot.zfs.forceImportAll = false;
-  boot.zfs.forceImportRoot = false;
+  boot.zfs.forceImportAll = true;
+  boot.zfs.forceImportRoot = true;
 
   boot.zfs.devNodes = "/dev/disk/by-id";
   boot.initrd.supportedFilesystems = [ "zfs" ];
