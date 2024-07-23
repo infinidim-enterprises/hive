@@ -16,16 +16,16 @@
   };
   adguard-filters_adguardteam = {
     pname = "adguard-filters_adguardteam";
-    version = "2f4d46f461da7e6136f754dfcd3af35ee3fb0ae0";
+    version = "01509ef57d72c6a9d468e39b2915562fbc6fb3e7";
     src = fetchgit {
       url = "https://github.com/AdguardTeam/AdguardFilters";
-      rev = "2f4d46f461da7e6136f754dfcd3af35ee3fb0ae0";
+      rev = "01509ef57d72c6a9d468e39b2915562fbc6fb3e7";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-uOAdAp2ZnC7kZtwoSVMmkacPfIuxw3Ucd3sRQwN2FIk=";
+      sha256 = "sha256-zQYRw8gdXuaGtfHj3IUJz9N+MqqdGHTp8gFiZlAGNos=";
     };
-    date = "2024-07-20";
+    date = "2024-07-23";
   };
   adguard-filters_romania = {
     pname = "adguard-filters_romania";
@@ -332,16 +332,16 @@
   };
   pam_usb = {
     pname = "pam_usb";
-    version = "898cfcff47ca4e5231f3c42c3b6c8c63a60ccf80";
+    version = "d092eaa40453be54590e498fdb46671e5f29d1b7";
     src = fetchgit {
       url = "https://github.com/mcdope/pam_usb";
-      rev = "898cfcff47ca4e5231f3c42c3b6c8c63a60ccf80";
+      rev = "d092eaa40453be54590e498fdb46671e5f29d1b7";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-PEDyuxsZ2C0kKOvXlA6LZdn8eVGdibR8ILyJw+7ruRg=";
+      sha256 = "sha256-/WFv5zAJiRWaTj0sArmU/GnXNelQEhbbof/fMv2Bp7c=";
     };
-    date = "2024-07-20";
+    date = "2024-07-22";
   };
   paper-store = {
     pname = "paper-store";
@@ -358,12 +358,12 @@
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "e4ab7d7d0cfc4500da821ebd769c625bf6bab591";
+    version = "a9e5f6bfcd6d8025f6ee98c563c8e31eb322ec75";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";
     };
-    date = "2024-07-20";
+    date = "2024-07-23";
   };
   pgp-key-generation = {
     pname = "pgp-key-generation";

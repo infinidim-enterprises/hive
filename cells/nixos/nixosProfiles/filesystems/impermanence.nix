@@ -29,8 +29,8 @@ rec {
           (mkIf services.samba.enable
             "/var/lib/samba/usershares")
 
-          (mkIf sound.enable
-            "/var/lib/alsa")
+          # (mkIf sound.enable
+          #   "/var/lib/alsa")
 
           (mkIf (networking.wireless.enable || hardware.bluetooth.enable)
             "/var/lib/systemd/rfkill")

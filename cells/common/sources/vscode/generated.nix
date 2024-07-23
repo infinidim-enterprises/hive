@@ -36,11 +36,11 @@
   };
   copilot = {
     pname = "copilot";
-    version = "1.214.996";
+    version = "1.214.998";
     src = fetchurl {
-      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.214.996/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "copilot-1.214.996.zip";
-      sha256 = "sha256-r1+kTDVyTodmXeUErv4RiwlA6JS6QaA+m4VILfwoBVk=";
+      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.214.998/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "copilot-1.214.998.zip";
+      sha256 = "sha256-Trdh/w+10d7t35h5d52zkh0CP4hUnwXHq7ovuBhLaD0=";
     };
     publisher = "GitHub";
     name = "copilot";
@@ -113,11 +113,11 @@
   };
   gitlens = {
     pname = "gitlens";
-    version = "2024.7.1905";
+    version = "2024.7.2305";
     src = fetchurl {
-      url = "https://eamodio.gallery.vsassets.io/_apis/public/gallery/publisher/eamodio/extension/gitlens/2024.7.1905/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "gitlens-2024.7.1905.zip";
-      sha256 = "sha256-qWiKiGD9/TZsjKsSy9UyVD1nTTMF09tCIAk4ScQQsbw=";
+      url = "https://eamodio.gallery.vsassets.io/_apis/public/gallery/publisher/eamodio/extension/gitlens/2024.7.2305/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "gitlens-2024.7.2305.zip";
+      sha256 = "sha256-/HeT0K+tfF1QhUvrYT6WD9II/igEFhgpmbogc1+PB28=";
     };
     publisher = "eamodio";
     name = "gitlens";
@@ -168,11 +168,11 @@
   };
   language-julia = {
     pname = "language-julia";
-    version = "1.96.1";
+    version = "1.102.1";
     src = fetchurl {
-      url = "https://julialang.gallery.vsassets.io/_apis/public/gallery/publisher/julialang/extension/language-julia/1.96.1/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "language-julia-1.96.1.zip";
-      sha256 = "sha256-mntt2AQwZHG3E5jHeSVsZUDxwTSIaZgf2NP8rp0jbjo=";
+      url = "https://julialang.gallery.vsassets.io/_apis/public/gallery/publisher/julialang/extension/language-julia/1.102.1/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "language-julia-1.102.1.zip";
+      sha256 = "sha256-R6VnbTILLOMPvK9Jcu8MvEThWGMMAbopfUzrBx3PKcU=";
     };
     publisher = "julialang";
     name = "language-julia";
@@ -366,11 +366,11 @@
   };
   tabnine-vscode = {
     pname = "tabnine-vscode";
-    version = "3.129.0";
+    version = "3.131.0";
     src = fetchurl {
-      url = "https://TabNine.gallery.vsassets.io/_apis/public/gallery/publisher/TabNine/extension/tabnine-vscode/3.129.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "tabnine-vscode-3.129.0.zip";
-      sha256 = "sha256-65NtbO/oh0v6cd7MJDpCY/LRxVevbBfH1+0Qfhv1f1Y=";
+      url = "https://TabNine.gallery.vsassets.io/_apis/public/gallery/publisher/TabNine/extension/tabnine-vscode/3.131.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "tabnine-vscode-3.131.0.zip";
+      sha256 = "sha256-tDjyfde2zkLmVKdOmpQBGuZH2Fs9pkzwH2Da192L4Gg=";
     };
     publisher = "TabNine";
     name = "tabnine-vscode";
