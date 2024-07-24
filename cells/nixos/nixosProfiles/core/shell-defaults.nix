@@ -71,7 +71,7 @@ in
       # FIXME: nixos-option = "nixos-option -I nixpkgs=${self}/lib/compat";
       nix-cleanup = "nix-collect-garbage -d && sudo nix-collect-garbage -d";
 
-      # top
+      # top matcha-dark-sea
       top = "${pkgs.btop}/bin/btop --low-color";
     };
 }
