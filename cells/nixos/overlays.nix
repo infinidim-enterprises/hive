@@ -44,6 +44,7 @@ rec {
     inputs.hyprland-hypridle.overlays.default
     inputs.hyprland-hyprutils.overlays.default
     inputs.hyprland-hycov.overlays.default
+    inputs.hyprland-xdg-desktop-portal.overlays.default
 
     (final: prev: {
       hyprlandPlugins = prev.hyprlandPlugins // {

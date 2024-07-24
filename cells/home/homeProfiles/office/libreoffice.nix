@@ -1,8 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    # TODO: vendor libreoffice
-    libreoffice # -fresh
+    libreoffice-bin
     (hunspellWithDicts
       (with hunspellDicts; [
         ru_RU

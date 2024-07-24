@@ -10,7 +10,15 @@ in
   inherit
     (nixpkgs-release)
     atuin
+
     nyxt
+
+    # chromium
+    # libreoffice-bin
+    # libreoffice-still
+    # onlyoffice-bin
+    # onlyoffice-bin_latest
+
     gimp
     gimpPlugins
     gimp-with-plugins;
