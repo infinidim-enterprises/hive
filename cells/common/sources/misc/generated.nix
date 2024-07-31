@@ -16,16 +16,16 @@
   };
   adguard-filters_adguardteam = {
     pname = "adguard-filters_adguardteam";
-    version = "01509ef57d72c6a9d468e39b2915562fbc6fb3e7";
+    version = "58d5f0d1c2216d5eb1f53d7fb08937c772bb944c";
     src = fetchgit {
       url = "https://github.com/AdguardTeam/AdguardFilters";
-      rev = "01509ef57d72c6a9d468e39b2915562fbc6fb3e7";
+      rev = "58d5f0d1c2216d5eb1f53d7fb08937c772bb944c";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-zQYRw8gdXuaGtfHj3IUJz9N+MqqdGHTp8gFiZlAGNos=";
+      sha256 = "sha256-OFEaS1sTtCvVHQKmEat80h7lQZKPeCyvuBDiImucsAM=";
     };
-    date = "2024-07-23";
+    date = "2024-07-31";
   };
   adguard-filters_romania = {
     pname = "adguard-filters_romania";
@@ -68,15 +68,15 @@
   };
   chatgpt-wrapper = {
     pname = "chatgpt-wrapper";
-    version = "ada591068e935dcc64a8c964ff8415c6a0051c74";
+    version = "5eb94f2fe08709aeabf5b6e37da9af3d08819954";
     src = fetchFromGitHub {
       owner = "llm-workflow-engine";
       repo = "llm-workflow-engine";
-      rev = "ada591068e935dcc64a8c964ff8415c6a0051c74";
+      rev = "5eb94f2fe08709aeabf5b6e37da9af3d08819954";
       fetchSubmodules = false;
-      sha256 = "sha256-XkOuWXlfO3oNjH1c0NAj9ASAQEeqlDNSrj88Su3cn/Q=";
+      sha256 = "sha256-MM/tPtLHNQ7VEraxfLDWuOC3HB59QakR89L3WG9xKCY=";
     };
-    date = "2024-07-18";
+    date = "2024-07-25";
   };
   cl-hash-util = {
     pname = "cl-hash-util";
@@ -251,16 +251,16 @@
   };
   ipxe = {
     pname = "ipxe";
-    version = "5a9f476d4f1395e69cbb845d7379b0e3591028c0";
+    version = "0dc8933f6769e375a645ed4e9053855191cf8170";
     src = fetchgit {
       url = "https://github.com/ipxe/ipxe";
-      rev = "5a9f476d4f1395e69cbb845d7379b0e3591028c0";
+      rev = "0dc8933f6769e375a645ed4e9053855191cf8170";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-I9Dsze42sg4EhK8/QdQ2XDpWrbfCYVdQDkmHJ75r5mM=";
+      sha256 = "sha256-QznmKbyfWsCsd7MDLEbl/l7RfjMiJawgiAc5TMLbFJw=";
     };
-    date = "2024-07-08";
+    date = "2024-07-30";
   };
   iterable-io = {
     pname = "iterable-io";
@@ -272,13 +272,13 @@
   };
   langchain = {
     pname = "langchain";
-    version = "langchain-core==0.2.22";
+    version = "langchain-core==0.2.25";
     src = fetchFromGitHub {
       owner = "langchain-ai";
       repo = "langchain";
-      rev = "langchain-core==0.2.22";
+      rev = "langchain-core==0.2.25";
       fetchSubmodules = false;
-      sha256 = "sha256-c3lz34Pgy54b2Wbm06QfESc2FjY/dyGqZW1+WBhkKTA=";
+      sha256 = "sha256-K0jl7S5hbU2Hd7lvqwPjFENZXlTypf9JxbFhwjdilX0=";
     };
   };
   ledger-live-desktop = {
@@ -332,16 +332,16 @@
   };
   pam_usb = {
     pname = "pam_usb";
-    version = "d092eaa40453be54590e498fdb46671e5f29d1b7";
+    version = "d2d076ef153f3983258a1ab9cd11da50d159ac3f";
     src = fetchgit {
       url = "https://github.com/mcdope/pam_usb";
-      rev = "d092eaa40453be54590e498fdb46671e5f29d1b7";
+      rev = "d2d076ef153f3983258a1ab9cd11da50d159ac3f";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-/WFv5zAJiRWaTj0sArmU/GnXNelQEhbbof/fMv2Bp7c=";
+      sha256 = "sha256-IJsnpczMN5H3uEgSIraNhnsD19k6rUJOz8J0Sk+CqlU=";
     };
-    date = "2024-07-22";
+    date = "2024-07-26";
   };
   paper-store = {
     pname = "paper-store";
@@ -358,12 +358,12 @@
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "a9e5f6bfcd6d8025f6ee98c563c8e31eb322ec75";
+    version = "c841bb40af50238e17b96558aceb5ca8746fd1ea";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";
     };
-    date = "2024-07-23";
+    date = "2024-07-31";
   };
   pgp-key-generation = {
     pname = "pgp-key-generation";
@@ -410,15 +410,15 @@
   };
   s5cmd = {
     pname = "s5cmd";
-    version = "89218dc7fd484030367b3139961ba1be061d8b2b";
+    version = "c280956c9c2e2789041e81e51cb1f9c4529340cc";
     src = fetchFromGitHub {
       owner = "peak";
       repo = "s5cmd";
-      rev = "89218dc7fd484030367b3139961ba1be061d8b2b";
+      rev = "c280956c9c2e2789041e81e51cb1f9c4529340cc";
       fetchSubmodules = false;
-      sha256 = "sha256-o7qL4RQis9YG1PTVHN+h7e8jjZJ2ObhWFLw5uscbdCg=";
+      sha256 = "sha256-5sAi+yVvhuJs/BSkzHDNx2uyXukKfmBfhQfRRzOWJ7c=";
     };
-    date = "2024-07-16";
+    date = "2024-07-26";
   };
   solarized-dark-gnome-shell-2020 = {
     pname = "solarized-dark-gnome-shell-2020";
@@ -486,17 +486,17 @@
   };
   stumpwm-git = {
     pname = "stumpwm-git";
-    version = "11be454df8f01f2ed7aa20cffe23f16f1d7b7bd6";
+    version = "bfa43b7ec9658d3bf13304f0c04df88ce356acac";
     src = fetchFromGitHub {
       owner = "stumpwm";
       repo = "stumpwm";
-      rev = "11be454df8f01f2ed7aa20cffe23f16f1d7b7bd6";
+      rev = "bfa43b7ec9658d3bf13304f0c04df88ce356acac";
       fetchSubmodules = false;
-      sha256 = "sha256-aEacyvOv0mOCoPyrPOoZHhCsLNCMp+VSLr9mfamuk8A=";
+      sha256 = "sha256-bJMbHWNiEqp2bbRnX7D6lAXW5CnQx1YM0yZ2uXw8tNQ=";
     };
     asd = "stumpwm";
     system = "stumpwm";
-    date = "2024-04-18";
+    date = "2024-07-25";
   };
   stumpwm-release = {
     pname = "stumpwm-release";
@@ -513,13 +513,13 @@
   };
   sublimeSolarized = {
     pname = "sublimeSolarized";
-    version = "2.7.5";
+    version = "3.0.0";
     src = fetchFromGitHub {
       owner = "braver";
       repo = "Solarized";
-      rev = "2.7.5";
+      rev = "3.0.0";
       fetchSubmodules = false;
-      sha256 = "sha256-5T8Ga6QHliA0+rGf23peBjoSNtxVlqZLltMx1OKdQFc=";
+      sha256 = "sha256-+hxwoYjieSGeiBpQ2T8LXBwb+Lf/Gjh2LLlG/WJ4bT0=";
     };
   };
   tfenv = {

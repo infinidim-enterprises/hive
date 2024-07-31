@@ -3,33 +3,33 @@
 {
   bash-ide-vscode = {
     pname = "bash-ide-vscode";
-    version = "1.41.0";
+    version = "1.42.0";
     src = fetchurl {
-      url = "https://mads-hartmann.gallery.vsassets.io/_apis/public/gallery/publisher/mads-hartmann/extension/bash-ide-vscode/1.41.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "bash-ide-vscode-1.41.0.zip";
-      sha256 = "sha256-glaoBIYnjl5yXA804htdbnbsgLjJyyChel0AIdN0hD0=";
+      url = "https://mads-hartmann.gallery.vsassets.io/_apis/public/gallery/publisher/mads-hartmann/extension/bash-ide-vscode/1.42.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "bash-ide-vscode-1.42.0.zip";
+      sha256 = "sha256-NcL9qPpqDuXrrsmvTvQZFh4biRJGCue+SyRul458vE0=";
     };
     publisher = "mads-hartmann";
     name = "bash-ide-vscode";
   };
   codium = {
     pname = "codium";
-    version = "0.9.10";
+    version = "0.9.11";
     src = fetchurl {
-      url = "https://Codium.gallery.vsassets.io/_apis/public/gallery/publisher/Codium/extension/codium/0.9.10/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "codium-0.9.10.zip";
-      sha256 = "sha256-8lJ1FvTPo9QHQ8BZomY+b4DB8sUz+kkePQQ8HnP0/tQ=";
+      url = "https://Codium.gallery.vsassets.io/_apis/public/gallery/publisher/Codium/extension/codium/0.9.11/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "codium-0.9.11.zip";
+      sha256 = "sha256-5ip0/F22Qqk3+qSXlB5yTJWjqGtmCxaSBzTHa4fpTPM=";
     };
     publisher = "Codium";
     name = "codium";
   };
   copilot = {
     pname = "copilot";
-    version = "1.214.998";
+    version = "1.219.1019";
     src = fetchurl {
-      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.214.998/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "copilot-1.214.998.zip";
-      sha256 = "sha256-Trdh/w+10d7t35h5d52zkh0CP4hUnwXHq7ovuBhLaD0=";
+      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.219.1019/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "copilot-1.219.1019.zip";
+      sha256 = "sha256-W39hZyJ5XtDghkKu4Ml99M0/jZ1tVMGesKAKPquTkb8=";
     };
     publisher = "GitHub";
     name = "copilot";

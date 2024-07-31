@@ -3,15 +3,15 @@
 {
   getoptions = {
     pname = "getoptions";
-    version = "114b42d049e66a3f7b198a87a57169dbff599dc9";
+    version = "06d5f27eb2f87d5d60296a873196b683fc3719f2";
     src = fetchFromGitHub {
       owner = "ko1nksm";
       repo = "getoptions";
-      rev = "114b42d049e66a3f7b198a87a57169dbff599dc9";
+      rev = "06d5f27eb2f87d5d60296a873196b683fc3719f2";
       fetchSubmodules = false;
-      sha256 = "sha256-bbqLdc+GbxlXnUCK1hSCVUDYJen5VUUH3/l/DNGKKcA=";
+      sha256 = "sha256-HHxImHMT5862ysI+1QGkzaA21YsrUUUOH2LwAkVBPf0=";
     };
-    date = "2024-07-22";
+    date = "2024-07-30";
   };
   lorri = {
     pname = "lorri";
@@ -53,15 +53,15 @@
   };
   shellspec = {
     pname = "shellspec";
-    version = "2e434cea536535599ffb91bde1598035938491e7";
+    version = "9ff9261b5df1913b4853401a6219c7cf74dbdbbe";
     src = fetchFromGitHub {
       owner = "shellspec";
       repo = "shellspec";
-      rev = "2e434cea536535599ffb91bde1598035938491e7";
+      rev = "9ff9261b5df1913b4853401a6219c7cf74dbdbbe";
       fetchSubmodules = false;
-      sha256 = "sha256-SwklJTZR34IrYErObfzbdjavR6RxwTAjBrr/lrKlkBg=";
+      sha256 = "sha256-6KnzSdaP8tzr/A1xm04ywXVn/kpHApTnr0CptUmiwBw=";
     };
-    date = "2024-07-20";
+    date = "2024-07-30";
   };
   shflags = {
     pname = "shflags";
@@ -89,15 +89,15 @@
   };
   zsh-plugin_any-nix-shell = {
     pname = "zsh-plugin_any-nix-shell";
-    version = "e61713d379d68d1f097fc23bb8d0b0b7c3f3843d";
+    version = "1f5d3d172bc83fb46fc7eedbac2a8b9d510ae195";
     src = fetchFromGitHub {
       owner = "haslersn";
       repo = "any-nix-shell";
-      rev = "e61713d379d68d1f097fc23bb8d0b0b7c3f3843d";
+      rev = "1f5d3d172bc83fb46fc7eedbac2a8b9d510ae195";
       fetchSubmodules = false;
-      sha256 = "sha256-n4+aokW5o3EuXKqyc12vRsn5Mlkvdso27AdpahhySYw=";
+      sha256 = "sha256-t6+LKSGWmkHQhfqw/4Ztz4QgDXQ2RZr9R/mMEEA3jlY=";
     };
-    date = "2024-07-20";
+    date = "2024-07-23";
   };
   zsh-plugin_aw-watcher-shell = {
     pname = "zsh-plugin_aw-watcher-shell";
@@ -164,16 +164,16 @@
   };
   zsh-plugin_oh-my-zsh = {
     pname = "zsh-plugin_oh-my-zsh";
-    version = "8127e5838c24a7fbfaac5b9a02609e033cb3c5e2";
+    version = "d525e80355597d752f941edfe0415b3ae881a774";
     src = fetchgit {
       url = "https://github.com/robbyrussell/oh-my-zsh";
-      rev = "8127e5838c24a7fbfaac5b9a02609e033cb3c5e2";
+      rev = "d525e80355597d752f941edfe0415b3ae881a774";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-zSmzBYY+4HXfb0YnrRlw36y5TBJIsp4uur5FOgZ3KBA=";
+      sha256 = "sha256-nzf9wg5t6o0YJMBzFIG6hjfh05jj/+v9Pe2NcyRdBNY=";
     };
-    date = "2024-07-21";
+    date = "2024-07-30";
   };
   zsh-plugin_tipz = {
     pname = "zsh-plugin_tipz";
@@ -229,16 +229,16 @@
   };
   zsh-plugin_zsh-completions = {
     pname = "zsh-plugin_zsh-completions";
-    version = "a50d486f6d3ce45c842c394a493326c3c66db061";
+    version = "f8c41dbdbba6687140c0c8a9efde617eb13a2ae0";
     src = fetchgit {
       url = "https://github.com/zsh-users/zsh-completions";
-      rev = "a50d486f6d3ce45c842c394a493326c3c66db061";
+      rev = "f8c41dbdbba6687140c0c8a9efde617eb13a2ae0";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-d4W0Gw46gw4GXLT5ESLgUDH0ngg0Cy6S+0lLOMjmHno=";
+      sha256 = "sha256-WCpq/OcjsFfUqPa/1FkOyRs1JMUbFaLpBF0bJlCp0GE=";
     };
-    date = "2024-07-17";
+    date = "2024-07-29";
   };
   zsh-plugin_zsh-history-substring-search = {
     pname = "zsh-plugin_zsh-history-substring-search";

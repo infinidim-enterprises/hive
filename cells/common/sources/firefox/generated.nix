@@ -451,10 +451,10 @@
   };
   "duckduckgo-for-firefox" = rec {
     pname = "duckduckgo-for-firefox";
-    version = "2024.7.10";
+    version = "2024.7.24";
     addonId = "jid1-ZAdIEUB7XOzOJw@jetpack";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4317796/duckduckgo_for_firefox-2024.7.10.xpi";
-    sha256 = "af5a94c1c5bc2564a092e581c06c283b43ca480d037e324e719df1775ba0a9ae";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4325805/duckduckgo_for_firefox-2024.7.24.xpi";
+    sha256 = "e1a71dff13da64d25341c18184da301b0f248434764563f90ad3de040da46b57";
     meta = with lib;
       {
         homepage = "https://duckduckgo.com/app";
@@ -491,10 +491,10 @@
   };
   "ether-metamask" = rec {
     pname = "ether-metamask";
-    version = "11.16.15";
+    version = "11.16.16";
     addonId = "webextension@metamask.io";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4314725/ether_metamask-11.16.15.xpi";
-    sha256 = "0ae84354d844454142312a12a508154d29588659eb87fa6a03707601ded22105";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4326873/ether_metamask-11.16.16.xpi";
+    sha256 = "c91ea731551b8f2fdf32a87735a60eb607541872e71969d623b3c462b8f7d67e";
     meta = with lib;
       {
         description = "Ethereum Browser Extension";
@@ -583,10 +583,10 @@
   };
   "languagetool" = rec {
     pname = "languagetool";
-    version = "8.10.4";
+    version = "8.9.1";
     addonId = "languagetool-webextension@languagetool.org";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4317259/languagetool-8.10.4.xpi";
-    sha256 = "cf5fed5704ac8b6d4052fcf5819d1aa46ee61c76811393a7e355064baa32679c";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4298468/languagetool-8.9.1.xpi";
+    sha256 = "0747fcd4d7066ac746d140b93870a37eb5cf3241c3a5759128c54bf12b14feea";
     meta = with lib;
       {
         homepage = "https://languagetool.org";
