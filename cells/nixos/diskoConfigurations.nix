@@ -434,6 +434,10 @@ in
 
     };
 
+  # kate:
+  # ata-SanDisk_SSD_PLUS_480GB_1941A7800295
+  # wwn-0x5001b448b1639122
+
   oglaroon =
     { disks ? [ "/dev/disk/by-id/nvme-CT1000P2SSD8_2228E648DC10" ], ... }:
     {

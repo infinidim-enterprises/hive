@@ -113,11 +113,11 @@
   };
   gitlens = {
     pname = "gitlens";
-    version = "2024.7.3005";
+    version = "2024.8.205";
     src = fetchurl {
-      url = "https://eamodio.gallery.vsassets.io/_apis/public/gallery/publisher/eamodio/extension/gitlens/2024.7.3005/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "gitlens-2024.7.3005.zip";
-      sha256 = "sha256-o4tRcT672V5b3o2VFdadDCygHcn2hnRevJ3kFt2D+l0=";
+      url = "https://eamodio.gallery.vsassets.io/_apis/public/gallery/publisher/eamodio/extension/gitlens/2024.8.205/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "gitlens-2024.8.205.zip";
+      sha256 = "sha256-kplfelccRhZ2ElJSECyIov454XPfq6TIhAxIjEZmssg=";
     };
     publisher = "eamodio";
     name = "gitlens";

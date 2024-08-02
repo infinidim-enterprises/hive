@@ -29,7 +29,7 @@ rec {
     [
       numix-solarized-gtk-theme
       make-desktopitem
-      # NOTE: obsolete masterpdfeditor
+      masterpdfeditor # NOTE: required for 5.9.85
       firefox-addons
       # stumpwm
     ];

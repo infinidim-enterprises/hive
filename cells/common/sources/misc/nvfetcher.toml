@@ -277,8 +277,9 @@ fetch.github = "braver/Solarized"
 
 # Office apps
 [masterpdfeditor]
-src.manual = "5.9.82"
-fetch.url = "https://code-industry.net/public/master-pdf-editor-$ver-qt5.x86_64.tar.gz"
+# http://code-industry.net/public/master-pdf-editor-5.9.85-qt5.x86_64-qt_include.tar.gz
+src.manual = "5.9.85"
+fetch.url = "https://code-industry.net/public/master-pdf-editor-$ver-qt5.x86_64-qt_include.tar.gz"
 
 [ledger-live-desktop]
 # src.manual = "2.57.0"
