@@ -552,6 +552,13 @@ in
       "move 100 100, class:^(Vlc)$, title:^(Open Directory|Select one or multiple files)$"
       "stayfocused, class:^(Vlc)$, title:^(Open Directory|Select one or multiple files)$"
       "dimaround, class:^(Vlc)$, title:^(Open Directory|Select one or multiple files)$"
+
+      "float, class:^(net.code-industry.masterpdfeditor5)$, title:^(Print)$"
+      "size 600 700, class:^(net.code-industry.masterpdfeditor5)$, title:^(Print)$"
+      "move 100 15, class:^(net.code-industry.masterpdfeditor5)$, title:^(Print)$"
+      "stayfocused, class:^(net.code-industry.masterpdfeditor5)$, title:^(Print)$"
+      "dimaround, class:^(net.code-industry.masterpdfeditor5)$, title:^(Print)$"
+
     ];
   };
 
