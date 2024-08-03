@@ -583,10 +583,10 @@
   };
   "languagetool" = rec {
     pname = "languagetool";
-    version = "8.9.1";
+    version = "8.11.2";
     addonId = "languagetool-webextension@languagetool.org";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4298468/languagetool-8.9.1.xpi";
-    sha256 = "0747fcd4d7066ac746d140b93870a37eb5cf3241c3a5759128c54bf12b14feea";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4329853/languagetool-8.11.2.xpi";
+    sha256 = "bfac73229d0973370d163cd607ed36ada0aff46d597afee2c334cc58ec431210";
     meta = with lib;
       {
         homepage = "https://languagetool.org";
@@ -1290,10 +1290,10 @@
   };
   "ublock-origin" = rec {
     pname = "ublock-origin";
-    version = "1.58.0";
+    version = "1.59.0";
     addonId = "uBlock0@raymondhill.net";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4290466/ublock_origin-1.58.0.xpi";
-    sha256 = "470c56994a7174db21578adce598b158a5dc0970c87c5cfe889ac632bd3085ea";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4328681/ublock_origin-1.59.0.xpi";
+    sha256 = "1db9c676a07d141f8d36dbbc24f9e3d64a6cc2340dbfc6c848bc4395f96cfb14";
     meta = with lib;
       {
         homepage = "https://github.com/gorhill/uBlock#ublock-origin";

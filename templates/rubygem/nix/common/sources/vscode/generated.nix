@@ -25,11 +25,11 @@
   };
   copilot = {
     pname = "copilot";
-    version = "1.219.1019";
+    version = "1.219.1028";
     src = fetchurl {
-      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.219.1019/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "copilot-1.219.1019.zip";
-      sha256 = "sha256-W39hZyJ5XtDghkKu4Ml99M0/jZ1tVMGesKAKPquTkb8=";
+      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.219.1028/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "copilot-1.219.1028.zip";
+      sha256 = "sha256-5f1P/CV6+Rp2kS9oSz5Ko5jMUt/Q6pWa9a+3nPyin6k=";
     };
     publisher = "GitHub";
     name = "copilot";
@@ -135,11 +135,11 @@
   };
   nix-ide = {
     pname = "nix-ide";
-    version = "0.3.1";
+    version = "0.3.3";
     src = fetchurl {
-      url = "https://jnoortheen.gallery.vsassets.io/_apis/public/gallery/publisher/jnoortheen/extension/nix-ide/0.3.1/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "nix-ide-0.3.1.zip";
-      sha256 = "sha256-05oMDHvFM/dTXB6T3rcDK3EiNG2T0tBN9Au9b+Bk7rI=";
+      url = "https://jnoortheen.gallery.vsassets.io/_apis/public/gallery/publisher/jnoortheen/extension/nix-ide/0.3.3/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "nix-ide-0.3.3.zip";
+      sha256 = "sha256-/vBbErwwecQhsqQwnw8ijooof8DPWt85symLQQtBC+Y=";
     };
     publisher = "jnoortheen";
     name = "nix-ide";

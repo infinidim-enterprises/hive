@@ -16,29 +16,29 @@
   };
   adguard-filters_adguardteam = {
     pname = "adguard-filters_adguardteam";
-    version = "58d5f0d1c2216d5eb1f53d7fb08937c772bb944c";
+    version = "f800ecf7bbd13e9570e03c2394197243299955f0";
     src = fetchgit {
       url = "https://github.com/AdguardTeam/AdguardFilters";
-      rev = "58d5f0d1c2216d5eb1f53d7fb08937c772bb944c";
+      rev = "f800ecf7bbd13e9570e03c2394197243299955f0";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-OFEaS1sTtCvVHQKmEat80h7lQZKPeCyvuBDiImucsAM=";
+      sha256 = "sha256-ZlzFNBMGzeOagCpkrmhHjkBf1LsuqtKd2Zcglz7XBLI=";
     };
-    date = "2024-07-31";
+    date = "2024-08-03";
   };
   adguard-filters_romania = {
     pname = "adguard-filters_romania";
-    version = "d7944ea8ba3358e58a3c25071bb72c141f45eaef";
+    version = "0a9a5316463ff7ae6d782827f8d4421e7e3cf211";
     src = fetchgit {
       url = "https://github.com/tcptomato/ROad-Block";
-      rev = "d7944ea8ba3358e58a3c25071bb72c141f45eaef";
+      rev = "0a9a5316463ff7ae6d782827f8d4421e7e3cf211";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-A8qUJlFq698GmVGzWtCd2lFe4+KKbFIjUj/SvGFX+Ls=";
+      sha256 = "sha256-DBH7syyS/FYl/nmFL8apCA4yrgFQlGJ6IZMlwEhjOKE=";
     };
-    date = "2024-07-12";
+    date = "2024-07-31";
   };
   age-plugin-trezor = {
     pname = "age-plugin-trezor";
@@ -251,16 +251,16 @@
   };
   ipxe = {
     pname = "ipxe";
-    version = "0dc8933f6769e375a645ed4e9053855191cf8170";
+    version = "a064d397688930dcb341f62587db4e8e786777a0";
     src = fetchgit {
       url = "https://github.com/ipxe/ipxe";
-      rev = "0dc8933f6769e375a645ed4e9053855191cf8170";
+      rev = "a064d397688930dcb341f62587db4e8e786777a0";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-QznmKbyfWsCsd7MDLEbl/l7RfjMiJawgiAc5TMLbFJw=";
+      sha256 = "sha256-Sgfs+AV3aAaeh8pH0IEsy7rpUIhw4pvLwt2b9ffQLrk=";
     };
-    date = "2024-07-30";
+    date = "2024-08-01";
   };
   iterable-io = {
     pname = "iterable-io";
@@ -272,13 +272,13 @@
   };
   langchain = {
     pname = "langchain";
-    version = "langchain-core==0.2.25";
+    version = "langchain-core==0.2.28";
     src = fetchFromGitHub {
       owner = "langchain-ai";
       repo = "langchain";
-      rev = "langchain-core==0.2.25";
+      rev = "langchain-core==0.2.28";
       fetchSubmodules = false;
-      sha256 = "sha256-K0jl7S5hbU2Hd7lvqwPjFENZXlTypf9JxbFhwjdilX0=";
+      sha256 = "sha256-S42AEZDKpUhCMQqR2CgeAbQAMywV29Sf+9tdvwThORc=";
     };
   };
   ledger-live-desktop = {
@@ -332,16 +332,16 @@
   };
   pam_usb = {
     pname = "pam_usb";
-    version = "d2d076ef153f3983258a1ab9cd11da50d159ac3f";
+    version = "7740bc1e901821af3801b4a9ce27fc168f7253d3";
     src = fetchgit {
       url = "https://github.com/mcdope/pam_usb";
-      rev = "d2d076ef153f3983258a1ab9cd11da50d159ac3f";
+      rev = "7740bc1e901821af3801b4a9ce27fc168f7253d3";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-IJsnpczMN5H3uEgSIraNhnsD19k6rUJOz8J0Sk+CqlU=";
+      sha256 = "sha256-RHCFFch6Tw/8RYNaT2jNHlMLYUr3n1iDpvzTleiPEgo=";
     };
-    date = "2024-07-26";
+    date = "2024-08-02";
   };
   paper-store = {
     pname = "paper-store";
@@ -358,12 +358,12 @@
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "c841bb40af50238e17b96558aceb5ca8746fd1ea";
+    version = "81d6cb6d11129366db45da17a0825b54c22c1a82";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";
     };
-    date = "2024-07-31";
+    date = "2024-08-02";
   };
   pgp-key-generation = {
     pname = "pgp-key-generation";
