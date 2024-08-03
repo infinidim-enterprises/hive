@@ -55,9 +55,9 @@ in
   # boot.plymouth.enable = true;
   # pkgs.plymouth-matrix-theme
 
-  hardware.bumblebee.enable = true;
-  hardware.bumblebee.group = "video";
-  hardware.bumblebee.driver = "nvidia";
+  # hardware.bumblebee.enable = true;
+  # hardware.bumblebee.group = "video";
+  # hardware.bumblebee.driver = "nvidia";
 
   boot.consoleLogLevel = 0;
   boot.kernelParams = [ "drm.debug=0" "modeset=1" ];
