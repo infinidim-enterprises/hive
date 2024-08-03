@@ -452,6 +452,13 @@ in
       inherit zpool;
     };
 
+  kate =
+    { disks ? [ "/dev/disk/by-id/ata-SanDisk_SSD_PLUS_480GB_1941A7800295" ], ... }:
+    {
+      disk = mkPartitions { inherit disks; };
+      inherit zpool;
+    };
+
   folfanga = { disks ? [ "/dev/disk/by-id/mmc-DF4064_0x33157f7a" ], lib, ... }:
     let
       inherit (lib) listToAttrs nameValuePair removePrefix;

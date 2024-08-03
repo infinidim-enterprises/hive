@@ -14,10 +14,9 @@ in
       services.kanshi.settings =
         let
           output_panel = {
-            criteria = "DSI-1";
-            mode = "720x1280";
+            criteria = "eDP-1";
+            mode = "1920x1080";
             status = "enable";
-            transform = "270";
             scale = 1.0;
           };
           output_HDMI-A-1 = {
@@ -31,13 +30,13 @@ in
           {
             profile.name = "builtin_panel";
             profile.outputs = [ (output_panel // { position = "0,0"; }) ];
-          }
 
+          }
           {
             profile.name = "panel_and_hdmi";
             profile.outputs = [
               (output_HDMI-A-1 // { position = "0,0"; })
-              (output_panel // { position = "320,1080"; })
+              (output_panel // { position = "0,1080"; })
             ];
           }
         ];
@@ -48,7 +47,7 @@ in
         && !config.services.kanshi.enable)
       {
         wayland.windowManager.hyprland.settings.monitor = [
-          "DSI-1,preferred,auto,1,transform,3"
+          "eDP-1,preferred,auto,1"
         ];
       })
   ];
@@ -56,61 +55,32 @@ in
   # boot.plymouth.enable = true;
   # pkgs.plymouth-matrix-theme
 
+  hardware.bumblebee.enable = true;
+  hardware.bumblebee.group = "video";
+  hardware.bumblebee.driver = "nvidia";
+
   boot.consoleLogLevel = 0;
   boot.kernelParams = [ "drm.debug=0" "modeset=1" ];
-  # NOTE: tradeoff - get lower wifi speeds, but at least no interruptions
-  # NOTE: iwlmvm doesn't allow to disable BT Coex, check bt_coex_active module parameter
-  # bt_coex_active=0
-  # options iwlwifi 11n_disable=1
   boot.extraModprobeConfig = ''
     options i915 verbose_state_checks=0 guc_log_level=0
   '';
   boot.blacklistedKernelModules = [ "nouveau" ];
   boot.kernelPackages = pkgs.linuxPackages_xanmod_stable;
-  boot.kernelPatches = [
-    {
-      # NOTE: annoying messages removed on gpd micro-pc
-      # i915 *ERROR* GPIO index request failed (-ENOENT)
-      name = "disable showing '*ERROR* GPIO index request failed'";
-      patch = ./intel_dsi_vbt.patch;
-    }
-  ];
-
-  # services.xserver.deviceSection = ''
-  #   Option "AccelMethod" "glamor"
-  # '';
-
-  # services.xserver.moduleSection = ''
-  #   Load "dri2"
-  #   Load "glamoregl"
-  # '';
-
-  # services.xserver.monitorSection = ''
-  #   Option "Rotate" "right"
-  # '';
-
-  # services.xserver.videoDrivers = lib.mkIf config.services.xserver.enable [
-  #   # "modesetting"
-  #   "intel"
+  # boot.kernelPatches = [
+  #   {
+  #     name = "disable showing '*ERROR* GPIO index request failed'";
+  #     patch = ./intel_dsi_vbt.patch;
+  #   }
   # ];
 
   services.logind.powerKeyLongPress = "suspend";
   services.logind.lidSwitchExternalPower = "ignore";
   services.logind.lidSwitch = "ignore";
 
-  # NOTE: https://github.com/systemd/systemd/issues/25269
-  # services.logind.lidSwitch = "suspend-then-hibernate";
-  # systemd.sleep.extraConfig = ''
-  #   HibernateDelaySec=300s
-  # '';
-
-  # TODO: maybe? kernelParams = [ "i915.force_probe=!9a49" "xe.force_probe=9a49" ]
-
   disko.devices = cell.diskoConfigurations.${baseNameOf ./.} { inherit lib; };
   imports =
     [
       inputs.disko.nixosModules.disko
-      inputs.nixos-hardware.nixosModules.gpd-micropc
 
       cell.nixosProfiles.hardware.opengl
       cell.nixosProfiles.hardware.common
