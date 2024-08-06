@@ -55,7 +55,7 @@ in
       services.gpg-agent.pinentryPackage = pkgs.pinentry-gnome3;
     }
 
-    (mkIf gtk.enable {
+    (mkIf config.gtk.enable {
       gtk.gtk3.bookmarks = [
         "file:///home/vod/Documents/%D0%9A%D0%B0%D1%82%D1%8F"
         "file:///home/vod/Projects/insurance-agent/out IA out"
