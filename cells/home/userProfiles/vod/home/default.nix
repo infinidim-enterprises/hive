@@ -2,6 +2,12 @@
 with lib;
 let
   isHiDpi = hasAttrByPath [ "deploy" "params" "hidpi" ] osConfig && osConfig.deploy.params.hidpi.enable;
+  keys = [
+    "E3C4C12EDF24CA20F167CC7EE203A151BB3FD1AE" # yubikey
+    "382A371CFB344166F69076BE8587AB791475DF76" # nitrokey
+  ];
+  # NOTE: PASSWORD_STORE_KEY can use multiple fingerprints separated by a whitespace
+  PASSWORD_STORE_KEY = concatStringsSep " " keys;
 in
 {
   imports =
@@ -33,18 +39,28 @@ in
       # ballerina # NOTE: currently only java support
     ]);
 
-  home.packages = with pkgs; [
-    nyxt # TODO: nyxt proper config!
-    tigervnc
-    jekyll
-    vultr-cli
-    sops
+  config = mkMerge [
+    {
+      xdg.userDirs.extraConfig.XDG_PROJ_DIR = "${config.home.homeDirectory}/Projects";
+
+      home.packages = with pkgs; [
+        nyxt # TODO: nyxt proper config!
+        tigervnc
+        jekyll
+        vultr-cli
+        sops
+      ];
+
+      programs.password-store.settings = { inherit PASSWORD_STORE_KEY; };
+      services.gpg-agent.pinentryPackage = pkgs.pinentry-gnome3;
+    }
+
+    (mkIf gtk.enable {
+      gtk.gtk3.bookmarks = [
+        "file:///home/vod/Documents/%D0%9A%D0%B0%D1%82%D1%8F"
+        "file:///home/vod/Projects/insurance-agent/out IA out"
+      ];
+    })
   ];
 
-  xdg.userDirs.extraConfig.XDG_PROJ_DIR = "${config.home.homeDirectory}/Projects";
-
-  # NOTE: PASSWORD_STORE_KEY can use multiple fingerprints separated by a whitespace
-  programs.password-store.settings.PASSWORD_STORE_KEY = "E3C4C12EDF24CA20F167CC7EE203A151BB3FD1AE 382A371CFB344166F69076BE8587AB791475DF76";
-
-  services.gpg-agent.pinentryPackage = pkgs.pinentry-gnome3;
 }

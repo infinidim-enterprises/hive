@@ -2,6 +2,61 @@
 
 { pkgs, lib, config, name, osConfig, ... }:
 let
+  userChrome = ''
+    /* Hide horizontal tabs on top of the window */
+    #main-window[tabsintitlebar="true"]:not([extradragspace="true"]) #TabsToolbar > .toolbar-items {
+      opacity: 0;
+      pointer-events: none;
+    }
+    #main-window:not([tabsintitlebar="true"]) #TabsToolbar {
+      visibility: collapse !important;
+      height: 0 !important;
+      margin-bottom: 0 !important;
+    }
+  '';
+
+  # NOTE: https://bugzilla.mozilla.org/show_bug.cgi?id=259356
+  # NOTE: fuck you mozilla devs, you're a bunch of stupid wankers! - a 20 years old bug
+
+  common_extension = with pkgs.firefox-addons; [
+    russian-spellchecking-dic-3703
+    absolute-enable-right-click
+    export-tabs-urls-and-titles
+    istilldontcareaboutcookies
+    auto-tab-discard
+    swisscows-search
+    ugetintegration
+    tree-style-tab
+    darkreader
+    bukubrow
+
+    # ublock-origin
+    # skip-redirect
+    # privacy-badger17
+    # umatrix
+    # MAYBE: privacy-redirect
+    # temporary-containers
+    # ether-metamask
+    # aw-watcher-web
+    # NOTE: makes everything very slow - decentraleyes
+
+    # passff
+    # org-capture
+    # promnesia
+    # duckduckgo-for-firefox
+    # browserpass-ce
+    # reduxdevtools
+    # canvasblocker
+    # clearurls
+    # cookie-autodelete
+    # https-everywhere
+
+  ];
+
+  flaky_extensions = with pkgs.firefox-addons; [
+    multi-account-containers
+  ];
+
   search = {
     force = true;
     default = "Swisscows";
@@ -129,65 +184,21 @@ lib.mkMerge [
       # FIXME: firefox_decrypt # extract passwords from profiles TODO: make an overlay with git version.
     ];
 
-    programs.firefox.profiles.default = {
-      inherit settings search;
-      id = 0;
-      name = "default";
-      isDefault = true;
+    programs.firefox.profiles.default =
+      {
+        inherit settings search userChrome;
+        id = 0;
+        name = "default";
+        isDefault = true;
+        extensions = common_extension;
+      };
 
-      userChrome = ''
-        /* Hide horizontal tabs on top of the window */
-        #main-window[tabsintitlebar="true"]:not([extradragspace="true"]) #TabsToolbar > .toolbar-items {
-          opacity: 0;
-          pointer-events: none;
-        }
-        #main-window:not([tabsintitlebar="true"]) #TabsToolbar {
-          visibility: collapse !important;
-          height: 0 !important;
-          margin-bottom: 0 !important;
-        }
-      '';
-
-      # NOTE: https://bugzilla.mozilla.org/show_bug.cgi?id=259356
-      # NOTE: fuck you mozilla devs, you're a bunch of stupid wankers! - a 20 years old bug
-      extensions = with pkgs.firefox-addons; [
-        # ublock-origin
-        # skip-redirect
-        # privacy-badger17
-        # umatrix
-
-        multi-account-containers
-
-        istilldontcareaboutcookies
-        # MAYBE: privacy-redirect
-        tree-style-tab
-        auto-tab-discard
-        # temporary-containers
-
-        # ether-metamask
-        ugetintegration
-        bukubrow
-        russian-spellchecking-dic-3703
-        export-tabs-urls-and-titles
-        swisscows-search
-        darkreader
-
-        absolute-enable-right-click
-        # aw-watcher-web
-        # NOTE: makes everything very slow - decentraleyes
-
-        # passff
-        # org-capture
-        # promnesia
-        # duckduckgo-for-firefox
-        # browserpass-ce
-        # reduxdevtools
-        # canvasblocker
-        # clearurls
-        # cookie-autodelete
-        # https-everywhere
-        #
-      ];
+    programs.firefox.profiles.containers = {
+      inherit settings search userChrome;
+      id = 1;
+      name = "containers";
+      isDefault = false;
+      extensions = common_extension ++ flaky_extensions;
     };
   }
 ]

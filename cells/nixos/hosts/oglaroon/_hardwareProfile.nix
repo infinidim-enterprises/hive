@@ -1,5 +1,11 @@
 { inputs, cell, ... }:
 
+# FIXME: kernel: atkbd serio0: Use 'setkeycodes e02b <keycode>' to make it known.
+# kernel: atkbd serio0: Unknown key pressed (translated set 2, code 0xab on isa0060/serio0).
+# kernel: atkbd serio0: Use 'setkeycodes e02b <keycode>' to make it known.
+# kernel: atkbd serio0: Unknown key released (translated set 2, code 0xab on isa0060/serio0).
+# kernel: atkbd serio0: Use 'setkeycodes e02b <keycode>' to make it known.
+
 { config, lib, pkgs, ... }:
 {
   deploy.params.cpu = "amd";
