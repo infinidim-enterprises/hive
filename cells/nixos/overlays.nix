@@ -14,6 +14,7 @@ rec {
     ++ vscode;
 
   base = with inputs.cells.common.overlays; [
+    inputs.nixd.overlays.default
     inputs.nix-filter.overlays.default
     nixpkgs-unstable-overrides
     nixpkgs-release-overrides

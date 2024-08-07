@@ -271,7 +271,7 @@
     # emacs-overlay.url = "github:nix-community/emacs-overlay/c16be6de78ea878aedd0292aa5d4a1ee0a5da501";
 
     # LSP for nix
-    nixd.url = "github:nix-community/nixd";
+    nixd.url = "github:nix-community/nixd?ref=refs/tags/2.3.1";
     nix4nixd.url = "github:NixOS/nix/2.19.4";
     # TODO: https://github.com/nix-community/nixd/blob/main/nixd/docs/user-guide.md
     # flake-compat, so options are visible
