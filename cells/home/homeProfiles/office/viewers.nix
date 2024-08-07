@@ -6,11 +6,18 @@ lib.mkMerge
       xdg.mimeApps.associations.added."application/pdf" = "org.gnome.Evince.desktop";
       xdg.mimeApps.defaultApplications."application/pdf" = "org.gnome.Evince.desktop";
     })
+
     {
       home.packages = with pkgs; [
         font-manager # Simple font management for GTK desktop environments
         foliate # A simple and modern GTK eBook reader
         evince # GNOME's document viewer
       ];
+    }
+
+    {
+      programs.sioyek.enable = true;
+      # programs.sioyek.config = {};
+      # programs.sioyek.bindings = {};
     }
   ]
