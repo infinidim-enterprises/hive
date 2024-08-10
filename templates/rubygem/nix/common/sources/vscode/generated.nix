@@ -14,22 +14,22 @@
   };
   codium = {
     pname = "codium";
-    version = "0.9.11";
+    version = "0.9.12";
     src = fetchurl {
-      url = "https://Codium.gallery.vsassets.io/_apis/public/gallery/publisher/Codium/extension/codium/0.9.11/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "codium-0.9.11.zip";
-      sha256 = "sha256-5ip0/F22Qqk3+qSXlB5yTJWjqGtmCxaSBzTHa4fpTPM=";
+      url = "https://Codium.gallery.vsassets.io/_apis/public/gallery/publisher/Codium/extension/codium/0.9.12/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "codium-0.9.12.zip";
+      sha256 = "sha256-QPY2fwTQt1ppotN9FKKb2fbe+KdKdQGoRlbvAOfxh/o=";
     };
     publisher = "Codium";
     name = "codium";
   };
   copilot = {
     pname = "copilot";
-    version = "1.219.1019";
+    version = "1.221.1040";
     src = fetchurl {
-      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.219.1019/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "copilot-1.219.1019.zip";
-      sha256 = "sha256-W39hZyJ5XtDghkKu4Ml99M0/jZ1tVMGesKAKPquTkb8=";
+      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.221.1040/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "copilot-1.221.1040.zip";
+      sha256 = "sha256-s2vtT0mP72HI+UJWNTsdiUzRwm/xzd6QHANg+WlAB9I=";
     };
     publisher = "GitHub";
     name = "copilot";
@@ -135,11 +135,11 @@
   };
   nix-ide = {
     pname = "nix-ide";
-    version = "0.3.1";
+    version = "0.3.3";
     src = fetchurl {
-      url = "https://jnoortheen.gallery.vsassets.io/_apis/public/gallery/publisher/jnoortheen/extension/nix-ide/0.3.1/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "nix-ide-0.3.1.zip";
-      sha256 = "sha256-05oMDHvFM/dTXB6T3rcDK3EiNG2T0tBN9Au9b+Bk7rI=";
+      url = "https://jnoortheen.gallery.vsassets.io/_apis/public/gallery/publisher/jnoortheen/extension/nix-ide/0.3.3/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "nix-ide-0.3.3.zip";
+      sha256 = "sha256-/vBbErwwecQhsqQwnw8ijooof8DPWt85symLQQtBC+Y=";
     };
     publisher = "jnoortheen";
     name = "nix-ide";

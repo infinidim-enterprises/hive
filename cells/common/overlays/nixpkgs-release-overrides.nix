@@ -13,13 +13,23 @@ in
 
     nyxt
 
-    # chromium
-    # libreoffice-bin
-    # libreoffice-still
-    # onlyoffice-bin
-    # onlyoffice-bin_latest
+    firefox
+    chromium
+
+    libreoffice
+    libreoffice-bin
+    libreoffice-still
+    onlyoffice-bin
+    onlyoffice-bin_latest
 
     gimp
     gimpPlugins
-    gimp-with-plugins;
+    gimp-with-plugins
+
+    libguestfs
+    jekyll
+
+    vlc
+    v4l-utils
+    ffmpeg-full;
 }

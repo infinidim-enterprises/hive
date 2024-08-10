@@ -19,7 +19,7 @@ rec {
     nixpkgs-unstable-overrides
     nixpkgs-release-overrides
     nixpkgs-master-overrides
-    dart-fix
+    # dart-fix
     base16-schemes
     # linux-firmware-fix
     sources

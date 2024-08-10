@@ -1413,7 +1413,7 @@
         ],
         "hyprwayland-scanner": "hyprwayland-scanner",
         "nixpkgs": [
-          "nixpkgs-unstable"
+          "hyprland-nixpkgs-unstable"
         ],
         "systems": [
           "hyprland-systems"
@@ -1440,7 +1440,7 @@
     "hyprland-contrib": {
       "inputs": {
         "nixpkgs": [
-          "nixpkgs-unstable"
+          "hyprland-nixpkgs-unstable"
         ]
       },
       "locked": {
@@ -1484,7 +1484,7 @@
           "hyprland"
         ],
         "nixpkgs": [
-          "nixpkgs-unstable"
+          "hyprland-nixpkgs-unstable"
         ],
         "systems": [
           "hyprland",
@@ -1510,7 +1510,7 @@
         "hyprlang": "hyprlang_2",
         "hyprutils": "hyprutils",
         "nixpkgs": [
-          "nixpkgs-unstable"
+          "hyprland-nixpkgs-unstable"
         ],
         "systems": [
           "hyprland",
@@ -1536,7 +1536,7 @@
         "hyprlang": "hyprlang_3",
         "hyprutils": "hyprutils_2",
         "nixpkgs": [
-          "nixpkgs-unstable"
+          "hyprland-nixpkgs-unstable"
         ],
         "systems": [
           "hyprland",
@@ -1560,7 +1560,7 @@
     "hyprland-hyprutils": {
       "inputs": {
         "nixpkgs": [
-          "nixpkgs-unstable"
+          "hyprland-nixpkgs-unstable"
         ],
         "systems": "systems_6"
       },
@@ -1576,6 +1576,22 @@
       "original": {
         "type": "git",
         "url": "https://github.com/hyprwm/hyprutils"
+      }
+    },
+    "hyprland-nixpkgs-unstable": {
+      "locked": {
+        "lastModified": 1723151389,
+        "narHash": "sha256-9AVY0ReCmSGXHrlx78+1RrqcDgVSRhHUKDVV1LLBy28=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "13fe00cb6c75461901f072ae62b5805baef9f8b2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
       }
     },
     "hyprland-plugins": {
@@ -1680,7 +1696,7 @@
           "hyprland"
         ],
         "nixpkgs": [
-          "nixpkgs-unstable"
+          "hyprland-nixpkgs-unstable"
         ]
       },
       "locked": {
@@ -1702,7 +1718,7 @@
         "hyprland-protocols": "hyprland-protocols_2",
         "hyprlang": "hyprlang_4",
         "nixpkgs": [
-          "nixpkgs-unstable"
+          "hyprland-nixpkgs-unstable"
         ],
         "systems": "systems_8"
       },
@@ -3216,6 +3232,7 @@
         "hyprland-hypridle": "hyprland-hypridle",
         "hyprland-hyprlock": "hyprland-hyprlock",
         "hyprland-hyprutils": "hyprland-hyprutils",
+        "hyprland-nixpkgs-unstable": "hyprland-nixpkgs-unstable",
         "hyprland-plugins": "hyprland-plugins",
         "hyprland-systems": "hyprland-systems",
         "hyprland-virtual-desktops": "hyprland-virtual-desktops",
@@ -3893,7 +3910,7 @@
       "inputs": {
         "flake-compat": "flake-compat_11",
         "nixpkgs": [
-          "nixpkgs-unstable"
+          "hyprland-nixpkgs-unstable"
         ]
       },
       "locked": {

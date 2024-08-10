@@ -16,16 +16,16 @@
   };
   adguard-filters_adguardteam = {
     pname = "adguard-filters_adguardteam";
-    version = "7121ba66330f9a558f9271902cf4ba1f34c9b3a3";
+    version = "b6a0be7c053efb863b76400eeac044577d0d25d6";
     src = fetchgit {
       url = "https://github.com/AdguardTeam/AdguardFilters";
-      rev = "7121ba66330f9a558f9271902cf4ba1f34c9b3a3";
+      rev = "b6a0be7c053efb863b76400eeac044577d0d25d6";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-zxQm1AHdV13HPTCLXITcoltz2VQTewI3qfT+YaqBsLs=";
+      sha256 = "sha256-Jeg8EI9A9gJIv3BKSEiBJZmEP04KIDqnpIf25lwg2K4=";
     };
-    date = "2024-08-02";
+    date = "2024-08-10";
   };
   adguard-filters_romania = {
     pname = "adguard-filters_romania";
@@ -68,15 +68,15 @@
   };
   chatgpt-wrapper = {
     pname = "chatgpt-wrapper";
-    version = "5eb94f2fe08709aeabf5b6e37da9af3d08819954";
+    version = "e8eccfd1abea98715d44e09987f001a725fbb79f";
     src = fetchFromGitHub {
       owner = "llm-workflow-engine";
       repo = "llm-workflow-engine";
-      rev = "5eb94f2fe08709aeabf5b6e37da9af3d08819954";
+      rev = "e8eccfd1abea98715d44e09987f001a725fbb79f";
       fetchSubmodules = false;
-      sha256 = "sha256-MM/tPtLHNQ7VEraxfLDWuOC3HB59QakR89L3WG9xKCY=";
+      sha256 = "sha256-eRXsu5tGL9SnP23sk2GcTYPvme7woFfOj+lLkhtuNJY=";
     };
-    date = "2024-07-25";
+    date = "2024-08-08";
   };
   cl-hash-util = {
     pname = "cl-hash-util";
@@ -251,16 +251,16 @@
   };
   ipxe = {
     pname = "ipxe";
-    version = "a064d397688930dcb341f62587db4e8e786777a0";
+    version = "59e2b03e6ac842d0e69bc4f757bf6da452fca074";
     src = fetchgit {
       url = "https://github.com/ipxe/ipxe";
-      rev = "a064d397688930dcb341f62587db4e8e786777a0";
+      rev = "59e2b03e6ac842d0e69bc4f757bf6da452fca074";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-Sgfs+AV3aAaeh8pH0IEsy7rpUIhw4pvLwt2b9ffQLrk=";
+      sha256 = "sha256-if0y6nK1FYSp6je3h0QxLRCPhvc1wjPTEZIx5TNaNQ4=";
     };
-    date = "2024-08-01";
+    date = "2024-08-07";
   };
   iterable-io = {
     pname = "iterable-io";
@@ -272,13 +272,13 @@
   };
   langchain = {
     pname = "langchain";
-    version = "langchain-core==0.2.27";
+    version = "langchain-core==0.2.29";
     src = fetchFromGitHub {
       owner = "langchain-ai";
       repo = "langchain";
-      rev = "langchain-core==0.2.27";
+      rev = "langchain-core==0.2.29";
       fetchSubmodules = false;
-      sha256 = "sha256-pkx4GovHZiLuIzC4qS7TuI4pFiPf3YehKthVFWYfhGY=";
+      sha256 = "sha256-B4IPilAWFOgYolMn3I0QKrJg8Q8laMOQanxc4Grm010=";
     };
   };
   ledger-live-desktop = {
@@ -332,16 +332,16 @@
   };
   pam_usb = {
     pname = "pam_usb";
-    version = "d2d076ef153f3983258a1ab9cd11da50d159ac3f";
+    version = "7740bc1e901821af3801b4a9ce27fc168f7253d3";
     src = fetchgit {
       url = "https://github.com/mcdope/pam_usb";
-      rev = "d2d076ef153f3983258a1ab9cd11da50d159ac3f";
+      rev = "7740bc1e901821af3801b4a9ce27fc168f7253d3";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-IJsnpczMN5H3uEgSIraNhnsD19k6rUJOz8J0Sk+CqlU=";
+      sha256 = "sha256-RHCFFch6Tw/8RYNaT2jNHlMLYUr3n1iDpvzTleiPEgo=";
     };
-    date = "2024-07-26";
+    date = "2024-08-02";
   };
   paper-store = {
     pname = "paper-store";
@@ -358,12 +358,12 @@
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "e18c970b1ae118ecb5697fcf0dd0da1243596eb3";
+    version = "9419f50b646c1f2dcb06f90b67438895528fb0cd";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";
     };
-    date = "2024-08-02";
+    date = "2024-08-10";
   };
   pgp-key-generation = {
     pname = "pgp-key-generation";

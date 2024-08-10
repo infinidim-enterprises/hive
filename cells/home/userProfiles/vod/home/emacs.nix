@@ -148,7 +148,7 @@ in
     # nodePackages.vscode-json-languageserver-bin
     # nodePackages.vscode-css-languageserver-bin
     # nodePackages.vscode-html-languageserver-bin
-    ocamlPackages.digestif
+    # FIXME: ocamlPackages.digestif
 
     nodePackages.js-beautify
     nodePackages.stylelint

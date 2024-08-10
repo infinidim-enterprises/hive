@@ -583,10 +583,10 @@
   };
   "languagetool" = rec {
     pname = "languagetool";
-    version = "8.10.4";
+    version = "8.11.2";
     addonId = "languagetool-webextension@languagetool.org";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4317259/languagetool-8.10.4_kLk3srz.xpi";
-    sha256 = "6a8d859e8b1ebc6641f642e284d723cc07e5ae196c67dbb232d8d33ff96dce7c";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4329853/languagetool-8.11.2.xpi";
+    sha256 = "bfac73229d0973370d163cd607ed36ada0aff46d597afee2c334cc58ec431210";
     meta = with lib;
       {
         homepage = "https://languagetool.org";
@@ -651,10 +651,10 @@
   };
   "passff" = rec {
     pname = "passff";
-    version = "1.19.5";
+    version = "1.20";
     addonId = "passff@invicem.pro";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4303400/passff-1.19.5.xpi";
-    sha256 = "03331d671c759b8689726aca7146cc2e2d9a4118d2d00e184dda20d1176e79e7";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4333675/passff-1.20.xpi";
+    sha256 = "cf07997a5687f4a1db191b5229a97ff839ec29f581bce2b6fa42b141635e0f7d";
     meta = with lib;
       {
         homepage = "https://codeberg.org/PassFF/passff";
@@ -1264,10 +1264,10 @@
   };
   "tree-style-tab" = rec {
     pname = "tree-style-tab";
-    version = "4.0.20";
+    version = "4.0.21";
     addonId = "treestyletab@piro.sakura.ne.jp";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4310845/tree_style_tab-4.0.20.xpi";
-    sha256 = "1c1588dc4cafff49344cfc97df40d763651aea3964de774c925e460e8e307552";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4331020/tree_style_tab-4.0.21.xpi";
+    sha256 = "2865b81e8ff55db7eb64903ce95ccfe5b8676290a3c11e5375366c3d2694f805";
     meta = with lib;
       {
         homepage = "http://piro.sakura.ne.jp/xul/_treestyletab.html.en";

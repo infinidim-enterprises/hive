@@ -3,6 +3,8 @@
 { inputs, cell, ... }:
 final: prev: {
   dart = prev.dart.override {
-    sources = import "${inputs.nixpkgs-unstable}/pkgs/development/compilers/dart/sources.nix" { inherit (prev) fetchurl; };
+    sources = import
+      "${inputs.nixpkgs-unstable}/pkgs/development/compilers/dart/sources.nix"
+      { inherit (prev) fetchurl; };
   };
 }
