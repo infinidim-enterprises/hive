@@ -1,7 +1,7 @@
 {
     "getoptions": {
         "cargoLocks": null,
-        "date": "2024-07-30",
+        "date": "2024-08-08",
         "extract": null,
         "name": "getoptions",
         "passthru": null,
@@ -13,11 +13,11 @@
             "name": null,
             "owner": "ko1nksm",
             "repo": "getoptions",
-            "rev": "06d5f27eb2f87d5d60296a873196b683fc3719f2",
-            "sha256": "sha256-HHxImHMT5862ysI+1QGkzaA21YsrUUUOH2LwAkVBPf0=",
+            "rev": "0205dda5dd8d690b07c027b611bd041ef88f4148",
+            "sha256": "sha256-D7OECeaYHszwW6469cJ97Zf1A6J/dWVYDVxQkgCv32w=",
             "type": "github"
         },
-        "version": "06d5f27eb2f87d5d60296a873196b683fc3719f2"
+        "version": "0205dda5dd8d690b07c027b611bd041ef88f4148"
     },
     "lorri": {
         "cargoLocks": null,
@@ -85,7 +85,7 @@
     },
     "shellspec": {
         "cargoLocks": null,
-        "date": "2024-07-30",
+        "date": "2024-08-08",
         "extract": null,
         "name": "shellspec",
         "passthru": null,
@@ -97,11 +97,11 @@
             "name": null,
             "owner": "shellspec",
             "repo": "shellspec",
-            "rev": "9ff9261b5df1913b4853401a6219c7cf74dbdbbe",
-            "sha256": "sha256-6KnzSdaP8tzr/A1xm04ywXVn/kpHApTnr0CptUmiwBw=",
+            "rev": "cb649abb6913b52ef2be8cddd364b7704916ee65",
+            "sha256": "sha256-SUB5gKqDj6TII8kmHFsmP01zYou8A6jEhs4EP3CQhG4=",
             "type": "github"
         },
-        "version": "9ff9261b5df1913b4853401a6219c7cf74dbdbbe"
+        "version": "cb649abb6913b52ef2be8cddd364b7704916ee65"
     },
     "shflags": {
         "cargoLocks": null,
@@ -262,7 +262,7 @@
     },
     "zsh-plugin_oh-my-zsh": {
         "cargoLocks": null,
-        "date": "2024-08-01",
+        "date": "2024-08-09",
         "extract": null,
         "name": "zsh-plugin_oh-my-zsh",
         "passthru": null,
@@ -272,12 +272,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "0f752036988f7acc25c3ac87e1f6e268bb15e742",
-            "sha256": "sha256-1FkgTbFYAnPM7RO1tjfj9H1lMNNkOqMrdmcce10+f18=",
+            "rev": "efafef8495f030501e0df59ccb76a598bbce3ae1",
+            "sha256": "sha256-KaUWDGwnOC6CJdVSgyWEjpyuApw4I+ayX4gG/qP3ESo=",
             "type": "git",
             "url": "https://github.com/robbyrussell/oh-my-zsh"
         },
-        "version": "0f752036988f7acc25c3ac87e1f6e268bb15e742"
+        "version": "efafef8495f030501e0df59ccb76a598bbce3ae1"
     },
     "zsh-plugin_tipz": {
         "cargoLocks": null,
@@ -357,7 +357,7 @@
     },
     "zsh-plugin_zsh-completions": {
         "cargoLocks": null,
-        "date": "2024-08-01",
+        "date": "2024-08-04",
         "extract": null,
         "name": "zsh-plugin_zsh-completions",
         "passthru": null,
@@ -367,12 +367,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "4145b89b0666af391cfc7a43065d4cd71c97dacd",
-            "sha256": "sha256-wplRf7FQC2FjbUnjM7NGdYps+nKgeHrMWI2rwqcfnQw=",
+            "rev": "e897589c9665750a6a21077c8d96c15dd0efc867",
+            "sha256": "sha256-kfqcqBWahKjnzp/N4V4uSmUso9KQDSQgnMlaJIjXjdw=",
             "type": "git",
             "url": "https://github.com/zsh-users/zsh-completions"
         },
-        "version": "4145b89b0666af391cfc7a43065d4cd71c97dacd"
+        "version": "e897589c9665750a6a21077c8d96c15dd0efc867"
     },
     "zsh-plugin_zsh-history-substring-search": {
         "cargoLocks": null,
