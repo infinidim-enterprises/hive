@@ -1508,7 +1508,9 @@
     "hyprland-hypridle": {
       "inputs": {
         "hyprlang": "hyprlang_2",
-        "hyprutils": "hyprutils",
+        "hyprutils": [
+          "hyprland-hyprutils"
+        ],
         "nixpkgs": [
           "hyprland-nixpkgs-unstable"
         ],
@@ -1534,7 +1536,9 @@
     "hyprland-hyprlock": {
       "inputs": {
         "hyprlang": "hyprlang_3",
-        "hyprutils": "hyprutils_2",
+        "hyprutils": [
+          "hyprland-hyprutils"
+        ],
         "nixpkgs": [
           "hyprland-nixpkgs-unstable"
         ],
@@ -1565,15 +1569,16 @@
         "systems": "systems_6"
       },
       "locked": {
-        "lastModified": 1721324102,
-        "narHash": "sha256-WAZ0X6yJW1hFG6otkHBfyJDKRpNP5stsRqdEuHrFRpk=",
-        "ref": "refs/heads/main",
-        "rev": "962582a090bc233c4de9d9897f46794280288989",
-        "revCount": 37,
+        "lastModified": 1722098849,
+        "narHash": "sha256-D3wIZlBNh7LuZ0NaoCpY/Pvu+xHxIVtSN+KkWZYvvVs=",
+        "ref": "refs/tags/v0.2.1",
+        "rev": "5dcbbc1e3de40b2cecfd2007434d86e924468f1f",
+        "revCount": 39,
         "type": "git",
         "url": "https://github.com/hyprwm/hyprutils"
       },
       "original": {
+        "ref": "refs/tags/v0.2.1",
         "type": "git",
         "url": "https://github.com/hyprwm/hyprutils"
       }
@@ -1825,7 +1830,7 @@
     },
     "hyprlang_4": {
       "inputs": {
-        "hyprutils": "hyprutils_3",
+        "hyprutils": "hyprutils",
         "nixpkgs": [
           "hyprland-xdg-desktop-portal",
           "nixpkgs"
@@ -1847,56 +1852,6 @@
       }
     },
     "hyprutils": {
-      "inputs": {
-        "nixpkgs": [
-          "hyprland-hypridle",
-          "nixpkgs"
-        ],
-        "systems": [
-          "hyprland-hypridle",
-          "systems"
-        ]
-      },
-      "locked": {
-        "lastModified": 1721324102,
-        "narHash": "sha256-WAZ0X6yJW1hFG6otkHBfyJDKRpNP5stsRqdEuHrFRpk=",
-        "owner": "hyprwm",
-        "repo": "hyprutils",
-        "rev": "962582a090bc233c4de9d9897f46794280288989",
-        "type": "github"
-      },
-      "original": {
-        "owner": "hyprwm",
-        "repo": "hyprutils",
-        "type": "github"
-      }
-    },
-    "hyprutils_2": {
-      "inputs": {
-        "nixpkgs": [
-          "hyprland-hyprlock",
-          "nixpkgs"
-        ],
-        "systems": [
-          "hyprland-hyprlock",
-          "systems"
-        ]
-      },
-      "locked": {
-        "lastModified": 1721324102,
-        "narHash": "sha256-WAZ0X6yJW1hFG6otkHBfyJDKRpNP5stsRqdEuHrFRpk=",
-        "owner": "hyprwm",
-        "repo": "hyprutils",
-        "rev": "962582a090bc233c4de9d9897f46794280288989",
-        "type": "github"
-      },
-      "original": {
-        "owner": "hyprwm",
-        "repo": "hyprutils",
-        "type": "github"
-      }
-    },
-    "hyprutils_3": {
       "inputs": {
         "nixpkgs": [
           "hyprland-xdg-desktop-portal",

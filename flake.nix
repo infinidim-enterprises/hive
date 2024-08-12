@@ -304,16 +304,18 @@
     hyprland-xdg-desktop-portal.url = "git+https://github.com/hyprwm/xdg-desktop-portal-hyprland";
     hyprland-xdg-desktop-portal.inputs.nixpkgs.follows = "hyprland-nixpkgs-unstable";
 
-    hyprland-hyprutils.url = "git+https://github.com/hyprwm/hyprutils";
+    hyprland-hyprutils.url = "git+https://github.com/hyprwm/hyprutils?ref=refs/tags/v0.2.1";
     hyprland-hyprutils.inputs.nixpkgs.follows = "hyprland-nixpkgs-unstable";
 
     hyprland-hyprlock.url = "git+https://github.com/hyprwm/hyprlock";
     hyprland-hyprlock.inputs.nixpkgs.follows = "hyprland-nixpkgs-unstable";
     hyprland-hyprlock.inputs.systems.follows = "hyprland/systems";
+    hyprland-hyprlock.inputs.hyprutils.follows = "hyprland-hyprutils";
 
     hyprland-hypridle.url = "git+https://github.com/hyprwm/hypridle";
     hyprland-hypridle.inputs.nixpkgs.follows = "hyprland-nixpkgs-unstable";
     hyprland-hypridle.inputs.systems.follows = "hyprland/systems";
+    hyprland-hypridle.inputs.hyprutils.follows = "hyprland-hyprutils";
 
     hyprland-contrib.url = "git+https://github.com/hyprwm/contrib";
     hyprland-contrib.inputs.nixpkgs.follows = "hyprland-nixpkgs-unstable";
@@ -322,9 +324,9 @@
     # hyprland-hyprpicker.inputs.nixpkgs.follows = "hyprland-nixpkgs-unstable";
 
     hyprland-plugins.url = "github:hyprwm/hyprland-plugins/v0.42.0";
-    hyprland-plugins.inputs.hyprland.follows = "hyprland";
     hyprland-plugins.inputs.nixpkgs.follows = "hyprland/nixpkgs";
     hyprland-plugins.inputs.systems.follows = "hyprland/systems";
+    hyprland-plugins.inputs.hyprland.follows = "hyprland";
 
     hyprland-hy3.url = "github:outfoxxed/hy3/hl0.42.0"; # FIXME: hy3
     hyprland-hy3.inputs.hyprland.follows = "hyprland";
