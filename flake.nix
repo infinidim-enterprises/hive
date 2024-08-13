@@ -175,6 +175,11 @@
     nixpkgs-22-11.follows = "nixos-22-11";
   };
 
+  # rpi stuff
+  inputs = {
+    raspberry-pi-nix.url = "github:nix-community/raspberry-pi-nix";
+  };
+
   # kubernetes and friends
   inputs = {
     k8s.url = "github:nixos/nixpkgs/3005f20ce0aaa58169cdee57c8aa12e5f1b6e1b3";
