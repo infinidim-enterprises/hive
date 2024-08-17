@@ -54,42 +54,42 @@
   };
   color-rg = {
     pname = "color-rg";
-    version = "1bb68a2bc799ab7c1c35cd491d397bef94e8cfbb";
+    version = "81ba1c5d8d70480c472c364aeee4281ac339f470";
     src = fetchgit {
       url = "https://github.com/manateelazycat/color-rg";
-      rev = "1bb68a2bc799ab7c1c35cd491d397bef94e8cfbb";
+      rev = "81ba1c5d8d70480c472c364aeee4281ac339f470";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-gifae7Y3CrhyRRnENbD9t5Lu/I3wXKQeaKd/IW6B7bc=";
+      sha256 = "sha256-nKISuXpR8Rr7vAjdGwzN/BAltzWbdOy6zoE5lDaRR3w=";
     };
-    date = "2024-07-14";
+    date = "2024-08-11";
   };
   copilot-el = {
     pname = "copilot-el";
-    version = "3af3a5f8877fd5c6c55454f5c5bf076a56608939";
+    version = "535ef61e82f09d744cd5b097b1fc99f08cce175c";
     src = fetchgit {
       url = "https://github.com/zerolfx/copilot.el.git";
-      rev = "3af3a5f8877fd5c6c55454f5c5bf076a56608939";
+      rev = "535ef61e82f09d744cd5b097b1fc99f08cce175c";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-xT8++/EFo/OGqZwSxbzckOdcuhQqeRUt8VoN3fyA0dg=";
+      sha256 = "sha256-/ZDnEZWUFcKnUtFrd/4C7LX16GAdUQncU8ZnYzntKS0=";
     };
-    date = "2024-08-05";
+    date = "2024-08-16";
   };
   doom-emacs = {
     pname = "doom-emacs";
-    version = "511c8af36537992fd60ff970e19e5638207546ed";
+    version = "74999956438ae0461f89569b7abb00205635ce93";
     src = fetchgit {
       url = "https://github.com/hlissner/doom-emacs";
-      rev = "511c8af36537992fd60ff970e19e5638207546ed";
+      rev = "74999956438ae0461f89569b7abb00205635ce93";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = true;
-      sha256 = "sha256-oexsVuN7WpyGs73giADWdbgbwdAqymIeoGOvZmnu04Y=";
+      sha256 = "sha256-aRIXR1fZvkRrRDpBUfP1UTSsm7HdN8aTX90yeintI/Q=";
     };
-    date = "2024-08-09";
+    date = "2024-08-16";
   };
   grip = {
     pname = "grip";
@@ -118,15 +118,15 @@
   };
   lsp-bridge = {
     pname = "lsp-bridge";
-    version = "0682dbcd889065e187769c86d09d4eec81a123ab";
+    version = "658f08ee51c193f52a0e9723b190e5f6eef77ab7";
     src = fetchFromGitHub {
       owner = "manateelazycat";
       repo = "lsp-bridge";
-      rev = "0682dbcd889065e187769c86d09d4eec81a123ab";
+      rev = "658f08ee51c193f52a0e9723b190e5f6eef77ab7";
       fetchSubmodules = false;
-      sha256 = "sha256-v0TgiiV8bcJYy2e8RAXPKFq2SgguAEGhiCTJprudbrw=";
+      sha256 = "sha256-ksKvekDKYdlJULRmALudfduYe1TkW3aG2uBeKdHOokQ=";
     };
-    date = "2024-08-10";
+    date = "2024-08-12";
   };
   nix-mode = {
     pname = "nix-mode";
