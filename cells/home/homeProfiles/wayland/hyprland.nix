@@ -540,24 +540,35 @@ in
 
     windowrulev2 = [
       "suppressevent maximize, class:.*"
+
       "float, class:^(gcr-prompter)$"
       "dimaround, class:^(gcr-prompter)$"
       "stayfocused, class:^(gcr-prompter)$"
+
       "float, title:^(Open File)$"
       "size 800 600, title:^(Open File)$"
       "move 100 100, title:^(Open File)$"
+
       "float, class:^(pavucontrol)$"
+
       "float, class:^(Vlc)$, title:^(Open Directory|Select one or multiple files)$"
       "size 800 600, class:^(Vlc)$, title:^(Open Directory|Select one or multiple files)$"
       "move 100 100, class:^(Vlc)$, title:^(Open Directory|Select one or multiple files)$"
       "stayfocused, class:^(Vlc)$, title:^(Open Directory|Select one or multiple files)$"
       "dimaround, class:^(Vlc)$, title:^(Open Directory|Select one or multiple files)$"
 
+      "float, class:^(evince)$, title:^(Print)$"
+      "size 800 600, class:^(evince)$, title:^(Print)$"
+      # "move 100 100, class:^(evince)$, title:^(Print)$"
+      "stayfocused, class:^(evince)$, title:^(Print)$"
+      "dimaround, class:^(evince)$, title:^(Print)$"
+
       "float, class:^(net.code-industry.masterpdfeditor5)$, title:^(Print)$"
       "size 600 700, class:^(net.code-industry.masterpdfeditor5)$, title:^(Print)$"
       "move 100 15, class:^(net.code-industry.masterpdfeditor5)$, title:^(Print)$"
       "stayfocused, class:^(net.code-industry.masterpdfeditor5)$, title:^(Print)$"
       "dimaround, class:^(net.code-industry.masterpdfeditor5)$, title:^(Print)$"
+
 
     ];
   };
