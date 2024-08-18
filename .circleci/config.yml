@@ -54,4 +54,5 @@ workflows:
             - auto/upgrade-dependencies
         matrix:
           parameters:
-            host: []
+            host:
+            - nixos-damogran
