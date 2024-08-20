@@ -583,10 +583,10 @@
   };
   "languagetool" = rec {
     pname = "languagetool";
-    version = "8.11.2";
+    version = "8.11.6";
     addonId = "languagetool-webextension@languagetool.org";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4329853/languagetool-8.11.2.xpi";
-    sha256 = "bfac73229d0973370d163cd607ed36ada0aff46d597afee2c334cc58ec431210";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4332776/languagetool-8.11.6.xpi";
+    sha256 = "dc14ac983d3fb5f91ea3930451529e1cb8919f79e375cdae293e6b49c6c419a4";
     meta = with lib;
       {
         homepage = "https://languagetool.org";
@@ -1264,10 +1264,10 @@
   };
   "tree-style-tab" = rec {
     pname = "tree-style-tab";
-    version = "4.0.21";
+    version = "4.0.22";
     addonId = "treestyletab@piro.sakura.ne.jp";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4331020/tree_style_tab-4.0.21.xpi";
-    sha256 = "2865b81e8ff55db7eb64903ce95ccfe5b8676290a3c11e5375366c3d2694f805";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4333810/tree_style_tab-4.0.22.xpi";
+    sha256 = "7712bb35bddaf4178a2847476c9dc4938c28e2661d02895fafefb2e3eae7fe9a";
     meta = with lib;
       {
         homepage = "http://piro.sakura.ne.jp/xul/_treestyletab.html.en";

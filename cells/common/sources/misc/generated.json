@@ -20,7 +20,7 @@
     },
     "adguard-filters_adguardteam": {
         "cargoLocks": null,
-        "date": "2024-08-10",
+        "date": "2024-08-18",
         "extract": null,
         "name": "adguard-filters_adguardteam",
         "passthru": null,
@@ -30,12 +30,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "b6a0be7c053efb863b76400eeac044577d0d25d6",
-            "sha256": "sha256-Jeg8EI9A9gJIv3BKSEiBJZmEP04KIDqnpIf25lwg2K4=",
+            "rev": "d777897c2c819b555968f6b5e262520df14711c4",
+            "sha256": "sha256-6oqGmEl0j4zNvYbdBvq2ot7wI8id+PXq6cNYRFxPJY4=",
             "type": "git",
             "url": "https://github.com/AdguardTeam/AdguardFilters"
         },
-        "version": "b6a0be7c053efb863b76400eeac044577d0d25d6"
+        "version": "d777897c2c819b555968f6b5e262520df14711c4"
     },
     "adguard-filters_romania": {
         "cargoLocks": null,
@@ -99,7 +99,7 @@
     },
     "chatgpt-wrapper": {
         "cargoLocks": null,
-        "date": "2024-08-08",
+        "date": "2024-08-16",
         "extract": null,
         "name": "chatgpt-wrapper",
         "passthru": null,
@@ -111,11 +111,11 @@
             "name": null,
             "owner": "llm-workflow-engine",
             "repo": "llm-workflow-engine",
-            "rev": "e8eccfd1abea98715d44e09987f001a725fbb79f",
-            "sha256": "sha256-eRXsu5tGL9SnP23sk2GcTYPvme7woFfOj+lLkhtuNJY=",
+            "rev": "55dfe88342530377db7fbfb59ff43a057a95bb4d",
+            "sha256": "sha256-zTySqrQtJpzqElO4lVeowfjvVqPnucpjz9yVsZukwu0=",
             "type": "github"
         },
-        "version": "e8eccfd1abea98715d44e09987f001a725fbb79f"
+        "version": "55dfe88342530377db7fbfb59ff43a057a95bb4d"
     },
     "cl-hash-util": {
         "cargoLocks": null,
@@ -402,7 +402,7 @@
     },
     "ipxe": {
         "cargoLocks": null,
-        "date": "2024-08-07",
+        "date": "2024-08-18",
         "extract": null,
         "name": "ipxe",
         "passthru": null,
@@ -412,12 +412,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "59e2b03e6ac842d0e69bc4f757bf6da452fca074",
-            "sha256": "sha256-if0y6nK1FYSp6je3h0QxLRCPhvc1wjPTEZIx5TNaNQ4=",
+            "rev": "53f089b723e16eecb4fd2e2a59b74b3932431b30",
+            "sha256": "sha256-rrTR85B/FW3VXCCF8+F3X67GqZz/8cIROW8xCq2aaIc=",
             "type": "git",
             "url": "https://github.com/ipxe/ipxe"
         },
-        "version": "59e2b03e6ac842d0e69bc4f757bf6da452fca074"
+        "version": "53f089b723e16eecb4fd2e2a59b74b3932431b30"
     },
     "iterable-io": {
         "cargoLocks": null,
@@ -448,11 +448,11 @@
             "name": null,
             "owner": "langchain-ai",
             "repo": "langchain",
-            "rev": "langchain-core==0.2.29",
-            "sha256": "sha256-B4IPilAWFOgYolMn3I0QKrJg8Q8laMOQanxc4Grm010=",
+            "rev": "langchain-core==0.2.33",
+            "sha256": "sha256-vM3FY9E8PeC8LHP4QCTM1ggFynI+PscF7pv7CMaSZlU=",
             "type": "github"
         },
-        "version": "langchain-core==0.2.29"
+        "version": "langchain-core==0.2.33"
     },
     "ledger-live-desktop": {
         "cargoLocks": null,
@@ -578,7 +578,7 @@
     },
     "pbkdf2-sha512": {
         "cargoLocks": null,
-        "date": "2024-08-10",
+        "date": "2024-08-18",
         "extract": null,
         "name": "pbkdf2-sha512",
         "passthru": null,
@@ -589,7 +589,7 @@
             "type": "url",
             "url": "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c"
         },
-        "version": "9419f50b646c1f2dcb06f90b67438895528fb0cd"
+        "version": "65c35987c88461b5b64466a66f297803d04d44fe"
     },
     "pgp-key-generation": {
         "cargoLocks": null,
@@ -842,11 +842,11 @@
             "name": null,
             "owner": "braver",
             "repo": "Solarized",
-            "rev": "3.0.0",
-            "sha256": "sha256-+hxwoYjieSGeiBpQ2T8LXBwb+Lf/Gjh2LLlG/WJ4bT0=",
+            "rev": "3.0.1",
+            "sha256": "sha256-K0LevG89BxbGajxWWycunK+pwH3JlJSfb+23bM54uYk=",
             "type": "github"
         },
-        "version": "3.0.0"
+        "version": "3.0.1"
     },
     "tfenv": {
         "cargoLocks": null,

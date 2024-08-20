@@ -10,7 +10,7 @@ in
   systemd.services.systemd-udev-settle.enable = false;
   systemd.services.NetworkManager-wait-online.enable = false;
 
-  systemd.enableUnifiedCgroupHierarchy = true;
+  # systemd.enableUnifiedCgroupHierarchy = true;
   systemd.tmpfiles.rules = mkAfter [ "d /mnt 0755 root root - -" ];
   systemd.extraConfig = ''
     DefaultTimeoutStopSec=15s

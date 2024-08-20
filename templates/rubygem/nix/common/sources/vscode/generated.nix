@@ -14,22 +14,22 @@
   };
   codium = {
     pname = "codium";
-    version = "0.9.12";
+    version = "0.9.13";
     src = fetchurl {
-      url = "https://Codium.gallery.vsassets.io/_apis/public/gallery/publisher/Codium/extension/codium/0.9.12/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "codium-0.9.12.zip";
-      sha256 = "sha256-QPY2fwTQt1ppotN9FKKb2fbe+KdKdQGoRlbvAOfxh/o=";
+      url = "https://Codium.gallery.vsassets.io/_apis/public/gallery/publisher/Codium/extension/codium/0.9.13/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "codium-0.9.13.zip";
+      sha256 = "sha256-yaIg7W1aqRGCzZpWrvP6T+2zH1YaOYjYaU1UY6vGzZ8=";
     };
     publisher = "Codium";
     name = "codium";
   };
   copilot = {
     pname = "copilot";
-    version = "1.221.1040";
+    version = "1.223.1055";
     src = fetchurl {
-      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.221.1040/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "copilot-1.221.1040.zip";
-      sha256 = "sha256-s2vtT0mP72HI+UJWNTsdiUzRwm/xzd6QHANg+WlAB9I=";
+      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.223.1055/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "copilot-1.223.1055.zip";
+      sha256 = "sha256-ufKqWSpZmhhww5l6W/E2rGPO7GbzfUj38nlrGdKej40=";
     };
     publisher = "GitHub";
     name = "copilot";
@@ -201,11 +201,11 @@
   };
   ruby-lsp = {
     pname = "ruby-lsp";
-    version = "0.7.14";
+    version = "0.7.15";
     src = fetchurl {
-      url = "https://Shopify.gallery.vsassets.io/_apis/public/gallery/publisher/Shopify/extension/ruby-lsp/0.7.14/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "ruby-lsp-0.7.14.zip";
-      sha256 = "sha256-RcWlWJuPvhruSFq9F2PeifU+I5pQg+qqjkk57Lb7JVs=";
+      url = "https://Shopify.gallery.vsassets.io/_apis/public/gallery/publisher/Shopify/extension/ruby-lsp/0.7.15/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "ruby-lsp-0.7.15.zip";
+      sha256 = "sha256-8Ycoq8M9DT7aTOH4qb/oknLl3KpINDdbrQxf44mV+KQ=";
     };
     publisher = "Shopify";
     name = "ruby-lsp";
@@ -289,11 +289,11 @@
   };
   vscode-docker = {
     pname = "vscode-docker";
-    version = "1.29.1";
+    version = "1.29.2";
     src = fetchurl {
-      url = "https://ms-azuretools.gallery.vsassets.io/_apis/public/gallery/publisher/ms-azuretools/extension/vscode-docker/1.29.1/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "vscode-docker-1.29.1.zip";
-      sha256 = "sha256-uleZLIkfOxKan+U56fKEwUjaleig07zdEwQKzsAzan0=";
+      url = "https://ms-azuretools.gallery.vsassets.io/_apis/public/gallery/publisher/ms-azuretools/extension/vscode-docker/1.29.2/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "vscode-docker-1.29.2.zip";
+      sha256 = "sha256-j68CgHyLTaWZ2tyzLDO34vnlFwABgk5+P9ZaA8q2RDA=";
     };
     publisher = "ms-azuretools";
     name = "vscode-docker";

@@ -13,6 +13,7 @@ rec {
       # FIXME: lollypop depends on youtube-dl
       config.permittedInsecurePackages = [
         "python3.12-youtube-dl-2021.12.17"
+        "jitsi-meet-1.0.8043"
       ];
       config.allowUnfree = true;
       overlays = cell.overlays.default_desktop;

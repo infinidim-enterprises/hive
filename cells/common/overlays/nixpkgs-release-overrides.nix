@@ -16,9 +16,13 @@ in
     firefox
     chromium
 
+    sambaFull
+    borgbackup
+
     libreoffice
     libreoffice-bin
     libreoffice-still
+
     onlyoffice-bin
     onlyoffice-bin_latest
 
