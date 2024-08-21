@@ -28,7 +28,7 @@ mkMerge [
     }];
 
     programs.ssh.matchBlocks."arm64 arm64.njk.*".remoteForwards = [{
-      bind.address = "/run/user/${toString uid}/gnupg/S.gpg-agent";
+      bind.address = "/run/user/0/gnupg/S.gpg-agent";
       host.address = replaceStrings [ "%t" ] [ "/run/user/${toString uid}" ]
         config.systemd.user.sockets.gpg-agent-extra.Socket.ListenStream;
     }];
