@@ -1,4 +1,24 @@
 {
+    "lobe-chat": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "lobe-chat",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "arch": null,
+            "finalImageName": null,
+            "finalImageTag": "latest",
+            "imageDigest": "sha256:57a9c0cdb6119330ecf486433d5379b480428e7b4fe70491f3ee248fb64e1fa1",
+            "imageName": "lobehub/lobe-chat",
+            "imageTag": "v1.11.9",
+            "os": null,
+            "sha256": "sha256-+x4yv77rxkwoQT9gvZ89aJbPOfftQ83wXnf/ui3kXjw=",
+            "tlsVerify": null
+        },
+        "version": "v1.11.9"
+    },
     "rock-pi-x-firmware": {
         "cargoLocks": null,
         "date": null,
@@ -36,7 +56,7 @@
     },
     "rtw89": {
         "cargoLocks": null,
-        "date": "2024-05-07",
+        "date": "2024-08-18",
         "extract": null,
         "name": "rtw89",
         "passthru": null,
@@ -48,10 +68,10 @@
             "name": null,
             "owner": "lwfinger",
             "repo": "rtw89",
-            "rev": "239cc6670a67a1e7b6f43bd681efdfedf6a53bb1",
-            "sha256": "sha256-7rhZs9P9c/z1DcHLw0zhnwf6WvOOxRioJhC3k4h668A=",
+            "rev": "d823c59fb32bd16f080f9a3c4ffb971b0e7f6c79",
+            "sha256": "sha256-IByjvxcYmhKg3wyM3Rayl1ccV35l3VKLd2bO0p+YBvc=",
             "type": "github"
         },
-        "version": "239cc6670a67a1e7b6f43bd681efdfedf6a53bb1"
+        "version": "d823c59fb32bd16f080f9a3c4ffb971b0e7f6c79"
     }
 }

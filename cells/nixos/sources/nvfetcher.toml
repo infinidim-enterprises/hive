@@ -12,6 +12,12 @@ fetch.github = "RinCat/RTL88x2BU-Linux-Driver"
 src.git = "https://github.com/lwfinger/rtw89"
 fetch.github = "lwfinger/rtw89"
 
+[lobe-chat]
+src.container = "lobehub/lobe-chat"
+fetch.docker = "lobehub/lobe-chat"
+docker.finalImageTag = "latest"
+# docker.arch = ""
+# docker pull lobehub/lobe-chat
 # [gnupg-git]
 # # TODO: refs/tags/gnupg-2.4.5
 # src.git = "https://git.gnupg.org/gnupg.git"

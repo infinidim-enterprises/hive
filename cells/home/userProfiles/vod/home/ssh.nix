@@ -26,6 +26,13 @@ mkMerge [
       host.address = replaceStrings [ "%t" ] [ "/run/user/${toString uid}" ]
         config.systemd.user.sockets.gpg-agent-extra.Socket.ListenStream;
     }];
+
+    programs.ssh.matchBlocks."arm64 arm64.njk.*".remoteForwards = [{
+      bind.address = "/run/user/${toString uid}/gnupg/S.gpg-agent";
+      host.address = replaceStrings [ "%t" ] [ "/run/user/${toString uid}" ]
+        config.systemd.user.sockets.gpg-agent-extra.Socket.ListenStream;
+    }];
+
   })
 
   {
@@ -40,6 +47,7 @@ mkMerge [
 
       matchBlocks = {
         "eadrax eadrax.njk.*" = defaults_njk // { user = name; };
+        "arm64 arm64.njk.*" = defaults_njk // { user = "root"; };
         "git.0a.njk.li" = defaults_njk_gitea;
         "*.0a.njk.li" = defaults_njk;
         "*.0.njk.li" = defaults_njk;

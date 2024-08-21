@@ -25,6 +25,8 @@
     cell.homeProfiles.multimedia.players
   ];
 
+  networking.hosts = { "43.228.124.216" = [ "arm64" "arm64.njk.local" ]; };
+
   sops.secrets.vod-password = {
     key = "vod-password";
     sopsFile = ../../../secrets/sops/nixos-common.yaml;
