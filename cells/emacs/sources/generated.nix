@@ -80,16 +80,16 @@
   };
   doom-emacs = {
     pname = "doom-emacs";
-    version = "c0a1b9efc9a89c240fb8a76424c4d227dcbfc2d8";
+    version = "0c1c37ad875a15ce8dae628856770af15701a0cf";
     src = fetchgit {
       url = "https://github.com/hlissner/doom-emacs";
-      rev = "c0a1b9efc9a89c240fb8a76424c4d227dcbfc2d8";
+      rev = "0c1c37ad875a15ce8dae628856770af15701a0cf";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = true;
-      sha256 = "sha256-EoLKicujbmXRBlav/6ulW68tbEO4Bv/wCACwcX7J32k=";
+      sha256 = "sha256-T5zzDll3p5DoPTcjAu94sJb8IwzxDPOm3RBgVPDPeL0=";
     };
-    date = "2024-08-18";
+    date = "2024-08-23";
   };
   grip = {
     pname = "grip";

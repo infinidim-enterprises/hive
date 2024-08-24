@@ -20,7 +20,7 @@
     },
     "adguard-filters_adguardteam": {
         "cargoLocks": null,
-        "date": "2024-08-18",
+        "date": "2024-08-23",
         "extract": null,
         "name": "adguard-filters_adguardteam",
         "passthru": null,
@@ -30,12 +30,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "d777897c2c819b555968f6b5e262520df14711c4",
-            "sha256": "sha256-6oqGmEl0j4zNvYbdBvq2ot7wI8id+PXq6cNYRFxPJY4=",
+            "rev": "de68ac1bc4197260225b099e298c0193a99fe23a",
+            "sha256": "sha256-qBfcWdk+kH/a06975S/VDhR365gpR3Jw7jlc0qqiBWU=",
             "type": "git",
             "url": "https://github.com/AdguardTeam/AdguardFilters"
         },
-        "version": "d777897c2c819b555968f6b5e262520df14711c4"
+        "version": "de68ac1bc4197260225b099e298c0193a99fe23a"
     },
     "adguard-filters_romania": {
         "cargoLocks": null,
@@ -80,7 +80,7 @@
     },
     "base16-schemes": {
         "cargoLocks": null,
-        "date": "2024-06-21",
+        "date": "2024-08-22",
         "extract": null,
         "name": "base16-schemes",
         "passthru": null,
@@ -90,12 +90,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "ef9a4c3c384624694608adebf0993d7a3bed3cf2",
-            "sha256": "sha256-9i9IjZcjvinb/214x5YShUDBZBC2189HYs26uGy/Hck=",
+            "rev": "43ba59b50b9cd49ddc67f9aab82826f9007ee4e6",
+            "sha256": "sha256-7TgpQx6JP3t/aSJW+yv5gEXceCIw8qTnhCAT3LtfmeY=",
             "type": "git",
             "url": "https://github.com/tinted-theming/schemes"
         },
-        "version": "ef9a4c3c384624694608adebf0993d7a3bed3cf2"
+        "version": "43ba59b50b9cd49ddc67f9aab82826f9007ee4e6"
     },
     "chatgpt-wrapper": {
         "cargoLocks": null,
@@ -402,7 +402,7 @@
     },
     "ipxe": {
         "cargoLocks": null,
-        "date": "2024-08-18",
+        "date": "2024-08-23",
         "extract": null,
         "name": "ipxe",
         "passthru": null,
@@ -412,12 +412,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "53f089b723e16eecb4fd2e2a59b74b3932431b30",
-            "sha256": "sha256-rrTR85B/FW3VXCCF8+F3X67GqZz/8cIROW8xCq2aaIc=",
+            "rev": "bdb5b4aef46ed34b47094652f3eefc7d0463d166",
+            "sha256": "sha256-fR1E2u84t/fjb5TribczbomfF/EVCLPpSk/dm6JBim4=",
             "type": "git",
             "url": "https://github.com/ipxe/ipxe"
         },
-        "version": "53f089b723e16eecb4fd2e2a59b74b3932431b30"
+        "version": "bdb5b4aef46ed34b47094652f3eefc7d0463d166"
     },
     "iterable-io": {
         "cargoLocks": null,
@@ -448,11 +448,11 @@
             "name": null,
             "owner": "langchain-ai",
             "repo": "langchain",
-            "rev": "langchain-core==0.2.33",
-            "sha256": "sha256-vM3FY9E8PeC8LHP4QCTM1ggFynI+PscF7pv7CMaSZlU=",
+            "rev": "langchain-core==0.2.34",
+            "sha256": "sha256-p2RTy3kUZl2VKk2XsIPcvHlGV1uZJaDdOjV2QiDuXTA=",
             "type": "github"
         },
-        "version": "langchain-core==0.2.33"
+        "version": "langchain-core==0.2.34"
     },
     "ledger-live-desktop": {
         "cargoLocks": null,
@@ -540,7 +540,7 @@
     },
     "pam_usb": {
         "cargoLocks": null,
-        "date": "2024-08-02",
+        "date": "2024-08-20",
         "extract": null,
         "name": "pam_usb",
         "passthru": null,
@@ -550,12 +550,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "7740bc1e901821af3801b4a9ce27fc168f7253d3",
+            "rev": "ac032272accabf1edc8cf7d5ba408cb706b2550e",
             "sha256": "sha256-RHCFFch6Tw/8RYNaT2jNHlMLYUr3n1iDpvzTleiPEgo=",
             "type": "git",
             "url": "https://github.com/mcdope/pam_usb"
         },
-        "version": "7740bc1e901821af3801b4a9ce27fc168f7253d3"
+        "version": "ac032272accabf1edc8cf7d5ba408cb706b2550e"
     },
     "paper-store": {
         "cargoLocks": null,
@@ -578,7 +578,7 @@
     },
     "pbkdf2-sha512": {
         "cargoLocks": null,
-        "date": "2024-08-18",
+        "date": "2024-08-24",
         "extract": null,
         "name": "pbkdf2-sha512",
         "passthru": null,
@@ -589,7 +589,7 @@
             "type": "url",
             "url": "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c"
         },
-        "version": "65c35987c88461b5b64466a66f297803d04d44fe"
+        "version": "a2f47ce51ce3b17fcdcb5e5142c8e82069814978"
     },
     "pgp-key-generation": {
         "cargoLocks": null,

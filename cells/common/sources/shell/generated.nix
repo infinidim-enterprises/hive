@@ -15,16 +15,16 @@
   };
   lorri = {
     pname = "lorri";
-    version = "9f6ba63b41bbe984b3394678f31ebdd87559187b";
+    version = "cb99f085b448f38e5d31196866111925a6465876";
     src = fetchFromGitHub {
       owner = "nix-community";
       repo = "lorri";
-      rev = "9f6ba63b41bbe984b3394678f31ebdd87559187b";
+      rev = "cb99f085b448f38e5d31196866111925a6465876";
       fetchSubmodules = false;
-      sha256 = "sha256-dEdKMgE4Jd8CCvtGQDZNDCYOomZAV8aR7Cmtyn8RfTo=";
+      sha256 = "sha256-UdmhpRXOr5bv5ljqgjLXpYwi9XxH5AmDkJBItTq9QtU=";
     };
     cargoSha256 = "0000000000000000000000000000000000000000000000000000";
-    date = "2024-08-16";
+    date = "2024-08-19";
   };
   nix-index = {
     pname = "nix-index";
@@ -164,16 +164,16 @@
   };
   zsh-plugin_oh-my-zsh = {
     pname = "zsh-plugin_oh-my-zsh";
-    version = "2056aeeeaddd977eb205619c6f236b94dac896be";
+    version = "ebb479e5e2395d26fc368c9b9d534e935a292740";
     src = fetchgit {
       url = "https://github.com/robbyrussell/oh-my-zsh";
-      rev = "2056aeeeaddd977eb205619c6f236b94dac896be";
+      rev = "ebb479e5e2395d26fc368c9b9d534e935a292740";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-VsaQJMyTTmk/FRLiSJ2HTINNUpepMbuGlM3szD0ZzkY=";
+      sha256 = "sha256-+uACSlon6xraKqwZhL8xFU40b0SvkEE2GAzvm/ROun0=";
     };
-    date = "2024-08-18";
+    date = "2024-08-21";
   };
   zsh-plugin_tipz = {
     pname = "zsh-plugin_tipz";

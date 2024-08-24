@@ -46,12 +46,12 @@
         },
         "pinned": false,
         "src": {
-            "name": "copilot-1.223.1055.zip",
-            "sha256": "sha256-ufKqWSpZmhhww5l6W/E2rGPO7GbzfUj38nlrGdKej40=",
+            "name": "copilot-1.223.1065.zip",
+            "sha256": "sha256-bDBxi8W2d2q/JPnaXxgvTG7HG4t1W3+hiTULnJ3Uvck=",
             "type": "url",
-            "url": "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.223.1055/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.223.1065/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "1.223.1055"
+        "version": "1.223.1065"
     },
     "cucumberautocomplete": {
         "cargoLocks": null,
@@ -334,12 +334,12 @@
         },
         "pinned": false,
         "src": {
-            "name": "ruby-lsp-0.7.15.zip",
-            "sha256": "sha256-8Ycoq8M9DT7aTOH4qb/oknLl3KpINDdbrQxf44mV+KQ=",
+            "name": "ruby-lsp-0.7.16.zip",
+            "sha256": "sha256-9N5pSeAzp2ZzgCBI/s0DBfBaPBMmAbjUj2TxvfLR9RU=",
             "type": "url",
-            "url": "https://Shopify.gallery.vsassets.io/_apis/public/gallery/publisher/Shopify/extension/ruby-lsp/0.7.15/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://Shopify.gallery.vsassets.io/_apis/public/gallery/publisher/Shopify/extension/ruby-lsp/0.7.16/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "0.7.15"
+        "version": "0.7.16"
     },
     "ruby-rubocop": {
         "cargoLocks": null,

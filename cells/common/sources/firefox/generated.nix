@@ -583,10 +583,10 @@
   };
   "languagetool" = rec {
     pname = "languagetool";
-    version = "8.11.6";
+    version = "8.11.7";
     addonId = "languagetool-webextension@languagetool.org";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4332776/languagetool-8.11.6.xpi";
-    sha256 = "dc14ac983d3fb5f91ea3930451529e1cb8919f79e375cdae293e6b49c6c419a4";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4337379/languagetool-8.11.7.xpi";
+    sha256 = "60a3564a300188fd9066e3f331f0350aabbe468a8de6a835d03654c18712afae";
     meta = with lib;
       {
         homepage = "https://languagetool.org";
@@ -651,10 +651,10 @@
   };
   "passff" = rec {
     pname = "passff";
-    version = "1.20";
+    version = "1.20.1";
     addonId = "passff@invicem.pro";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4333675/passff-1.20.xpi";
-    sha256 = "cf07997a5687f4a1db191b5229a97ff839ec29f581bce2b6fa42b141635e0f7d";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4339137/passff-1.20.1.xpi";
+    sha256 = "7418b41a6ee43d380d42147a3632c0cf7e68591a4341effc5dc2e40a72575122";
     meta = with lib;
       {
         homepage = "https://codeberg.org/PassFF/passff";

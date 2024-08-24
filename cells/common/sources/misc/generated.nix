@@ -16,16 +16,16 @@
   };
   adguard-filters_adguardteam = {
     pname = "adguard-filters_adguardteam";
-    version = "d777897c2c819b555968f6b5e262520df14711c4";
+    version = "de68ac1bc4197260225b099e298c0193a99fe23a";
     src = fetchgit {
       url = "https://github.com/AdguardTeam/AdguardFilters";
-      rev = "d777897c2c819b555968f6b5e262520df14711c4";
+      rev = "de68ac1bc4197260225b099e298c0193a99fe23a";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-6oqGmEl0j4zNvYbdBvq2ot7wI8id+PXq6cNYRFxPJY4=";
+      sha256 = "sha256-qBfcWdk+kH/a06975S/VDhR365gpR3Jw7jlc0qqiBWU=";
     };
-    date = "2024-08-18";
+    date = "2024-08-23";
   };
   adguard-filters_romania = {
     pname = "adguard-filters_romania";
@@ -55,16 +55,16 @@
   };
   base16-schemes = {
     pname = "base16-schemes";
-    version = "ef9a4c3c384624694608adebf0993d7a3bed3cf2";
+    version = "43ba59b50b9cd49ddc67f9aab82826f9007ee4e6";
     src = fetchgit {
       url = "https://github.com/tinted-theming/schemes";
-      rev = "ef9a4c3c384624694608adebf0993d7a3bed3cf2";
+      rev = "43ba59b50b9cd49ddc67f9aab82826f9007ee4e6";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-9i9IjZcjvinb/214x5YShUDBZBC2189HYs26uGy/Hck=";
+      sha256 = "sha256-7TgpQx6JP3t/aSJW+yv5gEXceCIw8qTnhCAT3LtfmeY=";
     };
-    date = "2024-06-21";
+    date = "2024-08-22";
   };
   chatgpt-wrapper = {
     pname = "chatgpt-wrapper";
@@ -251,16 +251,16 @@
   };
   ipxe = {
     pname = "ipxe";
-    version = "53f089b723e16eecb4fd2e2a59b74b3932431b30";
+    version = "bdb5b4aef46ed34b47094652f3eefc7d0463d166";
     src = fetchgit {
       url = "https://github.com/ipxe/ipxe";
-      rev = "53f089b723e16eecb4fd2e2a59b74b3932431b30";
+      rev = "bdb5b4aef46ed34b47094652f3eefc7d0463d166";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-rrTR85B/FW3VXCCF8+F3X67GqZz/8cIROW8xCq2aaIc=";
+      sha256 = "sha256-fR1E2u84t/fjb5TribczbomfF/EVCLPpSk/dm6JBim4=";
     };
-    date = "2024-08-18";
+    date = "2024-08-23";
   };
   iterable-io = {
     pname = "iterable-io";
@@ -272,13 +272,13 @@
   };
   langchain = {
     pname = "langchain";
-    version = "langchain-core==0.2.33";
+    version = "langchain-core==0.2.34";
     src = fetchFromGitHub {
       owner = "langchain-ai";
       repo = "langchain";
-      rev = "langchain-core==0.2.33";
+      rev = "langchain-core==0.2.34";
       fetchSubmodules = false;
-      sha256 = "sha256-vM3FY9E8PeC8LHP4QCTM1ggFynI+PscF7pv7CMaSZlU=";
+      sha256 = "sha256-p2RTy3kUZl2VKk2XsIPcvHlGV1uZJaDdOjV2QiDuXTA=";
     };
   };
   ledger-live-desktop = {
@@ -332,16 +332,16 @@
   };
   pam_usb = {
     pname = "pam_usb";
-    version = "7740bc1e901821af3801b4a9ce27fc168f7253d3";
+    version = "ac032272accabf1edc8cf7d5ba408cb706b2550e";
     src = fetchgit {
       url = "https://github.com/mcdope/pam_usb";
-      rev = "7740bc1e901821af3801b4a9ce27fc168f7253d3";
+      rev = "ac032272accabf1edc8cf7d5ba408cb706b2550e";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sha256 = "sha256-RHCFFch6Tw/8RYNaT2jNHlMLYUr3n1iDpvzTleiPEgo=";
     };
-    date = "2024-08-02";
+    date = "2024-08-20";
   };
   paper-store = {
     pname = "paper-store";
@@ -358,12 +358,12 @@
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "65c35987c88461b5b64466a66f297803d04d44fe";
+    version = "a2f47ce51ce3b17fcdcb5e5142c8e82069814978";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";
     };
-    date = "2024-08-18";
+    date = "2024-08-24";
   };
   pgp-key-generation = {
     pname = "pgp-key-generation";
