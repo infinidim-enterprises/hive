@@ -47,7 +47,7 @@ mkMerge [
 
       matchBlocks = {
         "eadrax eadrax.njk.*" = defaults_njk // { user = name; };
-        "arm64 arm64.njk.*" = defaults_njk // { user = "root"; };
+        "arm64 arm64.njk.*" = defaults_njk // { user = "root"; port = 65522; };
         "git.0a.njk.li" = defaults_njk_gitea;
         "*.0a.njk.li" = defaults_njk;
         "*.0.njk.li" = defaults_njk;
