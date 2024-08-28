@@ -16,16 +16,6 @@ jobs:
         extraPullNames: cuda-maintainers, mic92, nix-community, nrdxp
         name: njk
         signingKey: ${{ secrets.CACHIX_SIGNING_KEY }}
-    - name: Free Disk Space
-      uses: jlumbroso/free-disk-space@main
-      with:
-        android: true
-        docker-images: true
-        dotnet: true
-        haskell: true
-        large-packages: true
-        swap-storage: true
-        tool-cache: true
     - name: Configure git
       run: 'git config user.email "1203212+github-actions[bot]@users.noreply.github.com"
 

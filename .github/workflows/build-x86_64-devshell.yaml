@@ -16,16 +16,6 @@ jobs:
         extraPullNames: cuda-maintainers, mic92, nix-community, nrdxp
         name: njk
         signingKey: ${{ secrets.CACHIX_SIGNING_KEY }}
-    - name: Free Disk Space
-      uses: jlumbroso/free-disk-space@main
-      with:
-        android: true
-        docker-images: true
-        dotnet: true
-        haskell: true
-        large-packages: true
-        swap-storage: true
-        tool-cache: true
     - name: Build devshell
       run: nix develop --command "menu"
 name: Build devshell [x86_64-linux]

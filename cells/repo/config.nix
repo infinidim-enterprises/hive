@@ -236,20 +236,44 @@ in
             signingKey = "\${{ secrets.CACHIX_SIGNING_KEY }}";
           };
         }
-        {
-          name = "Free Disk Space";
-          uses = "jlumbroso/free-disk-space@main";
-          "with" = {
-            tool-cache = true;
-            android = true;
-            dotnet = true;
-            haskell = true;
-            large-packages = true;
-            docker-images = true;
-            swap-storage = true;
-          };
-        }
+        # {
+        #   name = "Free Disk Space";
+        #   uses = "jlumbroso/free-disk-space@main";
+        #   "with" = {
+        #     tool-cache = true;
+        #     android = true;
+        #     dotnet = true;
+        #     haskell = true;
+        #     large-packages = true;
+        #     docker-images = true;
+        #     swap-storage = true;
+        #   };
+        # }
       ];
+
+      devshell-aarch64-linux = mkNixago {
+        data = {
+          name = "Build devshell [aarch64-linux]";
+          on.push = null;
+          on.workflow_dispatch = null;
+          jobs = {
+            build_shell = {
+              runs-on = "self-hosted";
+              steps = common_steps ++ [
+                {
+                  name = "Build devshell";
+                  run = ''nix develop --command "menu"'';
+                }
+              ];
+            };
+          };
+        };
+
+        output = ".github/workflows/build-aarch64-linux-devshell.yaml";
+        format = "yaml";
+        hook.mode = "copy";
+      };
+
 
       devshell-x86_64-linux = mkNixago {
         data = {
@@ -421,6 +445,7 @@ in
     [
       # NOTE: garnix builds most things now!
       devshell-x86_64-linux
+      devshell-aarch64-linux
       workflowHostTemplate
       flake-lock
       dependabot
