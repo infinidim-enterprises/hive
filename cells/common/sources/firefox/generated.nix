@@ -381,10 +381,10 @@
   };
   "darkreader" = rec {
     pname = "darkreader";
-    version = "4.9.88";
+    version = "4.9.89";
     addonId = "addon@darkreader.org";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4317971/darkreader-4.9.88.xpi";
-    sha256 = "7a965d5880be9fbf8be81a106acd1968263b1acc2db0add580b30f2dd71954b3";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4341235/darkreader-4.9.89.xpi";
+    sha256 = "f4a5b4d5966d99cc68b31a9d2072cdb6388efefa9d45746f03d76e3c897c49be";
     meta = with lib;
       {
         homepage = "https://darkreader.org/";
@@ -491,10 +491,10 @@
   };
   "ether-metamask" = rec {
     pname = "ether-metamask";
-    version = "11.16.16";
+    version = "12.0.6";
     addonId = "webextension@metamask.io";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4326873/ether_metamask-11.16.16.xpi";
-    sha256 = "c91ea731551b8f2fdf32a87735a60eb607541872e71969d623b3c462b8f7d67e";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4342782/ether_metamask-12.0.6.xpi";
+    sha256 = "a66e20bbe5ded1b9408420e4c2ffc82369cc3bfd27350afe25f2c0ef6b26ff3b";
     meta = with lib;
       {
         description = "Ethereum Browser Extension";
@@ -583,10 +583,10 @@
   };
   "languagetool" = rec {
     pname = "languagetool";
-    version = "8.11.6";
+    version = "8.11.8";
     addonId = "languagetool-webextension@languagetool.org";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4332776/languagetool-8.11.6.xpi";
-    sha256 = "dc14ac983d3fb5f91ea3930451529e1cb8919f79e375cdae293e6b49c6c419a4";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4341696/languagetool-8.11.8.xpi";
+    sha256 = "2f1489f7180303be730ff2b16d6a432d07017c6cffd3fbfc39f37dc809a25fc8";
     meta = with lib;
       {
         homepage = "https://languagetool.org";
@@ -651,10 +651,10 @@
   };
   "passff" = rec {
     pname = "passff";
-    version = "1.20";
+    version = "1.20.1";
     addonId = "passff@invicem.pro";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4333675/passff-1.20.xpi";
-    sha256 = "cf07997a5687f4a1db191b5229a97ff839ec29f581bce2b6fa42b141635e0f7d";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4339137/passff-1.20.1.xpi";
+    sha256 = "7418b41a6ee43d380d42147a3632c0cf7e68591a4341effc5dc2e40a72575122";
     meta = with lib;
       {
         homepage = "https://codeberg.org/PassFF/passff";

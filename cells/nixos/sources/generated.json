@@ -10,14 +10,14 @@
             "arch": null,
             "finalImageName": null,
             "finalImageTag": "latest",
-            "imageDigest": "sha256:57a9c0cdb6119330ecf486433d5379b480428e7b4fe70491f3ee248fb64e1fa1",
+            "imageDigest": "sha256:06e441fe820897a8f145ce341cc92945fecdc4c5c847aa9a50ff2289fafbefa9",
             "imageName": "lobehub/lobe-chat",
-            "imageTag": "v1.11.9",
+            "imageTag": "v1.15.2",
             "os": null,
-            "sha256": "sha256-+x4yv77rxkwoQT9gvZ89aJbPOfftQ83wXnf/ui3kXjw=",
+            "sha256": "sha256-cNJl+TozD2M5pteD+Mv/DaDG3BUYw0rWXbfQpaXb95k=",
             "tlsVerify": null
         },
-        "version": "v1.11.9"
+        "version": "v1.15.2"
     },
     "rock-pi-x-firmware": {
         "cargoLocks": null,
@@ -56,7 +56,7 @@
     },
     "rtw89": {
         "cargoLocks": null,
-        "date": "2024-08-18",
+        "date": "2024-08-24",
         "extract": null,
         "name": "rtw89",
         "passthru": null,
@@ -68,10 +68,10 @@
             "name": null,
             "owner": "lwfinger",
             "repo": "rtw89",
-            "rev": "d823c59fb32bd16f080f9a3c4ffb971b0e7f6c79",
-            "sha256": "sha256-IByjvxcYmhKg3wyM3Rayl1ccV35l3VKLd2bO0p+YBvc=",
+            "rev": "d1fced1b8a741dc9f92b47c69489c24385945f6e",
+            "sha256": "sha256-Htu1TihKkUCNWw5LCf+cnGyCQsj0PuijlfAolug2MC8=",
             "type": "github"
         },
-        "version": "d823c59fb32bd16f080f9a3c4ffb971b0e7f6c79"
+        "version": "d1fced1b8a741dc9f92b47c69489c24385945f6e"
     }
 }

@@ -116,7 +116,7 @@
     },
     "doom-emacs": {
         "cargoLocks": null,
-        "date": "2024-08-18",
+        "date": "2024-08-30",
         "extract": null,
         "name": "doom-emacs",
         "passthru": null,
@@ -126,12 +126,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": true,
             "name": null,
-            "rev": "c0a1b9efc9a89c240fb8a76424c4d227dcbfc2d8",
-            "sha256": "sha256-EoLKicujbmXRBlav/6ulW68tbEO4Bv/wCACwcX7J32k=",
+            "rev": "79910fba42d8ec45c2960d855377af0f7a8d09d9",
+            "sha256": "sha256-6sRY7JMckr/JwWkD2upW6GvBr8ZIQEYfLGWMB6T67Xg=",
             "type": "git",
             "url": "https://github.com/hlissner/doom-emacs"
         },
-        "version": "c0a1b9efc9a89c240fb8a76424c4d227dcbfc2d8"
+        "version": "79910fba42d8ec45c2960d855377af0f7a8d09d9"
     },
     "grip": {
         "cargoLocks": null,
@@ -154,7 +154,7 @@
     },
     "jinx": {
         "cargoLocks": null,
-        "date": "2024-07-24",
+        "date": "2024-08-24",
         "extract": null,
         "name": "jinx",
         "passthru": null,
@@ -166,11 +166,11 @@
             "name": null,
             "owner": "minad",
             "repo": "jinx",
-            "rev": "4c89699db3851c3ecfa5d007ab56c810e8e3ffeb",
-            "sha256": "sha256-ddOp5BRk5GtMZ5LPU7SGUa6Z8NCmT3UnUDXTHVhJqNQ=",
+            "rev": "cd827ee199efedc8f5e094001d90206e698f91e8",
+            "sha256": "sha256-s6DQ9UlQ98071n+nbhcRU2J2qgNosiJxqC4FTazwkww=",
             "type": "github"
         },
-        "version": "4c89699db3851c3ecfa5d007ab56c810e8e3ffeb"
+        "version": "cd827ee199efedc8f5e094001d90206e698f91e8"
     },
     "lsp-bridge": {
         "cargoLocks": null,
