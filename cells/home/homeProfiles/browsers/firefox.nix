@@ -8,10 +8,23 @@ let
       opacity: 0;
       pointer-events: none;
     }
+
     #main-window:not([tabsintitlebar="true"]) #TabsToolbar {
       visibility: collapse !important;
       height: 0 !important;
       margin-bottom: 0 !important;
+    }
+
+    /* Autohide nav-bar */
+    #nav-bar {
+      visibility: collapse;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    #nav-bar:hover {
+      visibility: visible;
+      opacity: 1;
     }
   '';
 

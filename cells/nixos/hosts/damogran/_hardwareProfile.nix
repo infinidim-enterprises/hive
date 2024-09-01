@@ -5,9 +5,8 @@ let
   inherit (builtins) baseNameOf;
 in
 {
-  deploy.params.cpu = "intel";
-  deploy.params.gpu = "intel";
-  deploy.params.ram = 8;
+  # deploy.params.cpu = "intel";
+  # deploy.params.gpu = "intel";
 
   home-manager.sharedModules = [
     ({ config, lib, ... }: lib.mkIf config.services.kanshi.enable {
@@ -53,74 +52,43 @@ in
       })
   ];
 
-  # boot.plymouth.enable = true;
-  # pkgs.plymouth-matrix-theme
-
-  boot.consoleLogLevel = 0;
-  boot.kernelParams = [ "drm.debug=0" "modeset=1" ];
-  # NOTE: tradeoff - get lower wifi speeds, but at least no interruptions
-  # NOTE: iwlmvm doesn't allow to disable BT Coex, check bt_coex_active module parameter
-  # bt_coex_active=0
-  # options iwlwifi 11n_disable=1
-  boot.extraModprobeConfig = ''
-    options i915 verbose_state_checks=0 guc_log_level=0
-  '';
-  boot.blacklistedKernelModules = [ "nouveau" ];
-  boot.kernelPackages = pkgs.linuxPackages_xanmod_stable;
-  boot.kernelPatches = [
-    {
-      # NOTE: annoying messages removed on gpd micro-pc
-      # i915 *ERROR* GPIO index request failed (-ENOENT)
-      name = "disable showing '*ERROR* GPIO index request failed'";
-      patch = ./intel_dsi_vbt.patch;
-    }
-  ];
-
-  # services.xserver.deviceSection = ''
-  #   Option "AccelMethod" "glamor"
+  # boot.consoleLogLevel = 0;
+  # boot.kernelParams = [ "drm.debug=0" "modeset=1" ];
+  # boot.extraModprobeConfig = ''
+  #   options i915 verbose_state_checks=0 guc_log_level=0
   # '';
+  # boot.blacklistedKernelModules = [ "nouveau" ];
+  # boot.kernelPackages = pkgs.linuxPackages_xanmod_stable;
 
-  # services.xserver.moduleSection = ''
-  #   Load "dri2"
-  #   Load "glamoregl"
-  # '';
+  # disko.devices = cell.diskoConfigurations.${baseNameOf ./.} { inherit lib; };
 
-  # services.xserver.monitorSection = ''
-  #   Option "Rotate" "right"
-  # '';
-
-  # services.xserver.videoDrivers = lib.mkIf config.services.xserver.enable [
-  #   # "modesetting"
-  #   "intel"
-  # ];
-
-  services.logind.powerKeyLongPress = "suspend";
-  services.logind.lidSwitchExternalPower = "ignore";
-  services.logind.lidSwitch = "ignore";
-
-  # NOTE: https://github.com/systemd/systemd/issues/25269
-  # services.logind.lidSwitch = "suspend-then-hibernate";
-  # systemd.sleep.extraConfig = ''
-  #   HibernateDelaySec=300s
-  # '';
-
-  # TODO: maybe? kernelParams = [ "i915.force_probe=!9a49" "xe.force_probe=9a49" ]
-
-  disko.devices = cell.diskoConfigurations.${baseNameOf ./.} { inherit lib; };
   imports =
     [
-      inputs.disko.nixosModules.disko
-      inputs.nixos-hardware.nixosModules.gpd-micropc
+      inputs.raspberry-pi-nix.nixosModules.raspberry-pi
+
+      #inputs.disko.nixosModules.disko
 
       cell.nixosProfiles.hardware.opengl
       cell.nixosProfiles.hardware.common
       cell.nixosProfiles.hardware.bluetooth
       cell.nixosProfiles.hardware.tlp
       cell.nixosProfiles.hardware.fwupd
-      cell.nixosProfiles.hardware.intel
       cell.nixosProfiles.core.kernel.physical-access-system
       cell.nixosProfiles.filesystems.zfs
       cell.nixosProfiles.boot.systemd-boot
-      cell.nixosProfiles.filesystems.impermanence.default
+      # cell.nixosProfiles.filesystems.impermanence.default
     ];
+
+  raspberry-pi-nix.board = "bcm2711";
+  hardware.raspberry-pi.config.all = {
+    base-dt-params.BOOT_UART.value = 1;
+    base-dt-params.BOOT_UART.enable = true;
+
+    base-dt-params.uart_2ndstage.value = 1;
+    base-dt-params.uart_2ndstage.enable = true;
+
+    dt-overlays.disable-bt.enable = true;
+    dt-overlays.disable-bt.params = { };
+  };
+
 }
