@@ -12,10 +12,13 @@ rec {
     pkgs = import inputs.nixpkgs-unstable {
       inherit system;
       config.allowUnfree = true;
-      overlays = cell.overlays.default_desktop ++ [
-        inputs.raspberry-pi-nix.overlays.core
-        inputs.raspberry-pi-nix.overlays.libcamera
-      ];
+      overlays =
+        cell.overlays.emacs
+        ++ cell.overlays.base
+        ++ [
+          inputs.raspberry-pi-nix.overlays.core
+          inputs.raspberry-pi-nix.overlays.libcamera
+        ];
     };
   };
 
