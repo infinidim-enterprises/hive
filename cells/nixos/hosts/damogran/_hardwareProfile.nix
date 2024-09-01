@@ -68,7 +68,7 @@ in
 
       # inputs.disko.nixosModules.disko
 
-      cell.nixosProfiles.hardware.opengl
+      # cell.nixosProfiles.hardware.opengl
       cell.nixosProfiles.hardware.common
       cell.nixosProfiles.hardware.bluetooth
       cell.nixosProfiles.hardware.tlp
