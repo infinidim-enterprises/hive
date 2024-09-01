@@ -22,7 +22,15 @@ let
       transition: opacity 0.3s ease;
     }
 
-    #nav-bar:hover {
+    /* Show the nav-bar when hovered */
+    #nav-bar:hover,
+    #nav-bar[focused="true"] {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    /* Ensure Ctrl+L works by making the nav-bar visible when focused */
+    #urlbar[focused="true"] {
       visibility: visible;
       opacity: 1;
     }
