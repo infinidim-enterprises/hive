@@ -177,7 +177,9 @@
 
   # rpi stuff
   inputs = {
-    raspberry-pi-nix.url = "github:nix-community/raspberry-pi-nix";
+    # "github:nix-community/raspberry-pi-nix";
+    raspberry-pi-nix.url = "github:infinidim-enterprises/raspberry-pi-nix";
+    raspberry-pi-nix.inputs.nixpkgs.follows = "nixos-24-05";
   };
 
   # kubernetes and friends

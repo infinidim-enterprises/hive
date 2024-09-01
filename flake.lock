@@ -2933,22 +2933,6 @@
         "type": "github"
       }
     },
-    "nixpkgs_7": {
-      "locked": {
-        "lastModified": 1718835956,
-        "narHash": "sha256-wM9v2yIxClRYsGHut5vHICZTK7xdrUGfrLkXvSuv6s4=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "dd457de7e08c6d06789b1f5b88fc9327f4d96309",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-24.05",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nose": {
       "flake": false,
       "locked": {
@@ -3203,7 +3187,9 @@
       "inputs": {
         "libcamera-src": "libcamera-src",
         "libpisp-src": "libpisp-src",
-        "nixpkgs": "nixpkgs_7",
+        "nixpkgs": [
+          "nixos-24-05"
+        ],
         "rpi-bluez-firmware-src": "rpi-bluez-firmware-src",
         "rpi-firmware-nonfree-src": "rpi-firmware-nonfree-src",
         "rpi-firmware-src": "rpi-firmware-src",
@@ -3213,15 +3199,15 @@
         "u-boot-src": "u-boot-src"
       },
       "locked": {
-        "lastModified": 1723990852,
-        "narHash": "sha256-72GMGaEOC0f7ExJMBSJhtMLX7Q3CnaXQHMjMO2NkRQA=",
-        "owner": "nix-community",
+        "lastModified": 1725194937,
+        "narHash": "sha256-g8ra9L6KsC2E8POjYUvhWTUr7CLpdfvY+2kgs7TZOME=",
+        "owner": "infinidim-enterprises",
         "repo": "raspberry-pi-nix",
-        "rev": "a993f0cd595ecc0836ca82640657527b934f9c9e",
+        "rev": "e454d5adc2220384761eeb79092f5684f0156ede",
         "type": "github"
       },
       "original": {
-        "owner": "nix-community",
+        "owner": "infinidim-enterprises",
         "repo": "raspberry-pi-nix",
         "type": "github"
       }

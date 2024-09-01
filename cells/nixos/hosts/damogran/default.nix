@@ -12,16 +12,19 @@ rec {
     pkgs = import inputs.nixpkgs-unstable {
       inherit system;
       config.allowUnfree = true;
-      overlays = cell.overlays.default_desktop;
+      overlays = cell.overlays.default_desktop ++ [
+        inputs.raspberry-pi-nix.overlays.core
+        inputs.raspberry-pi-nix.overlays.libcamera
+      ];
     };
   };
 
   imports =
-    cell.nixosSuites.desktop
+    cell.nixosSuites.cli
     # ++ [ cell.nixosProfiles.desktop.rdpserver ] # LightDM login via xrdp
     ++ cell.nixosSuites.networking
-    ++ cell.nixosSuites.virtualization
-    ++ [ (cell.lib.mkHome "vod" "zsh") ]
+    # ++ cell.nixosSuites.virtualization
+    # ++ [ (cell.lib.mkHome "vod" "zsh") ]
     ++ [
       bee.home.nixosModules.home-manager
       (import ./_hardwareProfile.nix { inherit inputs cell; })
@@ -31,7 +34,7 @@ rec {
           systemd.network.networks.local-eth.matchConfig.Name = "eno1";
           networking.wireless.enable = false;
           networking.networkmanager.enable = true;
-          environment.systemPackages = with pkgs; [ ventoy-full ];
+          # environment.systemPackages = with pkgs; [ ventoy-full ];
         })
 
       {

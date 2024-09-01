@@ -66,7 +66,7 @@ in
     [
       inputs.raspberry-pi-nix.nixosModules.raspberry-pi
 
-      #inputs.disko.nixosModules.disko
+      # inputs.disko.nixosModules.disko
 
       cell.nixosProfiles.hardware.opengl
       cell.nixosProfiles.hardware.common
@@ -74,8 +74,8 @@ in
       cell.nixosProfiles.hardware.tlp
       cell.nixosProfiles.hardware.fwupd
       cell.nixosProfiles.core.kernel.physical-access-system
-      cell.nixosProfiles.filesystems.zfs
-      cell.nixosProfiles.boot.systemd-boot
+      # cell.nixosProfiles.filesystems.zfs
+      # cell.nixosProfiles.boot.systemd-boot
       # cell.nixosProfiles.filesystems.impermanence.default
     ];
 

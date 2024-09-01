@@ -15,24 +15,23 @@ let
       margin-bottom: 0 !important;
     }
 
-    /* Autohide nav-bar */
+    /* Hide the nav-bar by default */
     #nav-bar {
-      visibility: collapse;
-      opacity: 0;
+      visibility: collapse !important;
+      opacity: 0 !important;
       transition: opacity 0.3s ease;
     }
 
     /* Show the nav-bar when hovered */
-    #nav-bar:hover,
-    #nav-bar[focused="true"] {
-      visibility: visible;
-      opacity: 1;
+    #nav-bar:hover {
+      visibility: visible !important;
+      opacity: 1 !important;
     }
 
-    /* Ensure Ctrl+L works by making the nav-bar visible when focused */
-    #urlbar[focused="true"] {
-      visibility: visible;
-      opacity: 1;
+    /* Show the nav-bar when the address bar is focused */
+    #nav-bar:focus-within {
+      visibility: visible !important;
+      opacity: 1 !important;
     }
   '';
 
