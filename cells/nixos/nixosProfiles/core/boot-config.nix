@@ -49,7 +49,7 @@ in
     "xhci_pci"
     "ehci_pci"
     "sdhci_pci"
-    "sdhci_acpi"
+    # "sdhci_acpi"
     "ahci"
     "uhci_hcd"
     "usbhid"
