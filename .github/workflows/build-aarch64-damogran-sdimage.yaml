@@ -1,6 +1,6 @@
 jobs:
-  build_and_release_iso:
-    runs-on: ubuntu-latest
+  build_shell:
+    runs-on: self-hosted
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4.1.7
@@ -16,16 +16,11 @@ jobs:
         extraPullNames: cuda-maintainers, mic92, nix-community, nrdxp
         name: njk
         signingKey: ${{ secrets.CACHIX_SIGNING_KEY }}
-    - name: Build keygen.iso
-      run: nix develop --accept-flake-config --command just release
-    - name: copy iso
-      run: mkdir -p /home/runner/work/_temp/iso_release && cp $(cat /home/runner/work/_temp/iso_location.txt)
-        /home/runner/work/_temp/iso_release/keygen-x86_64-linux.iso
-    - name: Release
-      uses: softprops/action-gh-release@v2.0.8
-      with:
-        files: /home/runner/work/_temp/iso_release/keygen-x86_64-linux.iso
-        tag_name: v0.0.1
-name: Release keygen.iso [x86_64-linux]
+    - name: Build damogran sdImage
+      run: nix build .#nixosConfigurations.nixos-damogran.config.system.build.sdImage
+    - name: Build damogran toplevel
+      run: nix build .#nixosConfigurations.nixos-damogran.config.system.build.toplevel
+name: Build damogran [aarch64-linux]
 'on':
+  push: null
   workflow_dispatch: null

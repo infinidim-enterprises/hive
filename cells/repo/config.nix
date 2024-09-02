@@ -172,7 +172,7 @@ in
         resource_class = "arm.large";
         steps = [
           {
-            "nix/install".channels = "nixpkgs=https://nixos.org/channels/nixos-23.11";
+            "nix/install".channels = "nixpkgs=https://nixos.org/channels/nixos-24.05";
             "nix/install".extra-conf = ''
               experimental-features = flakes nix-command
             '';
@@ -222,7 +222,7 @@ in
           name = "Install Nix";
           uses = "cachix/install-nix-action@v27";
           "with" = {
-            nix_path = "nixpkgs=channel:nixos-23.11";
+            nix_path = "nixpkgs=channel:nixos-24.05";
             extra_nix_config = "access-tokens = github.com=\${{ secrets.GITHUB_TOKEN }}";
           };
         }
@@ -250,6 +250,34 @@ in
         #   };
         # }
       ];
+
+      rpi4-damogran-linux = mkNixago {
+        data = {
+          name = "Build damogran [aarch64-linux]";
+          on.push = null;
+          on.workflow_dispatch = null;
+          jobs = {
+            build_shell = {
+              runs-on = "self-hosted";
+              steps = common_steps ++ [
+                {
+                  name = "Build damogran sdImage";
+                  run = ''nix build .#nixosConfigurations.nixos-damogran.config.system.build.sdImage'';
+                }
+
+                {
+                  name = "Build damogran toplevel";
+                  run = ''nix build .#nixosConfigurations.nixos-damogran.config.system.build.toplevel'';
+                }
+              ];
+            };
+          };
+        };
+
+        output = ".github/workflows/build-aarch64-damogran-sdimage.yaml";
+        format = "yaml";
+        hook.mode = "copy";
+      };
 
       devshell-aarch64-linux = mkNixago {
         data = {
@@ -446,6 +474,7 @@ in
       # NOTE: garnix builds most things now!
       devshell-x86_64-linux
       devshell-aarch64-linux
+      rpi4-damogran-linux
       workflowHostTemplate
       flake-lock
       dependabot

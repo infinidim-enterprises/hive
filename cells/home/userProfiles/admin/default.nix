@@ -24,10 +24,16 @@ in
 
           ({ pkgs, ... }: {
             services.gpg-agent.pinentryPackage = pkgs.pinentry-gnome3;
+            home.packages = [ pkgs.dconf ];
           })
         ];
     }
-    { users.users.admin.extraGroups = [ "wheel" ]; }
+
+    {
+      users.users.admin.extraGroups = [ "wheel" ];
+      programs.dconf.enable = true;
+    }
+
     {
       users.users.admin = {
         # NOTE: cannot have it as a sops secret, since this user gets to be in bootstrap
