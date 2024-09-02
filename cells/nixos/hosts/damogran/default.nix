@@ -36,7 +36,7 @@ rec {
         {
           systemd.network.networks.local-eth.matchConfig.Name = "end0";
           networking.wireless.enable = false;
-          networking.networkmanager.enable = true;
+          networking.networkmanager.enable = false;
           # environment.systemPackages = with pkgs; [ ventoy-full ];
         })
 

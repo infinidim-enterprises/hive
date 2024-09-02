@@ -1,5 +1,5 @@
 jobs:
-  build_shell:
+  build_damogran:
     runs-on: self-hosted
     steps:
     - name: Checkout repository

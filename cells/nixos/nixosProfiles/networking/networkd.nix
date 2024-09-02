@@ -44,6 +44,7 @@ mkMerge [
 
     systemd.network = {
       enable = true;
+      # wait-online.enable = true;
       wait-online.anyInterface = config.networking.useNetworkd;
 
       networks.local-eth = {

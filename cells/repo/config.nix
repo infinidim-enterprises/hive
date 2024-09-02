@@ -257,7 +257,7 @@ in
           on.push = null;
           on.workflow_dispatch = null;
           jobs = {
-            build_shell = {
+            build_damogran = {
               runs-on = "self-hosted";
               steps = common_steps ++ [
                 {
