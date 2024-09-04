@@ -163,6 +163,7 @@ mkMerge [
         systemd-timesyncd-post = {
           inherit path serviceConfig;
           after = [ "systemd-timesyncd.service" ];
+          before = [ "adguardhome.service" ];
           requires = [ "systemd-timesyncd.service" ];
           description = "Restore DNS server after systemd-timesyncd";
           script = ''
