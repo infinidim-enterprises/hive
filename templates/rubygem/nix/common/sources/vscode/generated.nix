@@ -14,22 +14,22 @@
   };
   codium = {
     pname = "codium";
-    version = "0.9.13";
+    version = "0.9.14";
     src = fetchurl {
-      url = "https://Codium.gallery.vsassets.io/_apis/public/gallery/publisher/Codium/extension/codium/0.9.13/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "codium-0.9.13.zip";
-      sha256 = "sha256-yaIg7W1aqRGCzZpWrvP6T+2zH1YaOYjYaU1UY6vGzZ8=";
+      url = "https://Codium.gallery.vsassets.io/_apis/public/gallery/publisher/Codium/extension/codium/0.9.14/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "codium-0.9.14.zip";
+      sha256 = "sha256-LjEZB7QymLwgxU3vFoCeMS1aBWTFndORjaSSwkPgxns=";
     };
     publisher = "Codium";
     name = "codium";
   };
   copilot = {
     pname = "copilot";
-    version = "1.223.1055";
+    version = "1.226.0";
     src = fetchurl {
-      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.223.1055/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "copilot-1.223.1055.zip";
-      sha256 = "sha256-ufKqWSpZmhhww5l6W/E2rGPO7GbzfUj38nlrGdKej40=";
+      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.226.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "copilot-1.226.0.zip";
+      sha256 = "sha256-YOscDkuiB12t62ijkrgoY/aG66gbsIuzZtJYe0tRaYs=";
     };
     publisher = "GitHub";
     name = "copilot";
@@ -201,11 +201,11 @@
   };
   ruby-lsp = {
     pname = "ruby-lsp";
-    version = "0.7.15";
+    version = "0.7.18";
     src = fetchurl {
-      url = "https://Shopify.gallery.vsassets.io/_apis/public/gallery/publisher/Shopify/extension/ruby-lsp/0.7.15/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "ruby-lsp-0.7.15.zip";
-      sha256 = "sha256-8Ycoq8M9DT7aTOH4qb/oknLl3KpINDdbrQxf44mV+KQ=";
+      url = "https://Shopify.gallery.vsassets.io/_apis/public/gallery/publisher/Shopify/extension/ruby-lsp/0.7.18/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "ruby-lsp-0.7.18.zip";
+      sha256 = "sha256-ABuTYdAJO+vvAYvb5swFzdXlh7AicmPZGr9kPPaH0Ec=";
     };
     publisher = "Shopify";
     name = "ruby-lsp";

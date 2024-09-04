@@ -3,11 +3,11 @@
 {
   lobe-chat = {
     pname = "lobe-chat";
-    version = "v1.11.9";
+    version = "v1.15.11";
     src = dockerTools.pullImage {
       imageName = "lobehub/lobe-chat";
-      imageDigest = "sha256:57a9c0cdb6119330ecf486433d5379b480428e7b4fe70491f3ee248fb64e1fa1";
-      sha256 = "sha256-+MSPzcJETRBKp2Zr8NuOrbKIWbjs4t/KpyKGTfsLaOA=";
+      imageDigest = "sha256:c62c48a4b161fa14d0623f4e79c75d85a275f8d9943494bf0e630bc0860ded35";
+      sha256 = "sha256-UGYbiWO6mDXLvWIQDmC4KpS49So8ViDB2Kv9a7ENz0A=";
       finalImageTag = "latest";
     };
   };
@@ -33,14 +33,14 @@
   };
   rtw89 = {
     pname = "rtw89";
-    version = "d823c59fb32bd16f080f9a3c4ffb971b0e7f6c79";
+    version = "d1fced1b8a741dc9f92b47c69489c24385945f6e";
     src = fetchFromGitHub {
       owner = "lwfinger";
       repo = "rtw89";
-      rev = "d823c59fb32bd16f080f9a3c4ffb971b0e7f6c79";
+      rev = "d1fced1b8a741dc9f92b47c69489c24385945f6e";
       fetchSubmodules = false;
-      sha256 = "sha256-IByjvxcYmhKg3wyM3Rayl1ccV35l3VKLd2bO0p+YBvc=";
+      sha256 = "sha256-Htu1TihKkUCNWw5LCf+cnGyCQsj0PuijlfAolug2MC8=";
     };
-    date = "2024-08-18";
+    date = "2024-08-24";
   };
 }
