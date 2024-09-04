@@ -18,6 +18,7 @@ let
     "systemd-journal"
 
     "dialout"
+    "i2c"
   ];
 in
 

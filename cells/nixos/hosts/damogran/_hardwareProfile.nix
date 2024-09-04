@@ -8,50 +8,6 @@ in
   # deploy.params.cpu = "intel";
   # deploy.params.gpu = "intel";
 
-  home-manager.sharedModules = [
-    ({ config, lib, ... }: lib.mkIf config.services.kanshi.enable {
-      services.kanshi.settings =
-        let
-          output_panel = {
-            criteria = "DSI-1";
-            mode = "720x1280";
-            status = "enable";
-            transform = "270";
-            scale = 1.0;
-          };
-          output_HDMI-A-1 = {
-            criteria = "HDMI-A-1";
-            mode = "1920x1080";
-            status = "enable";
-            scale = 1.0;
-          };
-        in
-        [
-          {
-            profile.name = "builtin_panel";
-            profile.outputs = [ (output_panel // { position = "0,0"; }) ];
-          }
-
-          {
-            profile.name = "panel_and_hdmi";
-            profile.outputs = [
-              (output_HDMI-A-1 // { position = "0,0"; })
-              (output_panel // { position = "320,1080"; })
-            ];
-          }
-        ];
-    })
-
-    ({ config, lib, ... }: lib.mkIf
-      (config.wayland.windowManager.hyprland.enable
-        && !config.services.kanshi.enable)
-      {
-        wayland.windowManager.hyprland.settings.monitor = [
-          "DSI-1,preferred,auto,1,transform,3"
-        ];
-      })
-  ];
-
   # boot.consoleLogLevel = 0;
   # boot.kernelParams = [ "drm.debug=0" "modeset=1" ];
   # boot.extraModprobeConfig = ''
@@ -80,6 +36,10 @@ in
     ];
 
   raspberry-pi-nix.board = "bcm2711";
+
+  hardware.i2c.enable = true;
+  environment.systemPackages = [ pkgs.i2c-tools ];
+
   hardware.raspberry-pi.config.all = {
     base-dt-params.BOOT_UART.value = 1;
     base-dt-params.BOOT_UART.enable = true;

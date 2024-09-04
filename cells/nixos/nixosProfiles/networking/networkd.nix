@@ -137,6 +137,44 @@ mkMerge [
     }
   ))
 
+  (mkIf (config.services.timesyncd.enable && config.services.adguardhome.enable) {
+    # NOTE: adguard has dns over https, it needs valid datetime to verify certificates.
+    # systemd-timesyncd needs to resolve ntp server IP to run
+    # set DNS to google and after systemd-timesyncd gets synced, reset DNS to adguard
+    systemd.services =
+      let
+        path = with pkgs; [ jq iproute2 systemd ];
+        serviceConfig = { Type = "oneshot"; };
+        adguardhomeDNS = with config.services.adguardhome;
+          "${host}:${builtins.toString settings.dns.port}";
+        dev = "dev=$(ip -j route show default | jq -r '.[] | .dev')";
+      in
+      {
+        systemd-timesyncd-pre = {
+          inherit path serviceConfig;
+          before = [ "systemd-timesyncd.service" ];
+          description = "Set DNS server for systemd-timesyncd";
+          script = ''
+            ${dev}
+            resolvectl dns "$dev" 8.8.8.8:53
+          '';
+        };
+
+        systemd-timesyncd-post = {
+          inherit path serviceConfig;
+          after = [ "systemd-timesyncd.service" ];
+          requires = [ "systemd-timesyncd.service" ];
+          description = "Restore DNS server after systemd-timesyncd";
+          script = ''
+            ${dev}
+            resolvectl dns "$dev" ${adguardhomeDNS}
+          '';
+        };
+
+        systemd-timesyncd.before = [ "adguardhome.service" ];
+      };
+  })
+
   (mkIf config.networking.networkmanager.enable {
     # systemd.network.wait-online.anyInterface = true;
     systemd.network.wait-online.enable = false;
