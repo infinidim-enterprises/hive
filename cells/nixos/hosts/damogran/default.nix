@@ -32,6 +32,8 @@ rec {
       bee.home.nixosModules.home-manager
       (import ./_hardwareProfile.nix { inherit inputs cell; })
 
+      cell.nixosProfiles.services.minidlna
+
       ({ pkgs, ... }:
         {
           systemd.network.networks.local-eth.matchConfig.Name = "end0";
