@@ -2,6 +2,26 @@
 
 { pkgs, lib, config, name, osConfig, ... }:
 let
+  /*
+     Hide the nav-bar by default
+    #nav-bar {
+    visibility: collapse !important;
+    opacity: 0 !important;
+    transition: opacity 0.3s ease;
+    }
+
+     Show the nav-bar when hovered
+    #nav-bar:hover {
+    visibility: visible !important;
+    opacity: 1 !important;
+    }
+
+     Show the nav-bar when the address bar is focused
+    #nav-bar:focus-within {
+    visibility: visible !important;
+    opacity: 1 !important;
+    }
+  */
   userChrome = ''
     /* Hide horizontal tabs on top of the window */
     #main-window[tabsintitlebar="true"]:not([extradragspace="true"]) #TabsToolbar > .toolbar-items {
@@ -13,25 +33,6 @@ let
       visibility: collapse !important;
       height: 0 !important;
       margin-bottom: 0 !important;
-    }
-
-    /* Hide the nav-bar by default */
-    #nav-bar {
-      visibility: collapse !important;
-      opacity: 0 !important;
-      transition: opacity 0.3s ease;
-    }
-
-    /* Show the nav-bar when hovered */
-    #nav-bar:hover {
-      visibility: visible !important;
-      opacity: 1 !important;
-    }
-
-    /* Show the nav-bar when the address bar is focused */
-    #nav-bar:focus-within {
-      visibility: visible !important;
-      opacity: 1 !important;
     }
   '';
 

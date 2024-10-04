@@ -613,6 +613,8 @@ in
     bind = , k, submap, reset
     bind = , e, exec, [ workspace 2 silent ] emacsclient -c
     bind = , e, submap, reset
+
+    bind = Control_L, g, submap, reset
     submap = reset
   '';
   #   bind = $masterMod, apostrophe, submap, clipboard
