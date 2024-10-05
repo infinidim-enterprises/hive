@@ -97,7 +97,7 @@
     },
     "copilot-el": {
         "cargoLocks": null,
-        "date": "2024-08-16",
+        "date": "2024-09-25",
         "extract": null,
         "name": "copilot-el",
         "passthru": null,
@@ -107,16 +107,16 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "535ef61e82f09d744cd5b097b1fc99f08cce175c",
-            "sha256": "sha256-/ZDnEZWUFcKnUtFrd/4C7LX16GAdUQncU8ZnYzntKS0=",
+            "rev": "b5878d6a8c741138b5efbf4fe1c594f3fd69dbdd",
+            "sha256": "sha256-02ywlMPku1FIritZjjtxbQW6MmPvSwmRCrudYsUb8bU=",
             "type": "git",
             "url": "https://github.com/zerolfx/copilot.el.git"
         },
-        "version": "535ef61e82f09d744cd5b097b1fc99f08cce175c"
+        "version": "b5878d6a8c741138b5efbf4fe1c594f3fd69dbdd"
     },
     "doom-emacs": {
         "cargoLocks": null,
-        "date": "2024-09-03",
+        "date": "2024-10-03",
         "extract": null,
         "name": "doom-emacs",
         "passthru": null,
@@ -126,12 +126,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": true,
             "name": null,
-            "rev": "559e5b6a966fa82bf8322f89d78a00ef4181812a",
-            "sha256": "sha256-Wk0piemQp7OCevCrzHn3QZXYpjmUHzraNXb5GPsZjmo=",
+            "rev": "8b9168de6e6a9cabf13d1c92558e2ef71aa37a72",
+            "sha256": "sha256-KHj3ZqNx7ilaj0DbvRRohsiFpIh4JoQ+UKhO2dc2tyM=",
             "type": "git",
             "url": "https://github.com/hlissner/doom-emacs"
         },
-        "version": "559e5b6a966fa82bf8322f89d78a00ef4181812a"
+        "version": "8b9168de6e6a9cabf13d1c92558e2ef71aa37a72"
     },
     "grip": {
         "cargoLocks": null,
@@ -154,7 +154,7 @@
     },
     "jinx": {
         "cargoLocks": null,
-        "date": "2024-08-24",
+        "date": "2024-09-26",
         "extract": null,
         "name": "jinx",
         "passthru": null,
@@ -166,15 +166,15 @@
             "name": null,
             "owner": "minad",
             "repo": "jinx",
-            "rev": "cd827ee199efedc8f5e094001d90206e698f91e8",
-            "sha256": "sha256-s6DQ9UlQ98071n+nbhcRU2J2qgNosiJxqC4FTazwkww=",
+            "rev": "316e470633d9bbe365079cf237e3ddef1f37a80e",
+            "sha256": "sha256-oKH+5PvgrZZW/hxtvXkCGC5x/iiT7WFKNOl6aHK9dmc=",
             "type": "github"
         },
-        "version": "cd827ee199efedc8f5e094001d90206e698f91e8"
+        "version": "316e470633d9bbe365079cf237e3ddef1f37a80e"
     },
     "lsp-bridge": {
         "cargoLocks": null,
-        "date": "2024-09-04",
+        "date": "2024-10-04",
         "extract": null,
         "name": "lsp-bridge",
         "passthru": null,
@@ -186,11 +186,11 @@
             "name": null,
             "owner": "manateelazycat",
             "repo": "lsp-bridge",
-            "rev": "0c02dc44f9bdf86f93ee3a5fbe624bf5a556b807",
-            "sha256": "sha256-zgmGrgc+BHwwo6ouYGBq9fClRwt9rIYET5ExfWWgNPI=",
+            "rev": "2d0cd0bea3bd503ca3bb7bcf4a6a78af091c7ecc",
+            "sha256": "sha256-q6xIYUhXTqGeR9tnjd1xnCOnOeOMypJN6vfGjZDuIIM=",
             "type": "github"
         },
-        "version": "0c02dc44f9bdf86f93ee3a5fbe624bf5a556b807"
+        "version": "2d0cd0bea3bd503ca3bb7bcf4a6a78af091c7ecc"
     },
     "nix-mode": {
         "cargoLocks": null,
@@ -215,7 +215,7 @@
     },
     "nix-ts-mode": {
         "cargoLocks": null,
-        "date": "2024-07-10",
+        "date": "2024-09-30",
         "extract": null,
         "name": "nix-ts-mode",
         "passthru": null,
@@ -227,11 +227,11 @@
             "name": null,
             "owner": "remi-gelinas",
             "repo": "nix-ts-mode",
-            "rev": "59ad17690576190811e0746c12ad6809596ca3ac",
-            "sha256": "sha256-DtYAsAeKSYjDzGes504Bq538OUG8HQSiJf+GjeDuMDE=",
+            "rev": "a1189df50d8f4fa88f3b939cb9727bb5997f9b82",
+            "sha256": "sha256-Yj0E6yvdrDSCS4WPcz3mD/f6R63KCPeyytrrwsgwp7A=",
             "type": "github"
         },
-        "version": "59ad17690576190811e0746c12ad6809596ca3ac"
+        "version": "a1189df50d8f4fa88f3b939cb9727bb5997f9b82"
     },
     "org-pretty-table": {
         "cargoLocks": null,
