@@ -3,33 +3,33 @@
 {
   bash-ide-vscode = {
     pname = "bash-ide-vscode";
-    version = "1.42.0";
+    version = "1.43.0";
     src = fetchurl {
-      url = "https://mads-hartmann.gallery.vsassets.io/_apis/public/gallery/publisher/mads-hartmann/extension/bash-ide-vscode/1.42.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "bash-ide-vscode-1.42.0.zip";
-      sha256 = "sha256-NcL9qPpqDuXrrsmvTvQZFh4biRJGCue+SyRul458vE0=";
+      url = "https://mads-hartmann.gallery.vsassets.io/_apis/public/gallery/publisher/mads-hartmann/extension/bash-ide-vscode/1.43.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "bash-ide-vscode-1.43.0.zip";
+      sha256 = "sha256-IpJCzoYZ+L39HqBts487E00RfVnZhLa9wUYs2FIV9pQ=";
     };
     publisher = "mads-hartmann";
     name = "bash-ide-vscode";
   };
   codium = {
     pname = "codium";
-    version = "0.9.14";
+    version = "0.10.2";
     src = fetchurl {
-      url = "https://Codium.gallery.vsassets.io/_apis/public/gallery/publisher/Codium/extension/codium/0.9.14/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "codium-0.9.14.zip";
-      sha256 = "sha256-LjEZB7QymLwgxU3vFoCeMS1aBWTFndORjaSSwkPgxns=";
+      url = "https://Codium.gallery.vsassets.io/_apis/public/gallery/publisher/Codium/extension/codium/0.10.2/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "codium-0.10.2.zip";
+      sha256 = "sha256-tz0nw8Sh1DHI8PmS+H79nIgnlG2ggnczXENhgUGJLKU=";
     };
     publisher = "Codium";
     name = "codium";
   };
   copilot = {
     pname = "copilot";
-    version = "1.226.0";
+    version = "1.235.1137";
     src = fetchurl {
-      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.226.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "copilot-1.226.0.zip";
-      sha256 = "sha256-YOscDkuiB12t62ijkrgoY/aG66gbsIuzZtJYe0tRaYs=";
+      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.235.1137/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "copilot-1.235.1137.zip";
+      sha256 = "sha256-Dq2pP+PJxjudJC8p0rH2RgGX3nAcpigV2ysKCQinNp8=";
     };
     publisher = "GitHub";
     name = "copilot";
@@ -58,11 +58,11 @@
   };
   fonted = {
     pname = "fonted";
-    version = "0.0.7";
+    version = "1.0.0";
     src = fetchurl {
-      url = "https://degreat.gallery.vsassets.io/_apis/public/gallery/publisher/degreat/extension/fonted/0.0.7/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "fonted-0.0.7.zip";
-      sha256 = "sha256-mW3gC0pzMp53jx8KhkBqyFYxTIq1rcjRmfkeouZsH4A=";
+      url = "https://degreat.gallery.vsassets.io/_apis/public/gallery/publisher/degreat/extension/fonted/1.0.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "fonted-1.0.0.zip";
+      sha256 = "sha256-5iFt9F0yr1Smxi0FbIv5psSnGrdoo/gz3lGJn5g//F0=";
     };
     publisher = "degreat";
     name = "fonted";
@@ -102,11 +102,11 @@
   };
   markdown-preview-enhanced = {
     pname = "markdown-preview-enhanced";
-    version = "0.8.13";
+    version = "0.8.14";
     src = fetchurl {
-      url = "https://shd101wyy.gallery.vsassets.io/_apis/public/gallery/publisher/shd101wyy/extension/markdown-preview-enhanced/0.8.13/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "markdown-preview-enhanced-0.8.13.zip";
-      sha256 = "sha256-DxM7oWAbIonsKTvJjxX4oTaBwvRcxNT2y10ljYAzVeI=";
+      url = "https://shd101wyy.gallery.vsassets.io/_apis/public/gallery/publisher/shd101wyy/extension/markdown-preview-enhanced/0.8.14/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "markdown-preview-enhanced-0.8.14.zip";
+      sha256 = "sha256-vCuuPB/GTkM2xCBn1UF3CZwP49Ge/8eelHhg67EG7tQ=";
     };
     publisher = "shd101wyy";
     name = "markdown-preview-enhanced";
@@ -135,11 +135,11 @@
   };
   nix-ide = {
     pname = "nix-ide";
-    version = "0.3.3";
+    version = "0.3.5";
     src = fetchurl {
-      url = "https://jnoortheen.gallery.vsassets.io/_apis/public/gallery/publisher/jnoortheen/extension/nix-ide/0.3.3/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "nix-ide-0.3.3.zip";
-      sha256 = "sha256-/vBbErwwecQhsqQwnw8ijooof8DPWt85symLQQtBC+Y=";
+      url = "https://jnoortheen.gallery.vsassets.io/_apis/public/gallery/publisher/jnoortheen/extension/nix-ide/0.3.5/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "nix-ide-0.3.5.zip";
+      sha256 = "sha256-hiyFZVsZkxpc2Kh0zi3NGwA/FUbetAS9khWxYesxT4s=";
     };
     publisher = "jnoortheen";
     name = "nix-ide";
@@ -168,11 +168,11 @@
   };
   remote-ssh-edit = {
     pname = "remote-ssh-edit";
-    version = "0.86.0";
+    version = "0.87.0";
     src = fetchurl {
-      url = "https://ms-vscode-remote.gallery.vsassets.io/_apis/public/gallery/publisher/ms-vscode-remote/extension/remote-ssh-edit/0.86.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "remote-ssh-edit-0.86.0.zip";
-      sha256 = "sha256-JsbaoIekUo2nKCu+fNbGlh5d1Tt/QJGUuXUGP04TsDI=";
+      url = "https://ms-vscode-remote.gallery.vsassets.io/_apis/public/gallery/publisher/ms-vscode-remote/extension/remote-ssh-edit/0.87.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "remote-ssh-edit-0.87.0.zip";
+      sha256 = "sha256-yeX6RAJl07d+SuYyGQFLZNcUzVKAsmPFyTKEn+y3GuM=";
     };
     publisher = "ms-vscode-remote";
     name = "remote-ssh-edit";
@@ -201,11 +201,11 @@
   };
   ruby-lsp = {
     pname = "ruby-lsp";
-    version = "0.7.18";
+    version = "0.8.2";
     src = fetchurl {
-      url = "https://Shopify.gallery.vsassets.io/_apis/public/gallery/publisher/Shopify/extension/ruby-lsp/0.7.18/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "ruby-lsp-0.7.18.zip";
-      sha256 = "sha256-ABuTYdAJO+vvAYvb5swFzdXlh7AicmPZGr9kPPaH0Ec=";
+      url = "https://Shopify.gallery.vsassets.io/_apis/public/gallery/publisher/Shopify/extension/ruby-lsp/0.8.2/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "ruby-lsp-0.8.2.zip";
+      sha256 = "sha256-bx9cw4h7O9lzEpEAPGfcL1X6ILbypISd4fcRs1ZkoAM=";
     };
     publisher = "Shopify";
     name = "ruby-lsp";
@@ -289,11 +289,11 @@
   };
   vscode-docker = {
     pname = "vscode-docker";
-    version = "1.29.2";
+    version = "1.29.3";
     src = fetchurl {
-      url = "https://ms-azuretools.gallery.vsassets.io/_apis/public/gallery/publisher/ms-azuretools/extension/vscode-docker/1.29.2/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "vscode-docker-1.29.2.zip";
-      sha256 = "sha256-j68CgHyLTaWZ2tyzLDO34vnlFwABgk5+P9ZaA8q2RDA=";
+      url = "https://ms-azuretools.gallery.vsassets.io/_apis/public/gallery/publisher/ms-azuretools/extension/vscode-docker/1.29.3/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "vscode-docker-1.29.3.zip";
+      sha256 = "sha256-z0RqFos0ZG2Id/alUBZJyroX3coTcJ+x2R8v4FD2Zcg=";
     };
     publisher = "ms-azuretools";
     name = "vscode-docker";
@@ -322,11 +322,11 @@
   };
   vscode-markdownlint = {
     pname = "vscode-markdownlint";
-    version = "0.55.0";
+    version = "0.56.0";
     src = fetchurl {
-      url = "https://DavidAnson.gallery.vsassets.io/_apis/public/gallery/publisher/DavidAnson/extension/vscode-markdownlint/0.55.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "vscode-markdownlint-0.55.0.zip";
-      sha256 = "sha256-slfHfRPcuRu+649n6kAr2bv9H6J+DvYVN/ysq1QpPQM=";
+      url = "https://DavidAnson.gallery.vsassets.io/_apis/public/gallery/publisher/DavidAnson/extension/vscode-markdownlint/0.56.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "vscode-markdownlint-0.56.0.zip";
+      sha256 = "sha256-ITSpPe032XcGIlfRQtJSR0iNTizs85qwfRaTtKwNn50=";
     };
     publisher = "DavidAnson";
     name = "vscode-markdownlint";
