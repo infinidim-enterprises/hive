@@ -25,6 +25,7 @@ rec {
 
         directories = with config; [
           "/var/log"
+          "/var/lib/nixos"
 
           (mkIf services.samba.enable
             "/var/lib/samba/usershares")

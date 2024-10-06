@@ -6,23 +6,41 @@ let
     mkIf
     mkMerge
     hasAttr;
+  global = {
+    "usershare path" = "/var/lib/samba/usershares";
+    "usershare max shares" = "100";
+    "usershare allow guests" = "yes";
+    "usershare owner only" = "yes";
+    "disable netbios" = "yes";
+    "smb ports" = "445";
+  };
+  extraConfig =
+    with lib;
+    "\n" +
+    (concatStringsSep "\n"
+      (mapAttrsToList (k: v: "${toString k} = ${toString v}")
+        global)) +
+    "\n";
+  post_24-05 = lib.versionOlder inputs.nixos-24-05.lib.version pkgs.lib.version;
 in
 mkMerge [
+  (mkIf post_24-05 {
+    services.samba.settings = { inherit global; };
+    services.samba.nmbd.enable = false;
+  })
+  (mkIf (!post_24-05) {
+    services.samba = {
+      inherit extraConfig;
+      enableNmbd = false;
+    };
+  })
+
   {
     # NOTE: caja will be able to use net usershare
     services.samba.enable = true;
-    services.samba.enableNmbd = false;
     services.samba.package = pkgs.sambaFull;
     services.samba.openFirewall = true;
-    services.samba.extraConfig = ''
-      usershare path = /var/lib/samba/usershares
-      usershare max shares = 100
-      usershare allow guests = yes
-      usershare owner only = yes
 
-      disable netbios = yes
-      smb ports = 445
-    '';
     systemd.services.samba-smbd.serviceConfig.ExecStartPre = "${pkgs.coreutils}/bin/mkdir -m +t -p /var/lib/samba/usershares";
   }
 

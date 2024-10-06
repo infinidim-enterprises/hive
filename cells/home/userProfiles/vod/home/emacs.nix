@@ -33,7 +33,7 @@ let
       customSetts
 
       s
-      sqlite
+      # sqlite
       sqlite3
       # vterm
       # vterm-toggle
