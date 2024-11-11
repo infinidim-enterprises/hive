@@ -63,12 +63,14 @@ mkMerge [
     # xdg.portal.configPackages = mkDefault [ pkgs.gnome.gnome-session ];
 
     xdg.portal.extraPortals = with pkgs;[
+      xdg-desktop-portal-hyprland
+      xdg-desktop-portal-gtk
       # (xdg-desktop-portal-gtk.override {
       #   # Do not build portals that we already have.
       #   buildPortalsInGnome = false;
       # })
       # xdg-desktop-portal-gnome
-      # xdg-desktop-portal-xapp
+      xdg-desktop-portal-xapp
       # xdg-desktop-portal-shana
     ];
 
