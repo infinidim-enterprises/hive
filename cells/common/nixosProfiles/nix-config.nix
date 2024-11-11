@@ -3,6 +3,7 @@
 { config, lib, pkgs, ... }:
 let
   GB = 1024 * 1024 * 1024;
+  MB = 1024 * 1024;
   inherit (builtins) attrNames attrValues;
   cachix = {
     # NOTE: always set from the default module: "https://cache.nixos.org/" = "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=";
@@ -41,6 +42,7 @@ in
   nix.settings.fallback = true;
   nix.settings.warn-dirty = false;
   nix.settings.min-free = lib.mkDefault (5 * GB);
+  nix.settings.download-buffer-size = lib.mkDefault (10 * MB);
   nix.settings.builders-use-substitutes = true;
   nix.settings.auto-allocate-uids = true;
   nix.settings.use-cgroups = true;

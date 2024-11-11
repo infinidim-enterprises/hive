@@ -303,7 +303,8 @@
     #
     # hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1&ref=refs/tags/v0.41.2";
     # hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1&ref=refs/tags/v0.42.0";
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1&ref=refs/tags/v0.43.0";
+    # hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1&ref=refs/tags/v0.43.0";
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1&ref=refs/tags/v0.45.0";
     # hyprland.follows = "hyprland-hy3/hyprland";
     hyprland.inputs.nixpkgs.follows = "hyprland-nixpkgs-unstable";
     hyprland.inputs.systems.follows = "hyprland-systems";
@@ -313,7 +314,8 @@
     hyprland-xdg-desktop-portal.inputs.nixpkgs.follows = "hyprland-nixpkgs-unstable";
 
     # hyprland-hyprutils.url = "git+https://github.com/hyprwm/hyprutils?ref=refs/tags/v0.2.1";
-    hyprland-hyprutils.url = "git+https://github.com/hyprwm/hyprutils?ref=refs/tags/v0.2.3";
+    # hyprland-hyprutils.url = "git+https://github.com/hyprwm/hyprutils?ref=refs/tags/v0.2.3";
+    hyprland-hyprutils.url = "git+https://github.com/hyprwm/hyprutils?ref=refs/tags/v0.2.4";
     hyprland-hyprutils.inputs.nixpkgs.follows = "hyprland-nixpkgs-unstable";
 
     hyprland-hyprlock.url = "git+https://github.com/hyprwm/hyprlock";
@@ -332,12 +334,12 @@
     # hyprland-hyprpicker.url = "git+https://github.com/hyprwm/hyprpicker";
     # hyprland-hyprpicker.inputs.nixpkgs.follows = "hyprland-nixpkgs-unstable";
 
-    hyprland-plugins.url = "github:hyprwm/hyprland-plugins/v0.43.0";
+    hyprland-plugins.url = "github:hyprwm/hyprland-plugins/v0.45.0";
     hyprland-plugins.inputs.nixpkgs.follows = "hyprland/nixpkgs";
     hyprland-plugins.inputs.systems.follows = "hyprland/systems";
     hyprland-plugins.inputs.hyprland.follows = "hyprland";
 
-    hyprland-hy3.url = "github:outfoxxed/hy3/hl0.43.0"; # FIXME: hy3
+    hyprland-hy3.url = "github:outfoxxed/hy3/hl0.45.0";
     hyprland-hy3.inputs.hyprland.follows = "hyprland";
 
     # TODO: https://github.com/levnikmyskin/hyprland-virtual-desktops
