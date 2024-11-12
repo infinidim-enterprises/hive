@@ -1,71 +1,89 @@
 { inputs, cell, ... }:
 rec {
 
-  default = { lib, config, ... }:
+  default = { lib, config, pkgs, utils, ... }:
     let
+      inherit (utils) escapeSystemdPath;
+      inherit (pkgs.callPackage "${inputs.impermanence}/lib.nix" { })
+        concatPaths;
       inherit (lib)
         any
         mkIf
         mkAfter
+        mkMerge
         hasAttr
         optional
-        optionals;
+        optionals
+        escapeShellArg;
     in
     {
-      boot.initrd.postDeviceCommands = mkAfter ''
-        zfs rollback -r ${config.fileSystems."/".device}@blank
-      '';
-
-      fileSystems."/".neededForBoot = true;
-      fileSystems."/persist".neededForBoot = true;
-
       imports = [ inputs.impermanence.nixosModules.impermanence ];
-      environment.persistence."/persist" = {
-        hideMounts = true;
+      config = mkMerge [
+        {
+          boot.initrd.postDeviceCommands = mkAfter ''
+            zfs rollback -r ${config.fileSystems."/".device}@blank
+          '';
 
-        directories = with config; [
-          "/var/log"
-          "/var/lib/nixos"
+          fileSystems."/".neededForBoot = true;
+          fileSystems."/persist".neededForBoot = true;
 
-          (mkIf services.samba.enable
-            "/var/lib/samba/usershares")
+          environment.persistence."/persist" = {
+            hideMounts = true;
 
-          # (mkIf sound.enable
-          #   "/var/lib/alsa")
+            directories = with config; [
+              "/var/log"
+              "/var/lib/nixos"
 
-          (mkIf (networking.wireless.enable || hardware.bluetooth.enable)
-            "/var/lib/systemd/rfkill")
+              (mkIf services.samba.enable
+                "/var/lib/samba/usershares")
 
-          (mkIf networking.networkmanager.enable
-            "/etc/NetworkManager/system-connections")
+              # (mkIf sound.enable
+              #   "/var/lib/alsa")
 
-          (mkIf hardware.bluetooth.enable
-            "/var/lib/bluetooth")
+              (mkIf (networking.wireless.enable || hardware.bluetooth.enable)
+                "/var/lib/systemd/rfkill")
 
-          # (mkIf services.xserver.displayManager.lightdm.enable
-          #   "/var/cache/lightdm")
+              (mkIf networking.networkmanager.enable
+                "/etc/NetworkManager/system-connections")
 
-          (mkIf services.opensnitch.enable
-            "/etc/opensnitchd/rules")
+              (mkIf hardware.bluetooth.enable
+                "/var/lib/bluetooth")
 
-          (mkIf virtualisation.docker.enable
-            "/var/lib/docker")
+              # (mkIf services.xserver.displayManager.lightdm.enable
+              #   "/var/cache/lightdm")
 
-          (mkIf virtualisation.libvirtd.enable
-            "/var/lib/libvirt")
+              (mkIf services.opensnitch.enable
+                "/etc/opensnitchd/rules")
 
-          (mkIf services.zerotierone.enable "/var/lib/zerotier-one"
-            # TODO: perhaps only keep identity.secret in /persist for zerotier
-            # services.zerotierone.homeDir
-          )
+              (mkIf virtualisation.docker.enable
+                "/var/lib/docker")
 
-        ];
+              (mkIf virtualisation.libvirtd.enable
+                "/var/lib/libvirt")
 
-        files =
-          (optional (cell.lib.isZfs config) "/etc/machine-id") ++
-          (optionals config.services.openssh.enable
-            (map (e: e.path) config.services.openssh.hostKeys));
-      };
+              (mkIf services.zerotierone.enable "/var/lib/zerotier-one"
+                # TODO: perhaps only keep identity.secret in /persist for zerotier
+                # services.zerotierone.homeDir
+              )
+            ];
+
+            files =
+              (optional (cell.lib.isZfs config) "/etc/machine-id") ++
+              (optionals config.services.openssh.enable
+                (map (e: e.path) config.services.openssh.hostKeys));
+          };
+        }
+
+        (mkIf config.services.openssh.enable (
+          let
+            #targetFile = escapeShellArg (concatPaths [ persistentStoragePath filePath ]);
+          in
+          {
+            systemd.services.persist-persist-etc-ssh-ssh_host_rsa_key.before = [ "sshd.service" ];
+            systemd.services.persist-persist-etc-ssh-ssh_host_ed25519_key.before = [ "sshd.service" ];
+          }
+        ))
+      ];
     };
 
   vod = { lib, ... }: {
