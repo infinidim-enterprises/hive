@@ -14,7 +14,12 @@ rec {
         hasAttr
         optional
         optionals
+        mapAttrs'
+        listToAttrs
+        nameValuePair
         escapeShellArg;
+      persistentStoragePath = "/persist";
+      openSshHostKeys = map (e: e.path) config.services.openssh.hostKeys;
     in
     {
       imports = [ inputs.impermanence.nixosModules.impermanence ];
@@ -25,9 +30,9 @@ rec {
           '';
 
           fileSystems."/".neededForBoot = true;
-          fileSystems."/persist".neededForBoot = true;
+          fileSystems."${persistentStoragePath}".neededForBoot = true;
 
-          environment.persistence."/persist" = {
+          environment.persistence."${persistentStoragePath}" = {
             hideMounts = true;
 
             directories = with config; [
@@ -69,19 +74,20 @@ rec {
 
             files =
               (optional (cell.lib.isZfs config) "/etc/machine-id") ++
-              (optionals config.services.openssh.enable
-                (map (e: e.path) config.services.openssh.hostKeys));
+              (optionals config.services.openssh.enable openSshHostKeys);
           };
         }
 
         (mkIf config.services.openssh.enable (
           let
-            #targetFile = escapeShellArg (concatPaths [ persistentStoragePath filePath ]);
+            overrides = listToAttrs (map
+              (filePath: nameValuePair
+                "persist-${escapeSystemdPath
+                  (escapeShellArg (concatPaths [ persistentStoragePath filePath ]))}"
+                { before = [ "sshd.service" ]; })
+              openSshHostKeys);
           in
-          {
-            systemd.services.persist-persist-etc-ssh-ssh_host_rsa_key.before = [ "sshd.service" ];
-            systemd.services.persist-persist-etc-ssh-ssh_host_ed25519_key.before = [ "sshd.service" ];
-          }
+          { systemd.services = mapAttrs' nameValuePair overrides; }
         ))
       ];
     };
