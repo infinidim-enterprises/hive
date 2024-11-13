@@ -20,7 +20,7 @@
     },
     "adguard-filters_adguardteam": {
         "cargoLocks": null,
-        "date": "2024-10-05",
+        "date": "2024-11-13",
         "extract": null,
         "name": "adguard-filters_adguardteam",
         "passthru": null,
@@ -30,16 +30,16 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "72cacecd24748d0db1a86456b531b4ae3241edab",
-            "sha256": "sha256-Rd7pyZ6JRY75f0Zf3rey2Neep0JrDR9HHFEc2cwndMY=",
+            "rev": "013e6dfe1dc8ff1e83e71b993069293c355faca0",
+            "sha256": "sha256-pjXz56dkXFd138DS61uvs2U8CWJPVL/DcYob1CbT2Z0=",
             "type": "git",
             "url": "https://github.com/AdguardTeam/AdguardFilters"
         },
-        "version": "72cacecd24748d0db1a86456b531b4ae3241edab"
+        "version": "013e6dfe1dc8ff1e83e71b993069293c355faca0"
     },
     "adguard-filters_romania": {
         "cargoLocks": null,
-        "date": "2024-08-26",
+        "date": "2024-11-09",
         "extract": null,
         "name": "adguard-filters_romania",
         "passthru": null,
@@ -49,12 +49,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "15d22c04fdd05a86599a557d9f915b521028f90a",
-            "sha256": "sha256-9q2w255dNwdKCbCD99U1EHqlz0Qnvzt/W2yCP83j81w=",
+            "rev": "83c4027dd1c88018116c67de679531b357e5a9b4",
+            "sha256": "sha256-VSwYamdR8I/Qssskvjo93CVDEOn93xoJN4bMQ7CgNjo=",
             "type": "git",
             "url": "https://github.com/tcptomato/ROad-Block"
         },
-        "version": "15d22c04fdd05a86599a557d9f915b521028f90a"
+        "version": "83c4027dd1c88018116c67de679531b357e5a9b4"
     },
     "age-plugin-trezor": {
         "cargoLocks": null,
@@ -80,7 +80,7 @@
     },
     "base16-schemes": {
         "cargoLocks": null,
-        "date": "2024-09-25",
+        "date": "2024-11-12",
         "extract": null,
         "name": "base16-schemes",
         "passthru": null,
@@ -90,16 +90,16 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "b3273211d5d1510aee669083fc5a1e0e4b5e310c",
-            "sha256": "sha256-UCRGabAyj8+RFkKdSZBR8BPE6yLM3rPpdxXHmwd9rZ0=",
+            "rev": "61058a8d2e2bd4482b53d57a68feb56cdb991f0b",
+            "sha256": "sha256-Tp1BpaF5qRav7O2TsSGjCfgRzhiasu4IuwROR66gz1o=",
             "type": "git",
             "url": "https://github.com/tinted-theming/schemes"
         },
-        "version": "b3273211d5d1510aee669083fc5a1e0e4b5e310c"
+        "version": "61058a8d2e2bd4482b53d57a68feb56cdb991f0b"
     },
     "chatgpt-wrapper": {
         "cargoLocks": null,
-        "date": "2024-09-30",
+        "date": "2024-11-03",
         "extract": null,
         "name": "chatgpt-wrapper",
         "passthru": null,
@@ -111,11 +111,11 @@
             "name": null,
             "owner": "llm-workflow-engine",
             "repo": "llm-workflow-engine",
-            "rev": "e5555e9f16f41fa068d3e29622bee051f145f867",
-            "sha256": "sha256-32C8vyQs6K1w6FqoAr3V3nus8+ltQOxXXznumTvzvhQ=",
+            "rev": "e0065ee8aba732bcb52f3f0eb60a27f595f5c5ff",
+            "sha256": "sha256-Uinm1RQsb0XZAUhonjJR++V0xxrouUh6HH/BXKRCvS4=",
             "type": "github"
         },
-        "version": "e5555e9f16f41fa068d3e29622bee051f145f867"
+        "version": "e0065ee8aba732bcb52f3f0eb60a27f595f5c5ff"
     },
     "cl-hash-util": {
         "cargoLocks": null,
@@ -250,11 +250,11 @@
             "name": null,
             "owner": "elbywan",
             "repo": "crystalline",
-            "rev": "v0.14.1",
-            "sha256": "sha256-Z5gEuyK3MeFaIuzr+SdZ6dphSGEqL4fQ+cOwDW1Y3go=",
+            "rev": "v0.15.0",
+            "sha256": "sha256-6ZAogEuOJH1QQ6NSJ+8KZUSFSgQAcvd4U9vWNAGix/M=",
             "type": "github"
         },
-        "version": "v0.14.1"
+        "version": "v0.15.0"
     },
     "dbus": {
         "cargoLocks": null,
@@ -402,7 +402,7 @@
     },
     "ipxe": {
         "cargoLocks": null,
-        "date": "2024-09-27",
+        "date": "2024-10-29",
         "extract": null,
         "name": "ipxe",
         "passthru": null,
@@ -412,12 +412,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "3f4f843920afdc1d808a8b20354cf3eca481401a",
-            "sha256": "sha256-+Zpl8xhiWrnkFVL+DLuV0N9pn6hjw5JxDMxeDmfcNS4=",
+            "rev": "8fc11d8a4ad41f15af3d081250865f971312d871",
+            "sha256": "sha256-yR+Idz0of6T++D9GPA97MbZCLx3TDumn34B5Z7EHt4Y=",
             "type": "git",
             "url": "https://github.com/ipxe/ipxe"
         },
-        "version": "3f4f843920afdc1d808a8b20354cf3eca481401a"
+        "version": "8fc11d8a4ad41f15af3d081250865f971312d871"
     },
     "iterable-io": {
         "cargoLocks": null,
@@ -448,11 +448,11 @@
             "name": null,
             "owner": "langchain-ai",
             "repo": "langchain",
-            "rev": "langchain-core==0.3.9",
-            "sha256": "sha256-GuJhpMFq3hXa7Qg9K6Nm9yRXYrNv2CFPd2mE58e2AfM=",
+            "rev": "langchain-core==0.3.17",
+            "sha256": "sha256-IWNHiONascKwZS1I2foZD66eOW/zFR6UiAz9Gz8VDCU=",
             "type": "github"
         },
-        "version": "langchain-core==0.3.9"
+        "version": "langchain-core==0.3.17"
     },
     "ledger-live-desktop": {
         "cargoLocks": null,
@@ -540,7 +540,7 @@
     },
     "pam_usb": {
         "cargoLocks": null,
-        "date": "2024-08-30",
+        "date": "2024-11-03",
         "extract": null,
         "name": "pam_usb",
         "passthru": null,
@@ -550,12 +550,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "8ffa54bceec57b853c3dbfd81b8c4857f87f6a4d",
-            "sha256": "sha256-X8B22+KqX4GvcDofm+kHzjpW7MIdkGWhy04ydu/Io74=",
+            "rev": "38a32d53e9710be0f8e5b89d4eb43b025a94c4e4",
+            "sha256": "sha256-Xxb6Wi+ss6iIvnkO1l4JCIOO2VV0WBrsKgZ3l9XdFN8=",
             "type": "git",
             "url": "https://github.com/mcdope/pam_usb"
         },
-        "version": "8ffa54bceec57b853c3dbfd81b8c4857f87f6a4d"
+        "version": "38a32d53e9710be0f8e5b89d4eb43b025a94c4e4"
     },
     "paper-store": {
         "cargoLocks": null,
@@ -578,7 +578,7 @@
     },
     "pbkdf2-sha512": {
         "cargoLocks": null,
-        "date": "2024-10-05",
+        "date": "2024-11-13",
         "extract": null,
         "name": "pbkdf2-sha512",
         "passthru": null,
@@ -589,7 +589,7 @@
             "type": "url",
             "url": "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c"
         },
-        "version": "643b464914762ec890e6a3945ec557dc4793fb74"
+        "version": "e92d5eb3085079eb92d8a2c6981205827512b497"
     },
     "pgp-key-generation": {
         "cargoLocks": null,
@@ -668,7 +668,7 @@
     },
     "s5cmd": {
         "cargoLocks": null,
-        "date": "2024-07-26",
+        "date": "2024-10-24",
         "extract": null,
         "name": "s5cmd",
         "passthru": null,
@@ -680,11 +680,11 @@
             "name": null,
             "owner": "peak",
             "repo": "s5cmd",
-            "rev": "c280956c9c2e2789041e81e51cb1f9c4529340cc",
-            "sha256": "sha256-5sAi+yVvhuJs/BSkzHDNx2uyXukKfmBfhQfRRzOWJ7c=",
+            "rev": "8829d3b7cc3260474ceec2f7b4592ae430ad0c74",
+            "sha256": "sha256-Zu8zM4jeERQEeJrusrn9AxwCUy3L3s8MeV6H2o7Lbvw=",
             "type": "github"
         },
-        "version": "c280956c9c2e2789041e81e51cb1f9c4529340cc"
+        "version": "8829d3b7cc3260474ceec2f7b4592ae430ad0c74"
     },
     "solarized-dark-gnome-shell-2020": {
         "cargoLocks": null,
@@ -784,7 +784,7 @@
     },
     "stumpwm-git": {
         "cargoLocks": null,
-        "date": "2024-09-27",
+        "date": "2024-10-19",
         "extract": null,
         "name": "stumpwm-git",
         "passthru": {
@@ -799,11 +799,11 @@
             "name": null,
             "owner": "stumpwm",
             "repo": "stumpwm",
-            "rev": "5010a7e1a2fb51fc5997115ad90a9586b2d33209",
-            "sha256": "sha256-fPAEhLV7IDrfzJ88mSdZLXzXp0h2XF680PVjrIDYgvY=",
+            "rev": "20d839f2ddfdfd25a8460152bc5dc45a9354e773",
+            "sha256": "sha256-Ba2HcAmNcZvnqU0jpLTxsBe8L+4aHbO/oM4Bp/IYEC0=",
             "type": "github"
         },
-        "version": "5010a7e1a2fb51fc5997115ad90a9586b2d33209"
+        "version": "20d839f2ddfdfd25a8460152bc5dc45a9354e773"
     },
     "stumpwm-release": {
         "cargoLocks": null,
@@ -951,10 +951,10 @@
             "name": null,
             "owner": "wavetermdev",
             "repo": "waveterm",
-            "rev": "v0.8.8",
-            "sha256": "sha256-N/ymw4VfRyYg4FCICSqbD4620YcPrhw7AWyedUJvBAg=",
+            "rev": "v0.9.2",
+            "sha256": "sha256-s9fjhvb+swaphE3aGxNcb0umMnhlJ66BzIJ2Y4/iVfc=",
             "type": "github"
         },
-        "version": "v0.8.8"
+        "version": "v0.9.2"
     }
 }

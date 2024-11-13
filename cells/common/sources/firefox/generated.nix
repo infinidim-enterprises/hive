@@ -381,10 +381,10 @@
   };
   "darkreader" = rec {
     pname = "darkreader";
-    version = "4.9.94";
+    version = "4.9.96";
     addonId = "addon@darkreader.org";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4359254/darkreader-4.9.94.xpi";
-    sha256 = "251c4e7d0a30c0cab006803600e59ab92dcc0c606429740d42677846d4c9ccd6";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4378073/darkreader-4.9.96.xpi";
+    sha256 = "6e2f1a36d2398195b0cd7ee0fcb198ea4db6a57a1b3bf7b2cf5f17a8768f477e";
     meta = with lib;
       {
         homepage = "https://darkreader.org/";
@@ -427,10 +427,10 @@
   };
   "deepl-translate" = rec {
     pname = "deepl-translate";
-    version = "1.25.3";
+    version = "1.28.0";
     addonId = "firefox-extension@deepl.com";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4354972/deepl_translate-1.25.3.xpi";
-    sha256 = "b2ae4032bc2ff3179d0a7f2a184e4ea4dd2aee5402665dc48681b6b4453993f2";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4377180/deepl_translate-1.28.0.xpi";
+    sha256 = "db6021a1f6f8bbacc8eee5c6cff3c1a964ea0ad6bcdd57d0150d6fed56ab8ff4";
     meta = with lib;
       {
         homepage = "https://deepl.com";
@@ -452,10 +452,10 @@
   };
   "duckduckgo-for-firefox" = rec {
     pname = "duckduckgo-for-firefox";
-    version = "2024.7.24";
+    version = "2024.10.16";
     addonId = "jid1-ZAdIEUB7XOzOJw@jetpack";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4325805/duckduckgo_for_firefox-2024.7.24.xpi";
-    sha256 = "e1a71dff13da64d25341c18184da301b0f248434764563f90ad3de040da46b57";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4374439/duckduckgo_for_firefox-2024.10.16.xpi";
+    sha256 = "c37edce68c5324020b440eee298cfa8ac9851aa027571cdea1d48cea3b4f9c10";
     meta = with lib;
       {
         homepage = "https://duckduckgo.com/app";
@@ -652,10 +652,10 @@
   };
   "passff" = rec {
     pname = "passff";
-    version = "1.20.1";
+    version = "1.21";
     addonId = "passff@invicem.pro";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4339137/passff-1.20.1.xpi";
-    sha256 = "7418b41a6ee43d380d42147a3632c0cf7e68591a4341effc5dc2e40a72575122";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4383383/passff-1.21.xpi";
+    sha256 = "1119234918568333fb1c6119a023c4fbebb867fd3b05ec93af2c6df7001ae4b1";
     meta = with lib;
       {
         homepage = "https://codeberg.org/PassFF/passff";
@@ -1265,10 +1265,10 @@
   };
   "tree-style-tab" = rec {
     pname = "tree-style-tab";
-    version = "4.0.23";
+    version = "4.0.24";
     addonId = "treestyletab@piro.sakura.ne.jp";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4350896/tree_style_tab-4.0.23.xpi";
-    sha256 = "d8061eff00b56ccfdd6fd290b14ef2c8ef692a14eb8db1a27529f21e43df1f30";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4377780/tree_style_tab-4.0.24.xpi";
+    sha256 = "e1826e2054aede2f390cb98ff22915cc1e89778a6ebf94d68467200aeba8fefd";
     meta = with lib;
       {
         homepage = "http://piro.sakura.ne.jp/xul/_treestyletab.html.en";
