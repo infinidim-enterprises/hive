@@ -1291,10 +1291,10 @@
   };
   "ublock-origin" = rec {
     pname = "ublock-origin";
-    version = "1.60.0";
+    version = "1.61.0";
     addonId = "uBlock0@raymondhill.net";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4359936/ublock_origin-1.60.0.xpi";
-    sha256 = "e2cda9b2a1b0a7f6e5ef0da9f87f28df52f8560587ba2e51a3003121cfb81600";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4382536/ublock_origin-1.61.0.xpi";
+    sha256 = "e6fd55b799a568c66c10892a8f22428e6773fe16d7466ce9dee2952f224b203d";
     meta = with lib;
       {
         homepage = "https://github.com/gorhill/uBlock#ublock-origin";

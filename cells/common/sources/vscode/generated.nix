@@ -36,11 +36,11 @@
   };
   copilot = {
     pname = "copilot";
-    version = "1.245.1209";
+    version = "1.245.1214";
     src = fetchurl {
-      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.245.1209/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "copilot-1.245.1209.zip";
-      sha256 = "sha256-ELij7wbiTPLlBgzEYvW3068oEKvo7k5cdrHn+NlZRdo=";
+      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.245.1214/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "copilot-1.245.1214.zip";
+      sha256 = "sha256-zbvCuvDJdXX+48xic/TcQeTZ/lPAdCzQxFmztjRxnNE=";
     };
     publisher = "GitHub";
     name = "copilot";
@@ -113,11 +113,11 @@
   };
   gitlens = {
     pname = "gitlens";
-    version = "2024.11.1217";
+    version = "2024.11.1516";
     src = fetchurl {
-      url = "https://eamodio.gallery.vsassets.io/_apis/public/gallery/publisher/eamodio/extension/gitlens/2024.11.1217/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "gitlens-2024.11.1217.zip";
-      sha256 = "sha256-HQJKTzcGJfMN0gPtGf2FWzjtOSwBV44w+T0O9QhRg9E=";
+      url = "https://eamodio.gallery.vsassets.io/_apis/public/gallery/publisher/eamodio/extension/gitlens/2024.11.1516/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "gitlens-2024.11.1516.zip";
+      sha256 = "sha256-36YrNyOS1jq6yLfxNBL88jjRclDl2BqDpNVDJN2hMdo=";
     };
     publisher = "eamodio";
     name = "gitlens";
@@ -366,11 +366,11 @@
   };
   tabnine-vscode = {
     pname = "tabnine-vscode";
-    version = "3.189.0";
+    version = "3.190.0";
     src = fetchurl {
-      url = "https://TabNine.gallery.vsassets.io/_apis/public/gallery/publisher/TabNine/extension/tabnine-vscode/3.189.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "tabnine-vscode-3.189.0.zip";
-      sha256 = "sha256-fuKS43iywYC44fqppU+nPcQQd26t4clcurQb0v2Jnko=";
+      url = "https://TabNine.gallery.vsassets.io/_apis/public/gallery/publisher/TabNine/extension/tabnine-vscode/3.190.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "tabnine-vscode-3.190.0.zip";
+      sha256 = "sha256-TdL+8RbTMuxouuHSwjAerIgFLWLpm+T9mtwdBwsLOlg=";
     };
     publisher = "TabNine";
     name = "tabnine-vscode";

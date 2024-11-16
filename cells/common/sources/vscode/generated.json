@@ -64,12 +64,12 @@
         },
         "pinned": false,
         "src": {
-            "name": "copilot-1.245.1209.zip",
-            "sha256": "sha256-ELij7wbiTPLlBgzEYvW3068oEKvo7k5cdrHn+NlZRdo=",
+            "name": "copilot-1.245.1214.zip",
+            "sha256": "sha256-zbvCuvDJdXX+48xic/TcQeTZ/lPAdCzQxFmztjRxnNE=",
             "type": "url",
-            "url": "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.245.1209/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.245.1214/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "1.245.1209"
+        "version": "1.245.1214"
     },
     "crystal-lang": {
         "cargoLocks": null,
@@ -190,12 +190,12 @@
         },
         "pinned": false,
         "src": {
-            "name": "gitlens-2024.11.1217.zip",
-            "sha256": "sha256-HQJKTzcGJfMN0gPtGf2FWzjtOSwBV44w+T0O9QhRg9E=",
+            "name": "gitlens-2024.11.1516.zip",
+            "sha256": "sha256-36YrNyOS1jq6yLfxNBL88jjRclDl2BqDpNVDJN2hMdo=",
             "type": "url",
-            "url": "https://eamodio.gallery.vsassets.io/_apis/public/gallery/publisher/eamodio/extension/gitlens/2024.11.1217/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://eamodio.gallery.vsassets.io/_apis/public/gallery/publisher/eamodio/extension/gitlens/2024.11.1516/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "2024.11.1217"
+        "version": "2024.11.1516"
     },
     "gpt-pilot-vs-code": {
         "cargoLocks": null,
@@ -604,12 +604,12 @@
         },
         "pinned": false,
         "src": {
-            "name": "tabnine-vscode-3.189.0.zip",
-            "sha256": "sha256-fuKS43iywYC44fqppU+nPcQQd26t4clcurQb0v2Jnko=",
+            "name": "tabnine-vscode-3.190.0.zip",
+            "sha256": "sha256-TdL+8RbTMuxouuHSwjAerIgFLWLpm+T9mtwdBwsLOlg=",
             "type": "url",
-            "url": "https://TabNine.gallery.vsassets.io/_apis/public/gallery/publisher/TabNine/extension/tabnine-vscode/3.189.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://TabNine.gallery.vsassets.io/_apis/public/gallery/publisher/TabNine/extension/tabnine-vscode/3.190.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "3.189.0"
+        "version": "3.190.0"
     },
     "tokyo-night": {
         "cargoLocks": null,
