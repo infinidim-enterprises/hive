@@ -16,16 +16,16 @@
   };
   adguard-filters_adguardteam = {
     pname = "adguard-filters_adguardteam";
-    version = "013e6dfe1dc8ff1e83e71b993069293c355faca0";
+    version = "d30ee0eebd3eb8a47ed0732d9cb5b6948f2f22bd";
     src = fetchgit {
       url = "https://github.com/AdguardTeam/AdguardFilters";
-      rev = "013e6dfe1dc8ff1e83e71b993069293c355faca0";
+      rev = "d30ee0eebd3eb8a47ed0732d9cb5b6948f2f22bd";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-pjXz56dkXFd138DS61uvs2U8CWJPVL/DcYob1CbT2Z0=";
+      sha256 = "sha256-ko7IdvBppiolvLXc8WLdoXexiR/e2rF9Ut9DxNWt+AU=";
     };
-    date = "2024-11-13";
+    date = "2024-11-16";
   };
   adguard-filters_romania = {
     pname = "adguard-filters_romania";
@@ -272,13 +272,13 @@
   };
   langchain = {
     pname = "langchain";
-    version = "langchain-core==0.3.17";
+    version = "langchain-tests==0.3.0";
     src = fetchFromGitHub {
       owner = "langchain-ai";
       repo = "langchain";
-      rev = "langchain-core==0.3.17";
+      rev = "langchain-tests==0.3.0";
       fetchSubmodules = false;
-      sha256 = "sha256-IWNHiONascKwZS1I2foZD66eOW/zFR6UiAz9Gz8VDCU=";
+      sha256 = "sha256-WJfUmZA7QZUdrhmuEav1+0VPRd0jL2JIVyh+tjcmq7Y=";
     };
   };
   ledger-live-desktop = {
@@ -358,12 +358,12 @@
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "e92d5eb3085079eb92d8a2c6981205827512b497";
+    version = "8ebe7dbb740d0447fbe352fd69e8187c35b9dca6";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";
     };
-    date = "2024-11-13";
+    date = "2024-11-16";
   };
   pgp-key-generation = {
     pname = "pgp-key-generation";
