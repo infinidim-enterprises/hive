@@ -920,8 +920,10 @@ For whatever reason, emacs doesn't want to properly render font sizes, might hav
       (+ env-font-size 3))))
 
 (let* ((env-default-font (font-spec
-                          :family (getenv "HM_FONT_NAME")
-                          :size (font-size-by-emacs-version)
+                          :family "UbuntuMono Nerd Font Mono"
+                          ;; (getenv "HM_FONT_NAME")
+                          :size 15
+                          ;; FIXME: (font-size-by-emacs-version)
                           :weight 'normal)))
   (setq doom-font-increment 1
         doom-font env-default-font
