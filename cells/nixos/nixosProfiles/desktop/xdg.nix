@@ -20,7 +20,6 @@
 
   environment.systemPackages = with pkgs; [
     xdg-utils
-    xdg_utils
     xdg-user-dirs
     xdgmenumaker
   ];

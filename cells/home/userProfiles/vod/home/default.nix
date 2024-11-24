@@ -11,9 +11,12 @@ let
 in
 {
   imports =
-    # [ inputs.nix-doom-emacs.hmModule ] ++
-    (inputs.cells.common.lib.importers.importFolder ./.) ++
+    # (inputs.cells.common.lib.importers.importFolder ./.) ++
     [
+      ./gitconfig.nix
+      ./ssh.nix
+      ./emacs-unstraightened.nix
+
       # profiles.security.gpg
       # profiles.messengers
       # profiles.multimedia.players

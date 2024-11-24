@@ -37,7 +37,7 @@ mkMerge [
     programs.droidcam.enable = true;
 
     programs.kdeconnect.enable = true; # NOTE: open firewall ports 1714-1764
-    programs.kdeconnect.package = pkgs.kdeconnect;
+    programs.kdeconnect.package = pkgs.plasma5Packages.kdeconnect-kde;
 
     xdg.mime.enable = true;
 

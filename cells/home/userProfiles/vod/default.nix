@@ -11,7 +11,8 @@
 
   home-manager.users.vod.imports = [
     ./home
-    inputs.nix-doom-emacs.hmModule
+    inputs.nix-doom-emacs-unstraightened.hmModule
+    # inputs.nix-doom-emacs.hmModule
   ]
   ++ cell.homeSuites.wayland
   ++ cell.homeSuites.office

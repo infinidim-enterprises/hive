@@ -104,7 +104,7 @@ in
               imports =
                 inputs.cells.home.homeSuites.default ++
                 (with inputs.cells.home.homeModules; [
-                  services.emacs
+                  # services.emacs
                   programs.promnesia
                   programs.chemacs
                 ]);

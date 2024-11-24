@@ -221,7 +221,7 @@ Maybe use (package! maple-iedit :recipe (:host github :repo "honmaple/emacs-mapl
 
 #+begin_src emacs-lisp :tangle packages.el
 (package! discover :recipe (:host github :repo "mickeynp/discover.el"))
-(unpin! magit)
+;; (unpin! magit)
 #+end_src
 
 [[https://github.com/doomemacs/doomemacs/issues/6463][emmet-mode conflicts with copilot]]
@@ -277,7 +277,7 @@ Maybe use (package! maple-iedit :recipe (:host github :repo "honmaple/emacs-mapl
 [[https://github.com/Civitasv/pair-colorizer][Use a fork]]?
 
 #+begin_src emacs-lisp :tangle packages.el
-(package! rainbow-delimiters :recipe (:host github :repo "Civitasv/rainbow-delimiters"))
+(package! rainbow-delimiters)
 #+end_src
 
 #+begin_src emacs-lisp :tangle config.el
@@ -294,7 +294,7 @@ Maybe use (package! maple-iedit :recipe (:host github :repo "honmaple/emacs-mapl
 (package! org-ql)
 (package! helm-org-rifle)
 (package! org-books)
-(package! org-pretty-table)
+;; FIXME: (package! org-pretty-table)
 (package! org-mime)
 (package! org-rich-yank)
 ;; (package! ob-solidity)
@@ -303,25 +303,15 @@ Maybe use (package! maple-iedit :recipe (:host github :repo "honmaple/emacs-mapl
 #+end_src
 
 #+begin_src emacs-lisp :tangle config.el
-(after! langtool
-  (setq langtool-language-tool-server-jar (getenv "EMACS_PATH_LANGTOOL_SERVER")))
-
-(setq org-directory (getenv "EMACS_PATH_ORG")
-      org-brain-path (getenv "EMACS_PATH_ORG_BRAIN")
-      org-id-locations-file (getenv "EMACS_PATH_ORG_ID_LOCATION")
-      org-ref-pdf-directory (getenv "EMACS_PATH_ORG_REF_PDF_DIRECTORY")
-      org-ref-bibliography-notes (getenv "EMACS_PATH_ORG_REF_BIBLIOGRAPHY_NOTES")
-      org-ref-default-bibliography (getenv "EMACS_PATH_ORG_REF_DEFAULT_BIBLIOGRAPHY"))
-
 (use-package! ox-jekyll-md)
 (use-package! org-ql)
 (use-package! helm-org-rifle)
-(use-package! org-pretty-table
-  :after org-mode
-  :commands (org-pretty-table-mode global-org-pretty-table-mode)
-  ;; (lambda () (org-pretty-table-mode))
-  ;;:hook (org-mode . org-pretty-table-mode))
-)
+;; (use-package! org-pretty-table
+;;   :after org-mode
+;;   :commands (org-pretty-table-mode global-org-pretty-table-mode)
+;;   ;; (lambda () (org-pretty-table-mode))
+;;   ;;:hook (org-mode . org-pretty-table-mode))
+;; )
 (use-package! org-mime
   :config (setq org-mime-library 'semi))
 
@@ -336,7 +326,6 @@ Maybe use (package! maple-iedit :recipe (:host github :repo "honmaple/emacs-mapl
 (use-package! deft
   :custom
     (deft-extensions '("org" "md" "txt"))
-    (deft-directory (getenv "EMACS_PATH_ORG_DEFT"))
     (deft-use-filename-as-title t))
 
 (use-package! zetteldeft
@@ -548,7 +537,7 @@ helm-swoop can be replaced by (package! ctrlf :recipe (:host github :repo "raxod
 - [[https://github.com/ShuguangSun/ess-view-data][ShuguangSun/ess-view-data: View data support for ESS]]
 
 #+begin_src emacs-lisp :tangle packages.el
-(unpin! polymode)
+(package! polymode)
 #+end_src
 
 #+begin_src emacs-lisp :tangle config.el
@@ -590,6 +579,7 @@ helm-swoop can be replaced by (package! ctrlf :recipe (:host github :repo "raxod
 
 #+begin_src emacs-lisp :tangle packages.el
 (package! gitignore-templates)
+(package! magit-todos)
 #+end_src
 
 #+begin_src emacs-lisp :tangle config.el
@@ -689,23 +679,26 @@ This fails to build on nix currently
 ** color-rg
 
 #+begin_src emacs-lisp :tangle packages.el
-;;(package! color-rg :recipe (:host github :repo "manateelazycat/color-rg" :files "*"))
-(package! color-rg)
+;; (package! color-rg :recipe (:host github
+;;                             :repo "manateelazycat/color-rg"
+;;                             :files "*")
+;;   :pin t)
+
+;; (package! color-rg)
 #+end_src
 
+:rev "e45bedec545c044accf307532b3c50dbb9ab2b66"
+
 #+begin_src emacs-lisp :tangle config.el
-(use-package! color-rg
-  :commands (color-rg-search-input color-rg-search-symbol
-                                   color-rg-search-input-in-project)
-  :bind
-  (:map isearch-mode-map
-   ("M-s M-s" . isearch-toggle-color-rg)))
+;; (use-package! color-rg
+;;   :commands (color-rg-search-input color-rg-search-symbol
+;;                                    color-rg-search-input-in-project)
+;;   :bind
+;;   (:map isearch-mode-map
+;;    ("M-s M-s" . isearch-toggle-color-rg)))
 #+end_src
 
 ** Snippets and such
-#+begin_src emacs-lisp :tangle config.el
-(setq +snippets-dir (getenv "EMACS_PATH_SNIPPETS_DIR"))
-#+end_src
 
 * Language support
 ** Indent Guides
@@ -1018,10 +1011,6 @@ Not doing much lisp, switched to hyprland from stumpwm
  ;; TODO: user-mail-address "john@doe.com"
  calendar-week-start-day 1
  org-src-fontify-natively t
- plantuml-jar-path (getenv "EMACS_PATH_PLANTUML")
- org-plantuml-jar-path (getenv "EMACS_PATH_PLANTUML")
- url-history-file (concat (getenv "XDG_LOGS_DIR") "/emacs_url_hist.el")
- savehist-file (concat (getenv "XDG_LOGS_DIR") "/emacs_save_hist.el")
  comp-async-jobs-number 24
  display-line-numbers-type nil
  create-lockfiles nil
@@ -1070,4 +1059,15 @@ Not doing much lisp, switched to hyprland from stumpwm
 
 (add-hook! 'before-save-hook 'font-lock-flush)
 
+#+end_src
+
+** local-setts from nix config
+#+begin_src emacs-lisp :tangle packages.el
+(package! local-setts :built-in t)
+#+end_src
+
+#+begin_src emacs-lisp :tangle config.el
+(use-package! local-setts
+  :config
+  (load-nix-setts))
 #+end_src

@@ -27,5 +27,5 @@ jobs:
         files: /home/runner/work/_temp/iso_release/keygen-x86_64-linux.iso
         tag_name: v0.0.1
 name: Release keygen.iso [x86_64-linux]
-'on':
+on:
   workflow_dispatch: null

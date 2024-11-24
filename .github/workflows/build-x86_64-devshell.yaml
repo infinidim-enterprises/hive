@@ -19,6 +19,6 @@ jobs:
     - name: Build devshell
       run: nix develop --command "menu"
 name: Build devshell [x86_64-linux]
-'on':
+on:
   push: null
   workflow_dispatch: null

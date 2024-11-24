@@ -255,21 +255,26 @@
   # emacs & friends
   inputs = {
     #
-    nix-doom-emacs.url = "github:nix-community/nix-doom-emacs?ref=pull/316/head";
+
+    nix-doom-emacs-unstraightened.url = "github:marienz/nix-doom-emacs-unstraightened";
+
+    # nix-doom-emacs.url = "github:nix-community/nix-doom-emacs?ref=pull/316/head";
 
     # NOTE: https://github.com/nix-community/nix-straight.el/pull/4
-    nix-doom-emacs.inputs.nix-straight.follows = "nix-straight-fix-emacs29";
-    nix-doom-emacs.inputs.nixpkgs.follows = "nixpkgs-unstable";
+
+    # nix-doom-emacs.inputs.nix-straight.follows = "nix-straight-fix-emacs29";
+    # nix-doom-emacs.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
     # nix-doom-emacs.inputs.emacs-overlay.follows = "emacs-overlay";
 
-    nix-straight-fix-emacs29.url = "github:nix-community/nix-straight.el?ref=pull/4/head";
-    nix-straight-fix-emacs29.flake = false;
+    # nix-straight-fix-emacs29.url = "github:nix-community/nix-straight.el?ref=pull/4/head";
+    # nix-straight-fix-emacs29.flake = false;
 
     # a99c6b9036bde2f60697ce9f2ac259dfa2266dbf
     # nix-doom-emacs.inputs.doom-emacs.follows = "doom-emacs";
-    doom-emacs.url = "github:doomemacs/doomemacs";
-    doom-emacs.flake = false;
+
+    # doom-emacs.url = "github:doomemacs/doomemacs";
+    # doom-emacs.flake = false;
 
     # emacs-overlay.url = "github:nix-community/emacs-overlay";
     # emacs-overlay.inputs.nixpkgs.follows = "nixos";
@@ -278,8 +283,8 @@
     # emacs-overlay.url = "github:nix-community/emacs-overlay/c16be6de78ea878aedd0292aa5d4a1ee0a5da501";
 
     # LSP for nix
-    nixd.url = "github:nix-community/nixd?ref=refs/tags/2.4.0";
-    nix4nixd.url = "github:NixOS/nix/2.19.4";
+    nixd.url = "github:nix-community/nixd?ref=refs/tags/2.5.1";
+    nix4nixd.url = "github:NixOS/nix/2.25.2"; # 2.19.4
     # TODO: https://github.com/nix-community/nixd/blob/main/nixd/docs/user-guide.md
     # flake-compat, so options are visible
     nixd.inputs.nixpkgs.follows = "nixpkgs-unstable";
