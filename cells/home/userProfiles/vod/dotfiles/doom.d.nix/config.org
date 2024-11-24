@@ -221,14 +221,16 @@ Maybe use (package! maple-iedit :recipe (:host github :repo "honmaple/emacs-mapl
 
 #+begin_src emacs-lisp :tangle packages.el
 (package! discover :recipe (:host github :repo "mickeynp/discover.el"))
+(package! rainbow-mode)
 ;; (unpin! magit)
 #+end_src
 
 [[https://github.com/doomemacs/doomemacs/issues/6463][emmet-mode conflicts with copilot]]
 
 #+begin_src emacs-lisp :tangle config.el
-;;(use-package! rainbow-mode
-;;  :hook (prog-mode . rainbow-mode))
+(use-package! rainbow-mode
+  :hook (prog-mode . rainbow-mode))
+
 (setq custom-file (expand-file-name "doom_custom.el" (getenv "XDG_DATA_HOME")))
 (map! :after emmet-mode [tab] nil)
 #+end_src
