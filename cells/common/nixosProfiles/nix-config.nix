@@ -26,9 +26,9 @@ in
   nix.package = pkgs.nixVersions.latest;
   nix.optimise.automatic = lib.mkDefault true;
   nix.nrBuildUsers = 0;
-  nix.gc.automatic = true;
+  nix.gc.automatic = false;
   nix.gc.dates = "weekly";
-  nix.gc.options = "--delete-older-than 14d";
+  nix.gc.options = "--delete-older-than 30d";
   nix.settings.nix-path = [ "nixpkgs=${pkgs.path}" ];
   nix.settings.allowed-users = [ "@wheel" ];
   nix.settings.trusted-users = [ "root" "@wheel" ];
