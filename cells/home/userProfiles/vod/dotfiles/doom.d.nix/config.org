@@ -913,6 +913,7 @@ For whatever reason, emacs doesn't want to properly render font sizes, might hav
 #+begin_src emacs-lisp :tangle config.el
 (defun font-size-by-emacs-version ()
   "Native-comp and GTK support only come in emacs 29 and later."
+  ;; FIXME: not using MATE anymore, make it work with hyprland
   (let ((gtk-scaling-factor (string-to-number (shell-command-to-string "dconf read /org/mate/desktop/interface/window-scaling-factor")))
         (env-font-size (string-to-number (getenv "HM_FONT_SIZE"))))
     (if (<= emacs-major-version 28)
@@ -920,10 +921,8 @@ For whatever reason, emacs doesn't want to properly render font sizes, might hav
       (+ env-font-size 3))))
 
 (let* ((env-default-font (font-spec
-                          :family "UbuntuMono Nerd Font Mono"
-                          ;; (getenv "HM_FONT_NAME")
-                          :size 15
-                          ;; FIXME: (font-size-by-emacs-version)
+                          :family (getenv "HM_FONT_NAME")
+                          :size (font-size-by-emacs-version)
                           :weight 'normal)))
   (setq doom-font-increment 1
         doom-font env-default-font
