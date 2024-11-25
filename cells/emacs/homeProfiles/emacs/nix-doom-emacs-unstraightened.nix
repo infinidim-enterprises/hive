@@ -76,17 +76,6 @@ mkMerge [
     };
   })
 
-  # {
-  #   home.packages = [
-  #     (pkgs.aspellWithDicts (dicts: with dicts; [
-  #       en
-  #       en-computers
-  #       en-science
-  #       de
-  #       ru
-  #     ]))
-  #   ];
-
   #   # TODO: http://aspell.net/0.50-doc/man-html/4_Customizing.html
   #   # home.file.".aspell.conf".text =
   #   #   ".aspell.conf".text = ''

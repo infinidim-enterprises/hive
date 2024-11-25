@@ -47,12 +47,10 @@ mkMerge [
   {
     programs.hyprland.enable = true;
     programs.hyprland.xwayland.enable = true;
-    # BUG: https://github.com/NixOS/nixpkgs/issues/320734
-    # programs.hyprland.systemd.setPath.enable = true;
-    programs.hyprland.systemd.setPath.enable = false;
-    systemd.user.extraConfig = ''
-      DefaultEnvironment="PATH=/run/wrappers/bin:/etc/profiles/per-user/%u/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin:$PATH"
-    '';
+    programs.hyprland.systemd.setPath.enable = true;
+    # systemd.user.extraConfig = ''
+    #   DefaultEnvironment="PATH=/run/wrappers/bin:/etc/profiles/per-user/%u/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin:$PATH"
+    # '';
 
     programs.xwayland.enable = true;
     security.pam.services.hyprlock = { };
@@ -176,4 +174,37 @@ mkMerge [
   This configuration involves setting up Hyprland with one physical display and two virtual displays using WayVNC. You will configure Hyprland to handle multiple monitors, start Hyprland, and then start WayVNC instances for each virtual display. Connect to these virtual displays using VNC clients from other machines.
 
   While this setup does not use RDP directly (since Hyprland does not have native RDP support), it achieves similar functionality using VNC. If RDP is a strict requirement, you might need to explore additional solutions or different Wayland compositors that support RDP more directly, such as Weston.
+*/
+
+/*
+  Nov 25 11:45:46 oglaroon systemd[4354]: Starting Portal service...
+  Nov 25 11:45:46 oglaroon .xdg-desktop-po[4516]: Choosing gtk.portal for org.freedesktop.impl.portal.Lockdown as a last-resort fallback
+  Nov 25 11:45:46 oglaroon .xdg-desktop-po[4516]: The preferred method to match portal implementations to desktop environments is to use the portals.conf(5) configuration file
+  Nov 25 11:46:11 oglaroon .xdg-desktop-po[4516]: No skeleton to export
+  Nov 25 11:46:11 oglaroon .xdg-desktop-po[4516]: Choosing gtk.portal for org.freedesktop.impl.portal.FileChooser as a last-resort fallback
+  Nov 25 11:46:36 oglaroon .xdg-desktop-po[4516]: Failed to create file chooser proxy: Error calling StartServiceByName for org.freedesktop.impl.portal.desktop.gtk: Timeout was reached
+  Nov 25 11:46:36 oglaroon .xdg-desktop-po[4516]: No skeleton to export
+  Nov 25 11:46:36 oglaroon .xdg-desktop-po[4516]: Choosing gtk.portal for org.freedesktop.impl.portal.AppChooser as a last-resort fallback
+  Nov 25 11:47:01 oglaroon .xdg-desktop-po[4516]: Failed to create app chooser proxy: Error calling StartServiceByName for org.freedesktop.impl.portal.desktop.gtk: Timeout was reached
+  Nov 25 11:47:01 oglaroon .xdg-desktop-po[4516]: No skeleton to export
+  Nov 25 11:47:01 oglaroon .xdg-desktop-po[4516]: Choosing gtk.portal for org.freedesktop.impl.portal.Print as a last-resort fallback
+  Nov 25 11:47:16 oglaroon systemd[4354]: xdg-desktop-portal.service: start operation timed out. Terminating.
+  Nov 25 11:47:16 oglaroon systemd[4354]: xdg-desktop-portal.service: Failed with result 'timeout'.
+  Nov 25 11:47:16 oglaroon systemd[4354]: Failed to start Portal service.
+  Nov 25 11:53:08 oglaroon systemd[4354]: Starting Portal service...
+  Nov 25 11:53:08 oglaroon .xdg-desktop-po[9368]: Choosing gtk.portal for org.freedesktop.impl.portal.Lockdown as a last-resort fallback
+  Nov 25 11:53:08 oglaroon .xdg-desktop-po[9368]: The preferred method to match portal implementations to desktop environments is to use the portals.conf(5) configuration file
+  Nov 25 11:53:08 oglaroon .xdg-desktop-po[9368]: No skeleton to export
+  Nov 25 11:53:08 oglaroon .xdg-desktop-po[9368]: Choosing gtk.portal for org.freedesktop.impl.portal.FileChooser as a last-resort fallback
+  Nov 25 11:53:08 oglaroon .xdg-desktop-po[9368]: Choosing gtk.portal for org.freedesktop.impl.portal.AppChooser as a last-resort fallback
+  Nov 25 11:53:08 oglaroon .xdg-desktop-po[9368]: Choosing gtk.portal for org.freedesktop.impl.portal.Print as a last-resort fallback
+  Nov 25 11:53:08 oglaroon .xdg-desktop-po[9368]: Choosing gtk.portal for org.freedesktop.impl.portal.Notification as a last-resort fallback
+  Nov 25 11:53:08 oglaroon .xdg-desktop-po[9368]: Choosing gtk.portal for org.freedesktop.impl.portal.Inhibit as a last-resort fallback
+  Nov 25 11:53:08 oglaroon .xdg-desktop-po[9368]: Choosing gtk.portal for org.freedesktop.impl.portal.Access as a last-resort fallback
+  Nov 25 11:53:08 oglaroon .xdg-desktop-po[9368]: Failed connect to PipeWire: Couldn't connect to PipeWire
+  Nov 25 11:53:08 oglaroon .xdg-desktop-po[9368]: Choosing gtk.portal for org.freedesktop.impl.portal.Wallpaper as a last-resort fallback
+  Nov 25 11:53:08 oglaroon .xdg-desktop-po[9368]: Choosing gtk.portal for org.freedesktop.impl.portal.Account as a last-resort fallback
+  Nov 25 11:53:08 oglaroon .xdg-desktop-po[9368]: Choosing gtk.portal for org.freedesktop.impl.portal.Email as a last-resort fallback
+  Nov 25 11:53:08 oglaroon .xdg-desktop-po[9368]: Choosing gtk.portal for org.freedesktop.impl.portal.DynamicLauncher as a last-resort fallback
+
 */
