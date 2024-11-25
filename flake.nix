@@ -13,18 +13,18 @@
 
   # nixConfig.extra-access-tokens = ["github.com=github_pat_XYZ"];
 
-  # common for deduplication
   inputs = {
+    # common for deduplication
     flake-compat.url = "github:edolstra/flake-compat";
     flake-utils.url = "github:numtide/flake-utils";
     nixpkgs-lib.url = "github:nix-community/nixpkgs.lib";
     bird-nix-lib.url = "github:spikespaz/bird-nix-lib";
 
     flake-schemas.url = "github:DeterminateSystems/flake-schemas";
-  };
 
-  # hive / std
-  inputs = {
+    ###
+    # hive / std
+    ###
     devshell.url = "github:numtide/devshell";
     devshell.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
@@ -104,11 +104,11 @@
     hive.inputs.colmena.follows = "colmena";
     hive.inputs.nixago.follows = "nixago";
     hive.inputs.nixpkgs.follows = "nixpkgs-unstable";
-  };
 
-  # system tools
-  # TODO: inputs.nix-topology.url = "github:oddlama/nix-topology";
-  inputs = {
+    ###
+    # system tools
+    ###
+    # TODO: inputs.nix-topology.url = "github:oddlama/nix-topology";
     nix-super.url = "github:privatevoid-net/nix-super";
 
     nix-filter.url = "github:numtide/nix-filter";
@@ -138,10 +138,10 @@
 
     devos-ext-lib.url = "github:divnix/devos-ext-lib/?ref=refs/pull/8/head";
     devos-ext-lib.inputs.nixpkgs.follows = "nixpkgs-unstable";
-  };
 
-  # nixpkgs & home-manager
-  inputs = {
+    ###
+    # nixpkgs & home-manager
+    ###
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixpkgs-master.url = "github:nixos/nixpkgs";
     latest.follows = "nixpkgs-unstable";
@@ -159,10 +159,10 @@
 
     # Nix flake for "too much bleeding-edge" and unreleased packages
     # nyx.url = "github:chaotic-cx/nyx";
-  };
 
-  # Compat nixpkgs
-  inputs = {
+    ###
+    # Compat nixpkgs
+    ###
     # NOTE: nixpkgs-pycrypto-pinned is pinned for gpg-hd package, never upgrade!
     # https://github.com/Logicwax/gpg-hd/issues/3 - is the reason.
     # nixpkgs-pycrypto-pinned.url = "github:nixos/nixpkgs/e1d501922fd7351da4200e1275dfcf5faaad1220";
@@ -173,24 +173,24 @@
     nixos-23-11.url = "github:nixos/nixpkgs/release-23.11";
     nixos-24-05.url = "github:nixos/nixpkgs/release-24.05";
     nixpkgs-22-11.follows = "nixos-22-11";
-  };
 
-  # rpi stuff
-  inputs = {
+    ###
+    # rpi stuff
+    ###
     # "github:nix-community/raspberry-pi-nix";
     raspberry-pi-nix.url = "github:infinidim-enterprises/raspberry-pi-nix";
     raspberry-pi-nix.inputs.nixpkgs.follows = "nixos-24-05";
-  };
 
-  # kubernetes and friends
-  inputs = {
+    ###
+    # kubernetes and friends
+    ###
     k8s.url = "github:nixos/nixpkgs/3005f20ce0aaa58169cdee57c8aa12e5f1b6e1b3";
     kubenix.url = "github:hall/kubenix";
     kubenix.inputs.nixpkgs.follows = "nixpkgs-unstable";
-  };
 
-  # tools
-  inputs = {
+    ###
+    # tools
+    ###
     nixos-vscode-server.url = "github:nix-community/nixos-vscode-server";
     nixos-vscode-server.inputs.nixpkgs.follows = "nixpkgs";
     nixos-vscode-server.inputs.flake-utils.follows = "flake-utils";
@@ -218,7 +218,7 @@
       url = "git+https://seed.radicle.xyz/z3gqcJUoA1n9HaHKufZs5FCSGazv5.git";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
-    };*/
+      };*/
 
     # TODO: rewrite auto-cpufreq in crystal
     # auto-cpufreq.url = "github:AdnanHodzic/auto-cpufreq";
@@ -250,35 +250,25 @@
     # AAA
     # TODO: authentik
     authentik-nix.url = "github:nix-community/authentik-nix";
-  };
 
-  # emacs & friends
-  inputs = {
-    #
-
+    ###
+    # emacs & friends
+    ###
     nix-doom-emacs-unstraightened.url = "github:marienz/nix-doom-emacs-unstraightened";
 
     # nix-doom-emacs.url = "github:nix-community/nix-doom-emacs?ref=pull/316/head";
-
     # NOTE: https://github.com/nix-community/nix-straight.el/pull/4
-
     # nix-doom-emacs.inputs.nix-straight.follows = "nix-straight-fix-emacs29";
     # nix-doom-emacs.inputs.nixpkgs.follows = "nixpkgs-unstable";
-
     # nix-doom-emacs.inputs.emacs-overlay.follows = "emacs-overlay";
-
     # nix-straight-fix-emacs29.url = "github:nix-community/nix-straight.el?ref=pull/4/head";
     # nix-straight-fix-emacs29.flake = false;
-
     # a99c6b9036bde2f60697ce9f2ac259dfa2266dbf
     # nix-doom-emacs.inputs.doom-emacs.follows = "doom-emacs";
-
     # doom-emacs.url = "github:doomemacs/doomemacs";
     # doom-emacs.flake = false;
-
     # emacs-overlay.url = "github:nix-community/emacs-overlay";
     # emacs-overlay.inputs.nixpkgs.follows = "nixos";
-
     # emacs-overlay.follows = "nix-doom-emacs/inputs/emacs-overlay";
     # emacs-overlay.url = "github:nix-community/emacs-overlay/c16be6de78ea878aedd0292aa5d4a1ee0a5da501";
 
@@ -288,75 +278,55 @@
     # TODO: https://github.com/nix-community/nixd/blob/main/nixd/docs/user-guide.md
     # flake-compat, so options are visible
     nixd.inputs.nixpkgs.follows = "nixpkgs-unstable";
-  };
 
-  # wayland stuff
-  inputs = {
-    # TODO: reorganize inputs to have a let for vars, ie. hyprland_version = "0.41.0"; # 0.41.1
+    ###
+    # wayland stuff
+    ###
     hyprland-nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     hyprland-systems.url = "github:nix-systems/default-linux";
 
     waybar.url = "github:Alexays/Waybar";
-    waybar.inputs.nixpkgs.follows = "hyprland-nixpkgs-unstable";
+    waybar.inputs.nixpkgs.follows = "hyprland/nixpkgs";
 
-    # FIXME: hyprland version spec doesn't work!
-    # hyprland.url = "github:hyprwm/Hyprland?submodules=1&ref=v0.41.1";
-    # https://github.com/hyprwm/Hyprland/issues/5891
-
-    # b03f41efec14273cf25c42d4cef326acc36cb319
-    # hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1&rev=b03f41efec14273cf25c42d4cef326acc36cb319";
-    #
-    # hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1&ref=refs/tags/v0.41.2";
-    # hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1&ref=refs/tags/v0.42.0";
-    # hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1&ref=refs/tags/v0.43.0";
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1&ref=refs/tags/v0.45.0";
+    # hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1&ref=refs/tags/v0.45.0";
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1&ref=refs/tags/v0.45.2";
     # hyprland.follows = "hyprland-hy3/hyprland";
     hyprland.inputs.nixpkgs.follows = "hyprland-nixpkgs-unstable";
     hyprland.inputs.systems.follows = "hyprland-systems";
-    hyprland.inputs.hyprutils.follows = "hyprland-hyprutils";
-
-    hyprland-xdg-desktop-portal.url = "git+https://github.com/hyprwm/xdg-desktop-portal-hyprland";
-    hyprland-xdg-desktop-portal.inputs.nixpkgs.follows = "hyprland-nixpkgs-unstable";
-
-    # hyprland-hyprutils.url = "git+https://github.com/hyprwm/hyprutils?ref=refs/tags/v0.2.1";
-    # hyprland-hyprutils.url = "git+https://github.com/hyprwm/hyprutils?ref=refs/tags/v0.2.3";
-    hyprland-hyprutils.url = "git+https://github.com/hyprwm/hyprutils?ref=refs/tags/v0.2.4";
-    hyprland-hyprutils.inputs.nixpkgs.follows = "hyprland-nixpkgs-unstable";
-
-    hyprland-hyprlock.url = "git+https://github.com/hyprwm/hyprlock";
-    hyprland-hyprlock.inputs.nixpkgs.follows = "hyprland-nixpkgs-unstable";
-    hyprland-hyprlock.inputs.systems.follows = "hyprland/systems";
-    hyprland-hyprlock.inputs.hyprutils.follows = "hyprland-hyprutils";
-
-    hyprland-hypridle.url = "git+https://github.com/hyprwm/hypridle";
-    hyprland-hypridle.inputs.nixpkgs.follows = "hyprland-nixpkgs-unstable";
-    hyprland-hypridle.inputs.systems.follows = "hyprland/systems";
-    hyprland-hypridle.inputs.hyprutils.follows = "hyprland-hyprutils";
-
-    hyprland-contrib.url = "git+https://github.com/hyprwm/contrib";
-    hyprland-contrib.inputs.nixpkgs.follows = "hyprland-nixpkgs-unstable";
-
-    # hyprland-hyprpicker.url = "git+https://github.com/hyprwm/hyprpicker";
-    # hyprland-hyprpicker.inputs.nixpkgs.follows = "hyprland-nixpkgs-unstable";
-
-    hyprland-plugins.url = "github:hyprwm/hyprland-plugins/v0.45.0";
-    hyprland-plugins.inputs.nixpkgs.follows = "hyprland/nixpkgs";
-    hyprland-plugins.inputs.systems.follows = "hyprland/systems";
-    hyprland-plugins.inputs.hyprland.follows = "hyprland";
 
     hyprland-hy3.url = "github:outfoxxed/hy3/hl0.45.0";
     hyprland-hy3.inputs.hyprland.follows = "hyprland";
 
-    # TODO: https://github.com/levnikmyskin/hyprland-virtual-desktops
+    hyprland-hyprlock.url = "git+https://github.com/hyprwm/hyprlock";
+    hyprland-hyprlock.inputs.nixpkgs.follows = "hyprland/nixpkgs";
+    hyprland-hyprlock.inputs.systems.follows = "hyprland/systems";
+    hyprland-hyprlock.inputs.hyprutils.follows = "hyprland/hyprutils";
+
+    hyprland-hypridle.url = "git+https://github.com/hyprwm/hypridle";
+    hyprland-hypridle.inputs.nixpkgs.follows = "hyprland/nixpkgs";
+    hyprland-hypridle.inputs.systems.follows = "hyprland/systems";
+    hyprland-hypridle.inputs.hyprutils.follows = "hyprland/hyprutils";
+
+    # hyprland-plugins.url = "github:hyprwm/hyprland-plugins/v0.45.0";
+    hyprland-plugins.url = "github:hyprwm/hyprland-plugins";
+    hyprland-plugins.inputs.nixpkgs.follows = "hyprland/nixpkgs";
+    hyprland-plugins.inputs.systems.follows = "hyprland/systems";
+    hyprland-plugins.inputs.hyprland.follows = "hyprland";
+
+    hyprland-contrib.url = "git+https://github.com/hyprwm/contrib";
+    hyprland-contrib.inputs.nixpkgs.follows = "hyprland/nixpkgs";
+
+    # hyprland-hyprpicker.url = "git+https://github.com/hyprwm/hyprpicker";
+    # hyprland-hyprpicker.inputs.nixpkgs.follows = "hyprland/nixpkgs";
 
     hyprland-hycov.url = "github:DreamMaoMao/hycov";
     hyprland-hycov.inputs.hyprland.follows = "hyprland";
-    hyprland-hycov.inputs.nixpkgs.follows = "hyprland-nixpkgs-unstable";
+    hyprland-hycov.inputs.nixpkgs.follows = "hyprland/nixpkgs";
     hyprland-hycov.inputs.systems.follows = "hyprland/systems";
 
     hyprland-virtual-desktops.url = "github:levnikmyskin/hyprland-virtual-desktops";
     hyprland-virtual-desktops.inputs.hyprland.follows = "hyprland";
-    hyprland-virtual-desktops.inputs.nixpkgs.follows = "hyprland-nixpkgs-unstable";
+    hyprland-virtual-desktops.inputs.nixpkgs.follows = "hyprland/nixpkgs";
   };
 
   outputs =

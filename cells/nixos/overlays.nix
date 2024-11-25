@@ -50,8 +50,7 @@ rec {
 
     # inputs.hyprland-hyprutils.overlays.default
     # inputs.hyprland-hycov.overlays.default
-    inputs.hyprland-xdg-desktop-portal.overlays.default
-
+    # inputs.hyprland-xdg-desktop-portal.overlays.default
     # inputs.hyprland-hyprpicker.overlays.default
 
     (final: prev: {
