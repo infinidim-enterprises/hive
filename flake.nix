@@ -288,8 +288,8 @@
     waybar.url = "github:Alexays/Waybar";
     waybar.inputs.nixpkgs.follows = "hyprland/nixpkgs";
 
-    # hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1&ref=refs/tags/v0.45.0";
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1&ref=refs/tags/v0.45.2";
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1&ref=refs/tags/v0.45.0";
+    # hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1&ref=refs/tags/v0.45.2";
     # hyprland.follows = "hyprland-hy3/hyprland";
     hyprland.inputs.nixpkgs.follows = "hyprland-nixpkgs-unstable";
     hyprland.inputs.systems.follows = "hyprland-systems";
