@@ -34,9 +34,7 @@ rec {
       firefox-addons
       # stumpwm
       (final: prev:
-        {
-          sources = prev.sources // (final.callPackage ./sources/generated.nix { });
-        }
+        { sources = prev.sources // (final.callPackage ./sources/generated.nix { }); }
       )
     ];
 

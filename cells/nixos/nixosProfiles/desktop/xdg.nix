@@ -9,18 +9,12 @@
   xdg.icons.enable = true;
   xdg.sounds.enable = true;
 
-  # xdg.portal.enable = false;
-  # xdg.portal.wlr.enable = false;
-  # xdg.portal.configPackages = with pkgs; [
-  #   # xdg-desktop-portal
-  #   # xdg-desktop-portal-gnome
-  #   # xdg-desktop-portal-gtk
-  #   xdg-desktop-portal-xapp
-  # ];
-
   environment.systemPackages = with pkgs; [
     xdg-utils
-    xdg-user-dirs
+    xdg-launch
     xdgmenumaker
+    xdg-user-dirs
+    xdg-dbus-proxy
+    xdg-terminal-exec
   ];
 }

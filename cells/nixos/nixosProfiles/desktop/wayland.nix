@@ -59,20 +59,8 @@ mkMerge [
 
     xdg.portal.enable = true;
     xdg.portal.wlr.enable = true;
-
-    # xdg.portal.configPackages = mkDefault [ pkgs.gnome.gnome-session ];
-
-    xdg.portal.extraPortals = with pkgs;[
-      xdg-desktop-portal-hyprland
-      xdg-desktop-portal-gtk
-      # (xdg-desktop-portal-gtk.override {
-      #   # Do not build portals that we already have.
-      #   buildPortalsInGnome = false;
-      # })
-      # xdg-desktop-portal-gnome
-      xdg-desktop-portal-xapp
-      # xdg-desktop-portal-shana
-    ];
+    xdg.portal.extraPortals = with pkgs;[ xdg-desktop-portal-hyprland ];
+    xdg.portal.config.common.default = [ "hyprland" ];
 
     ### TODO: hyprland plugins:
     # https://github.com/jasper-at-windswept/hypr-ws-switcher
@@ -107,7 +95,7 @@ mkMerge [
 
       kitty
       waybar
-      networkmanagerapplet
+      # networkmanagerapplet
       wayvnc
       freerdp3 # wlfreerdp
 
