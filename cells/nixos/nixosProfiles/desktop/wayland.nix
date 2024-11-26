@@ -46,18 +46,14 @@ mkMerge [
 
   {
     programs.hyprland.enable = true;
+    programs.hyprland.withUWSM = true;
     programs.hyprland.xwayland.enable = true;
     programs.hyprland.systemd.setPath.enable = true;
-    # systemd.user.extraConfig = ''
-    #   DefaultEnvironment="PATH=/run/wrappers/bin:/etc/profiles/per-user/%u/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin:$PATH"
-    # '';
 
     programs.xwayland.enable = true;
     security.pam.services.hyprlock = { };
 
     xdg.portal.enable = true;
-    xdg.portal.wlr.enable = true;
-    xdg.portal.extraPortals = with pkgs;[ xdg-desktop-portal-hyprland ];
     xdg.portal.config.common.default = [ "hyprland" ];
 
     ### TODO: hyprland plugins:
