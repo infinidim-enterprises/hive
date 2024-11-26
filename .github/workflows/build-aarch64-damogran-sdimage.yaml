@@ -21,6 +21,6 @@ jobs:
     - name: Build damogran toplevel
       run: nix build .#nixosConfigurations.nixos-damogran.config.system.build.toplevel
 name: Build damogran [aarch64-linux]
-on:
+'on':
   push: null
   workflow_dispatch: null

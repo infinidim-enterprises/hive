@@ -19,7 +19,7 @@ jobs:
     - name: Build system configuration
       run: nix build ".#nixosConfigurations.${{ inputs.configuration }}.config.system.build.toplevel"
 name: Build x86_64 host
-on:
+'on':
   workflow_call:
     inputs:
       configuration:

@@ -345,6 +345,7 @@ lib.mapAttrs (_: std.lib.dev.mkShell) {
       # nixpkgs-unstable.crystalline
       # nixpkgs-unstable.shards
       nixpkgs-unstable.nixos-install-tools
+      nixpkgs-unstable.nix-output-monitor
 
       nvfetcher
       gnupg
