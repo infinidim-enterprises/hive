@@ -26,6 +26,7 @@ let
 in
 {
   services.network-manager-applet.enable = osConfig.networking.networkmanager.enable;
+  systemd.user.services.network-manager-applet.Unit.After = [ "waybar.service" ];
   # TODO: investigate mate-wayland-session with hyprland
 
   # NOTE: kinda need a filemanager
@@ -53,7 +54,7 @@ in
   # TODO: maybe this instead? https://github.com/savedra1/clipse
   services.cliphist.enable = true;
   services.cliphist.allowImages = true;
-  services.cliphist.systemdTarget = "graphical-session.target";
+  services.cliphist.systemdTarget = "wayland-session@Hyprland.target";
 
   services.gammastep.enable = true;
   services.gammastep.tray = true;
@@ -67,6 +68,7 @@ in
     general.fade = 1;
   };
 
+  systemd.user.services.xsettingsd.Unit.After = [ "wayland-wm@Hyprland.service" ];
   services.xsettingsd.enable = true;
   services.xsettingsd.settings = {
     /*
