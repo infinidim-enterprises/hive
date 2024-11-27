@@ -3,6 +3,8 @@
 lib.mkMerge [
   {
     services.remmina.enable = true;
+    systemd.user.services.remmina.Unit.After = [ "waybar.service" ];
+
     home.packages = with pkgs; [ nx-libs ];
   }
 

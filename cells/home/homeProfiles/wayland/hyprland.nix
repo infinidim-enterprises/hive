@@ -55,6 +55,8 @@ in
   services.cliphist.enable = true;
   services.cliphist.allowImages = true;
   services.cliphist.systemdTarget = "wayland-session@Hyprland.target";
+  systemd.user.services.cliphist.Unit.After = [ "waybar.service" ];
+  systemd.user.services.cliphist-images.Unit.After = [ "cliphist.service" ];
 
   services.gammastep.enable = true;
   services.gammastep.tray = true;
