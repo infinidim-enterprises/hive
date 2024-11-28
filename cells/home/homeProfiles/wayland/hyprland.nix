@@ -121,6 +121,7 @@ in
     "Xft/lcdfilter" = "lcddefault";
   };
 
+  systemd.user.services.hypridle.Unit.After = [ "waybar.service" ];
   services.hypridle.enable = true;
   services.hypridle.settings = {
     general = {

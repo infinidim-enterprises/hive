@@ -11,7 +11,7 @@ in
     (nixpkgs-release)
     atuin
 
-    nyxt
+    # nyxt
 
     firefox
     chromium
