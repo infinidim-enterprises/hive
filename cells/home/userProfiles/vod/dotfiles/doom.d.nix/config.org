@@ -956,22 +956,29 @@ savehist-file persp workspaces
 
 * Stumpwm integration
 ** Sly
-Not doing much lisp, switched to hyprland from stumpwm
-:tangle "config.el"
-#+begin_src emacs-lisp
+#+begin_src emacs-lisp :tangle packages.el
+(package! sly :built-in t)
+(package! sly-asdf :built-in t)
+(package! sly-overlay :built-in t)
+(package! sly-quicklisp :built-in t)
+(package! sly-macrostep :built-in t)
+(package! sly-repl-ansi-color :built-in t)
+(package! sly-named-readtables :built-in t)
+#+end_src
+
+#+begin_src emacs-lisp :tangle "config.el"
 (use-package! sly
   :init (setq sly-ignore-protocol-mismatches t
               sly-compile-file-options (list :fasl-directory "/tmp")))
 
-(defun sly-stumpwm-start ()
-  ;; FIXME: set connection params from nix
-  (sly-connect "127.0.0.1" 4405)
+(defun sly-nyxt-start ()
+  (sly-connect "127.0.0.1" 4406)
   (sleep-for 2)
   (when (buffer-live-p (get-buffer "*sly-mrepl for sbcl*"))
     (set-buffer "*sly-mrepl for sbcl*")
-    (sly-mrepl--eval-for-repl `(slynk-mrepl:guess-and-set-package "VOD"))))
+    (sly-mrepl--eval-for-repl `(slynk-mrepl:guess-and-set-package "NYXT-USER"))))
 
-(defun sly-stumpwm-stop ()
+(defun sly-nyxt-stop ()
   (sly-disconnect-all)
   (kill-buffer (get-buffer "*sly-mrepl for sbcl*")))
 #+end_src

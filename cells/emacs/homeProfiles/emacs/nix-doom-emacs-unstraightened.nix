@@ -36,7 +36,8 @@ let
                   org-ref-default-bibliography "${orgRoot}/papers/references.bib"
                   +snippets-dir "${config.xdg.userDirs.documents}/snippets"
                   url-history-file "${config.xdg.userDirs.extraConfig.XDG_LOGS_DIR}/emacs_url_hist.el"
-                  savehist-file "${config.xdg.userDirs.extraConfig.XDG_LOGS_DIR}/emacs_save_hist.el"))
+                  savehist-file "${config.xdg.userDirs.extraConfig.XDG_LOGS_DIR}/emacs_save_hist.el"
+                  sly-mrepl-history-file-name "${config.xdg.userDirs.extraConfig.XDG_LOGS_DIR}/sly-mrepl-history"))
 
           (provide 'local-setts)
         '';
@@ -51,10 +52,11 @@ let
 
       sly
       sly-asdf
-      sly-macrostep
-      sly-named-readtables
+      sly-overlay
       sly-quicklisp
+      sly-macrostep
       sly-repl-ansi-color
+      sly-named-readtables
     ];
 
 
