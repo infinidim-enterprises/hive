@@ -957,13 +957,15 @@ savehist-file persp workspaces
 * Stumpwm integration
 ** Sly
 #+begin_src emacs-lisp :tangle packages.el
-(package! sly :built-in t)
-(package! sly-asdf :built-in t)
-(package! sly-overlay :built-in t)
-(package! sly-quicklisp :built-in t)
-(package! sly-macrostep :built-in t)
-(package! sly-repl-ansi-color :built-in t)
-(package! sly-named-readtables :built-in t)
+(package! sly)
+(package! sly-asdf)
+(package! sly-overlay)
+(package! sly-quicklisp)
+(package! sly-macrostep)
+(package! sly-repl-ansi-color)
+(package! sly-named-readtables)
+(package! sly-quicklisp)
+(package! helm-sly)
 #+end_src
 
 #+begin_src emacs-lisp :tangle "config.el"
