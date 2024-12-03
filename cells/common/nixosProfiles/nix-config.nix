@@ -56,6 +56,7 @@ in
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
+    "impure-derivations"
     # https://github.com/NixOS/nix/issues/6666
     # https://github.com/NixOS/nixpkgs/issues/177142
     # BUG: "ca-derivations"

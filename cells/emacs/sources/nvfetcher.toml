@@ -65,3 +65,26 @@ fetch.git = "https://github.com/NixOS/nix-mode"
 [grip]
 src.git = "https://github.com/joeyespo/grip"
 fetch.git = "https://github.com/joeyespo/grip"
+
+
+### Nyxt extensions and stuff
+### TODO: move into a separate cell
+[nyxt-el]
+src.git = "https://github.com/migalmoreno/nyxt.el"
+fetch.git = "https://github.com/migalmoreno/nyxt.el"
+
+[nyxt-ext_nx-search-engines]
+src.git = "https://github.com/aartaka/nx-search-engines"
+fetch.git = "https://github.com/aartaka/nx-search-engines"
+
+[nyxt-ext_nx-tailor]
+src.git = "https://github.com/migalmoreno/nx-tailor"
+fetch.git = "https://github.com/migalmoreno/nx-tailor"
+
+[nyxt-ext_nx-ace]
+src.git = "https://github.com/atlas-engineer/nx-ace"
+fetch.git = "https://github.com/atlas-engineer/nx-ace"
+
+[nyxt-ext_nx-reader]
+src.git = "https://github.com/atlas-engineer/nx-reader"
+fetch.git = "https://github.com/atlas-engineer/nx-reader"

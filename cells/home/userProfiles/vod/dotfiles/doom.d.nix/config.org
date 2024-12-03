@@ -964,7 +964,6 @@ savehist-file persp workspaces
 (package! sly-macrostep)
 (package! sly-repl-ansi-color)
 (package! sly-named-readtables)
-(package! sly-quicklisp)
 (package! helm-sly)
 #+end_src
 
@@ -972,15 +971,24 @@ savehist-file persp workspaces
 (use-package! sly
   :init (setq sly-ignore-protocol-mismatches t
               sly-compile-file-options (list :fasl-directory "/tmp")))
+(use-package! sly-asdf)
+(use-package! sly-overlay)
+(use-package! sly-quicklisp)
+(use-package! sly-macrostep)
+(use-package! sly-repl-ansi-color)
+(use-package! sly-named-readtables)
+(use-package! helm-sly)
 
 (defun sly-nyxt-start ()
-  (sly-connect "127.0.0.1" 4406)
+  (interactive)
+  (sly-connect "127.0.0.1" 4006)
   (sleep-for 2)
   (when (buffer-live-p (get-buffer "*sly-mrepl for sbcl*"))
     (set-buffer "*sly-mrepl for sbcl*")
     (sly-mrepl--eval-for-repl `(slynk-mrepl:guess-and-set-package "NYXT-USER"))))
 
 (defun sly-nyxt-stop ()
+  (interactive)
   (sly-disconnect-all)
   (kill-buffer (get-buffer "*sly-mrepl for sbcl*")))
 #+end_src

@@ -213,6 +213,7 @@ in
 
   githubworkflows =
     let
+      # TODO: https://github.com/mxschmitt/action-tmate
       common_steps = [
         {
           name = "Checkout repository";

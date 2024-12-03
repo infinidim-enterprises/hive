@@ -138,3 +138,6 @@ adguardhome journalctl -b0|grep 'does not match safe patterns'
 journalctl -b0|grep 'dbus-broker-launch
 
 Nov 28 10:03:43 oglaroon systemd[4451]: hypridle was skipped because of an unmet condition check (ConditionEnvironment=WAYLAND_DISPLAY).
+
+NYXT:
+Failed to read portal settings: GDBus.Error:org.freedesktop.DBus.Error.UnknownMethod: No such interface “org.freedesktop.portal.Settings” on object at path /org/freedesktop/portal/desktop

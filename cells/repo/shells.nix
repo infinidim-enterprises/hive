@@ -227,14 +227,15 @@ let
   repl =
     let
       nixBinary = nixpkgs.nixVersions.nix_2_18;
+      # nixBinary = nixpkgs.nixVersions.nix_2_24;
       # nixBinary = nixpkgs-unstable.nixUnstable;
       # NOTE: https://github.com/NixOS/nix/issues/8761
     in
     writeShellScriptBin "repl" ''
       if [ -z "$1" ]; then
-         ${nixBinary}/bin/nix repl --argstr host "$HOST" --argstr flakePath "$PRJ_ROOT" ${./_repl.nix} --show-trace
+         ${nixBinary}/bin/nix repl --argstr host "$HOST" --argstr flakePath "$PRJ_ROOT" ${./_repl.nix} --show-trace --extra-experimental-features impure-derivations
       else
-         ${nixBinary}/bin/nix repl --argstr host "$HOST" --argstr flakePath $(readlink -f $1 | sed 's|/flake.nix||') ${./_repl.nix} --show-trace
+         ${nixBinary}/bin/nix repl --argstr host "$HOST" --argstr flakePath $(readlink -f $1 | sed 's|/flake.nix||') ${./_repl.nix} --show-trace --extra-experimental-features impure-derivations
       fi
     '';
 
