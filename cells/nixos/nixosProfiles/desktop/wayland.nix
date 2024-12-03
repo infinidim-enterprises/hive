@@ -51,6 +51,7 @@ mkMerge [
     programs.hyprland.enable = true;
     programs.hyprland.withUWSM = false;
 
+    programs.uwsm.enable = true;
     programs.uwsm.waylandCompositors = {
       hyprland =
         let
