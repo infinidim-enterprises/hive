@@ -49,30 +49,30 @@ mkMerge [
     services.upower.enable = true;
 
     programs.hyprland.enable = true;
-    programs.hyprland.withUWSM = false;
+    programs.hyprland.withUWSM = true;
 
-    programs.uwsm.enable = true;
-    programs.uwsm.waylandCompositors = {
-      hyprland =
-        let
-          inherit (lib) concatStringsSep;
-          cmd = [
-            "${pkgs.dbus}/bin/dbus-update-activation-environment"
-            "--systemd"
-            "--all"
-            "&&"
-            "${config.programs.hyprland.package}/bin/Hyprland"
-          ];
-          hyprlandScript = pkgs.writeScriptBin "hyprland" ''
-            ${pkgs.bash}/bin/bash -l -c '${concatStringsSep " " cmd}'
-          '';
-        in
-        {
-          prettyName = "Hyprland";
-          comment = "Hyprland compositor managed by UWSM";
-          binPath = "${hyprlandScript}/bin/hyprland";
-        };
-    };
+    # programs.uwsm.enable = true;
+    # programs.uwsm.waylandCompositors = {
+    #   hyprland =
+    #     let
+    #       inherit (lib) concatStringsSep;
+    #       cmd = [
+    #         "${pkgs.dbus}/bin/dbus-update-activation-environment"
+    #         "--systemd"
+    #         "--all"
+    #         "&&"
+    #         "${config.programs.hyprland.package}/bin/Hyprland"
+    #       ];
+    #       hyprlandScript = pkgs.writeScriptBin "hyprland" ''
+    #         ${pkgs.bash}/bin/bash -l -c '${concatStringsSep " " cmd}'
+    #       '';
+    #     in
+    #     {
+    #       prettyName = "Hyprland";
+    #       comment = "Hyprland compositor managed by UWSM";
+    #       binPath = "${hyprlandScript}/bin/hyprland";
+    #     };
+    # };
 
     programs.hyprland.xwayland.enable = true;
     programs.hyprland.systemd.setPath.enable = true;
