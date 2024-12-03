@@ -10,7 +10,6 @@ in
   programs.waybar.enable = true;
   programs.waybar.systemd.enable = true;
   programs.waybar.systemd.target = "wayland-session@Hyprland.target";
-  # after wayland-wm@Hyprland.service
 
   systemd.user.services.waybar.Unit.After = [ "wayland-wm@Hyprland.service" ];
 
