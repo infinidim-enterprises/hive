@@ -177,6 +177,8 @@ mkMerge [
   })
 
   (mkIf config.networking.networkmanager.enable {
+    systemd.services.domainname.after = [ "NetworkManager.service" ];
+
     # systemd.network.wait-online.anyInterface = true;
     systemd.network.wait-online.enable = false;
     # systemd.network.wait-online.timeout = 5;
@@ -206,7 +208,6 @@ mkMerge [
 
   (mkIf config.networking.wireless.enable {
     services.udev.packages = with pkgs; optional (versionOlder "4.16" config.boot.kernelPackages.kernel.version) [ crda ];
-    # FIXME: networks.lan.
 
     systemd.network.networks.wifi-generic = {
       dhcpV4Config.UseDNS = false;

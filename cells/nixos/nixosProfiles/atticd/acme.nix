@@ -13,11 +13,11 @@ in
   networking.firewall.allowedTCPPorts = [ 80 443 ];
   networking.firewall.allowedUDPPorts = [ 443 ];
 
-  security.acme.certs."zhangguangtao.org" = {
+  security.acme.certs."njk.li" = {
     dnsProvider = "cloudflare";
     credentialsFile = config.age.secrets."acme-cloudflare".path;
-    domain = "*.zhangguangtao.org";
-    extraDomainNames = [ "*.zhangguangtao.org" ];
+    domain = "*.njk.li";
+    extraDomainNames = [ "*.njk.li" ];
   };
 
   services.nginx = {
@@ -27,9 +27,9 @@ in
     recommendedOptimisation = true;
     recommendedGzipSettings = true;
     virtualHosts = {
-      "attic.zhangguangtao.org" = {
+      "attic.njk.li" = {
         # enableACME = true;
-        useACMEHost = "zhangguangtao.org";
+        useACMEHost = "njk.li";
         forceSSL = true;
         http3 = false;
         http2 = false;
@@ -46,7 +46,7 @@ in
     # virtualHosts."${hostName}.*" = {
     #   default = true;
     #   forceSSL = true;
-    #   useACMEHost = "zhangguangtao.org";
+    #   useACMEHost = "njk.li";
     #   serverAliases = ["localhost.*"];
     # };
   };
@@ -65,8 +65,8 @@ in
   # systemd.tmpfiles.rules = [
   #   "d '/var/lib/caddy' 0750 caddy acme - -"
   # ];
-  # services.caddy.virtualHosts."attic.zhangguangtao.org" = {
-  #   useACMEHost = "zhangguangtao.org";
+  # services.caddy.virtualHosts."attic.njk.li" = {
+  #   useACMEHost = "njk.li";
   #   logFormat = lib.mkForce "";
   #   extraConfig = ''
   #     import baseConfig
