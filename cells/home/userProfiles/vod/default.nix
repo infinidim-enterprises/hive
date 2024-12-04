@@ -21,7 +21,7 @@
     cell.homeProfiles.security.gpg
     cell.homeProfiles.security.keybase
     cell.homeProfiles.security.password-store
-    cell.homeProfiles.browsers.firefox
+    cell.homeProfiles.browsers.nyxt
     cell.homeProfiles.messengers
     cell.homeProfiles.multimedia.players
   ];

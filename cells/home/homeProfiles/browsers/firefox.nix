@@ -1,3 +1,4 @@
+# NOTE: fuck mozilla!
 { inputs, cell, ... }:
 
 { pkgs, lib, config, name, osConfig, ... }:

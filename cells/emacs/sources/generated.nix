@@ -67,29 +67,29 @@
   };
   copilot-el = {
     pname = "copilot-el";
-    version = "b5878d6a8c741138b5efbf4fe1c594f3fd69dbdd";
+    version = "88b10203705a9cdcbc232e7d2914f6b12217a885";
     src = fetchgit {
       url = "https://github.com/zerolfx/copilot.el.git";
-      rev = "b5878d6a8c741138b5efbf4fe1c594f3fd69dbdd";
+      rev = "88b10203705a9cdcbc232e7d2914f6b12217a885";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-02ywlMPku1FIritZjjtxbQW6MmPvSwmRCrudYsUb8bU=";
+      sha256 = "sha256-oTAxayxrEiIu0GUtsqaL/pCY0ElU1RjZp7OXgqqJqnA=";
     };
-    date = "2024-09-25";
+    date = "2024-11-18";
   };
   doom-emacs = {
     pname = "doom-emacs";
-    version = "fdcab58a1b28a3b2bde23789e2a4c9c1391070b6";
+    version = "ec645b83818d0d691493b944b03ffeab70b112bb";
     src = fetchgit {
       url = "https://github.com/hlissner/doom-emacs";
-      rev = "fdcab58a1b28a3b2bde23789e2a4c9c1391070b6";
+      rev = "ec645b83818d0d691493b944b03ffeab70b112bb";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = true;
-      sha256 = "sha256-nlaPo0Ne2csTVrFK9WnpC0fES9rCRwdr0AfnBT/oxGc=";
+      sha256 = "sha256-AjNbtI2orP+MmwHt/PfMgKJhti7Ro1HTefIiRym3Sog=";
     };
-    date = "2024-11-08";
+    date = "2024-12-01";
   };
   grip = {
     pname = "grip";
@@ -106,27 +106,27 @@
   };
   jinx = {
     pname = "jinx";
-    version = "c44d2517cfbe2214e7e2840e16ad1ad739e1c1a4";
+    version = "bdbec71e5e8924e5fd379a023bcec3eafd685376";
     src = fetchFromGitHub {
       owner = "minad";
       repo = "jinx";
-      rev = "c44d2517cfbe2214e7e2840e16ad1ad739e1c1a4";
+      rev = "bdbec71e5e8924e5fd379a023bcec3eafd685376";
       fetchSubmodules = false;
-      sha256 = "sha256-TYkaozKlqwHl4R3fiIuOXW5YgrW2UUCyyYH+aNMOGk4=";
+      sha256 = "sha256-OE3QQ54aMAii9MgJQ5QxkrqGsu3az5yT0Jal4EjEiUI=";
     };
-    date = "2024-11-05";
+    date = "2024-12-01";
   };
   lsp-bridge = {
     pname = "lsp-bridge";
-    version = "d9647c18aa85496bbc7879731ad2ae49314079fc";
+    version = "8a8e573e85cdc655498f67cbcd18af895673758b";
     src = fetchFromGitHub {
       owner = "manateelazycat";
       repo = "lsp-bridge";
-      rev = "d9647c18aa85496bbc7879731ad2ae49314079fc";
+      rev = "8a8e573e85cdc655498f67cbcd18af895673758b";
       fetchSubmodules = false;
-      sha256 = "sha256-aIFE5UsCLQ7E7vzz69M6KTp487E8HHCYiUbTKaLn9TM=";
+      sha256 = "sha256-5K2xEZ9/mKEtYxCzt2MzsDLjiardHuzxPe7AQ1HfOoY=";
     };
-    date = "2024-11-13";
+    date = "2024-11-19";
   };
   nix-mode = {
     pname = "nix-mode";
@@ -144,15 +144,80 @@
   };
   nix-ts-mode = {
     pname = "nix-ts-mode";
-    version = "9496bff8d18599ba0bc793051f86b0a86cbe38ae";
+    version = "cea932fd683bfab84234205f5f1d161e29a5adf6";
     src = fetchFromGitHub {
       owner = "remi-gelinas";
       repo = "nix-ts-mode";
-      rev = "9496bff8d18599ba0bc793051f86b0a86cbe38ae";
+      rev = "cea932fd683bfab84234205f5f1d161e29a5adf6";
       fetchSubmodules = false;
-      sha256 = "sha256-2IiTKqwm08YImrx2Zd7LokHLnNFKCN2zUQRTYKeHdRo=";
+      sha256 = "sha256-5tq/eZrS5Y8HWqW0ndFoMo/ybZOK13Sq33tCb6WcyFU=";
     };
-    date = "2024-11-11";
+    date = "2024-11-18";
+  };
+  nyxt-el = {
+    pname = "nyxt-el";
+    version = "f26834d37ae16e82ac8666a05959182652b412af";
+    src = fetchgit {
+      url = "https://github.com/migalmoreno/nyxt.el";
+      rev = "f26834d37ae16e82ac8666a05959182652b412af";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sha256 = "sha256-m6xnx4RjKGYej+z5Q1eXuHcQTCeaD4TDHcTSm3oyDuc=";
+    };
+    date = "2024-11-04";
+  };
+  nyxt-ext_nx-ace = {
+    pname = "nyxt-ext_nx-ace";
+    version = "83aac18448c05fc9ef1ff5058c3def668dc8d81a";
+    src = fetchgit {
+      url = "https://github.com/atlas-engineer/nx-ace";
+      rev = "83aac18448c05fc9ef1ff5058c3def668dc8d81a";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sha256 = "sha256-+/utlTZ/dvc2N/7whjMaE+Iv1HQGKa24gL2Hl8ASaYs=";
+    };
+    date = "2023-06-30";
+  };
+  nyxt-ext_nx-reader = {
+    pname = "nyxt-ext_nx-reader";
+    version = "cb08d2a1c794c8a9942bc5e7b793b2811a025074";
+    src = fetchgit {
+      url = "https://github.com/atlas-engineer/nx-reader";
+      rev = "cb08d2a1c794c8a9942bc5e7b793b2811a025074";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sha256 = "sha256-v0EPZKNfpKvY3LD1YZBuU//4/wCXJRyE8WBJBknfL/M=";
+    };
+    date = "2020-06-14";
+  };
+  nyxt-ext_nx-search-engines = {
+    pname = "nyxt-ext_nx-search-engines";
+    version = "f81f47df82f8e322f0a8919d05fc513297095a0b";
+    src = fetchgit {
+      url = "https://github.com/aartaka/nx-search-engines";
+      rev = "f81f47df82f8e322f0a8919d05fc513297095a0b";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sha256 = "sha256-Q+6B3lDzlhfHnS306yLh5LpxdIXESdH/Y2D3GJodbXs=";
+    };
+    date = "2023-06-07";
+  };
+  nyxt-ext_nx-tailor = {
+    pname = "nyxt-ext_nx-tailor";
+    version = "cdd8253e8a6d7bd3638458610c4971ffc58be0a8";
+    src = fetchgit {
+      url = "https://github.com/migalmoreno/nx-tailor";
+      rev = "cdd8253e8a6d7bd3638458610c4971ffc58be0a8";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sha256 = "sha256-f5T4ptMQQhooqTsj2TmaMOUqtD5zEuuPkNGihdf2Lcc=";
+    };
+    date = "2024-11-04";
   };
   org-pretty-table = {
     pname = "org-pretty-table";

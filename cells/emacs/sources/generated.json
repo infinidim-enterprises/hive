@@ -97,7 +97,7 @@
     },
     "copilot-el": {
         "cargoLocks": null,
-        "date": "2024-09-25",
+        "date": "2024-11-18",
         "extract": null,
         "name": "copilot-el",
         "passthru": null,
@@ -107,16 +107,16 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "b5878d6a8c741138b5efbf4fe1c594f3fd69dbdd",
-            "sha256": "sha256-02ywlMPku1FIritZjjtxbQW6MmPvSwmRCrudYsUb8bU=",
+            "rev": "88b10203705a9cdcbc232e7d2914f6b12217a885",
+            "sha256": "sha256-oTAxayxrEiIu0GUtsqaL/pCY0ElU1RjZp7OXgqqJqnA=",
             "type": "git",
             "url": "https://github.com/zerolfx/copilot.el.git"
         },
-        "version": "b5878d6a8c741138b5efbf4fe1c594f3fd69dbdd"
+        "version": "88b10203705a9cdcbc232e7d2914f6b12217a885"
     },
     "doom-emacs": {
         "cargoLocks": null,
-        "date": "2024-11-08",
+        "date": "2024-12-01",
         "extract": null,
         "name": "doom-emacs",
         "passthru": null,
@@ -126,12 +126,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": true,
             "name": null,
-            "rev": "fdcab58a1b28a3b2bde23789e2a4c9c1391070b6",
-            "sha256": "sha256-nlaPo0Ne2csTVrFK9WnpC0fES9rCRwdr0AfnBT/oxGc=",
+            "rev": "ec645b83818d0d691493b944b03ffeab70b112bb",
+            "sha256": "sha256-AjNbtI2orP+MmwHt/PfMgKJhti7Ro1HTefIiRym3Sog=",
             "type": "git",
             "url": "https://github.com/hlissner/doom-emacs"
         },
-        "version": "fdcab58a1b28a3b2bde23789e2a4c9c1391070b6"
+        "version": "ec645b83818d0d691493b944b03ffeab70b112bb"
     },
     "grip": {
         "cargoLocks": null,
@@ -154,7 +154,7 @@
     },
     "jinx": {
         "cargoLocks": null,
-        "date": "2024-11-05",
+        "date": "2024-12-01",
         "extract": null,
         "name": "jinx",
         "passthru": null,
@@ -166,15 +166,15 @@
             "name": null,
             "owner": "minad",
             "repo": "jinx",
-            "rev": "c44d2517cfbe2214e7e2840e16ad1ad739e1c1a4",
-            "sha256": "sha256-TYkaozKlqwHl4R3fiIuOXW5YgrW2UUCyyYH+aNMOGk4=",
+            "rev": "bdbec71e5e8924e5fd379a023bcec3eafd685376",
+            "sha256": "sha256-OE3QQ54aMAii9MgJQ5QxkrqGsu3az5yT0Jal4EjEiUI=",
             "type": "github"
         },
-        "version": "c44d2517cfbe2214e7e2840e16ad1ad739e1c1a4"
+        "version": "bdbec71e5e8924e5fd379a023bcec3eafd685376"
     },
     "lsp-bridge": {
         "cargoLocks": null,
-        "date": "2024-11-13",
+        "date": "2024-11-19",
         "extract": null,
         "name": "lsp-bridge",
         "passthru": null,
@@ -186,11 +186,11 @@
             "name": null,
             "owner": "manateelazycat",
             "repo": "lsp-bridge",
-            "rev": "d9647c18aa85496bbc7879731ad2ae49314079fc",
-            "sha256": "sha256-aIFE5UsCLQ7E7vzz69M6KTp487E8HHCYiUbTKaLn9TM=",
+            "rev": "8a8e573e85cdc655498f67cbcd18af895673758b",
+            "sha256": "sha256-5K2xEZ9/mKEtYxCzt2MzsDLjiardHuzxPe7AQ1HfOoY=",
             "type": "github"
         },
-        "version": "d9647c18aa85496bbc7879731ad2ae49314079fc"
+        "version": "8a8e573e85cdc655498f67cbcd18af895673758b"
     },
     "nix-mode": {
         "cargoLocks": null,
@@ -215,7 +215,7 @@
     },
     "nix-ts-mode": {
         "cargoLocks": null,
-        "date": "2024-11-11",
+        "date": "2024-11-18",
         "extract": null,
         "name": "nix-ts-mode",
         "passthru": null,
@@ -227,11 +227,106 @@
             "name": null,
             "owner": "remi-gelinas",
             "repo": "nix-ts-mode",
-            "rev": "9496bff8d18599ba0bc793051f86b0a86cbe38ae",
-            "sha256": "sha256-2IiTKqwm08YImrx2Zd7LokHLnNFKCN2zUQRTYKeHdRo=",
+            "rev": "cea932fd683bfab84234205f5f1d161e29a5adf6",
+            "sha256": "sha256-5tq/eZrS5Y8HWqW0ndFoMo/ybZOK13Sq33tCb6WcyFU=",
             "type": "github"
         },
-        "version": "9496bff8d18599ba0bc793051f86b0a86cbe38ae"
+        "version": "cea932fd683bfab84234205f5f1d161e29a5adf6"
+    },
+    "nyxt-el": {
+        "cargoLocks": null,
+        "date": "2024-11-04",
+        "extract": null,
+        "name": "nyxt-el",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "f26834d37ae16e82ac8666a05959182652b412af",
+            "sha256": "sha256-m6xnx4RjKGYej+z5Q1eXuHcQTCeaD4TDHcTSm3oyDuc=",
+            "type": "git",
+            "url": "https://github.com/migalmoreno/nyxt.el"
+        },
+        "version": "f26834d37ae16e82ac8666a05959182652b412af"
+    },
+    "nyxt-ext_nx-ace": {
+        "cargoLocks": null,
+        "date": "2023-06-30",
+        "extract": null,
+        "name": "nyxt-ext_nx-ace",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "83aac18448c05fc9ef1ff5058c3def668dc8d81a",
+            "sha256": "sha256-+/utlTZ/dvc2N/7whjMaE+Iv1HQGKa24gL2Hl8ASaYs=",
+            "type": "git",
+            "url": "https://github.com/atlas-engineer/nx-ace"
+        },
+        "version": "83aac18448c05fc9ef1ff5058c3def668dc8d81a"
+    },
+    "nyxt-ext_nx-reader": {
+        "cargoLocks": null,
+        "date": "2020-06-14",
+        "extract": null,
+        "name": "nyxt-ext_nx-reader",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "cb08d2a1c794c8a9942bc5e7b793b2811a025074",
+            "sha256": "sha256-v0EPZKNfpKvY3LD1YZBuU//4/wCXJRyE8WBJBknfL/M=",
+            "type": "git",
+            "url": "https://github.com/atlas-engineer/nx-reader"
+        },
+        "version": "cb08d2a1c794c8a9942bc5e7b793b2811a025074"
+    },
+    "nyxt-ext_nx-search-engines": {
+        "cargoLocks": null,
+        "date": "2023-06-07",
+        "extract": null,
+        "name": "nyxt-ext_nx-search-engines",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "f81f47df82f8e322f0a8919d05fc513297095a0b",
+            "sha256": "sha256-Q+6B3lDzlhfHnS306yLh5LpxdIXESdH/Y2D3GJodbXs=",
+            "type": "git",
+            "url": "https://github.com/aartaka/nx-search-engines"
+        },
+        "version": "f81f47df82f8e322f0a8919d05fc513297095a0b"
+    },
+    "nyxt-ext_nx-tailor": {
+        "cargoLocks": null,
+        "date": "2024-11-04",
+        "extract": null,
+        "name": "nyxt-ext_nx-tailor",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "cdd8253e8a6d7bd3638458610c4971ffc58be0a8",
+            "sha256": "sha256-f5T4ptMQQhooqTsj2TmaMOUqtD5zEuuPkNGihdf2Lcc=",
+            "type": "git",
+            "url": "https://github.com/migalmoreno/nx-tailor"
+        },
+        "version": "cdd8253e8a6d7bd3638458610c4971ffc58be0a8"
     },
     "org-pretty-table": {
         "cargoLocks": null,

@@ -17,4 +17,10 @@ let
 
   */
 in
-{ home.packages = [ pkgs.nyxt ]; }
+{
+  home.packages = [ pkgs.nyxt ];
+  xdg.mimeApps.defaultApplications = {
+    "x-scheme-handler/http" = "nyxt.desktop";
+    "x-scheme-handler/https" = "nyxt.desktop";
+  };
+}

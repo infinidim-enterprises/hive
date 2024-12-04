@@ -12,7 +12,7 @@ in
   config = mkMerge [
     {
       home-manager.users.admin.imports =
-        cell.homeSuites.wayland
+        # cell.homeSuites.wayland
         ++ cell.homeSuites.developer.default
         ++ [
           # inputs.nix-doom-emacs.hmModule

@@ -91,6 +91,7 @@ mkMerge [
     # https://github.com/JoaoCostaIFG/hyprtags
     # https://github.com/VortexCoyote/hyprfocus
     # https://github.com/horriblename/hyprgrass
+    # https://gitlab.com/magus/hyprslidr
     ###
     # hyprctl output create headless test
     # https://wiki.hyprland.org/Configuring/Using-hyprctl/#commands
@@ -115,8 +116,6 @@ mkMerge [
       wlrctl
 
       kitty
-      waybar
-      # networkmanagerapplet
       wayvnc
       freerdp3 # wlfreerdp
 

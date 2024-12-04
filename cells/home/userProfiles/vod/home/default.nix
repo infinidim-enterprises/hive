@@ -47,7 +47,6 @@ in
       xdg.userDirs.extraConfig.XDG_PROJ_DIR = "${config.home.homeDirectory}/Projects";
 
       home.packages = with pkgs; [
-        nyxt # TODO: nyxt proper config!
         tigervnc
         jekyll
         vultr-cli
