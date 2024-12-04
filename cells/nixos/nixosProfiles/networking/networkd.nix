@@ -177,7 +177,7 @@ mkMerge [
   })
 
   (mkIf config.networking.networkmanager.enable {
-    systemd.services.domainname.after = [ "NetworkManager.service" ];
+    # FIXME: systemd.services.domainname.after = [ "NetworkManager.service" ];
 
     # systemd.network.wait-online.anyInterface = true;
     systemd.network.wait-online.enable = false;

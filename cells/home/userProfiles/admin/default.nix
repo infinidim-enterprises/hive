@@ -14,7 +14,7 @@ in
       home-manager.users.admin.imports =
 
         cell.homeSuites.developer.default
-        # ++ cell.homeSuites.wayland
+        ++ cell.homeSuites.wayland
         ++ [
           # inputs.nix-doom-emacs.hmModule
 
