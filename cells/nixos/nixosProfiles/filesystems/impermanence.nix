@@ -25,7 +25,12 @@ rec {
       imports = [ inputs.impermanence.nixosModules.impermanence ];
       config = mkMerge [
         {
-          boot.initrd.postDeviceCommands = mkAfter ''
+          # boot.initrd.postDeviceCommands = mkAfter ''
+          #   zfs rollback -r ${config.fileSystems."/".device}@blank
+          # '';
+
+          # NOTE: https://github.com/NixOS/nixpkgs/pull/208037
+          boot.initrd.postResumeCommands = mkAfter ''
             zfs rollback -r ${config.fileSystems."/".device}@blank
           '';
 
