@@ -19,6 +19,7 @@ mkMerge [
   }
 
   {
+    # NOTE: https://github.com/grimsteel/pass-secret-service
     services.pass-secret-service.enable = true;
     services.pass-secret-service.storePath = config.programs.password-store.settings.PASSWORD_STORE_DIR;
 
@@ -46,6 +47,6 @@ mkMerge [
   })
 
   (mkIf (localLib.isGui osConfig) {
-    home.packages = [ pkgs.gnome.seahorse ];
+    home.packages = [ pkgs.seahorse ];
   })
 ]
