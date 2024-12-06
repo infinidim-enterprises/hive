@@ -24,7 +24,7 @@ in
           cell.homeProfiles.security.gpg
 
           ({ pkgs, ... }: {
-            services.gpg-agent.pinentryPackage = pkgs.pinentry-gnome3;
+            # services.gpg-agent.pinentryPackage = pkgs.pinentry-gnome3;
             home.packages = [ pkgs.dconf ];
           })
         ];

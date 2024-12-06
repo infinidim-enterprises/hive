@@ -1,7 +1,7 @@
 {
     "libcamera": {
         "cargoLocks": null,
-        "date": "2024-11-11",
+        "date": "2024-11-19",
         "extract": null,
         "name": "libcamera",
         "passthru": null,
@@ -13,15 +13,15 @@
             "name": null,
             "owner": "raspberrypi",
             "repo": "libcamera",
-            "rev": "75fe515ae832f9460ff867f449d05ff8ca995af7",
-            "sha256": "sha256-HDLSRylRn/siR2HMTHLkH20QLjzH1R2iKWPca7eSWiU=",
+            "rev": "1230f78d2f6d38d812568fd27f7b985b9ff19e39",
+            "sha256": "sha256-pG8QdMY9UWH+UodXi1j/hVuVFRe58vvOsf7tOrrb774=",
             "type": "github"
         },
-        "version": "75fe515ae832f9460ff867f449d05ff8ca995af7"
+        "version": "1230f78d2f6d38d812568fd27f7b985b9ff19e39"
     },
     "libcamera-apps": {
         "cargoLocks": null,
-        "date": "2024-11-12",
+        "date": "2024-12-04",
         "extract": null,
         "name": "libcamera-apps",
         "passthru": null,
@@ -33,15 +33,15 @@
             "name": null,
             "owner": "raspberrypi",
             "repo": "libcamera-apps",
-            "rev": "50958df98d3cf77b54706a794226d556d649981c",
-            "sha256": "sha256-dDb4/SL5SPuBhmp1g8h8ZMq9PnG2SZMIik2gnO8PkuY=",
+            "rev": "6287bffec8553eea41fa30277c2aaeb5616f8a06",
+            "sha256": "sha256-vzFSSWgryXuDsZxCvz7C8Y2j6HQz/2lzwflE0hR8Qk0=",
             "type": "github"
         },
-        "version": "50958df98d3cf77b54706a794226d556d649981c"
+        "version": "6287bffec8553eea41fa30277c2aaeb5616f8a06"
     },
     "mediamtx": {
         "cargoLocks": null,
-        "date": "2024-11-08",
+        "date": "2024-12-04",
         "extract": null,
         "name": "mediamtx",
         "passthru": null,
@@ -53,10 +53,10 @@
             "name": null,
             "owner": "bluenviron",
             "repo": "mediamtx",
-            "rev": "b7763454a98fb9e6b1b9ea3d3035f112d1d9fa85",
-            "sha256": "sha256-lOeKUqCP3NC3qw7MTl9Bd9yuVSXXO3JM27FeXynha40=",
+            "rev": "770d72b63843bf0f3d37d7a4f2f8a99a0611d0da",
+            "sha256": "sha256-moAsUEJHFLmN3hSIMr0dIgLVHZxTpzM/n34vlasxQ9Y=",
             "type": "github"
         },
-        "version": "b7763454a98fb9e6b1b9ea3d3035f112d1d9fa85"
+        "version": "770d72b63843bf0f3d37d7a4f2f8a99a0611d0da"
     }
 }

@@ -25,22 +25,22 @@
   };
   codium = {
     pname = "codium";
-    version = "0.12.2";
+    version = "0.12.4";
     src = fetchurl {
-      url = "https://Codium.gallery.vsassets.io/_apis/public/gallery/publisher/Codium/extension/codium/0.12.2/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "codium-0.12.2.zip";
-      sha256 = "sha256-bsuvR1KL97X74NyQvXa54pSrmL8oDp2lE6pSvKlR74Y=";
+      url = "https://Codium.gallery.vsassets.io/_apis/public/gallery/publisher/Codium/extension/codium/0.12.4/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "codium-0.12.4.zip";
+      sha256 = "sha256-FR7MGmYGKuHbDCKfHkyG86LN0HvhT9fXP7bTnUB2HUw=";
     };
     publisher = "Codium";
     name = "codium";
   };
   copilot = {
     pname = "copilot";
-    version = "1.245.1209";
+    version = "1.246.1243";
     src = fetchurl {
-      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.245.1209/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "copilot-1.245.1209.zip";
-      sha256 = "sha256-ELij7wbiTPLlBgzEYvW3068oEKvo7k5cdrHn+NlZRdo=";
+      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.246.1243/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "copilot-1.246.1243.zip";
+      sha256 = "sha256-OOzN+4cIbpzyYlNo3pI/2dayeUVjP3WCtLl3C+Unwic=";
     };
     publisher = "GitHub";
     name = "copilot";
@@ -80,11 +80,11 @@
   };
   emacs-mcx = {
     pname = "emacs-mcx";
-    version = "0.61.2";
+    version = "0.62.3";
     src = fetchurl {
-      url = "https://tuttieee.gallery.vsassets.io/_apis/public/gallery/publisher/tuttieee/extension/emacs-mcx/0.61.2/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "emacs-mcx-0.61.2.zip";
-      sha256 = "sha256-176YgcHZdw3VP/c8ph2gOU5sG+V1IueJp7oW0Q/jezE=";
+      url = "https://tuttieee.gallery.vsassets.io/_apis/public/gallery/publisher/tuttieee/extension/emacs-mcx/0.62.3/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "emacs-mcx-0.62.3.zip";
+      sha256 = "sha256-iLipoayTTSt71TTyJsAaxU3GFcqoxhuCF9pa4ZZ5o58=";
     };
     publisher = "tuttieee";
     name = "emacs-mcx";
@@ -113,11 +113,11 @@
   };
   gitlens = {
     pname = "gitlens";
-    version = "2024.11.1217";
+    version = "2024.12.504";
     src = fetchurl {
-      url = "https://eamodio.gallery.vsassets.io/_apis/public/gallery/publisher/eamodio/extension/gitlens/2024.11.1217/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "gitlens-2024.11.1217.zip";
-      sha256 = "sha256-HQJKTzcGJfMN0gPtGf2FWzjtOSwBV44w+T0O9QhRg9E=";
+      url = "https://eamodio.gallery.vsassets.io/_apis/public/gallery/publisher/eamodio/extension/gitlens/2024.12.504/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "gitlens-2024.12.504.zip";
+      sha256 = "sha256-ohTo/hvhxx2ENN9QL940NZG0gEPl+dWQ+mJMg8dWrug=";
     };
     publisher = "eamodio";
     name = "gitlens";
@@ -300,11 +300,11 @@
   };
   ruby-lsp = {
     pname = "ruby-lsp";
-    version = "0.8.13";
+    version = "0.8.15";
     src = fetchurl {
-      url = "https://Shopify.gallery.vsassets.io/_apis/public/gallery/publisher/Shopify/extension/ruby-lsp/0.8.13/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "ruby-lsp-0.8.13.zip";
-      sha256 = "sha256-JruuYbXpDOufmILFCIofeIjjOa6sespcfgw+C3bOnVY=";
+      url = "https://Shopify.gallery.vsassets.io/_apis/public/gallery/publisher/Shopify/extension/ruby-lsp/0.8.15/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "ruby-lsp-0.8.15.zip";
+      sha256 = "sha256-Ob8iDcTT0PSH71g91aeoTcpVJ7qMaZnEix9FKYLNupQ=";
     };
     publisher = "Shopify";
     name = "ruby-lsp";
@@ -366,11 +366,11 @@
   };
   tabnine-vscode = {
     pname = "tabnine-vscode";
-    version = "3.189.0";
+    version = "3.199.0";
     src = fetchurl {
-      url = "https://TabNine.gallery.vsassets.io/_apis/public/gallery/publisher/TabNine/extension/tabnine-vscode/3.189.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "tabnine-vscode-3.189.0.zip";
-      sha256 = "sha256-fuKS43iywYC44fqppU+nPcQQd26t4clcurQb0v2Jnko=";
+      url = "https://TabNine.gallery.vsassets.io/_apis/public/gallery/publisher/TabNine/extension/tabnine-vscode/3.199.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "tabnine-vscode-3.199.0.zip";
+      sha256 = "sha256-JcP0f4+0WwbHDgZ04ADmV30SAdLq+Wq6y+O0dtBx+fY=";
     };
     publisher = "TabNine";
     name = "tabnine-vscode";
@@ -421,22 +421,22 @@
   };
   vscode-emacs-tab = {
     pname = "vscode-emacs-tab";
-    version = "0.2.0";
+    version = "0.2.1";
     src = fetchurl {
-      url = "https://garaemon.gallery.vsassets.io/_apis/public/gallery/publisher/garaemon/extension/vscode-emacs-tab/0.2.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "vscode-emacs-tab-0.2.0.zip";
-      sha256 = "sha256-Ulwe5s/qieF7n6ymW6UdyRCUYN5LRG7pj6WyZyLNg9A=";
+      url = "https://garaemon.gallery.vsassets.io/_apis/public/gallery/publisher/garaemon/extension/vscode-emacs-tab/0.2.1/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "vscode-emacs-tab-0.2.1.zip";
+      sha256 = "sha256-zANcjqo9BOBf0EWFdJiMz8cs5g4vTVgXEd2w09wNzqk=";
     };
     publisher = "garaemon";
     name = "vscode-emacs-tab";
   };
   vscode-markdownlint = {
     pname = "vscode-markdownlint";
-    version = "0.56.0";
+    version = "0.57.0";
     src = fetchurl {
-      url = "https://DavidAnson.gallery.vsassets.io/_apis/public/gallery/publisher/DavidAnson/extension/vscode-markdownlint/0.56.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "vscode-markdownlint-0.56.0.zip";
-      sha256 = "sha256-ITSpPe032XcGIlfRQtJSR0iNTizs85qwfRaTtKwNn50=";
+      url = "https://DavidAnson.gallery.vsassets.io/_apis/public/gallery/publisher/DavidAnson/extension/vscode-markdownlint/0.57.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "vscode-markdownlint-0.57.0.zip";
+      sha256 = "sha256-5izhTYDrJyJD7A9Stmp2YJXkhJPSzOzK+QsTv3UfTL8=";
     };
     publisher = "DavidAnson";
     name = "vscode-markdownlint";

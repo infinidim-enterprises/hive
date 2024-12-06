@@ -3,6 +3,7 @@ let
   inherit (inputs.nixpkgs-lib.lib // builtins)
     elem
     mkForce
+    isAttrs
     hasAttr
     flatten
     optional
@@ -39,25 +40,20 @@ let
       findFirst (e: (!isString e) && hasAttr "pname" e && e.pname == name)
         null
         osConfig.fonts.packages;
+
     isGui = config:
       let
-        dm = removeAttrs config.services.xserver.displayManager
+        dm = removeAttrs
+          ((removeAttrs config.services.xserver.displayManager
+            [ "extraSessionFilesPackages" ])
+          // config.services.displayManager)
           [
             "auto"
-            "desktopManagerHandlesLidAndPower"
             "slim"
-            "sddm"
-            "autoLogin"
-            "defaultSession"
-            "extraSessionFilesPackages"
-            "hiddenUsers"
-            "logToJournal"
-            "sessionData"
-            "sessionPackages"
+            "desktopManagerHandlesLidAndPower"
           ];
       in
-      # TODO: replace with hasAttr and don't removeAttrs
-      (filterAttrs (k: v: v ? enable && v.enable) dm) != { };
+      (filterAttrs (k: v: isAttrs v && hasAttr "enable" v && v.enable == true) dm) != { };
   };
 
 in

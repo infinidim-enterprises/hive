@@ -54,7 +54,7 @@ in
       ];
 
       programs.password-store.settings = { inherit PASSWORD_STORE_KEY; };
-      services.gpg-agent.pinentryPackage = pkgs.pinentry-gnome3;
+      # services.gpg-agent.pinentryPackage = pkgs.pinentry-gnome3;
     }
 
     (mkIf config.gtk.enable {

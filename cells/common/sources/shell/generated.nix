@@ -164,16 +164,16 @@
   };
   zsh-plugin_oh-my-zsh = {
     pname = "zsh-plugin_oh-my-zsh";
-    version = "7ed475cb589c9e82211f71b3a5d7083b69cea93c";
+    version = "69a6359f7cf8978d464573fb7b023ee3cd00181a";
     src = fetchgit {
       url = "https://github.com/robbyrussell/oh-my-zsh";
-      rev = "7ed475cb589c9e82211f71b3a5d7083b69cea93c";
+      rev = "69a6359f7cf8978d464573fb7b023ee3cd00181a";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-rduWnGus/kiRk4qDnR9ifwZb+PnPPCs+aWHhT+M55WQ=";
+      sha256 = "sha256-31wI3wFGQ9YhEo7XguLSTNY0rvOFa+/MoFwDAZIo7ZY=";
     };
-    date = "2024-11-03";
+    date = "2024-11-28";
   };
   zsh-plugin_tipz = {
     pname = "zsh-plugin_tipz";
@@ -229,16 +229,16 @@
   };
   zsh-plugin_zsh-completions = {
     pname = "zsh-plugin_zsh-completions";
-    version = "9df3345fe46243e3e78674eb94f3ad7d74da373e";
+    version = "874917fa56828c19579f2deba6e0c1e79f18f477";
     src = fetchgit {
       url = "https://github.com/zsh-users/zsh-completions";
-      rev = "9df3345fe46243e3e78674eb94f3ad7d74da373e";
+      rev = "874917fa56828c19579f2deba6e0c1e79f18f477";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-ibdEDgyUiJ84OUdlwrlvedlySE8uwQfNqQ6HEM+QCLM=";
+      sha256 = "sha256-m3C+njGAtXeJHo3uctBn/2WqcumXb6tFhUxtbNqx0Yo=";
     };
-    date = "2024-11-08";
+    date = "2024-11-26";
   };
   zsh-plugin_zsh-history-substring-search = {
     pname = "zsh-plugin_zsh-history-substring-search";
@@ -255,15 +255,15 @@
   };
   zsh-plugin_zsh-syntax-highlighting = {
     pname = "zsh-plugin_zsh-syntax-highlighting";
-    version = "e0165eaa730dd0fa321a6a6de74f092fe87630b0";
+    version = "5eb677bb0fa9a3e60f0eff031dc13926e093df92";
     src = fetchgit {
       url = "https://github.com/zsh-users/zsh-syntax-highlighting";
-      rev = "e0165eaa730dd0fa321a6a6de74f092fe87630b0";
+      rev = "5eb677bb0fa9a3e60f0eff031dc13926e093df92";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-Vt2yKzMRJ34FBFPKrN+GJBZYmBt5ASArrs1dkZcIQmI=";
+      sha256 = "sha256-IIcGYa0pXdll/XDPA15zDBkLUuLhTdrqwS9sn06ce0Y=";
     };
-    date = "2024-01-06";
+    date = "2024-11-21";
   };
 }

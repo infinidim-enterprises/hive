@@ -6,33 +6,46 @@
 { config, lib, pkgs, ... }:
 with lib;
 let
-  hmModule = { config, osConfig, lib, ... }:
-    {
-      config = with lib; mkMerge [
-        {
-          # NOTE: chatty log pollution
-          systemd.user.services.gpg-agent.Service.StandardOutput = "null";
+  hmModule = { config, osConfig, lib, pkgs, ... }:
+    let
+      inherit (lib) mkDefault mkMerge;
+      pinentryPackage = (pkgs.writeShellScriptBin "pinentry-selector" ''
+        if [[ -n "$DISPLAY" || -n "$WAYLAND_DISPLAY" ]]; then
+          exec ${pkgs.pinentry-all}/bin/pinentry-gnome3
+        else
+          exec ${pkgs.pinentry-all}/bin/pinentry-curses
+        fi
+      '') // { meta = { mainProgram = "pinentry-selector"; }; };
+    in
+    mkMerge [
+      {
+        # NOTE: chatty log pollution
+        # home.sessionVariables.G_MESSAGES_DEBUG = "none";
+        systemd.user.services.gpg-agent.Service.StandardOutput = "null";
 
-          programs.gpg.enable = mkDefault true;
-          programs.gpg.mutableKeys = mkDefault true;
-          programs.gpg.mutableTrust = mkDefault true;
+        programs.gpg.enable = mkDefault true;
+        programs.gpg.mutableKeys = mkDefault true;
+        programs.gpg.mutableTrust = mkDefault true;
 
-          # NOTE: This is needed to support multiple keys
-          programs.gpg.scdaemonSettings.disable-ccid = osConfig.services.pcscd.enable;
+        # NOTE: This is needed to support multiple keys
+        programs.gpg.scdaemonSettings.disable-ccid = osConfig.services.pcscd.enable;
 
-          services.gpg-agent.enable = mkDefault true;
-          services.gpg-agent.enableSshSupport = mkDefault true;
-          services.gpg-agent.enableExtraSocket = mkDefault true;
-          services.gpg-agent.defaultCacheTtl = 3 * 60 * 60; # 3 hours
-          services.gpg-agent.defaultCacheTtlSsh = 3 * 60 * 60; # 3 hours
-          # services.gpg-agent.pinentryPackage = mkDefault pkgs.pinentry-gnome3;
-          services.gpg-agent.extraConfig = ''
+        home.packages = [ pkgs.pinentry-all ];
+
+        services.gpg-agent = {
+          inherit pinentryPackage;
+          enable = mkDefault true;
+          enableSshSupport = mkDefault true;
+          enableExtraSocket = mkDefault true;
+          defaultCacheTtl = 3 * 60 * 60; # 3 hours
+          defaultCacheTtlSsh = 3 * 60 * 60; # 3 hours
+          extraConfig = ''
             allow-emacs-pinentry
             allow-loopback-pinentry
           '';
-        }
-      ];
-    };
+        };
+      }
+    ];
 
 in
 mkMerge [

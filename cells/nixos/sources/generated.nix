@@ -3,11 +3,11 @@
 {
   lobe-chat = {
     pname = "lobe-chat";
-    version = "v1.31.5";
+    version = "v1.35.12";
     src = dockerTools.pullImage {
       imageName = "lobehub/lobe-chat";
-      imageDigest = "sha256:ff13c78abf1a18dd2670d4ef7f1cd25d04e943284fd67136d616a24ef69951e4";
-      sha256 = "sha256-sx8ZpYyL7o92+Sppi3QPl/eytijgZq01G2gSZfaLTds=";
+      imageDigest = "sha256:f02b0f890d1f7bce3db1eba469b61db3238a616a00d6185d73857473aa167bc6";
+      sha256 = "sha256-e5yBB6lGZ/g0YnoH8gC7vR+C4PHnYSgT/I0R48hJUjs=";
       finalImageTag = "latest";
     };
   };
@@ -21,15 +21,15 @@
   };
   rtl88x2bu = {
     pname = "rtl88x2bu";
-    version = "d4425c0b8f7b45ddb648bddf2d62668aa2b54c78";
+    version = "2092b8d80d7fb7fa953d9dd3d666e5679c99a2f8";
     src = fetchFromGitHub {
       owner = "RinCat";
       repo = "RTL88x2BU-Linux-Driver";
-      rev = "d4425c0b8f7b45ddb648bddf2d62668aa2b54c78";
+      rev = "2092b8d80d7fb7fa953d9dd3d666e5679c99a2f8";
       fetchSubmodules = false;
-      sha256 = "sha256-OyvWGo5CXdjZhknuMmlekHVrJsgOPISCvr4IO/nJArg=";
+      sha256 = "sha256-z3yZqAN0pbAgWrbqoJb+wkY3gxAj8oUwFyaUmwYk82o=";
     };
-    date = "2024-07-27";
+    date = "2024-12-01";
   };
   rtw89 = {
     pname = "rtw89";
