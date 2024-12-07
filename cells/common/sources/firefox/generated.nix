@@ -403,24 +403,23 @@
   };
   "decentraleyes" = rec {
     pname = "decentraleyes";
-    version = "2.0.19";
+    version = "3.0.0";
     addonId = "jid1-BoFifL9Vbdl2zQ@jetpack";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4255788/decentraleyes-2.0.19.xpi";
-    sha256 = "105d65bf8189d527251647d0452715c5725af6065fba67cd08187190aae4a98f";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4392113/decentraleyes-3.0.0.xpi";
+    sha256 = "6f2efed90696ac7f8ca7efb8ab308feb3bdf182350b3acfdf4050c09cc02f113";
     meta = with lib;
       {
         homepage = "https://decentraleyes.org";
         description = "Protects you against tracking through \"free\", centralized, content delivery. It prevents a lot of requests from reaching networks like Google Hosted Libraries, and serves local files to keep sites from breaking. Complements regular content blockers.";
         license = licenses.mpl20;
         mozPermissions = [
-          "*://*/*"
           "privacy"
-          "storage"
-          "unlimitedStorage"
-          "tabs"
           "webNavigation"
-          "webRequest"
           "webRequestBlocking"
+          "webRequest"
+          "unlimitedStorage"
+          "storage"
+          "tabs"
         ];
         platforms = platforms.all;
       };
@@ -584,10 +583,10 @@
   };
   "languagetool" = rec {
     pname = "languagetool";
-    version = "8.11.8";
+    version = "8.13.2";
     addonId = "languagetool-webextension@languagetool.org";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4341696/languagetool-8.11.8.xpi";
-    sha256 = "2f1489f7180303be730ff2b16d6a432d07017c6cffd3fbfc39f37dc809a25fc8";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4396724/languagetool-8.13.2.xpi";
+    sha256 = "e8a93ca046df390aaafeb7ba86254505ed3c593371c1f9e5af6892018d12de66";
     meta = with lib;
       {
         homepage = "https://languagetool.org";
@@ -601,6 +600,7 @@
           "https://*/*"
           "file:///*"
           "*://docs.google.com/document/*"
+          "*://docs.google.com/presentation/*"
           "*://languagetool.org/*"
         ];
         platforms = platforms.all;
