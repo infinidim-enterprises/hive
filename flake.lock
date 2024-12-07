@@ -3023,7 +3023,7 @@
         "nixago-exts": "nixago-exts",
         "nixd": "nixd",
         "nixos": [
-          "nixos-24-05"
+          "nixos-24-11"
         ],
         "nixos-22-11": "nixos-22-11",
         "nixos-23-11": "nixos-23-11",
@@ -3034,10 +3034,7 @@
         "nixos-hardware": "nixos-hardware",
         "nixos-vscode-server": "nixos-vscode-server",
         "nixpkgs": [
-          "nixos-24-05"
-        ],
-        "nixpkgs-22-11": [
-          "nixos-22-11"
+          "nixos-24-11"
         ],
         "nixpkgs-lib": "nixpkgs-lib_3",
         "nixpkgs-master": "nixpkgs-master",

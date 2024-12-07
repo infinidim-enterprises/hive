@@ -14,7 +14,7 @@ in
       home-manager.users.admin.imports =
 
         cell.homeSuites.developer.default
-        ++ cell.homeSuites.wayland
+        # FIXME:(for admin user only!) ++ cell.homeSuites.wayland
         ++ [
           # inputs.nix-doom-emacs.hmModule
 
@@ -24,7 +24,6 @@ in
           cell.homeProfiles.security.gpg
 
           ({ pkgs, ... }: {
-            # services.gpg-agent.pinentryPackage = pkgs.pinentry-gnome3;
             home.packages = [ pkgs.dconf ];
           })
         ];

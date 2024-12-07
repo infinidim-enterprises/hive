@@ -217,11 +217,11 @@ in
       common_steps = [
         {
           name = "Checkout repository";
-          uses = "actions/checkout@v4.1.7";
+          uses = "actions/checkout@v4.2.1";
         }
         {
           name = "Install Nix";
-          uses = "cachix/install-nix-action@v27";
+          uses = "cachix/install-nix-action@v30";
           "with" = {
             nix_path = "nixpkgs=channel:nixos-24.05";
             extra_nix_config = "access-tokens = github.com=\${{ secrets.GITHUB_TOKEN }}";
@@ -403,7 +403,7 @@ in
             # }
             {
               name = "Update flake.lock";
-              uses = "DeterminateSystems/update-flake-lock@v23";
+              uses = "DeterminateSystems/update-flake-lock@v24";
               "with".commit-msg = "deps(flake-lock): Updated flake.lock";
               "with".pr-title = "[Automated] Update 'flake.lock' and sources";
               "with".branch = "auto/upgrade-dependencies";

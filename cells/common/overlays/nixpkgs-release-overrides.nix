@@ -5,13 +5,20 @@ let
     inherit (inputs.nixpkgs) system;
     config.allowUnfree = true;
   };
+
+  nixpkgs-release-24-05 = import inputs.nixos-24-05 {
+    inherit (inputs.nixpkgs) system;
+    config.allowUnfree = true;
+  };
+
 in
 {
   inherit
-    (nixpkgs-release)
-    atuin
+    (nixpkgs-release-24-05)
+    atuin;
 
-    # nyxt
+  inherit
+    (nixpkgs-release)
 
     firefox
     chromium
