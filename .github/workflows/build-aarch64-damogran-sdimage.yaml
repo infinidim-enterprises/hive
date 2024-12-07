@@ -16,8 +16,6 @@ jobs:
         extraPullNames: cuda-maintainers, mic92, nix-community, nrdxp
         name: njk
         signingKey: ${{ secrets.CACHIX_SIGNING_KEY }}
-    - name: Build damogran sdImage
-      run: nix build .#nixosConfigurations.nixos-damogran.config.system.build.sdImage
     - name: Build damogran toplevel
       run: nix build .#nixosConfigurations.nixos-damogran.config.system.build.toplevel
 name: Build damogran [aarch64-linux]

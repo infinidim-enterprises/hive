@@ -261,10 +261,10 @@ in
             build_damogran = {
               runs-on = "self-hosted";
               steps = common_steps ++ [
-                {
-                  name = "Build damogran sdImage";
-                  run = ''nix build .#nixosConfigurations.nixos-damogran.config.system.build.sdImage'';
-                }
+                # {
+                #   name = "Build damogran sdImage";
+                #   run = ''nix build .#nixosConfigurations.nixos-damogran.config.system.build.sdImage'';
+                # }
 
                 {
                   name = "Build damogran toplevel";
