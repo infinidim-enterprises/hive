@@ -3,6 +3,7 @@ let
   inherit (lib // builtins)
     isInt
     toString
+    hasAttr
     concatStringsSep
     splitString
     fileContents
@@ -196,7 +197,10 @@ in
   };
 
   wayland.windowManager.hyprland.enable = true;
-  wayland.windowManager.hyprland.systemd.enable = !osConfig.programs.hyprland.withUWSM;
+  wayland.windowManager.hyprland.systemd.enable =
+    if hasAttr "withUWSM" osConfig.programs.hyprland
+    then !osConfig.programs.hyprland.withUWSM
+    else true;
   wayland.windowManager.hyprland.systemd.variables = [ "--all" ];
 
   # wayland.windowManager.hyprland.systemd.extraCommands = [

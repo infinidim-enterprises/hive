@@ -172,6 +172,7 @@
     nixos-22-11.url = "github:nixos/nixpkgs/release-22.11";
     nixos-23-11.url = "github:nixos/nixpkgs/release-23.11";
     nixos-24-05.url = "github:nixos/nixpkgs/release-24.05";
+    nixos-24-11.url = "github:nixos/nixpkgs/release-24.11";
     nixpkgs-22-11.follows = "nixos-22-11";
 
     ###
