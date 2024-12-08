@@ -20,7 +20,7 @@
   },
   "adguard-filters_adguardteam": {
     "cargoLocks": null,
-    "date": "2024-12-05",
+    "date": "2024-12-07",
     "extract": null,
     "name": "adguard-filters_adguardteam",
     "passthru": null,
@@ -30,12 +30,12 @@
       "fetchSubmodules": false,
       "leaveDotGit": false,
       "name": null,
-      "rev": "ab30f87403578c13b13c533028b247e0ce119b45",
-      "sha256": "sha256-tMQgsMG6eYk/tTD+X0PKO1fasATIkbV71+PaZ/Wlw34=",
+      "rev": "dfd01142ad704429e1781d73cc1496129f88895c",
+      "sha256": "sha256-dqBsmKpMQlEOOTyEeyqgqzWILiW5XnJ3+xi418lBNjs=",
       "type": "git",
       "url": "https://github.com/AdguardTeam/AdguardFilters"
     },
-    "version": "ab30f87403578c13b13c533028b247e0ce119b45"
+    "version": "dfd01142ad704429e1781d73cc1496129f88895c"
   },
   "adguard-filters_romania": {
     "cargoLocks": null,
@@ -99,7 +99,7 @@
   },
   "chatgpt-wrapper": {
     "cargoLocks": null,
-    "date": "2024-11-21",
+    "date": "2024-12-07",
     "extract": null,
     "name": "chatgpt-wrapper",
     "passthru": null,
@@ -111,11 +111,11 @@
       "name": null,
       "owner": "llm-workflow-engine",
       "repo": "llm-workflow-engine",
-      "rev": "41226fff17399a69bb08adb90028d3c9cb1c4278",
-      "sha256": "sha256-crl5zwUPIj80758sT0bLpfpOf27pkuwJ48iLS8esE0Q=",
+      "rev": "d0721180f35cdbb50b53169c8b70620c5d9c0f63",
+      "sha256": "sha256-2hNs6cVF4eqtcqNTaCjrltAO0pMYVkdAkmBNjN6qQzY=",
       "type": "github"
     },
-    "version": "41226fff17399a69bb08adb90028d3c9cb1c4278"
+    "version": "d0721180f35cdbb50b53169c8b70620c5d9c0f63"
   },
   "cl-hash-util": {
     "cargoLocks": null,
@@ -448,11 +448,11 @@
       "name": null,
       "owner": "langchain-ai",
       "repo": "langchain",
-      "rev": "langchain-core==0.3.21",
-      "sha256": "sha256-j3sD622nn8h4w+NUC0aLVd6N9S90I9EoHIqV/L+ytY4=",
+      "rev": "langchain-core==0.3.22",
+      "sha256": "sha256-sd01EpRDv7OfN5hWHb5UBn9kL543sIbfSBJC0yk2SAc=",
       "type": "github"
     },
-    "version": "langchain-core==0.3.21"
+    "version": "langchain-core==0.3.22"
   },
   "ledger-live-desktop": {
     "cargoLocks": null,
@@ -578,7 +578,7 @@
   },
   "pbkdf2-sha512": {
     "cargoLocks": null,
-    "date": "2024-12-05",
+    "date": "2024-12-07",
     "extract": null,
     "name": "pbkdf2-sha512",
     "passthru": null,
@@ -589,7 +589,7 @@
       "type": "url",
       "url": "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c"
     },
-    "version": "26de4d48a61b8fb0e54971927f1fc09199ce0b05"
+    "version": "e8ad7bbf9fe35a87dc1e939152d75152bde85510"
   },
   "pgp-key-generation": {
     "cargoLocks": null,

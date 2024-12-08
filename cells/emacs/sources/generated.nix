@@ -80,16 +80,16 @@
   };
   doom-emacs = {
     pname = "doom-emacs";
-    version = "ec645b83818d0d691493b944b03ffeab70b112bb";
+    version = "ba1dca322f9a07bc2b7bec6a98f2c3c55c0bbd77";
     src = fetchgit {
       url = "https://github.com/hlissner/doom-emacs";
-      rev = "ec645b83818d0d691493b944b03ffeab70b112bb";
+      rev = "ba1dca322f9a07bc2b7bec6a98f2c3c55c0bbd77";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = true;
-      sha256 = "sha256-AjNbtI2orP+MmwHt/PfMgKJhti7Ro1HTefIiRym3Sog=";
+      sha256 = "sha256-eDqPgcWd2iPOZAJ5qVGCZt2k5n6Z8KTbx0zkfc/mU+Q=";
     };
-    date = "2024-12-01";
+    date = "2024-12-05";
   };
   grip = {
     pname = "grip";
@@ -118,15 +118,15 @@
   };
   lsp-bridge = {
     pname = "lsp-bridge";
-    version = "8a8e573e85cdc655498f67cbcd18af895673758b";
+    version = "4fb92c97f4dd585bde59939bc53eeaee893c8fbe";
     src = fetchFromGitHub {
       owner = "manateelazycat";
       repo = "lsp-bridge";
-      rev = "8a8e573e85cdc655498f67cbcd18af895673758b";
+      rev = "4fb92c97f4dd585bde59939bc53eeaee893c8fbe";
       fetchSubmodules = false;
-      sha256 = "sha256-5K2xEZ9/mKEtYxCzt2MzsDLjiardHuzxPe7AQ1HfOoY=";
+      sha256 = "sha256-lTCmGbEwWUJupgiZMUWfgQoTQgJ3+iZnXlLhJzCugSw=";
     };
-    date = "2024-11-19";
+    date = "2024-12-05";
   };
   nix-mode = {
     pname = "nix-mode";

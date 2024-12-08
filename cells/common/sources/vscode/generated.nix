@@ -36,11 +36,11 @@
   };
   copilot = {
     pname = "copilot";
-    version = "1.246.1243";
+    version = "1.248.1249";
     src = fetchurl {
-      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.246.1243/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "copilot-1.246.1243.zip";
-      sha256 = "sha256-OOzN+4cIbpzyYlNo3pI/2dayeUVjP3WCtLl3C+Unwic=";
+      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.248.1249/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "copilot-1.248.1249.zip";
+      sha256 = "sha256-5cnOTM9iaA1ZycnETj9VEJH1Nia9IzqZl0PXg7FCbZk=";
     };
     publisher = "GitHub";
     name = "copilot";
@@ -113,11 +113,11 @@
   };
   gitlens = {
     pname = "gitlens";
-    version = "2024.12.504";
+    version = "2024.12.704";
     src = fetchurl {
-      url = "https://eamodio.gallery.vsassets.io/_apis/public/gallery/publisher/eamodio/extension/gitlens/2024.12.504/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "gitlens-2024.12.504.zip";
-      sha256 = "sha256-ohTo/hvhxx2ENN9QL940NZG0gEPl+dWQ+mJMg8dWrug=";
+      url = "https://eamodio.gallery.vsassets.io/_apis/public/gallery/publisher/eamodio/extension/gitlens/2024.12.704/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "gitlens-2024.12.704.zip";
+      sha256 = "sha256-pDs5cBdETb/1xieeA8elc+7ZGOC9K8SGz125G1Js030=";
     };
     publisher = "eamodio";
     name = "gitlens";
@@ -300,11 +300,11 @@
   };
   ruby-lsp = {
     pname = "ruby-lsp";
-    version = "0.8.15";
+    version = "0.8.16";
     src = fetchurl {
-      url = "https://Shopify.gallery.vsassets.io/_apis/public/gallery/publisher/Shopify/extension/ruby-lsp/0.8.15/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "ruby-lsp-0.8.15.zip";
-      sha256 = "sha256-Ob8iDcTT0PSH71g91aeoTcpVJ7qMaZnEix9FKYLNupQ=";
+      url = "https://Shopify.gallery.vsassets.io/_apis/public/gallery/publisher/Shopify/extension/ruby-lsp/0.8.16/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "ruby-lsp-0.8.16.zip";
+      sha256 = "sha256-jc8BOd+06SdPolQNkasPBntO7dCupOaliY7cOYiad6U=";
     };
     publisher = "Shopify";
     name = "ruby-lsp";

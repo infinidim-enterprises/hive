@@ -10,18 +10,18 @@ mkMerge [
     fonts.enableGhostscriptFonts = true;
     fonts.packages = with pkgs;
       [
-        (nerdfonts.override (_: {
-          fonts = [
-            "InconsolataLGC"
-            "Ubuntu"
-            "DejaVuSansMono"
-            "DroidSansMono"
-            "JetBrainsMono"
-            "ShareTechMono"
-            "UbuntuMono"
-            "VictorMono"
-          ];
-        }))
+        # (nerdfonts.override (_: {
+        #   fonts = [
+        #     "InconsolataLGC"
+        #     "Ubuntu"
+        #     "DejaVuSansMono"
+        #     "DroidSansMono"
+        #     "JetBrainsMono"
+        #     "ShareTechMono"
+        #     "UbuntuMono"
+        #     "VictorMono"
+        #   ];
+        # }))
 
         dejavu_fonts
         roboto
@@ -33,7 +33,17 @@ mkMerge [
         weather-icons
         inputs.cells.emacs.packages.all-the-icons
         material-symbols
-      ] ++ [ inputs.cells.common.packages.windows-fonts ];
+      ] ++ (with pkgs.nerd-fonts; [
+        inconsolata-lgc
+        ubuntu
+        ubuntu-mono
+        ubuntu-sans
+        dejavu-sans-mono
+        droid-sans-mono
+        jetbrains-mono
+        shure-tech-mono
+        victor-mono
+      ]) ++ [ inputs.cells.common.packages.windows-fonts ];
 
     fonts.fontconfig = {
       enable = true;

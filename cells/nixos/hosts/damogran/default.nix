@@ -30,6 +30,8 @@ rec {
     # ++ [ (cell.lib.mkHome "vod" "zsh") ]
     ++ [
       bee.home.nixosModules.home-manager
+      { home-manager.sharedModules = [{ home.enableNixpkgsReleaseCheck = false; }]; }
+
       (import ./_hardwareProfile.nix { inherit inputs cell; })
 
       cell.nixosProfiles.services.minidlna

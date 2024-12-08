@@ -16,16 +16,16 @@
   };
   adguard-filters_adguardteam = {
     pname = "adguard-filters_adguardteam";
-    version = "ab30f87403578c13b13c533028b247e0ce119b45";
+    version = "dfd01142ad704429e1781d73cc1496129f88895c";
     src = fetchgit {
       url = "https://github.com/AdguardTeam/AdguardFilters";
-      rev = "ab30f87403578c13b13c533028b247e0ce119b45";
+      rev = "dfd01142ad704429e1781d73cc1496129f88895c";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-tMQgsMG6eYk/tTD+X0PKO1fasATIkbV71+PaZ/Wlw34=";
+      sha256 = "sha256-dqBsmKpMQlEOOTyEeyqgqzWILiW5XnJ3+xi418lBNjs=";
     };
-    date = "2024-12-05";
+    date = "2024-12-07";
   };
   adguard-filters_romania = {
     pname = "adguard-filters_romania";
@@ -68,15 +68,15 @@
   };
   chatgpt-wrapper = {
     pname = "chatgpt-wrapper";
-    version = "41226fff17399a69bb08adb90028d3c9cb1c4278";
+    version = "d0721180f35cdbb50b53169c8b70620c5d9c0f63";
     src = fetchFromGitHub {
       owner = "llm-workflow-engine";
       repo = "llm-workflow-engine";
-      rev = "41226fff17399a69bb08adb90028d3c9cb1c4278";
+      rev = "d0721180f35cdbb50b53169c8b70620c5d9c0f63";
       fetchSubmodules = false;
-      sha256 = "sha256-crl5zwUPIj80758sT0bLpfpOf27pkuwJ48iLS8esE0Q=";
+      sha256 = "sha256-2hNs6cVF4eqtcqNTaCjrltAO0pMYVkdAkmBNjN6qQzY=";
     };
-    date = "2024-11-21";
+    date = "2024-12-07";
   };
   cl-hash-util = {
     pname = "cl-hash-util";
@@ -272,13 +272,13 @@
   };
   langchain = {
     pname = "langchain";
-    version = "langchain-core==0.3.21";
+    version = "langchain-core==0.3.22";
     src = fetchFromGitHub {
       owner = "langchain-ai";
       repo = "langchain";
-      rev = "langchain-core==0.3.21";
+      rev = "langchain-core==0.3.22";
       fetchSubmodules = false;
-      sha256 = "sha256-j3sD622nn8h4w+NUC0aLVd6N9S90I9EoHIqV/L+ytY4=";
+      sha256 = "sha256-sd01EpRDv7OfN5hWHb5UBn9kL543sIbfSBJC0yk2SAc=";
     };
   };
   ledger-live-desktop = {
@@ -358,12 +358,12 @@
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "26de4d48a61b8fb0e54971927f1fc09199ce0b05";
+    version = "e8ad7bbf9fe35a87dc1e939152d75152bde85510";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";
     };
-    date = "2024-12-05";
+    date = "2024-12-07";
   };
   pgp-key-generation = {
     pname = "pgp-key-generation";

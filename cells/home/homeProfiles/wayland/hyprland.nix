@@ -214,7 +214,7 @@ in
   wayland.windowManager.hyprland.plugins = with pkgs.hyprlandPlugins; [
     # hycov
     # virtual-desktops
-    hyprexpo
+    # hyprexpo
     hy3
   ];
 
@@ -289,11 +289,11 @@ in
     "$menu" = "wofi --show drun";
     "$fileManager" = "caja --no-desktop";
 
-    plugin.hyprexpo.columns = 3;
-    plugin.hyprexpo.gap_size = 5;
-    plugin.hyprexpo.bg_col = "rgb(0, 43, 54)";
-    plugin.hyprexpo.workspace_method = "center current"; # [center/first] [workspace] e.g. first 1 or center m+1
-    plugin.hyprexpo.enable_gesture = false; # laptop touchpad
+    # plugin.hyprexpo.columns = 3;
+    # plugin.hyprexpo.gap_size = 5;
+    # plugin.hyprexpo.bg_col = "rgb(0, 43, 54)";
+    # plugin.hyprexpo.workspace_method = "center current"; # [center/first] [workspace] e.g. first 1 or center m+1
+    # plugin.hyprexpo.enable_gesture = false; # laptop touchpad
 
     # plugin.hycov = {
     #   overview_gappo = 10; # gaps width from screen edge
@@ -456,7 +456,7 @@ in
       # "$masterMod, P, pseudo"
       # "$masterMod, J, togglesplit"
 
-      "$masterMod, grave, hyprexpo:expo, toggle" # hyprexpo plugin
+      # "$masterMod, grave, hyprexpo:expo, toggle" # hyprexpo plugin
 
       # Move focus with mainMod + arrow keys
       # "$masterMod, Left, movefocus, l"

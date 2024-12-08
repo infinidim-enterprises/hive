@@ -41,19 +41,8 @@ let
         null
         osConfig.fonts.packages;
 
-    isGui = config:
-      let
-        dm = removeAttrs
-          ((removeAttrs config.services.xserver.displayManager
-            [ "extraSessionFilesPackages" ])
-          // config.services.displayManager)
-          [
-            "auto"
-            "slim"
-            "desktopManagerHandlesLidAndPower"
-          ];
-      in
-      (filterAttrs (k: v: isAttrs v && hasAttr "enable" v && v.enable == true) dm) != { };
+    # NOTE: displayManager.enable will be true, when any DM is enabled
+    isGui = config: config.services.displayManager.enable;
   };
 
 in
