@@ -8,6 +8,7 @@ mkMerge [
       v4l-utils
       ffmpeg-full
 
+      yt-dlp # Command-line tool to download videos from YouTube.com and other sites
       # FIXME: lollypop # audio player
       id3v2 # mp3 tag manipulator
     ];

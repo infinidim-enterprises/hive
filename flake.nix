@@ -204,6 +204,11 @@
     stylix.inputs.nixpkgs.follows = "nixpkgs-unstable";
     stylix.inputs.home-manager.follows = "home-unstable";
 
+    # TODO: hyprspace VPN
+    # hyprspace.url = "github:hyprspace/hyprspace";
+    # hyprspace.inputs.flake-parts.follows = "flake-parts";
+    # hyprspace.inputs.nixpkgs.follows = "nixpkgs";
+
     # TODO: fork and PR a fix for https://github.com/danth/stylix/blob/73c6955b4572346cc10f43a459949fe646efbde0/modules/nixvim/nixvim.nix#L16
     # nixvim.url = "github:nix-community/nixvim";
     # nixvim.url = "github:nix-community/nixvim";

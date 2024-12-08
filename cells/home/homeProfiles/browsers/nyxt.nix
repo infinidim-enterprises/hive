@@ -9,9 +9,19 @@ let
     mkIf
     mkMerge
     hasPrefix
+    genAttrs
     filterAttrs
     removePrefix
     mapAttrsToList;
+
+  urls = [
+    # "text/html"
+    "x-scheme-handler/http"
+    "x-scheme-handler/https"
+    # "x-scheme-handler/about"
+    # "x-scheme-handler/unknown"
+  ];
+
   linkConfig = with builtins; pathExists "${self}/users/${name}/dotfiles/nyxt.d";
   nyxt-extensions = pkgs.linkFarm "nyxt-ext"
     (mapAttrsToList (k: v: { name = (removePrefix "nyxt-ext_" k); path = v.src; })
@@ -25,9 +35,6 @@ mkMerge [
   })
 
   (mkIf config.xdg.mimeApps.enable {
-    xdg.mimeApps.defaultApplications = {
-      "x-scheme-handler/http" = "nyxt.desktop";
-      "x-scheme-handler/https" = "nyxt.desktop";
-    };
+    xdg.mimeApps.defaultApplications = genAttrs urls (_: "nyxt.desktop");
   })
 ]

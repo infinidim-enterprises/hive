@@ -39,7 +39,15 @@ in
   programs.bat.enable = true;
   home.packages = with pkgs; [
     tmate #TODO: make a home-manager module - https://tmate.io/ Instant terminal sharing
-    tty-share # Secure terminal-session sharing
+    tty-share # Secure terminal-session sharing - https://tty-share.com
+    upterm # Secure terminal-session sharing - https://upterm.dev
+    eternal-terminal # TODO: Remote shell that automatically reconnects without interrupting the session
+    tio # Serial console TTY
+
+    # TODO: shell-gpt - make a home-manager module for this!
+
+    patool # portable archive file manager - https://wummel.github.io/patool
+    ouch # easily compressing and decompressing files and directories
 
     # Process management
     procps # Utilities that give information about processes using the /proc filesystem
@@ -91,6 +99,7 @@ in
     http-prompt # Interactive command-line HTTP client featuring autocomplete and syntax highlighting
     httplab # Interactive WebServer
     dogdns # Command-line DNS client
+    q # DNS client with support for UDP, TCP, DoT, DoH, DoQ, and ODoH
     gnutls # The GNU Transport Layer Security Library
     surfraw # "Provides a fast unix command line interface to a variety of popular WWW search engines and other artifacts of power"
     w3m # A text-mode web browser

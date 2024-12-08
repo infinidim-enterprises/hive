@@ -1,6 +1,6 @@
 { pkgs, lib, config, ... }:
 let
-  inherit (lib) mkMerge mkIf;
+  inherit (lib) mkMerge mkIf genAttrs;
 in
 mkMerge [
   {
@@ -8,6 +8,8 @@ mkMerge [
       # TODO: move it into a separate profile
       # bisq-desktop
 
+      matterbridge
+      dino # jabber/xmpp
       tdesktop
       # TODO: signald # Unofficial daemon for interacting with Signal
       signal-desktop
@@ -24,10 +26,19 @@ mkMerge [
   }
 
   (mkIf config.xdg.mimeApps.enable {
-    xdg.mimeApps.defaultApplications."x-scheme-handler/tg" = "org.telegram.desktop.desktop";
-    xdg.mimeApps.defaultApplications."x-scheme-handler/tonsite" = "org.telegram.desktop.desktop";
 
-    xdg.mimeApps.associations.added."x-scheme-handler/tg" = "org.telegram.desktop.desktop";
-    xdg.mimeApps.associations.added."x-scheme-handler/tonsite" = "org.telegram.desktop.desktop";
+
+    xdg.mimeApps.defaultApplications =
+      (genAttrs [
+        "x-scheme-handler/tg"
+        "x-scheme-handler/tonsite"
+      ]
+        (_: "org.telegram.desktop.desktop"))
+
+      // (genAttrs [
+        "x-scheme-handler/sgnl"
+        "x-scheme-handler/signalcaptcha"
+      ]
+        (_: "signal-desktop.desktop"));
   })
 ]
