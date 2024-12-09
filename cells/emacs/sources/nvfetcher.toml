@@ -88,3 +88,7 @@ fetch.git = "https://github.com/atlas-engineer/nx-ace"
 [nyxt-ext_nx-reader]
 src.git = "https://github.com/atlas-engineer/nx-reader"
 fetch.git = "https://github.com/atlas-engineer/nx-reader"
+
+[nyxt-ext_nx-dark-reader]
+src.git = "https://github.com/aartaka/nx-dark-reader"
+fetch.git = "https://github.com/aartaka/nx-dark-reader"

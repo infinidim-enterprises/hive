@@ -118,15 +118,15 @@
   };
   lsp-bridge = {
     pname = "lsp-bridge";
-    version = "4fb92c97f4dd585bde59939bc53eeaee893c8fbe";
+    version = "520d253a00d360d7aa47d85a9c4a99ea6702acde";
     src = fetchFromGitHub {
       owner = "manateelazycat";
       repo = "lsp-bridge";
-      rev = "4fb92c97f4dd585bde59939bc53eeaee893c8fbe";
+      rev = "520d253a00d360d7aa47d85a9c4a99ea6702acde";
       fetchSubmodules = false;
-      sha256 = "sha256-lTCmGbEwWUJupgiZMUWfgQoTQgJ3+iZnXlLhJzCugSw=";
+      sha256 = "sha256-NQ7lkTC8JGfMAsDA//Zj8IGV03b2frOuHuvjRSVNGXE=";
     };
-    date = "2024-12-05";
+    date = "2024-12-09";
   };
   nix-mode = {
     pname = "nix-mode";
@@ -179,6 +179,19 @@
       sha256 = "sha256-+/utlTZ/dvc2N/7whjMaE+Iv1HQGKa24gL2Hl8ASaYs=";
     };
     date = "2023-06-30";
+  };
+  nyxt-ext_nx-dark-reader = {
+    pname = "nyxt-ext_nx-dark-reader";
+    version = "57dc1a9482a81d7c15b00c4b9d647bf1b129d8e4";
+    src = fetchgit {
+      url = "https://github.com/aartaka/nx-dark-reader";
+      rev = "57dc1a9482a81d7c15b00c4b9d647bf1b129d8e4";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sha256 = "sha256-CKJGCk7ATd0naFhill5rrvay6V2JE4Bstu4tFpaAjB0=";
+    };
+    date = "2023-06-20";
   };
   nyxt-ext_nx-reader = {
     pname = "nyxt-ext_nx-reader";
