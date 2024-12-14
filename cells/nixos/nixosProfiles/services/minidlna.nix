@@ -32,7 +32,7 @@ in
   systemd.services.minidlna.wantedBy = lib.mkForce [ ]; # NOTE: Don't start minidlna by default
   systemd.services.minidlna.after = [ "minidlna-fix-perms.service" ];
   systemd.services.minidlna.preStart = ''
-    rm -rf ${config.services.minidlna.settings.options.db_dir}/*
+    rm -rf ${config.services.minidlna.settings.db_dir}/*
   '';
 
   boot.kernel.sysctl."fs.inotify.max_user_watches" = 524288;
