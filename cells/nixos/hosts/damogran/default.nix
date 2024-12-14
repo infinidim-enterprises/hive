@@ -35,6 +35,7 @@ rec {
       (import ./_hardwareProfile.nix { inherit inputs cell; })
 
       cell.nixosProfiles.services.minidlna
+      # cell.nixosProfiles.services.torrents
 
       ({ pkgs, ... }:
         {
