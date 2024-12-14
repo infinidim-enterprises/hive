@@ -26,7 +26,11 @@
     cell.homeProfiles.multimedia.players
   ];
 
-  networking.hosts = { "43.228.124.216" = [ "arm64" "arm64.njk.local" ]; };
+  networking.hosts = {
+    "43.228.124.216" = [ "arm64" "arm64.njk.local" ];
+    "192.168.1.135" = [ "asbleg" "asbleg.njk.local" ];
+    "192.168.1.133" = [ "damogran" "damogran.njk.local" ];
+  };
 
   sops.secrets.vod-password = {
     key = "vod-password";
