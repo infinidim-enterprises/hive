@@ -28,12 +28,11 @@ mkMerge [
     services.minidlna.settings.friendly_name = "dacha";
     services.minidlna.settings.inotify = "yes";
 
-    systemd.services.minidlna-fix-perms.partOf = [ "minidlna.service" ];
+    systemd.services.minidlna-fix-perms.wantedBy = [ "minidlna.service" ];
     systemd.services.minidlna-fix-perms.script = ''
       ${concatStringsSep "\n" media_dirs}
     '';
 
-    # systemd.services.minidlna.wantedBy = lib.mkForce [ ]; # NOTE: Don't start minidlna by default
     systemd.services.minidlna.after = [ "minidlna-fix-perms.service" ];
     systemd.services.minidlna.preStart = ''
       rm -rf ${config.services.minidlna.settings.db_dir}/*
@@ -50,10 +49,12 @@ mkMerge [
     services.transmission.openFirewall = true;
     services.transmission.settings = {
       inherit download-dir;
-      message-level = 0;
+      message-level = 4;
       rpc-port = 9091;
       rpc-bind-address = "0.0.0.0";
-      rpc-whitelist = "192.168.1.*";
+      rpc-whitelist = "192.168.1.*,127.0.0.*";
+      rpc-host-whitelist-enabled = false;
+      rpc-host-whitelist = "${config.networking.hostName}";
       incomplete-dir = "${download-dir}/.incomplete";
       incomplete-dir-enabled = true;
       peer-limit-global = 500;
@@ -66,6 +67,7 @@ mkMerge [
   {
     systemd.services.minidlna.after = [ "opt-media.mount" ];
     systemd.services.transmission.after = [ "opt-media.mount" ];
+
     systemd.mounts = [{
       what = "LABEL=torrents";
       where = "/opt/media";
