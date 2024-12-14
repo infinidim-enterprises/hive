@@ -87,7 +87,7 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = true;
-      sha256 = "sha256-eDqPgcWd2iPOZAJ5qVGCZt2k5n6Z8KTbx0zkfc/mU+Q=";
+      sha256 = "sha256-sR+25cNTw0LxpQk8s5yD5/VyNNQJjyDezoeiYXL07Pk=";
     };
     date = "2024-12-05";
   };
@@ -118,15 +118,15 @@
   };
   lsp-bridge = {
     pname = "lsp-bridge";
-    version = "4fb92c97f4dd585bde59939bc53eeaee893c8fbe";
+    version = "520d253a00d360d7aa47d85a9c4a99ea6702acde";
     src = fetchFromGitHub {
       owner = "manateelazycat";
       repo = "lsp-bridge";
-      rev = "4fb92c97f4dd585bde59939bc53eeaee893c8fbe";
+      rev = "520d253a00d360d7aa47d85a9c4a99ea6702acde";
       fetchSubmodules = false;
-      sha256 = "sha256-lTCmGbEwWUJupgiZMUWfgQoTQgJ3+iZnXlLhJzCugSw=";
+      sha256 = "sha256-NQ7lkTC8JGfMAsDA//Zj8IGV03b2frOuHuvjRSVNGXE=";
     };
-    date = "2024-12-05";
+    date = "2024-12-09";
   };
   nix-mode = {
     pname = "nix-mode";
