@@ -4,7 +4,7 @@ let
 in
 final: prev:
 let
-  inherit ((prev.appendOverlays [ inputs.nur.overlay ]).nur.repos.rycee.firefox-addons) buildFirefoxXpiAddon;
+  inherit ((prev.appendOverlays [ inputs.nur.overlays.default ]).nur.repos.rycee.firefox-addons) buildFirefoxXpiAddon;
 in
 {
   firefox-addons = mapAttrs

@@ -46,9 +46,14 @@ rec {
         networking.hostName = baseNameOf ./.;
         networking.hostId = "23d7e2ff";
       }
-      ({ lib, config, ... }: {
+      ({ pkgs, ... }: {
         systemd.network.networks.lan = {
-          addresses = [{ addressConfig.Address = "10.11.1.125/24"; }];
+          addresses = [
+            (cell.lib.networkdSyntax {
+              inherit pkgs;
+              Address = "10.11.1.125/24";
+            })
+          ];
           networkConfig.Gateway = "10.11.1.1";
         };
       })

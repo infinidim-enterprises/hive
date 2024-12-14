@@ -21,6 +21,8 @@ https://github.com/helm/chartmuseum
 https://github.com/nix-community/authentik-nix
 ** https://unifiedpush.org/
 * Cool stuff I want
+** stats services
+https://wakapi.dev - wakatime replacement with self hosting
 ** filesystems
 https://github.com/netheril96/securefs
 ** shell things

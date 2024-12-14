@@ -6,6 +6,8 @@ let
     mkIf
     mkMerge
     hasAttr;
+  inherit (cell.lib) post_24-05;
+
   global = {
     "usershare path" = "/var/lib/samba/usershares";
     "usershare max shares" = "100";
@@ -21,14 +23,15 @@ let
       (mapAttrsToList (k: v: "${toString k} = ${toString v}")
         global)) +
     "\n";
-  post_24-05 = lib.versionOlder inputs.nixos-24-05.lib.version pkgs.lib.version;
+  # post_24-05 = lib.versionOlder inputs.nixos-24-05.lib.version pkgs.lib.version;
 in
 mkMerge [
-  (mkIf post_24-05 {
+  (mkIf (post_24-05 { inherit pkgs; }) {
     services.samba.settings = { inherit global; };
     services.samba.nmbd.enable = false;
   })
-  (mkIf (!post_24-05) {
+
+  (mkIf (!(post_24-05 { inherit pkgs; })) {
     services.samba = {
       inherit extraConfig;
       enableNmbd = false;

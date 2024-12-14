@@ -4,7 +4,7 @@ let
 
   inherit (inputs) nixpkgs std;
   inherit (cell) config;
-  inherit ((nixpkgs.appendOverlays [ inputs.nur.overlay ]).nur.repos.rycee) mozilla-addons-to-nix;
+  inherit ((nixpkgs.appendOverlays [ inputs.nur.overlays.default ]).nur.repos.rycee) mozilla-addons-to-nix;
 
   nvfetcher = inputs.nvfetcher.packages.default;
   ssh-to-pgp = inputs.sops-ssh-to-pgp.packages.default;

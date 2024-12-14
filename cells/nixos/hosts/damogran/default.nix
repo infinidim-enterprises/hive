@@ -56,12 +56,18 @@ rec {
         networking.hostId = "23e7e5ff";
       }
 
-      ({ lib, config, ... }: {
-        systemd.network.networks.lan = {
-          addresses = [{ addressConfig.Address = "192.168.1.133/24"; }];
-          networkConfig.Gateway = "192.168.1.1";
-        };
-      })
+      ({ pkgs, ... }:
+        {
+          systemd.network.networks.lan = {
+            addresses = [
+              (cell.lib.networkdSyntax {
+                inherit pkgs;
+                Address = "192.168.1.133/24";
+              })
+            ];
+            networkConfig.Gateway = "192.168.1.1";
+          };
+        })
 
     ];
 }

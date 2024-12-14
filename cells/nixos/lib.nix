@@ -14,6 +14,7 @@ let
     filterAttrs
     removeAttrs
     hasAttrByPath
+    versionAtLeast
     mapAttrsToList;
   inherit (inputs.cells.common.lib) disableModulesFrom;
 
@@ -33,6 +34,13 @@ let
     (filterAttrs (n: v: v.fsType == "zfs") config.fileSystems) != { };
 
   localLib = {
+    post_24-05 = { pkgs }:
+      versionAtLeast pkgs.lib.version "24.11";
+    networkdSyntax = { pkgs, Address }:
+      if cell.lib.post_24-05 { inherit pkgs; }
+      then { inherit Address; }
+      else { addressConfig = { inherit Address; }; };
+
     pkgInstalled = { pkg, combinedPkgs }:
       elem pkg combinedPkgs;
 
@@ -47,7 +55,11 @@ let
 
 in
 {
-  inherit (localLib) isGui;
+  inherit (localLib)
+    isGui
+    post_24-05
+    networkdSyntax;
+
   inherit
     isZfs
     isImpermanence

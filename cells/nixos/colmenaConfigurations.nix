@@ -5,10 +5,10 @@ let
 
   overrides = {
     asbleg-bootstrap = { deployment.targetHost = "192.168.1.133"; };
-    # asbleg = { deployment.targetHost = "192.168.1.133"; deployment.allowLocalDeployment = true; };
+    asbleg = { deployment.targetHost = "192.168.1.133"; deployment.allowLocalDeployment = true; };
     marauder = { deployment.targetHost = "192.168.1.129"; };
     oglaroon = { deployment.targetHost = "localhost"; deployment.allowLocalDeployment = true; };
-    damogran = { deployment.targetHost = "192.168.1.133"; };
+    # damogran = { deployment.targetHost = "192.168.1.133"; };
   };
 in
 (mapAttrs
