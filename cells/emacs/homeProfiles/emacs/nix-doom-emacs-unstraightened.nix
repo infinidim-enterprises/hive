@@ -107,6 +107,7 @@ mkMerge [
         ditaa
         graphviz
         plantuml
+        python3 # treemacs requirement
         bibtex2html
 
         (aspellWithDicts (dicts: with dicts; [

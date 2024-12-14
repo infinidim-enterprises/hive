@@ -72,6 +72,7 @@ in
     bwm_ng # A small and simple console-based live network and disk io bandwidth monitor
     iperf # Tool to measure IP bandwidth using UDP or TCP
     arping # Broadcasts a who-has ARP packet on the network and prints answers
+    ethtool # Utility for controlling network drivers and hardware
 
     sipcalc # Advanced console ip subnet calculator
 
