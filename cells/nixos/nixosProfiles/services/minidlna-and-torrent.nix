@@ -77,14 +77,4 @@ mkMerge [
       requiredBy = [ "minidlna.service" "transmission.service" ];
     }];
   }
-
-  # {
-  #   services.udev.extraRules = ''
-  #     # Start services when the "torrents" disk is attached
-  #     ACTION=="add", SUBSYSTEM=="block", ENV{ID_FS_LABEL}=="torrents", TAG+="systemd", ENV{SYSTEMD_WANTS}="minidlna.service transmission.service"
-
-  #     # Stop services when the "torrents" disk is removed
-  #     ACTION=="remove", SUBSYSTEM=="block", ENV{ID_FS_LABEL}=="torrents", RUN+="${pkgs.systemd}/bin/systemctl stop minidlna.service transmission.service"
-  #   '';
-  # }
 ]

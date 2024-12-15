@@ -137,6 +137,9 @@ let
         name = "filter_" + (toString counter);
       })
       filter_paths_list;
+
+  safe_fs_patterns = with (lib // builtins);
+    map (e: e.url) filters;
 in
 mkMerge
   [
@@ -229,6 +232,7 @@ mkMerge
         };
 
         inherit filters;
+        filtering = { inherit safe_fs_patterns; };
 
         http_proxy = "";
         language = "";

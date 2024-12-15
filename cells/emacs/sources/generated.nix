@@ -67,16 +67,16 @@
   };
   copilot-el = {
     pname = "copilot-el";
-    version = "88b10203705a9cdcbc232e7d2914f6b12217a885";
+    version = "b7bff7b934837744688fd74191ecffb83b3bcc05";
     src = fetchgit {
       url = "https://github.com/zerolfx/copilot.el.git";
-      rev = "88b10203705a9cdcbc232e7d2914f6b12217a885";
+      rev = "b7bff7b934837744688fd74191ecffb83b3bcc05";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-oTAxayxrEiIu0GUtsqaL/pCY0ElU1RjZp7OXgqqJqnA=";
+      sha256 = "sha256-MEsjXQIeiTI6NXN5rTW7HfFPC18IZnhAssma2BZa0ks=";
     };
-    date = "2024-11-18";
+    date = "2024-12-14";
   };
   doom-emacs = {
     pname = "doom-emacs";
@@ -106,27 +106,27 @@
   };
   jinx = {
     pname = "jinx";
-    version = "bdbec71e5e8924e5fd379a023bcec3eafd685376";
+    version = "f4db32c2258aebf00e34ff2a03550a357706d911";
     src = fetchFromGitHub {
       owner = "minad";
       repo = "jinx";
-      rev = "bdbec71e5e8924e5fd379a023bcec3eafd685376";
+      rev = "f4db32c2258aebf00e34ff2a03550a357706d911";
       fetchSubmodules = false;
-      sha256 = "sha256-OE3QQ54aMAii9MgJQ5QxkrqGsu3az5yT0Jal4EjEiUI=";
+      sha256 = "sha256-pkf9Y5GJTwmyYsw28btq8kBu3I0J+Ajr59sQyaak6A0=";
     };
-    date = "2024-12-01";
+    date = "2024-12-14";
   };
   lsp-bridge = {
     pname = "lsp-bridge";
-    version = "520d253a00d360d7aa47d85a9c4a99ea6702acde";
+    version = "2031e6d2d2dddb66410a772becdae8814a2e7963";
     src = fetchFromGitHub {
       owner = "manateelazycat";
       repo = "lsp-bridge";
-      rev = "520d253a00d360d7aa47d85a9c4a99ea6702acde";
+      rev = "2031e6d2d2dddb66410a772becdae8814a2e7963";
       fetchSubmodules = false;
-      sha256 = "sha256-NQ7lkTC8JGfMAsDA//Zj8IGV03b2frOuHuvjRSVNGXE=";
+      sha256 = "sha256-SxUdzMEWmD9ZFNRxQh6atVrTjx7g0Sd69UTQkhHPQWU=";
     };
-    date = "2024-12-09";
+    date = "2024-12-15";
   };
   nix-mode = {
     pname = "nix-mode";

@@ -14,22 +14,22 @@
   };
   codium = {
     pname = "codium";
-    version = "0.12.4";
+    version = "0.12.5";
     src = fetchurl {
-      url = "https://Codium.gallery.vsassets.io/_apis/public/gallery/publisher/Codium/extension/codium/0.12.4/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "codium-0.12.4.zip";
-      sha256 = "sha256-FR7MGmYGKuHbDCKfHkyG86LN0HvhT9fXP7bTnUB2HUw=";
+      url = "https://Codium.gallery.vsassets.io/_apis/public/gallery/publisher/Codium/extension/codium/0.12.5/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "codium-0.12.5.zip";
+      sha256 = "sha256-VAxvRTYX9wArKHjx1h057PBPJHgu7YqwvlwIkZ/uzLg=";
     };
     publisher = "Codium";
     name = "codium";
   };
   copilot = {
     pname = "copilot";
-    version = "1.248.1249";
+    version = "1.252.0";
     src = fetchurl {
-      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.248.1249/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "copilot-1.248.1249.zip";
-      sha256 = "sha256-5cnOTM9iaA1ZycnETj9VEJH1Nia9IzqZl0PXg7FCbZk=";
+      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.252.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "copilot-1.252.0.zip";
+      sha256 = "sha256-vVxq4OBsnG3J/y/Pxiz/JGnkdqj6gS2nSpvq4akCwUQ=";
     };
     publisher = "GitHub";
     name = "copilot";
@@ -47,11 +47,11 @@
   };
   emacs-mcx = {
     pname = "emacs-mcx";
-    version = "0.62.3";
+    version = "0.62.4";
     src = fetchurl {
-      url = "https://tuttieee.gallery.vsassets.io/_apis/public/gallery/publisher/tuttieee/extension/emacs-mcx/0.62.3/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "emacs-mcx-0.62.3.zip";
-      sha256 = "sha256-iLipoayTTSt71TTyJsAaxU3GFcqoxhuCF9pa4ZZ5o58=";
+      url = "https://tuttieee.gallery.vsassets.io/_apis/public/gallery/publisher/tuttieee/extension/emacs-mcx/0.62.4/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "emacs-mcx-0.62.4.zip";
+      sha256 = "sha256-oRHPLQ8Ib1W2n5EUJvv8oRPwYlpI3uOMy4tloo/aIug=";
     };
     publisher = "tuttieee";
     name = "emacs-mcx";

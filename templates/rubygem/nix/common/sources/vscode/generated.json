@@ -28,12 +28,12 @@
     },
     "pinned": false,
     "src": {
-      "name": "codium-0.12.4.zip",
-      "sha256": "sha256-FR7MGmYGKuHbDCKfHkyG86LN0HvhT9fXP7bTnUB2HUw=",
+      "name": "codium-0.12.5.zip",
+      "sha256": "sha256-VAxvRTYX9wArKHjx1h057PBPJHgu7YqwvlwIkZ/uzLg=",
       "type": "url",
-      "url": "https://Codium.gallery.vsassets.io/_apis/public/gallery/publisher/Codium/extension/codium/0.12.4/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+      "url": "https://Codium.gallery.vsassets.io/_apis/public/gallery/publisher/Codium/extension/codium/0.12.5/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
     },
-    "version": "0.12.4"
+    "version": "0.12.5"
   },
   "copilot": {
     "cargoLocks": null,
@@ -46,12 +46,12 @@
     },
     "pinned": false,
     "src": {
-      "name": "copilot-1.248.1249.zip",
-      "sha256": "sha256-5cnOTM9iaA1ZycnETj9VEJH1Nia9IzqZl0PXg7FCbZk=",
+      "name": "copilot-1.252.0.zip",
+      "sha256": "sha256-vVxq4OBsnG3J/y/Pxiz/JGnkdqj6gS2nSpvq4akCwUQ=",
       "type": "url",
-      "url": "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.248.1249/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+      "url": "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.252.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
     },
-    "version": "1.248.1249"
+    "version": "1.252.0"
   },
   "cucumberautocomplete": {
     "cargoLocks": null,
@@ -82,12 +82,12 @@
     },
     "pinned": false,
     "src": {
-      "name": "emacs-mcx-0.62.3.zip",
-      "sha256": "sha256-iLipoayTTSt71TTyJsAaxU3GFcqoxhuCF9pa4ZZ5o58=",
+      "name": "emacs-mcx-0.62.4.zip",
+      "sha256": "sha256-oRHPLQ8Ib1W2n5EUJvv8oRPwYlpI3uOMy4tloo/aIug=",
       "type": "url",
-      "url": "https://tuttieee.gallery.vsassets.io/_apis/public/gallery/publisher/tuttieee/extension/emacs-mcx/0.62.3/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+      "url": "https://tuttieee.gallery.vsassets.io/_apis/public/gallery/publisher/tuttieee/extension/emacs-mcx/0.62.4/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
     },
-    "version": "0.62.3"
+    "version": "0.62.4"
   },
   "fonted": {
     "cargoLocks": null,
