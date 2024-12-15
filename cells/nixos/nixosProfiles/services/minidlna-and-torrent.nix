@@ -49,7 +49,7 @@ mkMerge [
     services.transmission.openFirewall = true;
     services.transmission.settings = {
       inherit download-dir;
-      message-level = 4;
+      message-level = 0;
       rpc-port = 9091;
       rpc-bind-address = "0.0.0.0";
       rpc-whitelist = "192.168.1.*,127.0.0.*";
