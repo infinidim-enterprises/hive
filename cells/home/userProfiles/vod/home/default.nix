@@ -1,20 +1,22 @@
 { inputs, config, pkgs, profiles, suites, osConfig, lib, ... }:
-with lib;
 let
-  isHiDpi = hasAttrByPath [ "deploy" "params" "hidpi" ] osConfig && osConfig.deploy.params.hidpi.enable;
-  keys = [
+  inherit (lib // builtins)
+    mkMerge
+    mkIf
+    concatStringsSep;
+
+  PASSWORD_STORE_KEY = concatStringsSep " " [
+    # NOTE: PASSWORD_STORE_KEY can use multiple fingerprints separated by a whitespace
     "E3C4C12EDF24CA20F167CC7EE203A151BB3FD1AE" # yubikey
     "382A371CFB344166F69076BE8587AB791475DF76" # nitrokey
   ];
-  # NOTE: PASSWORD_STORE_KEY can use multiple fingerprints separated by a whitespace
-  PASSWORD_STORE_KEY = concatStringsSep " " keys;
 in
 {
   imports =
     # (inputs.cells.common.lib.importers.importFolder ./.) ++
     [
-      ./gitconfig.nix
       ./ssh.nix
+      ./gitconfig.nix
       ./emacs-unstraightened.nix
 
       # profiles.security.gpg
@@ -44,6 +46,7 @@ in
 
   config = mkMerge [
     {
+      programs.password-store.settings = { inherit PASSWORD_STORE_KEY; };
       xdg.userDirs.extraConfig.XDG_PROJ_DIR = "${config.home.homeDirectory}/Projects";
 
       home.packages = with pkgs; [
@@ -51,10 +54,8 @@ in
         jekyll
         vultr-cli
         sops
+        ventoy-full
       ];
-
-      programs.password-store.settings = { inherit PASSWORD_STORE_KEY; };
-      # services.gpg-agent.pinentryPackage = pkgs.pinentry-gnome3;
     }
 
     (mkIf config.gtk.enable {

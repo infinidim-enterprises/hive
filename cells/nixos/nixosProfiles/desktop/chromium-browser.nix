@@ -15,7 +15,8 @@ lib.mkMerge [
       "nkbihfbeogaeaoehlefnkodbefgpgknn" # metamask
       "kcgpggonjhmeaejebeoeomdlohicfhce" # Removes cookies for the current site
       # "ldpochfccmkkmhdbclfhpagapcfdljkj" # Decentraleyes
-      "maekfnoeejhpjfkfmdlckioggdcdofpg" # Adblocker for Youtube™
+      # "maekfnoeejhpjfkfmdlckioggdcdofpg" # Adblocker for Youtube™
+      "bgnkhhnnamicmpeenaelnjfhikgbkllg" # AdGuard AdBlocker
       "jappgmhllahigjolfpgbjdfhciabdnde" # Link Map - Professional Tab Manager
       "edacconmaakjimmfgnblocblbcdcpbko" # session-buddy
       # "jpefmbpcbebpjpmelobfakahfdcgcmkl" # adblock for youtube

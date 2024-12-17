@@ -1,23 +1,17 @@
 { inputs, cell, ... }:
 let
   inherit (builtins) toString baseNameOf;
-  system = "aarch64-linux";
+  system = "x86_64-linux";
 in
 
 rec {
   bee = {
     inherit system;
     home = inputs.home-unstable;
-    pkgs = import inputs.nixos-24-05 {
+    pkgs = import inputs.nixos-24-11 {
       inherit system;
       config.allowUnfree = true;
-      overlays =
-        cell.overlays.emacs
-        ++ cell.overlays.base
-        ++ [
-          inputs.raspberry-pi-nix.overlays.core
-          inputs.raspberry-pi-nix.overlays.libcamera
-        ];
+      overlays = cell.overlays.base;
     };
   };
 
@@ -29,8 +23,6 @@ rec {
       { home-manager.sharedModules = [{ home.enableNixpkgsReleaseCheck = false; }]; }
 
       (import ./_hardwareProfile.nix { inherit inputs cell; })
-
-      cell.nixosProfiles.services.minidlna-and-torrent
 
       ({ pkgs, ... }:
         {

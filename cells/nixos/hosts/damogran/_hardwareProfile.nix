@@ -1,9 +1,9 @@
 { inputs, cell, ... }:
 
 { config, lib, pkgs, ... }:
-let
-  inherit (builtins) baseNameOf;
-in
+# let
+#   inherit (builtins) baseNameOf;
+# in
 {
 
   # disko.devices = cell.diskoConfigurations.${baseNameOf ./.} { inherit lib; };
