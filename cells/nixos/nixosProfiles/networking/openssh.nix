@@ -10,11 +10,10 @@
     settings = {
       LogLevel = "INFO";
       KbdInteractiveAuthentication = false;
-      # https://github.com/NixOS/nixpkgs/issues/234683
-      # permitRootLogin = mkDefault "no";
       PasswordAuthentication = false;
-      PermitRootLogin = mkDefault "no";
+      PermitRootLogin = "no";
       X11Forwarding = mkDefault true;
+      StrictModes = true;
     };
     extraConfig = ''
       StreamLocalBindUnlink yes
@@ -22,7 +21,6 @@
       ClientAliveInterval 180
       TCPKeepAlive yes
       LoginGraceTime 120
-      StrictModes yes
       IgnoreRhosts yes
       HostbasedAuthentication no
       PermitEmptyPasswords no

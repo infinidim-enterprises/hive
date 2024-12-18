@@ -55,6 +55,7 @@ in
         vultr-cli
         sops
         ventoy-full
+        google-cloud-sdk
       ];
     }
 

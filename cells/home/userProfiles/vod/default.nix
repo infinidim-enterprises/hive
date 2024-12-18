@@ -5,14 +5,13 @@
 {
   imports =
     [
-      # FIXME: restic
+      # FIXME: restic unlock
       (inputs.cells.nixos.nixosProfiles.backups.restic { user = "vod"; extraDirs = [ "tmp" ]; })
     ];
 
   home-manager.users.vod.imports = [
     ./home
     inputs.nix-doom-emacs-unstraightened.hmModule
-    # inputs.nix-doom-emacs.hmModule
   ]
   ++ cell.homeSuites.wayland
   ++ cell.homeSuites.office

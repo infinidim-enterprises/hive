@@ -43,8 +43,9 @@ rec {
     viewers
     printing
     graphics
-    libreoffice
     onlyoffice
+    libreoffice
+    archive_manager
   ];
 
   developer.default = with cell.homeProfiles.developer; [

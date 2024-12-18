@@ -24,12 +24,12 @@ rec {
 
       (import ./_hardwareProfile.nix { inherit inputs cell; })
 
-      ({ pkgs, ... }:
-        {
-          systemd.network.networks.local-eth.matchConfig.Name = "end0";
-          networking.wireless.enable = false;
-          networking.networkmanager.enable = false;
-        })
+
+      {
+        systemd.network.networks.local-eth.matchConfig.Name = "end0";
+        networking.wireless.enable = false;
+        networking.networkmanager.enable = false;
+      }
 
       {
         deploy.enable = true;
