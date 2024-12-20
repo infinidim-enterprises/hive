@@ -283,19 +283,20 @@
     ###
     # wayland stuff
     ###
-    hyprland-nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    # hyprland-nixpkgs-unstable.follows = "nixpkgs-unstable";
+    # hyprland-nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     hyprland-systems.url = "github:nix-systems/default-linux";
 
     waybar.url = "github:Alexays/Waybar";
     waybar.inputs.nixpkgs.follows = "hyprland/nixpkgs";
 
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1&ref=refs/tags/v0.45.0";
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1&ref=refs/tags/v0.46.0";
     # hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1&ref=refs/tags/v0.45.2";
     # hyprland.follows = "hyprland-hy3/hyprland";
-    hyprland.inputs.nixpkgs.follows = "hyprland-nixpkgs-unstable";
+    hyprland.inputs.nixpkgs.follows = "nixpkgs-unstable";
     hyprland.inputs.systems.follows = "hyprland-systems";
 
-    hyprland-hy3.url = "github:outfoxxed/hy3/hl0.45.0";
+    hyprland-hy3.url = "github:outfoxxed/hy3/hl0.46.0";
     hyprland-hy3.inputs.hyprland.follows = "hyprland";
 
     hyprland-hyprlock.url = "git+https://github.com/hyprwm/hyprlock";

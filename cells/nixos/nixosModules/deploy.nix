@@ -19,11 +19,12 @@ let
   cfgDeploy = config.deploy;
   lanOptions = {
     options = with types; {
+      enable = mkEnableOption "Have 'lan' interface";
       mac = mkOption { type = nullOr str; default = null; };
       ipv4 = mkOption { type = nullOr str; default = null; };
-      ipxe = mkEnableOption "use ipxe";
-      dhcpClient = mkEnableOption "use dhcp" // { default = true; };
-      server = mkOption { type = attrs; };
+      ipxe = mkEnableOption "use ipxe" // { default = false; };
+      dhcpClient = mkEnableOption "use dhcp" // { default = false; };
+      server = mkOption { type = attrs; default = { }; };
     };
   };
 
@@ -31,6 +32,7 @@ in
 {
   options.deploy = with types; {
     enable = mkEnableOption "Enable deploy config"; # // { default = true; };
+    publicHost.enable = mkEnableOption "Public cloud hosted machine";
     extraUserOpts.enable = mkEnableOption "Patched users-groups.nix" // { default = true; };
     params = {
       cpu = mkOption { type = nullOr (enum [ "intel" "amd" ]); default = null; };
@@ -48,7 +50,7 @@ in
           else null;
       };
       hidpi.enable = mkEnableOption "hiDpi";
-      lan = mkOption { type = submodule [ lanOptions ]; default = { }; };
+      lan = mkOption { type = submodule [ lanOptions ]; default = { enable = false; }; };
     };
   };
 

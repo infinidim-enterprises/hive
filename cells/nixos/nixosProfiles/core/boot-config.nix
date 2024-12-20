@@ -2,76 +2,91 @@
 
 { config, lib, pkgs, ... }:
 let
-  inherit (lib) mkAfter mkIf mkDefault;
+  inherit (lib)
+    mkAfter
+    mkIf
+    mkDefault
+    mkMerge;
 in
-{
-  # Speed up boot
-  # https://discourse.nixos.org/t/boot-faster-by-disabling-udev-settle-and-nm-wait-online/6339
-  systemd.services.systemd-udev-settle.enable = false;
-  systemd.services.NetworkManager-wait-online.enable = false;
+mkMerge
+  [
+    {
+      boot.kernelParams = mkAfter [
+        "consoleblank=90"
+        "systemd.gpt_auto=0"
+        "systemd.crash_reboot=1"
+        "systemd.dump_core=0"
+      ];
 
-  # systemd.enableUnifiedCgroupHierarchy = true;
-  systemd.tmpfiles.rules = mkAfter [ "d /mnt 0755 root root - -" ];
-  systemd.extraConfig = ''
-    DefaultTimeoutStopSec=15s
-  '';
+      boot.initrd.compressor = mkDefault "${pkgs.pigz}/bin/pigz --best --recursive";
+      powerManagement.resumeCommands = mkIf config.services.zerotierone.enable ''
+        ${pkgs.systemd}/bin/systemctl --no-block restart zerotierone.service
+      '';
 
-  systemd.coredump.enable = true;
-  systemd.coredump.extraConfig = ''
-    ProcessSizeMax=32G
-    ExternalSizeMax=32G
-    JournalSizeMax=64M
-  '';
+    }
 
-  environment.systemPackages = [ pkgs.efibootmgr ];
-  powerManagement.cpuFreqGovernor = mkDefault "powersave";
-  powerManagement.resumeCommands = mkIf config.services.zerotierone.enable ''
-    ${pkgs.systemd}/bin/systemctl --no-block restart zerotierone.service
-  '';
+    # (mkIf config.deploy.publicHost.enable {})
 
-  # TODO: services.smartd.enable
+    (mkIf (!config.deploy.publicHost.enable) {
+      # Speed up boot
+      # https://discourse.nixos.org/t/boot-faster-by-disabling-udev-settle-and-nm-wait-online/6339
+      systemd.services.systemd-udev-settle.enable = false;
+      systemd.services.NetworkManager-wait-online.enable = false;
 
-  boot.kernelPackages = mkDefault pkgs.linuxPackages;
+      # systemd.enableUnifiedCgroupHierarchy = true;
+      systemd.tmpfiles.rules = mkAfter [ "d /mnt 0755 root root - -" ];
+      systemd.extraConfig = ''
+        DefaultTimeoutStopSec=15s
+      '';
 
-  boot.loader.timeout = mkDefault 0;
-  boot.supportedFilesystems = [ "ext4" "zfs" "nfs4" "nfs" ];
+      systemd.coredump.enable = true;
+      systemd.coredump.extraConfig = ''
+        ProcessSizeMax=32G
+        ExternalSizeMax=32G
+        JournalSizeMax=64M
+      '';
 
-  boot.initrd.compressor = mkDefault "${pkgs.pigz}/bin/pigz --best --recursive";
-  boot.initrd.supportedFilesystems = [ "ext4" "vfat" ];
+      environment.systemPackages = [ pkgs.efibootmgr ];
+      powerManagement.cpuFreqGovernor = mkDefault "powersave";
 
-  # boot.initrd.kernelModules = [ "nfs" ];
+      # TODO: services.smartd.enable
 
-  boot.initrd.availableKernelModules = [
-    #"battery" # NOTE: on microPC the builtin keyboard needs this!
-    # "hid_generic"
-    # Mostly useful
-    "crc32c_generic"
-    "xhci_pci"
-    "ehci_pci"
-    "sdhci_pci"
-    # "sdhci_acpi"
-    "ahci"
-    "uhci_hcd"
-    "usbhid"
-    "usb_storage"
-    "sd_mod"
-    "sr_mod"
-    "rtsx_pci_sdmmc"
-    "rtsx_usb_sdmmc"
-  ];
+      boot.kernelPackages = mkDefault pkgs.linuxPackages;
 
-  hardware.firmware = [ pkgs.firmwareLinuxNonfree ];
+      boot.loader.timeout = mkDefault 0;
+      boot.supportedFilesystems = [ "ext4" "zfs" "nfs4" "nfs" ];
+      boot.initrd.supportedFilesystems = [ "ext4" "vfat" ];
 
-  boot.kernelParams = mkAfter [
-    # NOTE: https://askubuntu.com/questions/1418992/sgx-disabled-by-bios-message-on-ubuntu-20-04-booting
-    "nosgx"
-    "panic=10"
-    "boot.panic_on_fail"
-    "consoleblank=90"
-    "systemd.gpt_auto=0"
-    "systemd.crash_reboot=1"
-    "systemd.dump_core=0"
-    "udev.log_level=err"
-    "quiet"
-  ];
-}
+      # boot.initrd.kernelModules = [ "nfs" ];
+
+      boot.initrd.availableKernelModules = [
+        #"battery" # NOTE: on microPC the builtin keyboard needs this!
+        # "hid_generic"
+        # Mostly useful
+        "crc32c_generic"
+        "xhci_pci"
+        "ehci_pci"
+        "sdhci_pci"
+        # "sdhci_acpi"
+        "ahci"
+        "uhci_hcd"
+        "usbhid"
+        "usb_storage"
+        "sd_mod"
+        "sr_mod"
+        "rtsx_pci_sdmmc"
+        "rtsx_usb_sdmmc"
+      ];
+
+      hardware.firmware = [ pkgs.firmwareLinuxNonfree ];
+
+      boot.kernelParams = [
+        # NOTE: https://askubuntu.com/questions/1418992/sgx-disabled-by-bios-message-on-ubuntu-20-04-booting
+        "nosgx"
+        "panic=10"
+        "boot.panic_on_fail"
+        "udev.log_level=err"
+        "quiet"
+      ];
+    })
+  ]

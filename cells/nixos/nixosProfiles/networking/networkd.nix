@@ -7,33 +7,15 @@ let
   dhcpClient = config.deploy.params.lan.dhcpClient;
 in
 mkMerge [
-  {
-    systemd.services.nscd.serviceConfig.StandardOutput = "null";
-    systemd.services.nscd.serviceConfig.StandardError = "null";
-  }
 
   {
     networking.firewall.allowPing = true;
     networking.domain = "njk.li";
-  }
 
-  # TODO: Port 5355/udp/tcp - LLMNR - do something about it!
-  # TODO: services.fireqos.enable
-  {
-    ### NOTE: Fuck ipv6!
-    # After decades, proper vpns still aren't supported!
-    # :lol:
-    # sudo sysctl -w net.ipv6.conf.all.autoconf=0
-    # sudo sysctl -w net.ipv6.conf.all.accept_ra=0
+    systemd.services.nscd.serviceConfig.StandardOutput = "null";
+    systemd.services.nscd.serviceConfig.StandardError = "null";
 
-    boot.kernel.sysctl."net.ipv6.conf.all.disable_ipv6" = "1";
-    boot.kernel.sysctl."net.ipv6.conf.default.disable_ipv6" = "1";
-    boot.kernel.sysctl."net.ipv6.conf.all.autoconf" = "0";
-    boot.kernel.sysctl."net.ipv6.conf.all.accept_ra" = "0";
-    boot.kernel.sysctl."net.ipv4.conf.all.force_igmp_version" = "3";
-    networking.tempAddresses = "disabled";
-
-    networking.useDHCP = mkDefault false;
+    networking.useDHCP = false;
     networking.dhcpcd.enable = false;
     networking.useNetworkd = true;
     networking.useHostResolvConf = false;
@@ -41,50 +23,100 @@ mkMerge [
     networking.resolvconf.dnsSingleRequest = true;
 
     # services.resolved.dnssec = "false"; # FIXME: properly handle dnssec
-
     systemd.network = {
       enable = true;
-      # wait-online.enable = true;
+      wait-online.enable = mkDefault false;
       wait-online.anyInterface = config.networking.useNetworkd;
-
-      networks.local-eth = {
-        macvlan = [ "lan" ];
-        matchConfig.Name = mkDefault "mv* eth* en*";
-        linkConfig.ARP = false;
-        networkConfig.IPv6AcceptRA = "no";
-        networkConfig.LinkLocalAddressing = "no";
-      };
-
-      netdevs.lan.enable = mkDefault true;
-      netdevs.lan.netdevConfig.Kind = "macvlan";
-      netdevs.lan.netdevConfig.Name = "lan";
-      netdevs.lan.macvlanConfig.Mode = mkDefault "bridge";
-
-      networks.lan.networkConfig.DNSSEC = mkDefault false;
-      networks.lan.matchConfig.Name = mkDefault "lan";
-      networks.lan.linkConfig.ARP = true;
-      networks.lan.linkConfig.RequiredForOnline = mkDefault "yes";
-      networks.lan.networkConfig.IPv6AcceptRA = "no";
-      networks.lan.networkConfig.LinkLocalAddressing = "no";
-
-      networks.unmanaged.DHCP = "no";
-      networks.unmanaged.networkConfig.DHCP = "no";
-      networks.unmanaged.linkConfig.Unmanaged = "yes";
-      networks.unmanaged.networkConfig.IPv6AcceptRA = "no";
-      networks.unmanaged.networkConfig.LinkLocalAddressing = "no";
-
-      networks.unmanaged.matchConfig.Name = mkDefault (concatStringsSep " " [
-        # "zt*" NOTE: custom zerotier module is managing networkd for zt
-        "macvtap*"
-        "cni*"
-        "virbr*"
-        "docker*"
-        "br-*"
-        "veth*"
-      ]);
     };
   }
 
+  (mkIf config.deploy.publicHost.enable {
+    systemd.network.wait-online.enable = false;
+    systemd.network.networks.default-eth = {
+      DHCP = "yes";
+
+      matchConfig.Name = mkDefault "mv* eth* en*";
+
+      # linkConfig.ARP = true;
+      # linkConfig.RequiredForOnline = mkDefault "yes";
+      # linkConfig.MACAddressPolicy = "persistent";
+
+      networkConfig.LinkLocalAddressing = "ipv6";
+      networkConfig.DNSSEC = mkDefault false;
+      networkConfig.DHCP = "yes";
+
+      dhcpV4Config = {
+        ClientIdentifier = mkDefault "mac";
+        UseDNS = mkDefault true;
+        UseNTP = mkDefault true;
+        UseMTU = mkDefault true;
+        UseRoutes = mkDefault true;
+        UseDomains = true;
+        UseHostname = mkDefault false;
+        RouteMetric = 100;
+        UseTimezone = mkDefault true;
+        SendHostname = mkDefault true;
+        SendRelease = true;
+      };
+    };
+  })
+
+  # TODO: Port 5355/udp/tcp - LLMNR - do something about it!
+  # TODO: services.fireqos.enable
+  (mkIf (!config.deploy.publicHost.enable)
+    {
+      ### NOTE: Fuck ipv6!
+      # After decades, proper vpns still aren't supported!
+      # :lol:
+      # sudo sysctl -w net.ipv6.conf.all.autoconf=0
+      # sudo sysctl -w net.ipv6.conf.all.accept_ra=0
+
+      boot.kernel.sysctl."net.ipv6.conf.all.disable_ipv6" = "1";
+      boot.kernel.sysctl."net.ipv6.conf.default.disable_ipv6" = "1";
+      boot.kernel.sysctl."net.ipv6.conf.all.autoconf" = "0";
+      boot.kernel.sysctl."net.ipv6.conf.all.accept_ra" = "0";
+      boot.kernel.sysctl."net.ipv4.conf.all.force_igmp_version" = "3";
+      networking.tempAddresses = "disabled";
+
+      systemd.network = {
+        networks.local-eth = {
+          macvlan = [ "lan" ];
+          matchConfig.Name = mkDefault "mv* eth* en*";
+          linkConfig.ARP = false;
+          networkConfig.IPv6AcceptRA = "no";
+          networkConfig.LinkLocalAddressing = "no";
+        };
+
+        netdevs.lan.enable = mkDefault true;
+        netdevs.lan.netdevConfig.Kind = "macvlan";
+        netdevs.lan.netdevConfig.Name = "lan";
+        netdevs.lan.macvlanConfig.Mode = mkDefault "bridge";
+
+        networks.lan.networkConfig.DNSSEC = mkDefault false;
+        networks.lan.matchConfig.Name = mkDefault "lan";
+        networks.lan.linkConfig.ARP = true;
+        networks.lan.linkConfig.RequiredForOnline = mkDefault "yes";
+        networks.lan.networkConfig.IPv6AcceptRA = "no";
+        networks.lan.networkConfig.LinkLocalAddressing = "no";
+
+        networks.unmanaged.DHCP = "no";
+        networks.unmanaged.networkConfig.DHCP = "no";
+        networks.unmanaged.linkConfig.Unmanaged = "yes";
+        networks.unmanaged.networkConfig.IPv6AcceptRA = "no";
+        networks.unmanaged.networkConfig.LinkLocalAddressing = "no";
+
+        networks.unmanaged.matchConfig.Name = mkDefault (concatStringsSep " " [
+          # "zt*" NOTE: custom zerotier module is managing networkd for zt
+          "macvtap*"
+          "cni*"
+          "virbr*"
+          "docker*"
+          "br-*"
+          "veth*"
+        ]);
+      };
+    }
+  )
   (mkIf setMac {
     systemd.network.networks.lan.linkConfig.MACAddress =
       getAttrFromPath
@@ -114,7 +146,7 @@ mkMerge [
     };
   })
 
-  (mkIf (! config.services.adguardhome.enable) {
+  (mkIf (!config.services.adguardhome.enable) {
     systemd.network.networks.lan.dns = [ "8.8.8.8" ];
   })
 
@@ -133,7 +165,8 @@ mkMerge [
       services.resolved.extraConfig = ''
         MulticastDNS=false
       '';
-      systemd.network.networks.lan.dns = adguardhomeDNS;
+
+      systemd.network.networks = optionalAttrs (!config.deploy.publicHost.enable) { lan.dns = adguardhomeDNS; };
     }
   ))
 
@@ -200,7 +233,7 @@ mkMerge [
   })
 
   (mkIf config.networking.firewall.enable {
-    networking.firewall.trustedInterfaces = [ config.systemd.network.netdevs.lan.netdevConfig.Name ];
+    networking.firewall.trustedInterfaces = optional (!config.deploy.publicHost.enable) config.systemd.network.netdevs.lan.netdevConfig.Name;
     # NOTE: https://github.com/NixOS/nixpkgs/issues/45944
     networking.firewall.checkReversePath = false;
     networking.firewall.logReversePathDrops = true;
