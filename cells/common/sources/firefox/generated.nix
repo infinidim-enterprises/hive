@@ -62,10 +62,10 @@
   };
   "browserpass-ce" = rec {
     pname = "browserpass-ce";
-    version = "3.8.0";
+    version = "3.9.0";
     addonId = "browserpass@maximbaz.com";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4187654/browserpass_ce-3.8.0.xpi";
-    sha256 = "5291d94443be41a80919605b0939c16cc62f9100a8b27df713b735856140a9a7";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4406417/browserpass_ce-3.9.0.xpi";
+    sha256 = "514c1a606d7bc82045d21bcbc6e5b1e5007446ab32aa01f0f17fbe0bde03ef0c";
     meta = with lib;
       {
         homepage = "https://github.com/browserpass/browserpass-extension";
@@ -381,10 +381,10 @@
   };
   "darkreader" = rec {
     pname = "darkreader";
-    version = "4.9.97";
+    version = "4.9.99";
     addonId = "addon@darkreader.org";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4403051/darkreader-4.9.97.xpi";
-    sha256 = "32ba95331d99f07db48bd2dfd9c715010ec450b84494dec07e2954cdcf7fa447";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4405074/darkreader-4.9.99.xpi";
+    sha256 = "02c67ce2b3cd96719b5e369b9207ef11ed6c3a79eccb454d1e6ec3e005004e72";
     meta = with lib;
       {
         homepage = "https://darkreader.org/";
@@ -491,10 +491,10 @@
   };
   "ether-metamask" = rec {
     pname = "ether-metamask";
-    version = "12.0.6";
+    version = "12.6.2";
     addonId = "webextension@metamask.io";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4342782/ether_metamask-12.0.6.xpi";
-    sha256 = "a66e20bbe5ded1b9408420e4c2ffc82369cc3bfd27350afe25f2c0ef6b26ff3b";
+    url = "https://addons.mozilla.org/firefox/downloads/file/4392249/ether_metamask-12.6.2.xpi";
+    sha256 = "ca7b385559d7469ccca0454323f92f63d3aef5d68c504a46f818eb59bd735c74";
     meta = with lib;
       {
         description = "Ethereum Browser Extension";
@@ -502,20 +502,15 @@
           "storage"
           "unlimitedStorage"
           "clipboardWrite"
-          "http://localhost:8545/"
-          "https://*.infura.io/"
-          "https://*.codefi.network/"
-          "https://*.cx.metamask.io/"
-          "https://chainid.network/chains.json"
-          "https://lattice.gridplus.io/*"
+          "http://*/*"
+          "https://*/*"
           "activeTab"
           "webRequest"
+          "webRequestBlocking"
           "*://*.eth/"
           "notifications"
           "file://*/*"
-          "http://*/*"
-          "https://*/*"
-          "*://connect.trezor.io/*/popup.html"
+          "*://connect.trezor.io/*/popup.html*"
         ];
         platforms = platforms.all;
       };

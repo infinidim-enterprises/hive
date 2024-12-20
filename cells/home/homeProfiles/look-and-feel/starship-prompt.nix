@@ -86,6 +86,7 @@ lib.mkMerge [
 
       gcloud.symbol = " ";
       gcloud.format = "\\[[$symbol$account(@$domain)(\\($region\\))]($style)\\]";
+      gcloud.detect_env_vars = [ "GOOGLE_CLOUD" ];
 
       terraform.symbol = " ";
       terraform.format = "\\[[$symbol$workspace]($style)\\]";
