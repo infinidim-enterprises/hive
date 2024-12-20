@@ -25,121 +25,125 @@ let
     "\n";
   # post_24-05 = lib.versionOlder inputs.nixos-24-05.lib.version pkgs.lib.version;
 in
-mkMerge [
-  (mkIf (post_24-05 { inherit pkgs; }) {
-    services.samba.settings = { inherit global; };
-    services.samba.nmbd.enable = false;
-  })
+{
+  imports = [ inputs.hyprland.nixosModules.default ];
 
-  (mkIf (!(post_24-05 { inherit pkgs; })) {
-    services.samba = {
-      inherit extraConfig;
-      enableNmbd = false;
-    };
-  })
+  config = mkMerge [
+    (mkIf (post_24-05 { inherit pkgs; }) {
+      services.samba.settings = { inherit global; };
+      services.samba.nmbd.enable = false;
+    })
 
-  {
-    # NOTE: caja will be able to use net usershare
-    services.samba.enable = true;
-    services.samba.package = pkgs.sambaFull;
-    services.samba.openFirewall = true;
+    (mkIf (!(post_24-05 { inherit pkgs; })) {
+      services.samba = {
+        inherit extraConfig;
+        enableNmbd = false;
+      };
+    })
 
-    systemd.services.samba-smbd.serviceConfig.ExecStartPre = "${pkgs.coreutils}/bin/mkdir -m +t -p /var/lib/samba/usershares";
-  }
+    {
+      # NOTE: caja will be able to use net usershare
+      services.samba.enable = true;
+      services.samba.package = pkgs.sambaFull;
+      services.samba.openFirewall = true;
 
-  {
-    # TODO: upower - /org/freedesktop/UPower
-    services.upower.enable = true;
+      systemd.services.samba-smbd.serviceConfig.ExecStartPre = "${pkgs.coreutils}/bin/mkdir -m +t -p /var/lib/samba/usershares";
+    }
 
-    programs.hyprland.enable = true;
-    programs.hyprland.withUWSM = true;
+    {
+      # TODO: upower - /org/freedesktop/UPower
+      services.upower.enable = true;
 
-    # programs.uwsm.enable = true;
-    # programs.uwsm.waylandCompositors = {
-    #   hyprland =
-    #     let
-    #       inherit (lib) concatStringsSep;
-    #       cmd = [
-    #         "${pkgs.dbus}/bin/dbus-update-activation-environment"
-    #         "--systemd"
-    #         "--all"
-    #         "&&"
-    #         "${config.programs.hyprland.package}/bin/Hyprland"
-    #       ];
-    #       hyprlandScript = pkgs.writeScriptBin "hyprland" ''
-    #         ${pkgs.bash}/bin/bash -l -c '${concatStringsSep " " cmd}'
-    #       '';
-    #     in
-    #     {
-    #       prettyName = "Hyprland";
-    #       comment = "Hyprland compositor managed by UWSM";
-    #       binPath = "${hyprlandScript}/bin/hyprland";
-    #     };
-    # };
+      programs.hyprland.enable = true;
+      programs.hyprland.withUWSM = true;
 
-    programs.hyprland.xwayland.enable = true;
-    programs.hyprland.systemd.setPath.enable = true;
+      # programs.uwsm.enable = true;
+      # programs.uwsm.waylandCompositors = {
+      #   hyprland =
+      #     let
+      #       inherit (lib) concatStringsSep;
+      #       cmd = [
+      #         "${pkgs.dbus}/bin/dbus-update-activation-environment"
+      #         "--systemd"
+      #         "--all"
+      #         "&&"
+      #         "${config.programs.hyprland.package}/bin/Hyprland"
+      #       ];
+      #       hyprlandScript = pkgs.writeScriptBin "hyprland" ''
+      #         ${pkgs.bash}/bin/bash -l -c '${concatStringsSep " " cmd}'
+      #       '';
+      #     in
+      #     {
+      #       prettyName = "Hyprland";
+      #       comment = "Hyprland compositor managed by UWSM";
+      #       binPath = "${hyprlandScript}/bin/hyprland";
+      #     };
+      # };
 
-    programs.xwayland.enable = true;
-    security.pam.services.hyprlock = { };
+      programs.hyprland.xwayland.enable = true;
+      programs.hyprland.systemd.setPath.enable = true;
 
-    xdg.portal.enable = true;
-    xdg.portal.config.common.default = [ "hyprland;gtk" ];
+      programs.xwayland.enable = true;
+      security.pam.services.hyprlock = { };
 
-    ### TODO: hyprland plugins:
-    # https://github.com/jasper-at-windswept/hypr-ws-switcher
-    # https://github.com/codelif/hyprnotify
-    # https://github.com/zakk4223/hyprNStack
-    # https://github.com/shezdy/hyprsplit
-    # https://github.com/JoaoCostaIFG/hyprtags
-    # https://github.com/VortexCoyote/hyprfocus
-    # https://github.com/horriblename/hyprgrass
-    # https://gitlab.com/magus/hyprslidr
-    ###
-    # hyprctl output create headless test
-    # https://wiki.hyprland.org/Configuring/Using-hyprctl/#commands
+      xdg.portal.enable = true;
+      xdg.portal.config.common.default = [ "hyprland;gtk" ];
 
-    environment.systemPackages = with pkgs; [
-      wev
+      ### TODO: hyprland plugins:
+      # https://github.com/jasper-at-windswept/hypr-ws-switcher
+      # https://github.com/codelif/hyprnotify
+      # https://github.com/zakk4223/hyprNStack
+      # https://github.com/shezdy/hyprsplit
+      # https://github.com/JoaoCostaIFG/hyprtags
+      # https://github.com/VortexCoyote/hyprfocus
+      # https://github.com/horriblename/hyprgrass
+      # https://gitlab.com/magus/hyprslidr
+      ###
+      # hyprctl output create headless test
+      # https://wiki.hyprland.org/Configuring/Using-hyprctl/#commands
 
-      # nitch # system fetch # TODO: https://github.com/ssleert/nitch/pull/20
-      grim # wayland screenshot
-      slurp # Select a region in a Wayland compositor
-      grimblast
-      swappy
-      # hyprpicker
+      environment.systemPackages = with pkgs; [
+        wev
 
-      wofi
-      wtype
-      wofi-pass
-      wofi-emoji
+        # nitch # system fetch # TODO: https://github.com/ssleert/nitch/pull/20
+        grim # wayland screenshot
+        slurp # Select a region in a Wayland compositor
+        grimblast
+        swappy
+        # hyprpicker
 
-      wlogout
-      wl-clipboard
-      wlrctl
+        wofi
+        wtype
+        wofi-pass
+        wofi-emoji
 
-      kitty
-      wayvnc
-      freerdp3 # wlfreerdp
+        wlogout
+        wl-clipboard
+        wlrctl
 
-      hdrop
-      hyprprop
+        kitty
+        wayvnc
+        freerdp3 # wlfreerdp
 
-      glib
-      polkit_gnome
-      gtk4-layer-shell # Lib
-      walker # launcher https://github.com/abenz1267/walker TODO: home-manager module for walker
+        hdrop
+        hyprprop
 
-      /*
+        glib
+        polkit_gnome
+        gtk4-layer-shell # Lib
+        walker # launcher https://github.com/abenz1267/walker TODO: home-manager module for walker
+
+        /*
 
       walker.url = "github:abenz1267/walker";
       walker.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
-      */
-    ];
+        */
+      ];
 
-  }
-]
+    }
+  ];
+}
 /*
   Hyprland is a dynamic tiling Wayland compositor that supports advanced configurations and is capable of handling multiple displays, including virtual displays streamed via RDP. While Hyprland itself does not natively support RDP or VNC, you can achieve similar functionality by using auxiliary tools like WayVNC or RDP backends. Here is how you can set up a configuration with Hyprland, where the middle display is a local physical screen, and the left and right ones are streamed via RDP:
 

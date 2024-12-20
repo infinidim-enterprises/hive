@@ -290,10 +290,19 @@
     waybar.url = "github:Alexays/Waybar";
     waybar.inputs.nixpkgs.follows = "hyprland/nixpkgs";
 
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1&ref=refs/tags/v0.46.0";
-    # hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1&ref=refs/tags/v0.45.2";
-    # hyprland.follows = "hyprland-hy3/hyprland";
+    xdph.url = "git+https://github.com/hyprwm/xdg-desktop-portal-hyprland?ref=refs/tags/v1.3.9";
+    xdph.inputs.nixpkgs.follows = "hyprland/nixpkgs";
+
+    # inputs.systems.follows = "systems";
+    # inputs.hyprland-protocols.follows = "hyprland-protocols";
+    # inputs.hyprlang.follows = "hyprlang";
+    # inputs.hyprutils.follows = "hyprutils";
+    # inputs.hyprwayland-scanner.follows = "hyprwayland-scanner";
+
+    # hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1&ref=refs/tags/v0.46.0";
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1&ref=refs/tags/v0.46.2";
     hyprland.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    hyprland.inputs.xdph.follows = "xdph";
     hyprland.inputs.systems.follows = "hyprland-systems";
 
     hyprland-hy3.url = "github:outfoxxed/hy3/hl0.46.0";
@@ -309,8 +318,8 @@
     hyprland-hypridle.inputs.systems.follows = "hyprland/systems";
     hyprland-hypridle.inputs.hyprutils.follows = "hyprland/hyprutils";
 
-    # hyprland-plugins.url = "github:hyprwm/hyprland-plugins/v0.45.0";
-    hyprland-plugins.url = "github:hyprwm/hyprland-plugins";
+    hyprland-plugins.url = "github:hyprwm/hyprland-plugins/v0.46.0";
+    # hyprland-plugins.url = "github:hyprwm/hyprland-plugins";
     hyprland-plugins.inputs.nixpkgs.follows = "hyprland/nixpkgs";
     hyprland-plugins.inputs.systems.follows = "hyprland/systems";
     hyprland-plugins.inputs.hyprland.follows = "hyprland";
