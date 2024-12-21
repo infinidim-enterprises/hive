@@ -152,28 +152,28 @@
   };
   zsh-plugin_nix-zsh-completions = {
     pname = "zsh-plugin_nix-zsh-completions";
-    version = "7558fc9495c634cca7d79b6bf49d6d8151a18ea3";
+    version = "4e654da12a28ebc272e7f6b7a60a1c8af3da84f0";
     src = fetchFromGitHub {
       owner = "spwhitt";
       repo = "nix-zsh-completions";
-      rev = "7558fc9495c634cca7d79b6bf49d6d8151a18ea3";
+      rev = "4e654da12a28ebc272e7f6b7a60a1c8af3da84f0";
       fetchSubmodules = false;
-      sha256 = "sha256-OncfatdtdEavVF5Y5hLITgx9wz1Z29bX4P/uxmojvDI=";
+      sha256 = "sha256-L7N+TUag830IGD+lP8vwR0nWCXVfy87d5lTObYfBo8U=";
     };
-    date = "2024-08-14";
+    date = "2024-12-15";
   };
   zsh-plugin_oh-my-zsh = {
     pname = "zsh-plugin_oh-my-zsh";
-    version = "69a6359f7cf8978d464573fb7b023ee3cd00181a";
+    version = "b9e73b44811becbdf24cff54441c73839a29c523";
     src = fetchgit {
       url = "https://github.com/robbyrussell/oh-my-zsh";
-      rev = "69a6359f7cf8978d464573fb7b023ee3cd00181a";
+      rev = "b9e73b44811becbdf24cff54441c73839a29c523";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-31wI3wFGQ9YhEo7XguLSTNY0rvOFa+/MoFwDAZIo7ZY=";
+      sha256 = "sha256-3j2N1lKfiHyNU58thIgfn8IEfoHPxK8baZeeBs3bEow=";
     };
-    date = "2024-11-28";
+    date = "2024-12-15";
   };
   zsh-plugin_tipz = {
     pname = "zsh-plugin_tipz";
