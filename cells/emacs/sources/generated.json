@@ -127,7 +127,7 @@
             "leaveDotGit": true,
             "name": null,
             "rev": "ba1dca322f9a07bc2b7bec6a98f2c3c55c0bbd77",
-            "sha256": "sha256-eDqPgcWd2iPOZAJ5qVGCZt2k5n6Z8KTbx0zkfc/mU+Q=",
+            "sha256": "sha256-sR+25cNTw0LxpQk8s5yD5/VyNNQJjyDezoeiYXL07Pk=",
             "type": "git",
             "url": "https://github.com/hlissner/doom-emacs"
         },
@@ -154,7 +154,7 @@
     },
     "jinx": {
         "cargoLocks": null,
-        "date": "2024-12-14",
+        "date": "2024-12-17",
         "extract": null,
         "name": "jinx",
         "passthru": null,
@@ -166,15 +166,15 @@
             "name": null,
             "owner": "minad",
             "repo": "jinx",
-            "rev": "f4db32c2258aebf00e34ff2a03550a357706d911",
-            "sha256": "sha256-pkf9Y5GJTwmyYsw28btq8kBu3I0J+Ajr59sQyaak6A0=",
+            "rev": "9ffd681d66e2ee7720c62da1165341124c087a17",
+            "sha256": "sha256-fMxVNM0Gyodj1raFbC0YhLXZHv63ARY1vuLg48rIRX8=",
             "type": "github"
         },
-        "version": "f4db32c2258aebf00e34ff2a03550a357706d911"
+        "version": "9ffd681d66e2ee7720c62da1165341124c087a17"
     },
     "lsp-bridge": {
         "cargoLocks": null,
-        "date": "2024-12-15",
+        "date": "2024-12-20",
         "extract": null,
         "name": "lsp-bridge",
         "passthru": null,
@@ -186,11 +186,11 @@
             "name": null,
             "owner": "manateelazycat",
             "repo": "lsp-bridge",
-            "rev": "2031e6d2d2dddb66410a772becdae8814a2e7963",
-            "sha256": "sha256-SxUdzMEWmD9ZFNRxQh6atVrTjx7g0Sd69UTQkhHPQWU=",
+            "rev": "acebc35d9fed200bfb8237087074a50fcb0d71d2",
+            "sha256": "sha256-PwielZ2uTW+snP2D0p1pwSCTRQ83EO1sU90lMrd0pvE=",
             "type": "github"
         },
-        "version": "2031e6d2d2dddb66410a772becdae8814a2e7963"
+        "version": "acebc35d9fed200bfb8237087074a50fcb0d71d2"
     },
     "nix-mode": {
         "cargoLocks": null,

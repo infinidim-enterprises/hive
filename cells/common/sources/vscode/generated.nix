@@ -25,22 +25,22 @@
   };
   codium = {
     pname = "codium";
-    version = "0.12.5";
+    version = "0.12.6";
     src = fetchurl {
-      url = "https://Codium.gallery.vsassets.io/_apis/public/gallery/publisher/Codium/extension/codium/0.12.5/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "codium-0.12.5.zip";
-      sha256 = "sha256-VAxvRTYX9wArKHjx1h057PBPJHgu7YqwvlwIkZ/uzLg=";
+      url = "https://Codium.gallery.vsassets.io/_apis/public/gallery/publisher/Codium/extension/codium/0.12.6/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "codium-0.12.6.zip";
+      sha256 = "sha256-sPdUQ3YAA7G9wE2j0Cz3fF5HYZuw0p8aZOWuS5OGSJQ=";
     };
     publisher = "Codium";
     name = "codium";
   };
   copilot = {
     pname = "copilot";
-    version = "1.252.0";
+    version = "1.254.0";
     src = fetchurl {
-      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.252.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "copilot-1.252.0.zip";
-      sha256 = "sha256-vVxq4OBsnG3J/y/Pxiz/JGnkdqj6gS2nSpvq4akCwUQ=";
+      url = "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.254.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "copilot-1.254.0.zip";
+      sha256 = "sha256-4HbE4UrwFvlCczMOYbjPpDUKN6EMaY+maqjSKn4n/18=";
     };
     publisher = "GitHub";
     name = "copilot";
@@ -80,11 +80,11 @@
   };
   emacs-mcx = {
     pname = "emacs-mcx";
-    version = "0.62.4";
+    version = "0.62.5";
     src = fetchurl {
-      url = "https://tuttieee.gallery.vsassets.io/_apis/public/gallery/publisher/tuttieee/extension/emacs-mcx/0.62.4/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "emacs-mcx-0.62.4.zip";
-      sha256 = "sha256-oRHPLQ8Ib1W2n5EUJvv8oRPwYlpI3uOMy4tloo/aIug=";
+      url = "https://tuttieee.gallery.vsassets.io/_apis/public/gallery/publisher/tuttieee/extension/emacs-mcx/0.62.5/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "emacs-mcx-0.62.5.zip";
+      sha256 = "sha256-NYskMDNmHUi82BnnXShDUF4mTyyLQURyJxCfJxT/c4o=";
     };
     publisher = "tuttieee";
     name = "emacs-mcx";
@@ -113,11 +113,11 @@
   };
   gitlens = {
     pname = "gitlens";
-    version = "2024.12.1304";
+    version = "2024.12.2015";
     src = fetchurl {
-      url = "https://eamodio.gallery.vsassets.io/_apis/public/gallery/publisher/eamodio/extension/gitlens/2024.12.1304/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "gitlens-2024.12.1304.zip";
-      sha256 = "sha256-qGd+yUJUcxh4ca2piQ7+4JTXk+UxnxIs2fpjFHBxkTU=";
+      url = "https://eamodio.gallery.vsassets.io/_apis/public/gallery/publisher/eamodio/extension/gitlens/2024.12.2015/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "gitlens-2024.12.2015.zip";
+      sha256 = "sha256-LsG7sbtlcAIxu4t5CXUJZJIaNtsdnuAFRf6QF7T7lSs=";
     };
     publisher = "eamodio";
     name = "gitlens";
@@ -168,11 +168,11 @@
   };
   language-julia = {
     pname = "language-julia";
-    version = "1.127.2";
+    version = "1.129.1";
     src = fetchurl {
-      url = "https://julialang.gallery.vsassets.io/_apis/public/gallery/publisher/julialang/extension/language-julia/1.127.2/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "language-julia-1.127.2.zip";
-      sha256 = "sha256-fvJ0jO+mhepnzderoh2Pg09yF0AgYGdXQLjJCFptigY=";
+      url = "https://julialang.gallery.vsassets.io/_apis/public/gallery/publisher/julialang/extension/language-julia/1.129.1/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "language-julia-1.129.1.zip";
+      sha256 = "sha256-Qxi/RmKJ5G5MrQ9Kl0n61FL14vDUTrbCSa8hPsAlHeY=";
     };
     publisher = "julialang";
     name = "language-julia";
@@ -366,11 +366,11 @@
   };
   tabnine-vscode = {
     pname = "tabnine-vscode";
-    version = "3.203.0";
+    version = "3.204.0";
     src = fetchurl {
-      url = "https://TabNine.gallery.vsassets.io/_apis/public/gallery/publisher/TabNine/extension/tabnine-vscode/3.203.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "tabnine-vscode-3.203.0.zip";
-      sha256 = "sha256-ixvGMl2rtWOfof3uVM365DZ472YWwszl4+zO3W03QLU=";
+      url = "https://TabNine.gallery.vsassets.io/_apis/public/gallery/publisher/TabNine/extension/tabnine-vscode/3.204.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "tabnine-vscode-3.204.0.zip";
+      sha256 = "sha256-S/1oYDVaBnDRMYeKsv3/zBxctBNMCXWLG0u7f028nZ8=";
     };
     publisher = "TabNine";
     name = "tabnine-vscode";
