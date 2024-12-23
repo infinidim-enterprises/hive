@@ -54,9 +54,10 @@
     yants.inputs.nixpkgs.follows = "nixpkgs-lib";
 
     # BUG: https://github.com/zhaofengli/colmena/issues/202
-    colmena.url = "github:zhaofengli/colmena/e3ad42138015fcdf2524518dd564a13145c72ea1";
-    colmena.inputs.nixpkgs.follows = "nixpkgs-unstable";
-    colmena.inputs.flake-utils.follows = "flake-utils";
+    # e3ad42138015fcdf2524518dd564a13145c72ea1
+    colmena.url = "github:zhaofengli/colmena";
+    # colmena.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    # colmena.inputs.flake-utils.follows = "flake-utils";
 
     nixago.url = "github:nix-community/nixago";
     nixago.inputs.nixpkgs.follows = "nixpkgs-unstable";
