@@ -31,34 +31,39 @@ mkMerge [
   }
 
   (mkIf config.deploy.publicHost.enable {
-    systemd.network.wait-online.enable = false;
-    systemd.network.networks.default-eth = {
-      DHCP = "yes";
+    systemd.network.wait-online.enable = true;
+    systemd.network.wait-online.timeout = 30;
 
-      matchConfig.Name = mkDefault "mv* eth* en*";
+    # systemd.network.config.networkConfig.DHCP = "yes";
 
-      # linkConfig.ARP = true;
-      # linkConfig.RequiredForOnline = mkDefault "yes";
-      # linkConfig.MACAddressPolicy = "persistent";
+    # systemd.network.wait-online.enable = false;
+    # systemd.network.networks.default-eth = {
+    #   DHCP = "yes";
 
-      networkConfig.LinkLocalAddressing = "ipv6";
-      networkConfig.DNSSEC = mkDefault false;
-      networkConfig.DHCP = "yes";
+    #   matchConfig.Name = mkDefault "mv* eth* en*";
 
-      dhcpV4Config = {
-        ClientIdentifier = mkDefault "mac";
-        UseDNS = mkDefault true;
-        UseNTP = mkDefault true;
-        UseMTU = mkDefault true;
-        UseRoutes = mkDefault true;
-        UseDomains = true;
-        UseHostname = mkDefault false;
-        RouteMetric = 100;
-        UseTimezone = mkDefault true;
-        SendHostname = mkDefault true;
-        SendRelease = true;
-      };
-    };
+    #   # linkConfig.ARP = true;
+    #   # linkConfig.RequiredForOnline = mkDefault "yes";
+    #   # linkConfig.MACAddressPolicy = "persistent";
+
+    #   networkConfig.LinkLocalAddressing = "ipv6";
+    #   networkConfig.DNSSEC = mkDefault false;
+    #   networkConfig.DHCP = "yes";
+
+    #   dhcpV4Config = {
+    #     ClientIdentifier = mkDefault "mac";
+    #     UseDNS = mkDefault true;
+    #     UseNTP = mkDefault true;
+    #     UseMTU = mkDefault true;
+    #     UseRoutes = mkDefault true;
+    #     UseDomains = true;
+    #     UseHostname = mkDefault false;
+    #     RouteMetric = 100;
+    #     UseTimezone = mkDefault true;
+    #     SendHostname = mkDefault true;
+    #     SendRelease = true;
+    #   };
+    # };
   })
 
   # TODO: Port 5355/udp/tcp - LLMNR - do something about it!

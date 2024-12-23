@@ -26,13 +26,28 @@ rec {
         deploy.publicHost.enable = true;
 
         networking.hostName = baseNameOf ./.;
-        networking.hostId = "23e5e5ff";
+        # networking.hostId = "23e5e5ff";
+
         networking.wireless.enable = false;
         networking.networkmanager.enable = false;
 
         home-manager.sharedModules = [{ home.enableNixpkgsReleaseCheck = false; }];
       }
 
-      # ({ pkgs, ... }: { })
+      ({ pkgs, lib, modulesPath, ... }: {
+        imports = [ "${toString modulesPath}/virtualisation/google-compute-image.nix" ];
+
+        systemd.services.google-guest-agent.enable = false;
+        systemd.services.google-guest-agent.wantedBy = lib.mkForce [ ];
+
+        systemd.services.google-startup-scripts.enable = false;
+        systemd.services.google-startup-scripts.wantedBy = lib.mkForce [ ];
+
+        systemd.services.google-shutdown-scripts.enable = false;
+        systemd.services.google-shutdown-scripts.wantedBy = lib.mkForce [ ];
+
+        system.nixos.label = baseNameOf ./.;
+        system.nixos.versionSuffix = "_gce";
+      })
     ];
 }
