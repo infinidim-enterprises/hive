@@ -36,34 +36,33 @@ mkMerge [
 
     # systemd.network.config.networkConfig.DHCP = "yes";
 
-    # systemd.network.wait-online.enable = false;
-    # systemd.network.networks.default-eth = {
-    #   DHCP = "yes";
+    systemd.network.networks.default-eth = {
+      DHCP = "yes";
 
-    #   matchConfig.Name = mkDefault "mv* eth* en*";
+      matchConfig.Name = mkDefault "mv* eth* en*";
 
-    #   # linkConfig.ARP = true;
-    #   # linkConfig.RequiredForOnline = mkDefault "yes";
-    #   # linkConfig.MACAddressPolicy = "persistent";
+      linkConfig.ARP = true;
+      # linkConfig.RequiredForOnline = mkDefault "yes";
+      # linkConfig.MACAddressPolicy = "persistent";
 
-    #   networkConfig.LinkLocalAddressing = "ipv6";
-    #   networkConfig.DNSSEC = mkDefault false;
-    #   networkConfig.DHCP = "yes";
+      networkConfig.LinkLocalAddressing = "ipv6";
+      networkConfig.DNSSEC = mkDefault false;
+      networkConfig.DHCP = "yes";
 
-    #   dhcpV4Config = {
-    #     ClientIdentifier = mkDefault "mac";
-    #     UseDNS = mkDefault true;
-    #     UseNTP = mkDefault true;
-    #     UseMTU = mkDefault true;
-    #     UseRoutes = mkDefault true;
-    #     UseDomains = true;
-    #     UseHostname = mkDefault false;
-    #     RouteMetric = 100;
-    #     UseTimezone = mkDefault true;
-    #     SendHostname = mkDefault true;
-    #     SendRelease = true;
-    #   };
-    # };
+      dhcpV4Config = {
+        ClientIdentifier = mkDefault "mac";
+        UseDNS = mkDefault true;
+        UseNTP = mkDefault true;
+        UseMTU = mkDefault true;
+        UseRoutes = mkDefault true;
+        UseDomains = true;
+        UseHostname = mkDefault false;
+        RouteMetric = 100;
+        UseTimezone = mkDefault true;
+        SendHostname = mkDefault true;
+        SendRelease = true;
+      };
+    };
   })
 
   # TODO: Port 5355/udp/tcp - LLMNR - do something about it!

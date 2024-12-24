@@ -53,6 +53,7 @@ in
         tigervnc
         jekyll
         vultr-cli
+        oci-cli
         sops
         ventoy-full
         google-cloud-sdk

@@ -35,19 +35,19 @@ rec {
       }
 
       ({ pkgs, lib, modulesPath, ... }: {
-        imports = [ "${toString modulesPath}/virtualisation/google-compute-image.nix" ];
+        # imports = [ "${toString modulesPath}/virtualisation/google-compute-image.nix" ];
 
-        systemd.services.google-guest-agent.enable = false;
-        systemd.services.google-guest-agent.wantedBy = lib.mkForce [ ];
+        # systemd.services.google-guest-agent.enable = false;
+        # systemd.services.google-guest-agent.wantedBy = lib.mkForce [ ];
 
-        systemd.services.google-startup-scripts.enable = false;
-        systemd.services.google-startup-scripts.wantedBy = lib.mkForce [ ];
+        # systemd.services.google-startup-scripts.enable = false;
+        # systemd.services.google-startup-scripts.wantedBy = lib.mkForce [ ];
 
-        systemd.services.google-shutdown-scripts.enable = false;
-        systemd.services.google-shutdown-scripts.wantedBy = lib.mkForce [ ];
+        # systemd.services.google-shutdown-scripts.enable = false;
+        # systemd.services.google-shutdown-scripts.wantedBy = lib.mkForce [ ];
 
         system.nixos.label = baseNameOf ./.;
-        system.nixos.versionSuffix = "_gce";
+        system.nixos.versionSuffix = "_cloud";
       })
     ];
 }
