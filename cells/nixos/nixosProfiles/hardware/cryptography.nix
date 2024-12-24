@@ -70,7 +70,7 @@ mkMerge [
     hardware.nitrokey.enable = true;
     hardware.gpgSmartcards.enable = true;
 
-    services.trezord.enable = true;
+    services.trezord.enable = mkDefault true;
     services.pcscd.enable = true;
 
     # services.pcscd.plugins = [ pkgs.acsccid ];

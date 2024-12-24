@@ -30,7 +30,8 @@ rec {
         networking.wireless.enable = false;
         networking.networkmanager.enable = false;
 
-        services.openssh.ports = [ 22 65522 ];
+        services.openssh.ports = [ 65522 ];
+        services.trezord.enable = false;
 
         home-manager.sharedModules = [{ home.enableNixpkgsReleaseCheck = false; }];
       }
