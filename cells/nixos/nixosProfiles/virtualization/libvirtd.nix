@@ -22,7 +22,7 @@ mkMerge [
     virtualisation.spiceUSBRedirection.enable = true;
   }
 
-  (mkIf config.services.xserver.enable {
+  (mkIf (cell.lib.isGui config) {
     environment.systemPackages = with pkgs; [ virt-manager spice-gtk ];
   })
 ]
