@@ -5,6 +5,7 @@ keys:
   - &asbleg 383717918D3D86D5AC5687AA3E7793D3B1830782
   - &marauder F000AE3CA8A68C0F4392D3D3E19E70EE13C86ECD
   - &damogran f22401246d122829b59e0ad40f0c6caea0f2b98f
+  - &kakrafoon 4366B89962390B5D56DEB342333000D473B9FBFA
 creation_rules:
   - path_regex: cells/secrets/sops/envs.yaml
     key_groups:
@@ -21,6 +22,7 @@ creation_rules:
           - *marauder
           - *oglaroon
           - *damogran
+          - *kakrafoon
       # - age:
       #     - *oglaroon
 
