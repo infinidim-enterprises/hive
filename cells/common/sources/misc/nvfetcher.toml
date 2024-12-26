@@ -128,9 +128,9 @@ fetch.url = "https://github.com/logseq/logseq/releases/download/$ver/logseq-linu
 src.git = "https://github.com/nurupo/paper-store"
 fetch.git = "https://github.com/nurupo/paper-store"
 
-[pbkdf2-sha512]
-src.git = "https://github.com/NixOS/nixpkgs"
-fetch.url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c"
+# [pbkdf2-sha512]
+# src.git = "https://github.com/NixOS/nixpkgs"
+# fetch.url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c"
 
 [pam_usb]
 # pam_usb provides hardware authentication for Linux using ordinary removable media
@@ -148,27 +148,27 @@ src.git = "https://github.com/summitto/pgp-packet-library"
 fetch.github = "summitto/pgp-packet-library"
 git.fetchSubmodules = true
 
-[trezor-agent]
-#  Hardware-based SSH/GPG/age agent
-src.github_tag = "romanz/trezor-agent"
-src.use_latest_tag = true
-# src.manual = "v0.14.5"
-fetch.github = "romanz/trezor-agent"
+# [trezor-agent]
+# #  Hardware-based SSH/GPG/age agent
+# src.github_tag = "romanz/trezor-agent"
+# src.use_latest_tag = true
+# # src.manual = "v0.14.5"
+# fetch.github = "romanz/trezor-agent"
 
-[trezor-agent-subkeys]
-# Hardware-based SSH/PGP agent
-src.git = "https://github.com/jrruethe/trezor-agent"
-src.branch = "subkeys"
-fetch.git = "https://github.com/jrruethe/trezor-agent"
+# [trezor-agent-subkeys]
+# # Hardware-based SSH/PGP agent
+# src.git = "https://github.com/jrruethe/trezor-agent"
+# src.branch = "subkeys"
+# fetch.git = "https://github.com/jrruethe/trezor-agent"
 
-[trezor-gpg-pinentry-tk]
-src.pypi = "trezor-gpg-pinentry-tk"
-fetch.pypi = "trezor-gpg-pinentry-tk"
+# [trezor-gpg-pinentry-tk]
+# src.pypi = "trezor-gpg-pinentry-tk"
+# fetch.pypi = "trezor-gpg-pinentry-tk"
 
-[age-plugin-trezor]
-src.git = "https://github.com/romanz/age-plugin-trezor"
-fetch.github = "romanz/age-plugin-trezor"
-passthru = { cargoSha256 = "0000000000000000000000000000000000000000000000000000" }
+# [age-plugin-trezor]
+# src.git = "https://github.com/romanz/age-plugin-trezor"
+# fetch.github = "romanz/age-plugin-trezor"
+# passthru = { cargoSha256 = "0000000000000000000000000000000000000000000000000000" }
 
 ### MISC
 [dbus-listen]
@@ -204,20 +204,20 @@ passthru = { vendorSha256 = "0789v1r6my256pncs0105yji28ifchj6ppfiy8gavglgclq3cgv
 
 ### :BEGIN: lisp overlays stuff
 ### TODO: migrate to a separate cell eventually
-[stumpwm-release]
-src.github = "stumpwm/stumpwm"
-src.use_latest_release = true
-fetch.github = "stumpwm/stumpwm"
-passthru = { system = "stumpwm", asd = "stumpwm" }
+# [stumpwm-release]
+# src.github = "stumpwm/stumpwm"
+# src.use_latest_release = true
+# fetch.github = "stumpwm/stumpwm"
+# passthru = { system = "stumpwm", asd = "stumpwm" }
 
-[stumpwm-contrib]
-src.git = "https://github.com/stumpwm/stumpwm-contrib"
-fetch.github = "stumpwm/stumpwm-contrib"
+# [stumpwm-contrib]
+# src.git = "https://github.com/stumpwm/stumpwm-contrib"
+# fetch.github = "stumpwm/stumpwm-contrib"
 
-[stumpwm-git]
-src.git = "https://github.com/stumpwm/stumpwm"
-fetch.github = "stumpwm/stumpwm"
-passthru = { system = "stumpwm", asd = "stumpwm" }
+# [stumpwm-git]
+# src.git = "https://github.com/stumpwm/stumpwm"
+# fetch.github = "stumpwm/stumpwm"
+# passthru = { system = "stumpwm", asd = "stumpwm" }
 
 [quicklisp]
 src.manual = "latest"
@@ -281,10 +281,10 @@ fetch.github = "braver/Solarized"
 src.manual = "5.9.85"
 fetch.url = "https://code-industry.net/public/master-pdf-editor-$ver-qt5.x86_64-qt_include.tar.gz"
 
-[ledger-live-desktop]
-# src.manual = "2.57.0"
-src.manual = "2.77.2"
-fetch.url = "https://download.live.ledger.com/ledger-live-desktop-$ver-linux-x86_64.AppImage"
+# [ledger-live-desktop]
+# # src.manual = "2.57.0"
+# src.manual = "2.77.2"
+# fetch.url = "https://download.live.ledger.com/ledger-live-desktop-$ver-linux-x86_64.AppImage"
 
 ### crystal-lang
 [crystalline]
@@ -293,15 +293,15 @@ src.github = "elbywan/crystalline"
 fetch.github = "elbywan/crystalline"
 
 ### firefox stuff, but not addons
-[firefox_user_js]
-src.use_latest_release = true
-src.github = "arkenfox/user.js"
-fetch.github = "arkenfox/user.js"
+# [firefox_user_js]
+# src.use_latest_release = true
+# src.github = "arkenfox/user.js"
+# fetch.github = "arkenfox/user.js"
 
-[firefox_decrypt]
-src.use_latest_tag = true
-src.github_tag = "unode/firefox_decrypt"
-fetch.github = "unode/firefox_decrypt"
+# [firefox_decrypt]
+# src.use_latest_tag = true
+# src.github_tag = "unode/firefox_decrypt"
+# fetch.github = "unode/firefox_decrypt"
 
 # [linux-firmware]
 # src.manual = "20240410"
@@ -309,6 +309,13 @@ fetch.github = "unode/firefox_decrypt"
 
 ###
 [waveterm]
+# FIXME: waveterm sources versions and update via nvfetcher
+src.manual = "0.10.4"
+# src.use_latest_release = true
+# src.github = "wavetermdev/waveterm"
+fetch.url = "https://github.com/wavetermdev/waveterm/releases/download/v$ver/waveterm-linux-x64-$ver.zip"
+
+[zerotierone]
 src.use_latest_release = true
-src.github = "wavetermdev/waveterm"
-fetch.github = "wavetermdev/waveterm"
+src.github = "zerotier/ZeroTierOne"
+fetch.url = "https://github.com/zerotier/ZeroTierOne/archive/refs/tags/$ver.tar.gz"

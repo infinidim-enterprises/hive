@@ -46,12 +46,12 @@
     },
     "pinned": false,
     "src": {
-      "name": "codium-0.12.5.zip",
-      "sha256": "sha256-VAxvRTYX9wArKHjx1h057PBPJHgu7YqwvlwIkZ/uzLg=",
+      "name": "codium-0.12.7.zip",
+      "sha256": "sha256-z9O0F5tF/rowEr40arpdir7O4KkRY1X07tgBFGv3Xcs=",
       "type": "url",
-      "url": "https://Codium.gallery.vsassets.io/_apis/public/gallery/publisher/Codium/extension/codium/0.12.5/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+      "url": "https://Codium.gallery.vsassets.io/_apis/public/gallery/publisher/Codium/extension/codium/0.12.7/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
     },
-    "version": "0.12.5"
+    "version": "0.12.7"
   },
   "copilot": {
     "cargoLocks": null,
@@ -64,12 +64,12 @@
     },
     "pinned": false,
     "src": {
-      "name": "copilot-1.252.0.zip",
-      "sha256": "sha256-vVxq4OBsnG3J/y/Pxiz/JGnkdqj6gS2nSpvq4akCwUQ=",
+      "name": "copilot-1.254.1278.zip",
+      "sha256": "sha256-9GyXFoavPue4YD8lHdMMMmrzOMZDbicjoQdhpPxVpVg=",
       "type": "url",
-      "url": "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.252.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+      "url": "https://GitHub.gallery.vsassets.io/_apis/public/gallery/publisher/GitHub/extension/copilot/1.254.1278/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
     },
-    "version": "1.252.0"
+    "version": "1.254.1278"
   },
   "crystal-lang": {
     "cargoLocks": null,
@@ -136,12 +136,12 @@
     },
     "pinned": false,
     "src": {
-      "name": "emacs-mcx-0.62.4.zip",
-      "sha256": "sha256-oRHPLQ8Ib1W2n5EUJvv8oRPwYlpI3uOMy4tloo/aIug=",
+      "name": "emacs-mcx-0.62.5.zip",
+      "sha256": "sha256-NYskMDNmHUi82BnnXShDUF4mTyyLQURyJxCfJxT/c4o=",
       "type": "url",
-      "url": "https://tuttieee.gallery.vsassets.io/_apis/public/gallery/publisher/tuttieee/extension/emacs-mcx/0.62.4/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+      "url": "https://tuttieee.gallery.vsassets.io/_apis/public/gallery/publisher/tuttieee/extension/emacs-mcx/0.62.5/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
     },
-    "version": "0.62.4"
+    "version": "0.62.5"
   },
   "fonted": {
     "cargoLocks": null,
@@ -190,12 +190,12 @@
     },
     "pinned": false,
     "src": {
-      "name": "gitlens-2024.12.1304.zip",
-      "sha256": "sha256-qGd+yUJUcxh4ca2piQ7+4JTXk+UxnxIs2fpjFHBxkTU=",
+      "name": "gitlens-2024.12.2404.zip",
+      "sha256": "sha256-25EHqbkIVB451DAoEjWUwi0UDbU1ia4lT1AX1xWGgHE=",
       "type": "url",
-      "url": "https://eamodio.gallery.vsassets.io/_apis/public/gallery/publisher/eamodio/extension/gitlens/2024.12.1304/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+      "url": "https://eamodio.gallery.vsassets.io/_apis/public/gallery/publisher/eamodio/extension/gitlens/2024.12.2404/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
     },
-    "version": "2024.12.1304"
+    "version": "2024.12.2404"
   },
   "gpt-pilot-vs-code": {
     "cargoLocks": null,
@@ -280,12 +280,12 @@
     },
     "pinned": false,
     "src": {
-      "name": "language-julia-1.127.2.zip",
-      "sha256": "sha256-fvJ0jO+mhepnzderoh2Pg09yF0AgYGdXQLjJCFptigY=",
+      "name": "language-julia-1.130.1.zip",
+      "sha256": "sha256-VjOw6vpnmXxmcJJu4m5IurtjFcWLzvYZ67vXi4bkoyc=",
       "type": "url",
-      "url": "https://julialang.gallery.vsassets.io/_apis/public/gallery/publisher/julialang/extension/language-julia/1.127.2/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+      "url": "https://julialang.gallery.vsassets.io/_apis/public/gallery/publisher/julialang/extension/language-julia/1.130.1/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
     },
-    "version": "1.127.2"
+    "version": "1.130.1"
   },
   "markdown-preview-enhanced": {
     "cargoLocks": null,
@@ -604,12 +604,12 @@
     },
     "pinned": false,
     "src": {
-      "name": "tabnine-vscode-3.203.0.zip",
-      "sha256": "sha256-ixvGMl2rtWOfof3uVM365DZ472YWwszl4+zO3W03QLU=",
+      "name": "tabnine-vscode-3.206.0.zip",
+      "sha256": "sha256-jHQomAYh2GTfOY9u2jDhNINQLLXWl/QARBf+gEK/ukA=",
       "type": "url",
-      "url": "https://TabNine.gallery.vsassets.io/_apis/public/gallery/publisher/TabNine/extension/tabnine-vscode/3.203.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+      "url": "https://TabNine.gallery.vsassets.io/_apis/public/gallery/publisher/TabNine/extension/tabnine-vscode/3.206.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
     },
-    "version": "3.203.0"
+    "version": "3.206.0"
   },
   "tokyo-night": {
     "cargoLocks": null,

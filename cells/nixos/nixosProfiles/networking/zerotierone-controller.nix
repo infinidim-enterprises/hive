@@ -110,26 +110,4 @@ in
           };
       };
   };
-
-  # virtualisation.oci-containers.backend = "docker";
-  # virtualisation.oci-containers.containers.mfc-j615w-printing = {
-  #   autoStart = true;
-  #   image = "njkli/mfc-j615w";
-  #   imageFile = pkgs.dockerTools.pullImage {
-  #     imageName = "njkli/mfc-j615w";
-  #     imageDigest = "sha256:0b64b5a02d642d4bc3b084d04a2667fd7d42699c51ebd84abc00e13019ce5b6b";
-  #     sha256 = "00l17n69zlpl7hq36jmnxc7sqcpg9yfxyyq7p3fgy82hisdglw52";
-  #   };
-  #   volumes = [
-  #     "/sys/fs/cgroup:/sys/fs/cgroup"
-  #   ];
-  #   extraOptions = [
-  #     "--tmpfs=/tmp"
-  #     "--tmpfs=/run"
-  #     "--tmpfs=/run/lock:rw"
-  #   ];
-  #   ports = [ "631:631/tcp" ];
-  # };
-  # networking.firewall.allowedTCPPorts = [ 631 ];
-
 }

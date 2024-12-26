@@ -51,14 +51,17 @@ in
 
       home.packages = with pkgs; [
         tigervnc
+        waveterm # AI assisted GUI terminal
+
+        sops
+
+        google-cloud-sdk
         vultr-cli
         oci-cli
-        google-cloud-sdk
-        sops
 
         ventoy-full
 
-        zerotierone
+        inputs.cells.common.packages.zerotierone
       ];
     }
 

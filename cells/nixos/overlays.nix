@@ -31,7 +31,8 @@ rec {
       numix-solarized-gtk-theme
       make-desktopitem
       masterpdfeditor # NOTE: required for 5.9.85
-      firefox-addons
+      waveterm
+      # firefox-addons
       nyxt
       (final: prev:
         { sources = prev.sources // (final.callPackage ./sources/generated.nix { }); }

@@ -97,7 +97,7 @@ mkMerge [
       pcsclite
       pcsctools
 
-      inputs.cells.common.packages.pbkdf2-sha512
+      # inputs.cells.common.packages.pbkdf2-sha512
       cryptsetup
       openssl
       paperkey

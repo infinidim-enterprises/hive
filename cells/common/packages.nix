@@ -12,6 +12,7 @@ cell.lib.importers.importPackagesRakeleaves
   src = ./packages;
   overlays = [ cell.overlays.sources ];
   skip = [
+    "pbkdf2-sha512"
     "waveterm" # TODO: package it properly
 
     "TakeTheTime"

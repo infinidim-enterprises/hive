@@ -152,28 +152,28 @@
   };
   zsh-plugin_nix-zsh-completions = {
     pname = "zsh-plugin_nix-zsh-completions";
-    version = "7558fc9495c634cca7d79b6bf49d6d8151a18ea3";
+    version = "4e654da12a28ebc272e7f6b7a60a1c8af3da84f0";
     src = fetchFromGitHub {
       owner = "spwhitt";
       repo = "nix-zsh-completions";
-      rev = "7558fc9495c634cca7d79b6bf49d6d8151a18ea3";
+      rev = "4e654da12a28ebc272e7f6b7a60a1c8af3da84f0";
       fetchSubmodules = false;
-      sha256 = "sha256-OncfatdtdEavVF5Y5hLITgx9wz1Z29bX4P/uxmojvDI=";
+      sha256 = "sha256-L7N+TUag830IGD+lP8vwR0nWCXVfy87d5lTObYfBo8U=";
     };
-    date = "2024-08-14";
+    date = "2024-12-15";
   };
   zsh-plugin_oh-my-zsh = {
     pname = "zsh-plugin_oh-my-zsh";
-    version = "69a6359f7cf8978d464573fb7b023ee3cd00181a";
+    version = "f733dc340b2a1c5b2e61a4da7de790b2f557175f";
     src = fetchgit {
       url = "https://github.com/robbyrussell/oh-my-zsh";
-      rev = "69a6359f7cf8978d464573fb7b023ee3cd00181a";
+      rev = "f733dc340b2a1c5b2e61a4da7de790b2f557175f";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-31wI3wFGQ9YhEo7XguLSTNY0rvOFa+/MoFwDAZIo7ZY=";
+      sha256 = "sha256-67DSpgD5v9RIahW3SYhL9AtOToYfKMt2xrCFZSh3arI=";
     };
-    date = "2024-11-28";
+    date = "2024-12-22";
   };
   zsh-plugin_tipz = {
     pname = "zsh-plugin_tipz";
@@ -229,16 +229,16 @@
   };
   zsh-plugin_zsh-completions = {
     pname = "zsh-plugin_zsh-completions";
-    version = "6ff1a671a8177ebdb356dd566e557c2db79759a2";
+    version = "c160d09fddd28ceb3af5cf80e9253af80e450d96";
     src = fetchgit {
       url = "https://github.com/zsh-users/zsh-completions";
-      rev = "6ff1a671a8177ebdb356dd566e557c2db79759a2";
+      rev = "c160d09fddd28ceb3af5cf80e9253af80e450d96";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-JnJRmSkmYUBdv9zGlgmFAwAVIo29wixlEnWC5OAOA84=";
+      sha256 = "sha256-EG6bwbwZW9Cya/BGZ83J5YEAUdfJ0UAQC7bRG7cFL2k=";
     };
-    date = "2024-12-11";
+    date = "2024-12-23";
   };
   zsh-plugin_zsh-history-substring-search = {
     pname = "zsh-plugin_zsh-history-substring-search";

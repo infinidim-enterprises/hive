@@ -20,7 +20,7 @@
   },
   "adguard-filters_adguardteam": {
     "cargoLocks": null,
-    "date": "2024-12-15",
+    "date": "2024-12-26",
     "extract": null,
     "name": "adguard-filters_adguardteam",
     "passthru": null,
@@ -30,12 +30,12 @@
       "fetchSubmodules": false,
       "leaveDotGit": false,
       "name": null,
-      "rev": "656064933f72194257aac8719e51ed53eae7ab54",
-      "sha256": "sha256-MpMqNlhlZ0sJsryhqpbgEE3aazFFq7AGqDr6Q19jHe8=",
+      "rev": "15e4cec3f13cc2dc3f1a1f61dbc9e6381a071c5a",
+      "sha256": "sha256-n2MVNiyh007SUEuOae22wMwrOjijqQN+RQauOFwjQsY=",
       "type": "git",
       "url": "https://github.com/AdguardTeam/AdguardFilters"
     },
-    "version": "656064933f72194257aac8719e51ed53eae7ab54"
+    "version": "15e4cec3f13cc2dc3f1a1f61dbc9e6381a071c5a"
   },
   "adguard-filters_romania": {
     "cargoLocks": null,
@@ -55,28 +55,6 @@
       "url": "https://github.com/tcptomato/ROad-Block"
     },
     "version": "db0b271a835e0538d738c87a0c847f24ecec26ec"
-  },
-  "age-plugin-trezor": {
-    "cargoLocks": null,
-    "date": "2021-01-01",
-    "extract": null,
-    "name": "age-plugin-trezor",
-    "passthru": {
-      "cargoSha256": "0000000000000000000000000000000000000000000000000000"
-    },
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "romanz",
-      "repo": "age-plugin-trezor",
-      "rev": "1a89e1aec4aa6ee85987883146c5decd42a47a39",
-      "sha256": "sha256-EXhbCjIl5xDfxOZIQEDWHSFnWabwlVC5EYWk4ezAXy8=",
-      "type": "github"
-    },
-    "version": "1a89e1aec4aa6ee85987883146c5decd42a47a39"
   },
   "base16-schemes": {
     "cargoLocks": null,
@@ -99,7 +77,7 @@
   },
   "chatgpt-wrapper": {
     "cargoLocks": null,
-    "date": "2024-12-07",
+    "date": "2024-12-19",
     "extract": null,
     "name": "chatgpt-wrapper",
     "passthru": null,
@@ -111,11 +89,11 @@
       "name": null,
       "owner": "llm-workflow-engine",
       "repo": "llm-workflow-engine",
-      "rev": "d0721180f35cdbb50b53169c8b70620c5d9c0f63",
-      "sha256": "sha256-2hNs6cVF4eqtcqNTaCjrltAO0pMYVkdAkmBNjN6qQzY=",
+      "rev": "1adf2670f9e559936047009cd5a383e49149fe4e",
+      "sha256": "sha256-yNVklEgP0e6BmuWO61RxMv1oTRh7PyH5cX0HHyyrN3I=",
       "type": "github"
     },
-    "version": "d0721180f35cdbb50b53169c8b70620c5d9c0f63"
+    "version": "1adf2670f9e559936047009cd5a383e49149fe4e"
   },
   "cl-hash-util": {
     "cargoLocks": null,
@@ -294,46 +272,6 @@
     },
     "version": "e7aeedfbcdc18e3ea2d45cf6931e38d350096f2f"
   },
-  "firefox_decrypt": {
-    "cargoLocks": null,
-    "date": null,
-    "extract": null,
-    "name": "firefox_decrypt",
-    "passthru": null,
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "unode",
-      "repo": "firefox_decrypt",
-      "rev": "1.1.1",
-      "sha256": "sha256-HPjOUWusPXoSwwDvW32Uad4gFERvn79ee/WxeX6h3jY=",
-      "type": "github"
-    },
-    "version": "1.1.1"
-  },
-  "firefox_user_js": {
-    "cargoLocks": null,
-    "date": null,
-    "extract": null,
-    "name": "firefox_user_js",
-    "passthru": null,
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "arkenfox",
-      "repo": "user.js",
-      "rev": "128.0",
-      "sha256": "sha256-XLswsa2u2qsUPsLYRYn6lwis7VwSjAW6BRNdI4brbSM=",
-      "type": "github"
-    },
-    "version": "128.0"
-  },
   "git-get": {
     "cargoLocks": null,
     "date": "2021-08-07",
@@ -402,7 +340,7 @@
   },
   "ipxe": {
     "cargoLocks": null,
-    "date": "2024-12-03",
+    "date": "2024-12-18",
     "extract": null,
     "name": "ipxe",
     "passthru": null,
@@ -412,12 +350,12 @@
       "fetchSubmodules": false,
       "leaveDotGit": false,
       "name": null,
-      "rev": "24db39fb2983ca83ab5c6ee37cb57a4f7f6f94e6",
-      "sha256": "sha256-RuJRtrjM2gyPBVAC9FeVDu+CksXY8XiNstLb1/QiUCw=",
+      "rev": "83ba34076ad4ca79be81a71f25303b340c60e7b8",
+      "sha256": "sha256-nzAU9ZaUa+D6tBv2mq8mXRGCY7dDeSURPVUjJ1Jy7Vg=",
       "type": "git",
       "url": "https://github.com/ipxe/ipxe"
     },
-    "version": "24db39fb2983ca83ab5c6ee37cb57a4f7f6f94e6"
+    "version": "83ba34076ad4ca79be81a71f25303b340c60e7b8"
   },
   "iterable-io": {
     "cargoLocks": null,
@@ -448,26 +386,11 @@
       "name": null,
       "owner": "langchain-ai",
       "repo": "langchain",
-      "rev": "langchain-core==0.3.25",
-      "sha256": "sha256-+BUz9mXs2JVZiibgco0eA8O3asayUNKKdcXEJbV5804=",
+      "rev": "langchain-core==0.3.28",
+      "sha256": "sha256-nDV8bOstMEq7b9CN5nuYV5L2uqIXZuj84D/Zyfp7TdY=",
       "type": "github"
     },
-    "version": "langchain-core==0.3.25"
-  },
-  "ledger-live-desktop": {
-    "cargoLocks": null,
-    "date": null,
-    "extract": null,
-    "name": "ledger-live-desktop",
-    "passthru": null,
-    "pinned": false,
-    "src": {
-      "name": null,
-      "sha256": "sha256-orIyfRs6TJgqGGLpl2tvoUtejsB0ni8xRK0SboP2LHw=",
-      "type": "url",
-      "url": "https://download.live.ledger.com/ledger-live-desktop-2.77.2-linux-x86_64.AppImage"
-    },
-    "version": "2.77.2"
+    "version": "langchain-core==0.3.28"
   },
   "listopia": {
     "cargoLocks": null,
@@ -576,21 +499,6 @@
     },
     "version": "f369e81f8723123d89b8ac527f955e4d4c60b7fd"
   },
-  "pbkdf2-sha512": {
-    "cargoLocks": null,
-    "date": "2024-12-15",
-    "extract": null,
-    "name": "pbkdf2-sha512",
-    "passthru": null,
-    "pinned": false,
-    "src": {
-      "name": null,
-      "sha256": "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=",
-      "type": "url",
-      "url": "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c"
-    },
-    "version": "f03cbc4e787cbed5419e4434e68528a302f5f34a"
-  },
   "pgp-key-generation": {
     "cargoLocks": null,
     "date": "2022-12-02",
@@ -668,7 +576,7 @@
   },
   "s5cmd": {
     "cargoLocks": null,
-    "date": "2024-11-27",
+    "date": "2024-12-16",
     "extract": null,
     "name": "s5cmd",
     "passthru": null,
@@ -680,11 +588,11 @@
       "name": null,
       "owner": "peak",
       "repo": "s5cmd",
-      "rev": "d72716a8e54c192f978b0b7b6dfbb8665923af52",
-      "sha256": "sha256-/fLDiCmaToSYRV8BGmCEmkopIEh8n8RRXTroXFhdbmM=",
+      "rev": "991c9fbc16709341b4bac04513232a1445941f63",
+      "sha256": "sha256-+wSVJkXmu+1BzvO1o31jhKZLXeG7y+YkABIZZ1TlK/g=",
       "type": "github"
     },
-    "version": "d72716a8e54c192f978b0b7b6dfbb8665923af52"
+    "version": "991c9fbc16709341b4bac04513232a1445941f63"
   },
   "solarized-dark-gnome-shell-2020": {
     "cargoLocks": null,
@@ -762,72 +670,6 @@
     },
     "version": "2b5bdf1045f2a5c8b880b482840be8983ca06191"
   },
-  "stumpwm-contrib": {
-    "cargoLocks": null,
-    "date": "2024-12-07",
-    "extract": null,
-    "name": "stumpwm-contrib",
-    "passthru": null,
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "stumpwm",
-      "repo": "stumpwm-contrib",
-      "rev": "c4f077b1fe97cd8da6d710e5cbe390eb680629bd",
-      "sha256": "sha256-1q42E6HCsUod/W/0abTQdAdwgKHhTtXIJUYxmkEjuzk=",
-      "type": "github"
-    },
-    "version": "c4f077b1fe97cd8da6d710e5cbe390eb680629bd"
-  },
-  "stumpwm-git": {
-    "cargoLocks": null,
-    "date": "2024-11-29",
-    "extract": null,
-    "name": "stumpwm-git",
-    "passthru": {
-      "asd": "stumpwm",
-      "system": "stumpwm"
-    },
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "stumpwm",
-      "repo": "stumpwm",
-      "rev": "d54bebd3c4d6095207e58d64a54fc9a32ff78691",
-      "sha256": "sha256-EHgiy8xdOy4KlMGhMzvmzQp5hZiz5W6UPuCj0f2VoUs=",
-      "type": "github"
-    },
-    "version": "d54bebd3c4d6095207e58d64a54fc9a32ff78691"
-  },
-  "stumpwm-release": {
-    "cargoLocks": null,
-    "date": null,
-    "extract": null,
-    "name": "stumpwm-release",
-    "passthru": {
-      "asd": "stumpwm",
-      "system": "stumpwm"
-    },
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "stumpwm",
-      "repo": "stumpwm",
-      "rev": "24.11",
-      "sha256": "sha256-Ba2HcAmNcZvnqU0jpLTxsBe8L+4aHbO/oM4Bp/IYEC0=",
-      "type": "github"
-    },
-    "version": "24.11"
-  },
   "sublimeSolarized": {
     "cargoLocks": null,
     "date": null,
@@ -883,60 +725,6 @@
     },
     "version": "v1.8.0"
   },
-  "trezor-agent": {
-    "cargoLocks": null,
-    "date": null,
-    "extract": null,
-    "name": "trezor-agent",
-    "passthru": null,
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "romanz",
-      "repo": "trezor-agent",
-      "rev": "v0.15.0",
-      "sha256": "sha256-NmpFyLjLdR9r1tc06iDNH8Tc7isUelTg13mWPrQvxSc=",
-      "type": "github"
-    },
-    "version": "v0.15.0"
-  },
-  "trezor-agent-subkeys": {
-    "cargoLocks": null,
-    "date": "2023-06-09",
-    "extract": null,
-    "name": "trezor-agent-subkeys",
-    "passthru": null,
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "rev": "eac2f8215f2c11a92faf30170277c57bb7289801",
-      "sha256": "sha256-DA5REsNQNykpbCFb6PJbgEBYiDh1kEq083wRZq+pIQM=",
-      "type": "git",
-      "url": "https://github.com/jrruethe/trezor-agent"
-    },
-    "version": "eac2f8215f2c11a92faf30170277c57bb7289801"
-  },
-  "trezor-gpg-pinentry-tk": {
-    "cargoLocks": null,
-    "date": null,
-    "extract": null,
-    "name": "trezor-gpg-pinentry-tk",
-    "passthru": null,
-    "pinned": false,
-    "src": {
-      "name": null,
-      "sha256": "sha256-h/NJKbKBP5Sbq0BYJes1h2ka2/k2gSUr564qOQZeAc4=",
-      "type": "url",
-      "url": "https://pypi.org/packages/source/t/trezor-gpg-pinentry-tk/trezor-gpg-pinentry-tk-0.0.10.tar.gz"
-    },
-    "version": "0.0.10"
-  },
   "waveterm": {
     "cargoLocks": null,
     "date": null,
@@ -945,16 +733,26 @@
     "passthru": null,
     "pinned": false,
     "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
       "name": null,
-      "owner": "wavetermdev",
-      "repo": "waveterm",
-      "rev": "v0.10.1",
-      "sha256": "sha256-oejD7OKFfuw3g4g9mphiFr6o04Xq6F/MzCnYkgg937Q=",
-      "type": "github"
+      "sha256": "sha256-HfTFQ7nB3jTur/29jiFgV9boLVw5ed0k2yBGevYIlIs=",
+      "type": "url",
+      "url": "https://github.com/wavetermdev/waveterm/releases/download/v0.10.4/waveterm-linux-x64-0.10.4.zip"
     },
-    "version": "v0.10.1"
+    "version": "0.10.4"
+  },
+  "zerotierone": {
+    "cargoLocks": null,
+    "date": null,
+    "extract": null,
+    "name": "zerotierone",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "name": null,
+      "sha256": "sha256-wvZDOfzPUUinrwibiWZ41lX7/MrFLdzncUMUpZ173bs=",
+      "type": "url",
+      "url": "https://github.com/zerotier/ZeroTierOne/archive/refs/tags/1.14.2.tar.gz"
+    },
+    "version": "1.14.2"
   }
 }
