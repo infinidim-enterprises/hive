@@ -110,6 +110,9 @@ mkMerge [
         python3 # treemacs requirement
         bibtex2html
 
+        bash-language-server
+        yaml-language-server
+
         (aspellWithDicts (dicts: with dicts; [
           en
           en-computers

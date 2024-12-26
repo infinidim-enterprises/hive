@@ -51,12 +51,14 @@ in
 
       home.packages = with pkgs; [
         tigervnc
-        jekyll
         vultr-cli
         oci-cli
-        sops
-        ventoy-full
         google-cloud-sdk
+        sops
+
+        ventoy-full
+
+        zerotierone
       ];
     }
 
