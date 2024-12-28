@@ -451,7 +451,6 @@ in
 
     bind = [
       "$masterMod, Return, fullscreen, 0"
-      "$masterMod, F, exec, $fileManager"
       "$masterMod Alt_L, F, togglefloating"
       # "$masterMod, P, pseudo"
       # "$masterMod, J, togglesplit"
@@ -598,6 +597,9 @@ in
     bind = Control_L, y, submap, reset
     bind = , y, exec, cliphist list | wofi --show dmenu | cliphist decode | wl-copy
     bind = , y, submap, reset
+
+    bind = , f, exec, $fileManager
+    bind = , f, submap, reset
 
     bind = , 3, hy3:makegroup, h
     bind = , 3, submap, reset

@@ -16,8 +16,11 @@ in
     # (inputs.cells.common.lib.importers.importFolder ./.) ++
     [
       ./ssh.nix
+      ./waveterm.nix
       ./gitconfig.nix
       ./emacs-unstraightened.nix
+
+      inputs.cells.home.homeModules.programs.waveterm
 
       # profiles.security.gpg
       # profiles.messengers

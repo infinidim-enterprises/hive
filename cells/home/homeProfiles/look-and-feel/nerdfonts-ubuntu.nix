@@ -7,6 +7,7 @@ let
     mkMerge
     mkIf
     mkBefore
+    hasAttr
     elem
     toInt
     toString;
@@ -206,5 +207,10 @@ mkMerge [
         + " "
         + (toString ((toInt HM_FONT_SIZE) - 6));
     };
+  })
+
+  (mkIf (hasAttr "waveterm" config.programs && config.programs.waveterm.enable) {
+    programs.waveterm.settings."term:fontsize" = toInt HM_FONT_SIZE;
+    programs.waveterm.settings."term:fontfamily" = HM_FONT_NAME;
   })
 ]
