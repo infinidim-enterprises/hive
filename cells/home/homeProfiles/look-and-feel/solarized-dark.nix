@@ -12,6 +12,8 @@ let
     mkAfter
     hasAttr;
   inherit (localLib) isGui pkgInstalled;
+  inherit (inputs.cells.common.lib) hexToRgba;
+
   combinedPkgs = config.home.packages ++ osConfig.environment.systemPackages;
   commonDefaults = { gtk-theme = "NumixSolarizedDarkGreen"; icon-theme = "Numix-Circle"; };
   # NOTE: https://gitlab.gnome.org/GNOME/gtk/-/blob/gtk-3-24/gtk/theme/Adwaita/_colors-public.scss
@@ -259,9 +261,22 @@ mkMerge [
 
   (mkIf (hasAttr "waveterm" config.programs && config.programs.waveterm.enable) {
     programs.waveterm.settings."term:theme" = "solarized-dark";
+    programs.waveterm.settings."tab:preset" = "bg@solarized-dark";
+
+    programs.waveterm.presets."bg@solarized-dark" = {
+      "display:name" = "Solarized Dark";
+      "display:order" = -1;
+
+      "bg:*" = true;
+      "bg" = hexToRgba "#002b36";
+      "bg:text" = hexToRgba "#839496";
+      "bg:opacity" = 1.0;
+      "bg:activebordercolor" = hexToRgba "#839496";
+    };
+
     programs.waveterm.termthemes."solarized-dark" = {
-      "display:name" = "Solarized-dark";
-      "display:order" = 1;
+      "display:name" = "Solarized Dark";
+      "display:order" = -1;
 
       "background" = "#002b36";
       "foreground" = "#839496";
@@ -313,5 +328,4 @@ mkMerge [
 
     */
   })
-
 ]

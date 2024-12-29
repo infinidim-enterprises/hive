@@ -20,8 +20,6 @@ in
       ./gitconfig.nix
       ./emacs-unstraightened.nix
 
-      inputs.cells.home.homeModules.programs.waveterm
-
       # profiles.security.gpg
       # profiles.messengers
       # profiles.multimedia.players

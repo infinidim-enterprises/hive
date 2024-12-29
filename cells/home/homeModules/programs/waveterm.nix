@@ -23,6 +23,7 @@ in
     settings = mkOption {
       type = json.type;
       default = { };
+      apply = attrs: attrs // { "autoupdate:enabled" = false; };
       example = literalExpression ''{ "telemetry:enabled" = false; }'';
       description = ''
         Settings for waveterm.
@@ -32,9 +33,18 @@ in
     termthemes = mkOption {
       type = json.type;
       default = { };
-      example = literalExpression ''{ "user@host": {}; }'';
+      example = literalExpression ''{ "background" = "#002b36"; }'';
       description = ''
         Terminal themes for waveterm.
+      '';
+    };
+
+    presets = mkOption {
+      type = json.type;
+      default = { };
+      example = literalExpression ''{ "background" = "#002b36"; }'';
+      description = ''
+        Themes presets for waveterm tabs.
       '';
     };
 
@@ -57,5 +67,10 @@ in
     (mkIf (cfg.enable && cfg.termthemes != { }) {
       xdg.configFile."waveterm/termthemes.json".source = json.generate "termthemes.json" cfg.termthemes;
     })
+
+    (mkIf (cfg.enable && cfg.presets != { }) {
+      xdg.configFile."waveterm/presets.json".source = json.generate "presets.json" cfg.termthemes;
+    })
+
   ];
 }
