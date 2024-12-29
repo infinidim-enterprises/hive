@@ -49,10 +49,10 @@ mkMerge [
         "git.0a.njk.li" = defaults_njk_gitea;
         "*.0a.njk.li" = defaults_njk;
         "*.0.njk.li" = defaults_njk;
-        "damogran damogran.njk.li damogran.njk.local" = defaults_njk;
-        "nowhat* nowhat*.0*.njk.li".port = 65522;
-        "maintenance* maintenance*.0*.njk.li".port = 65522;
-        "kakrafoon* kakrafoon*.0*.njk.li".port = 65522;
+        "damogran damogran.njk.*" = defaults_njk;
+        # "nowhat* nowhat*.0*.njk.li".port = 65522;
+        # "maintenance* maintenance*.0*.njk.li".port = 65522;
+        "kakrafoon kakrafoon.njk.*" = defaults_njk // { port = 65522; };
         "bitbucket.org" = defaults_git;
         "github.com" = defaults_git;
       };

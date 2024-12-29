@@ -1010,8 +1010,8 @@ savehist-file persp workspaces
 (use-package! org-crypt
   :config
   (org-crypt-use-before-save-magic)
-  (setq org-crypt-key "E203A151BB3FD1AE"
-        epa-file-encrypt-to "vod@njk.li"
+  (setq org-crypt-key "382A371CFB344166F69076BE8587AB791475DF76"
+        epa-file-encrypt-to '("v@njk.li" "vod@njk.li")
         org-tags-exclude-from-inheritance (quote ("crypt"))))
 #+end_src
 

@@ -104,6 +104,7 @@ mkMerge [
         pandoc
         pandoc-imagine
         pandoc-plantuml-filter
+
         ditaa
         graphviz
         plantuml
