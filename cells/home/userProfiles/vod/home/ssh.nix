@@ -39,11 +39,9 @@ mkMerge [
     programs.ssh = {
       enable = true;
       compression = true;
-      serverAliveInterval = 15;
-      extraOptionOverrides = {
-        StrictHostKeyChecking = "no";
-        IdentitiesOnly = "no";
-      };
+      serverAliveInterval = 30;
+      extraOptionOverrides.StrictHostKeyChecking = "no";
+      extraOptionOverrides.IdentitiesOnly = "no";
 
       matchBlocks = {
         "eadrax eadrax.njk.*" = defaults_njk // { user = name; };

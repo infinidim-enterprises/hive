@@ -2,9 +2,10 @@
 
 { config, lib, pkgs, inputs, ... }:
 let
-  inherit (lib)
+  inherit (lib // builtins)
     mkIf
     mkMerge
+    genAttrs
     mkOption
     mkEnableOption
     mkPackageOption
@@ -51,6 +52,9 @@ in
     connections = mkOption {
       type = json.type;
       default = { };
+      apply = attrs: attrs // genAttrs
+        [ "git@github.com" "git@bitbucket.org" ]
+        (_: { "display:hidden" = true; });
       example = literalExpression ''{ "user@host" = {}; }'';
       description = ''
         Connections overrides for waveterm.
@@ -72,5 +76,8 @@ in
       xdg.configFile."waveterm/presets.json".source = json.generate "presets.json" cfg.presets;
     })
 
+    (mkIf (cfg.enable && cfg.presets != { }) {
+      xdg.configFile."waveterm/connections.json".source = json.generate "connections.json" cfg.connections;
+    })
   ];
 }

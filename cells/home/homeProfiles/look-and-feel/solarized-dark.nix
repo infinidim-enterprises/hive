@@ -265,12 +265,13 @@ mkMerge [
 
     programs.waveterm.presets."bg@solarized-dark" = {
       "display:name" = "Solarized Dark";
-      "display:order" = -1;
+      "display:order" = -2;
 
       "bg:*" = true;
       "bg" = hexToRgba "#002b36";
       "bg:text" = hexToRgba "#839496";
-      "bg:opacity" = 1.0;
+      # "bg:opacity" = 1.0;
+      "bg:opacity" = 0.3;
       "bg:activebordercolor" = hexToRgba "#839496";
     };
 
