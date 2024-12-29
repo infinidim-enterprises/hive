@@ -69,7 +69,7 @@ in
     })
 
     (mkIf (cfg.enable && cfg.presets != { }) {
-      xdg.configFile."waveterm/presets.json".source = json.generate "presets.json" cfg.termthemes;
+      xdg.configFile."waveterm/presets.json".source = json.generate "presets.json" cfg.presets;
     })
 
   ];
