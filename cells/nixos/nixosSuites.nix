@@ -48,6 +48,7 @@ rec {
     cell.nixosProfiles.networking.firewall
     cell.nixosProfiles.networking.openssh
     cell.nixosProfiles.networking.adguardhome
+    cell.nixosProfiles.networking.vpn.zerotierone.peer
   ];
 
   virtualization = [

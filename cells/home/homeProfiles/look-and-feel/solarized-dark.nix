@@ -262,6 +262,7 @@ mkMerge [
   (mkIf (hasAttr "waveterm" config.programs && config.programs.waveterm.enable) {
     programs.waveterm.settings."term:theme" = "solarized-dark";
     programs.waveterm.settings."tab:preset" = "bg@solarized-dark";
+    programs.waveterm.settings."term:transparency" = 0;
     programs.waveterm.settings."window:bgcolor" = "#002b36";
     programs.waveterm.settings."window:reducedmotion" = true;
     programs.waveterm.settings."window:tilegapsize" = 1;
