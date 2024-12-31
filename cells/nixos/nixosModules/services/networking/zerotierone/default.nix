@@ -224,7 +224,7 @@ in
         nix
         systemd
         diffutils
-        iproute
+        iproute2
         iptables
         bridge-utils
         httpie
