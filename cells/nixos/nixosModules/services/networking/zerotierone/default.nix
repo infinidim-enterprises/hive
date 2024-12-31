@@ -321,8 +321,7 @@ in
         '')
         + (
           let
-            # FIXME:systemd changed interface, hence this no longer works: .ConfigState == "configured" and
-            jqFilter = ''.Interfaces[] | select(.AddressState == "routable" and .OnlineState == "online" and .IPv4AddressState == "routable") | any'';
+            jqFilter = ''.Interfaces[] | select(.AddressState == "routable" and .OperationalState == "routable" and .IPv4AddressState == "routable") | any'';
           in
           ''
             until networkctl --json=short | jq -e '${jqFilter}'
