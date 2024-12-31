@@ -280,7 +280,7 @@ in
     (mkIf cfg.enable {
       # ZeroTier UDP on port 9993 by default
       networking.firewall.allowedUDPPorts = [ cfg.service_port ];
-      environment.systemPackages = [ cfg.package ];
+      # environment.systemPackages = [ cfg.package ];
 
       systemd.services.zerotierone = {
         description = "ZeroTierOne";
