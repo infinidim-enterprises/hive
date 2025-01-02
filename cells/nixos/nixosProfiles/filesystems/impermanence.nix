@@ -71,10 +71,8 @@ rec {
               (mkIf virtualisation.libvirtd.enable
                 "/var/lib/libvirt")
 
-              (mkIf services.zerotierone.enable "/var/lib/zerotier-one"
-                # TODO: perhaps only keep identity.secret in /persist for zerotier
-                # services.zerotierone.homeDir
-              )
+              (mkIf services.zerotierone.enable
+                config.services.zerotierone.homeDir)
             ];
 
             files =

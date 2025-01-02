@@ -1,6 +1,5 @@
 { lib
 , stdenv
-, fetchFromGitHub
 , buildPackages
 , lzo
 , openssl
@@ -8,7 +7,6 @@
 , ronn
 , zlib
 , libiconv
-, fetchpatch
 , sources
 }:
 
@@ -23,6 +21,9 @@ stdenv.mkDerivation {
     substituteInPlace ./make-linux.mk \
       --replace '-march=armv6zk' "" \
       --replace '-mcpu=arm1176jzf-s' ""
+
+    mkdir -p $out/share/bash-completion/completions
+    cp ./zerotier-cli-completion.bash $out/share/bash-completion/completions/zerotier-cli
   '';
 
   nativeBuildInputs = [
