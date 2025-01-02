@@ -3,8 +3,8 @@ let
   inherit (inputs.cells.common.lib.importers) importNixosConfigurations;
 in
 importNixosConfigurations {
-  # skip = [ "damogran" ];
-  skipBootstrap = [ "marauder" "damogran" ];
+  skip = [ "kate" ];
+  skipBootstrap = [ "kate" "marauder" "damogran" ];
   src = ./hosts;
   inherit inputs cell;
 }

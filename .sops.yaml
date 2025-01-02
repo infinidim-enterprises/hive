@@ -57,3 +57,39 @@ creation_rules:
       - pgp:
           - *vod
           - *vod_new
+
+  # zerotier keys
+  - path_regex: cells/secrets/sops/zerotier/oglaroon/ca4d6753c1
+    key_groups:
+      - pgp:
+          - *vod
+          - *vod_new
+          - *oglaroon
+
+  - path_regex: cells/secrets/sops/zerotier/kakrafoon/ba8ec53f7a
+    key_groups:
+      - pgp:
+          - *vod
+          - *vod_new
+          - *kakrafoon
+
+  - path_regex: cells/secrets/sops/zerotier/asbleg/edc7b5c56e
+    key_groups:
+      - pgp:
+          - *vod
+          - *vod_new
+          - *asbleg
+
+  - path_regex: cells/secrets/sops/zerotier/marauder/1747defb79
+    key_groups:
+      - pgp:
+          - *vod
+          - *vod_new
+          - *marauder
+
+  - path_regex: cells/secrets/sops/zerotier/damogran/cb324d4155
+    key_groups:
+      - pgp:
+          - *vod
+          - *vod_new
+          - *damogran

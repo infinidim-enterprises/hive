@@ -16,7 +16,7 @@
   services.zerotierone.controller.enable = true;
 
   services.zerotierone.controller.networks.admin =
-    let pref = "10.0.0"; in
+    let pref = "10.0.1"; in
     {
       id = "d3b09dd7f50e3236";
       mutable = false;

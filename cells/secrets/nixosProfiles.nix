@@ -1,11 +1,5 @@
 { inputs, cell, ... }:
 
-let
-  # sshKeyPaths =
-  /*
-    map (e: e.persistentStoragePath + e.filePath) (filter (e: hasSuffix "ssh_host_rsa_key" e.filePath) (flatten (mapAttrsToList (k: v: v.files) Flake.nixosConfigurations.nixos-asbleg.config.environment.persistence)))
-  */
-in
 {
   common = { pkgs, lib, config, ... }:
     let
@@ -13,10 +7,14 @@ in
         map
         mkIf
         elem
+        head
         filter
         flatten
         mkForce
+        readDir
         mkMerge
+        attrNames
+        pathExists
         hasAttrByPath
         mapAttrsToList;
       isImpermanence = inputs.cells.nixos.lib.isImpermanence config;
@@ -28,6 +26,13 @@ in
         (filter (e: elem e.filePath opensshServiceKeyPaths)
           (flatten (mapAttrsToList (k: v: v.files)
             config.environment.persistence)));
+
+      path = ./sops/zerotier/${config.networking.hostName};
+
+      zerotierKey =
+        if pathExists path
+        then head (attrNames (readDir path))
+        else null;
     in
     {
       imports = [ inputs.sops-nix.nixosModules.sops ];
@@ -37,6 +42,15 @@ in
           system.activationScripts.setupSecretsForUsers.deps = [
             "persist-files"
           ];
+        })
+
+        (mkIf (zerotierKey != null && config.services.zerotierone.enable) {
+          sops.secrets.zerotierKey = {
+            sopsFile = path + "/${zerotierKey}";
+            restartUnits = [ "zerotierone.service" ];
+            format = "binary";
+          };
+          services.zerotierone.privateKeyFile = config.sops.secrets.zerotierKey.path;
         })
 
         (mkIf (isOpenssh && isImpermanence) {

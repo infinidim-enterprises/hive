@@ -195,9 +195,8 @@ in
     };
 
     privateKeyFile = mkOption {
-      # TODO: privateKeyFile
       default = null;
-      example = "/run/secrets/age_secret";
+      example = "/run/secrets/zerotierKey";
       type = nullOr str;
       description = ''
         ZeroTier private key file.
@@ -246,7 +245,7 @@ in
     service_script_timeout = mkOption {
       type = either str int;
       default = 30;
-      apply = builtins.toString;
+      apply = toString;
     };
 
     # TODO: service_script per network
@@ -319,6 +318,12 @@ in
           ${builtins.toJSON (sanitize cfg.localConf)}
           EOL
         '')
+
+        + (optionalString (cfg.privateKeyFile != null) ''
+          rm -rf ${cfg.homeDir}/identity.*
+          cp ${cfg.privateKeyFile} ${cfg.homeDir}/identity.secret
+        '')
+
         + (
           let
             jqFilter = ''.Interfaces[] | select(.AddressState == "routable" and .OperationalState == "routable" and .IPv4AddressState == "routable") | any'';
@@ -332,7 +337,7 @@ in
           ''
         );
 
-        serviceConfig.ExecStart = "${cfg.package}/bin/zerotier-one -p${builtins.toString cfg.service_port} ${cfg.homeDir}";
+        serviceConfig.ExecStart = "${cfg.package}/bin/zerotier-one -p${toString cfg.service_port} ${cfg.homeDir}";
         serviceConfig.Restart = "always";
         serviceConfig.KillMode = "process";
         serviceConfig.TimeoutStopSec = 5;
