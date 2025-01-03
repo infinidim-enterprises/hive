@@ -11,21 +11,15 @@ let
     head;
   path = toPath (config.sops.secrets.zerotierKey.sopsFile + "/../..");
   names = attrNames (readDir path);
+  idOf = name: head (attrNames (readDir (toPath (path + "/" + name))));
   members = mergeAttrsList (map
     (name:
-      let
-        id = head (attrNames (readDir (toPath (path + "/" + name))));
-      in
-      { ${id} = { inherit name; authorized = true; activeBridge = true; }; })
+      { ${idOf name} = { inherit name; authorized = true; activeBridge = true; }; })
     names);
 in
-
 {
-  # networking.firewall.allowedTCPPorts = [ 9993 ];
-
   services.zerotierone.enable = true;
   services.zerotierone.controller.enable = true;
-
   services.zerotierone.controller.networks.admin =
     let pref = "10.0.1"; in
     {
