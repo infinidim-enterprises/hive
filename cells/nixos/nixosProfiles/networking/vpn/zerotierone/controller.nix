@@ -1,16 +1,27 @@
 { inputs, cell, ... }:
 
-{ lib, pkgs, ... }:
+{ lib, pkgs, config, ... }:
+let
+  inherit (lib // builtins)
+    mergeAttrsList
+    attrNames
+    genAttrs
+    readDir
+    toPath
+    head;
+  path = toPath (config.sops.secrets.zerotierKey.sopsFile + "/../..");
+  names = attrNames (readDir path);
+  members = mergeAttrsList (map
+    (name:
+      let
+        id = head (attrNames (readDir (toPath (path + "/" + name))));
+      in
+      { ${id} = { inherit name; authorized = true; activeBridge = true; }; })
+    names);
+in
 
 {
-  # imports = [ profiles.virtualisation.docker ];
-
-  # age.secrets."zerotier-controller" = {
-  #   file = "${self}/secrets/shared/zerotier-controller.age";
-  #   mode = "0600";
-  #   path = "/run/secrets/zerotier-controller.identity.secret";
-  # };
-  networking.firewall.allowedTCPPorts = [ 9993 ];
+  # networking.firewall.allowedTCPPorts = [ 9993 ];
 
   services.zerotierone.enable = true;
   services.zerotierone.controller.enable = true;
@@ -18,24 +29,12 @@
   services.zerotierone.controller.networks.admin =
     let pref = "10.0.1"; in
     {
-      id = "d3b09dd7f50e3236";
-      mutable = false;
+      id = "ba8ec53f7acfdaa1";
       name = "Admin network - admin.njk.local";
+      mutable = false;
       ipAssignmentPools = [{ ipRangeStart = "${pref}.100"; ipRangeEnd = "${pref}.200"; }];
       routes = [{ target = "${pref}.0/24"; }];
-      members = {
-        "3d806c5763".authorized = true;
-        "3d806c5763".activeBridge = true;
-        "3d806c5763".ipAssignments = [ "${pref}.220" ];
-
-        "09eb0880cf".authorized = true;
-        "09eb0880cf".activeBridge = true;
-        "09eb0880cf".ipAssignments = [ "${pref}.254" ];
-
-        "fc9dbaf872".authorized = true;
-        "fc9dbaf872".activeBridge = true;
-        "fc9dbaf872".ipAssignments = [ "${pref}.222" ];
-      };
+      inherit members;
     };
 
 }

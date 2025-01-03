@@ -20,6 +20,9 @@ rec {
     ++ cell.nixosSuites.networking
     ++ [
       bee.home.nixosModules.home-manager
+
+      cell.nixosProfiles.networking.vpn.zerotierone.controller
+
       (import ./_hardwareProfile.nix { inherit inputs cell; })
       {
         deploy.enable = true;

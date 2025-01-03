@@ -181,6 +181,12 @@ let
         type = bool;
       };
 
+      name = mkOption {
+        description = "Custom name for a member";
+        default = null;
+        type = nullOr str;
+      };
+
       activeBridge = mkOption {
         description = "Member is able to bridge to other Ethernet nets";
         default = false;
