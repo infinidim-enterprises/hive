@@ -16,29 +16,29 @@
   };
   adguard-filters_adguardteam = {
     pname = "adguard-filters_adguardteam";
-    version = "15e4cec3f13cc2dc3f1a1f61dbc9e6381a071c5a";
+    version = "0fd8435bb00dd14e14be9c315f4a739eaa5d2a0b";
     src = fetchgit {
       url = "https://github.com/AdguardTeam/AdguardFilters";
-      rev = "15e4cec3f13cc2dc3f1a1f61dbc9e6381a071c5a";
+      rev = "0fd8435bb00dd14e14be9c315f4a739eaa5d2a0b";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-n2MVNiyh007SUEuOae22wMwrOjijqQN+RQauOFwjQsY=";
+      sha256 = "sha256-+xdxnrBxSBKlVlgadfdytO3fn6RvOVfMLybWdWn3Haw=";
     };
-    date = "2024-12-26";
+    date = "2025-01-03";
   };
   adguard-filters_romania = {
     pname = "adguard-filters_romania";
-    version = "db0b271a835e0538d738c87a0c847f24ecec26ec";
+    version = "dc115f4e426eb6c7085d767bc6e73f7f1b963aa6";
     src = fetchgit {
       url = "https://github.com/tcptomato/ROad-Block";
-      rev = "db0b271a835e0538d738c87a0c847f24ecec26ec";
+      rev = "dc115f4e426eb6c7085d767bc6e73f7f1b963aa6";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-UVOh3+GrqCVTPmG/I6SDUqtFQYZCY49QUMOkPnIQs/A=";
+      sha256 = "sha256-IAYla2Wus+6o3y1cyIwiMdUeP/GUH2W6205fv7ZRTIY=";
     };
-    date = "2024-12-12";
+    date = "2025-01-03";
   };
   base16-schemes = {
     pname = "base16-schemes";
@@ -55,15 +55,15 @@
   };
   chatgpt-wrapper = {
     pname = "chatgpt-wrapper";
-    version = "1adf2670f9e559936047009cd5a383e49149fe4e";
+    version = "2bc533ecf2510b330ad51084446c8788431b4e5b";
     src = fetchFromGitHub {
       owner = "llm-workflow-engine";
       repo = "llm-workflow-engine";
-      rev = "1adf2670f9e559936047009cd5a383e49149fe4e";
+      rev = "2bc533ecf2510b330ad51084446c8788431b4e5b";
       fetchSubmodules = false;
-      sha256 = "sha256-yNVklEgP0e6BmuWO61RxMv1oTRh7PyH5cX0HHyyrN3I=";
+      sha256 = "sha256-6J2wXLbEjUxAGufDswfIa2d3a8s2kDqlQTpkwGjb9Fc=";
     };
-    date = "2024-12-19";
+    date = "2024-12-27";
   };
   cl-hash-util = {
     pname = "cl-hash-util";
@@ -237,13 +237,13 @@
   };
   langchain = {
     pname = "langchain";
-    version = "langchain-core==0.3.28";
+    version = "langchain-core==0.3.29";
     src = fetchFromGitHub {
       owner = "langchain-ai";
       repo = "langchain";
-      rev = "langchain-core==0.3.28";
+      rev = "langchain-core==0.3.29";
       fetchSubmodules = false;
-      sha256 = "sha256-nDV8bOstMEq7b9CN5nuYV5L2uqIXZuj84D/Zyfp7TdY=";
+      sha256 = "sha256-AJoi7mPV/x+TZT4tF7Ca6nlLxw/XFrDMhIUjiYFZhdI=";
     };
   };
   listopia = {

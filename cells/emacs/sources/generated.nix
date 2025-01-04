@@ -67,16 +67,16 @@
   };
   copilot-el = {
     pname = "copilot-el";
-    version = "b7bff7b934837744688fd74191ecffb83b3bcc05";
+    version = "c5dfa99f05878db5e6a6a378dc7ed09f11e803d4";
     src = fetchgit {
       url = "https://github.com/zerolfx/copilot.el.git";
-      rev = "b7bff7b934837744688fd74191ecffb83b3bcc05";
+      rev = "c5dfa99f05878db5e6a6a378dc7ed09f11e803d4";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-MEsjXQIeiTI6NXN5rTW7HfFPC18IZnhAssma2BZa0ks=";
+      sha256 = "sha256-FzI08AW7a7AleEM7kSQ8LsWsDYID8SW1SmSN6/mIB/A=";
     };
-    date = "2024-12-14";
+    date = "2024-12-27";
   };
   doom-emacs = {
     pname = "doom-emacs";
@@ -87,7 +87,7 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = true;
-      sha256 = "sha256-eDqPgcWd2iPOZAJ5qVGCZt2k5n6Z8KTbx0zkfc/mU+Q=";
+      sha256 = "sha256-sR+25cNTw0LxpQk8s5yD5/VyNNQJjyDezoeiYXL07Pk=";
     };
     date = "2024-12-05";
   };
@@ -106,27 +106,27 @@
   };
   jinx = {
     pname = "jinx";
-    version = "f4db32c2258aebf00e34ff2a03550a357706d911";
+    version = "8407ed958001f6a4718f225737665e50e6666dbf";
     src = fetchFromGitHub {
       owner = "minad";
       repo = "jinx";
-      rev = "f4db32c2258aebf00e34ff2a03550a357706d911";
+      rev = "8407ed958001f6a4718f225737665e50e6666dbf";
       fetchSubmodules = false;
-      sha256 = "sha256-pkf9Y5GJTwmyYsw28btq8kBu3I0J+Ajr59sQyaak6A0=";
+      sha256 = "sha256-kmBpVAQfmyHnvFw8LEkgVdbVVN/hQTVjKMTLGLoCA5k=";
     };
-    date = "2024-12-14";
+    date = "2025-01-01";
   };
   lsp-bridge = {
     pname = "lsp-bridge";
-    version = "2031e6d2d2dddb66410a772becdae8814a2e7963";
+    version = "a8e5d67bed1e6838d307be9dacde560add2d7bdf";
     src = fetchFromGitHub {
       owner = "manateelazycat";
       repo = "lsp-bridge";
-      rev = "2031e6d2d2dddb66410a772becdae8814a2e7963";
+      rev = "a8e5d67bed1e6838d307be9dacde560add2d7bdf";
       fetchSubmodules = false;
-      sha256 = "sha256-SxUdzMEWmD9ZFNRxQh6atVrTjx7g0Sd69UTQkhHPQWU=";
+      sha256 = "sha256-g8SsIhceugc30E5puSVFW6vetIOvJxC+wk/U4a7CNlI=";
     };
-    date = "2024-12-15";
+    date = "2025-01-03";
   };
   nix-mode = {
     pname = "nix-mode";
