@@ -97,7 +97,7 @@
     },
     "copilot-el": {
         "cargoLocks": null,
-        "date": "2024-12-14",
+        "date": "2024-12-27",
         "extract": null,
         "name": "copilot-el",
         "passthru": null,
@@ -107,12 +107,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "b7bff7b934837744688fd74191ecffb83b3bcc05",
-            "sha256": "sha256-MEsjXQIeiTI6NXN5rTW7HfFPC18IZnhAssma2BZa0ks=",
+            "rev": "c5dfa99f05878db5e6a6a378dc7ed09f11e803d4",
+            "sha256": "sha256-FzI08AW7a7AleEM7kSQ8LsWsDYID8SW1SmSN6/mIB/A=",
             "type": "git",
             "url": "https://github.com/zerolfx/copilot.el.git"
         },
-        "version": "b7bff7b934837744688fd74191ecffb83b3bcc05"
+        "version": "c5dfa99f05878db5e6a6a378dc7ed09f11e803d4"
     },
     "doom-emacs": {
         "cargoLocks": null,
@@ -127,7 +127,7 @@
             "leaveDotGit": true,
             "name": null,
             "rev": "ba1dca322f9a07bc2b7bec6a98f2c3c55c0bbd77",
-            "sha256": "sha256-eDqPgcWd2iPOZAJ5qVGCZt2k5n6Z8KTbx0zkfc/mU+Q=",
+            "sha256": "sha256-sR+25cNTw0LxpQk8s5yD5/VyNNQJjyDezoeiYXL07Pk=",
             "type": "git",
             "url": "https://github.com/hlissner/doom-emacs"
         },
@@ -154,7 +154,7 @@
     },
     "jinx": {
         "cargoLocks": null,
-        "date": "2024-12-14",
+        "date": "2025-01-01",
         "extract": null,
         "name": "jinx",
         "passthru": null,
@@ -166,15 +166,15 @@
             "name": null,
             "owner": "minad",
             "repo": "jinx",
-            "rev": "f4db32c2258aebf00e34ff2a03550a357706d911",
-            "sha256": "sha256-pkf9Y5GJTwmyYsw28btq8kBu3I0J+Ajr59sQyaak6A0=",
+            "rev": "8407ed958001f6a4718f225737665e50e6666dbf",
+            "sha256": "sha256-kmBpVAQfmyHnvFw8LEkgVdbVVN/hQTVjKMTLGLoCA5k=",
             "type": "github"
         },
-        "version": "f4db32c2258aebf00e34ff2a03550a357706d911"
+        "version": "8407ed958001f6a4718f225737665e50e6666dbf"
     },
     "lsp-bridge": {
         "cargoLocks": null,
-        "date": "2024-12-15",
+        "date": "2025-01-03",
         "extract": null,
         "name": "lsp-bridge",
         "passthru": null,
@@ -186,11 +186,11 @@
             "name": null,
             "owner": "manateelazycat",
             "repo": "lsp-bridge",
-            "rev": "2031e6d2d2dddb66410a772becdae8814a2e7963",
-            "sha256": "sha256-SxUdzMEWmD9ZFNRxQh6atVrTjx7g0Sd69UTQkhHPQWU=",
+            "rev": "a8e5d67bed1e6838d307be9dacde560add2d7bdf",
+            "sha256": "sha256-g8SsIhceugc30E5puSVFW6vetIOvJxC+wk/U4a7CNlI=",
             "type": "github"
         },
-        "version": "2031e6d2d2dddb66410a772becdae8814a2e7963"
+        "version": "a8e5d67bed1e6838d307be9dacde560add2d7bdf"
     },
     "nix-mode": {
         "cargoLocks": null,
