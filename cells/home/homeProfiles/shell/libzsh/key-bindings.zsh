@@ -5,6 +5,17 @@
 autoload -U edit-command-line
 zle      -N edit-command-line
 
+# submit a raw newline without triggering command. note will be like a semicolon and initiate a new command
+function insert-newline() {
+  LBUFFER+=$'\n'
+}
+
+# Create a widget from the function
+zle -N insert-newline
+
+# Bind the widget to a key sequence, in this case, \x1b\x0a
+bindkey "\e^M" insert-newline # [Alt-Return]
+
 # Start typing + [Up-Arrow] - fuzzy find history forward
 if [[ -n "${terminfo[kcuu1]}" ]]; then
     autoload -U up-line-or-beginning-search

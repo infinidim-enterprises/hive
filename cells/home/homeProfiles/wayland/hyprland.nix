@@ -573,12 +573,17 @@ in
       "stayfocused, class:^(evince)$, title:^(Print)$"
       "dimaround, class:^(evince)$, title:^(Print)$"
 
-      "float, class:^(net.code-industry.masterpdfeditor5)$, title:^(Print)$"
-      "size 600 700, class:^(net.code-industry.masterpdfeditor5)$, title:^(Print)$"
-      "move 100 15, class:^(net.code-industry.masterpdfeditor5)$, title:^(Print)$"
-      "stayfocused, class:^(net.code-industry.masterpdfeditor5)$, title:^(Print)$"
-      "dimaround, class:^(net.code-industry.masterpdfeditor5)$, title:^(Print)$"
+      # "float, class:^(net.code-industry.masterpdfeditor5)$, title:^(Print)$"
+      # "size 600 700, class:^(net.code-industry.masterpdfeditor5)$, title:^(Print)$"
+      # "move 150 100, class:^(net.code-industry.masterpdfeditor5)$, title:^(Print)$"
+      # "stayfocused, class:^(net.code-industry.masterpdfeditor5)$, title:^(Print)$"
+      # "dimaround, class:^(net.code-industry.masterpdfeditor5)$, title:^(Print)$"
 
+      "float, class:^(Masterpdfeditor5)$, title:^(Save|Open|Print)$"
+      "size 600 700, class:^(Masterpdfeditor5)$, title:^(Save|Open|Print)$"
+      "move 150 100, class:^(Masterpdfeditor5)$, title:^(Save|Open|Print)$"
+      "stayfocused, class:^(Masterpdfeditor5)$, title:^(Save|Open|Print)$"
+      "dimaround, class:^(Masterpdfeditor5)$, title:^(Save|Open|Print)$"
 
     ];
   };

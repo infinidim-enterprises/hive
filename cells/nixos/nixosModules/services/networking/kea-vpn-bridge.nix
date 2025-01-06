@@ -55,8 +55,9 @@ let
         n
         (map (sn: { ${sn.subnet} = { blacklist = true; }; }) v.subnet4))
       cfg.zerotierone))));
-  jqOnlineSelector = ''.Interfaces[] | select(.Name | test("${concatStringsSep "|" (map (a: "^${a}$") (attrNames cfg.zerotierone))}")) | .CarrierState == "carrier" and .OnlineState == "online" and .IPv4AddressState == "routable"'';
 
+  jqOnlineSelector = ''.Interfaces[] | select(.Name | test("${concatStringsSep "|" (map (a: "^${a}$") (attrNames cfg.zerotierone))}")) | .CarrierState == "carrier" and .IPv4AddressState == "routable"'';
+  # .OnlineState == "online" and
 in
 {
   options.services.kea.vpn-bridges.zerotierone = with types;

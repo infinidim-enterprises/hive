@@ -13,7 +13,8 @@ let
       set = mapAttrs
         (const sanitize)
         (filterAttrs
-          (name: value: name != "_module" &&
+          (name: value:
+            name != "_module" &&
             name != "mutable" &&
             name != "members" &&
             name != "apply" &&
@@ -23,6 +24,8 @@ let
 
   top = config.services.zerotierone;
   cfg = top.controller;
+
+  networksWithDns = filterAttrs (_: v: v.dns != null) cfg.networks;
 
   routesOptions = with types; { ... }: {
     options = {
@@ -202,6 +205,11 @@ let
     };
   };
 
+  dnsOptions = with types; { ... }: {
+    options.domain = mkOption { type = str; };
+    options.servers = mkOption { type = listOf str; };
+  };
+
   networkOptions = with types; { ... }: {
     options = {
       mutable = mkOption {
@@ -284,6 +292,12 @@ let
         description = "Managed IPv4 and IPv6 routes";
         default = [ ];
         type = listOf (submodule [ routesOptions ]);
+      };
+
+      dns = mkOption {
+        description = "DNS options";
+        default = null;
+        type = nullOr (submodule [ dnsOptions ]);
       };
 
       ipAssignmentPools = mkOption {
@@ -416,71 +430,85 @@ in
     };
   };
 
-  config = mkIf cfg.enable {
-    services.zerotierone.enable = true;
-    systemd.services.zerotierone = {
-      preStart =
-        let
-          immutable_networks = attrNames (filterAttrs (n: v: v.mutable == false) cfg.networks);
-          immutable_p = (lists.length immutable_networks) > 0;
-        in
-        mkIf immutable_p
-          (concatMapStrings
-            (str: ''
-              rm -rf ${top.homeDir}/controller.d/network/${cfg.networks."${str}".id}{,.json}
-            '')
-            immutable_networks);
+  config = mkMerge [
+    (mkIf cfg.enable {
+      services.zerotierone.enable = true;
+      systemd.services.zerotierone = {
+        preStart =
+          let
+            immutable_networks = attrNames (filterAttrs (n: v: v.mutable == false) cfg.networks);
+            immutable_p = (lists.length immutable_networks) > 0;
+          in
+          mkIf immutable_p
+            (concatMapStrings
+              (str: ''
+                rm -rf ${top.homeDir}/controller.d/network/${cfg.networks."${str}".id}{,.json}
+              '')
+              immutable_networks);
 
-      postStart = with builtins; ''
-        until nc -d -z 127.0.0.1 ${toString top.service_port};do sleep 2 && echo waiting for API && sleep 1;done
-        auth_token=$(cat ${top.homeDir}/authtoken.secret)
-        for net in $(ls -1 -d "${toPath networksJson}/"*.json)
-        do
-          net_id=''${net##*/}
-          http -f POST http://127.0.0.1:${toString top.service_port}/controller/network/''${net_id%".json"} X-ZT1-Auth:\ $auth_token < $net &> /dev/null
+        postStart = with builtins; ''
+          until nc -d -z 127.0.0.1 ${toString top.service_port};do sleep 2 && echo waiting for API && sleep 1;done
+          auth_token=$(cat ${top.homeDir}/authtoken.secret)
+          for net in $(ls -1 -d "${toPath networksJson}/"*.json)
+          do
+            net_id=''${net##*/}
+            http -f POST http://127.0.0.1:${toString top.service_port}/controller/network/''${net_id%".json"} X-ZT1-Auth:\ $auth_token < $net &> /dev/null
 
-          if [[ -d "${toPath networksJson}/''${net_id%".json"}" ]]
-          then
-            for member in $(ls -1 -d "${toPath networksJson}/''${net_id%".json"}/"*.json )
-            do
-              member_id=''${member##*/}
-              http -f POST http://127.0.0.1:${toString top.service_port}/controller/network/''${net_id%".json"}/member/''${member_id%".json"} X-ZT1-Auth:\ $auth_token < $member &> /dev/null
-            done
-          fi
-        done
-      '';
-    };
-
-    environment.systemPackages =
-      let
-        scriptInit = ''
-          set -e
-          ADDRESS=$(zerotier-cli -j info | ${pkgs.jq}/bin/jq -r '.address')
-          AUTH=$(cat ${top.homeDir}/authtoken.secret)
-          BASEURL=http://127.0.0.1:${toString top.service_port}/controller/network
+            if [[ -d "${toPath networksJson}/''${net_id%".json"}" ]]
+            then
+              for member in $(ls -1 -d "${toPath networksJson}/''${net_id%".json"}/"*.json )
+              do
+                member_id=''${member##*/}
+                http -f POST http://127.0.0.1:${toString top.service_port}/controller/network/''${net_id%".json"}/member/''${member_id%".json"} X-ZT1-Auth:\ $auth_token < $member &> /dev/null
+              done
+            fi
+          done
         '';
-      in
-      attrValues
-        (
-          mapAttrs'
-            (net_name: net_cfg:
-              nameValuePair "zerotier-network-${net_name}-${net_cfg.id}"
-                (pkgs.writeShellScriptBin "zerotier-network-${net_name}-${net_cfg.id}" ''
-                  set -e
-                  auth_token=$(cat ${top.homeDir}/authtoken.secret)
-                  url=http://127.0.0.1:${toString top.service_port}/controller/network/${net_cfg.id}/member/$1
-                  tmpfile=/tmp/${net_name}-member-$1.json
-                  cat > $tmpfile <<EOF
-                  {"authorized": true, "ipAssignments": [ "$2" ]}
-                  EOF
-                  ${pkgs.httpie}/bin/http -f POST $url X-ZT1-Auth:\ $auth_token < $tmpfile &> /dev/null
-                  rm -rf $tmpfile
-                ''))
-            cfg.networks) ++ [
-        (pkgs.writeShellScriptBin "zerotier-network-create" ''
-          ${scriptInit}
-          ${pkgs.httpie}/bin/http --raw '{}' -f POST "''${BASEURL}/''${ADDRESS}______" X-ZT1-Auth:\ $AUTH
-        '')
-      ];
-  };
+      };
+
+      environment.systemPackages =
+        let
+          scriptInit = ''
+            set -e
+            ADDRESS=$(zerotier-cli -j info | ${pkgs.jq}/bin/jq -r '.address')
+            AUTH=$(cat ${top.homeDir}/authtoken.secret)
+            BASEURL=http://127.0.0.1:${toString top.service_port}/controller/network
+          '';
+        in
+        attrValues
+          (
+            mapAttrs'
+              (net_name: net_cfg:
+                nameValuePair "zerotier-network-${net_name}-${net_cfg.id}"
+                  (pkgs.writeShellScriptBin "zerotier-network-${net_name}-${net_cfg.id}" ''
+                    set -e
+                    auth_token=$(cat ${top.homeDir}/authtoken.secret)
+                    url=http://127.0.0.1:${toString top.service_port}/controller/network/${net_cfg.id}/member/$1
+                    tmpfile=/tmp/${net_name}-member-$1.json
+                    cat > $tmpfile <<EOF
+                    {"authorized": true, "ipAssignments": [ "$2" ]}
+                    EOF
+                    ${pkgs.httpie}/bin/http -f POST $url X-ZT1-Auth:\ $auth_token < $tmpfile &> /dev/null
+                    rm -rf $tmpfile
+                  ''))
+              cfg.networks) ++ [
+          (pkgs.writeShellScriptBin "zerotier-network-create" ''
+            ${scriptInit}
+            ${pkgs.httpie}/bin/http --raw '{}' -f POST "''${BASEURL}/''${ADDRESS}______" X-ZT1-Auth:\ $AUTH
+          '')
+        ];
+    })
+
+    # NOTE: zeronsd doesn't work with self hosted controllers
+    # https://github.com/zerotier/zeronsd/issues/234#issuecomment-2057222863
+    #
+    # (mkIf (cfg.enable && networksWithDns != { }) {
+    #   services.zeronsd.servedNetworks = mapAttrs'
+    #     (n: v: nameValuePair v.id {
+    #       settings.domain = v.dns.domain;
+    #       settings.wildcard = true;
+    #     })
+    #     networksWithDns;
+    # })
+  ];
 }
