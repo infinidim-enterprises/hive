@@ -16,16 +16,40 @@ let
           (name: value:
             name != "_module" &&
             name != "mutable" &&
+            name != "cidr" &&
             name != "members" &&
             name != "apply" &&
             value != null)
           cfgChunk);
     };
 
+  ipCalc = subnet:
+    mapAttrs' (n: v: nameValuePair (toLower n) v)
+      (builtins.fromJSON (fileContents (pkgs.runCommandNoCC "ipcalc"
+        { buildInputs = with pkgs; [ ipcalc ]; } ''
+        ipcalc ${subnet} --json > $out
+      '')));
+
   top = config.services.zerotierone;
   cfg = top.controller;
 
   networksWithDns = filterAttrs (_: v: v.dns != null) cfg.networks;
+
+  cidrOptions = { ... }:
+    with types;
+    {
+      options = genAttrs [
+        "addresses"
+        "addrspace"
+        "broadcast"
+        "maxaddr"
+        "minaddr"
+        "netmask"
+        "network"
+        "prefix"
+      ]
+        (_: mkOption { type = str; });
+    };
 
   routesOptions = with types; { ... }: {
     options = {
@@ -210,7 +234,7 @@ let
     options.servers = mkOption { type = listOf str; };
   };
 
-  networkOptions = with types; { ... }: {
+  networkOptions = with types; { name, ... }: {
     options = {
       mutable = mkOption {
         description = ''
@@ -220,6 +244,16 @@ let
         '';
         default = true;
         type = bool;
+      };
+
+      cidr = mkOption {
+        description = "That option is used to configure the the bridge/pgsql/kea/powerdns";
+        default = null;
+        type = nullOr (oneOf [ str (submodule [ cidrOptions ]) ]);
+        apply = x:
+          if isString x
+          then ipCalc x
+          else x;
       };
 
       id = mkOption {
@@ -279,7 +313,11 @@ let
       multicastLimit = mkOption {
         description = "Maximum recipients for a multicast packet";
         default = 128;
-        type = int;
+        type = oneOf [ int str ];
+        apply = x:
+          if !isNull cfg.networks.${name}.cidr
+          then toInt cfg.networks.${name}.cidr.addresses
+          else toInt (toString x);
       };
 
       revision = mkOption {
