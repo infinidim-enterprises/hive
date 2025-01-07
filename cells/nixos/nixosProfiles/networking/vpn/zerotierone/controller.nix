@@ -41,11 +41,13 @@ in
 {
   imports =
     [ cell.nixosModules.services.networking.kea-vpn-bridge ] ++
-    [ cell.nixosProfiles.networking.dhcp-ddns.postgresql ] ++
+    [ cell.nixosProfiles.networking.dhcp-ddns.postgresql ];
 
-    (with cell.nixosProfiles.networking.vpn.zerotierone; [
-      service-dns
-    ]);
+  # ++
+
+  #   (with cell.nixosProfiles.networking.vpn.zerotierone; [
+  #     service-dns
+  #   ]);
 
   config = mkMerge [
 
