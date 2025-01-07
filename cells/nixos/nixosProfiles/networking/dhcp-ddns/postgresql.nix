@@ -59,21 +59,22 @@ in
   config = mkMerge [
     {
       systemd.services.postgresql = with config.services.postgresql; {
-        preStart = lib.mkAfter ''
+        preStart = mkAfter ''
           [[ -e  "${dataDir}/.first_startup" ]] && touch "${dataDir}/.first_startup_user" || true
         '';
         postStart =
-          lib.mkAfter ''
+          mkAfter ''
             if test -e "${dataDir}/.first_startup_user"; then
-              $PSQL -tAc --dbname=powerdns 'ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL PRIVILEGES ON TABLES TO "powerdns"'
+              $PSQL --tuples-only --no-align --dbname=powerdns --command='ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL PRIVILEGES ON TABLES TO powerdns'
               $PSQL --host=127.0.0.1 --no-password --username=powerdns --dbname=powerdns --file="${pkgs.powerdns}/share/doc/pdns/schema.pgsql.sql"
 
-              $PSQL -tAc --dbname=kea 'ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL PRIVILEGES ON TABLES TO "kea"'
+              $PSQL --tuples-only --no-align --dbname=kea --command='ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL PRIVILEGES ON TABLES TO kea'
               $PSQL --host=127.0.0.1 --no-password --username=kea --dbname=kea --file="${pkgs.kea}/share/kea/scripts/pgsql/dhcpdb_create.pgsql"
 
               rm -f "${dataDir}/.first_startup_user"
             fi
           '';
+
         # $PSQL -f "${powerdnsSqlSetup}" -d powerdns
         # $PSQL -f  ${keadhcpSqlSetup} -d kea
         # $PSQL -tAc "alter user kea password 'kea'"
