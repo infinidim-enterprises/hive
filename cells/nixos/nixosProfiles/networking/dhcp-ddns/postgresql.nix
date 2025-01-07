@@ -7,6 +7,7 @@ let
   inherit (lib // builtins)
     concatMapStringsSep
     mkAfter
+    mkForce
     map;
 
   inherit (pkgs) writeText;
@@ -65,13 +66,12 @@ in
         postStart =
           lib.mkAfter ''
             if test -e "${dataDir}/.first_startup_user"; then
-              # $PSQL -f "${pkgs.powerdns}/share/doc/pdns/schema.pgsql.sql" -d powerdns
-              # $PSQL -f "${powerdnsSqlSetup}" -d powerdns
-              # $PSQL -f "${pkgs.kea}/share/kea/scripts/pgsql/dhcpdb_create.pgsql" -d kea
-              # $PSQL -f  ${keadhcpSqlSetup} -d kea
-              # $PSQL -tAc "alter user kea password 'kea'"
-              # $PSQL -tAc "alter user powerdns password 'powerdns'"
-              # $PSQL -tAc "alter user powerdnsadmin password 'powerdnsadmin'"
+              $PSQL -f "${pkgs.powerdns}/share/doc/pdns/schema.pgsql.sql" -d powerdns
+              $PSQL -f "${powerdnsSqlSetup}" -d powerdns
+              $PSQL -f "${pkgs.kea}/share/kea/scripts/pgsql/dhcpdb_create.pgsql" -d kea
+              $PSQL -f  ${keadhcpSqlSetup} -d kea
+              $PSQL -tAc "alter user kea password 'kea'"
+              $PSQL -tAc "alter user powerdns password 'powerdns'"
               rm -f "${dataDir}/.first_startup_user"
             fi
           '';
@@ -89,8 +89,10 @@ in
         settings.log_timezone = "CET";
         # settings.log_destination = "syslog";
 
-        authentication = ''
+        authentication = mkForce ''
+          local all all trust
           host all all 127.0.0.1/32 trust
+          # host all all localhost trust
         '';
 
         ensureDatabases = [ "powerdns" "kea" ];
