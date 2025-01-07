@@ -65,11 +65,11 @@ in
         postStart =
           mkAfter ''
             if test -e "${dataDir}/.first_startup_user"; then
-              $PSQL --tuples-only --no-align --dbname=powerdns --command='ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL PRIVILEGES ON TABLES TO powerdns'
               $PSQL --host=127.0.0.1 --no-password --username=powerdns --dbname=powerdns --file="${pkgs.powerdns}/share/doc/pdns/schema.pgsql.sql"
+              $PSQL --host=127.0.0.1 --no-password --username=powerdns --dbname=powerdns --command='GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO powerdns'
 
-              $PSQL --tuples-only --no-align --dbname=kea --command='ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL PRIVILEGES ON TABLES TO kea'
               $PSQL --host=127.0.0.1 --no-password --username=kea --dbname=kea --file="${pkgs.kea}/share/kea/scripts/pgsql/dhcpdb_create.pgsql"
+              $PSQL --host=127.0.0.1 --no-password --username=kea --dbname=kea --command='GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO kea'
 
               rm -f "${dataDir}/.first_startup_user"
             fi
