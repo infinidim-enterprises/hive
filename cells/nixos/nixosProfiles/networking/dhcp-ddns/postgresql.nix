@@ -87,7 +87,7 @@ in
         # https://gitlab.isc.org/isc-projects/kea/-/issues/1731
         settings.timezone = "CET";
         settings.log_timezone = "CET";
-        settings.log_destination = "syslog";
+        # settings.log_destination = "syslog";
 
         authentication = ''
           host all all 127.0.0.1/32 trust
