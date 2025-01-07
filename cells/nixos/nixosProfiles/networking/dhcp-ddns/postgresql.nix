@@ -66,12 +66,12 @@ in
         postStart =
           lib.mkAfter ''
             if test -e "${dataDir}/.first_startup_user"; then
-              $PSQL -f "${pkgs.powerdns}/share/doc/pdns/schema.pgsql.sql" -d powerdns
-              $PSQL -f "${powerdnsSqlSetup}" -d powerdns
-              $PSQL -f "${pkgs.kea}/share/kea/scripts/pgsql/dhcpdb_create.pgsql" -d kea
-              $PSQL -f  ${keadhcpSqlSetup} -d kea
-              $PSQL -tAc "alter user kea password 'kea'"
-              $PSQL -tAc "alter user powerdns password 'powerdns'"
+              $PSQL --host=127.0.0.1 --no-password --username=powerdns --dbname=powerdns --file="${pkgs.powerdns}/share/doc/pdns/schema.pgsql.sql"
+              # $PSQL -f "${powerdnsSqlSetup}" -d powerdns
+              $PSQL --host=127.0.0.1 --no-password --username=kea --dbname=kea --file="${pkgs.kea}/share/kea/scripts/pgsql/dhcpdb_create.pgsql"
+              # $PSQL -f  ${keadhcpSqlSetup} -d kea
+              # $PSQL -tAc "alter user kea password 'kea'"
+              # $PSQL -tAc "alter user powerdns password 'powerdns'"
               rm -f "${dataDir}/.first_startup_user"
             fi
           '';
