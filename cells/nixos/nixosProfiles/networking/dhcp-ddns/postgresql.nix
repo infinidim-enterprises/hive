@@ -65,13 +65,13 @@ in
         postStart =
           lib.mkAfter ''
             if test -e "${dataDir}/.first_startup_user"; then
-              $PSQL -f "${pkgs.powerdns}/share/doc/pdns/schema.pgsql.sql" -d powerdns
-              $PSQL -f "${powerdnsSqlSetup}" -d powerdns
-              $PSQL -f "${pkgs.kea}/share/kea/scripts/pgsql/dhcpdb_create.pgsql" -d kea
-              $PSQL -f  ${keadhcpSqlSetup} -d kea
-              $PSQL -tAc "alter user kea password 'kea'"
-              $PSQL -tAc "alter user powerdns password 'powerdns'"
-              $PSQL -tAc "alter user powerdnsadmin password 'powerdnsadmin'"
+              # $PSQL -f "${pkgs.powerdns}/share/doc/pdns/schema.pgsql.sql" -d powerdns
+              # $PSQL -f "${powerdnsSqlSetup}" -d powerdns
+              # $PSQL -f "${pkgs.kea}/share/kea/scripts/pgsql/dhcpdb_create.pgsql" -d kea
+              # $PSQL -f  ${keadhcpSqlSetup} -d kea
+              # $PSQL -tAc "alter user kea password 'kea'"
+              # $PSQL -tAc "alter user powerdns password 'powerdns'"
+              # $PSQL -tAc "alter user powerdnsadmin password 'powerdnsadmin'"
               rm -f "${dataDir}/.first_startup_user"
             fi
           '';
@@ -81,7 +81,7 @@ in
         # TODO: maybe use .initialScript
         enable = true;
         enableTCPIP = true;
-        extraPlugins = [ pkgs.postgresql.pkgs.pg_ed25519 ];
+        extensions = [ pkgs.postgresql.pkgs.pg_ed25519 ];
 
         # NOTE: must be set the same as on the machine running kea-dhcp
         # https://gitlab.isc.org/isc-projects/kea/-/issues/1731
