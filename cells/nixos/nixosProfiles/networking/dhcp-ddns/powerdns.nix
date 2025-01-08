@@ -110,28 +110,34 @@ let
         default = pkgs.writeShellApplication {
           name = "initzone-${name}";
           runtimeInputs = with pkgs;[ httpie ];
-          text = ''
-            # create ${name} zone
-            ${endpoint { method = "POST"; }} < ${json.generate "zone_${name}_.json" {
-              name = "${name}.";
-              kind = "Native";
-              masters = [];
-              nameservers = [ "ns1.${name}." ];
-            }}
-            # create record
-            ${endpoint { method = "PATCH"; zone = name; }} < ${json.generate "zone_${name}_records.json" { inherit (zones."${name}") rrsets; }}
-            # enable dnssec
-            ${endpoint { method = "POST"; zone = name; path = "cryptokeys"; }} < ${json.generate "zone_${name}_ddns_secure.json" {
-              type = "Cryptokey";
-              keytype = "csk";
-              active = true;
-              published = true;
-              algorithm = "ECDSAP256SHA256";
-              bits = 256;
-            }}
-            # rectify dnssec
-            ${endpoint { method = "PUT"; zone = name; path = "rectify"; }}
-          '';
+          text =
+            let
+              dnssecString = ''
+                # enable dnssec
+                ${endpoint { method = "POST"; zone = name; path = "cryptokeys"; }} < ${json.generate "zone_${name}_ddns_secure.json" {
+                  type = "Cryptokey";
+                  keytype = "csk";
+                  active = true;
+                  published = true;
+                  algorithm = "ECDSAP256SHA256";
+                  bits = 256;
+                }}
+                # rectify dnssec
+                ${endpoint { method = "PUT"; zone = name; path = "rectify"; }}
+              '';
+            in
+            ''
+              # create ${name} zone
+              ${endpoint { method = "POST"; }} < ${json.generate "zone_${name}_.json" {
+                name = "${name}.";
+                kind = "Native";
+                masters = [];
+                nameservers = [ "ns1.${name}." ];
+              }}
+              # create records
+              ${endpoint { method = "PATCH"; zone = name; }} < ${json.generate "zone_${name}_records.json" { inherit (zones."${name}") rrsets; }}
+              ${optionalString zones."${name}".dnssec dnssecString}
+            '';
         };
       };
     };
@@ -170,6 +176,8 @@ in
       systemd.services.pdns.path = with pkgs; [ libressl.nc ];
       systemd.services.pdns.preStart = ''
         until nc -d -z 127.0.0.1 ${psql_port};do echo 'waiting for sql server for 5 sec.' && sleep 5;done
+      '';
+      systemd.services.pdns.postStart = ''
       '';
 
       services.powerdns = {

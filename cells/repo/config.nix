@@ -140,8 +140,10 @@ in
 
   garnix_io = mkNixago {
     data = {
+      builds.branch = "release";
       builds.include = [
         # "*.x86_64-linux.*"
+        # TODO: aarch64-linux
         "devShells.x86_64-linux.*"
         "packages.x86_64-linux.*"
         "nixosConfigurations.*"
