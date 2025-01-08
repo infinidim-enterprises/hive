@@ -55,8 +55,10 @@ mkMerge [
         "kakrafoon kakrafoon.njk.*" = defaults_njk // {
           port = 65522;
           remoteForwards = [{
-            bind.address = "127.0.0.1:5432";
-            host.address = "127.0.0.1:5432";
+            bind.address = "127.0.0.1";
+            bind.port = 5432;
+            host.address = "127.0.0.1";
+            host.port = 5432;
           }];
         };
         "bitbucket.org" = defaults_git;

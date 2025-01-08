@@ -13,11 +13,10 @@ let
 in
 mkMerge [
   {
-    # networking.firewall.interfaces."kea-dhcp".allowedUDPPorts = [ 53 ];
+    # networking.firewall.interfaces."njk.local".allowedUDPPorts = [ 5353 ];
     networking.firewall.allowedUDPPorts = [ 53 ];
 
-    # systemd.network.networks.lan = { inherit (cfg) addresses; inherit (lan) networkConfig; };
-
+    # dogdns
     environment.systemPackages = [
       (pkgs.writeShellScriptBin "pdnsutil" ''
         ${cfgDir}

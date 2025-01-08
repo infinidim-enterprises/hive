@@ -51,9 +51,9 @@ in
 
     { services.zerotierone.controller.enable = true; }
 
-    # self managed dhcp/ddns/ipxe
     {
       services.zerotierone.controller.networks.admin-dhcp =
+        # self managed dhcp/ddns/ipxe
         {
           cidr = "10.0.0.0/24";
           id = "ba8ec53f7ab4e74f";
@@ -65,9 +65,9 @@ in
         };
     }
 
-    # ZT ip managed
     {
       services.zerotierone.controller.networks.admin =
+        # ZT ip managed
         let pref = "10.0.1"; in
         {
           id = "ba8ec53f7acfdaa1";
