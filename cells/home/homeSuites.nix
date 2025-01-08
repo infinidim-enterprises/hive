@@ -21,7 +21,7 @@ rec {
     # emacs
     remmina
     terminals.tilix
-    terminals.kitty
+    # terminals.kitty
     # conky
 
     look-and-feel.solarized-dark

@@ -52,7 +52,13 @@ mkMerge [
         "damogran damogran.njk.*" = defaults_njk;
         # "nowhat* nowhat*.0*.njk.li".port = 65522;
         # "maintenance* maintenance*.0*.njk.li".port = 65522;
-        "kakrafoon kakrafoon.njk.*" = defaults_njk // { port = 65522; };
+        "kakrafoon kakrafoon.njk.*" = defaults_njk // {
+          port = 65522;
+          remoteForwards = [{
+            bind.address = "127.0.0.1:5432";
+            host.address = "127.0.0.1:5432";
+          }];
+        };
         "bitbucket.org" = defaults_git;
         "github.com" = defaults_git;
       };

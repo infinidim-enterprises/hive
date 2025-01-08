@@ -3,12 +3,7 @@
 {
   # TODO: sops-nix for atuin key in ~/.local/share/atuin/key
   programs.atuin.enable = true;
-  # NOTE: zfs - https://github.com/atuinsh/atuin/pull/2006
-  # TODO: run atuin as a daemon in systemd service
-  programs.atuin.package = pkgs.atuin.overrideAttrs (_: {
-    # NOTE: https://github.com/Mic92/dotfiles/tree/main/home-manager/pkgs/atuin
-    patches = [ ./0001-make-atuin-on-zfs-fast-again.patch ];
-  });
+  programs.atuin.daemon.enable = true;
   programs.atuin.settings = {
     dialect = "uk";
     update_check = false;
@@ -33,6 +28,7 @@
       "ip"
       "kubectl"
       "nix"
+      "nom"
       "npm"
       "podman"
       "systemctl"

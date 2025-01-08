@@ -13,9 +13,9 @@ let
 
 in
 {
-  inherit
-    (nixpkgs-release-24-05)
-    atuin;
+  # inherit
+  #   (nixpkgs-release-24-05)
+  #   atuin;
 
   inherit
     (nixpkgs-release)

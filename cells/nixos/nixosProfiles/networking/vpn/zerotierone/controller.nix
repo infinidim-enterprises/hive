@@ -41,19 +41,17 @@ in
 {
   imports =
     [ cell.nixosModules.services.networking.kea-vpn-bridge ] ++
-    [ cell.nixosProfiles.networking.dhcp-ddns.postgresql ];
 
-  # ++
-
-  #   (with cell.nixosProfiles.networking.vpn.zerotierone; [
-  #     service-dns
-  #   ]);
+    [
+      cell.nixosProfiles.networking.dhcp-ddns.postgresql
+      cell.nixosProfiles.networking.dhcp-ddns.powerdns
+    ];
 
   config = mkMerge [
 
     { services.zerotierone.controller.enable = true; }
 
-    # self managed dhcp/ddns/dns
+    # self managed dhcp/ddns/ipxe
     {
       services.zerotierone.controller.networks.kea-dhcp =
         {

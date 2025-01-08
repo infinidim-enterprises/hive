@@ -1,5 +1,11 @@
-{ pkgs, ... }:
+{ pkgs, osConfig, localLib, lib, ... }:
+let
+  inherit (lib // builtins) mkMerge mkIf;
+in
+mkMerge [
+  { home.packages = with pkgs;[ pgcli ]; }
 
-{
-  home.packages = with pkgs;[ pgcli dbeaver-bin beekeeper-studio ];
-}
+  (mkIf (localLib.isGui osConfig) {
+    home.packages = with pkgs;[ dbeaver-bin beekeeper-studio ];
+  })
+]

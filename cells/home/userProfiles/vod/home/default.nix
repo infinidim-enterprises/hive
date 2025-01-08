@@ -36,7 +36,7 @@ in
       # direnv
       # git
       # javascript
-      # dbtools.postgresql
+      dbtools.postgresql
       # dbtools.mysql
       # tools
       # kubernetes
