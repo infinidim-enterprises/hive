@@ -84,10 +84,17 @@ in
   config = mkMerge [
 
     {
-      services.powerdns.zones."njk.local".rrsets = [{
-        type = "SOA";
-        records = [{ content = "soa stuff"; }];
-      }];
+      services.powerdns.zones."njk.local".rrsets = [
+        {
+          type = "SOA";
+          records = [{ content = "ns1.njk.local. hostmaster.njk.local. 5 10800 3600 604800 3600"; }];
+        }
+        {
+          type = "A";
+          name = "ns1";
+          records = [{ content = "10.0.0.1"; }];
+        }
+      ];
     }
     { services.zerotierone.controller.enable = true; }
 

@@ -18,6 +18,8 @@ let
   cfgDir = ''conf_dir=$(systemctl cat pdns.service | grep -i config-dir | awk -F ' ' '{printf $2}' | awk -F '=' '{printf $2}')'';
   param = ''--config-dir="''${conf_dir}" $@'';
 
+  inherit (config.services.powerdns) zones;
+
   endpoint = { method, zone ? null, path ? null, apikey ? "testkey" }:
     "http --json ${method}" +
     " " +
@@ -116,6 +118,8 @@ let
               masters = [];
               nameservers = [ "ns1.${name}." ];
             }}
+
+            ${endpoint { method = "PATCH"; }} < ${json.generate "zone_${name}_records.json" zones."${name}".rrsets}
           '';
         };
       };
