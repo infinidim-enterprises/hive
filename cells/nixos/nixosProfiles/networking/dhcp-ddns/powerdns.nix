@@ -118,7 +118,9 @@ let
               masters = [];
               nameservers = [ "ns1.${name}." ];
             }}
-            ${endpoint { method = "PATCH"; zone = name; }} < ${json.generate "zone_${name}_records.json" zones."${name}".rrsets}
+            # create record
+            ${endpoint { method = "PATCH"; zone = name; }} < ${json.generate "zone_${name}_records.json" { inherit (zones."${name}") rrsets; }}
+            # enable dnssec
             ${endpoint { method = "POST"; zone = name; path = "cryptokeys"; }} < ${json.generate "zone_${name}_ddns_secure.json" {
               type = "Cryptokey";
               keytype = "csk";
@@ -127,6 +129,7 @@ let
               algorithm = "ECDSAP256SHA256";
               bits = 256;
             }}
+            # rectify dnssec
             ${endpoint { method = "PUT"; zone = name; path = "rectify"; }}
           '';
         };
