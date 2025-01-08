@@ -41,8 +41,10 @@ mkMerge [
       # default-soa-name=njk.local <- removed with upgrade
       # FIXME: https://docs.powerdns.com/authoritative/settings.html#setting-default-soa-content
       #
-      # local-address=${localAddress}
+      #
       extraConfig = ''
+        local-address=0.0.0.0:5353
+
         webserver-allow-from=127.0.0.1
         webserver-address=127.0.0.1
 
