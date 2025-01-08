@@ -52,7 +52,6 @@ mkMerge [
         api=yes
         api-key=testkey
 
-        master=yes
         version-string=powerdns
 
         launch=gpgsql
@@ -63,7 +62,7 @@ mkMerge [
         gpgsql-dbname=powerdns
         gpgsql-dnssec=yes
       '';
-
+      #         master=yes
     };
   }
 ]
