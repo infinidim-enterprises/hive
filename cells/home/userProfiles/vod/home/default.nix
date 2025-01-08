@@ -54,6 +54,8 @@ in
         tigervnc
         waveterm # AI assisted GUI terminal
 
+        httpie-desktop # Painlessly test REST, GraphQL, and HTTP APIs
+
         sops
 
         google-cloud-sdk

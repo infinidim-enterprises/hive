@@ -5,6 +5,7 @@ let
   inherit (lib // builtins)
     mkEnableOption
     mergeAttrsList
+    optionalString
     nameValuePair
     fileContents
     attrNames
@@ -18,6 +19,7 @@ let
     toLower
     length
     toPath
+    isNull
     toInt
     types
     mkIf
@@ -37,6 +39,38 @@ let
       })
     names);
 
+  json = pkgs.formats.json { }; # json.generate
+
+  endpoint = { method, zone ? null, path ? null }:
+    "http --json ${method}" +
+    " " +
+    "http://localhost:8081/api/v1/servers/localhost/zones" +
+    (optionalString (!isNull zone) "/${zone}.") +
+    (optionalString (!isNull path) "/${path}") +
+    " " +
+    "X-API-Key:\\ testkey";
+
+  req = { name, type, ttl, changetype, content }: {
+    rrsets = [{
+      inherit type ttl changetype;
+      name = name + ".";
+      records = [{ inherit content; disabled = false; }];
+    }];
+  };
+
+  records = [{ }];
+  /*
+
+    http --json PATCH http://localhost:8081/api/v1/servers/localhost/zones/njk.local. X-API-Key:\ testkey rrsets:='[{"name": "njk.local.", "type": "SOA", "ttl": 3600, "changetype": "replace", "records": [{"content": "ns1.njk.local. hostmaster.njk.local. 5 10800 3600 604800 3600", "disabled": false}]}]'
+
+     http --json GET http://localhost:8081/api/v1/servers/localhost/zones/njk.local X-API-Key:\ testkey | jq
+    pdnsutil:
+    create-zone 'njk.local' ns1.njk.local
+    increase-serial 'njk.local'
+    add-record 'njk.local' ns1 A '10.0.1.114'
+    secure-zone 'njk.local'
+    rectify-zone 'njk.local'
+  */
 in
 {
   imports =
@@ -49,6 +83,12 @@ in
 
   config = mkMerge [
 
+    {
+      services.powerdns.zones."njk.local".rrsets = [{
+        type = "SOA";
+        records = [{ content = "soa stuff"; }];
+      }];
+    }
     { services.zerotierone.controller.enable = true; }
 
     {
