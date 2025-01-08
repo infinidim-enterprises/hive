@@ -118,8 +118,16 @@ let
               masters = [];
               nameservers = [ "ns1.${name}." ];
             }}
-
-            ${endpoint { method = "PATCH"; }} < ${json.generate "zone_${name}_records.json" zones."${name}".rrsets}
+            ${endpoint { method = "PATCH"; zone = name; }} < ${json.generate "zone_${name}_records.json" zones."${name}".rrsets}
+            ${endpoint { method = "POST"; zone = name; path = "cryptokeys"; }} < ${json.generate "zone_${name}_ddns_secure.json" {
+              type = "Cryptokey";
+              keytype = "csk";
+              active = true;
+              published = true;
+              algorithm = "ECDSAP256SHA256";
+              bits = 256;
+            }}
+            ${endpoint { method = "PUT"; zone = name; path = "rectify"; }}
           '';
         };
       };
