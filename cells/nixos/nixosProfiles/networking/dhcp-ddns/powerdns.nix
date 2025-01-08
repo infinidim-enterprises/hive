@@ -108,11 +108,6 @@ let
         default = pkgs.writeShellApplication {
           name = "initzone-${name}";
           runtimeInputs = with pkgs;[ httpie ];
-          # {"name": "example.org.",
-          # "kind": "Native",
-          # "masters": [],
-          # "nameservers": ["ns1.example.org.", "ns2.example.org."]}
-
           text = ''
             # create ${name} zone
             ${endpoint { method = "POST"; }} < ${json.generate "zone_${name}_.json" {
@@ -178,11 +173,6 @@ in
           dnsupdate=yes
           allow-dnsupdate-from=127.0.0.1/32
 
-          soa-refresh-default=10800
-          soa-retry-default=3600
-          soa-expire-default=604800
-          soa-minimum-ttl=60
-
           default-ttl=60
           dnssec-key-cache-ttl=0
 
@@ -198,6 +188,14 @@ in
           gpgsql-dbname=powerdns
           gpgsql-dnssec=yes
         '';
+        /*
+
+          soa-refresh-default=10800
+          soa-retry-default=3600
+          soa-expire-default=604800
+          soa-minimum-ttl=60
+
+        */
       };
     }
   ];
