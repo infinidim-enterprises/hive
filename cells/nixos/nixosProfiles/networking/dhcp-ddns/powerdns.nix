@@ -64,7 +64,6 @@ mkMerge [
         gpgsql-dbname=powerdns
         gpgsql-dnssec=yes
       '';
-      #         master=yes
     };
   }
 ]

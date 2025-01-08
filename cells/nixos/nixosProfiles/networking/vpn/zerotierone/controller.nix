@@ -53,7 +53,7 @@ in
 
     # self managed dhcp/ddns/ipxe
     {
-      services.zerotierone.controller.networks.kea-dhcp =
+      services.zerotierone.controller.networks.admin-dhcp =
         {
           cidr = "10.0.0.0/24";
           id = "ba8ec53f7ab4e74f";
