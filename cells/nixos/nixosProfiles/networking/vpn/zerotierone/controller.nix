@@ -69,6 +69,7 @@ let
       let
       in
       (nameValuePair v.dns.domain {
+        inherit (v) mutable;
         rrsets = [ (SOA v.dns.domain) ] ++
           (imap1
             (i: ip: {
@@ -80,7 +81,6 @@ let
           (imap1
             (i: ip: {
               type = "NS";
-              name = "${v.dns.domain}.";
               records = [{ content = "ns${toString i}.${v.dns.domain}."; }];
             })
             v.dns.servers);
@@ -89,11 +89,18 @@ let
   (mapAttrs'
     (n: v:
       (nameValuePair "${rdnsNet v.cidr.network}.in-addr.arpa" {
+        inherit (v) mutable;
         rrsets = [ (SOA v.dns.domain) ] ++
           (imap1
             (i: ip: {
               type = "PTR";
               name = "${rdnsIP ip}";
+              records = [{ content = "ns${toString i}.${v.dns.domain}."; }];
+            })
+            v.dns.servers) ++
+          (imap1
+            (i: ip: {
+              type = "NS";
               records = [{ content = "ns${toString i}.${v.dns.domain}."; }];
             })
             v.dns.servers);

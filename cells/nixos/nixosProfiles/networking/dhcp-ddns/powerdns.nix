@@ -10,6 +10,8 @@ let
     toUpper
     toString
     mkOption
+    hasSuffix
+    concatStrings
     mapAttrsToList
     optionalString
     mkEnableOption;
@@ -78,7 +80,8 @@ let
           "SPF"
           "SSHFP"
           "SRV"
-          "TKEY, TSIG"
+          "TKEY"
+          "TSIG"
           "TLSA"
           "SMIMEA"
           "TXT"
@@ -90,7 +93,11 @@ let
         apply = x:
           if isNull x
           then "${name}."
-          else "${x}.${name}.";
+          else
+          # NOTE: allow verbatim settings
+            if hasSuffix "." x
+            then x
+            else "${x}.${name}.";
         default = null;
       };
       changetype = mkOption {
@@ -104,6 +111,7 @@ let
   zoneOptions = { name, ... }: with types; {
     options = {
       dnssec = mkEnableOption "DNSSEC" // { default = true; };
+      mutable = mkEnableOption "Allow manual modification" // { default = false; };
       rrsets = mkOption { type = listOf (submodule [ (rrsetOptions { inherit name; }) ]); };
       initScript = mkOption {
         readOnly = true;
@@ -112,6 +120,10 @@ let
           runtimeInputs = with pkgs;[ httpie ];
           text =
             let
+              deleteZone = ''
+                # delete zone
+                ${endpoint { method = "DELETE"; zone = name; }}
+              '';
               dnssecString = ''
                 # enable dnssec
                 ${endpoint { method = "POST"; zone = name; path = "cryptokeys"; }} < ${json.generate "zone_${name}_ddns_secure.json" {
@@ -124,11 +136,10 @@ let
                 }}
                 # rectify dnssec
                 ${endpoint { method = "PUT"; zone = name; path = "rectify"; }}
-                ${endpoint { method = "PUT"; zone = name; path = "metadata/SOA-EDIT"; }} < ${json.generate "zone_${name}_soa-edit.json" { metadata = ["INCREASE"]; }}
-                ${endpoint { method = "PUT"; zone = name; path = "metadata/SOA-EDIT-DNSUPDATE"; }} < ${json.generate "zone_${name}_soa-edit-dnsupdate.json" { metadata = ["INCREASE"]; }}
               '';
             in
             ''
+              ${optionalString (! zones."${name}".mutable) deleteZone}
               # create ${name} zone
               ${endpoint { method = "POST"; }} < ${json.generate "zone_${name}_.json" {
                 name = "${name}.";
@@ -139,6 +150,8 @@ let
               # create records
               ${endpoint { method = "PATCH"; zone = name; }} < ${json.generate "zone_${name}_records.json" { inherit (zones."${name}") rrsets; }}
               ${optionalString zones."${name}".dnssec dnssecString}
+              ${endpoint { method = "PUT"; zone = name; path = "metadata/SOA-EDIT"; }} < ${json.generate "zone_${name}_soa-edit.json" { metadata = ["INCREASE"]; }}
+              ${endpoint { method = "PUT"; zone = name; path = "metadata/SOA-EDIT-DNSUPDATE"; }} < ${json.generate "zone_${name}_soa-edit-dnsupdate.json" { metadata = ["INCREASE"]; }}
             '';
         };
       };
@@ -160,7 +173,6 @@ in
       # networking.firewall.interfaces."njk.local".allowedUDPPorts = [ 5353 ];
       networking.firewall.allowedUDPPorts = [ 53 ];
 
-      # dogdns
       environment.systemPackages =
         (mapAttrsToList (n: v: v.initScript) config.services.powerdns.zones) ++
         [
@@ -175,12 +187,14 @@ in
           '')
         ];
 
-      systemd.services.pdns.path = with pkgs; [ libressl.nc ];
+      systemd.services.pdns.path = [ pkgs.libressl.nc ];
       systemd.services.pdns.preStart = ''
         until nc -d -z 127.0.0.1 ${psql_port};do echo 'waiting for sql server for 5 sec.' && sleep 5;done
       '';
-      # systemd.services.pdns.postStart = ''
-      # '';
+      systemd.services.pdns.postStart = concatStrings
+        (mapAttrsToList
+          (n: v: "${v.initScript}/bin/${v.initScript.name}\n")
+          config.services.powerdns.zones);
 
       services.powerdns = {
         enable = true;
