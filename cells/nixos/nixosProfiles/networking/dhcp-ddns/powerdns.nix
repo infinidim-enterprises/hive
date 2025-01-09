@@ -24,7 +24,7 @@ let
 
   inherit (config.services.powerdns) zones;
 
-  endpoint = { method, zone ? null, path ? null, apikey ? "$api-key" }:
+  endpoint = { method, zone ? null, path ? null, apikey ? "\"$apikey\"" }:
     "http --json ${method}" +
     " " +
     "http://localhost:8081/api/v1/servers/localhost/zones" +
@@ -118,8 +118,9 @@ let
       initScript = mkOption {
         readOnly = true;
         default = pkgs.writeShellApplication {
+          excludeShellChecks = [ "SC2154" "SC2002" ];
           name = "initzone-${name}";
-          runtimeInputs = with pkgs;[ httpie ];
+          runtimeInputs = with pkgs;[ httpie gawk ];
           text =
             let
               deleteZone = ''
@@ -141,6 +142,7 @@ let
               '';
             in
             ''
+              apikey=$(cat ${config.sops.secrets.powerdns.path} | awk -F'=' '{print $2}')
               ${optionalString (! zones."${name}".mutable) deleteZone}
               # create ${name} zone
               ${endpoint { method = "POST"; }} < ${json.generate "zone_${name}_.json" {
@@ -215,6 +217,7 @@ in
         extraConfig = ''
           local-address=0.0.0.0:5353
 
+          api=yes
           webserver-allow-from=127.0.0.1
           webserver-address=127.0.0.1
 
@@ -236,7 +239,7 @@ in
           gpgsql-dnssec=yes
         '';
 
-        # api=yes
+
         # api-key=testkey
 
       };
