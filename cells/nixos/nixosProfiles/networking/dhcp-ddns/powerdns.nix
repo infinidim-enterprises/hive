@@ -3,6 +3,7 @@
 { config, lib, pkgs, ... }:
 let
   inherit (lib // builtins)
+    mkIf
     types
     toInt
     mkMerge
@@ -11,6 +12,7 @@ let
     toString
     mkOption
     hasSuffix
+    hasAttrByPath
     concatStrings
     mapAttrsToList
     optionalString
@@ -22,7 +24,7 @@ let
 
   inherit (config.services.powerdns) zones;
 
-  endpoint = { method, zone ? null, path ? null, apikey ? "testkey" }:
+  endpoint = { method, zone ? null, path ? null, apikey ? "$api-key" }:
     "http --json ${method}" +
     " " +
     "http://localhost:8081/api/v1/servers/localhost/zones" +
@@ -169,12 +171,21 @@ in
 
 
   config = mkMerge [
+    (mkIf (hasAttrByPath [ "sops" "secrets" ] config) {
+      sops.secrets.powerdns = {
+        sopsFile = ../../../../secrets/sops/powerdns.env;
+        restartUnits = [ "pdns.service" ];
+        format = "binary";
+      };
+      services.powerdns.secretFile = config.sops.secrets.powerdns.path;
+    })
+
     {
       # networking.firewall.interfaces."njk.local".allowedUDPPorts = [ 5353 ];
       networking.firewall.allowedUDPPorts = [ 53 ];
 
       environment.systemPackages =
-        (mapAttrsToList (n: v: v.initScript) config.services.powerdns.zones) ++
+        # (mapAttrsToList (n: v: v.initScript) config.services.powerdns.zones) ++
         [
           (pkgs.writeShellScriptBin "pdnsutil" ''
             ${cfgDir}
@@ -201,8 +212,6 @@ in
         # default-soa-name=njk.local <- removed with upgrade
         # FIXME: https://docs.powerdns.com/authoritative/settings.html#setting-default-soa-content
 
-        # FIXME: test credentials!
-        # TODO: secretFile = sops.secrets.powerdns.path;
         extraConfig = ''
           local-address=0.0.0.0:5353
 
@@ -217,9 +226,6 @@ in
           default-ttl=60
           dnssec-key-cache-ttl=0
 
-          api=yes
-          api-key=testkey
-
           version-string=full
 
           launch=gpgsql
@@ -229,14 +235,10 @@ in
           gpgsql-dbname=powerdns
           gpgsql-dnssec=yes
         '';
-        /*
 
-          soa-refresh-default=10800
-          soa-retry-default=3600
-          soa-expire-default=604800
-          soa-minimum-ttl=60
+        # api=yes
+        # api-key=testkey
 
-        */
       };
     }
   ];
