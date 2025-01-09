@@ -55,6 +55,7 @@ in
         waveterm # AI assisted GUI terminal
 
         httpie-desktop # Painlessly test REST, GraphQL, and HTTP APIs
+        swagger-codegen # Generate stuff from openAPI spec
 
         sops
 

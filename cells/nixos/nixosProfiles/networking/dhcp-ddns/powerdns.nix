@@ -124,6 +124,8 @@ let
                 }}
                 # rectify dnssec
                 ${endpoint { method = "PUT"; zone = name; path = "rectify"; }}
+                ${endpoint { method = "PUT"; zone = name; path = "metadata/SOA-EDIT"; }} < ${json.generate "zone_${name}_soa-edit.json" { metadata = ["INCREASE"]; }}
+                ${endpoint { method = "PUT"; zone = name; path = "metadata/SOA-EDIT-DNSUPDATE"; }} < ${json.generate "zone_${name}_soa-edit-dnsupdate.json" { metadata = ["INCREASE"]; }}
               '';
             in
             ''
@@ -132,7 +134,7 @@ let
                 name = "${name}.";
                 kind = "Native";
                 masters = [];
-                nameservers = [ "ns1.${name}." ];
+                # NOTE: only good for forward lookups, but I want to handle reverse as well, so set manually - nameservers = [ "ns1.${name}." ];
               }}
               # create records
               ${endpoint { method = "PATCH"; zone = name; }} < ${json.generate "zone_${name}_records.json" { inherit (zones."${name}") rrsets; }}
@@ -177,8 +179,8 @@ in
       systemd.services.pdns.preStart = ''
         until nc -d -z 127.0.0.1 ${psql_port};do echo 'waiting for sql server for 5 sec.' && sleep 5;done
       '';
-      systemd.services.pdns.postStart = ''
-      '';
+      # systemd.services.pdns.postStart = ''
+      # '';
 
       services.powerdns = {
         enable = true;
@@ -196,6 +198,8 @@ in
           dnsupdate=yes
           allow-dnsupdate-from=127.0.0.1/32
 
+          default-soa-edit=increase
+          default-api-rectify=yes
           default-ttl=60
           dnssec-key-cache-ttl=0
 

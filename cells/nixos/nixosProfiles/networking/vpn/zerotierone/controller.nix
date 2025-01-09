@@ -3,11 +3,16 @@
 { lib, pkgs, config, ... }:
 let
   inherit (lib // builtins)
+    concatStringsSep
     mkEnableOption
     mergeAttrsList
     optionalString
+    hasAttrByPath
     nameValuePair
     fileContents
+    splitString
+    reverseList
+    filterAttrs
     attrNames
     mapAttrs'
     fromJSON
@@ -20,8 +25,11 @@ let
     length
     toPath
     isNull
+    imap1
     toInt
     types
+    take
+    last
     mkIf
     head;
 
@@ -39,38 +47,58 @@ let
       })
     names);
 
-  json = pkgs.formats.json { }; # json.generate
+  managedNetworks = filterAttrs
+    (n: v:
+      hasAttrByPath [ "cidr" "minaddr" ] v &&
+      hasAttrByPath [ "dns" "domain" ] v &&
+      hasAttrByPath [ "dns" "servers" ] v)
+    config.services.zerotierone.controller.networks;
 
-  endpoint = { method, zone ? null, path ? null }:
-    "http --json ${method}" +
-    " " +
-    "http://localhost:8081/api/v1/servers/localhost/zones" +
-    (optionalString (!isNull zone) "/${zone}.") +
-    (optionalString (!isNull path) "/${path}") +
-    " " +
-    "X-API-Key:\\ testkey";
-
-  req = { name, type, ttl, changetype, content }: {
-    rrsets = [{
-      inherit type ttl changetype;
-      name = name + ".";
-      records = [{ inherit content; disabled = false; }];
-    }];
+  soa = domain: "ns1.${domain}. hostmaster.${domain}. 0 10800 3600 604800 3600";
+  SOA = domain: {
+    type = "SOA";
+    records = [{ content = soa domain; }];
   };
 
-  records = [{ }];
-  /*
+  # 1.168.192.in-addr.arpa
+  rdnsNet = network: concatStringsSep "." (reverseList (take 3 (splitString "." network)));
+  rdnsIP = ip: last (splitString "." ip);
 
-    http --json PATCH http://localhost:8081/api/v1/servers/localhost/zones/njk.local. X-API-Key:\ testkey rrsets:='[{"name": "njk.local.", "type": "SOA", "ttl": 3600, "changetype": "replace", "records": [{"content": "ns1.njk.local. hostmaster.njk.local. 5 10800 3600 604800 3600", "disabled": false}]}]'
-
-     http --json GET http://localhost:8081/api/v1/servers/localhost/zones/njk.local X-API-Key:\ testkey | jq
-    pdnsutil:
-    create-zone 'njk.local' ns1.njk.local
-    increase-serial 'njk.local'
-    add-record 'njk.local' ns1 A '10.0.1.114'
-    secure-zone 'njk.local'
-    rectify-zone 'njk.local'
-  */
+  zones = (mapAttrs'
+    (n: v:
+      let
+      in
+      (nameValuePair v.dns.domain {
+        rrsets = [ (SOA v.dns.domain) ] ++
+          (imap1
+            (i: ip: {
+              type = "A";
+              name = "ns${toString i}";
+              records = [{ content = ip; }];
+            })
+            v.dns.servers) ++
+          (imap1
+            (i: ip: {
+              type = "NS";
+              name = "${v.dns.domain}.";
+              records = [{ content = "ns${toString i}.${v.dns.domain}."; }];
+            })
+            v.dns.servers);
+      }))
+    managedNetworks) //
+  (mapAttrs'
+    (n: v:
+      (nameValuePair "${rdnsNet v.cidr.network}.in-addr.arpa" {
+        rrsets = [ (SOA v.dns.domain) ] ++
+          (imap1
+            (i: ip: {
+              type = "PTR";
+              name = "${rdnsIP ip}";
+              records = [{ content = "ns${toString i}.${v.dns.domain}."; }];
+            })
+            v.dns.servers);
+      }))
+    managedNetworks);
 in
 {
   imports =
@@ -82,27 +110,16 @@ in
     ];
 
   config = mkMerge [
-
-    {
-      services.powerdns.zones."njk.local".rrsets = [
-        {
-          type = "SOA";
-          records = [{ content = "ns1.njk.local. hostmaster.njk.local. 5 10800 3600 604800 3600"; }];
-        }
-        {
-          type = "A";
-          name = "ns1";
-          records = [{ content = "10.0.0.1"; }];
-        }
-      ];
-    }
     { services.zerotierone.controller.enable = true; }
+    { services.powerdns = { inherit zones; }; }
 
     {
       services.zerotierone.controller.networks.admin-dhcp =
         # self managed dhcp/ddns/ipxe
         {
           cidr = "10.0.0.0/24";
+          dns.domain = "njk.local";
+          dns.servers = [ config.services.zerotierone.controller.networks.admin-dhcp.cidr.minaddr ];
           id = "ba8ec53f7ab4e74f";
           name = "kea-dhcp - njk.local";
           mutable = false;
