@@ -25,7 +25,7 @@ let
 
   inherit (config.services.powerdns) zones;
 
-  endpoint = { method, zone ? null, path ? null, apikey ? "\"$apikey\"" }:
+  endpoint = { method, zone ? null, path ? null, apikey ? "testkey" }:
     "http --json ${method}" +
     " " +
     "http://localhost:8081/api/v1/servers/localhost/zones" +
@@ -142,8 +142,8 @@ let
                 ${endpoint { method = "PUT"; zone = name; path = "rectify"; }}
               '';
             in
+            # TODO: apikey=$(cat ${config.sops.secrets.powerdns.path} | awk -F'=' '{print $2}')
             ''
-              apikey=$(cat ${config.sops.secrets.powerdns.path} | awk -F'=' '{print $2}')
               ${optionalString (! zones."${name}".mutable) deleteZone}
               # create ${name} zone
               ${endpoint { method = "POST"; }} < ${json.generate "zone_${name}_.json" {
@@ -185,13 +185,13 @@ in
 
 
   config = mkMerge [
-    (mkIf (hasAttrByPath [ "sops" "secrets" ] config) {
-      sops.secrets.powerdns = {
-        sopsFile = ../../../../secrets/sops/powerdns;
-        restartUnits = [ "pdns.service" ];
-        format = "binary";
-      };
-    })
+    # (mkIf (hasAttrByPath [ "sops" "secrets" ] config) {
+    #   sops.secrets.powerdns = {
+    #     sopsFile = ../../../../secrets/sops/powerdns;
+    #     restartUnits = [ "pdns.service" ];
+    #     format = "binary";
+    #   };
+    # })
 
     {
       # networking.firewall.interfaces."njk.local".allowedUDPPorts = [ 5353 ];
@@ -216,7 +216,7 @@ in
         until nc -d -z 127.0.0.1 ${psql_port};do echo 'waiting for sql server for 5 sec.' && sleep 5;done
       '';
 
-      systemd.services.pdns.serviceConfig.ExecStart = mkForce "${powerdnsStartScript}/bin/pdns";
+      # systemd.services.pdns.serviceConfig.ExecStart = mkForce "${powerdnsStartScript}/bin/pdns";
 
       systemd.services.pdns.postStart = concatStrings
         (mapAttrsToList
@@ -225,13 +225,12 @@ in
 
       services.powerdns = {
         enable = true;
-        # default-soa-name=njk.local <- removed with upgrade
-        # FIXME: https://docs.powerdns.com/authoritative/settings.html#setting-default-soa-content
-
         extraConfig = ''
           local-address=0.0.0.0:5353
 
           api=yes
+          api-key=testkey
+
           webserver-allow-from=127.0.0.1
           webserver-address=127.0.0.1
 
