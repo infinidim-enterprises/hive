@@ -6,8 +6,9 @@ let
     mkIf
     types
     toInt
-    mkMerge
     isNull
+    mkMerge
+    mkForce
     toUpper
     toString
     mkOption
@@ -120,7 +121,7 @@ let
         default = pkgs.writeShellApplication {
           excludeShellChecks = [ "SC2154" "SC2002" ];
           name = "initzone-${name}";
-          runtimeInputs = with pkgs;[ httpie gawk ];
+          runtimeInputs = with pkgs;[ httpie gawk coreutils ];
           text =
             let
               deleteZone = ''
@@ -149,7 +150,6 @@ let
                 name = "${name}.";
                 kind = "Native";
                 masters = [];
-                # NOTE: only good for forward lookups, but I want to handle reverse as well, so set manually - nameservers = [ "ns1.${name}." ];
               }}
               # create records
               ${endpoint { method = "PATCH"; zone = name; }} < ${json.generate "zone_${name}_records.json" { inherit (zones."${name}") rrsets; }}
@@ -160,6 +160,18 @@ let
         };
       };
     };
+  };
+
+  configFile = pkgs.writeText "pdns.conf" "${config.services.powerdns.extraConfig}";
+
+  powerdnsStartScript = pkgs.writeShellApplication {
+    runtimeInputs = [ pkgs.coreutils ];
+    name = "pdns";
+    text = ''
+      mkdir -p /run/pdns
+      cat ${configFile} ${config.sops.secrets.powerdns.path} > /run/pdns/pdns.conf
+      exec ${pkgs.pdns}/bin/pdns_server --config-dir=/run/pdns --guardian=no --daemon=no --disable-syslog --log-timestamp=no --write-pid=no
+    '';
   };
 
 in
@@ -179,7 +191,6 @@ in
         restartUnits = [ "pdns.service" ];
         format = "binary";
       };
-      services.powerdns.secretFile = config.sops.secrets.powerdns.path;
     })
 
     {
@@ -204,6 +215,9 @@ in
       systemd.services.pdns.preStart = ''
         until nc -d -z 127.0.0.1 ${psql_port};do echo 'waiting for sql server for 5 sec.' && sleep 5;done
       '';
+
+      systemd.services.pdns.serviceConfig.ExecStart = mkForce "${powerdnsStartScript}/bin/pdns";
+
       systemd.services.pdns.postStart = concatStrings
         (mapAttrsToList
           (n: v: "${v.initScript}/bin/${v.initScript.name}\n")
