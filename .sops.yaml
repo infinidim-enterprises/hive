@@ -94,7 +94,7 @@ creation_rules:
           - *vod_new
           - *damogran
 
-  - path_regex: cells/secrets/sops/powerdns.env
+  - path_regex: cells/secrets/sops/powerdns
     key_groups:
       - pgp:
           - *vod

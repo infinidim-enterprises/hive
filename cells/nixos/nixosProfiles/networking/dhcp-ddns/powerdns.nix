@@ -173,7 +173,7 @@ in
   config = mkMerge [
     (mkIf (hasAttrByPath [ "sops" "secrets" ] config) {
       sops.secrets.powerdns = {
-        sopsFile = ../../../../secrets/sops/powerdns.env;
+        sopsFile = ../../../../secrets/sops/powerdns;
         restartUnits = [ "pdns.service" ];
         format = "binary";
       };
