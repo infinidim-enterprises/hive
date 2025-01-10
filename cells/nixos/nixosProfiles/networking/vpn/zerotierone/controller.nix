@@ -144,7 +144,7 @@ in
       boot.kernel.sysctl."net.core.default_qdisc" = "fq_codel";
       boot.kernel.sysctl."net.ipv4.ip_forward" = 1;
 
-      services.kea.vpn-bridges.zerotierone.admin-dhcp =
+      services.kea.vpn-bridges.zerotierone."njk.local" =
         let
           inherit (config.services.zerotierone.controller.networks.admin-dhcp)
             cidr
