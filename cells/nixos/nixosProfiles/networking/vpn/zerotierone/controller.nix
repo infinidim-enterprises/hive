@@ -154,6 +154,8 @@ in
         with cidr;
         {
           subnet4 = [{
+            # subnet configuration failed: missing parameter 'id' (/etc/kea/dhcp4-server.conf:312:7)
+            id = 1;
             subnet = "${network}/${prefix}";
             pools = [{ pool = "${minaddr} - ${maxaddr}"; }];
             ddns-generated-prefix = "host";
