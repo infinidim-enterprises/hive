@@ -48,7 +48,7 @@ in
         # $PSQL -tAc "alter user powerdns password 'powerdns'"
       };
 
-      time.timeZone = "CET";
+      time.timeZone = mkForce "CET";
       services.postgresql = {
         # TODO: maybe use .initialScript
         enable = true;

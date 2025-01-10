@@ -167,7 +167,7 @@ in
           networkConfig.DNSSEC = false;
           networkConfig.IPv6AcceptRA = "no";
           networkConfig.LinkLocalAddressing = "no";
-          networkConfig.IPForward = "ipv4";
+          networkConfig.IPv4Forwarding = true;
 
           addresses = map
             (s: {
