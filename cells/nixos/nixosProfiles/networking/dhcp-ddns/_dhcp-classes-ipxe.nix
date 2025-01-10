@@ -12,7 +12,7 @@ with builtins;
   {
     # upgrade session here
     name = "iPXE_COMPAT";
-    test = "option[vendor-class-identifier].text == '${cfg.ipxeClassMatch}'";
+    test = "option[vendor-class-identifier].text == 'COMPAT'";
     # test = "option[175].option[20].exists and substring(option[77].hex,0,${toString (stringLength cfg.ipxeClassMatch)}) == '${cfg.ipxeClassMatch}'";
     # Next Server is - some say it should be (siaddr), others that it should be the tftpIp
     boot-file-name = "http://${httpIp}/boot/default.ipxe";

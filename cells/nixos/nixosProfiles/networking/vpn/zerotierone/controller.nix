@@ -114,6 +114,7 @@ in
     [
       cell.nixosProfiles.networking.dhcp-ddns.postgresql
       cell.nixosProfiles.networking.dhcp-ddns.powerdns
+      cell.nixosProfiles.networking.dhcp-ddns.kea
     ];
 
   config = mkMerge [

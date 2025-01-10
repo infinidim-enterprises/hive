@@ -1,20 +1,9 @@
 { inputs, cell, ... }:
 
-{ self, config, lib, pkgs, containers, ... }:
-with lib;
+{ config, lib, pkgs, ... }:
 let
-  # lan = config.deploy.params.lan.server;
-  # cfg = lan.kea-dhcp;
-  # localAddress = head (splitString "/" (head (cfg.addresses)).addressConfig.Address);
-  # localAddressSuffix = last (splitString "." localAddress);
-
-  # # dhcpServerAddress = head (splitString "/" (head (cfg.addresses)).addressConfig.Address);
-  # tftpIp = head (splitString "/" (head (lan.tftp-server.addresses)).addressConfig.Address);
-  # httpIp = head (splitString "/" (head (lan.http-server.addresses)).addressConfig.Address);
-  # dnsMasterIp = head (splitString "/" (head (lan.dns-native.addresses)).addressConfig.Address);
-  # postgresqlIp = head (splitString "/" (head (lan.postgresql.addresses)).addressConfig.Address);
-  # namespace = "lan-" + lan.domain;
-  # sameHost = hasAttrByPath [ "containers" "postgresql-dns-dhcp" ] config;
+  inherit (lib // builtins)
+    mkMerge;
 
   postgresqlIp = "127.0.0.1";
 
@@ -34,8 +23,6 @@ in
 
 mkMerge [
   {
-    networking.firewall.allowedUDPPorts = [ 67 ];
-
     systemd.services.kea-dhcp4-server.path = with pkgs; [ libressl.nc ];
     systemd.services.kea-dhcp4-server.preStart = ''
       until nc -d -z ${postgresqlIp} 5432;do echo 'waiting for sql server for 5 sec.' && sleep 5;done
@@ -58,7 +45,6 @@ mkMerge [
       enable = true;
 
       settings = {
-        inherit (cfg) subnet4;
         inherit hosts-database;
         lease-database = hosts-database;
 
@@ -66,10 +52,10 @@ mkMerge [
         ### https://gist.github.com/NiKiZe/5c181471b96ac37a069af0a76688944d
         ### https://github.com/pashinin/kea-docker-image/blob/b00aeef49fa5398060f995f930bebe9099b6c7bd/kea-dhcp4.conf
         option-def = import ./_dhcp-opts-ipxe.nix;
-        client-classes = import ./_dhcp-classes-ipxe.nix { inherit cfg lib httpIp tftpIp lan; };
+        # TODO: client-classes = import ./_dhcp-classes-ipxe.nix { inherit cfg lib httpIp tftpIp lan; }; # iPXE booting
 
         interfaces-config.dhcp-socket-type = "raw";
-        interfaces-config.interfaces = lan.macvlans;
+        # interfaces-config.interfaces = lan.macvlans; # Physical
 
         # 72h * 60 * 60
         valid-lifetime = 3600;
@@ -92,7 +78,10 @@ mkMerge [
           unwarned-reclaim-cycles = 5;
         };
 
-        loggers = let pattern = "%d{%j %H:%M:%S.%q} %c %m\n"; in
+        loggers =
+          let
+            pattern = "%d{%j %H:%M:%S.%q} %c %m\n";
+          in
           [
             {
               name = "kea-dhcp4";
@@ -120,7 +109,5 @@ mkMerge [
         hostname-char-replacement = "-";
       };
     };
-
   }
-
 ]
