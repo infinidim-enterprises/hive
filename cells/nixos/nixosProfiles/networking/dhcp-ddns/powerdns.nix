@@ -1,6 +1,7 @@
 { inputs, cell, ... }:
 
 { config, lib, pkgs, ... }:
+# TODO: fork and maintain a proper powerdns.nix module
 let
   inherit (lib // builtins)
     mkIf

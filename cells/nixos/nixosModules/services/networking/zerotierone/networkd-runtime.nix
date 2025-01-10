@@ -1,4 +1,4 @@
-{ lib ? import <nixpkgs/lib>, networkJson }:
+{ lib ? import <nixpkgs/lib>, networkJson, hostName }:
 with lib; with builtins;
 let
   network = fromJSON (readFile networkJson);
@@ -15,7 +15,7 @@ let
         then x + ":"
         else x)
       arr);
-  iaid = iaidGen (hashString "md5" network.id);
+  iaid = iaidGen (hashString "md5" (network.id + hostName));
 
   template = ''
     #${network.id}

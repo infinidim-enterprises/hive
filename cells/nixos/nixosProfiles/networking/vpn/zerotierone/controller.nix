@@ -6,6 +6,7 @@ let
     concatStringsSep
     mkEnableOption
     mergeAttrsList
+    mapAttrsToList
     optionalString
     hasAttrByPath
     nameValuePair
@@ -13,18 +14,22 @@ let
     splitString
     reverseList
     filterAttrs
+    attrValues
     attrNames
+    mapAttrs
     mapAttrs'
     fromJSON
     mkOption
     genAttrs
     isString
+    flatten
     mkMerge
     readDir
     toLower
     length
     toPath
     isNull
+    foldl'
     imap1
     toInt
     types
@@ -60,11 +65,47 @@ let
     records = [{ content = soa domain; }];
   };
 
-  # 1.168.192.in-addr.arpa
   rdnsNet = network: concatStringsSep "." (reverseList (take 3 (splitString "." network)));
   rdnsIP = ip: last (splitString "." ip);
 
-  zones = (mapAttrs'
+  mkZones = net:
+    let
+      generateForAttr = n: v:
+        let
+          all = { inherit (v) mutable; };
+          soa_ns = [ (SOA v.dns.domain) ] ++
+            (imap1
+              (i: ip: {
+                type = "NS";
+                records = [{ content = "ns${toString i}.${v.dns.domain}."; }];
+              })
+              v.dns.servers);
+          A = imap1
+            (i: ip: {
+              type = "A";
+              name = "ns${toString i}";
+              records = [{ content = ip; }];
+            })
+            v.dns.servers;
+          PTR = imap1
+            (i: ip: {
+              type = "PTR";
+              name = "${rdnsIP ip}";
+              records = [{ content = "ns${toString i}.${v.dns.domain}."; }];
+            })
+            v.dns.servers;
+        in
+        {
+          "${v.dns.domain}" = all // { rrsets = soa_ns ++ A; };
+          "${rdnsNet v.cidr.network}.in-addr.arpa" = all // { rrsets = soa_ns ++ PTR; };
+        };
+      newAttrs = mapAttrs generateForAttr net;
+    in
+    foldl' (acc: val: acc // val) { } (attrValues newAttrs);
+
+  zones = mkZones managedNetworks;
+
+  zones_old = (mapAttrs'
     (n: v:
       let
       in
@@ -119,6 +160,56 @@ in
   config = mkMerge [
     { services.zerotierone.controller.enable = true; }
     { services.powerdns = { inherit zones; }; }
+    {
+      services.kea.dhcp-ddns.settings =
+        let
+          inherit (config.services.zerotierone.controller.networks.admin-dhcp)
+            cidr
+            dns;
+        in
+        with cidr;
+        {
+          forward-ddns.ddns-domains = [{
+            name = dns.domain + ".";
+            dns-servers = [{ ip-address = minaddr; }];
+          }];
+
+          reverse-ddns.ddns-domains = [{
+            name = (rdnsNet network) + ".in-addr.arpa" + ".";
+            dns-servers = [{ ip-address = minaddr; }];
+          }];
+        };
+    }
+
+    {
+      boot.kernel.sysctl."net.core.default_qdisc" = "fq_codel";
+      boot.kernel.sysctl."net.ipv4.ip_forward" = 1;
+
+      services.kea.vpn-bridges.zerotierone.admin-dhcp =
+        let
+          inherit (config.services.zerotierone.controller.networks.admin-dhcp)
+            cidr
+            dns;
+        in
+        with cidr;
+        {
+          subnet4 = [{
+            subnet = "${network}/${prefix}";
+            pools = [{ pool = "${minaddr} - ${maxaddr}"; }];
+            ddns-generated-prefix = "host";
+            ddns-qualifying-suffix = dns.domain;
+            option-data = [
+              { name = "domain-name-servers"; data = minaddr; }
+              { name = "domain-search"; data = dns.domain; }
+              { name = "routers"; data = minaddr; }
+              { name = "domain-name"; data = dns.domain; }
+            ];
+          }];
+          bridgeIP = minaddr;
+          IPMasquerade = "ipv4";
+          joinNetworks = [{ "ba8ec53f7ab4e74f" = "admin-dhcp"; }];
+        };
+    }
 
     {
       services.zerotierone.controller.networks.admin-dhcp =

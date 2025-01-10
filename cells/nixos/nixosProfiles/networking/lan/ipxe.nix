@@ -18,7 +18,7 @@ let
 
   # :version_up2date
 
-  #     echo next-server: ''${next-server}
+  # echo next-server: ''${next-server}
   # echo www-server: ''${www-server}
   # echo ''${hostname}.''${net0/domain}
   # echo IP : ''${net0/ip} / ''${net0/netmask}

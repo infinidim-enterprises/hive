@@ -48,6 +48,7 @@ in
         # $PSQL -tAc "alter user powerdns password 'powerdns'"
       };
 
+      time.timeZone = "CET";
       services.postgresql = {
         # TODO: maybe use .initialScript
         enable = true;
@@ -58,7 +59,6 @@ in
         # https://gitlab.isc.org/isc-projects/kea/-/issues/1731
         settings.timezone = "CET";
         settings.log_timezone = "CET";
-        # settings.log_destination = "syslog";
 
         authentication = mkForce ''
           local all all trust
