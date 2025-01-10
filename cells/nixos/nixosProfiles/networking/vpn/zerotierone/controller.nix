@@ -59,10 +59,11 @@ let
       hasAttrByPath [ "dns" "servers" ] v)
     config.services.zerotierone.controller.networks;
 
-  soa = domain: "ns1.${domain}. hostmaster.${domain}. 0 10800 3600 604800 3600";
   SOA = domain: {
     type = "SOA";
-    records = [{ content = soa domain; }];
+    records = [{
+      content = "ns1.${domain}. hostmaster.${domain}. 0 10800 3600 604800 3600";
+    }];
   };
 
   rdnsNet = network: concatStringsSep "." (reverseList (take 3 (splitString "." network)));
@@ -105,48 +106,6 @@ let
 
   zones = mkZones managedNetworks;
 
-  zones_old = (mapAttrs'
-    (n: v:
-      let
-      in
-      (nameValuePair v.dns.domain {
-        inherit (v) mutable;
-        rrsets = [ (SOA v.dns.domain) ] ++
-          (imap1
-            (i: ip: {
-              type = "A";
-              name = "ns${toString i}";
-              records = [{ content = ip; }];
-            })
-            v.dns.servers) ++
-          (imap1
-            (i: ip: {
-              type = "NS";
-              records = [{ content = "ns${toString i}.${v.dns.domain}."; }];
-            })
-            v.dns.servers);
-      }))
-    managedNetworks) //
-  (mapAttrs'
-    (n: v:
-      (nameValuePair "${rdnsNet v.cidr.network}.in-addr.arpa" {
-        inherit (v) mutable;
-        rrsets = [ (SOA v.dns.domain) ] ++
-          (imap1
-            (i: ip: {
-              type = "PTR";
-              name = "${rdnsIP ip}";
-              records = [{ content = "ns${toString i}.${v.dns.domain}."; }];
-            })
-            v.dns.servers) ++
-          (imap1
-            (i: ip: {
-              type = "NS";
-              records = [{ content = "ns${toString i}.${v.dns.domain}."; }];
-            })
-            v.dns.servers);
-      }))
-    managedNetworks);
 in
 {
   imports =
