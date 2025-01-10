@@ -388,6 +388,7 @@ in
           skipNetworkStr = ". != null and (.[] | contains($device))";
         in
 
+        # FIXME: Unable to read IAID, ignoring assignment: 74:1a:f2:cd:ab:1b:ea:74:31:bf:6e:18:4a:d8:b5:cf
         {
           environment.NIX_REMOTE = "daemon";
           serviceConfig.Type = "notify";
