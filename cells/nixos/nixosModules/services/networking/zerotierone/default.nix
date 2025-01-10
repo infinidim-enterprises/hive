@@ -409,7 +409,7 @@ in
 
             _state_change() {
               nix eval -I nixpkgs=${pkgs.path} --raw --impure --expr \
-                'import ${./networkd-runtime.nix} { networkJson = builtins.getEnv "NOW"; hostName = ${config.networking.hostName};}' > /etc/systemd/network/$DEVICE.network
+                'import ${./networkd-runtime.nix} { networkJson = builtins.getEnv "NOW"; hostName = "${config.networking.hostName}";}' > /etc/systemd/network/$DEVICE.network
               networkctl reload
             }
 
