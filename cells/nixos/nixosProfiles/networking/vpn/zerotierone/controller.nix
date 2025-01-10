@@ -157,7 +157,7 @@ in
             # subnet configuration failed: missing parameter 'id' (/etc/kea/dhcp4-server.conf:312:7)
             id = 1;
             subnet = "${network}/${prefix}";
-            pools = [{ pool = "${minaddr} - ${maxaddr}"; }];
+            pools = [{ pool = "10.0.0.2 - ${maxaddr}"; }]; # ${minaddr}
             ddns-generated-prefix = "host";
             ddns-qualifying-suffix = dns.domain;
             option-data = [
