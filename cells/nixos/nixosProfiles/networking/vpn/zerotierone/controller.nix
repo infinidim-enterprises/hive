@@ -126,17 +126,23 @@ in
           inherit (config.services.zerotierone.controller.networks.admin-dhcp)
             cidr
             dns;
+          dns-servers = [{
+            ip-address = cidr.minaddr;
+            port = 5353; # NOTE: Must match the powerdns local-address port!
+          }];
         in
         with cidr;
         {
           forward-ddns.ddns-domains = [{
+            inherit dns-servers;
             name = dns.domain + ".";
-            dns-servers = [{ ip-address = minaddr; }];
+            # dns-servers = [{ ip-address = minaddr; port = 5353; }];
           }];
 
           reverse-ddns.ddns-domains = [{
+            inherit dns-servers;
             name = (rdnsNet network) + ".in-addr.arpa" + ".";
-            dns-servers = [{ ip-address = minaddr; }];
+            # dns-servers = [{ ip-address = minaddr; port = 5353; }];
           }];
         };
     }
@@ -157,7 +163,7 @@ in
             # subnet configuration failed: missing parameter 'id' (/etc/kea/dhcp4-server.conf:312:7)
             id = 1;
             subnet = "${network}/${prefix}";
-            pools = [{ pool = "10.0.0.2 - ${maxaddr}"; }]; # ${minaddr}
+            pools = [{ pool = "10.0.0.2 - ${maxaddr}"; }]; # TODO: ${minaddr} + 1
             ddns-generated-prefix = "host";
             ddns-qualifying-suffix = dns.domain;
             option-data = [
