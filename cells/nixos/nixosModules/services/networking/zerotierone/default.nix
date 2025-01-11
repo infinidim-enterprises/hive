@@ -398,6 +398,10 @@ in
         # iaid = (fromJSON (fileContents (pkgs.runCommandNoCCLocal "iaidGen" { } ''
           #   iaid '${hashString "sha512" (network.id + "/" + hostName)}' > $out
           # ''))).iaid;
+          #
+          # ambiguous redirect:
+          #    cat $NOW | jq -r '.id' > $IAID_NETWORK
+          #    iaid "$IAID_NETWORK_${config.networking.hostName}" > $IAID
 
         {
           environment.NIX_REMOTE = "daemon";
@@ -412,8 +416,6 @@ in
 
             _state_now() {
               ${ztCli} | ${jqCmd} '${network}' > $NOW
-              cat $NOW | jq -r '.id' > $IAID_NETWORK
-              iaid "$IAID_NETWORK_${config.networking.hostName}" > $IAID
             }
 
             _state_before() {

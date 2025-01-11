@@ -51,7 +51,7 @@ let
     Anonymize=false
     ClientIdentifier=duid
     DUIDType=uuid
-    IAID=${iaid}
+    # IAID=${iaid}
     SendHostname=true
     SendRelease=true
     UseDNS=true
