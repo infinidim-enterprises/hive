@@ -395,6 +395,9 @@ in
           network = ''.[] | select(.portDeviceName == $device) | del(.multicastSubscriptions)'';
           skipNetworkStr = ". != null and (.[] | contains($device))";
         in
+        # iaid = (fromJSON (fileContents (pkgs.runCommandNoCCLocal "iaidGen" { } ''
+          #   iaid '${hashString "sha512" (network.id + "/" + hostName)}' > $out
+          # ''))).iaid;
 
         {
           environment.NIX_REMOTE = "daemon";
@@ -405,10 +408,12 @@ in
             NOW=''${LOC}/''${DEVICE}_state_now.json
             BEFORE=''${LOC}/''${DEVICE}_state_before.json
 
-            export DEVICE NOW BEFORE LOC
+            export DEVICE NOW BEFORE LOC IAID_NETWORK IAID
 
             _state_now() {
               ${ztCli} | ${jqCmd} '${network}' > $NOW
+              cat $NOW | jq -r '.id' > $IAID_NETWORK
+              iaid "$IAID_NETWORK_${config.networking.hostName}" > $IAID
             }
 
             _state_before() {
@@ -417,7 +422,7 @@ in
 
             _state_change() {
               nix eval -I nixpkgs=${pkgs.path} --raw --impure --expr \
-                'import ${./networkd-runtime.nix} { networkJson = builtins.getEnv "NOW"; hostName = "${config.networking.hostName}"; }' > /etc/systemd/network/$DEVICE.network
+                'import ${./networkd-runtime.nix} { networkJson = builtins.getEnv "NOW"; iaid = builtins.getEnv "IAID"; }' > /etc/systemd/network/$DEVICE.network
               networkctl reload
             }
 

@@ -1,8 +1,4 @@
-{ lib ? import <nixpkgs/lib>
-, pkgs ? import <nixpkgs> { }
-, networkJson
-, hostName
-}:
+{ lib ? import <nixpkgs/lib>, networkJson, iaid }:
 with (lib // builtins);
 let
   network = fromJSON (readFile networkJson);
@@ -11,10 +7,6 @@ let
   isSearchDomain = network.dns.domain != "";
   isAddress = (length network.assignedAddresses) > 0;
   routes = filter (r: r.via != null) network.routes;
-
-  iaid = (fromJSON (fileContents (pkgs.runCommandNoCCLocal "iaidGen" { } ''
-    iaid '${hashString "sha512" (network.id + "/" + hostName)}' > $out
-  ''))).iaid;
 
   template = ''
     #${network.id}
