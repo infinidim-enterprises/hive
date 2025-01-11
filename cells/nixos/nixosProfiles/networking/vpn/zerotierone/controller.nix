@@ -98,7 +98,7 @@ let
         in
         {
           "${v.dns.domain}" = all // { rrsets = soa_ns ++ A; };
-          "${rdnsNet v.cidr.network}.in-addr.arpa" = all // { rrsets = soa_ns ++ PTR; };
+          "${v.cidr.ptr}" = all // { rrsets = soa_ns ++ PTR; };
         };
       newAttrs = mapAttrs generateForAttr net;
     in
@@ -131,7 +131,6 @@ in
             port = 5353; # NOTE: Must match the powerdns local-address port!
           }];
         in
-        with cidr;
         {
           forward-ddns.ddns-domains = [{
             inherit dns-servers;
@@ -140,7 +139,7 @@ in
 
           reverse-ddns.ddns-domains = [{
             inherit dns-servers;
-            name = (rdnsNet network) + ".in-addr.arpa" + ".";
+            name = cidr.ptr + ".";
           }];
         };
     }
@@ -149,29 +148,28 @@ in
       boot.kernel.sysctl."net.core.default_qdisc" = "fq_codel";
       boot.kernel.sysctl."net.ipv4.ip_forward" = 1;
 
-      services.kea.vpn-bridges.zerotierone."njk.local" =
+      services.kea.vpn-bridges.zerotierone."njk-local" =
         let
           inherit (config.services.zerotierone.controller.networks.admin-dhcp)
             cidr
             dns;
         in
-        with cidr;
         {
           subnet4 = [{
             # subnet configuration failed: missing parameter 'id' (/etc/kea/dhcp4-server.conf:312:7)
             id = 1;
-            subnet = "${network}/${prefix}";
-            pools = [{ pool = "10.0.0.2 - ${maxaddr}"; }]; # TODO: ${minaddr} + 1
+            subnet = "${cidr.network}/${cidr.prefix}";
+            pools = [{ inherit (cidr) pool; }];
             ddns-generated-prefix = "host";
             ddns-qualifying-suffix = dns.domain;
             option-data = [
-              { name = "domain-name-servers"; data = minaddr; }
+              { name = "domain-name-servers"; data = cidr.minaddr; }
               { name = "domain-search"; data = dns.domain; }
-              { name = "routers"; data = minaddr; }
+              { name = "routers"; data = cidr.minaddr; }
               { name = "domain-name"; data = dns.domain; }
             ];
           }];
-          bridgeIP = minaddr;
+          bridgeIP = cidr.minaddr;
           IPMasquerade = "ipv4";
           joinNetworks = [{ "ba8ec53f7ab4e74f" = "njk-admin"; }];
         };
@@ -181,7 +179,7 @@ in
       services.zerotierone.controller.networks.admin-dhcp =
         # self managed dhcp/ddns/ipxe
         {
-          cidr = "10.0.0.0/24";
+          cidr = "192.168.121.0/24";
           dns.domain = "njk.local";
           dns.servers = [ config.services.zerotierone.controller.networks.admin-dhcp.cidr.minaddr ];
           id = "ba8ec53f7ab4e74f";

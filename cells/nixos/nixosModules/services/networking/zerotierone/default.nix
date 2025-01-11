@@ -24,6 +24,14 @@ let
         cfgChunk);
   };
 
+  removeShebang = file:
+    concatStringsSep "\n" (tail (tail (splitString "\n" (fileContents file))));
+
+  iaidGenerator = pkgs.writeScriptBin
+    "iaid"
+    ("#!${getExe pkgs.python3.withPackages (p: [p.mmh3])}\n" +
+      (removeShebang ./iaid.py));
+
   localConfOptionsPhysical = with types;
     { ... }: {
       options = {
@@ -220,6 +228,7 @@ in
 
     service_path_pkgs = mkOption {
       default = with pkgs; [
+        iaidGenerator
         nix
         systemd
         diffutils
@@ -388,7 +397,6 @@ in
           skipNetworkStr = ". != null and (.[] | contains($device))";
         in
 
-        # FIXME: Unable to read IAID, ignoring assignment: 74:1a:f2:cd:ab:1b:ea:74:31:bf:6e:18:4a:d8:b5:cf
         {
           environment.NIX_REMOTE = "daemon";
           serviceConfig.Type = "notify";
@@ -410,7 +418,7 @@ in
 
             _state_change() {
               nix eval -I nixpkgs=${pkgs.path} --raw --impure --expr \
-                'import ${./networkd-runtime.nix} { networkJson = builtins.getEnv "NOW"; hostName = "${config.networking.hostName}";}' > /etc/systemd/network/$DEVICE.network
+                'import ${./networkd-runtime.nix} { networkJson = builtins.getEnv "NOW"; hostName = "${config.networking.hostName}"; }' > /etc/systemd/network/$DEVICE.network
               networkctl reload
             }
 

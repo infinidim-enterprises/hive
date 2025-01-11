@@ -1,5 +1,9 @@
-{ lib ? import <nixpkgs/lib>, networkJson, hostName }:
-with lib; with builtins;
+{ lib ? import <nixpkgs/lib>
+, pkgs ? import <nixpkgs>
+, networkJson
+, hostName
+}:
+with (lib // builtins);
 let
   network = fromJSON (readFile networkJson);
   isDHCP = (length network.assignedAddresses) < 1;
@@ -7,15 +11,10 @@ let
   isSearchDomain = network.dns.domain != "";
   isAddress = (length network.assignedAddresses) > 0;
   routes = filter (r: r.via != null) network.routes;
-  iaidGen = uuidStr:
-    let arr = stringToCharacters uuidStr; in
-    concatStrings (imap1
-      (i: x:
-        if mod i 2 == 0 && i < (length arr)
-        then x + ":"
-        else x)
-      arr);
-  iaid = iaidGen (hashString "md5" (network.id + hostName));
+
+  iaid = (fromJSON (pkgs.runCommandNoCCLocal "" { } ''
+    iaid '${hashString "sha512" (network.id + "/" + hostName)}'
+  '')).iaid;
 
   template = ''
     #${network.id}
@@ -27,7 +26,7 @@ let
     RequiredForOnline=no
 
     [Network]
-    Description=${network.id} [${network.name}]
+    Description=${network.id} [ ${network.name} ]
     # ConfigureWithoutCarrier=true
     IPv6AcceptRA=no
     LinkLocalAddressing=no
@@ -52,6 +51,7 @@ let
       Address=${a}
     '')
     network.assignedAddresses)
+
   # FIXME: UseRoutes=false
   + optionalString isDHCP ''
 

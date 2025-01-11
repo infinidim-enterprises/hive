@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 
-with lib;
+with (lib // builtins);
 
 let
   sanitize = cfgChunk:
@@ -23,12 +23,19 @@ let
           cfgChunk);
     };
 
+  removeShebang = file:
+    concatStringsSep "\n" (tail (tail (splitString "\n" (fileContents file))));
+
+  ipcalcScript = pkgs.writeScript
+    "ipcalc"
+    ("#!${getExe pkgs.python3}\n" +
+      (removeShebang ./ipcalc.py));
+
   ipCalc = subnet:
-    mapAttrs' (n: v: nameValuePair (toLower n) v)
-      (builtins.fromJSON (fileContents (pkgs.runCommandNoCC "ipcalc"
-        { buildInputs = with pkgs; [ ipcalc ]; } ''
-        ipcalc ${subnet} --json > $out
-      '')));
+    fromJSON
+      (fileContents (pkgs.runCommandNoCC "ipcalc" { } ''
+        ${ipcalcScript} '${subnet}' > $out
+      ''));
 
   top = config.services.zerotierone;
   cfg = top.controller;
@@ -41,6 +48,10 @@ let
       options = genAttrs [
         "addresses"
         "addrspace"
+        "hosts"
+        "pool"
+        "ptr"
+        "minaddrptr"
         "broadcast"
         "maxaddr"
         "minaddr"
@@ -48,7 +59,10 @@ let
         "network"
         "prefix"
       ]
-        (_: mkOption { type = str; });
+        (x:
+          if x == "hosts"
+          then mkOption { type = listOf str; }
+          else mkOption { type = str; });
     };
 
   routesOptions = with types; { ... }: {
