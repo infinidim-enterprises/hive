@@ -29,7 +29,7 @@ let
 
   iaidGenerator = pkgs.writeScriptBin
     "iaid"
-    ("#!${getExe pkgs.python3.withPackages (p: [p.mmh3])}\n" +
+    ("#!${getExe (pkgs.python3.withPackages (p: [p.mmh3]))}\n" +
       (removeShebang ./iaid.py));
 
   localConfOptionsPhysical = with types;
