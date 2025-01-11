@@ -12,9 +12,9 @@ let
   isAddress = (length network.assignedAddresses) > 0;
   routes = filter (r: r.via != null) network.routes;
 
-  iaid = (fromJSON (pkgs.runCommandNoCCLocal "" { } ''
-    iaid '${hashString "sha512" (network.id + "/" + hostName)}'
-  '')).iaid;
+  iaid = (fromJSON (fileContents (pkgs.runCommandNoCCLocal "" { } ''
+    iaid '${hashString "sha512" (network.id + "/" + hostName)}' > $out
+  ''))).iaid;
 
   template = ''
     #${network.id}

@@ -27,8 +27,7 @@ let
   removeShebang = file:
     concatStringsSep "\n" (tail (tail (splitString "\n" (fileContents file))));
 
-  iaidGenerator = pkgs.writeScriptBin
-    "iaid"
+  iaidGenerator = pkgs.writeScriptBin "iaid"
     ("#!${getExe (pkgs.python3.withPackages (p: [p.mmh3]))}\n" +
       (removeShebang ./iaid.py));
 
