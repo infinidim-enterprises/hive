@@ -127,7 +127,7 @@ in
             cidr
             dns;
           dns-servers = [{
-            ip-address = cidr.minaddr;
+            ip-address = "127.0.0.1"; # NOTE: Must match the powerdns allow-dnsupdate-from cidr.minaddr;
             port = 5353; # NOTE: Must match the powerdns local-address port!
           }];
         in
@@ -136,13 +136,11 @@ in
           forward-ddns.ddns-domains = [{
             inherit dns-servers;
             name = dns.domain + ".";
-            # dns-servers = [{ ip-address = minaddr; port = 5353; }];
           }];
 
           reverse-ddns.ddns-domains = [{
             inherit dns-servers;
             name = (rdnsNet network) + ".in-addr.arpa" + ".";
-            # dns-servers = [{ ip-address = minaddr; port = 5353; }];
           }];
         };
     }
