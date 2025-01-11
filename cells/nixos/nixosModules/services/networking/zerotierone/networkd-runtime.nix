@@ -1,5 +1,5 @@
 { lib ? import <nixpkgs/lib>
-, pkgs ? import <nixpkgs>
+, pkgs ? import <nixpkgs> { }
 , networkJson
 , hostName
 }:
@@ -12,7 +12,7 @@ let
   isAddress = (length network.assignedAddresses) > 0;
   routes = filter (r: r.via != null) network.routes;
 
-  iaid = (fromJSON (fileContents (pkgs.runCommandNoCCLocal "" { } ''
+  iaid = (fromJSON (fileContents (pkgs.runCommandNoCCLocal "iaidGen" { } ''
     iaid '${hashString "sha512" (network.id + "/" + hostName)}' > $out
   ''))).iaid;
 
