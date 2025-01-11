@@ -99,7 +99,7 @@ in
             "br.${n}"
             {
               allowedTCPPorts = config.services.openssh.ports;
-              allowedUDPPorts = [ 5353 ];
+              # allowedUDPPorts = [ 5353 ];
             })
         cfg.zerotierone;
     })

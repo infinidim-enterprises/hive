@@ -170,7 +170,7 @@ in
             ];
           }];
           bridgeIP = cidr.minaddr;
-          IPMasquerade = "ipv4";
+          # IPMasquerade = "ipv4";
           joinNetworks = [{ "ba8ec53f7ab4e74f" = "njk-admin"; }];
         };
     }
