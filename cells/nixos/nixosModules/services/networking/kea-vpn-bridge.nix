@@ -5,6 +5,7 @@ let
   top = config.services.kea;
   cfg = top.vpn-bridges;
   firewallEnabled = config.networking.firewall.enable;
+  sshEnabled = config.services.openssh.enable;
   isNetworkd = config.systemd.network.enable;
   isZerotierone = config.services.zerotierone.enable;
 
@@ -88,6 +89,18 @@ in
           nameValuePair
             "br.${n}"
             { allowedUDPPorts = [ 67 68 69 ]; })
+        cfg.zerotierone;
+    })
+
+    (mkIf (firewallEnabled && sshEnabled) {
+      networking.firewall.interfaces = mapAttrs'
+        (n: _:
+          nameValuePair
+            "br.${n}"
+            {
+              allowedTCPPorts = config.services.openssh.ports;
+              allowedUDPPorts = [ 5353 ];
+            })
         cfg.zerotierone;
     })
 
