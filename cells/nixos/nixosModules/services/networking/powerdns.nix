@@ -63,7 +63,7 @@ let
     (optionalString (!isNull zone) "/${zone}.") +
     (optionalString (!isNull path) "/${path}") +
     " " +
-    ''X-API-Key:\\ "${"$"}{APIKEY}"'';
+    ''X-API-Key:\ "${"$"}{APIKEY}"'';
 
   initZone = { name, zone }:
     pkgs.writeShellApplication {
