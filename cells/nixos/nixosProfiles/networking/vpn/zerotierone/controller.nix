@@ -119,7 +119,7 @@ in
 
   config = mkMerge [
     { services.zerotierone.controller.enable = true; }
-    { services.powerdns = { inherit zones; }; }
+    { services.powerdns.virtualInstances.default = { inherit zones; }; }
     {
       services.kea.dhcp-ddns.settings =
         let
