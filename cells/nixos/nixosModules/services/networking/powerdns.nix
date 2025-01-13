@@ -292,7 +292,10 @@ in
 
     {
       systemd.services = ({
+        pdns.enable = false;
+
         "pdns@".path = with pkgs; [ ini2json jq libressl.nc ];
+        "pdns@".environment.confDir = "/run/pdns";
         "pdns@".serviceConfig.ExecStart = [
           "" # Override
           (concatStringsSep " " [
@@ -313,6 +316,8 @@ in
           in
           nameValuePair "pdns@${n}"
             {
+              # overrideStrategy = "asDropin";
+
               wantedBy = [ "multi-user.target" ];
 
               after = [
@@ -336,7 +341,6 @@ in
                 in
                 concatStringsSep "\n"
                   [
-                    "export confDir=/run/pdns"
                     ''mkdir -p "''${confDir}"''
                     "until nc -d -z ${host} ${port};do echo 'waiting for backend for 5 sec.' && sleep 5;done"
                     cfgString
