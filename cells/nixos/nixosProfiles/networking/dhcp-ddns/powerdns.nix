@@ -80,7 +80,7 @@ in
           dnsupdate = "yes";
           allow-dnsupdate-from = "127.0.0.1/32";
 
-          default-soa-edit = "increase";
+          # default-soa-edit = "INCREASE";
           default-api-rectify = "yes";
           default-ttl = "60";
           dnssec-key-cache-ttl = "0";
