@@ -293,12 +293,11 @@ in
                 "$@"
               ];
           in
-          [
-            (pkgs.writeShellScriptBin "pdnsutil-${n}" (concatStringsSep " "
-              ([ "${pkgs.powerdns}/bin/pdnsutil" ] ++ params)))
-            (pkgs.writeShellScriptBin "pdnsutil-${n}" (concatStringsSep " "
-              ([ "${pkgs.powerdns}/bin/pdns_control" ] ++ params)))
-          ])
+          map
+            (e: (pkgs.writeShellScriptBin "${e}-${n}" (concatStringsSep " "
+              ([ "${pkgs.powerdns}/bin/${e}" ] ++ params))))
+            [ "pdnsutil" "pdns_control" ]
+        )
         cfg.virtualInstances);
     })
 
