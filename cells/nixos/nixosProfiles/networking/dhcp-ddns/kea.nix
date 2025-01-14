@@ -23,7 +23,10 @@ in
 
 mkMerge [
   {
-    systemd.services.kea-dhcp4-server.path = with pkgs; [ libressl.nc ];
+    systemd.services.kea-dhcp4-server.path = with pkgs; [
+      libressl.nc
+      config.services.postgresql.package
+    ];
     systemd.services.kea-dhcp4-server.preStart = ''
       until nc -d -z ${postgresqlIp} 5432;do echo 'waiting for sql server for 5 sec.' && sleep 5;done
     '';

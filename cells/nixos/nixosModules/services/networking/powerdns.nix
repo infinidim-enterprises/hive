@@ -232,6 +232,7 @@ in
 
   options = {
     services.powerdns = with types; {
+      debug = mkEnableOption "Install instance utils in systemPackages";
       enable = mkEnableOption "PowerDNS domain name server" // {
         readOnly = true;
         default = (filterAttrs (_: v: v.enable) cfg.virtualInstances) != { };
@@ -280,6 +281,26 @@ in
         }
       ];
     }
+
+    (mkIf cfg.debug {
+      environment.systemPackages = flatten (mapAttrsToList
+        (n: v:
+          let
+            params =
+              [
+                "--config-dir=${config.systemd.services."pdns@".environment.confDir}"
+                "--config-name=${n}"
+                "$@"
+              ];
+          in
+          [
+            (pkgs.writeShellScriptBin "pdnsutil-${n}" (concatStringsSep " "
+              ([ "${pkgs.powerdns}/bin/pdnsutil" ] ++ params)))
+            (pkgs.writeShellScriptBin "pdnsutil-${n}" (concatStringsSep " "
+              ([ "${pkgs.powerdns}/bin/pdns_control" ] ++ params)))
+          ])
+        cfg.virtualInstances);
+    })
 
     {
       systemd.packages = [ pkgs.pdns ];

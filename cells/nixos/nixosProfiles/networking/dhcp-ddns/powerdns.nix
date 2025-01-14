@@ -21,8 +21,6 @@ let
     mkEnableOption;
 
   psql_port = toString config.services.postgresql.settings.port;
-  cfgDir = ''conf_dir=$(systemctl cat pdns.service | grep -i config-dir | awk -F ' ' '{printf $2}' | awk -F '=' '{printf $2}')'';
-  param = ''--config-dir="''${conf_dir}" $@'';
 
 in
 {
@@ -41,21 +39,8 @@ in
       # networking.firewall.interfaces."njk.local".allowedUDPPorts = [ 5353 ];
       # networking.firewall.allowedUDPPorts = [ 53 ];
 
-      environment.systemPackages =
-        # (mapAttrsToList (n: v: v.initScript) config.services.powerdns.zones) ++
-        [
-          (pkgs.writeShellScriptBin "pdnsutil" ''
-            ${cfgDir}
-            ${pkgs.powerdns}/bin/pdnsutil ${param}
-          '')
-
-          (pkgs.writeShellScriptBin "pdns_control" ''
-            ${cfgDir}
-            ${pkgs.powerdns}/bin/pdns_control ${param}
-          '')
-        ];
-
       services.powerdns = {
+        debug = true;
         settings = {
           api = "yes";
 
