@@ -3,6 +3,9 @@
 with (lib // builtins);
 
 let
+  top = config.services.zerotierone;
+  cfg = top.controller;
+
   sanitize = cfgChunk:
     with builtins;
     getAttr (typeOf cfgChunk) {
@@ -17,6 +20,7 @@ let
             name != "_module" &&
             name != "mutable" &&
             name != "cidr" &&
+            name != "zones" &&
             name != "members" &&
             name != "apply" &&
             value != null)
@@ -37,10 +41,46 @@ let
         ${ipcalcScript} '${subnet}' > $out
       ''));
 
-  top = config.services.zerotierone;
-  cfg = top.controller;
-
   networksWithDns = filterAttrs (_: v: v.dns != null) cfg.networks;
+
+  SOA = domain: {
+    type = "SOA";
+    records = [{
+      content = "ns1.${domain}. hostmaster.${domain}. 0 10800 3600 604800 3600";
+    }];
+  };
+
+  rdnsIP = ip: last (splitString "." ip);
+
+  mkZones = network:
+    let
+      all = { inherit (network) mutable; };
+      soa_ns = [ (SOA network.dns.domain) ] ++
+        (imap1
+          (i: ip: {
+            type = "NS";
+            records = [{ content = "ns${toString i}.${network.dns.domain}."; }];
+          })
+          network.dns.servers);
+      A = imap1
+        (i: ip: {
+          type = "A";
+          name = "ns${toString i}";
+          records = [{ content = ip; }];
+        })
+        network.dns.servers;
+      PTR = imap1
+        (i: ip: {
+          type = "PTR";
+          name = "${rdnsIP ip}";
+          records = [{ content = "ns${toString i}.${network.dns.domain}."; }];
+        })
+        network.dns.servers;
+    in
+    {
+      "${network.dns.domain}" = all // { rrsets = soa_ns ++ A; };
+      "${network.cidr.ptr}" = all // { rrsets = soa_ns ++ PTR; };
+    };
 
   cidrOptions = { ... }:
     with types;
@@ -244,8 +284,8 @@ let
   };
 
   dnsOptions = with types; { ... }: {
-    options.domain = mkOption { type = str; };
-    options.servers = mkOption { type = listOf str; };
+    options.domain = mkOption { type = nullOr str; default = null; };
+    options.servers = mkOption { type = nullOr (listOf str); default = null; };
   };
 
   networkOptions = with types; { name, ... }: {
@@ -270,9 +310,21 @@ let
           else x;
       };
 
+      zones = mkOption {
+        description = "PowerDNS zones";
+        default = null;
+        type = nullOr attrs;
+        apply = x:
+          if (!isNull cfg.networks.${name}.cidr) &&
+            (!isNull cfg.networks.${name}.dns.domain) &&
+            (!isNull cfg.networks.${name}.dns.servers)
+          then mkZones cfg.networks.${name}
+          else null;
+      };
+
       id = mkOption {
         description = "16-digit network ID";
-        default = "1607197732143954";
+        default = "1234567832143954";
         type = str;
       };
 

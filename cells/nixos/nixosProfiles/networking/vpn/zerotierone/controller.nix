@@ -51,61 +51,6 @@ let
         };
       })
     names);
-
-  managedNetworks = filterAttrs
-    (n: v:
-      hasAttrByPath [ "cidr" "minaddr" ] v &&
-      hasAttrByPath [ "dns" "domain" ] v &&
-      hasAttrByPath [ "dns" "servers" ] v)
-    config.services.zerotierone.controller.networks;
-
-  SOA = domain: {
-    type = "SOA";
-    records = [{
-      content = "ns1.${domain}. hostmaster.${domain}. 0 10800 3600 604800 3600";
-    }];
-  };
-
-  rdnsNet = network: concatStringsSep "." (reverseList (take 3 (splitString "." network)));
-  rdnsIP = ip: last (splitString "." ip);
-
-  mkZones = net:
-    let
-      generateForAttr = n: v:
-        let
-          all = { inherit (v) mutable; };
-          soa_ns = [ (SOA v.dns.domain) ] ++
-            (imap1
-              (i: ip: {
-                type = "NS";
-                records = [{ content = "ns${toString i}.${v.dns.domain}."; }];
-              })
-              v.dns.servers);
-          A = imap1
-            (i: ip: {
-              type = "A";
-              name = "ns${toString i}";
-              records = [{ content = ip; }];
-            })
-            v.dns.servers;
-          PTR = imap1
-            (i: ip: {
-              type = "PTR";
-              name = "${rdnsIP ip}";
-              records = [{ content = "ns${toString i}.${v.dns.domain}."; }];
-            })
-            v.dns.servers;
-        in
-        {
-          "${v.dns.domain}" = all // { rrsets = soa_ns ++ A; };
-          "${v.cidr.ptr}" = all // { rrsets = soa_ns ++ PTR; };
-        };
-      newAttrs = mapAttrs generateForAttr net;
-    in
-    foldl' (acc: val: acc // val) { } (attrValues newAttrs);
-
-  zones = mkZones managedNetworks;
-
 in
 {
   imports =
@@ -119,7 +64,7 @@ in
 
   config = mkMerge [
     { services.zerotierone.controller.enable = true; }
-    { services.powerdns.virtualInstances.default = { inherit zones; }; }
+
     {
       services.kea.dhcp-ddns.settings =
         let
@@ -176,6 +121,10 @@ in
     }
 
     {
+      services.powerdns.virtualInstances.default = {
+        inherit (config.services.zerotierone.controller.networks.admin-dhcp)
+          zones;
+      };
       services.zerotierone.controller.networks.admin-dhcp =
         # self managed dhcp/ddns/ipxe
         {
