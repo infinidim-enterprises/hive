@@ -54,7 +54,8 @@ let
 in
 {
   imports =
-    [ cell.nixosModules.services.networking.kea-vpn-bridge ] ++
+    # [ cell.nixosModules.services.networking.kea-vpn-bridge ] ++
+    [ cell.nixosModules.services.networking.kea-vpn-interfaces ] ++
 
     [
       cell.nixosProfiles.networking.dhcp-ddns.postgresql
@@ -90,6 +91,36 @@ in
     }
 
     {
+      services.kea.vpn-interfaces.zerotierone."njk.local" =
+        let
+          inherit (config.services.zerotierone.controller.networks.admin-dhcp)
+            cidr
+            dns;
+        in
+
+        {
+          # bridge.enable = true;
+          # networkd.addresses = [ "10.0.0.1/24" "10.0.1.1/24" ];
+          networkID = "ba8ec53f7ab4e74f";
+          IPaddress = "${cidr.minaddr}/${cidr.prefix}";
+          subnet4 = [{
+            # id = 1;
+            subnet = "${cidr.network}/${cidr.prefix}";
+            pools = [{ inherit (cidr) pool; }];
+            ddns-generated-prefix = "host";
+            ddns-qualifying-suffix = dns.domain;
+            option-data = [
+              { name = "domain-name-servers"; data = cidr.minaddr; }
+              { name = "domain-search"; data = dns.domain; }
+              { name = "routers"; data = cidr.minaddr; }
+              { name = "domain-name"; data = dns.domain; }
+            ];
+          }];
+
+        };
+    }
+    /*
+      {
       boot.kernel.sysctl."net.core.default_qdisc" = "fq_codel";
       boot.kernel.sysctl."net.ipv4.ip_forward" = 1;
 
@@ -118,7 +149,8 @@ in
           # IPMasquerade = "ipv4";
           joinNetworks = [{ "ba8ec53f7ab4e74f" = "njk-admin"; }];
         };
-    }
+      }
+    */
 
     {
       services.powerdns.virtualInstances.default = {
