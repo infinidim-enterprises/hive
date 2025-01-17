@@ -73,7 +73,7 @@ in
             cidr
             dns;
           dns-servers = [{
-            ip-address = "127.0.0.1"; # NOTE: Must match the powerdns allow-dnsupdate-from cidr.minaddr;
+            ip-address = config.services.powerdns.virtualInstances.default.settings.local-address; # NOTE: Must match the powerdns allow-dnsupdate-from cidr.minaddr;
             port = toInt config.services.powerdns.virtualInstances.default.settings.local-port; # NOTE: Must match the powerdns local-address port!
           }];
         in
@@ -95,10 +95,15 @@ in
         (toInt config.services.powerdns.virtualInstances.default.settings.local-port)
       ];
 
-      # services.adguardhome.settings.dns.port = 5353;
-      services.powerdns.virtualInstances.default.settings.local-port = "5353";
-      # services.powerdns.virtualInstances.default.settings.local-address =
-      #   config.services.zerotierone.controller.networks.admin-dhcp.cidr.minaddr;
+      # services.resolved.dnssec = "allow-downgrade";
+      # services.resolved.llmnr = "false";
+
+      services.adguardhome.settings.dns.port = 5353;
+      services.powerdns.virtualInstances.default.settings.local-port = "53";
+      services.powerdns.virtualInstances.default.settings.local-address =
+        config.services.zerotierone.controller.networks.admin-dhcp.cidr.minaddr;
+      services.powerdns.virtualInstances.default.settings.allow-dnsupdate-from =
+        "${config.services.zerotierone.controller.networks.admin-dhcp.cidr.minaddr}/32";
 
       services.kea.vpn-interfaces.zerotierone."njk.local" =
         let
@@ -121,7 +126,7 @@ in
             option-data = [
               { name = "domain-name-servers"; data = cidr.minaddr; }
               { name = "domain-search"; data = dns.domain; }
-              { name = "routers"; data = cidr.minaddr; }
+              # { name = "routers"; data = cidr.minaddr; }
               { name = "domain-name"; data = dns.domain; }
             ];
           }];

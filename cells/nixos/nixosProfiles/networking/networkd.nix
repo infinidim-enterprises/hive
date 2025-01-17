@@ -162,7 +162,7 @@ mkMerge [
     {
       networking.resolvconf.dnsExtensionMechanism = false;
 
-      services.resolved.dnssec = "false";
+      services.resolved.dnssec = "allow-downgrade";
       services.resolved.llmnr = "false";
       services.resolved.fallbackDns = [ "8.8.8.8" ];
       networking.nameservers = adguardhomeDNS;

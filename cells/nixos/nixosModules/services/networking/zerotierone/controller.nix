@@ -69,6 +69,13 @@ let
           records = [{ content = ip; }];
         })
         network.dns.servers;
+      ALIAS = imap1
+        (i: ip: {
+          type = "ALIAS";
+          name = config.networking.hostName;
+          records = [{ content = "ns${toString i}.${network.dns.domain}."; }];
+        })
+        network.dns.servers;
       PTR = imap1
         (i: ip: {
           type = "PTR";
@@ -78,7 +85,7 @@ let
         network.dns.servers;
     in
     {
-      "${network.dns.domain}" = all // { rrsets = soa_ns ++ A; };
+      "${network.dns.domain}" = all // { rrsets = soa_ns ++ A ++ ALIAS; };
       "${network.cidr.ptr}" = all // { rrsets = soa_ns ++ PTR; };
     };
 

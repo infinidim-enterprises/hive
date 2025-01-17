@@ -64,7 +64,7 @@ in
           webserver-port = "8081";
 
           dnsupdate = "yes";
-          allow-dnsupdate-from = "127.0.0.1/32";
+          allow-dnsupdate-from = mkDefault "127.0.0.1/32";
 
           # default-soa-edit = "INCREASE";
           default-api-rectify = "yes";

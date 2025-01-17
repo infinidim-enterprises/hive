@@ -57,6 +57,6 @@ in
       }];
     };
 
-  networking.hosts = { "192.168.1.33" = [ "kyocera-printer.njk.local" ]; };
+  # networking.hosts = { "192.168.1.33" = [ "kyocera-printer.njk.local" ]; };
   environment.systemPackages = [ pkg ];
 }

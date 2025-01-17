@@ -17,7 +17,12 @@ in
       ];
     }
 
+    (mkIf ((! config.services.zerotierone.controller.enable) && config.services.resolved.enable) {
+      services.resolved.domains = [ "njk.local" ];
+    })
+
     (mkIf (! config.services.zerotierone.controller.enable) {
+
       # NOTE: self-hosted with ddns/dhcp/ipxe
       # join the peer, unless it's the controller
       services.zerotierone.joinNetworks = [{ "ba8ec53f7ab4e74f" = "njk.local"; }];

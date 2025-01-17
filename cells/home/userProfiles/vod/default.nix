@@ -25,12 +25,12 @@
     cell.homeProfiles.multimedia.players
   ];
 
-  networking.hosts = {
-    "43.228.124.216" = [ "arm64" "arm64.njk.local" ];
-    "192.168.1.135" = [ "asbleg" "asbleg.njk.local" ];
-    "192.168.1.133" = [ "damogran" "damogran.njk.local" ];
-    "104.197.114.101" = [ "kakrafoon" "kakrafoon.njk.li" ];
-  };
+  # networking.hosts = {
+  #   "43.228.124.216" = [ "arm64" "arm64.njk.local" ];
+  #   "192.168.1.135" = [ "asbleg" "asbleg.njk.local" ];
+  #   "192.168.1.133" = [ "damogran" "damogran.njk.local" ];
+  #   "104.197.114.101" = [ "kakrafoon" "kakrafoon.njk.li" ];
+  # };
 
   sops.secrets.vod-password = {
     key = "vod-password";
