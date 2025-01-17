@@ -95,8 +95,8 @@ in
         (toInt config.services.powerdns.virtualInstances.default.settings.local-port)
       ];
 
-      services.adguardhome.settings.dns.port = 5353;
-      services.powerdns.virtualInstances.default.settings.local-port = "53";
+      # services.adguardhome.settings.dns.port = 5353;
+      services.powerdns.virtualInstances.default.settings.local-port = "5353";
       # services.powerdns.virtualInstances.default.settings.local-address =
       #   config.services.zerotierone.controller.networks.admin-dhcp.cidr.minaddr;
 
