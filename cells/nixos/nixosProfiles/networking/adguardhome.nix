@@ -2,7 +2,7 @@
 
 { config, lib, pkgs, ... }:
 let
-  inherit (lib) mkMerge mkIf hasAttr;
+  inherit (lib) mkMerge mkIf hasAttr mkDefault;
 
   # TODO: either save files locally and update on a timer or scrape the github for available filters. Things change, without a warning!
   all_filters = [
@@ -157,8 +157,8 @@ mkMerge
       # TODO: declaratively create rules from nvfetcher of AdguardTeam/AdguardFilters repo, since changes are common, and urls go missing.
 
       services.adguardhome.enable = true;
-      services.adguardhome.host = "127.0.0.1";
-      services.adguardhome.port = 8888;
+      services.adguardhome.host = mkDefault "127.0.0.1";
+      services.adguardhome.port = mkDefault 8888;
       services.adguardhome.mutableSettings = false;
       services.adguardhome.settings = {
 
@@ -207,7 +207,7 @@ mkMerge
           parental_block_host = "family-block.dns.adguard.com";
           parental_cache_size = 1048576;
           parental_enabled = false;
-          port = 53;
+          port = mkDefault 53;
           private_networks = [ ];
           protection_enabled = true;
           querylog_enabled = true;

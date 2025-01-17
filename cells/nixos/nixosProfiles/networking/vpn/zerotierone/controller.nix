@@ -74,7 +74,7 @@ in
             dns;
           dns-servers = [{
             ip-address = "127.0.0.1"; # NOTE: Must match the powerdns allow-dnsupdate-from cidr.minaddr;
-            port = 5353; # NOTE: Must match the powerdns local-address port!
+            port = toInt config.services.powerdns.virtualInstances.default.settings.local-port; # NOTE: Must match the powerdns local-address port!
           }];
         in
         {
@@ -91,6 +91,15 @@ in
     }
 
     {
+      networking.firewall.interfaces."njk.local".allowedUDPPorts = [
+        (toInt config.services.powerdns.virtualInstances.default.settings.local-port)
+      ];
+
+      services.adguardhome.settings.dns.port = 5353;
+      services.powerdns.virtualInstances.default.settings.local-port = "53";
+      # services.powerdns.virtualInstances.default.settings.local-address =
+      #   config.services.zerotierone.controller.networks.admin-dhcp.cidr.minaddr;
+
       services.kea.vpn-interfaces.zerotierone."njk.local" =
         let
           inherit (config.services.zerotierone.controller.networks.admin-dhcp)

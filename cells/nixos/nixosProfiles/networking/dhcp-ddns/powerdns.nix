@@ -14,6 +14,7 @@ let
     toString
     mkOption
     hasSuffix
+    mkDefault
     hasAttrByPath
     concatStrings
     mapAttrsToList
@@ -55,8 +56,8 @@ in
         virtualInstances.default.enable = true;
         virtualInstances.default.secretsFile = config.sops.secrets.powerdns.path;
         virtualInstances.default.settings = {
-          local-address = "0.0.0.0";
-          local-port = "5353";
+          local-address = mkDefault "0.0.0.0";
+          local-port = mkDefault "53";
 
           webserver-allow-from = "127.0.0.1";
           webserver-address = "127.0.0.1";
