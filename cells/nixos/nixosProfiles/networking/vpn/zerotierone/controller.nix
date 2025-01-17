@@ -91,6 +91,9 @@ in
     }
 
     {
+      systemd.services.kea-dhcp4-server.after = [ "postgresql.service" ];
+      systemd.services.kea-dhcp-ddns-server.after = [ "kea-dhcp4-server.service" ];
+
       networking.firewall.interfaces."njk.local".allowedUDPPorts = [
         (toInt config.services.powerdns.virtualInstances.default.settings.local-port)
       ];

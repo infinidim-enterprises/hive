@@ -69,7 +69,7 @@ let
           records = [{ content = ip; }];
         })
         network.dns.servers;
-      ALIAS = imap1
+      CNAME = imap1
         (i: ip: {
           type = "ALIAS";
           name = config.networking.hostName;
