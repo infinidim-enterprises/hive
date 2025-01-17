@@ -71,7 +71,7 @@ let
         network.dns.servers;
       CNAME = imap1
         (i: ip: {
-          type = "ALIAS";
+          type = "CNAME";
           name = config.networking.hostName;
           records = [{ content = "ns${toString i}.${network.dns.domain}."; }];
         })
@@ -85,7 +85,7 @@ let
         network.dns.servers;
     in
     {
-      "${network.dns.domain}" = all // { rrsets = soa_ns ++ A ++ ALIAS; };
+      "${network.dns.domain}" = all // { rrsets = soa_ns ++ A ++ CNAME; };
       "${network.cidr.ptr}" = all // { rrsets = soa_ns ++ PTR; };
     };
 
