@@ -20,8 +20,8 @@ in
     (mkIf config.services.adguardhome.enable {
       services.adguardhome.settings.dns = {
         use_private_ptr_resolvers = true;
-        upstream_dns = [ "[/njk.local/192.168.121.1:53]" ];
-        local_ptr_upstreams = [ "[/121.168.192.in-addr.arpa/192.168.121.1:53]" ];
+        upstream_dns = [ "[/njk.local/]192.168.121.1:53" ];
+        local_ptr_upstreams = [ "[/121.168.192.in-addr.arpa/]192.168.121.1:53" ];
       };
     })
 
