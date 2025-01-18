@@ -20,7 +20,7 @@
   },
   "adguard-filters_adguardteam": {
     "cargoLocks": null,
-    "date": "2024-12-26",
+    "date": "2025-01-18",
     "extract": null,
     "name": "adguard-filters_adguardteam",
     "passthru": null,
@@ -30,16 +30,16 @@
       "fetchSubmodules": false,
       "leaveDotGit": false,
       "name": null,
-      "rev": "15e4cec3f13cc2dc3f1a1f61dbc9e6381a071c5a",
-      "sha256": "sha256-n2MVNiyh007SUEuOae22wMwrOjijqQN+RQauOFwjQsY=",
+      "rev": "a1e1ff42196970bdf5bc55379fd718e043e7ab85",
+      "sha256": "sha256-WwD+ZU7Eh00C/QLUBypLrQSaub/QqFb0dsK6L+xwmuY=",
       "type": "git",
       "url": "https://github.com/AdguardTeam/AdguardFilters"
     },
-    "version": "15e4cec3f13cc2dc3f1a1f61dbc9e6381a071c5a"
+    "version": "a1e1ff42196970bdf5bc55379fd718e043e7ab85"
   },
   "adguard-filters_romania": {
     "cargoLocks": null,
-    "date": "2024-12-12",
+    "date": "2025-01-11",
     "extract": null,
     "name": "adguard-filters_romania",
     "passthru": null,
@@ -49,16 +49,16 @@
       "fetchSubmodules": false,
       "leaveDotGit": false,
       "name": null,
-      "rev": "db0b271a835e0538d738c87a0c847f24ecec26ec",
-      "sha256": "sha256-UVOh3+GrqCVTPmG/I6SDUqtFQYZCY49QUMOkPnIQs/A=",
+      "rev": "c4d26c6d1f3c662fd82499bd9887d5ba783e19d2",
+      "sha256": "sha256-8j0kV7/zskNuxE0uqlhEYB4RhkBk6k36o9RvgcmxJL0=",
       "type": "git",
       "url": "https://github.com/tcptomato/ROad-Block"
     },
-    "version": "db0b271a835e0538d738c87a0c847f24ecec26ec"
+    "version": "c4d26c6d1f3c662fd82499bd9887d5ba783e19d2"
   },
   "base16-schemes": {
     "cargoLocks": null,
-    "date": "2024-12-09",
+    "date": "2025-01-14",
     "extract": null,
     "name": "base16-schemes",
     "passthru": null,
@@ -68,16 +68,16 @@
       "fetchSubmodules": false,
       "leaveDotGit": false,
       "name": null,
-      "rev": "d5024d07713029d21aa45263e164913a0dfab0b6",
-      "sha256": "sha256-PXah6e8PK41T9vONsh9X4AVSO0Nq6OtwN4Hd22GizVo=",
+      "rev": "5c6d92f20e5761e0bfd78ee88cb9fca72189c0cf",
+      "sha256": "sha256-ioUzCnrFr5YsFtsSG+0QecR7/A1YUQPFOUYblGy4CLM=",
       "type": "git",
       "url": "https://github.com/tinted-theming/schemes"
     },
-    "version": "d5024d07713029d21aa45263e164913a0dfab0b6"
+    "version": "5c6d92f20e5761e0bfd78ee88cb9fca72189c0cf"
   },
   "chatgpt-wrapper": {
     "cargoLocks": null,
-    "date": "2024-12-19",
+    "date": "2025-01-16",
     "extract": null,
     "name": "chatgpt-wrapper",
     "passthru": null,
@@ -89,11 +89,11 @@
       "name": null,
       "owner": "llm-workflow-engine",
       "repo": "llm-workflow-engine",
-      "rev": "1adf2670f9e559936047009cd5a383e49149fe4e",
-      "sha256": "sha256-yNVklEgP0e6BmuWO61RxMv1oTRh7PyH5cX0HHyyrN3I=",
+      "rev": "09df13ace4e2ce5c5ff89a88b92abcdfc3796450",
+      "sha256": "sha256-9whKw14rEkR+O4t1/sXa0ukAp36cpqeLvrI1PUEsMfQ=",
       "type": "github"
     },
-    "version": "1adf2670f9e559936047009cd5a383e49149fe4e"
+    "version": "09df13ace4e2ce5c5ff89a88b92abcdfc3796450"
   },
   "cl-hash-util": {
     "cargoLocks": null,
@@ -340,7 +340,7 @@
   },
   "ipxe": {
     "cargoLocks": null,
-    "date": "2024-12-18",
+    "date": "2025-01-10",
     "extract": null,
     "name": "ipxe",
     "passthru": null,
@@ -350,12 +350,12 @@
       "fetchSubmodules": false,
       "leaveDotGit": false,
       "name": null,
-      "rev": "83ba34076ad4ca79be81a71f25303b340c60e7b8",
-      "sha256": "sha256-nzAU9ZaUa+D6tBv2mq8mXRGCY7dDeSURPVUjJ1Jy7Vg=",
+      "rev": "d88eb0a1935942cdeccd3efee38f9765d2f1c235",
+      "sha256": "sha256-R6ytWBqs0ntOtlc8K4C3gXtDRBa1hf7kpWTRZz9/h4s=",
       "type": "git",
       "url": "https://github.com/ipxe/ipxe"
     },
-    "version": "83ba34076ad4ca79be81a71f25303b340c60e7b8"
+    "version": "d88eb0a1935942cdeccd3efee38f9765d2f1c235"
   },
   "iterable-io": {
     "cargoLocks": null,
@@ -386,11 +386,11 @@
       "name": null,
       "owner": "langchain-ai",
       "repo": "langchain",
-      "rev": "langchain-core==0.3.28",
-      "sha256": "sha256-nDV8bOstMEq7b9CN5nuYV5L2uqIXZuj84D/Zyfp7TdY=",
+      "rev": "langchain-core==0.3.30",
+      "sha256": "sha256-108DlyLAmL7CxEkYWol5wybylpvklFeGaGjGBcbRWg4=",
       "type": "github"
     },
-    "version": "langchain-core==0.3.28"
+    "version": "langchain-core==0.3.30"
   },
   "listopia": {
     "cargoLocks": null,
@@ -576,7 +576,7 @@
   },
   "s5cmd": {
     "cargoLocks": null,
-    "date": "2024-12-16",
+    "date": "2025-01-17",
     "extract": null,
     "name": "s5cmd",
     "passthru": null,
@@ -588,11 +588,11 @@
       "name": null,
       "owner": "peak",
       "repo": "s5cmd",
-      "rev": "991c9fbc16709341b4bac04513232a1445941f63",
-      "sha256": "sha256-+wSVJkXmu+1BzvO1o31jhKZLXeG7y+YkABIZZ1TlK/g=",
+      "rev": "7e56e29c6e7fbf511729bab3a8685274b5c41713",
+      "sha256": "sha256-JuBNlIw2w2EwVNkuDTlULDqSCwdGMDKUA/iiHykyMK8=",
       "type": "github"
     },
-    "version": "991c9fbc16709341b4bac04513232a1445941f63"
+    "version": "7e56e29c6e7fbf511729bab3a8685274b5c41713"
   },
   "solarized-dark-gnome-shell-2020": {
     "cargoLocks": null,

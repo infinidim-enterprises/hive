@@ -16,54 +16,54 @@
   };
   adguard-filters_adguardteam = {
     pname = "adguard-filters_adguardteam";
-    version = "15e4cec3f13cc2dc3f1a1f61dbc9e6381a071c5a";
+    version = "a1e1ff42196970bdf5bc55379fd718e043e7ab85";
     src = fetchgit {
       url = "https://github.com/AdguardTeam/AdguardFilters";
-      rev = "15e4cec3f13cc2dc3f1a1f61dbc9e6381a071c5a";
+      rev = "a1e1ff42196970bdf5bc55379fd718e043e7ab85";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-n2MVNiyh007SUEuOae22wMwrOjijqQN+RQauOFwjQsY=";
+      sha256 = "sha256-WwD+ZU7Eh00C/QLUBypLrQSaub/QqFb0dsK6L+xwmuY=";
     };
-    date = "2024-12-26";
+    date = "2025-01-18";
   };
   adguard-filters_romania = {
     pname = "adguard-filters_romania";
-    version = "db0b271a835e0538d738c87a0c847f24ecec26ec";
+    version = "c4d26c6d1f3c662fd82499bd9887d5ba783e19d2";
     src = fetchgit {
       url = "https://github.com/tcptomato/ROad-Block";
-      rev = "db0b271a835e0538d738c87a0c847f24ecec26ec";
+      rev = "c4d26c6d1f3c662fd82499bd9887d5ba783e19d2";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-UVOh3+GrqCVTPmG/I6SDUqtFQYZCY49QUMOkPnIQs/A=";
+      sha256 = "sha256-8j0kV7/zskNuxE0uqlhEYB4RhkBk6k36o9RvgcmxJL0=";
     };
-    date = "2024-12-12";
+    date = "2025-01-11";
   };
   base16-schemes = {
     pname = "base16-schemes";
-    version = "d5024d07713029d21aa45263e164913a0dfab0b6";
+    version = "5c6d92f20e5761e0bfd78ee88cb9fca72189c0cf";
     src = fetchgit {
       url = "https://github.com/tinted-theming/schemes";
-      rev = "d5024d07713029d21aa45263e164913a0dfab0b6";
+      rev = "5c6d92f20e5761e0bfd78ee88cb9fca72189c0cf";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-PXah6e8PK41T9vONsh9X4AVSO0Nq6OtwN4Hd22GizVo=";
+      sha256 = "sha256-ioUzCnrFr5YsFtsSG+0QecR7/A1YUQPFOUYblGy4CLM=";
     };
-    date = "2024-12-09";
+    date = "2025-01-14";
   };
   chatgpt-wrapper = {
     pname = "chatgpt-wrapper";
-    version = "1adf2670f9e559936047009cd5a383e49149fe4e";
+    version = "09df13ace4e2ce5c5ff89a88b92abcdfc3796450";
     src = fetchFromGitHub {
       owner = "llm-workflow-engine";
       repo = "llm-workflow-engine";
-      rev = "1adf2670f9e559936047009cd5a383e49149fe4e";
+      rev = "09df13ace4e2ce5c5ff89a88b92abcdfc3796450";
       fetchSubmodules = false;
-      sha256 = "sha256-yNVklEgP0e6BmuWO61RxMv1oTRh7PyH5cX0HHyyrN3I=";
+      sha256 = "sha256-9whKw14rEkR+O4t1/sXa0ukAp36cpqeLvrI1PUEsMfQ=";
     };
-    date = "2024-12-19";
+    date = "2025-01-16";
   };
   cl-hash-util = {
     pname = "cl-hash-util";
@@ -216,16 +216,16 @@
   };
   ipxe = {
     pname = "ipxe";
-    version = "83ba34076ad4ca79be81a71f25303b340c60e7b8";
+    version = "d88eb0a1935942cdeccd3efee38f9765d2f1c235";
     src = fetchgit {
       url = "https://github.com/ipxe/ipxe";
-      rev = "83ba34076ad4ca79be81a71f25303b340c60e7b8";
+      rev = "d88eb0a1935942cdeccd3efee38f9765d2f1c235";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-nzAU9ZaUa+D6tBv2mq8mXRGCY7dDeSURPVUjJ1Jy7Vg=";
+      sha256 = "sha256-R6ytWBqs0ntOtlc8K4C3gXtDRBa1hf7kpWTRZz9/h4s=";
     };
-    date = "2024-12-18";
+    date = "2025-01-10";
   };
   iterable-io = {
     pname = "iterable-io";
@@ -237,13 +237,13 @@
   };
   langchain = {
     pname = "langchain";
-    version = "langchain-core==0.3.28";
+    version = "langchain-core==0.3.30";
     src = fetchFromGitHub {
       owner = "langchain-ai";
       repo = "langchain";
-      rev = "langchain-core==0.3.28";
+      rev = "langchain-core==0.3.30";
       fetchSubmodules = false;
-      sha256 = "sha256-nDV8bOstMEq7b9CN5nuYV5L2uqIXZuj84D/Zyfp7TdY=";
+      sha256 = "sha256-108DlyLAmL7CxEkYWol5wybylpvklFeGaGjGBcbRWg4=";
     };
   };
   listopia = {
@@ -358,15 +358,15 @@
   };
   s5cmd = {
     pname = "s5cmd";
-    version = "991c9fbc16709341b4bac04513232a1445941f63";
+    version = "7e56e29c6e7fbf511729bab3a8685274b5c41713";
     src = fetchFromGitHub {
       owner = "peak";
       repo = "s5cmd";
-      rev = "991c9fbc16709341b4bac04513232a1445941f63";
+      rev = "7e56e29c6e7fbf511729bab3a8685274b5c41713";
       fetchSubmodules = false;
-      sha256 = "sha256-+wSVJkXmu+1BzvO1o31jhKZLXeG7y+YkABIZZ1TlK/g=";
+      sha256 = "sha256-JuBNlIw2w2EwVNkuDTlULDqSCwdGMDKUA/iiHykyMK8=";
     };
-    date = "2024-12-16";
+    date = "2025-01-17";
   };
   solarized-dark-gnome-shell-2020 = {
     pname = "solarized-dark-gnome-shell-2020";

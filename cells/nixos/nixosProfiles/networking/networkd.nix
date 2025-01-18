@@ -10,7 +10,7 @@ mkMerge [
 
   {
     networking.firewall.allowPing = true;
-    networking.domain = "njk.li";
+    networking.domain = "njk.local";
 
     systemd.services.nscd.serviceConfig.StandardOutput = "null";
     systemd.services.nscd.serviceConfig.StandardError = "null";

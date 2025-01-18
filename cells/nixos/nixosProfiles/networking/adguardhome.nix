@@ -226,9 +226,9 @@ mkMerge
           statistics_interval = 90;
           trusted_proxies = [ "127.0.0.0/8" "::1/128" ];
           upstream_dns = [ "https://dns10.quad9.net/dns-query" ];
-          upstream_dns_file = "";
+          # upstream_dns_file = "";
           upstream_timeout = "10s";
-          use_private_ptr_resolvers = true;
+          # use_private_ptr_resolvers = mkDefault true;
         };
 
         inherit filters;
