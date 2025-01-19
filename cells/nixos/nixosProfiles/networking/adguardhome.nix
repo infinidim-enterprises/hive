@@ -177,7 +177,7 @@ mkMerge
 
         dns = {
           aaaa_disabled = true;
-          all_servers = false;
+          all_servers = true;
           allowed_clients = [ ];
           anonymize_client_ip = false;
           bind_hosts = [ "127.0.0.1" ];
@@ -188,7 +188,14 @@ mkMerge
           blocking_ipv6 = "";
           blocking_mode = "default";
           bogus_nxdomain = [ ];
-          bootstrap_dns = [ "8.8.8.8" "8.8.4.4" "2001:4860:4860::8888" "2001:4860:4860::8844" ];
+          bootstrap_dns = [
+            "8.8.8.8"
+            "8.8.4.4"
+            "94.140.14.14"
+            "94.140.15.15"
+            "2001:4860:4860::8888"
+            "2001:4860:4860::8844"
+          ];
           cache_optimistic = false;
           cache_size = 4194304;
           cache_time = 30;
@@ -225,7 +232,12 @@ mkMerge
           safesearch_enabled = false;
           statistics_interval = 90;
           trusted_proxies = [ "127.0.0.0/8" "::1/128" ];
-          upstream_dns = [ "https://dns10.quad9.net/dns-query" ];
+          upstream_dns = [
+            "https://dns10.quad9.net/dns-query"
+            "https://dns.adguard-dns.com/dns-query"
+            "https://security.cloudflare-dns.com/dns-query"
+            "quic://dns.adguard-dns.com"
+          ];
           # upstream_dns_file = "";
           upstream_timeout = "10s";
           # use_private_ptr_resolvers = mkDefault true;
