@@ -21,6 +21,7 @@ let
             name != "mutable" &&
             name != "cidr" &&
             name != "zones" &&
+            name != "mkZones" &&
             name != "members" &&
             name != "apply" &&
             value != null)
