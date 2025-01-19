@@ -2,139 +2,28 @@
 
 { config, lib, pkgs, ... }:
 let
-  inherit (lib) mkMerge mkIf hasAttr mkDefault;
-
-  # TODO: either save files locally and update on a timer or scrape the github for available filters. Things change, without a warning!
-  all_filters = [
-    /*
-
-    */
-    # NOTE:  https://github.com/AdguardTeam/AdguardFilters
-    # "https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt"
-
-    # "https://adaway.org/hosts.txt"
-    # "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-social/hosts"
-
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/BaseFilter/sections/adservers.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/BaseFilter/sections/adservers_firstparty.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/BaseFilter/sections/allowlist.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/BaseFilter/sections/allowlist_stealth.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/BaseFilter/sections/antiadblock.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/BaseFilter/sections/banner_sizes.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/BaseFilter/sections/content_blocker.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/BaseFilter/sections/cryptominers.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/BaseFilter/sections/foreign.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/BaseFilter/sections/general_elemhide.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/BaseFilter/sections/general_extensions.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/BaseFilter/sections/general_url.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/BaseFilter/sections/replace.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/BaseFilter/sections/specific.txt"
-
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/GermanFilter/sections/adservers.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/GermanFilter/sections/allowlist.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/GermanFilter/sections/antiadblock.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/GermanFilter/sections/general_elemhide.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/GermanFilter/sections/general_extensions.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/GermanFilter/sections/general_url.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/GermanFilter/sections/replace.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/GermanFilter/sections/specific.txt"
-
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/CyrillicFilters/common-sections/adservers.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/CyrillicFilters/common-sections/adservers_firstparty.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/CyrillicFilters/common-sections/allowlist.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/CyrillicFilters/common-sections/antiadblock.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/CyrillicFilters/common-sections/general_elemhide.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/CyrillicFilters/common-sections/general_extensions.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/CyrillicFilters/common-sections/general_url.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/CyrillicFilters/common-sections/specific.txt"
-
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/CyrillicFilters/RussianFilter/sections/adservers_firstparty.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/CyrillicFilters/RussianFilter/sections/allowlist.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/CyrillicFilters/RussianFilter/sections/antiadblock.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/CyrillicFilters/RussianFilter/sections/general_extensions.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/CyrillicFilters/RussianFilter/sections/replace.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/CyrillicFilters/RussianFilter/sections/specific.txt"
-
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/CyrillicFilters/UkrainianFilter/sections/adservers_firstparty.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/CyrillicFilters/UkrainianFilter/sections/allowlist.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/CyrillicFilters/UkrainianFilter/sections/antiadblock.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/CyrillicFilters/UkrainianFilter/sections/general_extensions.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/CyrillicFilters/UkrainianFilter/sections/replace.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/CyrillicFilters/UkrainianFilter/sections/specific.txt"
-
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/CyrillicFilters/Belarusian/sections/filter.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/CyrillicFilters/Bulgarian/sections/filter.txt"
-    # "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/CyrillicFilters/Kazakh/sections/filter.txt"
-
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/AnnoyancesFilter/Cookies/sections/cookies_specific.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/AnnoyancesFilter/Cookies/sections/cookies_general.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/AnnoyancesFilter/Cookies/sections/cookies_allowlist.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/AnnoyancesFilter/MobileApp/sections/mobile-app_allowlist.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/AnnoyancesFilter/MobileApp/sections/mobile-app_general.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/AnnoyancesFilter/MobileApp/sections/mobile-app_specific.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/AnnoyancesFilter/Other/sections/annoyances.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/AnnoyancesFilter/Other/sections/self-promo.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/AnnoyancesFilter/Other/sections/tweaks.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/AnnoyancesFilter/Popups/sections/antiadblock.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/AnnoyancesFilter/Popups/sections/popups_allowlist.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/AnnoyancesFilter/Popups/sections/popups_general.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/AnnoyancesFilter/Popups/sections/popups_specific.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/AnnoyancesFilter/Popups/sections/push-notifications_allowlist.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/AnnoyancesFilter/Popups/sections/push-notifications_general.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/AnnoyancesFilter/Popups/sections/push-notifications_specific.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/AnnoyancesFilter/Popups/sections/subscriptions_allowlist.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/AnnoyancesFilter/Popups/sections/subscriptions_general.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/AnnoyancesFilter/Popups/sections/subscriptions_specific.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/AnnoyancesFilter/Widgets/sections/widgets.txt"
-
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/allowlist.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/cookies_allowlist.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/cookies_general.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/cookies_specific.txt"
-    # NOTE: https://github.com/AdguardTeam/FiltersRegistry/issues/826
-    # "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/css_extended.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/general_elemhide.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/general_extensions.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/general_url.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile_allowlist.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/specific.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/tracking_servers.txt"
-    "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/tracking_servers_firstparty.txt"
-
-    # TODO: Romanian adblocker
-    # "https://raw.githubusercontent.com/tcptomato/ROad-Block/master/road-block-filters.txt"
-    # "https://raw.githubusercontent.com/tcptomato/ROad-Block/master/road-ubo.txt"
-    # "https://raw.githubusercontent.com/tcptomato/ROad-Block/master/road-kill-filters.txt"
-  ];
-
-  fname = with lib; url:
-    let
-      prefix = "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/";
-    in
-    removeSuffix ".txt" (replaceStrings [ "/" ] [ "_" ] (removePrefix prefix url));
-  o_filters = with lib; imap1
-    (counter: v: {
-      enabled = true;
-      id = counter;
-      url = v;
-      name = fname v;
-    })
-    all_filters;
+  inherit (lib)
+    mkMerge
+    mkIf
+    hasAttr
+    mkDefault;
 
   filters = with (lib // builtins);
     let
-      filter_paths = mapAttrsToList (k: v: v.src.outPath) (filterAttrs (k: v: hasPrefix "adguard-filters" k) pkgs.sources);
-      filter_paths_list = splitString "\n" (fileContents (pkgs.runCommandNoCC "filter_paths" { buildInputs = [ pkgs.findutils ]; } ''
-        for path in ${concatStringsSep " " filter_paths}; do find "$path" -type f -name \*.txt >> $out;done
-      ''));
+      filter_paths =
+        mapAttrsToList
+          (k: v: v.src.outPath)
+          (filterAttrs (k: v: hasPrefix "adguard-filters" k) pkgs.sources);
+      filter_paths_list = splitString "\n" (fileContents
+        (pkgs.runCommandNoCC "filter_paths" { buildInputs = [ pkgs.findutils ]; } ''
+          for path in ${concatStringsSep " " filter_paths}; do find "$path" -type f -name \*.txt >> $out;done
+        ''));
     in
     imap1
-      (counter: v: {
+      (id: url: {
+        inherit id url;
         enabled = true;
-        id = counter;
-        url = v;
-        name = "filter_" + (toString counter);
+        name = "filter_" + (toString id);
       })
       filter_paths_list;
 
@@ -143,33 +32,57 @@ let
 in
 mkMerge
   [
-    # (mkIf (hasAttr "dns" config.systemd.network.networks.lan) {
-    #   systemd.network.networks.lan.dns = config.services.adguardhome.settings.dns.bind_hosts;
-    # })
+    {
+      # NOTE: https://github.com/quic-go/quic-go/wiki/UDP-Buffer-Sizes
+      # required for quic lookups
+      boot.kernel.sysctl."net.core.rmem_max" = 7500000;
+      boot.kernel.sysctl."net.core.wmem_max" = 7500000;
+    }
 
     (mkIf config.networking.networkmanager.enable {
       networking.networkmanager.insertNameservers = config.services.adguardhome.settings.dns.bind_hosts;
     })
 
     {
-      # networking.extraHosts = lib.readFile "${pkgs.sources.StevenBlack-hosts.src}/alternates/fakenews-gambling-porn-social/hosts";
-      # TODO: depend on systemd service, that waits for connectivity
-      # TODO: declaratively create rules from nvfetcher of AdguardTeam/AdguardFilters repo, since changes are common, and urls go missing.
-
       services.adguardhome.enable = true;
       services.adguardhome.host = mkDefault "127.0.0.1";
       services.adguardhome.port = mkDefault 8888;
       services.adguardhome.mutableSettings = false;
       services.adguardhome.settings = {
 
+        inherit filters;
+        filtering = { inherit safe_fs_patterns; };
+
         auth_attempts = 5;
         beta_bind_port = 0;
         block_auth_min = 15;
-        clients = { persistent = [ ]; runtime_sources = { arp = true; dhcp = true; hosts = true; rdns = true; whois = true; }; };
+        clients = {
+          persistent = [ ];
+          runtime_sources = {
+            arp = true;
+            dhcp = true;
+            hosts = true;
+            rdns = true;
+            whois = true;
+          };
+        };
         debug_pprof = false;
         dhcp = {
-          dhcpv4 = { gateway_ip = ""; icmp_timeout_msec = 1000; lease_duration = 86400; options = [ ]; range_end = ""; range_start = ""; subnet_mask = ""; };
-          dhcpv6 = { lease_duration = 86400; ra_allow_slaac = false; ra_slaac_only = false; range_start = ""; };
+          dhcpv4 = {
+            gateway_ip = "";
+            icmp_timeout_msec = 1000;
+            lease_duration = 86400;
+            options = [ ];
+            range_end = "";
+            range_start = "";
+            subnet_mask = "";
+          };
+          dhcpv6 = {
+            lease_duration = 86400;
+            ra_allow_slaac = false;
+            ra_slaac_only = false;
+            range_start = "";
+          };
           enabled = false;
           interface_name = "";
           local_domain_name = "lan";
@@ -243,9 +156,6 @@ mkMerge
           # use_private_ptr_resolvers = mkDefault true;
         };
 
-        inherit filters;
-        filtering = { inherit safe_fs_patterns; };
-
         http_proxy = "";
         language = "";
         log_compress = false;
@@ -254,7 +164,7 @@ mkMerge
         log_max_age = 3;
         log_max_backups = 0;
         log_max_size = 100;
-        os = { group = ""; rlimit_nofile = 0; user = ""; };
+        # os = { group = ""; rlimit_nofile = 0; user = ""; };
         # schema_version = 14;
         tls = {
           allow_unencrypted_doh = false;
@@ -282,11 +192,13 @@ mkMerge
           "@@||static.licdn.com^$important"
           "@@||media.licdn.com^$important"
         ];
-        users = [{ name = "admin"; password = "$2y$05$n1jeESbnw1MsGKsqd9BiSO.GztmN5/RYO3jK.BHHhmdaoi5ZXhngW"; }];
+        users = [{
+          name = "admin";
+          password = "$2y$05$n1jeESbnw1MsGKsqd9BiSO.GztmN5/RYO3jK.BHHhmdaoi5ZXhngW";
+        }];
         verbose = false;
         web_session_ttl = 720;
         whitelist_filters = [ ];
       };
-
     }
   ]
