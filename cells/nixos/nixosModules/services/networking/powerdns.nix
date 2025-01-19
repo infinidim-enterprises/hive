@@ -220,6 +220,12 @@ let
           '';
         };
 
+        extraPreStart = mkOption {
+          description = "extra commands to run in preStart of the instance service file";
+          type = nullOr str;
+          default = null;
+        };
+
         zones = mkOption {
           description = "dns zones";
           type = attrsOf (submodule [ zoneOptions ]);
@@ -336,8 +342,6 @@ in
           in
           nameValuePair "pdns@${n}"
             {
-              # overrideStrategy = "asDropin";
-
               wantedBy = [ "multi-user.target" ];
 
               after = [
@@ -349,7 +353,6 @@ in
 
               preStart =
                 let
-                  inherit (backendConn (cfg.settings // v.settings)) host port;
                   cfgString = concatStringsSep " " (
                     [ "cat" ] ++
                       (optional (!isNull cfg.settings) "${mkIni "pdns.conf" cfg.settings}") ++
@@ -359,12 +362,11 @@ in
                       [ ''> "''${confDir}/${cfgName}"'' ]
                   );
                 in
-                concatStringsSep "\n"
-                  [
-                    ''mkdir -p "''${confDir}"''
-                    "until nc -d -z ${host} ${port};do echo 'waiting for backend for 5 sec.' && sleep 5;done"
-                    cfgString
-                  ];
+                concatStringsSep "\n" (
+                  [ ''mkdir -p "''${confDir}"'' ] ++
+                    (optional (!isNull v.extraPreStart) v.extraPreStart) ++
+                    [ cfgString ]
+                );
 
               postStart =
                 let

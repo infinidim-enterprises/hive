@@ -15,6 +15,7 @@ let
     mkOption
     hasSuffix
     mkDefault
+    fileContents
     hasAttrByPath
     concatStrings
     mapAttrsToList
@@ -22,6 +23,11 @@ let
     mkEnableOption;
 
   psql_port = toString config.services.postgresql.settings.port;
+
+  preStartScript = import ./_db_check.nix {
+    inherit pkgs;
+    text = fileContents ./prestart_db_check.sh;
+  };
 
 in
 {
@@ -55,6 +61,14 @@ in
 
         virtualInstances.default.enable = true;
         virtualInstances.default.secretsFile = config.sops.secrets.powerdns.path;
+        virtualInstances.default.extraPreStart =
+          with config.services.powerdns.settings;
+          ''
+            ${preStartScript}/bin/dbcheck \
+              --db-user ${gpgsql-user}\
+              --db-host ${gpgsql-host}\
+              --db-port ${gpgsql-port}
+          '';
         virtualInstances.default.settings = {
           local-address = mkDefault "0.0.0.0";
           local-port = mkDefault "53";

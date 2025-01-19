@@ -317,6 +317,12 @@ let
           else x;
       };
 
+      mkZones = mkOption {
+        type = anything;
+        readOnly = true;
+        default = mkZones;
+      };
+
       zones = mkOption {
         description = "PowerDNS zones";
         default = null;

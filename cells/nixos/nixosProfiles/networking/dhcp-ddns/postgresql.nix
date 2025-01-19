@@ -13,7 +13,13 @@ let
     imap0
     map;
 
-  dbSetup = concatStringsSep "\n" (imap0
+  init_done = ''
+    $PSQL --host=127.0.0.1 --no-password --username=postgres --dbname=postgres \
+      --command='create table if not exists init_done ( id SERIAL primary key )' \
+      --command='GRANT SELECT ON init_done TO kea, powerdns'
+  '';
+
+  init_databases = concatStringsSep "\n" (imap0
     (i: s: if i > 0 then "  ${s}" else s)
     (flatten (mapAttrsToList
       (n: v:
@@ -40,7 +46,10 @@ in
         postStart =
           mkAfter ''
             if test -e "${dataDir}/.first_startup_user"; then
-              ${dbSetup}
+
+              ${init_databases}
+
+              ${init_done}
               rm -f "${dataDir}/.first_startup_user"
             fi
           '';
