@@ -31,7 +31,7 @@ rec {
       numix-solarized-gtk-theme
       make-desktopitem
       masterpdfeditor # NOTE: required for 5.9.85
-      waveterm
+      # FIXME: waveterm
       # firefox-addons
       nyxt
       (final: prev:
@@ -46,11 +46,12 @@ rec {
     inputs.hyprland-contrib.overlays.default
     inputs.hyprland-hyprlock.overlays.default
     inputs.hyprland-hypridle.overlays.default
+    inputs.hyprland-hyprpicker.overlays.default
 
     # inputs.hyprland-hyprutils.overlays.default
     # inputs.hyprland-hycov.overlays.default
     # inputs.hyprland-xdg-desktop-portal.overlays.default
-    # inputs.hyprland-hyprpicker.overlays.default
+
 
     (final: prev: {
       hyprlandPlugins = prev.hyprlandPlugins // {

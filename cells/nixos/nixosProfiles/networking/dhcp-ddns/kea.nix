@@ -70,8 +70,8 @@ in
           # interfaces-config.interfaces = lan.macvlans; # Physical
 
           # 72h * 60 * 60
-          valid-lifetime = 3600;
-          renew-timer = 3600;
+          valid-lifetime = 3600; # 1 hour
+          renew-timer = 3600; # 1 hour
           # rebind-timer = 1800;
 
           multi-threading = {

@@ -9,7 +9,7 @@ mkMerge [
       # bisq-desktop
 
       matterbridge
-      dino # jabber/xmpp
+      # dino # jabber/xmpp
       tdesktop
       # TODO: signald # Unofficial daemon for interacting with Signal
       signal-desktop
@@ -19,7 +19,7 @@ mkMerge [
       baresip
       # NOTE: defunct jitsi
       # qtox # Qt Tox client
-      utox # Lightweight Tox client
+      # utox # Lightweight Tox client
       # nym # NOTE: fuck rust. Mixnet providing IP-level privacy
       localsend # Open source cross-platform alternative to AirDrop
     ];

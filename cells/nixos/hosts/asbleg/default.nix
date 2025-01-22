@@ -9,7 +9,8 @@ rec {
   bee = {
     inherit system;
     home = inputs.home-unstable;
-    pkgs = import inputs.nixpkgs-unstable {
+    # nixpkgs-unstable
+    pkgs = import inputs.nixos-24-11 {
       inherit system;
       config.allowUnfree = true;
       overlays = cell.overlays.default_desktop;
@@ -24,6 +25,7 @@ rec {
     ++ [ (cell.lib.mkHome "vod" "zsh") ]
     ++ [
       bee.home.nixosModules.home-manager
+      { home-manager.sharedModules = [{ home.enableNixpkgsReleaseCheck = false; }]; }
       (import ./_hardwareProfile.nix { inherit inputs cell; })
 
       ({ pkgs, ... }:

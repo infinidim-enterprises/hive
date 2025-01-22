@@ -110,7 +110,7 @@ in
         slurp # Select a region in a Wayland compositor
         grimblast
         swappy
-        # hyprpicker
+        hyprpicker
 
         wofi
         wtype
@@ -121,7 +121,7 @@ in
         wl-clipboard
         wlrctl
 
-        kitty
+        # kitty
         wayvnc
         freerdp3 # wlfreerdp
 

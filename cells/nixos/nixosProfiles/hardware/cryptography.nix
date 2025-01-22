@@ -160,12 +160,12 @@ mkMerge [
       [ pkgs.gcr ];
     environment.systemPackages = with pkgs; [
       # gcr
-      sirikali # GUI front end to sshfs,ecryptfs,cryfs,gocryptfs,securefs,fscrypt,encfs
+      # sirikali # GUI front end to sshfs,ecryptfs,cryfs,gocryptfs,securefs,fscrypt,encfs
       gpa # Graphical user interface for the GnuPG
       yubikey-personalization-gui
       yubikey-manager-qt
       # yubioath-desktop
-      yubioath-flutter
+      # yubioath-flutter
       trezor-suite
       nitrokey-app
       ledger-live-desktop

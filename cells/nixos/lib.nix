@@ -10,9 +10,11 @@ let
     isString
     mkDefault
     findFirst
+    hasSuffix
     optionals
     filterAttrs
     removeAttrs
+    removeSuffix
     hasAttrByPath
     versionAtLeast
     mapAttrsToList;
@@ -35,7 +37,14 @@ let
 
   localLib = {
     post_24-05 = { pkgs }:
-      versionAtLeast pkgs.lib.version "24.11";
+      let
+        version =
+          if hasSuffix "pre-git" pkgs.lib.version
+          then removeSuffix "pre-git" pkgs.lib.version
+          else pkgs.lib.version;
+      in
+      versionAtLeast version "24.11";
+
     networkdSyntax = { pkgs, Address }:
       if cell.lib.post_24-05 { inherit pkgs; }
       then { inherit Address; }

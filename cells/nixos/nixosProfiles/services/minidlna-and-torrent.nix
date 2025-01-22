@@ -52,7 +52,7 @@ mkMerge [
       message-level = 0;
       rpc-port = 9091;
       rpc-bind-address = "0.0.0.0";
-      rpc-whitelist = "192.168.1.*,127.0.0.*";
+      rpc-whitelist = "192.168.121.*,127.0.0.*";
       rpc-host-whitelist-enabled = false;
       rpc-host-whitelist = "${config.networking.hostName}";
       incomplete-dir = "${download-dir}/.incomplete";

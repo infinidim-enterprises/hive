@@ -22,7 +22,7 @@ in
           ../vod/home/gitconfig.nix # FIXME: for testing
 
           cell.homeProfiles.security.gpg
-          cell.homeProfiles.pentester.traffic
+          # cell.homeProfiles.pentester.traffic
 
           ({ pkgs, ... }: {
             home.packages = [ pkgs.dconf ];

@@ -1,3 +1,34 @@
+version_at_least() {
+  local version_input
+  local version_min
+  local version_clean
+
+  version_input=$1
+  version_min=$2
+
+  # Extract version numbers from input (e.g., "Version 0.6.2.0" -> "0.6.2.0")
+  version_clean=$(echo "$version_input" | grep -oP '\d+(\.\d+)+')
+
+  # Split versions into arrays
+  IFS='.' read -r -a version_array <<<"$version_clean"
+  IFS='.' read -r -a min_array <<<"$version_min"
+
+  # Compare each part of the version
+  for i in "${!min_array[@]}"; do
+    local version_part=${version_array[$i]:-0} # Default to 0 if part is missing
+    local min_part=${min_array[$i]}
+
+    if ((version_part > min_part)); then
+      return 0 # True, version is greater
+    elif ((version_part < min_part)); then
+      return 1 # False, version is smaller
+    fi
+  done
+
+  # If all parts are equal, return true
+  return 0
+}
+
 createKeyfile() {
   local keyfile
 

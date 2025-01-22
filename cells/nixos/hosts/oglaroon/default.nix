@@ -8,7 +8,8 @@ rec {
   bee = {
     inherit system;
     home = inputs.home-unstable;
-    pkgs = import inputs.nixpkgs-unstable {
+    # away from nixpkgs-unstable
+    pkgs = import inputs.nixos-24-11 {
       inherit (inputs.nixpkgs) system;
       # FIXME: lollypop depends on youtube-dl
       config.permittedInsecurePackages = [
@@ -27,6 +28,7 @@ rec {
     ++ [ (cell.lib.mkHome "vod" "zsh") ]
     ++ [
       bee.home.nixosModules.home-manager
+      { home-manager.sharedModules = [{ home.enableNixpkgsReleaseCheck = false; }]; }
       (import ./_hardwareProfile.nix { inherit inputs cell; })
 
       cell.nixosProfiles.desktop.printer-kyocera

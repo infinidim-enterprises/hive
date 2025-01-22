@@ -51,6 +51,7 @@ mkMerge [
     hardware.acpilight.enable = true;
 
     hardware.pulseaudio.enable = true;
+    # services.pulseaudio.enable = true;
     services.pipewire.enable = false;
 
     services.opensnitch.enable = false; # NOTE: opensnitch SUCKS!

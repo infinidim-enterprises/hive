@@ -12,12 +12,25 @@ in
     gnupg
     sops
 
+    hyprlandPlugins
+
+    atuin
+    waveterm
+    nyxt
+
+    nerd-fonts
+
     direnv
     editorconfig-checker
 
+    pgcli
+    beekeeper-studio
+
+    tilix
     flameshot
 
     android-tools
+    libadwaita
     vscode
 
     alejandra
@@ -28,8 +41,18 @@ in
     cachix
     nix-index
 
+    ctop
     terraform
     terraform-ls
+
+    remmina
+    freerdp
+
+    openvswitch
+    libvirt
+    qemu_kvm
+    virt-manager
+    spice-gtk
 
     kubelogin-oidc
     minikube

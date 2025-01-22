@@ -308,12 +308,12 @@ fetch.github = "elbywan/crystalline"
 # fetch.url = "https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/linux-firmware-$ver.tar.gz"
 
 ###
-[waveterm]
+# [waveterm]
 # FIXME: waveterm sources versions and update via nvfetcher
-src.manual = "0.10.4"
+# src.manual = "0.10.4"
 # src.use_latest_release = true
 # src.github = "wavetermdev/waveterm"
-fetch.url = "https://github.com/wavetermdev/waveterm/releases/download/v$ver/waveterm-linux-x64-$ver.zip"
+# fetch.url = "https://github.com/wavetermdev/waveterm/releases/download/v$ver/waveterm-linux-x64-$ver.zip"
 
 [zerotierone]
 src.use_latest_release = true
