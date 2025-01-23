@@ -12,6 +12,8 @@ in
     gnupg
     sops
 
+    nix-prefetch-scripts
+
     hyprlandPlugins
 
     atuin

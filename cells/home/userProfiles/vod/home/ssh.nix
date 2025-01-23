@@ -10,13 +10,6 @@ let
   inherit (osConfig.users.users.${name}) uid;
 in
 mkMerge [
-  # (mkIf config.services.gpg-agent.enable {
-  #   services.gpg-agent.sshKeys = [
-  #     "E3C4C12EDF24CA20F167CC7EE203A151BB3FD1AE"
-  #     "1953CEBFBC2D71B3CA498433F7EFDE2FDC1E69C5"
-  #   ];
-  # })
-
   (mkIf (config.services.gpg-agent.enable && config.services.gpg-agent.enableExtraSocket) {
     # NOTE: https://mlohr.com/gpg-agent-forwarding
     # NOTE: will break if UID is different!
