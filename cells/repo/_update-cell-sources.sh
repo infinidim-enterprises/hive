@@ -6,14 +6,11 @@ version_at_least() {
   version_input=$1
   version_min=$2
 
-  # Extract version numbers from input (e.g., "Version 0.6.2.0" -> "0.6.2.0")
   version_clean=$(echo "$version_input" | grep -oP '\d+(\.\d+)+')
 
-  # Split versions into arrays
   IFS='.' read -r -a version_array <<<"$version_clean"
   IFS='.' read -r -a min_array <<<"$version_min"
 
-  # Compare each part of the version
   for i in "${!min_array[@]}"; do
     local version_part=${version_array[$i]:-0} # Default to 0 if part is missing
     local min_part=${min_array[$i]}
@@ -25,7 +22,6 @@ version_at_least() {
     fi
   done
 
-  # If all parts are equal, return true
   return 0
 }
 
@@ -36,6 +32,12 @@ createKeyfile() {
 
   echo '[keys]' >"${keyfile}"
   echo "github = \"${GITHUB_TOKEN}\"" >>"${keyfile}"
+}
+
+with_globstar() {
+  shopt -s globstar nullglob
+  "$@"
+  shopt -u globstar nullglob
 }
 
 updateSources() {
@@ -49,10 +51,17 @@ updateSources() {
   toml="${1}"
 
   tmpdir=$(mktemp -d nvfetcher-keyfile.XXXXXXXX --tmpdir)
+  trap 'rm -rf "${tmpdir:-}"' EXIT
+
   keyfile="${tmpdir}/keyfile.toml"
 
-  # --keep-old
+  nvfetcher_version=$(nvfetcher --version 2>&1 | grep -oP '\d+(\.\d+)+')
+
   nvfetcher_cmd="nvfetcher -j 0 --timing --build-dir ${src_dir} --config ${toml}"
+
+  if version_at_least "${nvfetcher_version}" "0.7"; then
+    nvfetcher_cmd="${nvfetcher_cmd} --keep-old"
+  fi
 
   if [[ -n ${GITHUB_TOKEN} ]]; then
     createKeyfile "${keyfile}" && nvfetcher_cmd="${nvfetcher_cmd} --keyfile ${keyfile}"
@@ -72,6 +81,8 @@ updateSourcesFirefoxAddons() {
   local final_nix
 
   tmpdir=$(mktemp -d nvfetcher-ff-addons.XXXXXXXX --tmpdir)
+  trap 'rm -rf "${tmpdir:-}"' EXIT
+
   in_file="${1}"
   src_dir=$(dirname "${1}")
   out_file="${tmpdir}"/sources.json
@@ -101,21 +112,48 @@ regularOrFirefox() {
   fi
 }
 
-updateSourcesAll() {
-  shopt -s globstar nullglob
+_updateSourcesAll() {
   for src in "${PRJ_ROOT}"/**/nvfetcher.toml; do
     regularOrFirefox "${src}"
   done
-  shopt -u globstar nullglob
+}
+
+_updateSourcesForCell() {
+  local input
+  local cell
+  local subdir
+  local search_path
+
+  input="${1}"
+
+  cell=$(echo "${input}" | cut -d '/' -f 1)
+  subdir=$(echo "${input}" | cut -d '/' -f 2-)
+
+  if [[ -z ${subdir} ]]; then
+    search_path="${PRJ_ROOT}/cells/${cell}"
+  else
+    search_path="${PRJ_ROOT}/cells/${cell}/${subdir}"
+  fi
+
+  if [[ ! -d ${search_path} ]]; then
+    echo "Error: Directory '${search_path}' does not exist."
+    return 1
+  fi
+
+  for src in "${search_path}"/**/nvfetcher.toml; do
+    regularOrFirefox "${src}"
+  done
+}
+
+updateSourcesAll() {
+  with_globstar _updateSourcesAll
 }
 
 updateSourcesForCell() {
-  shopt -s globstar nullglob
-  local cell="${1}"
-  for src in "${PRJ_ROOT}"/cells/"${cell}"/**/nvfetcher.toml; do
-    regularOrFirefox "${src}"
-  done
-  shopt -u globstar nullglob
+  local cell
+  cell="${1}"
+
+  with_globstar _updateSourcesForCell "${cell}"
 }
 
 if [[ $# -eq 0 || ${1} == "ALL" ]]; then

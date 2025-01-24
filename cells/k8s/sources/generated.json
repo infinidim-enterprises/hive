@@ -15,6 +15,7 @@
             "repo": "k9s",
             "rev": "v0.31.4",
             "sha256": "sha256-M7syAy8Brnh0g4VXXoXM7UjIJLDpvNLA5nqa8yDcxIM=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "v0.31.4"

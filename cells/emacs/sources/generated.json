@@ -15,6 +15,7 @@
             "repo": "acm-terminal",
             "rev": "1851d8fa2a27d3fd8deeeb29cd21c3002b8351ba",
             "sha256": "sha256-EYhFrOo0j0JSNTdcZCbyM0iLxaymUXi1u6jZy8lTOaY=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "1851d8fa2a27d3fd8deeeb29cd21c3002b8351ba"
@@ -33,6 +34,7 @@
             "name": null,
             "rev": "19aed6ca81a3b1e549f47867c924d180d8536791",
             "sha256": "sha256-FZmWuu64D08kysLa/LU8o3W60s6/0FeQbVL923mJd1k=",
+            "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/pauldub/activity-watch-mode"
         },
@@ -52,6 +54,7 @@
             "name": null,
             "rev": "39ef44f810c34e8900978788467cc675870bcd19",
             "sha256": "sha256-SlqJ8erFtiydEdgZFGJ23DQ9fZH4FF09iO6t3gf5pwE=",
+            "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/domtronn/all-the-icons.el"
         },
@@ -71,6 +74,7 @@
             "name": null,
             "rev": "c2d700b784c793cc82131ef86323801b8d6e67bb",
             "sha256": "sha256-/WtacZPr45lurS0hv+W8UGzsXY3RujkU5oGGGqjqG0Q=",
+            "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/plexus/chemacs2"
         },
@@ -78,7 +82,7 @@
     },
     "color-rg": {
         "cargoLocks": null,
-        "date": "2024-10-07",
+        "date": "2025-01-22",
         "extract": null,
         "name": "color-rg",
         "passthru": null,
@@ -88,12 +92,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "e45bedec545c044accf307532b3c50dbb9ab2b66",
-            "sha256": "sha256-8BeNK2Qa5Gd2shv0i3YdQ8/RDgHzW4cyz6vJfZJy5WM=",
+            "rev": "f61438668edee6358ad95d76308e43b3d872ea7f",
+            "sha256": "sha256-PTlzJ73z4PyOoB5KaJtLhZOctE+5eing9vZthJ1rZEI=",
+            "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/manateelazycat/color-rg"
         },
-        "version": "e45bedec545c044accf307532b3c50dbb9ab2b66"
+        "version": "f61438668edee6358ad95d76308e43b3d872ea7f"
     },
     "copilot-el": {
         "cargoLocks": null,
@@ -109,29 +114,11 @@
             "name": null,
             "rev": "867a3debf907cbd7c5b0eb8837354a1efc7c2db9",
             "sha256": "sha256-BEA5cQSNgAMOULM3uNMATYHtFwV7CXAsZYi5IT1kB8A=",
+            "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/zerolfx/copilot.el.git"
         },
         "version": "867a3debf907cbd7c5b0eb8837354a1efc7c2db9"
-    },
-    "doom-emacs": {
-        "cargoLocks": null,
-        "date": "2025-01-14",
-        "extract": null,
-        "name": "doom-emacs",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": true,
-            "name": null,
-            "rev": "2bc052425ca45a41532be0648ebd976d1bd2e6c1",
-            "sha256": "sha256-1dlXEKEE/69UnNufxJEO9ZmxfEjYRFIw0sf9PhymwwE=",
-            "type": "git",
-            "url": "https://github.com/hlissner/doom-emacs"
-        },
-        "version": "2bc052425ca45a41532be0648ebd976d1bd2e6c1"
     },
     "grip": {
         "cargoLocks": null,
@@ -147,6 +134,7 @@
             "name": null,
             "rev": "a3f0ab5c8942ac15cf68f790b80c0a43b3a4c71e",
             "sha256": "sha256-ZOkuzGXgNJw9tj7/MATBojEmDszK7FcYyYKy59Qo19I=",
+            "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/joeyespo/grip"
         },
@@ -154,7 +142,7 @@
     },
     "jinx": {
         "cargoLocks": null,
-        "date": "2025-01-01",
+        "date": "2025-01-21",
         "extract": null,
         "name": "jinx",
         "passthru": null,
@@ -166,31 +154,12 @@
             "name": null,
             "owner": "minad",
             "repo": "jinx",
-            "rev": "8407ed958001f6a4718f225737665e50e6666dbf",
-            "sha256": "sha256-kmBpVAQfmyHnvFw8LEkgVdbVVN/hQTVjKMTLGLoCA5k=",
+            "rev": "ba93f949d23e3eeadb5a34534c0204109c668647",
+            "sha256": "sha256-7rH+lglOXN5gUr7J15jDQvDwgPnd5UK0mM5RjAy41RQ=",
+            "sparseCheckout": [],
             "type": "github"
         },
-        "version": "8407ed958001f6a4718f225737665e50e6666dbf"
-    },
-    "lsp-bridge": {
-        "cargoLocks": null,
-        "date": "2025-01-11",
-        "extract": null,
-        "name": "lsp-bridge",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "manateelazycat",
-            "repo": "lsp-bridge",
-            "rev": "6fd5eb21a174e6a04247a2f370b544dcd6cb2420",
-            "sha256": "sha256-+E1l0Ea0Db5ksX9tDW+cvNUMjT4be5i9qcI/rIvFKbY=",
-            "type": "github"
-        },
-        "version": "6fd5eb21a174e6a04247a2f370b544dcd6cb2420"
+        "version": "ba93f949d23e3eeadb5a34534c0204109c668647"
     },
     "nix-mode": {
         "cargoLocks": null,
@@ -208,6 +177,7 @@
             "name": null,
             "rev": "719feb7868fb567ecfe5578f6119892c771ac5e5",
             "sha256": "sha256-W/bxCAn4cvzKGbhILxtTiWJ5Wln2w6g4TPgk+ziCXsQ=",
+            "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/NixOS/nix-mode"
         },
@@ -229,6 +199,7 @@
             "repo": "nix-ts-mode",
             "rev": "cea932fd683bfab84234205f5f1d161e29a5adf6",
             "sha256": "sha256-5tq/eZrS5Y8HWqW0ndFoMo/ybZOK13Sq33tCb6WcyFU=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "cea932fd683bfab84234205f5f1d161e29a5adf6"
@@ -247,6 +218,7 @@
             "name": null,
             "rev": "f26834d37ae16e82ac8666a05959182652b412af",
             "sha256": "sha256-m6xnx4RjKGYej+z5Q1eXuHcQTCeaD4TDHcTSm3oyDuc=",
+            "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/migalmoreno/nyxt.el"
         },
@@ -266,6 +238,7 @@
             "name": null,
             "rev": "83aac18448c05fc9ef1ff5058c3def668dc8d81a",
             "sha256": "sha256-+/utlTZ/dvc2N/7whjMaE+Iv1HQGKa24gL2Hl8ASaYs=",
+            "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/atlas-engineer/nx-ace"
         },
@@ -285,6 +258,7 @@
             "name": null,
             "rev": "57dc1a9482a81d7c15b00c4b9d647bf1b129d8e4",
             "sha256": "sha256-CKJGCk7ATd0naFhill5rrvay6V2JE4Bstu4tFpaAjB0=",
+            "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/aartaka/nx-dark-reader"
         },
@@ -304,6 +278,7 @@
             "name": null,
             "rev": "cb08d2a1c794c8a9942bc5e7b793b2811a025074",
             "sha256": "sha256-v0EPZKNfpKvY3LD1YZBuU//4/wCXJRyE8WBJBknfL/M=",
+            "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/atlas-engineer/nx-reader"
         },
@@ -323,6 +298,7 @@
             "name": null,
             "rev": "f81f47df82f8e322f0a8919d05fc513297095a0b",
             "sha256": "sha256-Q+6B3lDzlhfHnS306yLh5LpxdIXESdH/Y2D3GJodbXs=",
+            "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/aartaka/nx-search-engines"
         },
@@ -342,6 +318,7 @@
             "name": null,
             "rev": "cdd8253e8a6d7bd3638458610c4971ffc58be0a8",
             "sha256": "sha256-f5T4ptMQQhooqTsj2TmaMOUqtD5zEuuPkNGihdf2Lcc=",
+            "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/migalmoreno/nx-tailor"
         },
@@ -361,6 +338,7 @@
             "name": null,
             "rev": "38e4354bbf7a8d08294babd067fac697038119b1",
             "sha256": "sha256-IeHnoB9hpISwuzI+pKiU+5wvGvz9YJrG5amGg6DGgq4=",
+            "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/Fuco1/org-pretty-table"
         },
@@ -380,6 +358,7 @@
             "name": null,
             "rev": "a912aaefae8abdada2b2479aec0ad53fcf0b57bf",
             "sha256": "sha256-X+t8E+0Bxtl6YMU0SwA/vRD8kn1lSXd2PcBhIY001Xo=",
+            "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/alphapapa/org-protocol-capture-html"
         },

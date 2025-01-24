@@ -13,6 +13,7 @@
       "name": null,
       "rev": "cac1d6920998ddcbee8310a873414732e707d8e5",
       "sha256": "sha256-CvfiudyBNYQsyPFy05kjbhGVtwl56wKPAllqgi6uZio=",
+      "sparseCheckout": [],
       "type": "git",
       "url": "https://git.code.sf.net/p/portableaserve/git"
     },
@@ -20,7 +21,7 @@
   },
   "adguard-filters_adguardteam": {
     "cargoLocks": null,
-    "date": "2025-01-18",
+    "date": "2025-01-24",
     "extract": null,
     "name": "adguard-filters_adguardteam",
     "passthru": null,
@@ -30,12 +31,13 @@
       "fetchSubmodules": false,
       "leaveDotGit": false,
       "name": null,
-      "rev": "a1e1ff42196970bdf5bc55379fd718e043e7ab85",
-      "sha256": "sha256-WwD+ZU7Eh00C/QLUBypLrQSaub/QqFb0dsK6L+xwmuY=",
+      "rev": "adca97ce890dc15f85ff8201f5e9b44a70186cad",
+      "sha256": "sha256-A17PZ8qXIgc7ZojGGafpEI5SIT+gWZzeKgXlu1C5iDA=",
+      "sparseCheckout": [],
       "type": "git",
       "url": "https://github.com/AdguardTeam/AdguardFilters"
     },
-    "version": "a1e1ff42196970bdf5bc55379fd718e043e7ab85"
+    "version": "adca97ce890dc15f85ff8201f5e9b44a70186cad"
   },
   "adguard-filters_romania": {
     "cargoLocks": null,
@@ -51,6 +53,7 @@
       "name": null,
       "rev": "c4d26c6d1f3c662fd82499bd9887d5ba783e19d2",
       "sha256": "sha256-8j0kV7/zskNuxE0uqlhEYB4RhkBk6k36o9RvgcmxJL0=",
+      "sparseCheckout": [],
       "type": "git",
       "url": "https://github.com/tcptomato/ROad-Block"
     },
@@ -58,7 +61,7 @@
   },
   "base16-schemes": {
     "cargoLocks": null,
-    "date": "2025-01-14",
+    "date": "2025-01-22",
     "extract": null,
     "name": "base16-schemes",
     "passthru": null,
@@ -68,16 +71,17 @@
       "fetchSubmodules": false,
       "leaveDotGit": false,
       "name": null,
-      "rev": "5c6d92f20e5761e0bfd78ee88cb9fca72189c0cf",
-      "sha256": "sha256-ioUzCnrFr5YsFtsSG+0QecR7/A1YUQPFOUYblGy4CLM=",
+      "rev": "ae31625ba47aeaa4bf6a98cf11a8d4886f9463d9",
+      "sha256": "sha256-y+9cvOA6BLKT0WfebDsyUpUa/YxKow9hTjBp6HpQv68=",
+      "sparseCheckout": [],
       "type": "git",
       "url": "https://github.com/tinted-theming/schemes"
     },
-    "version": "5c6d92f20e5761e0bfd78ee88cb9fca72189c0cf"
+    "version": "ae31625ba47aeaa4bf6a98cf11a8d4886f9463d9"
   },
   "chatgpt-wrapper": {
     "cargoLocks": null,
-    "date": "2025-01-16",
+    "date": "2025-01-18",
     "extract": null,
     "name": "chatgpt-wrapper",
     "passthru": null,
@@ -89,11 +93,12 @@
       "name": null,
       "owner": "llm-workflow-engine",
       "repo": "llm-workflow-engine",
-      "rev": "09df13ace4e2ce5c5ff89a88b92abcdfc3796450",
-      "sha256": "sha256-9whKw14rEkR+O4t1/sXa0ukAp36cpqeLvrI1PUEsMfQ=",
+      "rev": "4df47950b509b415f7e453b443e0321c558a8514",
+      "sha256": "sha256-SvVVAhO3sbt5dBB/4tNSSTZ6uYnskc0u5dccfpOXKyM=",
+      "sparseCheckout": [],
       "type": "github"
     },
-    "version": "09df13ace4e2ce5c5ff89a88b92abcdfc3796450"
+    "version": "4df47950b509b415f7e453b443e0321c558a8514"
   },
   "cl-hash-util": {
     "cargoLocks": null,
@@ -111,6 +116,7 @@
       "repo": "cl-hash-util",
       "rev": "7f88cb7579b2af8c21022554f46dddd6ce6a5fc2",
       "sha256": "sha256-Neg1WUxhMVAtk3AwlW05jryCyKsYGY50DkRsVcU+S/U=",
+      "sparseCheckout": [],
       "type": "github"
     },
     "version": "7f88cb7579b2af8c21022554f46dddd6ce6a5fc2"
@@ -129,6 +135,7 @@
       "name": null,
       "rev": "5a7fbdbfe4ac3810c7f00434d3d6dc7555891705",
       "sha256": "sha256-nFEecXmStgu/ePtNretaCgC1huBr4kKnzvgdoUG+u0Q=",
+      "sparseCheckout": [],
       "type": "git",
       "url": "https://codeberg.org/cage/cl-mount-info"
     },
@@ -150,6 +157,7 @@
       "repo": "cl-shellwords",
       "rev": "313576b9f6b925cbbc3dcf5e49e8f47c9c1b46bc",
       "sha256": "sha256-9hKq54YOOEE3Vc/9LVUnqvcw/1G1rpcUVL+8GKJlqEY=",
+      "sparseCheckout": [],
       "type": "github"
     },
     "version": "313576b9f6b925cbbc3dcf5e49e8f47c9c1b46bc"
@@ -170,6 +178,7 @@
       "repo": "cl-strings",
       "rev": "93ec4177fc51f403a9f1ef0a8933f36d917f2140",
       "sha256": "sha256-UpXjI9KsWvOhsjGSo1zVMNlD1I4Pwu9+cZoD60jREMk=",
+      "sparseCheckout": [],
       "type": "github"
     },
     "version": "93ec4177fc51f403a9f1ef0a8933f36d917f2140"
@@ -190,6 +199,7 @@
       "repo": "cl-syslog",
       "rev": "f62d524874616383650e30f7f23320005fd310c1",
       "sha256": "sha256-rH0zOgXR3BixtVaqcYPhIfZBjqYgWnqrORQfr1mBqFM=",
+      "sparseCheckout": [],
       "type": "github"
     },
     "version": "f62d524874616383650e30f7f23320005fd310c1"
@@ -210,6 +220,7 @@
       "repo": "console-solarized",
       "rev": "26929b5e303703ec527b6f6e4569f351d9831e52",
       "sha256": "sha256-QMxhuDuVHgw8+DpQAavtC3Dyg4rBmbrYoA8tKtamy3Y=",
+      "sparseCheckout": [],
       "type": "github"
     },
     "version": "26929b5e303703ec527b6f6e4569f351d9831e52"
@@ -230,6 +241,7 @@
       "repo": "crystalline",
       "rev": "v0.15.0",
       "sha256": "sha256-6ZAogEuOJH1QQ6NSJ+8KZUSFSgQAcvd4U9vWNAGix/M=",
+      "sparseCheckout": [],
       "type": "github"
     },
     "version": "v0.15.0"
@@ -248,6 +260,7 @@
       "name": null,
       "rev": "8bba6a0942232e9d7fa915b33bbe32dfedc5abb9",
       "sha256": "sha256-xbg3tPYfRNGJo+9F/58w2bDeZqV33Z871+ClSg4ACPk=",
+      "sparseCheckout": [],
       "type": "git",
       "url": "https://github.com/death/dbus"
     },
@@ -267,6 +280,7 @@
       "name": null,
       "rev": "e7aeedfbcdc18e3ea2d45cf6931e38d350096f2f",
       "sha256": "sha256-WU3e7F0iNrxiS7WXzNbxnBp4oIru2pLihKbVIR236J4=",
+      "sparseCheckout": [],
       "type": "git",
       "url": "https://github.com/voobscout/dbus-listen"
     },
@@ -290,6 +304,7 @@
       "repo": "git-get",
       "rev": "8cd27a8f629317bd27432f2e9a4bd00561b3b21e",
       "sha256": "sha256-dBZNrhg4df7NDECq8B333dY/7OXEyPIByD7YHdV9moo=",
+      "sparseCheckout": [],
       "type": "github"
     },
     "version": "8cd27a8f629317bd27432f2e9a4bd00561b3b21e"
@@ -312,6 +327,7 @@
       "repo": "git-pull-request-mirror",
       "rev": "3d342363b0e1f2da4e59ac01baf4601bcf233bf9",
       "sha256": "sha256-OMtRSGRB1xRk3L3sIfEpagDQHNWNJBBOE5tuW7ic4Y4=",
+      "sparseCheckout": [],
       "type": "github"
     },
     "version": "3d342363b0e1f2da4e59ac01baf4601bcf233bf9"
@@ -334,13 +350,14 @@
       "repo": "git-remote-ipfs",
       "rev": "12b3f421c19eb5548ae76b8c79c9581a428329e0",
       "sha256": "sha256-59zv362KfuW1Lki9vfwe9fJfdm6o0+DTPDbI/L+Ugsk=",
+      "sparseCheckout": [],
       "type": "github"
     },
     "version": "12b3f421c19eb5548ae76b8c79c9581a428329e0"
   },
   "ipxe": {
     "cargoLocks": null,
-    "date": "2025-01-10",
+    "date": "2025-01-22",
     "extract": null,
     "name": "ipxe",
     "passthru": null,
@@ -350,12 +367,13 @@
       "fetchSubmodules": false,
       "leaveDotGit": false,
       "name": null,
-      "rev": "d88eb0a1935942cdeccd3efee38f9765d2f1c235",
-      "sha256": "sha256-R6ytWBqs0ntOtlc8K4C3gXtDRBa1hf7kpWTRZz9/h4s=",
+      "rev": "c2f21a21852741e869b5a64d02d6a49ef16a94cd",
+      "sha256": "sha256-GXXyzhC/U4r6TbqZUQCxqtQ9ifV7kAO4XzT1jyQZNiM=",
+      "sparseCheckout": [],
       "type": "git",
       "url": "https://github.com/ipxe/ipxe"
     },
-    "version": "d88eb0a1935942cdeccd3efee38f9765d2f1c235"
+    "version": "c2f21a21852741e869b5a64d02d6a49ef16a94cd"
   },
   "iterable-io": {
     "cargoLocks": null,
@@ -386,11 +404,12 @@
       "name": null,
       "owner": "langchain-ai",
       "repo": "langchain",
-      "rev": "langchain-core==0.3.30",
-      "sha256": "sha256-108DlyLAmL7CxEkYWol5wybylpvklFeGaGjGBcbRWg4=",
+      "rev": "langchain-core==0.3.31",
+      "sha256": "sha256-u+Za7NtXVP0Mg6K65CuRLx8OrVpBXEe1ayP0uMUNJG4=",
+      "sparseCheckout": [],
       "type": "github"
     },
-    "version": "langchain-core==0.3.30"
+    "version": "langchain-core==0.3.31"
   },
   "listopia": {
     "cargoLocks": null,
@@ -408,6 +427,7 @@
       "repo": "listopia",
       "rev": "2d2a1a3c35580252ca0085e15ebf625f73230d60",
       "sha256": "sha256-IEoPmF0QC1S6xF/enlqy1rDX8qi/2bvacxWpCHaro0k=",
+      "sparseCheckout": [],
       "type": "github"
     },
     "version": "2d2a1a3c35580252ca0085e15ebf625f73230d60"
@@ -456,6 +476,7 @@
       "name": null,
       "rev": "2c5a85bd79c7b7d509ec14dd00d310cfe9f9afd2",
       "sha256": "sha256-r5xCe8Ew+/SuCUaZ0yjlumORTy/y1VwbQQjQ6uEyGsY=",
+      "sparseCheckout": [],
       "type": "git",
       "url": "https://github.com/Ferdi265/numix-solarized-gtk-theme"
     },
@@ -475,6 +496,7 @@
       "name": null,
       "rev": "38a32d53e9710be0f8e5b89d4eb43b025a94c4e4",
       "sha256": "sha256-Xxb6Wi+ss6iIvnkO1l4JCIOO2VV0WBrsKgZ3l9XdFN8=",
+      "sparseCheckout": [],
       "type": "git",
       "url": "https://github.com/mcdope/pam_usb"
     },
@@ -494,6 +516,7 @@
       "name": null,
       "rev": "f369e81f8723123d89b8ac527f955e4d4c60b7fd",
       "sha256": "sha256-StmpmszWHzmi8pMd+y3f6+1s2vjW8HM5O6maJiE6Ajc=",
+      "sparseCheckout": [],
       "type": "git",
       "url": "https://github.com/nurupo/paper-store"
     },
@@ -515,6 +538,7 @@
       "repo": "pgp-key-generation",
       "rev": "e4549972b1ed686b38da9e2a663106669edddb9b",
       "sha256": "sha256-FR6I4jwrF9t+pur0E/z54cgQ8acwtsAsKIp4pO0Ulng=",
+      "sparseCheckout": [],
       "type": "github"
     },
     "version": "e4549972b1ed686b38da9e2a663106669edddb9b"
@@ -535,6 +559,7 @@
       "repo": "pgp-packet-library",
       "rev": "42b4d08c0cb4b8ee527f729c1674e982eca409a7",
       "sha256": "sha256-DI0vxfbewqlXocrvzPgCM66IuSVxHjFdL3hIPxzFou8=",
+      "sparseCheckout": [],
       "type": "github"
     },
     "version": "42b4d08c0cb4b8ee527f729c1674e982eca409a7"
@@ -555,6 +580,7 @@
       "repo": "python-pass",
       "rev": "6f51145a3bc12ee79d2881204b88a82d149f3228",
       "sha256": "sha256-iJZe/Ljae9igkpfz9WJQK48wZZJWcOt4Z3kdp5VILqE=",
+      "sparseCheckout": [],
       "type": "github"
     },
     "version": "6f51145a3bc12ee79d2881204b88a82d149f3228"
@@ -590,6 +616,7 @@
       "repo": "s5cmd",
       "rev": "7e56e29c6e7fbf511729bab3a8685274b5c41713",
       "sha256": "sha256-JuBNlIw2w2EwVNkuDTlULDqSCwdGMDKUA/iiHykyMK8=",
+      "sparseCheckout": [],
       "type": "github"
     },
     "version": "7e56e29c6e7fbf511729bab3a8685274b5c41713"
@@ -608,6 +635,7 @@
       "name": null,
       "rev": "fa0ce0fe63ae314938e11843074fe0955f89e9ac",
       "sha256": "sha256-Rtaf0LRcWJ/a3yTFPMSPk6vlK0UW6dyStnAVJ24jREg=",
+      "sparseCheckout": [],
       "type": "git",
       "url": "https://github.com/rtlewis88/rtl88-Themes"
     },
@@ -627,6 +655,7 @@
       "name": null,
       "rev": "ab0a4d325b6c3bc34293850abcacc924b2ee2933",
       "sha256": "sha256-rBNlEgMyjPqt/e68pYery+puBAbiy0CskBjeKx0Tq/0=",
+      "sparseCheckout": [],
       "type": "git",
       "url": "https://github.com/rtlewis1/GTK"
     },
@@ -646,6 +675,7 @@
       "name": null,
       "rev": "93ab6a4b7683795ee9da42f39c1ad28a23ac8b3c",
       "sha256": "sha256-MDAewKv1DRoCxWfSCj6+EEtkFFYjm9z5iPZQ3xCjpqM=",
+      "sparseCheckout": [],
       "type": "git",
       "url": "https://github.com/rtlewis1/GTK"
     },
@@ -665,6 +695,7 @@
       "name": null,
       "rev": "2b5bdf1045f2a5c8b880b482840be8983ca06191",
       "sha256": "sha256-uVNYmpPM2o9Fq3A1gP04ffXeWdc7y2HP1g7vkiuJZtg=",
+      "sparseCheckout": [],
       "type": "git",
       "url": "https://github.com/MalditoBarbudo/solarized_sddm_theme"
     },
@@ -686,6 +717,7 @@
       "repo": "Solarized",
       "rev": "3.0.1",
       "sha256": "sha256-K0LevG89BxbGajxWWycunK+pwH3JlJSfb+23bM54uYk=",
+      "sparseCheckout": [],
       "type": "github"
     },
     "version": "3.0.1"
@@ -706,6 +738,7 @@
       "repo": "tfenv",
       "rev": "39d8c27ad9862ffdec57989b66fd2720cb72e76c",
       "sha256": "sha256-h5ZHT4u7oAdwuWpUrL35G8bIAMasx6E81h15lTJSHhQ=",
+      "sparseCheckout": [],
       "type": "github"
     },
     "version": "39d8c27ad9862ffdec57989b66fd2720cb72e76c"
@@ -724,21 +757,6 @@
       "url": "https://github.com/6c65726f79/Transmissionic/releases/download/v1.8.0/Transmissionic-webui-v1.8.0.zip"
     },
     "version": "v1.8.0"
-  },
-  "waveterm": {
-    "cargoLocks": null,
-    "date": null,
-    "extract": null,
-    "name": "waveterm",
-    "passthru": null,
-    "pinned": false,
-    "src": {
-      "name": null,
-      "sha256": "sha256-HfTFQ7nB3jTur/29jiFgV9boLVw5ed0k2yBGevYIlIs=",
-      "type": "url",
-      "url": "https://github.com/wavetermdev/waveterm/releases/download/v0.10.4/waveterm-linux-x64-0.10.4.zip"
-    },
-    "version": "0.10.4"
   },
   "zerotierone": {
     "cargoLocks": null,

@@ -16,7 +16,19 @@ in
 
     hyprlandPlugins
 
+    ### cli/shell/terminal
     atuin
+
+    tmux
+    tmux-cssh
+    tmux-mem-cpu-load
+    tmux-sessionizer
+    tmux-xpanes
+    tmuxPlugins
+    tmuxifier
+    tmuxinator
+    tmuxp
+
     waveterm
     nyxt
 

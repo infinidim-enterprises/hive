@@ -108,6 +108,7 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
+      sparseCheckout = [ ];
       sha256 = "sha256-72aQ5N5L14mwJ8RB50p/swi6wXhPGYRYJ/Q8CUdP4wE=";
     };
     date = "2023-12-06";
@@ -121,6 +122,7 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
+      sparseCheckout = [ ];
       sha256 = "sha256-FMwQza1WjMShV30uRR6rqmQtoRcwzZ7FwyniatvTGXQ=";
     };
     date = "2024-07-10";
@@ -146,6 +148,7 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
+      sparseCheckout = [ ];
       sha256 = "sha256-32rJjBzqS2e6w/L78KMNwQRg4E3sqqdAmb87XEhqbRQ=";
     };
     date = "2018-09-09";
@@ -164,16 +167,17 @@
   };
   zsh-plugin_oh-my-zsh = {
     pname = "zsh-plugin_oh-my-zsh";
-    version = "028d65363230b4aa54f3aaa14e03237243a2f1d8";
+    version = "5fd2059e5eda17ee07501a21d47189d4b96d6ff3";
     src = fetchgit {
       url = "https://github.com/robbyrussell/oh-my-zsh";
-      rev = "028d65363230b4aa54f3aaa14e03237243a2f1d8";
+      rev = "5fd2059e5eda17ee07501a21d47189d4b96d6ff3";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-z7Ya2eWf7tZo03XDE/B+eg0u73NNiG2rSH7FponHDTo=";
+      sparseCheckout = [ ];
+      sha256 = "sha256-QM5edAGScACWLsLcPFf82J1+WM8pbEfakhXxwn6MqG8=";
     };
-    date = "2025-01-15";
+    date = "2025-01-23";
   };
   zsh-plugin_tipz = {
     pname = "zsh-plugin_tipz";
@@ -184,6 +188,7 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
+      sparseCheckout = [ ];
       sha256 = "sha256-oFZJwHYDfK4f53lhcZg6PCw2AgHxFC0CRiqiinKZz8k=";
     };
     date = "2018-05-03";
@@ -197,6 +202,7 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
+      sparseCheckout = [ ];
       sha256 = "sha256-P/pbpDJmsMSZkNi5GjVTDy7R+OxaIVZhb/bEnYQlaLo=";
     };
     date = "2022-09-13";
@@ -210,6 +216,7 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
+      sparseCheckout = [ ];
       sha256 = "sha256-8HznSWSBj1baetvDOIZ+H9mWg5gbbzF52nIEG+u9Di8=";
     };
     date = "2024-06-04";
@@ -223,6 +230,7 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
+      sparseCheckout = [ ];
       sha256 = "sha256-3zvOgIi+q7+sTXrT+r/4v98qjeiEL4Wh64rxBYnwJvQ=";
     };
     date = "2024-07-14";
@@ -236,6 +244,7 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
+      sparseCheckout = [ ];
       sha256 = "sha256-lDlXqMHYHlX0RKFhCNjGwxsng0DI8+ErLWNGHLblsAw=";
     };
     date = "2025-01-12";
@@ -249,6 +258,7 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
+      sparseCheckout = [ ];
       sha256 = "sha256-1+w0AeVJtu1EK5iNVwk3loenFuIyVlQmlw8TWliHZGI=";
     };
     date = "2024-06-05";
@@ -262,6 +272,7 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
+      sparseCheckout = [ ];
       sha256 = "sha256-IIcGYa0pXdll/XDPA15zDBkLUuLhTdrqwS9sn06ce0Y=";
     };
     date = "2024-11-21";

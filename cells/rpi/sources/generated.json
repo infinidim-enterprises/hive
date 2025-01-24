@@ -15,6 +15,7 @@
             "repo": "libcamera",
             "rev": "34f4e38ad5045a24b46ae7f1a69fb91c180cea2e",
             "sha256": "sha256-xC9PdYnB0quERSpdTEMIvhT5TIXek/hYzHjWXRPiOvQ=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "34f4e38ad5045a24b46ae7f1a69fb91c180cea2e"
@@ -35,13 +36,14 @@
             "repo": "libcamera-apps",
             "rev": "e821e4aa1b3a8d3b1f11878cb5acdeb1007616fd",
             "sha256": "sha256-CvQrKYvCRJiw33ad7w+xoM/ORMoI3FVuA8igRtNz7Xs=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "e821e4aa1b3a8d3b1f11878cb5acdeb1007616fd"
     },
     "mediamtx": {
         "cargoLocks": null,
-        "date": "2025-01-18",
+        "date": "2025-01-24",
         "extract": null,
         "name": "mediamtx",
         "passthru": null,
@@ -53,10 +55,11 @@
             "name": null,
             "owner": "bluenviron",
             "repo": "mediamtx",
-            "rev": "c1e1c74f6ec5127398e426904a019e4b329af52b",
-            "sha256": "sha256-GZL9rrxUHH0SflohXW+amT52h6cpqvbxdIB5Gi0HphM=",
+            "rev": "a8b8f676f4acdb37b5eaaf4a20213901c78baad3",
+            "sha256": "sha256-+NT3YheDdlTPnyGLUl9mpyYx2kvN1lw2jDRdAboTSdc=",
+            "sparseCheckout": [],
             "type": "github"
         },
-        "version": "c1e1c74f6ec5127398e426904a019e4b329af52b"
+        "version": "a8b8f676f4acdb37b5eaaf4a20213901c78baad3"
     }
 }
