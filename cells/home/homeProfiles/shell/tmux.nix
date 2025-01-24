@@ -18,7 +18,7 @@
     ];
 
     extraConfig = ''
-      set-option -g utf8 on
+      set -g utf8 on
 
       # Disable the startup message
       set-option -g visual-activity off
