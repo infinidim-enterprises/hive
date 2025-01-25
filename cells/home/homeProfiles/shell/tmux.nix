@@ -18,7 +18,7 @@
     ];
 
     extraConfig = ''
-      set -g utf8 on
+      # FIXME: 'invalid option utf8' set -g utf8 on
 
       # Disable the startup message
       set-option -g visual-activity off
@@ -29,16 +29,10 @@
       # Enable automatic detach
       set-option -g detach-on-destroy off
 
-      # Enable alternate screen
       ${lib.optionalString config.programs.atuin.enable "set-option -g alternate-screen on"}
 
-      # Set the escape key to Ctrl-O
-      set-option -g prefix C-o
-      unbind-key C-b
-      bind-key C-o send-prefix
-
-      # Enable mouse support
-      set-option -g mouse on
+      # Enable the Super-key usage
+      set -g extended-keys always
 
       # Set the status line
       set-option -g status on
@@ -47,21 +41,32 @@
       set-option -g status-left-length 20
       set-option -g status-right-length 50
       set-option -g status-style fg=white,bg=black
-      set-option -g status-left "#[fg=green][#[fg=white]#S#[fg=green]]"
-      set-option -g status-right "#[fg=green][#[fg=white]%H:%M:%S#[fg=green]]"
+      set-option -g status-left "#[fg=green][#[fg=white]#(${pkgs.coreutils}/bin/tty >/dev/null && ${pkgs.coreutils}/bin/tty | ${pkgs.coreutils}/bin/cut -d'/' -f3- || echo '?').#H[fg=green]]"
+      set-option -g status-right "#[fg=green][#[fg=white]#S#[fg=green]]"
 
       # Window list
       set-option -g window-status-format "#I:#W"
       set-option -g window-status-current-format "#[fg=white]#I:#W"
 
-      # Bind keys for window navigation
-      bind-key -n M-Left previous-window
-      bind-key -n M-Right next-window
-
       # Bind keys for copying and pasting
       bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
       bind-key -T copy-mode-vi Y send-keys -X copy-pipe-and-cancel "xsel -i -b"
       bind-key -T copy-mode-vi p send-keys -X paste-buffer
+
+      # Bind keys for window navigation
+      bind-key C-o last-window
+      bind-key n "next-window"
+      bind-key p "previous-window"
+      bind-key C-n if-shell -F "#{window_panes} -gt 1" \
+        "join-pane -d -s :.+ -t :." \
+        "next-window"
+      bind-key C-p if-shell -F "#{window_panes} -gt 1" \
+        "join-pane -d -s :.- -t :." \
+        "previous-window"
+
+      # Bind keys for splitting panes
+      bind-key 2 split-window -v
+      bind-key 3 split-window -h
 
       # Bind keys for resizing panes
       bind-key -n M-Up resize-pane -U 5
@@ -71,10 +76,14 @@
 
       # Bind keys for focusing panes
       bind-key -n M-Tab select-pane -t :.+
-      bind-key -n M-h select-pane -L
+      bind-key -n M-j select-pane -L
       bind-key -n M-l select-pane -R
-      bind-key -n M-k select-pane -U
-      bind-key -n M-j select-pane -D
+      bind-key -n M-i select-pane -U
+      bind-key -n M-k select-pane -D
+
+      # Bind other keys
+      bind-key A command-prompt -I "#W" "rename-window '%%'"
+      bind-key q kill-session
 
       # Bind keys for logging
       bind-key R new-window -n "root" "sudo su -"
