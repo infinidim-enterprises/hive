@@ -94,3 +94,7 @@ fetch.git = "https://github.com/chrissicool/zsh-256color"
 [zsh-plugin_zsh-autoenv]
 src.git = "https://github.com/Tarrasch/zsh-autoenv"
 fetch.git = "https://github.com/Tarrasch/zsh-autoenv"
+
+[dircolors-solarized]
+src.git = "https://github.com/seebi/dircolors-solarized"
+fetch.git = "https://github.com/seebi/dircolors-solarized"

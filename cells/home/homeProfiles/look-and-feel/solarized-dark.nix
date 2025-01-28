@@ -332,4 +332,8 @@ mkMerge [
 
     */
   })
+
+  (mkIf config.programs.dircolors.enable {
+    programs.dircolors.extraConfig = fileContents "${pkgs.sources.dircolors-solarized.src}//dircolors.256dark";
+  })
 ]

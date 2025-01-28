@@ -1,4 +1,24 @@
 {
+  "dircolors-solarized": {
+    "cargoLocks": null,
+    "date": "2024-12-16",
+    "extract": null,
+    "name": "dircolors-solarized",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "rev": "2249310a957977e523b62c7d916ba40c2165869c",
+      "sha256": "sha256-8YvcLQL+zUWT/tn9MAeYVkFkkPSbZJ9JRsVw85bE/3s=",
+      "sparseCheckout": [],
+      "type": "git",
+      "url": "https://github.com/seebi/dircolors-solarized"
+    },
+    "version": "2249310a957977e523b62c7d916ba40c2165869c"
+  },
   "getoptions": {
     "cargoLocks": null,
     "date": "2024-08-18",
@@ -275,7 +295,7 @@
   },
   "zsh-plugin_oh-my-zsh": {
     "cargoLocks": null,
-    "date": "2025-01-23",
+    "date": "2025-01-26",
     "extract": null,
     "name": "zsh-plugin_oh-my-zsh",
     "passthru": null,
@@ -285,13 +305,13 @@
       "fetchSubmodules": false,
       "leaveDotGit": false,
       "name": null,
-      "rev": "5fd2059e5eda17ee07501a21d47189d4b96d6ff3",
-      "sha256": "sha256-QM5edAGScACWLsLcPFf82J1+WM8pbEfakhXxwn6MqG8=",
+      "rev": "ce9a4a0196a372b153a592ecd61b728cd88bb767",
+      "sha256": "sha256-SVaqnpfaQSmVVj42zcDJMAEYRHmYTLhjmK3cYD7yKF0=",
       "sparseCheckout": [],
       "type": "git",
       "url": "https://github.com/robbyrussell/oh-my-zsh"
     },
-    "version": "5fd2059e5eda17ee07501a21d47189d4b96d6ff3"
+    "version": "ce9a4a0196a372b153a592ecd61b728cd88bb767"
   },
   "zsh-plugin_tipz": {
     "cargoLocks": null,

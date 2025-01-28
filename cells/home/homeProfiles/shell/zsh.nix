@@ -49,8 +49,6 @@ lib.mkIf config.programs.zsh.enable
   programs.zsh.dirHashes.vids = "$HOME/Videos";
   programs.zsh.dirHashes.bins = "$HOME/bin";
 
-  # programs.zsh.shellAliases = { };
-
   programs.zsh.localVariables = {
     WORDCHARS = "*?_-.[]~=&;!#$%^(){}<>";
     MOTION_WORDCHARS = "*?_-.[]~=&;!#$%^(){}<>/";

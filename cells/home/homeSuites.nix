@@ -14,7 +14,10 @@ rec {
     shell.atuin
     shell.screen
     shell.cli-tools
+    look-and-feel.solarized-dark
     look-and-feel.starship-prompt
+
+    inputs.cells.home.homeModules.programs.waveterm
   ];
 
   desktop = with cell.homeProfiles; [
@@ -24,7 +27,6 @@ rec {
     # terminals.kitty
     # conky
 
-    look-and-feel.solarized-dark
     look-and-feel.nerdfonts-ubuntu
     look-and-feel.pointer-cursor
   ];

@@ -37,8 +37,9 @@ let
 in
 {
   programs.bat.enable = true;
+  programs.dircolors.enable = true;
   home.packages = with pkgs; [
-    tmate #TODO: make a home-manager module - https://tmate.io/ Instant terminal sharing
+    tmate #TODO: make a home-manager module - https://tmate.io Instant terminal sharing
     tty-share # Secure terminal-session sharing - https://tty-share.com
     upterm # Secure terminal-session sharing - https://upterm.dev
     eternal-terminal # TODO: Remote shell that automatically reconnects without interrupting the session
@@ -108,7 +109,7 @@ in
     rclone # Command line program to sync files and directories to and from major cloud storage
 
     # perl # fzf-history-widget() needs perl to sort input
-    thefuck # if you mistyped: fuck
+    # thefuck # if you mistyped: fuck
 
     # NOTE: Fuck Rust and their liberal fascism religious cult!
     # fselect # Find files with SQL-like queries
