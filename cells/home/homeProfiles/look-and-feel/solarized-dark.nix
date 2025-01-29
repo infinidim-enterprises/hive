@@ -19,7 +19,7 @@ let
   # NOTE: https://gitlab.gnome.org/GNOME/gtk/-/blob/gtk-3-24/gtk/theme/Adwaita/_colors-public.scss
 in
 mkMerge [
-  {
+  (mkIf (inputs.cells.nixos.lib.isGui osConfig) {
     qt.enable = true;
     qt.platformTheme.name = "gtk";
     qt.style.name = "gtk2";
@@ -101,7 +101,7 @@ mkMerge [
     '';
 
     # TODO: gtk.gtk3.extraCss = fileContents ./gtk3.gtk_css;
-  }
+  })
 
   (mkIf config.programs.waybar.enable {
     programs.waybar.style = mkAfter ''

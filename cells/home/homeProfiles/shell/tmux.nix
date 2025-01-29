@@ -129,21 +129,22 @@ in
           tmux display-message "Mouse mode: ON"; \
         fi'
 
-        bind-key Q if-shell -F '#{==:#{window_panes},1}' {
-          display-message "Only one pane in window; nothing to maximize."
-        } {
-            if-shell -F '#{pane_maximized}' {
-            resize-pane -Z
-            display-message "Pane restored to original size."
-        } {
-            resize-pane -Z
-            display-message "Pane maximized."
-          }
+      # Toggle maximized state for pane
+      bind-key Q if-shell -F '#{==:#{window_panes},1}' {
+        display-message "Only one pane in window; nothing to maximize."
+      } {
+          if-shell -F '#{pane_maximized}' {
+          resize-pane -Z
+          display-message "Pane restored to original size."
+      } {
+          resize-pane -Z
+          display-message "Pane maximized."
         }
+      }
 
       # Bind keys for splitting panes emacs-style
-      bind-key C-2 split-window -v
-      bind-key C-3 split-window -h
+      bind-key "\\" split-window -v
+      bind-key "|" split-window -h
 
       # Bind keys for resizing panes
       bind-key -n M-J resize-pane -L 1
