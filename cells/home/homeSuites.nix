@@ -13,6 +13,7 @@ rec {
     shell.zsh
     shell.atuin
     shell.screen
+    shell.tmux
     shell.cli-tools
     look-and-feel.solarized-dark
     look-and-feel.starship-prompt
