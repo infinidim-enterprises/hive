@@ -135,14 +135,12 @@ in
       } {
           if-shell -F '#{pane_maximized}' {
           resize-pane -Z
-          display-message "Pane restored to original size."
       } {
           resize-pane -Z
-          display-message "Pane maximized."
         }
       }
 
-      # Bind keys for splitting panes emacs-style
+      # Bind keys for splitting panes
       bind-key "\\" split-window -v
       bind-key "|" split-window -h
 

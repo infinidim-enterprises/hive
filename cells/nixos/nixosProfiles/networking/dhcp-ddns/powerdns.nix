@@ -43,9 +43,6 @@ in
     })
 
     {
-      # networking.firewall.interfaces."njk.local".allowedUDPPorts = [ 5353 ];
-      # networking.firewall.allowedUDPPorts = [ 53 ];
-
       services.powerdns = {
         debug = true;
         settings = {

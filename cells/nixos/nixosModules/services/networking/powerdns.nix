@@ -69,7 +69,7 @@ let
     pkgs.writeShellApplication {
       excludeShellChecks = [ "SC2154" "SC2002" ];
       name = "initzone-${name}";
-      runtimeInputs = with pkgs; [ httpie gawk coreutils ];
+      runtimeInputs = with pkgs; [ httpie gawk coreutils jq ];
       text =
         let
           deleteZone = ''
@@ -78,7 +78,7 @@ let
           '';
           dnssecString = ''
             # enable dnssec
-            ${endpoint { method = "POST"; zone = name; path = "cryptokeys"; }} < ${json "zone_${name}_ddns_secure.json" {
+              ${endpoint { method = "POST"; zone = name; path = "cryptokeys"; }} < ${json "zone_${name}_ddns_secure.json" {
               type = "Cryptokey";
               keytype = "csk";
               active = true;
@@ -87,8 +87,15 @@ let
               bits = 256;
             }}
 
-            # rectify dnssec
-            ${endpoint { method = "PUT"; zone = name; path = "rectify"; }}
+              # rectify dnssec
+              ${endpoint { method = "PUT"; zone = name; path = "rectify"; }}
+          '';
+          dnssecCheck = ''
+            # Add dnssec keys if zone has none
+            if ${endpoint { method = "GET"; zone = name; path = "cryptokeys"; }} | jq -e 'length == 0' > /dev/null
+            then
+              ${dnssecString}
+            fi
           '';
         in
         ''
@@ -108,7 +115,7 @@ let
           # create records
           ${endpoint { method = "PATCH"; zone = name; }} < ${json "zone_${name}_records.json" { inherit (zone) rrsets; }}
 
-          ${optionalString zone.dnssec dnssecString}
+          ${optionalString zone.dnssec dnssecCheck}
         '';
     };
 
