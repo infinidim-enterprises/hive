@@ -17,7 +17,7 @@ rec {
         "jitsi-meet-1.0.8043"
       ];
       config.allowUnfree = true;
-      overlays = cell.overlays.default_desktop;
+      overlays = cell.overlays.default_desktop ++ cell.overlays.llm;
     };
   };
 

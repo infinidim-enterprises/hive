@@ -88,6 +88,33 @@ mkMerge [
   # }
 
   {
+    home.packages = with pkgs; [
+      config.programs.ripgrep.package
+      config.programs.git.package
+      config.programs.fd.package
+
+      pandoc
+      pandoc-imagine
+      pandoc-plantuml-filter
+
+      ditaa
+      graphviz
+      plantuml
+      python3 # treemacs requirement
+      bibtex2html
+
+      bash-language-server
+      yaml-language-server
+
+      (aspellWithDicts (dicts: with dicts; [
+        en
+        en-computers
+        en-science
+        de
+        ru
+      ]))
+    ];
+
     programs.doom-emacs = {
       inherit emacs extraPackages;
       enable = mkDefault true;
@@ -95,6 +122,7 @@ mkMerge [
       doomLocalDir = mkDefault (
         config.xdg.dataHome + "/nix-doom-emacs-unstraightened"
       );
+      # FIXME: programs.doom-emacs.extraBinPackages | doesn't work on 24.11 release
       extraBinPackages = [
         config.programs.ripgrep.package
         config.programs.git.package

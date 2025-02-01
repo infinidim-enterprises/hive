@@ -88,6 +88,10 @@ rec {
       })
     ];
 
+  llm = [
+    inputs.cells.llm.overlays.sources
+  ];
+
   emacs = [
     inputs.cells.emacs.overlays.sources
     # inputs.cells.emacs.overlays.tools

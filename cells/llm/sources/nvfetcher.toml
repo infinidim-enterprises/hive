@@ -1,0 +1,14 @@
+[gluetun]
+# Lightweight swiss-army-knife-like VPN client to multiple VPN service providers
+src.container = "qmcgaw/gluetun"
+src.include_regex = "latest"
+fetch.docker = "qmcgaw/gluetun"
+docker.os = "linux"
+docker.arch = "amd64"
+
+[lobe-chat]
+src.container = "lobehub/lobe-chat"
+src.include_regex = "latest"
+fetch.docker = "lobehub/lobe-chat"
+docker.os = "linux"
+docker.arch = "amd64"
