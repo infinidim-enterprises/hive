@@ -671,6 +671,28 @@ This fails to build on nix currently
 
 *** nix
 #+begin_src emacs-lisp :tangle config.el
+(use-package! nix-mode
+  :after lsp-mode
+  :hook
+  ((nix-mode . lsp-deferred)
+   (nix-mode . (lambda () (setq company-idle-delay 0.1))))
+  :custom
+  (lsp-disabled-clients '((nix-mode . nix-nil)))
+  :config
+  (let* ((prj_root (getenv "PRJ_ROOT"))
+         (username (getenv "USER"))
+         (hostname (with-temp-buffer (call-process "hostname" nil t nil)
+                                     (string-trim (buffer-string))))
+         (host (concat "(builtins.getFlake \"" prj_root "\").nixosConfigurations.nixos-" hostname)))
+    (setq lsp-nix-nixd-server-path "nixd"
+          lsp-nix-nixd-formatting-command [ "nixpkgs-fmt" ]
+          lsp-nix-nixd-nixpkgs-expr "import <nixpkgs> { }"
+          lsp-nix-nixd-nixos-options-expr (concat host ".options")
+          ;; FIXME: lsp-nix-nixd-home-manager-options-expr (concat host ".config\"nb@mnd\".options")
+          )))
+#+end_src
+
+#+begin_src emacs-lisp
 (with-eval-after-load 'lsp-mode
   (lsp-register-client
     (make-lsp-client :new-connection (lsp-stdio-connection "nixd")
