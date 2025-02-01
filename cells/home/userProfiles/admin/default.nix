@@ -18,8 +18,6 @@ in
         ++ [
           # inputs.nix-doom-emacs.hmModule
 
-          cell.homeProfiles.shell.tmux
-
           # ../vod/home/emacs.nix # FIXME: for testing
           ../vod/home/gitconfig.nix # FIXME: for testing
 
