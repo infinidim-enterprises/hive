@@ -99,15 +99,15 @@
   };
   jinx = {
     pname = "jinx";
-    version = "ba93f949d23e3eeadb5a34534c0204109c668647";
+    version = "2144d03f7bcc3f461b4e67f913dfc0055e4ad7e2";
     src = fetchFromGitHub {
       owner = "minad";
       repo = "jinx";
-      rev = "ba93f949d23e3eeadb5a34534c0204109c668647";
+      rev = "2144d03f7bcc3f461b4e67f913dfc0055e4ad7e2";
       fetchSubmodules = false;
-      sha256 = "sha256-7rH+lglOXN5gUr7J15jDQvDwgPnd5UK0mM5RjAy41RQ=";
+      sha256 = "sha256-b+hWDJ70LmXILP+8o+6RNa0q+N4XOZNHOklg1xfvtrM=";
     };
-    date = "2025-01-21";
+    date = "2025-01-28";
   };
   nix-mode = {
     pname = "nix-mode";
