@@ -596,6 +596,10 @@ in
       "stayfocused, class:^(Masterpdfeditor5)$, title:^(Save|Open|Print)$"
       "dimaround, class:^(Masterpdfeditor5)$, title:^(Save|Open|Print)$"
 
+      "float, class:^(com.github.hluk.copyq)$"
+      "center, class:^(com.github.hluk.copyq)$"
+      "stayfocused, class:^(com.github.hluk.copyq)$"
+      "dimaround, class:^(com.github.hluk.copyq)$"
     ];
   };
 
@@ -612,8 +616,8 @@ in
     bind = Control_L, y, exec, ${config.services.copyq.package}/bin/copyq toggle
     bind = Control_L, y, submap, reset
 
-    # bind = , y, exec, cliphist list | wofi --show dmenu | cliphist decode | wl-copy
-    # bind = , y, submap, reset
+    bind = , i, exec, hyprprop | wl-copy
+    bind = , y, submap, reset
 
     # bind = Control_L, y, exec, cliphist list | wofi --show dmenu | cliphist decode | xargs wtype
     # bind = Control_L, y, submap, reset
