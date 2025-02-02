@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
   # TODO: sops-nix for atuin key in ~/.local/share/atuin/key
@@ -10,7 +10,7 @@
     auto_sync = true;
     sync_frequency = "1m";
     search_mode = "fuzzy";
-    filter_mode = "global";
+    filter_mode = "workspace";
     workspaces = true;
     style = "compact";
     show_preview = true;

@@ -732,7 +732,7 @@ This fails to build on nix currently
 ** Nix
 
 #+begin_src emacs-lisp :tangle packages.el
-(unpin! nix-mode)
+;; (unpin! nix-mode)
 ;; (unpin! lsp-mode)
 ;; (package! lsp-mode)
 (package! nixpkgs-fmt)
