@@ -52,12 +52,22 @@ in
     # FIXME: "org/gnome/system/wsdd".display-mode = "disabled";
   };
 
-  # TODO: maybe this instead? https://github.com/savedra1/clipse
-  services.cliphist.enable = true;
-  services.cliphist.allowImages = true;
-  services.cliphist.systemdTarget = "wayland-session@Hyprland.target";
-  systemd.user.services.cliphist.Unit.After = [ "waybar.service" ];
-  systemd.user.services.cliphist-images.Unit.After = [ "cliphist.service" ];
+  # NOTE: cliphist sucks, switched to copyQ
+  services.copyq.enable = true;
+  services.copyq.systemdTarget = "wayland-session@Hyprland.target";
+  systemd.user.services.copyq.Unit.After = [ "waybar.service" ];
+
+  # services.cliphist.enable = true;
+  # services.cliphist.allowImages = true;
+  # services.cliphist.systemdTarget = "wayland-session@Hyprland.target";
+  # services.cliphist.extraOptions = [
+  #   "-max-dedupe-search"
+  #   "500"
+  #   "-max-items"
+  #   "750"
+  # ];
+  # systemd.user.services.cliphist.Unit.After = [ "waybar.service" ];
+  # systemd.user.services.cliphist-images.Unit.After = [ "cliphist.service" ];
 
   services.gammastep.enable = true;
   services.gammastep.tray = true;
@@ -598,10 +608,16 @@ in
     bind = SHIFT, k, hy3:killactive
     bind = SHIFT, k, submap, reset
 
-    bind = Control_L, y, exec, cliphist list | wofi --show dmenu | cliphist decode | xargs wtype
+    bind = Control_L, y, exec, ${config.services.copyq.package}/bin/copyq toggle
     bind = Control_L, y, submap, reset
-    bind = , y, exec, cliphist list | wofi --show dmenu | cliphist decode | wl-copy
-    bind = , y, submap, reset
+
+    # bind = , y, exec, cliphist list | wofi --show dmenu | cliphist decode | wl-copy
+    # bind = , y, submap, reset
+
+    # bind = Control_L, y, exec, cliphist list | wofi --show dmenu | cliphist decode | xargs wtype
+    # bind = Control_L, y, submap, reset
+    # bind = , y, exec, cliphist list | wofi --show dmenu | cliphist decode | wl-copy
+    # bind = , y, submap, reset
 
     bind = , f, exec, $fileManager
     bind = , f, submap, reset

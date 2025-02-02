@@ -2,7 +2,6 @@
 
 {
   programs.waveterm.enable = true;
-  # programs.waveterm.package = pkgs.waveterm_10_04;
   programs.waveterm.settings = {
     "telemetry:enabled" = false;
     "term:copyonselect" = true;

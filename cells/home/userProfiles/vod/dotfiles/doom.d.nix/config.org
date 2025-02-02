@@ -222,7 +222,7 @@ Maybe use (package! maple-iedit :recipe (:host github :repo "honmaple/emacs-mapl
 #+begin_src emacs-lisp :tangle packages.el
 (package! discover :recipe (:host github :repo "mickeynp/discover.el"))
 (package! rainbow-mode)
-;; (unpin! magit)
+(package! docker-tramp :disable t)
 #+end_src
 
 [[https://github.com/doomemacs/doomemacs/issues/6463][emmet-mode conflicts with copilot]]
@@ -233,16 +233,6 @@ Maybe use (package! maple-iedit :recipe (:host github :repo "honmaple/emacs-mapl
 
 (setq custom-file (expand-file-name "doom_custom.el" (getenv "XDG_DATA_HOME")))
 (map! :after emmet-mode [tab] nil)
-#+end_src
-** Activitywatch
-#+begin_src emacs-lisp :tangle packages.el
-;; (package! activity-watch-mode)
-(package! docker-tramp :disable t)
-#+end_src
-
-#+begin_src emacs-lisp :tangle config.el
-;; (use-package! activity-watch-mode
-;;   :config (global-activity-watch-mode))
 #+end_src
 ** TODO SFS Search/Indexing
 [[https://github.com/Overdr0ne/sfs][Search File System]]
@@ -501,8 +491,7 @@ helm-swoop can be replaced by (package! ctrlf :recipe (:host github :repo "raxod
   (setq tramp-default-method "ssh"
         make-backup-files nil
         create-lockfiles nil
-        helm-tramp-custom-connections '(/ssh:admin@frogstar.0.njk.li:/home/admin/))
-)
+        helm-tramp-custom-connections '(/ssh:admin@frogstar.0.njk.li:/home/admin/)))
 #+end_src
 
 ** Terminals
@@ -667,7 +656,19 @@ This fails to build on nix currently
 #+end_src
 
 
+** IDEA clipboard
+:tangle packages.el
+#+begin_src emacs-lisp
+(package! clipmon)
+#+end_src
 
+:tangle config.el
+#+begin_src emacs-lisp
+(use-package! clipmon
+  :defer
+  :config
+  (setq clipmon-timer-interval 2))
+#+end_src
 ** devdocs
 #+begin_src emacs-lisp :tangle packages.el
 (package! devdocs)
@@ -675,12 +676,20 @@ This fails to build on nix currently
 
 #+begin_src emacs-lisp :tangle config.el
 (use-package! devdocs
+  :defer
   :bind
   ("C-h D" . devdocs-lookup))
 #+end_src
-(package! color-theme-sanityinc-solarized
-  :recipe (:host github :repo "purcell/color-theme-sanityinc-solarized"))
+** TODO llm
+#+begin_src emacs-lisp :tangle packages.el
+(package! gptel)
+#+end_src
 
+#+begin_src emacs-lisp :tangle config.el
+(use-package! gptel
+  :bind
+  ("M-s-<return>" . gptel-send))
+#+end_src
 ** color-rg
 
 #+begin_src emacs-lisp :tangle packages.el

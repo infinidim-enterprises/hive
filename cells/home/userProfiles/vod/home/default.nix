@@ -50,9 +50,11 @@ in
       programs.password-store.settings = { inherit PASSWORD_STORE_KEY; };
       xdg.userDirs.extraConfig.XDG_PROJ_DIR = "${config.home.homeDirectory}/Projects";
 
+      home.file.".authinfo.gpg".source = ./authinfo.gpg;
+
       home.packages = with pkgs; [
         tigervnc
-        waveterm # AI assisted GUI terminal
+        # waveterm # AI assisted GUI terminal
 
         httpie-desktop # Painlessly test REST, GraphQL, and HTTP APIs
         swagger-codegen # Generate stuff from openAPI spec
