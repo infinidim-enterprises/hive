@@ -54,6 +54,7 @@ in
 
   # NOTE: cliphist sucks, switched to copyQ
   services.copyq.enable = true;
+  services.copyq.forceXWayland = false;
   services.copyq.systemdTarget = "wayland-session@Hyprland.target";
   systemd.user.services.copyq.Unit.After = [ "waybar.service" ];
 
