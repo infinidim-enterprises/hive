@@ -668,6 +668,18 @@ This fails to build on nix currently
 
 
 
+** devdocs
+#+begin_src emacs-lisp :tangle packages.el
+(package! devdocs)
+#+end_src
+
+#+begin_src emacs-lisp :tangle config.el
+(use-package! devdocs
+  :bind
+  ("C-h D" . devdocs-lookup))
+#+end_src
+(package! color-theme-sanityinc-solarized
+  :recipe (:host github :repo "purcell/color-theme-sanityinc-solarized"))
 
 ** color-rg
 
