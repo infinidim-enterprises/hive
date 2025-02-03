@@ -495,6 +495,7 @@ helm-swoop can be replaced by (package! ctrlf :recipe (:host github :repo "raxod
 #+end_src
 
 ** Terminals
+https://github.com/SqrtMinusOne/eshell-atuin
 #+begin_src emacs-lisp :tangle packages.el
 ;;(package! multi-vterm)
 ;; (package! vtm)

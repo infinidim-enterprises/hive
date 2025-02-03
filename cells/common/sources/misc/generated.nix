@@ -17,31 +17,31 @@
   };
   adguard-filters_adguardteam = {
     pname = "adguard-filters_adguardteam";
-    version = "adca97ce890dc15f85ff8201f5e9b44a70186cad";
+    version = "a714063fb1c27cec7b28b33104c037a6d9243227";
     src = fetchgit {
       url = "https://github.com/AdguardTeam/AdguardFilters";
-      rev = "adca97ce890dc15f85ff8201f5e9b44a70186cad";
+      rev = "a714063fb1c27cec7b28b33104c037a6d9243227";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-A17PZ8qXIgc7ZojGGafpEI5SIT+gWZzeKgXlu1C5iDA=";
+      sha256 = "sha256-KiciDz+kzY6ne8eHq6+J3zyRwwANZasPaI7eZZazDWw=";
     };
-    date = "2025-01-24";
+    date = "2025-02-03";
   };
   adguard-filters_romania = {
     pname = "adguard-filters_romania";
-    version = "c4d26c6d1f3c662fd82499bd9887d5ba783e19d2";
+    version = "a4ee764e566f25ed75b5c4fb6a9475dfa2e907ea";
     src = fetchgit {
       url = "https://github.com/tcptomato/ROad-Block";
-      rev = "c4d26c6d1f3c662fd82499bd9887d5ba783e19d2";
+      rev = "a4ee764e566f25ed75b5c4fb6a9475dfa2e907ea";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-8j0kV7/zskNuxE0uqlhEYB4RhkBk6k36o9RvgcmxJL0=";
+      sha256 = "sha256-21Fx3gb9pYmKkqfHTRI6XGevzkMko4/OhNM6UpzCWwU=";
     };
-    date = "2025-01-11";
+    date = "2025-01-25";
   };
   base16-schemes = {
     pname = "base16-schemes";
@@ -59,15 +59,15 @@
   };
   chatgpt-wrapper = {
     pname = "chatgpt-wrapper";
-    version = "4df47950b509b415f7e453b443e0321c558a8514";
+    version = "98c175e32c31d8bc6d9454a7aa33b8d62168197e";
     src = fetchFromGitHub {
       owner = "llm-workflow-engine";
       repo = "llm-workflow-engine";
-      rev = "4df47950b509b415f7e453b443e0321c558a8514";
+      rev = "98c175e32c31d8bc6d9454a7aa33b8d62168197e";
       fetchSubmodules = false;
-      sha256 = "sha256-SvVVAhO3sbt5dBB/4tNSSTZ6uYnskc0u5dccfpOXKyM=";
+      sha256 = "sha256-Drwt7Aw09O6t5BNRluVR2YPATcvdsZa/Kl6W2oaWY7M=";
     };
-    date = "2025-01-18";
+    date = "2025-01-31";
   };
   cl-hash-util = {
     pname = "cl-hash-util";
@@ -223,17 +223,17 @@
   };
   ipxe = {
     pname = "ipxe";
-    version = "c2f21a21852741e869b5a64d02d6a49ef16a94cd";
+    version = "c85de315a601d95a6348c4caf5d3af6b146274b7";
     src = fetchgit {
       url = "https://github.com/ipxe/ipxe";
-      rev = "c2f21a21852741e869b5a64d02d6a49ef16a94cd";
+      rev = "c85de315a601d95a6348c4caf5d3af6b146274b7";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-GXXyzhC/U4r6TbqZUQCxqtQ9ifV7kAO4XzT1jyQZNiM=";
+      sha256 = "sha256-MHAKkDuwEVSkDjulHYNJumYcBQCJSZpmYqJIui9SiA0=";
     };
-    date = "2025-01-22";
+    date = "2025-01-30";
   };
   iterable-io = {
     pname = "iterable-io";
@@ -245,13 +245,13 @@
   };
   langchain = {
     pname = "langchain";
-    version = "langchain-core==0.3.31";
+    version = "langchain-core==0.3.33";
     src = fetchFromGitHub {
       owner = "langchain-ai";
       repo = "langchain";
-      rev = "langchain-core==0.3.31";
+      rev = "langchain-core==0.3.33";
       fetchSubmodules = false;
-      sha256 = "sha256-u+Za7NtXVP0Mg6K65CuRLx8OrVpBXEe1ayP0uMUNJG4=";
+      sha256 = "sha256-1bLb81MOQ3062dhutUV4hDf/79DlM5VRFyy32TU6x04=";
     };
   };
   listopia = {

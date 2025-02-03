@@ -21,7 +21,7 @@
   },
   "adguard-filters_adguardteam": {
     "cargoLocks": null,
-    "date": "2025-01-24",
+    "date": "2025-02-03",
     "extract": null,
     "name": "adguard-filters_adguardteam",
     "passthru": null,
@@ -31,17 +31,17 @@
       "fetchSubmodules": false,
       "leaveDotGit": false,
       "name": null,
-      "rev": "adca97ce890dc15f85ff8201f5e9b44a70186cad",
-      "sha256": "sha256-A17PZ8qXIgc7ZojGGafpEI5SIT+gWZzeKgXlu1C5iDA=",
+      "rev": "a714063fb1c27cec7b28b33104c037a6d9243227",
+      "sha256": "sha256-KiciDz+kzY6ne8eHq6+J3zyRwwANZasPaI7eZZazDWw=",
       "sparseCheckout": [],
       "type": "git",
       "url": "https://github.com/AdguardTeam/AdguardFilters"
     },
-    "version": "adca97ce890dc15f85ff8201f5e9b44a70186cad"
+    "version": "a714063fb1c27cec7b28b33104c037a6d9243227"
   },
   "adguard-filters_romania": {
     "cargoLocks": null,
-    "date": "2025-01-11",
+    "date": "2025-01-25",
     "extract": null,
     "name": "adguard-filters_romania",
     "passthru": null,
@@ -51,13 +51,13 @@
       "fetchSubmodules": false,
       "leaveDotGit": false,
       "name": null,
-      "rev": "c4d26c6d1f3c662fd82499bd9887d5ba783e19d2",
-      "sha256": "sha256-8j0kV7/zskNuxE0uqlhEYB4RhkBk6k36o9RvgcmxJL0=",
+      "rev": "a4ee764e566f25ed75b5c4fb6a9475dfa2e907ea",
+      "sha256": "sha256-21Fx3gb9pYmKkqfHTRI6XGevzkMko4/OhNM6UpzCWwU=",
       "sparseCheckout": [],
       "type": "git",
       "url": "https://github.com/tcptomato/ROad-Block"
     },
-    "version": "c4d26c6d1f3c662fd82499bd9887d5ba783e19d2"
+    "version": "a4ee764e566f25ed75b5c4fb6a9475dfa2e907ea"
   },
   "base16-schemes": {
     "cargoLocks": null,
@@ -81,7 +81,7 @@
   },
   "chatgpt-wrapper": {
     "cargoLocks": null,
-    "date": "2025-01-18",
+    "date": "2025-01-31",
     "extract": null,
     "name": "chatgpt-wrapper",
     "passthru": null,
@@ -93,12 +93,12 @@
       "name": null,
       "owner": "llm-workflow-engine",
       "repo": "llm-workflow-engine",
-      "rev": "4df47950b509b415f7e453b443e0321c558a8514",
-      "sha256": "sha256-SvVVAhO3sbt5dBB/4tNSSTZ6uYnskc0u5dccfpOXKyM=",
+      "rev": "98c175e32c31d8bc6d9454a7aa33b8d62168197e",
+      "sha256": "sha256-Drwt7Aw09O6t5BNRluVR2YPATcvdsZa/Kl6W2oaWY7M=",
       "sparseCheckout": [],
       "type": "github"
     },
-    "version": "4df47950b509b415f7e453b443e0321c558a8514"
+    "version": "98c175e32c31d8bc6d9454a7aa33b8d62168197e"
   },
   "cl-hash-util": {
     "cargoLocks": null,
@@ -357,7 +357,7 @@
   },
   "ipxe": {
     "cargoLocks": null,
-    "date": "2025-01-22",
+    "date": "2025-01-30",
     "extract": null,
     "name": "ipxe",
     "passthru": null,
@@ -367,13 +367,13 @@
       "fetchSubmodules": false,
       "leaveDotGit": false,
       "name": null,
-      "rev": "c2f21a21852741e869b5a64d02d6a49ef16a94cd",
-      "sha256": "sha256-GXXyzhC/U4r6TbqZUQCxqtQ9ifV7kAO4XzT1jyQZNiM=",
+      "rev": "c85de315a601d95a6348c4caf5d3af6b146274b7",
+      "sha256": "sha256-MHAKkDuwEVSkDjulHYNJumYcBQCJSZpmYqJIui9SiA0=",
       "sparseCheckout": [],
       "type": "git",
       "url": "https://github.com/ipxe/ipxe"
     },
-    "version": "c2f21a21852741e869b5a64d02d6a49ef16a94cd"
+    "version": "c85de315a601d95a6348c4caf5d3af6b146274b7"
   },
   "iterable-io": {
     "cargoLocks": null,
@@ -404,12 +404,12 @@
       "name": null,
       "owner": "langchain-ai",
       "repo": "langchain",
-      "rev": "langchain-core==0.3.31",
-      "sha256": "sha256-u+Za7NtXVP0Mg6K65CuRLx8OrVpBXEe1ayP0uMUNJG4=",
+      "rev": "langchain-core==0.3.33",
+      "sha256": "sha256-1bLb81MOQ3062dhutUV4hDf/79DlM5VRFyy32TU6x04=",
       "sparseCheckout": [],
       "type": "github"
     },
-    "version": "langchain-core==0.3.31"
+    "version": "langchain-core==0.3.33"
   },
   "listopia": {
     "cargoLocks": null,

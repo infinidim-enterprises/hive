@@ -43,12 +43,13 @@ let
     text = lib.fileContents ./tmux-swap-pane.sh;
   };
 
-  window0 =
+  window = win_name:
     if name == "vod"
-    then ''"-=flake=-" "$SHELL -c 'if gpg --card-status 2>/dev/null | grep -q 77033511 && [ -d \"$HOME/Projects/hive\" ]; then cd \"$HOME/Projects/hive\"; fi; exec $SHELL'"''
+    then ''"${win_name}" "$SHELL -c 'if gpg --card-status 2>/dev/null | grep -q 77033511 && [ -d \"$HOME/Projects/hive\" ]; then cd \"$HOME/Projects/hive\"; fi; exec $SHELL'"''
     else ''"-=shell=-" "$SHELL"'';
 in
 {
+  home.packages = [ pkgs.ansifilter ]; # for tmux logging
   programs.zsh.shellAliases = {
     tmux-default = "${getExe config.programs.tmux.package} new-session -A -s default";
   };
@@ -65,10 +66,39 @@ in
     keyMode = "emacs";
     prefix = "C-o";
     terminal = "screen-256color";
-    plugins = with pkgs.tmuxPlugins; [{
-      plugin = tmux-colors-solarized;
-      extraConfig = "set -g @colors-solarized '256'";
-    }];
+    plugins = with pkgs.tmuxPlugins; [
+      {
+        plugin = tmux-colors-solarized;
+        extraConfig = "set -g @colors-solarized '256'";
+      }
+      {
+        plugin = logging;
+        extraConfig = ''
+          unbind l
+
+          set -g @logging_key 'C-l'
+          set -g @screen-capture-key 'l'
+          set -g @save-complete-history-key 'M-l'
+          set -g @clear-history-key 'M-k'
+
+          set -g @logging-path '${config.xdg.userDirs.extraConfig.XDG_LOGS_DIR}'
+          set -g @screen-capture-path '${config.xdg.userDirs.extraConfig.XDG_LOGS_DIR}'
+          set -g @save-complete-history-path '${config.xdg.userDirs.extraConfig.XDG_LOGS_DIR}'
+        '';
+      }
+      # ISSUE: https://github.com/NixOS/nixpkgs/issues/376560
+      # {
+      #   plugin = tmux-which-key;
+      #   extraConfig = ''
+      #     set -g @wk_cfg_key_prefix_table "Space"
+      #     set -g @wk_cfg_title_style "align=centre,bold"
+      #     set -g @wk_cfg_title_prefix "tmux"
+      #     set -g @wk_cfg_title_prefix_style "fg=green,align=centre,bold"
+      #     set -g @wk_cfg_pos_x "C"
+      #     set -g @wk_cfg_pos_y "C"
+      #   '';
+      # }
+    ];
 
     extraConfig = ''
       # Disable the startup message
@@ -88,7 +118,6 @@ in
       set-option -g automatic-rename off
       set-option -g renumber-windows off
       set-option -g set-titles on
-
 
       # Set the status line
       set-option -g status on
@@ -168,13 +197,13 @@ in
       bind-key R new-window -n "-=root=-" "sudo su -"
       bind-key L new-window -n "-=syslog=-" "journalctl -fn -l -q"
       bind-key D new-window -n "-=docker-stats=-" "docker-ps"
-      bind-key P new-window -n "-=top=-" "${pkgs.btop}/bin/btop --low-color"
+      bind-key P new-window -n "-=top=-" "${pkgs.btop}/bin/btop"
 
       # Create initial session and windows
-      new-session -s default -n ${window0}
+      new-session -s default -n ${window "-=flake=-"}
       new-window -t default -n "-=syslog=-" "journalctl -fn -l -q"
-      new-window -t default -n "-=top=-" "${pkgs.btop}/bin/btop --low-color"
-      new-window -t default -n "src" "$SHELL"
+      new-window -t default -n "-=top=-" "${pkgs.btop}/bin/btop"
+      new-window -t default -n ${window "-=repl=-"}
       new-window -t default -n "misc" "$SHELL"
 
       # Select the first window
