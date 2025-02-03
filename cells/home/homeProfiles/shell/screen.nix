@@ -1,7 +1,5 @@
-{ name, pkgs, lib, config, ... }:
-
+{ pkgs, lib, config, ... }:
 {
-  # TODO: create dvtm/abduco config, instead of screen
   home.packages = [ pkgs.screen ];
   home.file.".screenrc".text = ''
     # -*- conf-space -*-
@@ -44,7 +42,7 @@
     # don't care about case when searching in buffer
     ignorecase on
 
-    # Paste xselection into screen (Could be ^y, if not for my xterm settings!)
+    # Paste xselection into screen (Could be ^y, if not tilix settings!)
     bind y exec .!. xsel -nbo
     # ALT-y Slurp xselection into screen buffer:
     bindkey "^[y" exec sh -c "xsel -nbo > $HOME/.cache/screen-exchange && screen -X readbuf"

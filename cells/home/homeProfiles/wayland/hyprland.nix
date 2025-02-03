@@ -58,18 +58,6 @@ in
   services.copyq.systemdTarget = "wayland-session@Hyprland.target";
   systemd.user.services.copyq.Unit.After = [ "waybar.service" ];
 
-  # services.cliphist.enable = true;
-  # services.cliphist.allowImages = true;
-  # services.cliphist.systemdTarget = "wayland-session@Hyprland.target";
-  # services.cliphist.extraOptions = [
-  #   "-max-dedupe-search"
-  #   "500"
-  #   "-max-items"
-  #   "750"
-  # ];
-  # systemd.user.services.cliphist.Unit.After = [ "waybar.service" ];
-  # systemd.user.services.cliphist-images.Unit.After = [ "cliphist.service" ];
-
   services.gammastep.enable = true;
   services.gammastep.tray = true;
   services.gammastep.provider = "manual";
@@ -243,7 +231,7 @@ in
       "GDK_BACKEND,wayland,x11,*"
       "QT_QPA_PLATFORM,wayland;xcb"
       "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
-      "SDL_VIDEODRIVER,waylan"
+      "SDL_VIDEODRIVER,wayland"
       "CLUTTER_BACKEND,wayland"
     ];
 
@@ -617,12 +605,7 @@ in
     bind = Control_L, y, submap, reset
 
     bind = , i, exec, hyprprop | wl-copy
-    bind = , y, submap, reset
-
-    # bind = Control_L, y, exec, cliphist list | wofi --show dmenu | cliphist decode | xargs wtype
-    # bind = Control_L, y, submap, reset
-    # bind = , y, exec, cliphist list | wofi --show dmenu | cliphist decode | wl-copy
-    # bind = , y, submap, reset
+    bind = , i, submap, reset
 
     bind = , f, exec, $fileManager
     bind = , f, submap, reset
