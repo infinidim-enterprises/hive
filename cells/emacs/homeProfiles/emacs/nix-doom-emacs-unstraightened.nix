@@ -122,6 +122,9 @@ mkMerge [
       doomLocalDir = mkDefault (
         config.xdg.dataHome + "/nix-doom-emacs-unstraightened"
       );
+      # TODO: experimentalFetchTree osConfig.nix.package.version
+      # ISSUE: https://github.com/marienz/nix-doom-emacs-unstraightened/issues/14
+      experimentalFetchTree = true;
       # FIXME: programs.doom-emacs.extraBinPackages | doesn't work on 24.11 release
       extraBinPackages = [
         config.programs.ripgrep.package

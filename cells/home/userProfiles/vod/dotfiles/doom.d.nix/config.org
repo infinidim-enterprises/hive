@@ -13,33 +13,43 @@
        ;;layout            ; auie,ctsrnm is the superior home row
 
        :completion
-       company            ; the ultimate code completion backend
-       (helm
-        +fuzzy)              ; the *other* search engine for love and life
+       (corfu
+        +orderless
+        +icons
+        +dabbrev
+        +dict)
+       ;;company             ; the ultimate code completion backend
+       (helm +fuzzy)       ; the *other* search engine for love and life
        ;;ido               ; the other *other* search engine...
        ;;ivy               ; a search engine for love and life
-       ;;vertico           ; the search engine of the future
+       (vertico +icons)           ; the search engine of the future
 
        :ui
-       deft              ; notational velocity for Emacs
-       doom              ; what makes DOOM look the way it does
-       ;; doom-dashboard    ; a nifty splash screen for Emacs
-       ;; doom-quit         ; DOOM quit-message prompts when you quit Emacs
-       ;;(emoji +unicode)  ; 🙂
-       hl-todo           ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
+       deft                ; notational velocity for Emacs
+       doom                ; what makes DOOM look the way it does
+       ;; doom-dashboard   ; a nifty splash screen for Emacs
+       ;; doom-quit        ; DOOM quit-message prompts when you quit Emacs
+       ;; (emoji
+       ;;  +unicode
+       ;;  +github)           ; 🙂
+       hl-todo             ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
        ;;hydra
-       ;; indent-guides     ; highlighted indent columns
-       ;;ligatures         ; ligatures and symbols to make your code pretty again
-       minimap           ; show a map of the code on the side
-       modeline          ; snazzy, Atom-inspired modeline, plus API
-       nav-flash         ; blink cursor line after big motions
-       ;; neotree           ; a project drawer, like NERDTree for vim
-       (treemacs +lsp) ; a project drawer, like neotree but cooler
-       ophints           ; highlight the region an operation acts on
-       (popup +all +defaults)   ; tame sudden yet inevitable temporary windows
+       ;; indent-guides    ; highlighted indent columns
+       (ligatures
+        +extra
+        +pragmata-pro)     ; ligatures and symbols to make your code pretty again
+       minimap             ; show a map of the code on the side
+       modeline            ; snazzy, Atom-inspired modeline, plus API
+       nav-flash           ; blink cursor line after big motions
+       ;; neotree          ; a project drawer, like NERDTree for vim
+       (treemacs +lsp)     ; a project drawer, like neotree but cooler
+       ophints             ; highlight the region an operation acts on
+       (popup
+        +all
+        +defaults)         ; tame sudden yet inevitable temporary windows
        ;;tabs              ; a tab bar for Emacs
-       ;; unicode           ; extended unicode support for various languages
-       vc-gutter         ; vcs diff in the fringe
+       ;; unicode          ; extended unicode support for various languages
+       (vc-gutter +pretty) ; vcs diff in the fringe
        ;; vi-tilde-fringe   ; fringe tildes to mark beyond EOB
        window-select     ; visually switch windows
        workspaces        ; tab emulation, persistence & separate workspaces
@@ -52,76 +62,75 @@
        ;;(format +onsave)  ; automated prettiness
        ;;god               ; run Emacs commands without modifier keys
        ;;lispy             ; vim for lisp, for people who don't like vim
-       multiple-cursors  ; editing in many places at once
+       multiple-cursors    ; editing in many places at once
        ;;objed             ; text object editing for the innocent
        ;;parinfer          ; turn lisp into python, sort of
-       rotate-text       ; cycle region at point between text candidates
-       snippets          ; my elves. They type so I don't have to
-       word-wrap         ; soft wrapping with language-aware indent
+       rotate-text         ; cycle region at point between text candidates
+       snippets            ; my elves. They type so I don't have to
+       word-wrap           ; soft wrapping with language-aware indent
 
        :emacs
-       (dired +icons)             ; making dired pretty [functional]
-       electric          ; smarter, keyword-based electric-indent
-       (ibuffer :config
-                ibuffer-group-buffers-by 'projects) ; interactive buffer management
-       (undo +tree)      ; persistent, smarter undo for your inevitable mistakes
-       vc                ; version-control and Emacs, sitting in a tree
+       (dired +icons)      ; making dired pretty [functional]
+       electric            ; smarter, keyword-based electric-indent
+       (ibuffer
+        :config
+        ibuffer-group-buffers-by 'projects) ; interactive buffer management
+       (undo +tree)        ; persistent, smarter undo for your inevitable mistakes
+       vc                  ; version-control and Emacs, sitting in a tree
 
        :term
-       eshell            ; the elisp shell that works everywhere
-       ;;shell             ; simple shell REPL for Emacs
-       ;;term              ; basic terminal emulator for Emacs
-       vterm             ; the best terminal emulation in Emacs
+       eshell              ; the elisp shell that works everywhere
+       vterm               ; the best terminal emulation in Emacs
 
        :checkers
-       syntax              ; tasing you for every semicolon you forget
-       (spell +flyspell
+       (syntax +childframe); tasing you for every semicolon you forget
+       (spell +aspell
+              +flyspell
               +everywhere) ; tasing you for misspelling mispelling
-       grammar           ; tasing grammar mistake every you make
+       grammar             ; tasing grammar mistake every you make
 
        :tools
        biblio
        ;; TODO: https://github.com/doomemacs/doomemacs/tree/master/modules/tools/biblio
        ;;ansible
-       (debugger +lsp)          ; FIXME stepping through code, to help you add bugs
+       (debugger +lsp)     ; FIXME stepping through code, to help you add bugs
        direnv
        (docker +lsp)
-       editorconfig      ; let someone else argue about tabs vs spaces
+       editorconfig        ; let someone else argue about tabs vs spaces
        ;;ein               ; tame Jupyter notebooks with emacs
        (eval +overlay)     ; run code, run (also, repls)
-       gist              ; interacting with github gists
+       gist                ; interacting with github gists
        lookup              ; navigate your code and its documentation
        (lsp +peek)               ; M-x vscode
        (magit +forge)             ; a git porcelain for Emacs
-       make              ; run make tasks from Emacs
+       make                ; run make tasks from Emacs
        (pass +auth)              ; password manager for nerds
-       pdf               ; pdf enhancements
+       pdf                 ; pdf enhancements
        ;;prodigy           ; FIXME managing external services & code builders
-       rgb               ; creating color strings
+       rgb                 ; creating color strings
        ;;taskrunner        ; taskrunner for all your projects
        ;;terraform         ; infrastructure as code
        ;;tmux              ; an API for interacting with tmux
-       upload            ; map local to remote projects via ssh/ftp
+       upload              ; map local to remote projects via ssh/ftp
 
        :os
-       (:if IS-MAC macos)  ; improve compatibility with macOS
-       ;;tty               ; improve the terminal Emacs experience
+       tty                 ; improve the terminal Emacs experience
 
        :lang
        ;;agda              ; types of types of types of types...
        ;;beancount         ; mind the GAAP
        ;;cc                ; C > C++ == 1
        ;;clojure           ; java with a lisp
-       ;; common-lisp       ; if you've seen one lisp, you've seen them all
+       common-lisp         ; if you've seen one lisp, you've seen them all
        ;;coq               ; proofs-as-programs
-       crystal           ; ruby at the speed of c
+       crystal             ; ruby at the speed of c
        ;;csharp            ; unity, .NET, and mono shenanigans
-       data              ; config/data formats
+       data                ; config/data formats
        ;;(dart +flutter)   ; paint ui and not much else
        ;; dhall
        ;;elixir            ; erlang done right
        ;; elm               ; care for a cup of TEA?
-       emacs-lisp        ; drown in parentheses
+       emacs-lisp          ; drown in parentheses
        ;;erlang            ; an elegant language for a more civilized age
        ;;ess               ; emacs speaks statistics
        ;;factor
@@ -129,7 +138,9 @@
        ;;fsharp            ; ML stands for Microsoft's Language
        ;;fstar             ; (dependent) types and (monadic) effects and Z3
        ;;gdscript          ; the language you waited for
-       (go +lsp)         ; the hipster dialect
+       (go
+        +lsp
+        +tree-sitter)      ; the hipster dialect
        ;; (graphql +lsp)
        ;;(haskell +lsp)    ; a language that's lazier than I am
        ;;hy                ; readability of scheme w/ speed of python
@@ -142,13 +153,14 @@
        ;;javascript        ; all(hope(abandon(ye(who(enter(here))))))
        ;;julia             ; a better, faster MATLAB
        ;;kotlin            ; a better, slicker Java(Script)
-       (latex +lsp)             ; writing papers in Emacs has never been so fun
+       (latex +lsp)        ; writing papers in Emacs has never been so fun
        ;;lean              ; for folks with too much to prove
        ;;ledger            ; be audit you can be
        ;;lua               ; one-based indices? one-based indices
-       (markdown +grip)          ; writing docs for people to ignore
+       (markdown +grip)    ; writing docs for people to ignore
        ;;nim               ; python + lisp at the speed of c
        (nix
+        +lsp
         +tree-sitter)      ; I hereby declare "nix geht mehr!"
        ;;ocaml             ; an objective camel
        (org
@@ -160,34 +172,43 @@
         ;; +jupyter
         +roam2
         +noter
-        +present
-        )
-       ;; organize your plain life in plain text
+        +present)          ; organize your plain life in plain text
        ;;php               ; perl's insecure younger brother
-       plantuml          ; diagrams for confusing people more
+       plantuml            ; diagrams for confusing people more
        ;;purescript        ; javascript, but functional
-       ;; (python
-       ;;  +poetry
-       ;;  +lsp
-       ;;  +pyright)            ; beautiful is better than ugly
+       (python
+        +pyenv
+        +poetry
+        +treesitter
+        +lsp
+        +pyright)          ; beautiful is better than ugly
        ;;qt                ; the 'cutest' gui framework ever
        ;;racket            ; a DSL for DSLs
        ;;raku              ; the artist formerly known as perl6
-       rest              ; Emacs as a REST client
+       rest                ; Emacs as a REST client
        ;;rst               ; ReST in peace
-       (ruby +rails
-             +lsp)     ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
+       (ruby
+        +rails
+        +lsp
+        +rbenv
+        +tree-sitter)      ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
        ;; (rust
        ;;  +lsp) ;Fe2O3.unwrap().unwrap().unwrap().unwrap()
        ;;scala             ; java, but good
        ;; (scheme +guile)   ; a fully conniving family of lisps
-       (sh +lsp)                ; she sells {ba,z,fi}sh shells on the C xor
+       (sh
+        +lsp
+        +tree-sitter)      ; she sells {ba,z,fi}sh shells on the C xor
        ;;sml
        ;;solidity          ; do you need a blockchain? No.
        ;;swift             ; who asked for emoji variables?
        ;;terra             ; Earth and Moon in alignment for performance.
-       ;; (web +lsp)               ; the tubes
-       (yaml +lsp)              ; JSON, but readable
+       (web
+        +lsp
+        +tree-sitter)      ; the tubes
+       (yaml
+        +lsp
+        +tree-sitter)      ; JSON, but readable
        ;;zig               ; C, but simpler
 
        :email
@@ -214,6 +235,27 @@
        ;; my-code
        )
 
+;; https://discourse.doomemacs.org/t/using-lsp-use-plists-with-doom/2832
+(setenv "LSP_USE_PLISTS" "1")
+
+;; needs to put this in init.el
+;; https://github.com/hlissner/doom-emacs/issues/401
+;; (setq evil-respect-visual-line-mode nil)
+;; (setq straight-vc-git-default-clone-depth 'full)
+;; (add-hook 'tty-setup-hook (lambda () (load! "./tty/config.el")))
+(defalias 'defgeneric 'cl-defgeneric)
+
+;; don't resize based on fonts etc, make the startup faster
+;; https://tony-zorman.com/posts/2022-10-22-emacs-potpourri.html
+(setq frame-inhibit-implied-resize nil)
+
+;; aot native compile
+;; https://github.com/doomemacs/doomemacs/issues/6811
+;; (setq native-comp-deferred-compilation nil)
+(setq straight-vc-git-default-protocol 'https)
+(setq native-compile-jit-compilation nil)
+(after! (doom-packages straight)
+  (setq straight--native-comp-available t))
 #+end_src
 * Usability improvements
 ** General
@@ -228,19 +270,87 @@ Maybe use (package! maple-iedit :recipe (:host github :repo "honmaple/emacs-mapl
 [[https://github.com/doomemacs/doomemacs/issues/6463][emmet-mode conflicts with copilot]]
 
 #+begin_src emacs-lisp :tangle config.el
+(defun ++popup-messages (arg)
+  (interactive "P")
+  (if arg
+      (+popup-buffer (get-buffer "*Messages*"))
+    (+popup-buffer (get-buffer "*Messages*") '((quit . t)))))
+
+(defun +doom/toggle-line-numbers ()
+  "Toggle line numbers.
+
+Cycles through regular, relative and no line numbers. The order depends on what
+`display-line-numbers-type' is set to. If you're using Emacs 26+, and
+visual-line-mode is on, this skips relative and uses visual instead.
+
+See `display-line-numbers' for what these values mean."
+  (interactive)
+  (defvar doom--line-number-style display-line-numbers-type)
+  (let* ((styles `(t ,(if visual-line-mode 'visual t) nil))
+         (order (cons display-line-numbers-type (remq display-line-numbers-type styles)))
+         (queue (memq doom--line-number-style order))
+         (next (if (= (length queue) 1)
+                   (car order)
+                 (car (cdr queue)))))
+    (setq doom--line-number-style next)
+    (setq display-line-numbers next)
+    (message "Switched to %s line numbers"
+             (pcase next
+               (`t "normal")
+               (`nil "disabled")
+               (_ (symbol-name next))))))
+
+(defun ++projectile-switch-project-and-rename-workspace ()
+  "Switch to a project's magit-status buffer and prompt for new workspace name
+
+This is for per workspace each task setup"
+  (interactive)
+  (require 'projectile)
+  (let ((projectile-current-project-on-switch 'keep)
+        (+workspaces-switch-project-function #'magit-status))
+    (call-interactively #'projectile-switch-project)))
+
+(defmacro log/spy (form)
+  "Evaluate FORM and return its result.
+Additionally, print a message to the *Messages* buffer showing
+the form and its result.
+
+This macro is useful for debugging and inspecting the
+intermediate results of Elisp code without changing your code
+structure. Just wrap the form with `im-tap' that you want to see
+it's output without introducing an intermediate let-form."
+  `(let ((result ,form))
+     (message "[spy :: %s] → %s" ,(prin1-to-string form) result)
+     result))
+
+(defun log/debug (thing)
+  "Like `im-tap' but uses `pp-display-expression' to display the
+result instead of `message'."
+  (pp-display-expression thing "*im-debug*")
+  thing)
+
+(defun ++clojure-keywordp (s)
+  (and
+   (stringp s)
+   (s-starts-with? ":" s)
+   (not (s-contains? " " s))))
+
 (use-package! rainbow-mode
   :hook (prog-mode . rainbow-mode))
 
-(setq custom-file (expand-file-name "doom_custom.el" (getenv "XDG_DATA_HOME")))
+(setq! package-native-compile t
+       confirm-kill-processes nil
+       consult-tramp-method "sshx"
+       custom-file (expand-file-name "doom_custom.el" (getenv "XDG_DATA_HOME")))
 (map! :after emmet-mode [tab] nil)
 #+end_src
 ** TODO SFS Search/Indexing
 [[https://github.com/Overdr0ne/sfs][Search File System]]
 ** hl-todo
-[[https://github.com/tarsius/hl-todo][Highlight TODO and similar keywords in comments and strings]]
-
 #+begin_src emacs-lisp :tangle config.el
-(setq hl-todo-keyword-faces
+(use-package! hl-todo
+  :config
+  (setq! hl-todo-keyword-faces
       `(;; For things that need to be done, just not today.
         ("TODO" warning bold)
         ;; For problems that will become bigger problems later if not
@@ -263,7 +373,7 @@ Maybe use (package! maple-iedit :recipe (:host github :repo "honmaple/emacs-mapl
         ;; For a known bug that needs a workaround
         ("BUG" error bold)
         ;; For warning about a problematic or misguiding code
-        ("XXX" font-lock-constant-face bold)))
+        ("XXX" font-lock-constant-face bold))))
 #+end_src
 ** Rainbow delimiters
 [[https://github.com/Civitasv/pair-colorizer][Use a fork]]?
@@ -681,36 +791,195 @@ This fails to build on nix currently
   :bind
   ("C-h D" . devdocs-lookup))
 #+end_src
-** TODO llm
+** llm
 #+begin_src emacs-lisp :tangle packages.el
 (package! gptel)
+(package! whisper
+  :pin "ee29777238fc089d66d8e4b6812fdd5743cad19a"
+  :recipe (:host github
+           :repo "natrys/whisper.el"
+           :branch "master"))
 #+end_src
 
 #+begin_src emacs-lisp :tangle config.el
+(defun +whisper-insert ()
+  (interactive)
+  (whisper-run)
+  (if (y-or-n-p "Trans?")
+      (progn
+        (whisper-run)
+        (when (and (boundp #'gptel-mode) gptel-mode)
+          (if (y-or-n-p "Query?")
+              (progn (goto-char (point-max))
+                     (gptel-send))
+            (goto-char (point-max)))))
+    (when (process-live-p whisper--recording-process)
+      (kill-process whisper--recording-process))))
+
+(defun +whisper-run ()
+  (interactive)
+  (cond
+   ((eq current-prefix-arg 1)
+    (+whisper-zh-lang-model))
+   ((not current-prefix-arg)
+    (+whisper-default-lang-model)))
+  (call-interactively '+whisper-insert))
+
+(defun +chat-with-ai ()
+  (interactive)
+  (cond
+   ((and current-prefix-arg (and (boundp #'gptel-mode) gptel-mode))
+    (progn
+      (call-interactively #'gptel)
+      (when-let ((buf (get-buffer gptel-default-session)))
+        (with-current-buffer buf
+          (call-interactively #'+whisper-run)))))
+   ((and (boundp #'gptel-mode) gptel-mode)
+    (call-interactively #'+whisper-run))
+   (t
+    (progn
+      (call-interactively #'gptel)
+      (when-let ((buf (get-buffer gptel-default-session)))
+        (with-current-buffer buf
+          (call-interactively #'+whisper-run)))))))
+
+(defun +gptel-save-buffer (&rest args)
+  (interactive)
+  (when-let ((buf (current-buffer)))
+    (with-current-buffer buf
+      (if buffer-file-name
+          (save-buffer)
+        (write-file
+         (format
+          (expand-file-name
+           "~/Documents/org/gptel/gptel-%s.org")
+          (format-time-string
+           "%Y%m%d-%H%M%S-%3N")))))))
+
+(defun +gptel-kill-default-buffer ()
+  (interactive)
+  (when-let ((buf (get-buffer gptel-default-session)))
+    (kill-buffer buf)))
+
+(use-package! whisper
+  :bind ("s-w" . whisper-run)
+  :config
+  (setq! whisper-model "base"
+         ;; whisper-install-directory "/tmp/"
+         whisper-language "en"
+         whisper-translate nil
+         whisper-install-whispercpp 'manual
+         whisper-use-threads (/ (num-processors) 2)))
+
 (use-package! gptel
-  :bind
-  ("M-s-<return>" . gptel-send))
+  :commands (gptel)
+  :bind (("M-s-<return>" . gptel-send)
+         ("M-s-="        . gptel-add))
+  :init
+  (setq! gptel-default-mode 'org-mode
+         gptel-temperature 0.8
+         gptel-model 'deepseek/deepseek-r1:free)
+  ;; (defadvice! +gptel-cleanup-default-buffer (&rest args)
+  ;;   :before #'gptel
+  ;;   (+gptel-kill-default-buffer))
+  ;; "^\\*ChatGPT\\*$"
+  (set-popup-rule! "^\\*\\(?:ChatGPT\\|OpenRouter\\)\\*$"
+    :side 'right
+    :size 0.4
+    :vslot 100
+    :quit t)
+  :config
+  (setq! gptel--openai
+         (gptel-make-openai "ChatGPT"
+           :key (auth-source-pick-first-password :host "api.openai.com")
+           :stream nil
+           :host "api.openai.com"
+           :models
+           '((gpt-4o-mini
+              :capabilities (media tool json url)
+              :description "Affordable and intelligent small model for fast, lightweight tasks"
+              :mime-types ("image/jpeg" "image/png" "image/gif" "image/webp"))
+             (gpt-4o
+              :capabilities (media tool json url)
+              :description "High-intelligence flagship model for complex, multi-step tasks"
+              :mime-types ("image/jpeg" "image/png" "image/gif" "image/webp")))))
+  (setq! gptel--openrouter
+         (gptel-make-openai "OpenRouter"
+           :stream nil
+           :host "openrouter.ai"
+           :key (auth-source-pick-first-password :host "openrouter.ai")
+           :endpoint "/api/v1/chat/completions"
+           :models
+           '(deepseek/deepseek-r1:free
+             sophosympatheia/rogue-rose-103b-v0.2:free
+             google/gemini-2.0-flash-thinking-exp:free
+             google/gemini-2.0-flash-thinking-exp-1219:free
+             google/gemini-2.0-flash-exp:free
+             ;; google/gemini-exp-1206:free
+             ;; google/gemini-exp-1121:free
+             ;; google/learnlm-1.5-pro-experimental:free
+             ;; google/gemini-exp-1114:free
+             ;; meta-llama/llama-3.2-3b-instruct:free
+             ;; meta-llama/llama-3.2-1b-instruct:free
+             meta-llama/llama-3.2-90b-vision-instruct:free
+             ;; meta-llama/llama-3.2-11b-vision-instruct:free
+             ;; google/gemini-flash-1.5-exp:free
+             ;; meta-llama/llama-3.1-405b-instruct:free
+             ;; meta-llama/llama-3.1-8b-instruct:free
+             ;; meta-llama/llama-3.1-70b-instruct:free
+             qwen/qwen-2-7b-instruct:free
+             google/gemma-2-9b-it:free
+             mistralai/mistral-7b-instruct:free
+             ;; microsoft/phi-3-mini-128k-instruct:free
+             microsoft/phi-3-medium-128k-instruct:free
+             ;; meta-llama/llama-3-8b-instruct:free
+             openchat/openchat-7b:free
+             undi95/toppy-m-7b:free
+             huggingfaceh4/zephyr-7b-beta:free
+             gryphe/mythomax-l2-13b:free
+             ;; and the paid models
+             deepseek/deepseek-chat
+             openai/gpt-4
+             openai/gpt-4o-mini
+             openai/chatgpt-4o-latest
+             anthropic/claude-3.5-sonnet:beta
+             mistralai/mixtral-8x7b-instruct
+             ;; and the autorouting
+             openrouter/auto)))
+  (setq! gptel-post-response-functions nil
+         gptel-backend gptel--openrouter)
+  (add-hook! 'gptel-post-response-functions '+gptel-save-buffer)
+  (setq gptel-directives
+        '((default . "You are a large language model living in Emacs and a helpful assistant. Respond concisely.")
+          (programming . "You are a large language model and a careful programmer. Provide code and only code as output without any additional text, prompt or note.")
+          (writing . "You are a large language model and a writing assistant. Respond concisely.")
+          (chat . "You are a large language model and a conversation partner. Respond concisely."))))
 #+end_src
 ** color-rg
 
-#+begin_src emacs-lisp :tangle packages.el
-;; (package! color-rg :recipe (:host github
-;;                             :repo "manateelazycat/color-rg"
-;;                             :files "*")
-;;   :pin t)
+:tangle packages.el
+#+begin_src emacs-lisp
+(package! color-rg
+  :recipe (:host github
+           :repo "manateelazycat/color-rg"
+           :files "*"
+           :branch "master")
+  :pin t)
 
 ;; (package! color-rg)
 #+end_src
 
 :rev "e45bedec545c044accf307532b3c50dbb9ab2b66"
 
-#+begin_src emacs-lisp :tangle config.el
-;; (use-package! color-rg
-;;   :commands (color-rg-search-input color-rg-search-symbol
-;;                                    color-rg-search-input-in-project)
-;;   :bind
-;;   (:map isearch-mode-map
-;;    ("M-s M-s" . isearch-toggle-color-rg)))
+:tangle config.el
+#+begin_src emacs-lisp
+(use-package! color-rg
+  :commands (color-rg-search-input
+             color-rg-search-symbol
+             color-rg-search-input-in-project)
+  :bind
+  (:map isearch-mode-map
+   ("M-s M-s" . isearch-toggle-color-rg)))
 #+end_src
 
 ** Snippets and such
@@ -754,9 +1023,19 @@ This fails to build on nix currently
 ** Nix
 
 #+begin_src emacs-lisp :tangle packages.el
-;; (unpin! nix-mode)
-;; (unpin! lsp-mode)
-;; (package! lsp-mode)
+;; (unpin! nix-mode lsp-mode)
+(package! lsp-mode
+  :type 'core
+  :pin "230608ad65809806481adab40ecf41d3780e7b8d"
+  :recipe (:host github
+           :repo "emacs-lsp/lsp-mode"
+           :branch "master"))
+(package! nix-mode
+  :type 'core
+  :pin "719feb7868fb567ecfe5578f6119892c771ac5e5"
+  :recipe (:host github
+           :repo "NixOS/nix-mode"
+           :branch "master"))
 (package! nixpkgs-fmt)
 #+end_src
 
@@ -769,7 +1048,7 @@ nixd setup function
            (hostname (with-temp-buffer (call-process "hostname" nil t nil)
                                        (string-trim (buffer-string))))
            (host (concat "(builtins.getFlake \"" prj_root "\").nixosConfigurations.nixos-" hostname)))
-      (setq lsp-nix-nixd-server-path "nixd"
+      (setq! lsp-nix-nixd-server-path "nixd"
             lsp-nix-nixd-formatting-command [ "nixpkgs-fmt" ]
             lsp-nix-nixd-nixpkgs-expr "import <nixpkgs> { }"
             lsp-nix-nixd-nixos-options-expr (concat host ".options")
@@ -782,13 +1061,14 @@ nixd setup function
   :after lsp-mode
   :hook
   ((nix-mode . lsp-deferred)
-   (nix-mode . (lambda () (setq company-idle-delay 0.1))))
+   ;; (nix-mode . (lambda () (setq company-idle-delay 0.1)))
+   )
   :custom
   (lsp-disabled-clients '((nix-mode . nix-nil)))
   :config
   (add-hook 'envrc-mode-hook #'local/setup-nixd))
 #+end_src
-
+:tangle config.el
 #+begin_src emacs-lisp
 (with-eval-after-load 'lsp-mode
   (lsp-register-client
@@ -811,7 +1091,7 @@ nixd setup function
 (use-package! nixpkgs-fmt
   :defer t
   :config
-  (setq nix-nixfmt-bin "nixpkgs-fmt")
+  (setq! nix-nixfmt-bin "nixpkgs-fmt")
   :hook (nix-mode . nixpkgs-fmt-on-save-mode))
 #+end_src
 
@@ -1006,7 +1286,7 @@ Perhaps a better option is [[https://github.com/m00natic/vlfi][vlfi]] - it seems
 ** TODO Littering and file locations
 savehist-file persp workspaces
 
-* Stumpwm integration
+* nyxt-browser integration
 ** Sly
 #+begin_src emacs-lisp :tangle packages.el
 (package! sly)
@@ -1023,9 +1303,9 @@ savehist-file persp workspaces
 (use-package! sly
   :init (setq sly-ignore-protocol-mismatches t
               sly-compile-file-options (list :fasl-directory "/tmp")))
-(use-package! sly-asdf)
+(use-package! sly-asdf :after sly)
 (use-package! sly-overlay)
-(use-package! sly-quicklisp)
+(use-package! sly-quicklisp :after sly)
 (use-package! sly-macrostep)
 (use-package! sly-repl-ansi-color)
 (use-package! sly-named-readtables)
@@ -1044,7 +1324,6 @@ savehist-file persp workspaces
   (sly-disconnect-all)
   (kill-buffer (get-buffer "*sly-mrepl for sbcl*")))
 #+end_src
-
 * setts
 ** TODO gpg
 
@@ -1078,7 +1357,7 @@ savehist-file persp workspaces
 
 (global-visual-line-mode t)
 
-(setq
+(setq!
  ;; TODO: user-full-name "John Doe"
  ;; TODO: user-mail-address "john@doe.com"
  calendar-week-start-day 1

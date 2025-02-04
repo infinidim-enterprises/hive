@@ -82,6 +82,7 @@ in
 
     tailscale
     ffmpeg_5-full
+    openai-whisper-cpp
     ;
 
   nvfetcher = inputs.nvfetcher.packages.default;
