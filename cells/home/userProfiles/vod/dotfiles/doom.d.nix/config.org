@@ -101,8 +101,9 @@
        (eval +overlay)     ; run code, run (also, repls)
        gist                ; interacting with github gists
        lookup              ; navigate your code and its documentation
-       (lsp +peek)               ; M-x vscode
-       (magit +forge)             ; a git porcelain for Emacs
+       (lsp +peek)         ; M-x vscode
+       tree-sitter
+       (magit +forge)      ; a git porcelain for Emacs
        make                ; run make tasks from Emacs
        (pass +auth)              ; password manager for nerds
        pdf                 ; pdf enhancements
@@ -161,7 +162,8 @@
        ;;nim               ; python + lisp at the speed of c
        (nix
         +lsp
-        +tree-sitter)      ; I hereby declare "nix geht mehr!"
+        ;; +tree-sitter
+        )      ; I hereby declare "nix geht mehr!"
        ;;ocaml             ; an objective camel
        (org
         +brain
@@ -793,7 +795,11 @@ This fails to build on nix currently
 #+end_src
 ** llm
 #+begin_src emacs-lisp :tangle packages.el
-(package! gptel)
+(package! gptel
+  :pin "aa649b013322a62d29e7507e22234f8000c68c48"
+  :recipe (:host github
+           :repo "karthink/gptel"
+           :branch "master"))
 (package! whisper
   :pin "ee29777238fc089d66d8e4b6812fdd5743cad19a"
   :recipe (:host github
@@ -887,7 +893,7 @@ This fails to build on nix currently
     :side 'right
     :size 0.4
     :vslot 100
-    :quit t)
+    :quit nil)
   :config
   (setq! gptel--openai
          (gptel-make-openai "ChatGPT"
@@ -1041,6 +1047,9 @@ This fails to build on nix currently
 
 nixd setup function
 #+begin_src emacs-lisp :tangle config.el
+;; (after! lsp-mode
+;;   (setq lsp-use-plists t))
+
 (defun local/setup-nixd ()
   (when (getenv "PRJ_ROOT")
     (let* ((prj_root (getenv "PRJ_ROOT"))
@@ -1048,12 +1057,13 @@ nixd setup function
            (hostname (with-temp-buffer (call-process "hostname" nil t nil)
                                        (string-trim (buffer-string))))
            (host (concat "(builtins.getFlake \"" prj_root "\").nixosConfigurations.nixos-" hostname)))
-      (setq! lsp-nix-nixd-server-path "nixd"
-            lsp-nix-nixd-formatting-command [ "nixpkgs-fmt" ]
-            lsp-nix-nixd-nixpkgs-expr "import <nixpkgs> { }"
-            lsp-nix-nixd-nixos-options-expr (concat host ".options")
-            ;; FIXME: lsp-nix-nixd-home-manager-options-expr (concat host ".config\"nb@mnd\".options")
-            ))))
+      (setq! lsp-nix-nixd-server-path '("nixd" "--semantic-tokens=true" "--inlay-hints=true")
+             lsp-nix-nixd-formatting-command [ "nixpkgs-fmt" ]
+             lsp-nix-nixd-nixpkgs-expr "import <nixpkgs> { }"
+             lsp-nix-nixd-nixos-options-expr (concat host ".options")
+             ;; FIXME: lsp-nix-nixd-home-manager-options-expr (concat host ".config\"nb@mnd\".options")
+             lsp-use-plists nil ; otherwise, lsp-mode errors out on hash-table-p
+             ))))
 #+end_src
 
 #+begin_src emacs-lisp :tangle config.el

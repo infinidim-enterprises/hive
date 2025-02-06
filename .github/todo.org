@@ -76,6 +76,17 @@ https://github.com/nix-community/disko/blob/master/tests/disko-install/default.n
 * chromium extensions
 https://github.com/iamadamdev/bypass-paywalls-chrome
 * TODO BUGS
+---
+⛔ Error (sh-mode-local-vars-hook): Error running hook "tree-sitter!" because: (tsc-lang-abi-too-new 14 (13 . 13) /nix/store/wyyb8cmj26v7il37qf9n8s7jl9qbb5mv-emacs-tree-sitter-grammars/langs/bin/bash.so)
+⛔ Warning (lsp-mode): Unknown notification: semgrep/rulesRefreshed
+
+Error running timer ‘corfu--auto-complete-deferred’: (error "The connected server(s) does not support method textDocument/completion.
+To find out what capabilities support your server use ‘M-x lsp-describe-session’
+and expand the capabilities section")
+
+--------
+
+
 Nov 28 10:03:31 oglaroon kernel: ACPI BIOS Error (bug): Could not resolve symbol [\_SB.PCI0.28.EC0], AE_NOT_FOUND (20240322/dswload2-162)
 Nov 28 10:03:31 oglaroon kernel: fbcon: Taking over console
 Nov 28 10:03:31 oglaroon kernel: ACPI Error: AE_NOT_FOUND, During name lookup/catalog (20240322/psobject-220)

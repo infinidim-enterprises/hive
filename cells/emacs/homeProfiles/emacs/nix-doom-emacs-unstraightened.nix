@@ -46,6 +46,9 @@ let
     with emacsPackages; epkgs: [
       localSetts
 
+      # ISSUE: https://github.com/marienz/nix-doom-emacs-unstraightened?tab=readme-ov-file#tree-sitter-error-on-initialization-with-file-error-opening-output-file-read-only-file-system
+      treesit-grammars.with-all-grammars
+
       s
       sqlite3
       grab-x-link
@@ -103,6 +106,7 @@ mkMerge [
       python3 # treemacs requirement
       bibtex2html
 
+      semgrep
       bash-language-server
       yaml-language-server
 
@@ -142,6 +146,7 @@ mkMerge [
         python3 # treemacs requirement
         bibtex2html
 
+        semgrep
         bash-language-server
         yaml-language-server
 

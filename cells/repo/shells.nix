@@ -57,9 +57,10 @@ let
     ''
   */
 
-  nixd = inputs.nixd.packages.default.override {
-    inherit (inputs.nix4nixd.packages) nix;
-  };
+  nixd = inputs.nixd.packages.default;
+  # nixd = inputs.nixd.packages.default.override {
+  #   inherit (inputs.nix4nixd.packages) nix;
+  # };
 
   vscode =
     let

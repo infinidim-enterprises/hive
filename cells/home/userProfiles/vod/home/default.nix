@@ -1,9 +1,19 @@
-{ inputs, config, pkgs, profiles, suites, osConfig, lib, ... }:
+{ inputs
+, config
+, pkgs
+, profiles
+  # , suites
+, localLib
+, osConfig
+, lib
+, ...
+}:
 let
   inherit (lib // builtins)
     mkMerge
     mkIf
     concatStringsSep;
+  inherit (localLib) isGui;
 
   PASSWORD_STORE_KEY = concatStringsSep " " [
     # NOTE: PASSWORD_STORE_KEY can use multiple fingerprints separated by a whitespace
@@ -46,6 +56,25 @@ in
     ]);
 
   config = mkMerge [
+    (mkIf (isGui osConfig) {
+      xdg.configFile."nyxt".source = ../dotfiles/nyxt;
+      xdg.configFile."nyxt".recursive = true;
+      # xdg.configFile."common-lisp/asdf-output-translations.conf.d/99-disable-cache.conf".text = ":disable-cache";
+
+      home.packages = with pkgs; [
+        httpie-desktop # Painlessly test REST, GraphQL, and HTTP APIs
+        tigervnc
+        ventoy-full
+      ];
+    })
+
+    (mkIf (isGui osConfig && config.gtk.enable) {
+      gtk.gtk3.bookmarks = [
+        "file:///home/vod/Documents/%D0%9A%D0%B0%D1%82%D1%8F"
+        "file:///home/vod/Projects/insurance-agent/out IA out"
+      ];
+    })
+
     {
       programs.password-store.settings = { inherit PASSWORD_STORE_KEY; };
       xdg.userDirs.extraConfig.XDG_PROJ_DIR = "${config.home.homeDirectory}/Projects";
@@ -53,11 +82,7 @@ in
       home.file.".authinfo.gpg".source = ./authinfo.gpg;
 
       home.packages = with pkgs; [
-        tigervnc
-        # waveterm # AI assisted GUI terminal
-
-        httpie-desktop # Painlessly test REST, GraphQL, and HTTP APIs
-        swagger-codegen # Generate stuff from openAPI spec
+        swagger-codegen # Generate stuff from openAPI spec [ CLI tool ]
 
         sops
 
@@ -65,18 +90,9 @@ in
         vultr-cli
         oci-cli
 
-        ventoy-full
-
         inputs.cells.common.packages.zerotierone
       ];
     }
-
-    (mkIf config.gtk.enable {
-      gtk.gtk3.bookmarks = [
-        "file:///home/vod/Documents/%D0%9A%D0%B0%D1%82%D1%8F"
-        "file:///home/vod/Projects/insurance-agent/out IA out"
-      ];
-    })
   ];
 
 }

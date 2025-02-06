@@ -1,6 +1,6 @@
 # { inputs, cell, ... }:
 
-{ config, lib, pkgs, inputs, ... }:
+{ config, lib, pkgs, ... }:
 let
   inherit (lib // builtins)
     mkIf
@@ -17,7 +17,7 @@ in
 {
   imports = [ ];
 
-  options.programs.waveterm = with lib.types; {
+  options.programs.waveterm = {
     enable = mkEnableOption "Enable waveterm";
     package = mkPackageOption pkgs "waveterm" { };
 
@@ -63,21 +63,22 @@ in
 
   };
 
-  config = mkMerge [
-    (mkIf cfg.enable {
+  config = mkIf cfg.enable (mkMerge [
+    {
+      home.packages = [ cfg.package ];
       xdg.configFile."waveterm/settings.json".source = json.generate "settings.json" cfg.settings;
-    })
+    }
 
-    (mkIf (cfg.enable && cfg.termthemes != { }) {
+    (mkIf (cfg.termthemes != { }) {
       xdg.configFile."waveterm/termthemes.json".source = json.generate "termthemes.json" cfg.termthemes;
     })
 
-    (mkIf (cfg.enable && cfg.presets != { }) {
+    (mkIf (cfg.presets != { }) {
       xdg.configFile."waveterm/presets.json".source = json.generate "presets.json" cfg.presets;
     })
 
-    (mkIf (cfg.enable && cfg.presets != { }) {
+    (mkIf (cfg.presets != { }) {
       xdg.configFile."waveterm/connections.json".source = json.generate "connections.json" cfg.connections;
     })
-  ];
+  ]);
 }
