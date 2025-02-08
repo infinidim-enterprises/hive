@@ -3,17 +3,17 @@
 {
   dircolors-solarized = {
     pname = "dircolors-solarized";
-    version = "2249310a957977e523b62c7d916ba40c2165869c";
+    version = "52bfa164e4388ee232f6a9235f62e8482e1f1767";
     src = fetchgit {
       url = "https://github.com/seebi/dircolors-solarized";
-      rev = "2249310a957977e523b62c7d916ba40c2165869c";
+      rev = "52bfa164e4388ee232f6a9235f62e8482e1f1767";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-8YvcLQL+zUWT/tn9MAeYVkFkkPSbZJ9JRsVw85bE/3s=";
+      sha256 = "sha256-+2t9OsyD9QkamsFbgmgehBrfszBQmv1Y0C94T4g16GI=";
     };
-    date = "2024-12-16";
+    date = "2025-02-03";
   };
   getoptions = {
     pname = "getoptions";
@@ -181,17 +181,17 @@
   };
   zsh-plugin_oh-my-zsh = {
     pname = "zsh-plugin_oh-my-zsh";
-    version = "2b547d113b7e55a556b695c9372f1beb721efd67";
+    version = "db32c6ccce91e0b36873c8bfccd1e40f452a2060";
     src = fetchgit {
       url = "https://github.com/robbyrussell/oh-my-zsh";
-      rev = "2b547d113b7e55a556b695c9372f1beb721efd67";
+      rev = "db32c6ccce91e0b36873c8bfccd1e40f452a2060";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-QjUw9Z70J8RozJ+F06yWLeDieJf5diehiUheFwpLoCU=";
+      sha256 = "sha256-Q81SUuc2U9PHXCKDxtD9ZT2hX/YXHzKI04YqOwE0CAI=";
     };
-    date = "2025-02-02";
+    date = "2025-02-04";
   };
   zsh-plugin_tipz = {
     pname = "zsh-plugin_tipz";
