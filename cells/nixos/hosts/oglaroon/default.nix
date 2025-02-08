@@ -32,7 +32,7 @@ rec {
       (import ./_hardwareProfile.nix { inherit inputs cell; })
 
       cell.nixosProfiles.desktop.printer-kyocera
-      inputs.cells.llm.nixosProfiles.amdgpu
+      # TODO: inputs.cells.llm.nixosProfiles.amdgpu
 
       {
         systemd.network.networks.local-eth.matchConfig.Name = "eno1";

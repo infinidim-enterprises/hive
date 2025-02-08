@@ -6,7 +6,10 @@
       # ISSUE: https://github.com/ROCm/ROCm/issues/2216#issuecomment-1637054248
       hardware.amdgpu.opencl.enable = true;
 
-      services.ollama.enable = true;
+      # ISSUE: https://github.com/ollama/ollama/pull/6282#issue-2457641055
+      # services.ollama.enable = true;
+      services.ollama.user = "ollama";
+      services.ollama.group = "ollama";
       services.ollama.acceleration = "rocm";
       services.ollama.rocmOverrideGfx = "9.0.0";
       services.ollama.loadModels = [

@@ -1231,13 +1231,14 @@ nixd setup function
            (username (getenv "USER"))
            (hostname (with-temp-buffer (call-process "hostname" nil t nil)
                                        (string-trim (buffer-string))))
-           (options-nixos (format "(builtins.getFlake \"%s\").nixosConfigurations.nixos-%s.options" prj_root hostname))
-           (options-home-manager (format  ".config\"uname@host\".options")))
+           (flakeref (format "(builtins.getFlake \"%s\")" prj_root))
+           (options-nixos (format "%s.nixosConfigurations.nixos-%s.options" flakeref hostname))
+           (options-home-manager (format "%s.homeConfigurations.home-nixd.options" flakeref)))
       (setq lsp-nix-nixd-server-path '("nixd" "--semantic-tokens=true" "--inlay-hints=true")
             lsp-nix-nixd-formatting-command [ "nixpkgs-fmt" ]
             lsp-nix-nixd-nixpkgs-expr "import <nixpkgs> { }"
             lsp-nix-nixd-nixos-options-expr options-nixos
-            ;; TODO: lsp-nix-nixd-home-manager-options-expr options-home-manager
+            lsp-nix-nixd-home-manager-options-expr options-home-manager
             ;; NOTE: otherwise, lsp-mode errors out on hash-table-p
             lsp-use-plists nil))))
 #+end_src
@@ -1561,6 +1562,9 @@ savehist-file persp workspaces
       "s-[" #'winner-undo
       "s-]" #'winner-redo
 
+      "M-[" #'previous-buffer
+      "M-]" #'next-buffer
+
       ;; [s-up] #'windmove-up
       ;; [s-down] #'windmove-down
       ;; [s-left] #'windmove-left
@@ -1572,6 +1576,7 @@ savehist-file persp workspaces
       "C-x C-y" #'+default/yank-pop
       "C-x f" #'helm-recentf
       "C-x b" #'helm-projectile-switch-to-buffer
+      "C-x s-b" #'projectile-find-file-dwim
       "s-t" #'+treemacs/toggle
       "M-s-." #'mc/mark-next-like-this
       "M-s-," #'mc/mark-previous-like-this

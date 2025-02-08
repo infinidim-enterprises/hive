@@ -56,7 +56,7 @@ in
   services.copyq.enable = true;
   services.copyq.forceXWayland = false;
   services.copyq.systemdTarget = "wayland-session@Hyprland.target";
-  systemd.user.services.copyq.Unit.After = [ "waybar.service" ];
+  # systemd.user.services.copyq.Unit.After = [ "waybar.service" ];
 
   services.gammastep.enable = true;
   services.gammastep.tray = true;

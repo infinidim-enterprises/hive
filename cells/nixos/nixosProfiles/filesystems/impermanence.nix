@@ -6,18 +6,22 @@ rec {
       inherit (utils) escapeSystemdPath;
       inherit (pkgs.callPackage "${inputs.impermanence}/lib.nix" { })
         concatPaths;
-      inherit (lib)
+      inherit (lib // builtins)
         any
+        map
         mkIf
+        last
         mkAfter
         mkMerge
         hasAttr
         optional
         optionals
         mapAttrs'
+        splitString
         listToAttrs
         nameValuePair
-        escapeShellArg;
+        escapeShellArg
+        concatMapStringsSep;
       persistentStoragePath = "/persist";
       openSshHostKeys = map (e: e.path) config.services.openssh.hostKeys;
     in
@@ -71,12 +75,29 @@ rec {
               (mkIf virtualisation.libvirtd.enable
                 "/var/lib/libvirt")
 
-              (mkIf config.services.ollama.enable
-                config.services.ollama.home)
-
               # (mkIf services.zerotierone.enable
               #   config.services.zerotierone.homeDir)
-            ];
+            ] ++ (optionals config.services.ollama.enable (
+              let
+                pathList = splitString "/" config.services.ollama.home;
+                pathPrivate = concatMapStringsSep "/"
+                  (e:
+                    if e == (last pathList)
+                    then "private/" + e
+                    else e)
+                  pathList;
+              in
+              map
+                (directory: {
+                  inherit directory;
+                  inherit (config.services.ollama) user group;
+                  mode = "0700";
+                })
+                [
+                  pathPrivate
+                  config.services.ollama.home
+                ]
+            ));
 
             files =
               (optional (cell.lib.isZfs config) "/etc/machine-id") ++
