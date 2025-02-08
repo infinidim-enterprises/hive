@@ -13,7 +13,8 @@ rec {
       config.allowUnfree = true;
       overlays =
         cell.overlays.emacs
-        ++ cell.overlays.base
+        ++ (inputs.nixpkgs-lib.lib.subtractLists [ inputs.nixd.overlays.default ]
+          cell.overlays.base)
         ++ [
           inputs.raspberry-pi-nix.overlays.core
           inputs.raspberry-pi-nix.overlays.libcamera

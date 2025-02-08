@@ -14,3 +14,4 @@ result
 docs/build/**
 /.data/
 /result-man
+.aider*

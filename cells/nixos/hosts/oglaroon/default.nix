@@ -32,12 +32,14 @@ rec {
       (import ./_hardwareProfile.nix { inherit inputs cell; })
 
       cell.nixosProfiles.desktop.printer-kyocera
+      inputs.cells.llm.nixosProfiles.amdgpu
 
-      ({ pkgs, ... }: {
+      {
         systemd.network.networks.local-eth.matchConfig.Name = "eno1";
         networking.wireless.enable = false;
         networking.networkmanager.enable = true;
-      })
+      }
+
       {
         deploy.enable = true;
         deploy.params.hidpi.enable = false;

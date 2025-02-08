@@ -21,6 +21,8 @@ https://github.com/helm/chartmuseum
 https://github.com/nix-community/authentik-nix
 ** https://unifiedpush.org/
 * Cool stuff I want
+** Package and make modules
+*** TODO [[https://github.com/mujx/hakatime/pull/100][hakatime]]
 ** stats services
 https://wakapi.dev - wakatime replacement with self hosting
 ** filesystems
@@ -52,6 +54,9 @@ https://github.com/AnalogJ/scrutiny
 ** TODO NixOS secrets management
 https://github.com/oddlama/agenix-rekey
 Find auto-rekey for sops-nix
+
+*** Integrate eval-time secrets with nix-plugins exec
+https://oddlama.org/blog/evaluation-time-secrets-in-nix/
 ** github alternatives
 https://radicle.xyz/
 https://onedev.io

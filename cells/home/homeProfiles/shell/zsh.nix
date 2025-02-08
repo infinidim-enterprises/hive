@@ -59,6 +59,7 @@ lib.mkIf config.programs.zsh.enable
     ZLE_RPROMPT_INDENT = 0;
   };
 
+  # TODO: https://github.com/olets/zsh-abbr
   programs.zsh.plugins =
     let
       omz_plugins =

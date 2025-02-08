@@ -18,7 +18,7 @@
         +icons
         +dabbrev
         +dict)
-       ;;company             ; the ultimate code completion backend
+       ;; company             ; the ultimate code completion backend
        (helm +fuzzy)       ; the *other* search engine for love and life
        ;;ido               ; the other *other* search engine...
        ;;ivy               ; a search engine for love and life
@@ -100,7 +100,9 @@
        ;;ein               ; tame Jupyter notebooks with emacs
        (eval +overlay)     ; run code, run (also, repls)
        gist                ; interacting with github gists
-       lookup              ; navigate your code and its documentation
+       (lookup
+        +dictionary
+        +docsets)          ; navigate your code and its documentation
        (lsp +peek)         ; M-x vscode
        tree-sitter
        (magit +forge)      ; a git porcelain for Emacs
@@ -170,8 +172,11 @@
         +dragndrop
         +gnuplot
         +pandoc
+        +crypt
         +journal
         ;; +jupyter
+        +hugo
+        +pomodoro
         +roam2
         +noter
         +present)          ; organize your plain life in plain text
@@ -179,6 +184,7 @@
        plantuml            ; diagrams for confusing people more
        ;;purescript        ; javascript, but functional
        (python
+        +cython
         +pyenv
         +poetry
         +treesitter
@@ -223,7 +229,7 @@
        ;;emms
        everywhere        ; *leave* Emacs!? You must be joking
        irc               ; how neckbeards socialize
-       ;;(rss +org)        ; emacs as an RSS reader
+       (rss +org)        ; emacs as an RSS reader
        ;;twitter           ; twitter client https://twitter.com/vnought
 
        :config
@@ -238,7 +244,7 @@
        )
 
 ;; https://discourse.doomemacs.org/t/using-lsp-use-plists-with-doom/2832
-(setenv "LSP_USE_PLISTS" "1")
+;; (setenv "LSP_USE_PLISTS" "1")
 
 ;; needs to put this in init.el
 ;; https://github.com/hlissner/doom-emacs/issues/401
@@ -344,7 +350,35 @@ result instead of `message'."
        confirm-kill-processes nil
        consult-tramp-method "sshx"
        custom-file (expand-file-name "doom_custom.el" (getenv "XDG_DATA_HOME")))
+
 (map! :after emmet-mode [tab] nil)
+
+(use-package! consult
+  :defer t
+  :config
+  ;; Define the custom source
+  (defun local/consult--source-buffer-with-paths ()
+    "Custom source for `consult-buffer` that includes buffer file paths."
+    (let ((buffers (consult--buffer-query
+                    :sort 'visibility
+                    :as #'buffer-name
+                    :include-current t)))
+      (lambda (action)
+        (if (eq action 'items)
+            (mapcar (lambda (buf)
+                      (let* ((buffer (get-buffer buf))
+                             (file (buffer-file-name buffer))
+                             (name (buffer-name buffer))
+                             (display (if file
+                                          (concat name " (" (abbreviate-file-name file) ")")
+                                        name)))
+                        (cons display buffer)))
+                    buffers)
+          (consult--buffer-state action)))))
+
+  ;; Add the custom source to `consult-buffer-sources`
+  (add-to-list 'consult-buffer-sources '(local/consult--source-buffer-with-paths :name "Buffers with Paths")))
+
 #+end_src
 ** TODO SFS Search/Indexing
 [[https://github.com/Overdr0ne/sfs][Search File System]]
@@ -768,7 +802,85 @@ This fails to build on nix currently
 ;;     (use-package! acm-terminal)))
 #+end_src
 
+*** corfu / vertico
+#+begin_src emacs-lisp :tangle packages.el
+(package! vertico
+  :type 'core
+  :pin "e69ef62ffa4bc42dd42437881c251ecdcae0e0c5"
+  :recipe (:host github
+           :repo "minad/vertico"
+           :branch "main"))
 
+(package! corfu
+  :type 'core
+  :pin "2c476b442ccfda9935e472b26d9cd60d45726560"
+  :recipe (:host github
+           :repo "minad/corfu"
+           :branch "main"))
+
+(package! nerd-icons-corfu
+  :type 'core
+  :pin "41110180ceab9d0edaa856d19633b2b3fdf82e75"
+  :recipe (:host github
+           :repo "LuigiPiucco/nerd-icons-corfu"
+           :branch "master"))
+
+(package! cape
+  :type 'core
+  :pin "118db73710466ab03708e7511f4bff7827057000"
+  :recipe (:host github
+           :repo "minad/cape"
+           :branch "main"))
+
+(package! orderless
+  :type 'core
+  :pin "c7cb04499d94ee1c17affb29b1cfcd2a45116c97"
+  :recipe (:host github
+           :repo "oantolin/orderless"
+           :branch "main"))
+
+(package! tempel
+  :type 'core
+  :pin "12a2072ce97d7489296dbb950da946b77d215506"
+  :recipe (:host github
+           :repo "minad/tempel"
+           :branch "main"))
+
+(package! corfu-terminal
+  :type 'core
+  :pin "501548c3d51f926c687e8cd838c5865ec45d03cc"
+  :recipe (:type git
+           :repo "https://codeberg.org/akib/emacs-corfu-terminal.git"
+           :branch "master"))
+
+;; (package! corfu-doc-terminal
+;;   :type 'core
+;;   :pin "da5042082d2296946972599f6d95bbbffaf63fba"
+;;   :recipe (:type git
+;;            :repo "https://codeberg.org/akib/emacs-corfu-doc-terminal.git"
+;;            :branch "master"))
+#+end_src
+
+#+begin_src emacs-lisp :tangle config.el
+;; (use-package! vertico)
+;; (use-package! corfu)
+;; (use-package! corfu-terminal)
+;; (use-package! nerd-icons-corfu)
+;; (use-package! cape)
+;; (use-package! orderless)
+;; (use-package! tempel)
+
+
+;; (use-package! corfu-terminal
+;;   :init
+;;   (unless (display-graphic-p)
+;;   (corfu-terminal-mode +1)))
+
+;; (use-package! corfu-doc-terminal
+;;   :init
+;;   (unless (display-graphic-p)
+;;   (corfu-doc-terminal-mode +1)))
+#+end_src
 ** IDEA clipboard
 :tangle packages.el
 #+begin_src emacs-lisp
@@ -794,18 +906,32 @@ This fails to build on nix currently
   ("C-h D" . devdocs-lookup))
 #+end_src
 ** llm
+
 #+begin_src emacs-lisp :tangle packages.el
 (package! gptel
   :pin "aa649b013322a62d29e7507e22234f8000c68c48"
   :recipe (:host github
            :repo "karthink/gptel"
            :branch "master"))
+(package! gptel-extensions
+  :pin "671e5186153fc9bf105c91effb1ed7db06508677"
+  :recipe (:host github
+           :repo "kamushadenes/gptel-extensions.el"))
 (package! whisper
   :pin "ee29777238fc089d66d8e4b6812fdd5743cad19a"
   :recipe (:host github
            :repo "natrys/whisper.el"
            :branch "master"))
+(package! aider
+  :pin "ebe03e12c05a857bc2b91fdff32a9ef6cdceaf13"
+  :recipe (:host github
+           :repo "tninja/aider.el"
+           :branch "main"
+           :files ("aider.el" "aider-doom.el")))
 #+end_src
+
+package aider requires a dependency on helm when recipe files contains "aider-helm.el", however when the package is being built helm isn't available
+FIXME: requires a dependency on helm "aider-helm.el"
 
 #+begin_src emacs-lisp :tangle config.el
 (defun +whisper-insert ()
@@ -874,11 +1000,11 @@ This fails to build on nix currently
          ;; whisper-install-directory "/tmp/"
          whisper-language "en"
          whisper-translate nil
-         whisper-install-whispercpp 'manual
+         whisper-install-whispercpp nil
          whisper-use-threads (/ (num-processors) 2)))
 
 (use-package! gptel
-  :commands (gptel)
+  :commands (gptel gptel-send)
   :bind (("M-s-<return>" . gptel-send)
          ("M-s-="        . gptel-add))
   :init
@@ -890,9 +1016,10 @@ This fails to build on nix currently
   ;;   (+gptel-kill-default-buffer))
   ;; "^\\*ChatGPT\\*$"
   (set-popup-rule! "^\\*\\(?:ChatGPT\\|OpenRouter\\)\\*$"
+    ;; (concat "^" (regexp-opt (mapcar 'regexp-quote '("*ChatGPT*" "*OpenRouter*"))) "$")
     :side 'right
     :size 0.4
-    :vslot 100
+    ;; :vslot 100
     :quit nil)
   :config
   (setq! gptel--openai
@@ -908,8 +1035,8 @@ This fails to build on nix currently
              (gpt-4o
               :capabilities (media tool json url)
               :description "High-intelligence flagship model for complex, multi-step tasks"
-              :mime-types ("image/jpeg" "image/png" "image/gif" "image/webp")))))
-  (setq! gptel--openrouter
+              :mime-types ("image/jpeg" "image/png" "image/gif" "image/webp"))))
+         gptel--openrouter
          (gptel-make-openai "OpenRouter"
            :stream nil
            :host "openrouter.ai"
@@ -960,6 +1087,35 @@ This fails to build on nix currently
           (programming . "You are a large language model and a careful programmer. Provide code and only code as output without any additional text, prompt or note.")
           (writing . "You are a large language model and a writing assistant. Respond concisely.")
           (chat . "You are a large language model and a conversation partner. Respond concisely."))))
+
+(use-package! gptel-extensions
+  :demand t
+  :after gptel)
+
+(use-package! aider
+  :after helm
+  :init
+  (set-popup-rule! (regexp-quote "*aider:")
+    :side 'right
+    :size 0.4
+    :vslot 50
+    :quit nil)
+  :config
+  (setenv "OPENROUTER_API_KEY" (auth-source-pick-first-password
+                                :host "openrouter.ai"
+                                :user "apikey"))
+  (setq! aider-args '("--no-auto-commits" "--model" "openrouter/deepseek/deepseek-chat"))
+  :custom
+  (aider-popular-models '("openrouter/deepseek/deepseek-chat"
+                          "openrouter/deepseek/deepseek-r1"
+                          "openrouter/deepseek/deepseek-coder"
+                          "openrouter/openai/gpt-4o"
+                          "openrouter/openai/o1"
+                          "openrouter/anthropic/claude-3.5-sonnet"
+                          "openrouter/anthropic/claude-3-5-haiku"
+                          "openrouter/anthropic/claude-3-opus"
+                          "openrouter/google/gemini-pro-1.5"
+                          "openrouter/google/gemini-pro-vision")))
 #+end_src
 ** color-rg
 
@@ -1042,13 +1198,32 @@ This fails to build on nix currently
   :recipe (:host github
            :repo "NixOS/nix-mode"
            :branch "master"))
-(package! nixpkgs-fmt)
+(package! nix-ts-mode
+  :type 'core
+  :pin "cea932fd683bfab84234205f5f1d161e29a5adf6"
+  :recipe (:host github
+           :repo "nix-community/nix-ts-mode"
+           :branch "trunk"))
+(package! nixpkgs-fmt
+  :type 'core
+  :pin "1f6fb42a5439589c44d99c661cc76958520323cc"
+  :recipe (:host github
+           :repo "purcell/emacs-nixpkgs-fmt"
+           :branch "master"))
 #+end_src
 
 nixd setup function
 #+begin_src emacs-lisp :tangle config.el
-;; (after! lsp-mode
-;;   (setq lsp-use-plists t))
+(defun local/print-nixd-capabilities ()
+  "Print the capabilities of the `nixd` language server."
+  (interactive)
+  (let* ((workspace (lsp-find-workspace 'nixd-lsp nil))
+         (capabilities (when workspace
+                         (lsp--workspace-server-capabilities workspace))))
+    (if capabilities
+        (with-output-to-temp-buffer "*nixd Capabilities*"
+          (princ (json-encode capabilities)))
+      (message "nixd language server is not active in the current buffer."))))
 
 (defun local/setup-nixd ()
   (when (getenv "PRJ_ROOT")
@@ -1056,14 +1231,15 @@ nixd setup function
            (username (getenv "USER"))
            (hostname (with-temp-buffer (call-process "hostname" nil t nil)
                                        (string-trim (buffer-string))))
-           (host (concat "(builtins.getFlake \"" prj_root "\").nixosConfigurations.nixos-" hostname)))
-      (setq! lsp-nix-nixd-server-path '("nixd" "--semantic-tokens=true" "--inlay-hints=true")
-             lsp-nix-nixd-formatting-command [ "nixpkgs-fmt" ]
-             lsp-nix-nixd-nixpkgs-expr "import <nixpkgs> { }"
-             lsp-nix-nixd-nixos-options-expr (concat host ".options")
-             ;; FIXME: lsp-nix-nixd-home-manager-options-expr (concat host ".config\"nb@mnd\".options")
-             lsp-use-plists nil ; otherwise, lsp-mode errors out on hash-table-p
-             ))))
+           (options-nixos (format "(builtins.getFlake \"%s\").nixosConfigurations.nixos-%s.options" prj_root hostname))
+           (options-home-manager (format  ".config\"uname@host\".options")))
+      (setq lsp-nix-nixd-server-path '("nixd" "--semantic-tokens=true" "--inlay-hints=true")
+            lsp-nix-nixd-formatting-command [ "nixpkgs-fmt" ]
+            lsp-nix-nixd-nixpkgs-expr "import <nixpkgs> { }"
+            lsp-nix-nixd-nixos-options-expr options-nixos
+            ;; TODO: lsp-nix-nixd-home-manager-options-expr options-home-manager
+            ;; NOTE: otherwise, lsp-mode errors out on hash-table-p
+            lsp-use-plists nil))))
 #+end_src
 
 #+begin_src emacs-lisp :tangle config.el
@@ -1071,21 +1247,11 @@ nixd setup function
   :after lsp-mode
   :hook
   ((nix-mode . lsp-deferred)
-   ;; (nix-mode . (lambda () (setq company-idle-delay 0.1)))
-   )
+   (nix-mode . (lambda () (setq company-idle-delay 0.1))))
   :custom
-  (lsp-disabled-clients '((nix-mode . nix-nil)))
+  (lsp-disabled-clients  '(nix-nil nix-rnix))
   :config
   (add-hook 'envrc-mode-hook #'local/setup-nixd))
-#+end_src
-:tangle config.el
-#+begin_src emacs-lisp
-(with-eval-after-load 'lsp-mode
-  (lsp-register-client
-    (make-lsp-client :new-connection (lsp-stdio-connection "nixd")
-                     :major-modes '(nix-mode)
-                     :priority 0
-                     :server-id 'nixd)))
 #+end_src
 
 #+begin_src emacs-lisp :tangle config.el
@@ -1392,10 +1558,14 @@ savehist-file persp workspaces
       "M-j" #'windmove-left
       "M-l" #'windmove-right
 
+      "s-[" #'winner-undo
+      "s-]" #'winner-redo
+
       ;; [s-up] #'windmove-up
       ;; [s-down] #'windmove-down
       ;; [s-left] #'windmove-left
       ;; [s-right] #'windmove-right
+
       "s-=" #'text-scale-increase
       "s--" #'text-scale-decrease
       "s-<return>" #'toggle-frame-fullscreen
@@ -1407,7 +1577,8 @@ savehist-file persp workspaces
       "M-s-," #'mc/mark-previous-like-this
       "M-s-SPC" #'mc/mark-all-like-this
       "s-SPC" #'set-rectangular-region-anchor
-      ;; "C-<escape>" #'+vterm/toggle
+
+      "C-<escape>" #'+vterm/toggle
 
       :map prog-mode-map
       :nie "s-." #'helm-semantic-or-imenu

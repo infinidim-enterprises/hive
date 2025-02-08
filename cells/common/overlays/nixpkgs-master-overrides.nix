@@ -10,5 +10,6 @@ in
   inherit
     (nixpkgs-master)
     gimp-with-plugins
+    aider-chat
     activitywatch;
 }

@@ -71,6 +71,9 @@ rec {
               (mkIf virtualisation.libvirtd.enable
                 "/var/lib/libvirt")
 
+              (mkIf config.services.ollama.enable
+                config.services.ollama.home)
+
               # (mkIf services.zerotierone.enable
               #   config.services.zerotierone.homeDir)
             ];

@@ -3,8 +3,43 @@
 { self, config, osConfig, name, pkgs, lib, ... }:
 let
   inherit (lib) mkMerge mkIf mkDefault;
-  inherit (builtins) pathExists;
   inherit (pkgs) callPackage;
+  extraBinPackages = [
+    config.programs.ripgrep.package
+    config.programs.git.package
+    config.programs.fd.package
+  ] ++ (with pkgs; [
+    # org-mode helpers
+    pandoc
+    pandoc-imagine
+    pandoc-plantuml-filter
+
+    aider-chat
+
+    (sbcl.withPackages (p: with p; [
+      slynk
+      slynk-macrostep
+      slynk-named-readtables
+    ]))
+
+    ditaa
+    graphviz
+    plantuml
+    python3 # treemacs requirement
+    bibtex2html
+
+    semgrep
+    bash-language-server
+    yaml-language-server
+
+    (aspellWithDicts (dicts: with dicts; [
+      en
+      en-computers
+      en-science
+      de
+      ru
+    ]))
+  ]);
 
   doomCfgDir = "${self}/users/${name}/dotfiles/doom.d";
   doomCfgDirNix = "${doomCfgDir}/default.nix";
@@ -91,33 +126,7 @@ mkMerge [
   # }
 
   {
-    home.packages = with pkgs; [
-      config.programs.ripgrep.package
-      config.programs.git.package
-      config.programs.fd.package
-
-      pandoc
-      pandoc-imagine
-      pandoc-plantuml-filter
-
-      ditaa
-      graphviz
-      plantuml
-      python3 # treemacs requirement
-      bibtex2html
-
-      semgrep
-      bash-language-server
-      yaml-language-server
-
-      (aspellWithDicts (dicts: with dicts; [
-        en
-        en-computers
-        en-science
-        de
-        ru
-      ]))
-    ];
+    home.packages = extraBinPackages;
 
     programs.doom-emacs = {
       inherit emacs extraPackages;
@@ -130,35 +139,7 @@ mkMerge [
       # ISSUE: https://github.com/marienz/nix-doom-emacs-unstraightened/issues/14
       experimentalFetchTree = true;
       # FIXME: programs.doom-emacs.extraBinPackages | doesn't work on 24.11 release
-      extraBinPackages = [
-        config.programs.ripgrep.package
-        config.programs.git.package
-        config.programs.fd.package
-      ] ++ (with pkgs; [
-        # org-mode helpers
-        pandoc
-        pandoc-imagine
-        pandoc-plantuml-filter
-
-        ditaa
-        graphviz
-        plantuml
-        python3 # treemacs requirement
-        bibtex2html
-
-        semgrep
-        bash-language-server
-        yaml-language-server
-
-        (aspellWithDicts (dicts: with dicts; [
-          en
-          en-computers
-          en-science
-          de
-          ru
-        ]))
-      ]);
-
+      inherit extraBinPackages;
     };
 
     services.emacs.enable = mkDefault true;

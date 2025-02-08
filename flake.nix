@@ -354,8 +354,6 @@
   outputs =
     { self
     , std
-    , nixpkgs
-    , latest
     , hive
     , ...
     } @ inputs:
