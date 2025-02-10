@@ -28,6 +28,7 @@ rec {
     # terminals.kitty
     # conky
 
+
     look-and-feel.nerdfonts-ubuntu
     look-and-feel.pointer-cursor
   ];

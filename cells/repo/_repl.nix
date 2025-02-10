@@ -1,4 +1,4 @@
-{ flakePath }:
+{ host ? null, flakePath }:
 let
   compatFlake =
     if builtins.pathExists flakePath
@@ -63,6 +63,11 @@ let
     config.allowUnfree = true;
   };
 in
+lib.optionalAttrs
+  (!builtins.isNull host && lib.hasAttr "nixos-${host}" Flake.nixosConfigurations)
+  {
+    host = Flake.nixosConfigurations."nixos-${host}";
+  } //
 {
   inherit
     LedgerDev

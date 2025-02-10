@@ -1,6 +1,13 @@
 { inputs, cell, ... }:
 
-{ self, config, osConfig, name, pkgs, lib, ... }:
+{ self
+, config
+  # , osConfig
+, name
+, pkgs
+, lib
+, ...
+}:
 let
   inherit (lib) mkMerge mkIf mkDefault;
   inherit (pkgs) callPackage;
@@ -55,6 +62,9 @@ let
         pname = "local-setts";
         ename = pname;
         version = "1.0";
+        # TODO: user-full-name "John Doe"
+        # TODO: user-mail-address "john@doe.com"
+
         src = pkgs.writeText "local-setts.el" ''
           (defvar vod-setts-custom-from-nix "${pkgs.nodejs}/bin/node")
 
@@ -88,13 +98,13 @@ let
       sqlite3
       grab-x-link
 
-      sly
-      sly-asdf
-      sly-overlay
-      sly-quicklisp
-      sly-macrostep
-      sly-repl-ansi-color
-      sly-named-readtables
+      # sly
+      # sly-asdf
+      # sly-overlay
+      # sly-quicklisp
+      # sly-macrostep
+      # sly-repl-ansi-color
+      # sly-named-readtables
     ];
 
 

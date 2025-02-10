@@ -14,7 +14,7 @@ lib.mkMerge [
       # "nglaklhklhcoonedhgnpgddginnjdadi" # TODO: mkIf hmModule activitywatch enabled.
       "nkbihfbeogaeaoehlefnkodbefgpgknn" # metamask
       "kcgpggonjhmeaejebeoeomdlohicfhce" # Removes cookies for the current site
-      "fialfmcgpibjgdoeodaondepigiiddio" # Braintool org-mode bookmarks and tabs collection
+      # FIXME: "fialfmcgpibjgdoeodaondepigiiddio" # Braintool org-mode bookmarks and tabs collection
       # "ldpochfccmkkmhdbclfhpagapcfdljkj" # Decentraleyes
       # "maekfnoeejhpjfkfmdlckioggdcdofpg" # Adblocker for Youtube™
       "bgnkhhnnamicmpeenaelnjfhikgbkllg" # AdGuard AdBlocker

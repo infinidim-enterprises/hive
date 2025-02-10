@@ -1,6 +1,6 @@
 { lib, config, osConfig, pkgs, ... }:
 let
-  inherit (lib // builtins) toInt toString;
+  # inherit (lib // builtins) toInt toString;
   inherit (config.home.sessionVariables)
     HM_FONT_NAME
     HM_FONT_SIZE;

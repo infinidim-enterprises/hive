@@ -227,17 +227,18 @@ let
 
   repl =
     let
-      nixBinary = nixpkgs.nixVersions.nix_2_18;
-      # nixBinary = nixpkgs.nixVersions.nix_2_24;
-      # nixBinary = nixpkgs-unstable.nixUnstable;
-      # NOTE: https://github.com/NixOS/nix/issues/8761
+      nixBinary = nixpkgs-unstable.nixVersions.latest;
     in
-    writeShellScriptBin "repl" ''
+      /*
       if [ -z "$1" ]; then
          ${nixBinary}/bin/nix repl --argstr host "$HOST" --argstr flakePath "$PRJ_ROOT" ${./_repl.nix} --show-trace --extra-experimental-features impure-derivations
       else
          ${nixBinary}/bin/nix repl --argstr host "$HOST" --argstr flakePath $(readlink -f $1 | sed 's|/flake.nix||') ${./_repl.nix} --show-trace --extra-experimental-features impure-derivations
       fi
+
+      */
+    writeShellScriptBin "repl" ''
+      ${nixBinary}/bin/nix repl --argstr host $(hostname) --argstr flakePath "$PRJ_ROOT" --file ${./_repl.nix} --show-trace --extra-experimental-features impure-derivations
     '';
 
   update-cell-sources = writeShellApplication {

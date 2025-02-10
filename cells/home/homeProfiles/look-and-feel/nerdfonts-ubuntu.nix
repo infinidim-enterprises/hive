@@ -209,7 +209,7 @@ mkMerge [
     };
   })
 
-  (mkIf (hasAttr "waveterm" config.programs && config.programs.waveterm.enable) {
+  (mkIf (isGui osConfig && hasAttr "waveterm" config.programs && config.programs.waveterm.enable) {
     programs.waveterm.settings."term:fontsize" = toInt HM_FONT_SIZE;
     programs.waveterm.settings."term:fontfamily" = HM_FONT_NAME;
   })

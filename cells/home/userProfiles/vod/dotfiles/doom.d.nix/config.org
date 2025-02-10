@@ -266,6 +266,21 @@
   (setq straight--native-comp-available t))
 #+end_src
 * Usability improvements
+** frames/emacsclient
+#+begin_src emacs-lisp
+(after! persp-mode
+  (setq persp-emacsclient-init-frame-behaviour-override nil))
+
+(defun local/inherit-last-active-perspective (frame)
+  "Assign the new FRAME to the perspective of the last active frame."
+  (when (and persp-mode (not (persp-frame-persp frame)))
+    (let ((last-persp (persp-get-by-name (persp-current-name))))
+      (when last-persp
+        (persp-frame-switch last-persp frame)))))
+
+;; Add the function to the frame creation hook
+(add-hook 'after-make-frame-functions #'local/inherit-last-active-perspective)
+#+end_src
 ** General
 Maybe use (package! maple-iedit :recipe (:host github :repo "honmaple/emacs-maple-iedit")) instead of built-in mc/mark-next-like-this
 
@@ -353,32 +368,56 @@ result instead of `message'."
 
 (map! :after emmet-mode [tab] nil)
 
-(use-package! consult
+(use-package! helm-projectile
   :defer t
   :config
-  ;; Define the custom source
-  (defun local/consult--source-buffer-with-paths ()
-    "Custom source for `consult-buffer` that includes buffer file paths."
-    (let ((buffers (consult--buffer-query
-                    :sort 'visibility
-                    :as #'buffer-name
-                    :include-current t)))
-      (lambda (action)
-        (if (eq action 'items)
-            (mapcar (lambda (buf)
-                      (let* ((buffer (get-buffer buf))
-                             (file (buffer-file-name buffer))
-                             (name (buffer-name buffer))
-                             (display (if file
-                                          (concat name " (" (abbreviate-file-name file) ")")
-                                        name)))
-                        (cons display buffer)))
-                    buffers)
-          (consult--buffer-state action)))))
+  (defun local/helm-buffer-transformer (buffers)
+    "Transformer function to display project buffers with full file paths, excluding internal buffers."
+    (let* ((filtered-buffers
+            (cl-remove-if
+             (lambda (buf)
+               (string-prefix-p "*" (buffer-name buf)))
+             buffers))
+           (max-name-length
+            (apply #'max
+                   (mapcar (lambda (buf)
+                             (length (buffer-name buf)))
+                           filtered-buffers)))
+           (max-mode-length
+            (apply #'max
+                   (mapcar (lambda (buf)
+                             (length (symbol-name (with-current-buffer buf major-mode))))
+                           filtered-buffers))))
+      (cl-loop for buffer in filtered-buffers
+               for name = (buffer-name buffer)
+               for size = (buffer-size buffer)
+               for mode = (with-current-buffer buffer major-mode)
+               for path = (or (buffer-file-name buffer) "")
+               collect
+               (cons (format (format "%%-%ds %%7s %%-%ds %%s"
+                                     max-name-length
+                                     max-mode-length)
+                             name
+                             (file-size-human-readable size)
+                             mode
+                             (abbreviate-file-name path))
+                     buffer))))
 
-  ;; Add the custom source to `consult-buffer-sources`
-  (add-to-list 'consult-buffer-sources '(local/consult--source-buffer-with-paths :name "Buffers with Paths")))
+  (defun local/helm-source-project-buffers-list ()
+    "Create a Helm source for project buffer switching with full file paths."
+    (helm-build-sync-source "Project Buffers"
+      :candidates (local/helm-buffer-transformer (projectile-project-buffers))
+      :action '(("Switch to buffer" . (lambda (candidate)
+                                        (switch-to-buffer candidate))))
+      :fuzzy-match t))
 
+  (defun local/helm-switch-to-project-buffer ()
+    "Switch to project buffer with full file path search and formatted display."
+    (interactive)
+    (helm :sources (local/helm-source-project-buffers-list)
+          :prompt (format "[%s] Switch to buffer: " (+workspace-current-name))
+          :buffer "*helm project buffers*"))
+  :bind ("C-x b" . local/helm-switch-to-project-buffer))
 #+end_src
 ** TODO SFS Search/Indexing
 [[https://github.com/Overdr0ne/sfs][Search File System]]
@@ -415,7 +454,12 @@ result instead of `message'."
 [[https://github.com/Civitasv/pair-colorizer][Use a fork]]?
 
 #+begin_src emacs-lisp :tangle packages.el
-(package! rainbow-delimiters)
+(package! rainbow-delimiters
+  :type 'core
+  :pin "f40ece58df8b2f0fb6c8576b527755a552a5e763"
+  :recipe (:host github
+           :repo "Fanael/rainbow-delimiters"
+           :branch "master"))
 #+end_src
 
 #+begin_src emacs-lisp :tangle config.el
@@ -1131,7 +1175,7 @@ FIXME: requires a dependency on helm "aider-helm.el"
 ;; (package! color-rg)
 #+end_src
 
-:rev "e45bedec545c044accf307532b3c50dbb9ab2b66"
+:pin "e45bedec545c044accf307532b3c50dbb9ab2b66"
 
 :tangle config.el
 #+begin_src emacs-lisp
@@ -1466,14 +1510,48 @@ savehist-file persp workspaces
 * nyxt-browser integration
 ** Sly
 #+begin_src emacs-lisp :tangle packages.el
-(package! sly)
-(package! sly-asdf)
-(package! sly-overlay)
-(package! sly-quicklisp)
-(package! sly-macrostep)
-(package! sly-repl-ansi-color)
-(package! sly-named-readtables)
-(package! helm-sly)
+(package! sly
+  :pin "c48defcf58596e035d473f3a125fdd1485593146"
+  :recipe (:host github
+           :repo "joaotavora/sly"
+           :branch "master"))
+;; TODO: https://github.com/joaotavora/sly-stepper
+;; TODO: https://github.com/40ants/sly-package-inferred
+(package! sly-asdf
+  :pin "6f9d751469bb82530db1673c22e7437ca6c95f45"
+  :recipe (:host github
+           :repo "mmgeorge/sly-asdf"
+           :branch "master"))
+(package! sly-overlay
+  :pin "d62945059035f8097a6f222ed2700cfd99609d11"
+  :recipe (:host github
+           :repo "fosskers/sly-overlay"
+           :branch "master"))
+(package! sly-quicklisp
+  :pin "34c73d43dd9066262387c626c17a9b486db07b2d"
+  :recipe (:host github
+           :repo "joaotavora/sly-quicklisp"
+           :branch "master"))
+(package! sly-macrostep
+  :pin "5113e4e926cd752b1d0bcc1508b3ebad5def5fad"
+  :recipe (:host github
+           :repo "joaotavora/sly-macrostep"
+           :branch "master"))
+(package! sly-repl-ansi-color
+  :pin "b9cd52d1cf927bf7e08582d46ab0bcf1d4fb5048"
+  :recipe (:host github
+           :repo "PuercoPop/sly-repl-ansi-color"
+           :branch "master"))
+(package! sly-named-readtables
+  :pin "a5a42674ccffa97ccd5e4e9742beaf3ea719931f"
+  :recipe (:host github
+           :repo "joaotavora/sly-named-readtables"
+           :branch "master"))
+(package! helm-sly
+  :pin "3691626c80620e992a338c3222283d9149f1ecb5"
+  :recipe (:host github
+           :repo "emacs-helm/helm-sly"
+           :branch "master"))
 #+end_src
 
 #+begin_src emacs-lisp :tangle "config.el"
@@ -1481,12 +1559,12 @@ savehist-file persp workspaces
   :init (setq sly-ignore-protocol-mismatches t
               sly-compile-file-options (list :fasl-directory "/tmp")))
 (use-package! sly-asdf :after sly)
-(use-package! sly-overlay)
+(use-package! sly-overlay :after sly)
 (use-package! sly-quicklisp :after sly)
-(use-package! sly-macrostep)
-(use-package! sly-repl-ansi-color)
-(use-package! sly-named-readtables)
-(use-package! helm-sly)
+(use-package! sly-macrostep :after sly)
+(use-package! sly-repl-ansi-color :after sly)
+(use-package! sly-named-readtables :after sly)
+(use-package! helm-sly :after sly)
 
 (defun sly-nyxt-start ()
   (interactive)
@@ -1513,7 +1591,7 @@ savehist-file persp workspaces
 }
 #+end_src
 [[https://www.gnu.org/software/emacs/manual/html_mono/epa.html][Reference]]
-
+TODO: move it to local-setts in Nix
 #+begin_src emacs-lisp :tangle config.el
 (use-package! org-crypt
   :config
@@ -1525,7 +1603,6 @@ savehist-file persp workspaces
 
 ** uncategorized
 #+begin_src emacs-lisp :tangle config.el
-;; TODO: set uname/email
 (set-language-environment "UTF-8")
 (set-default-coding-systems 'utf-8)
 
@@ -1535,8 +1612,6 @@ savehist-file persp workspaces
 (global-visual-line-mode t)
 
 (setq!
- ;; TODO: user-full-name "John Doe"
- ;; TODO: user-mail-address "john@doe.com"
  calendar-week-start-day 1
  org-src-fontify-natively t
  comp-async-jobs-number 24
@@ -1575,7 +1650,7 @@ savehist-file persp workspaces
       "s-<return>" #'toggle-frame-fullscreen
       "C-x C-y" #'+default/yank-pop
       "C-x f" #'helm-recentf
-      "C-x b" #'helm-projectile-switch-to-buffer
+      ;; "C-x b" #'helm-projectile-switch-to-buffer
       "C-x s-b" #'projectile-find-file-dwim
       "s-t" #'+treemacs/toggle
       "M-s-." #'mc/mark-next-like-this
@@ -1595,7 +1670,6 @@ savehist-file persp workspaces
       "<right>" #'helm-execute-persistent-action)
 
 (add-hook! 'before-save-hook 'font-lock-flush)
-
 #+end_src
 
 ** local-setts from nix config

@@ -3,23 +3,21 @@
 { osConfig, config, lib, localLib, pkgs, ... }:
 let
   inherit (lib // builtins)
-    readFile
     mkIf
     mkMerge
-    elem
-    fileContents
-    toInt
     mkAfter
-    hasAttr;
-  inherit (localLib) isGui pkgInstalled;
+    hasAttr
+    fileContents;
+  inherit (localLib) pkgInstalled;
   inherit (inputs.cells.common.lib) hexToRgba;
+  IsDesktop = inputs.cells.nixos.lib.isGui osConfig;
 
   combinedPkgs = config.home.packages ++ osConfig.environment.systemPackages;
   commonDefaults = { gtk-theme = "NumixSolarizedDarkGreen"; icon-theme = "Numix-Circle"; };
   # NOTE: https://gitlab.gnome.org/GNOME/gtk/-/blob/gtk-3-24/gtk/theme/Adwaita/_colors-public.scss
 in
 mkMerge [
-  (mkIf (inputs.cells.nixos.lib.isGui osConfig) {
+  (mkIf IsDesktop {
     qt.enable = true;
     qt.platformTheme.name = "gtk";
     qt.style.name = "gtk2";
@@ -103,7 +101,7 @@ mkMerge [
     # TODO: gtk.gtk3.extraCss = fileContents ./gtk3.gtk_css;
   })
 
-  (mkIf config.programs.waybar.enable {
+  (mkIf (IsDesktop && config.programs.waybar.enable) {
     programs.waybar.style = mkAfter ''
       window#waybar {
           background: @theme_base_color;
@@ -121,21 +119,21 @@ mkMerge [
     '';
   })
 
-  (mkIf config.services.dunst.enable {
+  (mkIf (IsDesktop && config.services.dunst.enable) {
     services.dunst.iconTheme.name = config.gtk.iconTheme.name;
     services.dunst.iconTheme.package = config.gtk.iconTheme.package;
   })
 
-  (mkIf config.wayland.windowManager.hyprland.enable {
+  (mkIf (IsDesktop && config.wayland.windowManager.hyprland.enable) {
     wayland.windowManager.hyprland.settings.general = {
       "col.active_border" = "rgba(839496FF)";
       "col.inactive_border" = "rgba(002b36ff)";
     };
   })
 
-  (mkIf config.programs.vscode.enable { programs.vscode.userSettings."workbench.colorTheme" = "Solarized Dark"; })
+  (mkIf (IsDesktop && config.programs.vscode.enable) { programs.vscode.userSettings."workbench.colorTheme" = "Solarized Dark"; })
 
-  (mkIf (isGui osConfig) {
+  (mkIf IsDesktop {
     dconf.settings."org/mate/desktop/peripherals/keyboard/indicator" = {
       foreground-color = "131 148 150";
       background-color = "0 0 0"; ### FIXME: invalid color and 0 43 54 doesnt work
@@ -158,7 +156,7 @@ mkMerge [
     programs.git.delta.options.syntax-theme = "Solarized (dark)";
   })
 
-  (mkIf config.programs.kitty.enable {
+  (mkIf (IsDesktop && config.programs.kitty.enable) {
     programs.kitty.settings = {
       cursor = "#93a1a1";
       background = "#002b36";
@@ -184,9 +182,9 @@ mkMerge [
     };
   })
 
-  (mkIf config.programs.rofi.enable { programs.rofi.theme = "solarized"; })
+  (mkIf (IsDesktop && config.programs.rofi.enable) { programs.rofi.theme = "solarized"; })
 
-  (mkIf (pkgInstalled { pkg = pkgs.tilix; inherit combinedPkgs; }) {
+  (mkIf (IsDesktop && pkgInstalled { pkg = pkgs.tilix; inherit combinedPkgs; }) {
     dconf.settings."com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d" = {
       background-color = "#002b36";
       foreground-color = "#839496";
@@ -213,7 +211,7 @@ mkMerge [
     };
   })
 
-  (mkIf (pkgInstalled { pkg = pkgs.xterm; inherit combinedPkgs; }) {
+  (mkIf (IsDesktop && pkgInstalled { pkg = pkgs.xterm; inherit combinedPkgs; }) {
     xresources.properties = {
       # just in case xterm is needed!
       "XTerm.termName" = "xterm-256color";
@@ -259,7 +257,7 @@ mkMerge [
     };
   })
 
-  (mkIf (hasAttr "waveterm" config.programs && config.programs.waveterm.enable) {
+  (mkIf (IsDesktop && hasAttr "waveterm" config.programs && config.programs.waveterm.enable) {
     programs.waveterm.settings."term:theme" = "solarized-dark";
     programs.waveterm.settings."tab:preset" = "bg@solarized-dark";
     programs.waveterm.settings."term:transparency" = 0;
@@ -308,8 +306,15 @@ mkMerge [
       # "gray" = "#8b918a";
       # "cmdtext" = "#f0f0f0";
     };
+  })
 
-    /*
+  (mkIf config.programs.dircolors.enable {
+    programs.dircolors.extraConfig = fileContents "${pkgs.sources.dircolors-solarized.src}//dircolors.256dark";
+  })
+]
+
+
+/*
       base03    #002b36  8/4 brblack  234 #1c1c1c 15 -12 -12   0  43  54 193 100  21
       base02    #073642  0/4 black    235 #262626 20 -12 -12   7  54  66 192  90  26
 
@@ -331,9 +336,3 @@ mkMerge [
       green     #859900  2/2 green     64 #5f8700 60 -20  65 133 153   0  68 100  60
 
     */
-  })
-
-  (mkIf config.programs.dircolors.enable {
-    programs.dircolors.extraConfig = fileContents "${pkgs.sources.dircolors-solarized.src}//dircolors.256dark";
-  })
-]
