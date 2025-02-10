@@ -6,9 +6,9 @@
 { config, lib, pkgs, ... }:
 with lib;
 let
-  hmModule = { config, osConfig, lib, pkgs, ... }:
+  hmModule = { osConfig, lib, pkgs, config, ... }:
     let
-      inherit (lib) mkDefault mkMerge;
+      inherit (lib) mkDefault mkIf mkEnableOption;
       pinentryPackage = (pkgs.writeShellScriptBin "pinentry-selector" ''
         if [[ -n "$DISPLAY" || -n "$WAYLAND_DISPLAY" ]]; then
           exec ${pkgs.pinentry-all}/bin/pinentry-gnome3
@@ -16,36 +16,39 @@ let
           exec ${pkgs.pinentry-all}/bin/pinentry-curses
         fi
       '') // { meta = { mainProgram = "pinentry-selector"; }; };
+      cfg = config.gui;
     in
-    mkMerge [
-      {
-        # NOTE: chatty log pollution
-        # home.sessionVariables.G_MESSAGES_DEBUG = "none";
-        systemd.user.services.gpg-agent.Service.StandardOutput = "null";
+    {
+      options.gui.enable = mkEnableOption "gtk3 pinentry" // { default = true; };
+      config = mkIf cfg.enable
+        {
+          # NOTE: chatty log pollution
+          # home.sessionVariables.G_MESSAGES_DEBUG = "none";
+          systemd.user.services.gpg-agent.Service.StandardOutput = "null";
 
-        programs.gpg.enable = mkDefault true;
-        programs.gpg.mutableKeys = mkDefault true;
-        programs.gpg.mutableTrust = mkDefault true;
+          programs.gpg.enable = mkDefault true;
+          programs.gpg.mutableKeys = mkDefault true;
+          programs.gpg.mutableTrust = mkDefault true;
 
-        # NOTE: This is needed to support multiple keys
-        programs.gpg.scdaemonSettings.disable-ccid = osConfig.services.pcscd.enable;
+          # NOTE: This is needed to support multiple keys
+          programs.gpg.scdaemonSettings.disable-ccid = osConfig.services.pcscd.enable;
 
-        home.packages = [ pkgs.pinentry-all ];
+          home.packages = [ pkgs.pinentry-all ];
 
-        services.gpg-agent = {
-          inherit pinentryPackage;
-          enable = mkDefault true;
-          enableSshSupport = mkDefault true;
-          enableExtraSocket = mkDefault true;
-          defaultCacheTtl = 3 * 60 * 60; # 3 hours
-          defaultCacheTtlSsh = 3 * 60 * 60; # 3 hours
-          extraConfig = ''
-            allow-emacs-pinentry
-            allow-loopback-pinentry
-          '';
+          services.gpg-agent = {
+            inherit pinentryPackage;
+            enable = mkDefault true;
+            enableSshSupport = mkDefault true;
+            enableExtraSocket = mkDefault true;
+            defaultCacheTtl = 3 * 60 * 60; # 3 hours
+            defaultCacheTtlSsh = 3 * 60 * 60; # 3 hours
+            extraConfig = ''
+              allow-emacs-pinentry
+              allow-loopback-pinentry
+            '';
+          };
         };
-      }
-    ];
+    };
 
 in
 mkMerge [
@@ -63,15 +66,15 @@ mkMerge [
     # security.pam.yubico.challengeResponsePath = "/var/lib/yubico";
 
     # NOTE: This enables trezor logins
-    security.pam.u2f.enable = true;
+    security.pam.u2f.enable = mkDefault true;
     security.pam.u2f.control = "sufficient";
 
-    hardware.ledger.enable = true;
-    hardware.nitrokey.enable = true;
-    hardware.gpgSmartcards.enable = true;
+    hardware.ledger.enable = mkDefault true;
+    hardware.nitrokey.enable = mkDefault true;
+    hardware.gpgSmartcards.enable = mkDefault true;
 
     services.trezord.enable = mkDefault true;
-    services.pcscd.enable = true;
+    services.pcscd.enable = mkDefault true;
 
     # services.pcscd.plugins = [ pkgs.acsccid ];
     # programs.gnupg.dirmngr.enable = true;
@@ -80,8 +83,8 @@ mkMerge [
 
     environment.systemPackages = with pkgs; [
       # TODO: trezor_agent_recover
-      trezor_agent
-      trezorctl
+      # trezor_agent
+      # trezorctl
 
       # NOTE: https://github.com/dhess/nixos-yubikey
       yubikey-personalization
@@ -95,14 +98,12 @@ mkMerge [
       # rage
 
       pcsclite
-      pcsctools
 
       # inputs.cells.common.packages.pbkdf2-sha512
       cryptsetup
       openssl
       paperkey
       qrencode
-      zbar
 
       ###
       inputs.cells.common.packages.paper-store
@@ -164,6 +165,9 @@ mkMerge [
       gpa # Graphical user interface for the GnuPG
       yubikey-personalization-gui
       yubikey-manager-qt
+      zbar
+      pcsctools
+
       # yubioath-desktop
       # yubioath-flutter
       trezor-suite

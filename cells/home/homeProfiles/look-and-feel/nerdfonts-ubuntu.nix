@@ -8,7 +8,6 @@ let
     mkIf
     mkBefore
     hasAttr
-    elem
     toInt
     toString;
   inherit (localLib)

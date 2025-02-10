@@ -5,7 +5,6 @@ let
   inherit (lib // builtins)
     map
     last
-    mkForce
     mkMerge
     splitString
     concatStringsSep;
@@ -43,7 +42,12 @@ mkMerge [
     services.transmission.enable = true;
     services.transmission.user = "minidlna";
     services.transmission.group = "minidlna";
-    services.transmission.package = pkgs.transmission_4;
+    services.transmission.package = pkgs.transmission_4.override {
+      enableGTK3 = false;
+      enableQt5 = false;
+      enableQt6 = false;
+    };
+
     services.transmission.webHome = inputs.cells.common.packages.transmissionic;
     services.transmission.openRPCPort = true;
     services.transmission.openFirewall = true;

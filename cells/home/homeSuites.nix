@@ -18,6 +18,7 @@ rec {
     look-and-feel.solarized-dark
     look-and-feel.starship-prompt
 
+    # TODO: separate desktop and cli environments completely
     inputs.cells.home.homeModules.programs.waveterm
   ];
 

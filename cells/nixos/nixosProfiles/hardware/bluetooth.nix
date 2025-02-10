@@ -1,21 +1,27 @@
 { inputs, cell, ... }:
+let inherit (cell.lib) isGui; in
 
-{ pkgs, ... }:
+{ config, lib, pkgs, ... }:
+let inherit (lib) mkMerge mkIf; in
 
-{
-  hardware.bluetooth.enable = true;
-  hardware.bluetooth.package = pkgs.bluez;
-  hardware.bluetooth.powerOnBoot = true;
-  hardware.bluetooth.disabledPlugins = [
-    "bap"
-    "bass"
-    "mcp"
-    "vcp"
-    "micp"
-    "ccp"
-    "csip"
-    "GameControllerWakelock"
-  ];
+mkMerge [
+  {
+    hardware.bluetooth.enable = true;
+    hardware.bluetooth.package = pkgs.bluez;
+    hardware.bluetooth.powerOnBoot = true;
+    hardware.bluetooth.disabledPlugins = [
+      "bap"
+      "bass"
+      "mcp"
+      "vcp"
+      "micp"
+      "ccp"
+      "csip"
+      "GameControllerWakelock"
+    ];
+  }
 
-  services.blueman.enable = true;
-}
+  (mkIf (isGui config) {
+    services.blueman.enable = true;
+  })
+]
