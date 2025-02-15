@@ -40,7 +40,7 @@ let
       coreutils-full
       gawk
     ];
-    text = lib.fileContents ./tmux-swap-pane.sh;
+    text = fileContents ./tmux-swap-pane.sh;
   };
 
   window = win_name:

@@ -4,31 +4,23 @@ let
     name = "iotop";
     runtimeInputs = with pkgs; [ procps ];
     text = ''
-      # Function to disable task_delayacct upon script exit
       disable_task_delayacct() {
           sudo sysctl kernel.task_delayacct=0 >/dev/null 2>&1
       }
 
-      # Ensure disable_task_delayacct is called on script exit
       trap 'disable_task_delayacct' EXIT
 
-      # Check if the user has sudo capabilities
       if ! sudo -n true 2>/dev/null; then
           echo "Error: This script requires sudo privileges."
           exit 1
       fi
 
-      # Check the value of kernel.task_delayacct
       task_delayacct_value=$(sysctl -n kernel.task_delayacct)
 
       if [ "$task_delayacct_value" -eq 0 ]; then
-          # Set kernel.task_delayacct to 1
           sudo sysctl kernel.task_delayacct=1 >/dev/null 2>&1
-
-          # Run iotop with passed arguments
           sudo ${pkgs.iotop-c}/bin/iotop-c --processes --only "$@"
       else
-          # Find the already running iotop process and print its PID and COMMAND
           ps -C 'iotop-c' -o pid,cmd
       fi
     '';

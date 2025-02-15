@@ -17,7 +17,7 @@
     # style = "compact";
     style = "compact";
     inline_height = 7;
-    auto_hide_height = 8;
+    # auto_hide_height = 8;
     show_preview = true;
     secrets_filter = true;
     history_filter = [ "mkpasswd" ];

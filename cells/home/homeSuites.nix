@@ -4,7 +4,6 @@ rec {
   # TODO: MAYBE remove and rework default, base
   base = default;
   default =
-    # NOTE: This always gets applied from lib.mkHome
     [{ disabledModules = inputs.cells.common.lib.disableModulesFrom ./homeModules; }] ++
     cli;
 
@@ -14,7 +13,7 @@ rec {
     shell.atuin
     shell.screen
     shell.tmux
-    shell.cli-tools
+    shell.cli-tools # TODO: shell.cli-tools split into smaller profiles,
     look-and-feel.solarized-dark
     look-and-feel.starship-prompt
 

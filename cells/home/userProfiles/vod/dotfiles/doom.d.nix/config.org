@@ -1296,6 +1296,7 @@ nixd setup function
   :custom
   (lsp-disabled-clients  '(nix-nil nix-rnix))
   :config
+  ;; TODO: in dir-locals (setq! nix-repl-executable-args)
   (add-hook 'envrc-mode-hook #'local/setup-nixd))
 #+end_src
 

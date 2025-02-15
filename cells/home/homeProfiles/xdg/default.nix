@@ -4,7 +4,7 @@ let
 in
 mkMerge [
   {
-    home.packages = [ pkgs.jmtpfs ];
+    home.packages = with pkgs; [ jmtpfs dconf ];
 
     xdg.enable = mkDefault true;
     xdg.mime.enable = mkDefault true;

@@ -33,8 +33,12 @@ https://github.com/charmbracelet/gum
 https://github.com/DannyBen/bashly
 ** use modules in nixos
 https://docs.searxng.org/
+https://docs.gerbera.io/en/stable/index.html
 #+begin_src nix
-{ services.searx.enable = true; }
+{
+  services.searx.enable = true;
+  services.mediatomb.enable = true;
+}
 #+end_src
 https://git.sr.ht/~whynothugo/systemd-lock-handler/
 https://github.com/dutchcoders/transfer.sh

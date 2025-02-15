@@ -15,13 +15,9 @@ in
         # FIXME: nixd won't build on 24.05 cell.homeSuites.developer.default
         # FIXME:(for admin user only!) ++ cell.homeSuites.wayland
         [
-          ../vod/home/gitconfig.nix # FIXME: for testing
           cell.homeProfiles.security.gpg
+          # ../vod/home/gitconfig.nix # FIXME: for testing
           # cell.homeProfiles.pentester.traffic
-
-          ({ pkgs, ... }: {
-            home.packages = [ pkgs.dconf ];
-          })
         ];
     }
 

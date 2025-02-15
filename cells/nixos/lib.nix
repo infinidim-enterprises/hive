@@ -2,23 +2,17 @@
 let
   inherit (inputs.nixpkgs-lib.lib // builtins)
     elem
-    # mkForce
-    # isAttrs
     hasAttr
     flatten
     optional
     isString
-    # mkDefault
     findFirst
     hasSuffix
-    # optionals
     filterAttrs
-    # removeAttrs
     removeSuffix
     hasAttrByPath
     versionAtLeast
     mapAttrsToList;
-  # inherit (inputs.cells.common.lib) disableModulesFrom;
 
   isImpermanence = config:
     (hasAttrByPath [ "persistence" ] config.environment) &&
