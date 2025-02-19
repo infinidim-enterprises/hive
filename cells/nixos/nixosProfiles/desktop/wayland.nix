@@ -26,7 +26,7 @@ let
   # post_24-05 = lib.versionOlder inputs.nixos-24-05.lib.version pkgs.lib.version;
 in
 {
-  imports = [ inputs.hyprland.nixosModules.default ];
+  # imports = [ inputs.hyprland.nixosModules.default ];
 
   config = mkMerge [
     (mkIf (post_24-05 { inherit pkgs; }) {

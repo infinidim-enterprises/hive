@@ -22,11 +22,19 @@ mkMerge [
         programs.zsh.enableVteIntegration = true;
         programs.bash.enableVteIntegration = true;
       }
+
+      ({ config, ... }: mkIf config.programs.waybar.enable {
+        systemd.user.services.kdeconnect.Unit.After = [ "waybar.service" ];
+        systemd.user.services.kdeconnect-indicator.Unit.After = [
+          "waybar.service"
+          "kdeconnect.service"
+        ];
+      })
+
       ({ osConfig, ... }: mkIf osConfig.programs.kdeconnect.enable {
         services.kdeconnect.enable = true;
         services.kdeconnect.indicator = true;
-        # Nov 28 10:03:43 oglaroon kdeconnect-indicator[4706]: Failed to create wl_display (No such file or directory)
-        # Nov 28 10:03:45 oglaroon kernel: warning: `.kdeconnectd-wr' uses wireless extensions which will stop working for Wi-Fi 7 hardware; use nl80211
+        # kernel: warning: `.kdeconnectd-wr' uses wireless extensions which will stop working for Wi-Fi 7 hardware; use nl80211
 
       })
     ];

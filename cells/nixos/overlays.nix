@@ -41,24 +41,23 @@ rec {
 
   wayland = [
     inputs.waybar.overlays.default
-    inputs.hyprland.overlays.default
-    inputs.hyprland-plugins.overlays.default
+    # inputs.hyprland.overlays.default
+    # inputs.hyprland-plugins.overlays.default
     inputs.hyprland-contrib.overlays.default
-    inputs.hyprland-hyprlock.overlays.default
-    inputs.hyprland-hypridle.overlays.default
-    inputs.hyprland-hyprpicker.overlays.default
+    # inputs.hyprland-hyprlock.overlays.default
+    # inputs.hyprland-hypridle.overlays.default
+    # inputs.hyprland-hyprpicker.overlays.default
 
     # inputs.hyprland-hyprutils.overlays.default
     # inputs.hyprland-hycov.overlays.default
     # inputs.hyprland-xdg-desktop-portal.overlays.default
 
-
-    (final: prev: {
-      hyprlandPlugins = prev.hyprlandPlugins // {
-        hy3 = inputs.hyprland-hy3.packages.${prev.system}.default;
-        virtual-desktops = inputs.hyprland-virtual-desktops.packages.${prev.system}.default;
-      };
-    })
+    # (final: prev: {
+    #   hyprlandPlugins = prev.hyprlandPlugins // {
+    #     hy3 = inputs.hyprland-hy3.packages.${prev.system}.default;
+    #     virtual-desktops = inputs.hyprland-virtual-desktops.packages.${prev.system}.default;
+    #   };
+    # })
   ];
   /*
     mv "$tmp_dir/theme/gdm.css" "$tmp_dir/theme/original.css"

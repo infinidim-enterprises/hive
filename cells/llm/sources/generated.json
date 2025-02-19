@@ -1,4 +1,25 @@
 {
+    "aider-chat": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "aider-chat",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "Aider-AI",
+            "repo": "aider",
+            "rev": "v0.74.0",
+            "sha256": "sha256-4KNAgNAmFxCnrgm2tnor+Hy6f9RAnoRinezg2rkSuOk=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v0.74.0"
+    },
     "gluetun": {
         "cargoLocks": null,
         "date": null,
@@ -38,5 +59,20 @@
             "tlsVerify": null
         },
         "version": "latest"
+    },
+    "n8n": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "n8n",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": "n8n.tar.gz",
+            "sha256": "sha256-fHJSY2DKy1VUlUSZcqy8rxJDJcjqAKAS17D1I1X9aJ4=",
+            "type": "url",
+            "url": "https://github.com/n8n-io/n8n/archive/n8n@1.78.1.tar.gz"
+        },
+        "version": "n8n@1.78.1"
     }
 }

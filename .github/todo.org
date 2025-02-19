@@ -17,6 +17,8 @@ https://github.com/kubevela/kubevela
 https://github.com/meshery/meshery
 https://github.com/helm/chartmuseum
 * Cloud services
+** VPN
+https://github.com/hyprspace/hyprspace
 ** auth
 https://github.com/nix-community/authentik-nix
 ** https://unifiedpush.org/
@@ -39,6 +41,10 @@ https://docs.gerbera.io/en/stable/index.html
   services.searx.enable = true;
   services.mediatomb.enable = true;
 }
+#+end_src
+AI local videofeed ID and detection:
+#+begin_src nix
+{ services.frigate.enable = true; }
 #+end_src
 https://git.sr.ht/~whynothugo/systemd-lock-handler/
 https://github.com/dutchcoders/transfer.sh

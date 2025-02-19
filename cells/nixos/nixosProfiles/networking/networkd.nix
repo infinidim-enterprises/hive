@@ -7,6 +7,7 @@ let
   dhcpClient = config.deploy.params.lan.dhcpClient;
 in
 mkMerge [
+  # TODO: services.networkd-dispatcher.rules
 
   {
     networking.firewall.allowPing = true;

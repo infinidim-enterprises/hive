@@ -1,7 +1,7 @@
 {
   "dircolors-solarized": {
     "cargoLocks": null,
-    "date": "2024-12-16",
+    "date": "2025-02-03",
     "extract": null,
     "name": "dircolors-solarized",
     "passthru": null,
@@ -11,13 +11,13 @@
       "fetchSubmodules": false,
       "leaveDotGit": false,
       "name": null,
-      "rev": "2249310a957977e523b62c7d916ba40c2165869c",
-      "sha256": "sha256-8YvcLQL+zUWT/tn9MAeYVkFkkPSbZJ9JRsVw85bE/3s=",
+      "rev": "52bfa164e4388ee232f6a9235f62e8482e1f1767",
+      "sha256": "sha256-+2t9OsyD9QkamsFbgmgehBrfszBQmv1Y0C94T4g16GI=",
       "sparseCheckout": [],
       "type": "git",
       "url": "https://github.com/seebi/dircolors-solarized"
     },
-    "version": "2249310a957977e523b62c7d916ba40c2165869c"
+    "version": "52bfa164e4388ee232f6a9235f62e8482e1f1767"
   },
   "getoptions": {
     "cargoLocks": null,
@@ -42,7 +42,7 @@
   },
   "lorri": {
     "cargoLocks": null,
-    "date": "2024-08-19",
+    "date": "2025-02-19",
     "extract": null,
     "name": "lorri",
     "passthru": {
@@ -56,12 +56,12 @@
       "name": null,
       "owner": "nix-community",
       "repo": "lorri",
-      "rev": "cb99f085b448f38e5d31196866111925a6465876",
-      "sha256": "sha256-UdmhpRXOr5bv5ljqgjLXpYwi9XxH5AmDkJBItTq9QtU=",
+      "rev": "971dbc7b5c1663e4ead2e0af84398e88a5209bd1",
+      "sha256": "sha256-Ne5OVGoEoGd6x5MbQwVVAQj4lVwyHEIx816wp5X/iKY=",
       "sparseCheckout": [],
       "type": "github"
     },
-    "version": "cb99f085b448f38e5d31196866111925a6465876"
+    "version": "971dbc7b5c1663e4ead2e0af84398e88a5209bd1"
   },
   "nix-index": {
     "cargoLocks": null,
@@ -295,7 +295,7 @@
   },
   "zsh-plugin_oh-my-zsh": {
     "cargoLocks": null,
-    "date": "2025-02-02",
+    "date": "2025-02-19",
     "extract": null,
     "name": "zsh-plugin_oh-my-zsh",
     "passthru": null,
@@ -305,13 +305,13 @@
       "fetchSubmodules": false,
       "leaveDotGit": false,
       "name": null,
-      "rev": "2b547d113b7e55a556b695c9372f1beb721efd67",
-      "sha256": "sha256-QjUw9Z70J8RozJ+F06yWLeDieJf5diehiUheFwpLoCU=",
+      "rev": "6e7ac0544e71c7b777746cb50f70de68c6495b86",
+      "sha256": "sha256-d4w15ja5qe4axOwNyIoXZdVcgUedAIgZQrhINmNNJFw=",
       "sparseCheckout": [],
       "type": "git",
       "url": "https://github.com/robbyrussell/oh-my-zsh"
     },
-    "version": "2b547d113b7e55a556b695c9372f1beb721efd67"
+    "version": "6e7ac0544e71c7b777746cb50f70de68c6495b86"
   },
   "zsh-plugin_tipz": {
     "cargoLocks": null,
@@ -395,7 +395,7 @@
   },
   "zsh-plugin_zsh-completions": {
     "cargoLocks": null,
-    "date": "2025-01-28",
+    "date": "2025-02-14",
     "extract": null,
     "name": "zsh-plugin_zsh-completions",
     "passthru": null,
@@ -405,13 +405,13 @@
       "fetchSubmodules": false,
       "leaveDotGit": false,
       "name": null,
-      "rev": "85e041be36a33d8f6ca71746654406425d3a910f",
-      "sha256": "sha256-jamYAmvanI/upc1PsRA/6VLiER8qJ3kOCgXsPT9WkYU=",
+      "rev": "0adf2f053ece56262ad8a173678add97c8ca4042",
+      "sha256": "sha256-tl5WWIwWP5DrWy5TtPCoCmZmhfuMneFNdD3d7h6vleg=",
       "sparseCheckout": [],
       "type": "git",
       "url": "https://github.com/zsh-users/zsh-completions"
     },
-    "version": "85e041be36a33d8f6ca71746654406425d3a910f"
+    "version": "0adf2f053ece56262ad8a173678add97c8ca4042"
   },
   "zsh-plugin_zsh-history-substring-search": {
     "cargoLocks": null,

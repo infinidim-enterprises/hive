@@ -57,6 +57,7 @@ in
   services.copyq.forceXWayland = false;
   systemd.user.services.copyq.Unit.After = [ "waybar.service" ];
 
+  systemd.user.services.gammastep.Unit.After = [ "waybar.service" ];
   services.gammastep.enable = true;
   services.gammastep.tray = true;
   services.gammastep.provider = "manual";

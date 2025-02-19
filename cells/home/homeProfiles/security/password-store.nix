@@ -23,6 +23,10 @@ mkMerge [
     services.pass-secret-service.enable = true;
     services.pass-secret-service.storePath = config.programs.password-store.settings.PASSWORD_STORE_DIR;
 
+    /*
+      asbleg dbus-broker-launch[31705]: Activation request for 'org.freedesktop.secrets' failed: The systemd unit 'dbus-org.freedesktop.secrets.service' could not be found.
+    */
+
     programs.password-store = {
       enable = true;
       settings.PASSWORD_STORE_DIR = mkDefault defaultPasswordStorePath;

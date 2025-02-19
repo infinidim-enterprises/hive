@@ -10,14 +10,14 @@
             "arch": null,
             "finalImageName": null,
             "finalImageTag": "latest",
-            "imageDigest": "sha256:c9e11b13a6b933beade06eb3d66c86f0a14db155bc03df9910886ae17df8a167",
+            "imageDigest": "sha256:5b573c0c1eec19c39ee89603d0b3a173b67d5bfac65fb376fdc3379c4f4dde5d",
             "imageName": "lobehub/lobe-chat",
-            "imageTag": "v1.49.12",
+            "imageTag": "1.61.4",
             "os": null,
-            "sha256": "sha256-X/z8TkqwJANhS8ooMhtUI3kBb5DRGwhAmxviw0uHx7o=",
+            "sha256": "sha256-t1B+G5FRI9NLRKCagiBJ0Nd5BeUPreIcVPnSnD7F0HI=",
             "tlsVerify": null
         },
-        "version": "v1.49.12"
+        "version": "1.61.4"
     },
     "rock-pi-x-firmware": {
         "cargoLocks": null,
@@ -36,7 +36,7 @@
     },
     "rtl88x2bu": {
         "cargoLocks": null,
-        "date": "2025-01-13",
+        "date": "2025-02-18",
         "extract": null,
         "name": "rtl88x2bu",
         "passthru": null,
@@ -48,12 +48,12 @@
             "name": null,
             "owner": "RinCat",
             "repo": "RTL88x2BU-Linux-Driver",
-            "rev": "1b30de3269a43a0307795583961f66ccf00a126c",
-            "sha256": "sha256-SthOQO+5829oDZAPsQrhpwG5Hkzbsf/X2fyyPq/I5Qo=",
+            "rev": "f0644acaa8b906a94a5176d7afc9efc988239fcb",
+            "sha256": "sha256-TzZXBOEAl1ndEUhjzxglMHPl9tO60ACJV6u9N+J3S8c=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "1b30de3269a43a0307795583961f66ccf00a126c"
+        "version": "f0644acaa8b906a94a5176d7afc9efc988239fcb"
     },
     "rtw89": {
         "cargoLocks": null,

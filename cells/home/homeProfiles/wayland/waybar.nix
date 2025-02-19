@@ -1,9 +1,9 @@
-{ lib, config, osConfig, pkgs, ... }:
+{ config, osConfig, pkgs, ... }:
 let
   # inherit (lib // builtins) toInt toString;
-  inherit (config.home.sessionVariables)
-    HM_FONT_NAME
-    HM_FONT_SIZE;
+  # inherit (config.home.sessionVariables)
+  #   HM_FONT_NAME
+  #   HM_FONT_SIZE;
 in
 # TODO: https://github.com/thiagokokada/nix-configs/blob/master/home-manager/desktop/sway/waybar.nix
 {
@@ -19,7 +19,9 @@ in
       "hyprland/workspaces"
       "hyprland/window"
     ];
-    # modules-center = [  ];
+
+    # modules-center = [ "hyprland/language" ];
+
     modules-right = [
       "hyprland/submap"
       "hyprland/language"
@@ -53,6 +55,15 @@ in
     pulseaudio.on-click = "${pkgs.pavucontrol}/bin/pavucontrol";
 
     "hyprland/language".format = "󰌌 {short}";
+    # "hyprland/language".format-en = "🇬🇧 (English-US)";
+    # "hyprland/language".format-YAZHERTY = "🇷🇺 (YAZHERTY)";
+    # "hyprland/language".format-ru-phonetic = "🇷🇺 (ru-phonetic)";
+    # "hyprland/language".format-ru-phonetic_YAZHERTY = "🇷🇺 (ru-phonetic_YAZHERTY)";
+    # "hyprland/language".format-ru-phonetic_yazherty = "🇷🇺 (ru-phonetic_yazherty)";
+    # "hyprland/language".format-ru = "🇷🇺 (RU)";
+    # "hyprland/language".format-phonetic_YAZHERTY = "🇷🇺 (phonetic_YAZHERTY)";
+    # "hyprland/language".format-phonetic_yazherty = "🇷🇺 (phonetic_yazherty)";
+    # "hyprland/language".keyboard-name = "at-translated-set-2-keyboard";
 
     "hyprland/window".format = " {}";
     "hyprland/window".max-length = 100;
@@ -61,7 +72,7 @@ in
     "hyprland/workspaces".format = "{name}";
 
     "hyprland/submap" = {
-      "format" = "✌🏻 {}";
+      "format" = "{} ✌🏻";
       "max-length" = 30;
       "tooltip" = false;
     };

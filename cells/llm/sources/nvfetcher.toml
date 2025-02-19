@@ -12,3 +12,16 @@ src.include_regex = "latest"
 fetch.docker = "lobehub/lobe-chat"
 docker.os = "linux"
 docker.arch = "amd64"
+
+[aider-chat]
+src.use_latest_release = true
+src.github = "Aider-AI/aider"
+fetch.github = "Aider-AI/aider"
+
+[n8n]
+src.use_latest_release = true
+src.github = "n8n-io/n8n"
+# NOTE: is not a valid store path: name 'n8n@1.78.1.tar.gz' contains illegal character '@'
+# ISSUE: https://github.com/berberman/nvfetcher/issues/112
+fetch.url = "https://github.com/n8n-io/n8n/archive/$ver.tar.gz"
+url.name = "n8n.tar.gz"
