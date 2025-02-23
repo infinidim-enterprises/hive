@@ -68,7 +68,6 @@ mkMerge [
       background-color = "#002b36";
       foreground-color = "#839496";
 
-      # FIXME: tilix is dead, find something better!
       # palette = lib.hm.gvariant.mkArray "" [
       #   "#063541"
       #   "#DB312E"

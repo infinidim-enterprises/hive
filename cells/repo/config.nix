@@ -60,7 +60,7 @@ in
       # (nixpkgs.appendOverlays [inputs.cells.common.overlays.latest-overrides]).alejandra
       nixpkgs.nixpkgs-fmt
       nixpkgs.nodePackages.prettier
-      # FIXME: nixpkgs.nodePackages.prettier-plugin-toml
+      nixpkgs.nodePackages.prettier-plugin-toml
       nixpkgs.shfmt
     ];
     # devshell.startup.prettier-plugin-toml = lib.stringsWithDeps.noDepEntry ''

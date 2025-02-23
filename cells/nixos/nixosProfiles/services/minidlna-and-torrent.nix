@@ -21,6 +21,7 @@ mkMerge [
   { boot.kernel.sysctl."fs.inotify.max_user_watches" = 524288; }
 
   {
+    # TODO: switch to jellyfin, instead of minidlna
     services.minidlna.enable = true;
     services.minidlna.openFirewall = true;
     services.minidlna.settings.media_dir = [ "V,${download-dir}" ];

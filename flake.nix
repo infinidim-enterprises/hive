@@ -53,8 +53,6 @@
     yants.url = "github:divnix/yants";
     yants.inputs.nixpkgs.follows = "nixpkgs-lib";
 
-    # BUG: https://github.com/zhaofengli/colmena/issues/202
-    # e3ad42138015fcdf2524518dd564a13145c72ea1
     colmena.url = "github:zhaofengli/colmena";
     # colmena.inputs.nixpkgs.follows = "nixpkgs-unstable";
     # colmena.inputs.flake-utils.follows = "flake-utils";
@@ -395,9 +393,6 @@
             # TODO: (terra "infra" "git@github.com:myorg/myrepo.git")
 
             (functions "lib")
-
-            # FIXME: rename to something usefull
-            # (functions "ledger-openpgp") no more ledger
 
             (files "files")
             (installables "packages" { ci.build = true; })
