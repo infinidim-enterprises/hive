@@ -3,11 +3,15 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports =
-    [
-      # FIXME: restic unlock
-      (inputs.cells.nixos.nixosProfiles.backups.restic { user = "vod"; extraDirs = [ "tmp" ]; })
-    ];
+  imports = [
+    (inputs.cells.nixos.nixosProfiles.backups.restic {
+      user = "vod";
+      extraDirs = [
+        "tmp"
+        "Projects"
+      ];
+    })
+  ];
 
   home-manager.users.vod.imports = [
     ./home

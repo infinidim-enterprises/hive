@@ -349,6 +349,9 @@ in
         # the tab bar should animate in/out from the top instead of below the window
         from_top = false; # default: false
 
+        # tab bar border width
+        border_width = 0;
+
         # rounding of tab bar corners
         rounding = 3; # default: 3
 

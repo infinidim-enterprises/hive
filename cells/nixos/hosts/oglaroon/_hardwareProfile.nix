@@ -64,8 +64,8 @@
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
   services.logind.powerKeyLongPress = "suspend";
-  services.logind.lidSwitchExternalPower = "ignore";
-  services.logind.lidSwitch = "ignore";
+  services.logind.lidSwitchExternalPower = "lock";
+  services.logind.lidSwitch = "lock";
 
   boot.kernelPackages = pkgs.linuxPackages_xanmod_stable;
   boot.initrd.availableKernelModules = [ "nvme" "nvme_core" ];

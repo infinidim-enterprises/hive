@@ -1065,10 +1065,20 @@ FIXME: requires a dependency on helm "aider-helm.el"
     :size 0.4
     ;; :vslot 100
     :quit nil)
+
+  ;; (defun +gptel-set-model (model)
+  ;;   "Set the GPTel model interactively."
+  ;;   (interactive
+  ;;    (list (completing-read "Select model: " (mapcar 'car gptel--openrouter-models))))
+  ;;   (setq gptel-model model)
+  ;;   (message "GPTel model set to %s" model))
   :config
   (setq! gptel--openai
          (gptel-make-openai "ChatGPT"
-           :key (auth-source-pick-first-password :host "api.openai.com")
+           :key (lambda ()
+                  (or (auth-source-pick-first-password :host "api.openai.com")
+                      (user-error "GPTel: OpenRouter API key not found in auth-source.")))
+           ;; :key (auth-source-pick-first-password :host "api.openai.com")
            :stream nil
            :host "api.openai.com"
            :models
@@ -1084,7 +1094,10 @@ FIXME: requires a dependency on helm "aider-helm.el"
          (gptel-make-openai "OpenRouter"
            :stream nil
            :host "openrouter.ai"
-           :key (auth-source-pick-first-password :host "openrouter.ai")
+           :key (lambda ()
+                  (or (auth-source-pick-first-password :host "openrouter.ai")
+                      (user-error "GPTel: OpenRouter API key not found in auth-source.")))
+           ;; :key (auth-source-pick-first-password :host "openrouter.ai")
            :endpoint "/api/v1/chat/completions"
            :models
            '(deepseek/deepseek-r1:free
@@ -1126,7 +1139,7 @@ FIXME: requires a dependency on helm "aider-helm.el"
   (setq! gptel-post-response-functions nil
          gptel-backend gptel--openrouter)
   (add-hook! 'gptel-post-response-functions '+gptel-save-buffer)
-  (setq gptel-directives
+  (setq! gptel-directives
         '((default . "You are a large language model living in Emacs and a helpful assistant. Respond concisely.")
           (programming . "You are a large language model and a careful programmer. Provide code and only code as output without any additional text, prompt or note.")
           (writing . "You are a large language model and a writing assistant. Respond concisely.")

@@ -20,10 +20,9 @@ in
       "hyprland/window"
     ];
 
-    # modules-center = [ "hyprland/language" ];
+    modules-center = [ "hyprland/submap" ];
 
     modules-right = [
-      "hyprland/submap"
       "hyprland/language"
       "temperature"
       "battery"
@@ -55,6 +54,8 @@ in
     pulseaudio.on-click = "${pkgs.pavucontrol}/bin/pavucontrol";
 
     "hyprland/language".format = "󰌌 {short}";
+    "hyprland/language".max-length = 30;
+
     # "hyprland/language".format-en = "🇬🇧 (English-US)";
     # "hyprland/language".format-YAZHERTY = "🇷🇺 (YAZHERTY)";
     # "hyprland/language".format-ru-phonetic = "🇷🇺 (ru-phonetic)";
@@ -71,11 +72,9 @@ in
 
     "hyprland/workspaces".format = "{name}";
 
-    "hyprland/submap" = {
-      "format" = "{} ✌🏻";
-      "max-length" = 30;
-      "tooltip" = false;
-    };
+    "hyprland/submap".format = "✌🏻 {}";
+    "hyprland/submap".max-length = 30;
+    "hyprland/submap".tooltip = false;
 
     tray.spacing = 4;
     temperature.format = "{temperatureC}°C ";

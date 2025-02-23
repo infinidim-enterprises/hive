@@ -2,9 +2,14 @@
 
 { user, extraDirs ? [ ], ... }:
 
-{ config, lib, pkgs, ... }:
+{ config, lib, ... }:
 
 let
+  inherit (lib)
+    getExe
+    findFirst
+    hasInfix;
+
   baseDir = config.users.users.${user}.home + "/";
   defaultDirs = [
     # "Desktop"
@@ -20,18 +25,27 @@ let
   ];
 
   paths = map (p: baseDir + p) (defaultDirs ++ extraDirs);
+  name = "home-${user}-${config.networking.hostName}";
+  cmd = getExe (findFirst (e: hasInfix "restic-${name}" e) null config.environment.systemPackages);
 in
 
 {
-  services.restic.backups."home-${user}-${config.networking.hostName}" = {
+  services.restic.backups.${name} = {
     inherit paths;
     initialize = true;
+    inhibitsSleep = true;
     timerConfig.OnCalendar = "hourly";
     timerConfig.Persistent = true;
-    extraBackupArgs = [ "--compression max" "--no-cache" "--with-atime" ];
+    extraBackupArgs = [
+      "--compression max"
+      "--no-cache"
+      "--with-atime"
+      "--exclude-caches"
+    ];
     passwordFile = config.sops.secrets.restic_passwd.path;
     rcloneConfigFile = config.sops.secrets.rclone_conf.path;
     repository = "rclone:backups:/backups/${user}/${config.networking.hostName}";
+    backupPrepareCommand = "${cmd} unlock";
     pruneOpts = [
       "--keep-hourly 24"
       "--keep-daily 7"
