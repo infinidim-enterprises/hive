@@ -26,7 +26,11 @@ let
 
   paths = map (p: baseDir + p) (defaultDirs ++ extraDirs);
   name = "home-${user}-${config.networking.hostName}";
-  cmd = getExe (findFirst (e: hasInfix "restic-${name}" e) null config.environment.systemPackages);
+  cmd = getExe
+    (findFirst
+      (e: hasInfix "restic-${name}" e)
+      null
+      config.environment.systemPackages);
 in
 
 {

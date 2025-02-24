@@ -76,8 +76,8 @@ in
         };
         prettier = {
           command = "prettier";
-          options = [ "--write" ];
-          # options = [ "--plugin" "prettier-plugin-toml" "--write" ];
+          # options = [ "--write" ];
+          options = [ "--plugin" "prettier-plugin-toml" "--write" ];
           includes = [
             "*.css"
             "*.html"
@@ -219,15 +219,20 @@ in
       # TODO: https://github.com/mxschmitt/action-tmate
       common_steps = [
         {
-          name = "Checkout repository";
+          name = "⬆️ Checkout";
           uses = "actions/checkout@v4.2.2";
         }
         {
           name = "Install Nix";
           uses = "cachix/install-nix-action@v30";
           "with" = {
-            nix_path = "nixpkgs=channel:nixos-24.05";
-            extra_nix_config = "access-tokens = github.com=\${{ secrets.GITHUB_TOKEN }}";
+            nix_path = "nixpkgs=channel:nixos-24.11";
+            extra_nix_config = ''
+
+              access-tokens = github.com=''${{ secrets.GITHUB_TOKEN }}
+              experimental-features = nix-command flakes impure-derivations auto-allocate-uids cgroups
+              system-features = nixos-test benchmark big-parallel kvm recursive-nix
+            '';
           };
         }
         {
@@ -240,19 +245,19 @@ in
             signingKey = "\${{ secrets.CACHIX_SIGNING_KEY }}";
           };
         }
-        # {
-        #   name = "Free Disk Space";
-        #   uses = "jlumbroso/free-disk-space@main";
-        #   "with" = {
-        #     tool-cache = true;
-        #     android = true;
-        #     dotnet = true;
-        #     haskell = true;
-        #     large-packages = true;
-        #     docker-images = true;
-        #     swap-storage = true;
-        #   };
-        # }
+        {
+          name = "Free Disk Space";
+          uses = "jlumbroso/free-disk-space@main";
+          "with" = {
+            tool-cache = true;
+            android = true;
+            dotnet = true;
+            haskell = true;
+            large-packages = true;
+            docker-images = true;
+            swap-storage = true;
+          };
+        }
       ];
 
       rpi4-damogran-linux = mkNixago {
@@ -262,7 +267,7 @@ in
           on.workflow_dispatch = null;
           jobs = {
             build_damogran = {
-              runs-on = "self-hosted";
+              runs-on = "ubuntu-latest-arm";
               steps = common_steps ++ [
                 # {
                 #   name = "Build damogran sdImage";
@@ -397,13 +402,6 @@ in
                 git commit -am "deps(sources): Updated cell sources"
               '';
             }
-            # {
-            #   name = "Update deps hashes packages";
-            #   run = ''
-            #     nix run '.#mainsail.npmDepsHash' > cells/klipper/packages/_deps-hash/mainsail-npm.nix
-            #     git commit -am "deps(sources): Updated deps hash" || true
-            #   '';
-            # }
             {
               name = "Update flake.lock";
               uses = "DeterminateSystems/update-flake-lock@v24";
@@ -478,7 +476,7 @@ in
       # NOTE: garnix builds most things now!
       devshell-x86_64-linux
       # devshell-aarch64-linux
-      # rpi4-damogran-linux
+      rpi4-damogran-linux
       workflowHostTemplate
       flake-lock
       dependabot

@@ -1,6 +1,6 @@
 jobs:
-  lockfile:
-    runs-on: ubuntu-latest
+  build_damogran:
+    runs-on: ubuntu-latest-arm
     steps:
     - name: ⬆️ Checkout
       uses: actions/checkout@v4.2.2
@@ -35,32 +35,9 @@ jobs:
         large-packages: true
         swap-storage: true
         tool-cache: true
-    - name: Configure git
-      run: 'git config user.email "1203212+github-actions[bot]@users.noreply.github.com"
-
-        git config user.name "github-actions[bot]"
-
-        '
-    - name: Update nvfetcher packages
-      run: 'nix develop ''.#ci'' --command bash -c "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN
-        }} update-cell-sources ALL"
-
-        git commit -am "deps(sources): Updated cell sources"
-
-        '
-    - name: Update flake.lock
-      uses: DeterminateSystems/update-flake-lock@v24
-      with:
-        branch: auto/upgrade-dependencies
-        commit-msg: 'deps(flake-lock): Updated flake.lock'
-        pr-labels: 'dependencies
-
-          automated
-
-          '
-        pr-title: '[Automated] Update ''flake.lock'' and sources'
-name: Update [flake.lock, nvfetcher sources]
+    - name: Build damogran toplevel
+      run: nix build .#nixosConfigurations.nixos-damogran.config.system.build.toplevel
+name: Build damogran [aarch64-linux]
 'on':
-  schedule:
-  - cron: 0 0 * * 6
+  push: null
   workflow_dispatch: null

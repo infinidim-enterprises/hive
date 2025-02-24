@@ -2,13 +2,22 @@ jobs:
   build_shell:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout repository
+    - name: ⬆️ Checkout
       uses: actions/checkout@v4.2.2
     - name: Install Nix
       uses: cachix/install-nix-action@v30
       with:
-        extra_nix_config: access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
-        nix_path: nixpkgs=channel:nixos-24.05
+        extra_nix_config: '
+
+          access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+
+          experimental-features = nix-command flakes impure-derivations auto-allocate-uids
+          cgroups
+
+          system-features = nixos-test benchmark big-parallel kvm recursive-nix
+
+          '
+        nix_path: nixpkgs=channel:nixos-24.11
     - name: Install cachix action
       uses: cachix/cachix-action@v15
       with:
@@ -16,6 +25,16 @@ jobs:
         extraPullNames: cuda-maintainers, mic92, nix-community, nrdxp
         name: njk
         signingKey: ${{ secrets.CACHIX_SIGNING_KEY }}
+    - name: Free Disk Space
+      uses: jlumbroso/free-disk-space@main
+      with:
+        android: true
+        docker-images: true
+        dotnet: true
+        haskell: true
+        large-packages: true
+        swap-storage: true
+        tool-cache: true
     - name: Build devshell
       run: nix develop --command "menu"
 name: Build devshell [x86_64-linux]
