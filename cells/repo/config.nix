@@ -179,13 +179,14 @@ in
           }
           {
             run.name = "Build system";
+            run.no_output_timeout = "55m";
             run.command = ''
-              nix build ".#nixosConfigurations.<< parameters.host >>.config.system.build.toplevel"
+              nix build --accept-flake-config ".#nixosConfigurations.<< parameters.host >>.config.system.build.toplevel"
             '';
           }
           {
             run.name = "Push cache";
-            run.no_output_timeout = "30m";
+            run.no_output_timeout = "55m";
             run.command = ''
               ./cells/repo/push-paths.sh cachix "--compression-method xz --compression-level 9 --jobs 8" njk ""  ""
             '';

@@ -31,17 +31,19 @@ jobs:
           '
         name: Setup Cachix repos
     - run:
-        command: 'nix build ".#nixosConfigurations.<< parameters.host >>.config.system.build.toplevel"
+        command: 'nix build --accept-flake-config ".#nixosConfigurations.<< parameters.host
+          >>.config.system.build.toplevel"
 
           '
         name: Build system
+        no_output_timeout: 55m
     - run:
         command: './cells/repo/push-paths.sh cachix "--compression-method xz --compression-level
           9 --jobs 8" njk ""  ""
 
           '
         name: Push cache
-        no_output_timeout: 30m
+        no_output_timeout: 55m
 orbs:
   nix: eld/nix@1.1.1
 version: '2.1'
