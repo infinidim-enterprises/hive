@@ -264,7 +264,7 @@ in
           on.workflow_dispatch = null;
           jobs = {
             build_damogran = {
-              runs-on = "ubuntu-latest-arm";
+              runs-on = "ubuntu-22.04-arm";
               steps = common_steps ++ [
                 # {
                 #   name = "Build damogran sdImage";
@@ -292,7 +292,7 @@ in
           on.workflow_dispatch = null;
           jobs = {
             build_shell = {
-              runs-on = "ubuntu-latest-arm";
+              runs-on = "ubuntu-22.04-arm";
               steps = common_steps ++ [
                 {
                   name = "Build devshell";
