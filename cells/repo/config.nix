@@ -76,7 +76,6 @@ in
         };
         prettier = {
           command = "prettier";
-          # options = [ "--write" ];
           options = [ "--plugin" "prettier-plugin-toml" "--write" ];
           includes = [
             "*.css"
@@ -89,7 +88,7 @@ in
             "*.scss"
             "*.ts"
             "*.yaml"
-            # "*.toml"
+            "*.toml"
           ];
           excludes = [
             "test/*"
@@ -106,7 +105,6 @@ in
   };
 
   # Tool Homepage: https://github.com/evilmartians/lefthook
-  #
   lefthook = mkNixago std.lib.cfg.lefthook {
     data = {
       commit-msg.commands.conform = {
@@ -122,20 +120,6 @@ in
         commands.treefmt.skip = [ "merge" "rebase" ];
       };
     };
-  };
-
-  dot_nixd_json = mkNixago {
-    data = {
-      "$schema" = "https://raw.githubusercontent.com/nix-community/nixd/main/nixd/docs/nixd-schema.json";
-      formatting.command = "nixpkgs-fmt";
-      eval.depth = 10;
-      options.enable = true;
-      options.target.installable = ".#nixosConfigurations.nixos-asbleg.options";
-    };
-
-    output = ".nixd.json";
-    format = "json";
-    hook.mode = "copy";
   };
 
   garnix_io = mkNixago {
@@ -175,9 +159,10 @@ in
         resource_class = "arm.large";
         steps = [
           {
-            "nix/install".channels = "nixpkgs=https://nixos.org/channels/nixos-24.05";
+            "nix/install".channels = "nixpkgs=https://nixos.org/channels/nixos-24.11";
             "nix/install".extra-conf = ''
-              experimental-features = flakes nix-command
+              experimental-features = nix-command flakes impure-derivations auto-allocate-uids cgroups
+              system-features = nixos-test benchmark big-parallel kvm recursive-nix
             '';
           }
           "nix/install-cachix"
@@ -189,7 +174,7 @@ in
               cachix use mic92
               cachix use nrdxp
               cachix use njk
-              ./.ci/install-nix.sh > /tmp/store-path-pre-build
+              ./cells/repo/list-paths.sh > /tmp/store-path-pre-build
             '';
           }
           {
@@ -202,7 +187,7 @@ in
             run.name = "Push cache";
             run.no_output_timeout = "30m";
             run.command = ''
-              ./.ci/push-paths.sh cachix "--compression-method xz --compression-level 9 --jobs 8" njk ""  ""
+              ./cells/repo/push-paths.sh cachix "--compression-method xz --compression-level 9 --jobs 8" njk ""  ""
             '';
           }
         ];
@@ -216,19 +201,30 @@ in
 
   githubworkflows =
     let
-      # TODO: https://github.com/mxschmitt/action-tmate
+      debug_steps = [
+        {
+          name = "✓ Detached tmate session";
+          uses = "mxschmitt/action-tmate@master";
+          "if" = "\${{ failure() }}";
+          "with" = {
+            detached = true;
+            # timeout-minutes = 5;
+            limit-access-to-actor = true;
+          };
+        }
+      ];
+
       common_steps = [
         {
-          name = "⬆️ Checkout";
+          name = "⬆ Checkout";
           uses = "actions/checkout@v4.2.2";
         }
         {
-          name = "Install Nix";
+          name = "✓ Install Nix";
           uses = "cachix/install-nix-action@v30";
           "with" = {
             nix_path = "nixpkgs=channel:nixos-24.11";
             extra_nix_config = ''
-
               access-tokens = github.com=''${{ secrets.GITHUB_TOKEN }}
               experimental-features = nix-command flakes impure-derivations auto-allocate-uids cgroups
               system-features = nixos-test benchmark big-parallel kvm recursive-nix
@@ -236,7 +232,7 @@ in
           };
         }
         {
-          name = "Install cachix action";
+          name = "✓ Install cachix action";
           uses = "cachix/cachix-action@v15";
           "with" = {
             name = "njk";
@@ -246,7 +242,7 @@ in
           };
         }
         {
-          name = "Free Disk Space";
+          name = "✓ Free Disk Space";
           uses = "jlumbroso/free-disk-space@main";
           "with" = {
             tool-cache = true;
@@ -258,11 +254,11 @@ in
             swap-storage = true;
           };
         }
-      ];
+      ] ++ debug_steps;
 
       rpi4-damogran-linux = mkNixago {
         data = {
-          name = "Build damogran [aarch64-linux]";
+          name = "damogran [aarch64-linux]";
           on.push = null;
           on.workflow_dispatch = null;
           jobs = {
@@ -283,19 +279,19 @@ in
           };
         };
 
-        output = ".github/workflows/build-aarch64-damogran-sdimage.yaml";
+        output = ".github/workflows/build-aarch64-damogran.yaml";
         format = "yaml";
         hook.mode = "copy";
       };
 
       devshell-aarch64-linux = mkNixago {
         data = {
-          name = "Build devshell [aarch64-linux]";
+          name = "devshell [aarch64-linux]";
           on.push = null;
           on.workflow_dispatch = null;
           jobs = {
             build_shell = {
-              runs-on = "self-hosted";
+              runs-on = "ubuntu-latest-arm";
               steps = common_steps ++ [
                 {
                   name = "Build devshell";
@@ -306,7 +302,7 @@ in
           };
         };
 
-        output = ".github/workflows/build-aarch64-linux-devshell.yaml";
+        output = ".github/workflows/build-aarch64-devshell.yaml";
         format = "yaml";
         hook.mode = "copy";
       };
@@ -314,7 +310,7 @@ in
 
       devshell-x86_64-linux = mkNixago {
         data = {
-          name = "Build devshell [x86_64-linux]";
+          name = "devshell [x86_64-linux]";
           on.push = null;
           on.workflow_dispatch = null;
           jobs = {
@@ -475,7 +471,7 @@ in
     [
       # NOTE: garnix builds most things now!
       devshell-x86_64-linux
-      # devshell-aarch64-linux
+      devshell-aarch64-linux
       rpi4-damogran-linux
       workflowHostTemplate
       flake-lock

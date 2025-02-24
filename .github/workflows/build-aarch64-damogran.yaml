@@ -1,6 +1,6 @@
 jobs:
-  build_system:
-    runs-on: ubuntu-latest
+  build_damogran:
+    runs-on: ubuntu-latest-arm
     steps:
     - name: ⬆ Checkout
       uses: actions/checkout@v4.2.2
@@ -39,17 +39,9 @@ jobs:
       with:
         detached: true
         limit-access-to-actor: true
-    - name: Build system configuration
-      run: nix build ".#nixosConfigurations.${{ inputs.configuration }}.config.system.build.toplevel"
-name: Build x86_64 host
+    - name: Build damogran toplevel
+      run: nix build .#nixosConfigurations.nixos-damogran.config.system.build.toplevel
+name: damogran [aarch64-linux]
 'on':
-  workflow_call:
-    inputs:
-      configuration:
-        required: true
-        type: string
-    secrets:
-      CACHIX_AUTH_TOKEN:
-        required: true
-      CACHIX_SIGNING_KEY:
-        required: true
+  push: null
+  workflow_dispatch: null

@@ -337,9 +337,8 @@ lib.mapAttrs (_: std.lib.dev.mkShell) {
         config.editorconfig
         config.githubsettings
         config.lefthook
-        # FIXME: config.circleci
+        config.circleci
         config.garnix_io
-        # FIXME: config.dot_nixd_json
         # config.mdbook
       ];
 
