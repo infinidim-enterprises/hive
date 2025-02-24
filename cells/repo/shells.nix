@@ -339,7 +339,7 @@ lib.mapAttrs (_: std.lib.dev.mkShell) {
         config.lefthook
         config.circleci
         config.garnix_io
-        # config.mdbook
+        # NOTE: find org-mode alternative for config.mdbook
       ];
 
     packages = [
