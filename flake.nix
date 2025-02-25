@@ -4,11 +4,13 @@
   nixConfig.extra-substituters = [
     "https://njk.cachix.org"
     "https://cache.garnix.io"
+    "https://nix-community.cachix.org"
   ];
 
   nixConfig.extra-trusted-public-keys = [
     "njk.cachix.org-1:ON4lemYq096ZfK5MtL1NU3afFk9ILAsEnXdy5lDDgKs="
     "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
+    "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
   ];
 
   # nixConfig.extra-access-tokens = ["github.com=github_pat_XYZ"];
@@ -174,7 +176,7 @@
     ###
     # "github:nix-community/raspberry-pi-nix";
     raspberry-pi-nix.url = "github:infinidim-enterprises/raspberry-pi-nix";
-    raspberry-pi-nix.inputs.nixpkgs.follows = "nixos-24-05";
+    raspberry-pi-nix.inputs.nixpkgs.follows = "nixos-24-11";
 
     ###
     # kubernetes and friends
