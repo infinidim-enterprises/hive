@@ -39,7 +39,7 @@ jobs:
         no_output_timeout: 55m
     - run:
         command: './cells/repo/push-paths.sh cachix "--compression-method xz --compression-level
-          9 --jobs 8" njk ""  ""
+          9 --jobs 4" njk ""  ""
 
           '
         name: Push cache

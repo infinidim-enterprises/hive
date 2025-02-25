@@ -20,6 +20,7 @@ jobs:
       uses: cachix/cachix-action@v15
       with:
         authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
+        cachixArgs: --compression-method xz --compression-level 9 --jobs 4
         extraPullNames: cuda-maintainers, mic92, nix-community, nrdxp
         name: njk
         signingKey: ${{ secrets.CACHIX_SIGNING_KEY }}
@@ -33,8 +34,7 @@ jobs:
         large-packages: true
         swap-storage: true
         tool-cache: true
-    - if: ${{ failure() }}
-      name: ✓ Detached tmate session
+    - name: ✓ Detached tmate session
       uses: mxschmitt/action-tmate@master
       with:
         detached: true

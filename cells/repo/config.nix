@@ -57,15 +57,11 @@ in
   # Tool Homepage: https://numtide.github.io/treefmt/
   treefmt = mkNixago std.lib.cfg.treefmt {
     packages = [
-      # (nixpkgs.appendOverlays [inputs.cells.common.overlays.latest-overrides]).alejandra
       nixpkgs.nixpkgs-fmt
       nixpkgs.nodePackages.prettier
       nixpkgs.nodePackages.prettier-plugin-toml
       nixpkgs.shfmt
     ];
-    # devshell.startup.prettier-plugin-toml = lib.stringsWithDeps.noDepEntry ''
-    #   export NODE_PATH=${latest.nodePackages.prettier-plugin-toml}/lib/node_modules:''${NODE_PATH:-}
-    # '';
     data = {
       global.excludes = [ "cells/*/sources/generated.*" "cells/secrets/*" ];
       formatter = {
@@ -76,7 +72,11 @@ in
         };
         prettier = {
           command = "prettier";
-          options = [ "--plugin" "prettier-plugin-toml" "--write" ];
+          options = [
+            "--plugin"
+            "${nixpkgs.nodePackages.prettier-plugin-toml}/lib/node_modules/prettier-plugin-toml/lib/index.js"
+            "--write"
+          ];
           includes = [
             "*.css"
             "*.html"
@@ -188,7 +188,7 @@ in
             run.name = "Push cache";
             run.no_output_timeout = "55m";
             run.command = ''
-              ./cells/repo/push-paths.sh cachix "--compression-method xz --compression-level 9 --jobs 8" njk ""  ""
+              ./cells/repo/push-paths.sh cachix "--compression-method xz --compression-level 9 --jobs 4" njk ""  ""
             '';
           }
         ];
@@ -206,7 +206,7 @@ in
         {
           name = "✓ Detached tmate session";
           uses = "mxschmitt/action-tmate@master";
-          "if" = "\${{ failure() }}";
+          # "if" = "\${{ failure() }}";
           "with" = {
             detached = true;
             # timeout-minutes = 5;
@@ -240,6 +240,7 @@ in
             extraPullNames = "cuda-maintainers, mic92, nix-community, nrdxp";
             authToken = "\${{ secrets.CACHIX_AUTH_TOKEN }}";
             signingKey = "\${{ secrets.CACHIX_SIGNING_KEY }}";
+            cachixArgs = "--compression-method xz --compression-level 9 --jobs 4";
           };
         }
         {
@@ -273,7 +274,7 @@ in
 
                 {
                   name = "Build damogran toplevel";
-                  run = ''nix build .#nixosConfigurations.nixos-damogran.config.system.build.toplevel'';
+                  run = ''nix build --accept-flake-config .#nixosConfigurations.nixos-damogran.config.system.build.toplevel'';
                 }
               ];
             };
@@ -296,7 +297,7 @@ in
               steps = common_steps ++ [
                 {
                   name = "Build devshell";
-                  run = ''nix develop --command "menu"'';
+                  run = ''nix develop --accept-flake-config --command "menu"'';
                 }
               ];
             };
@@ -320,7 +321,7 @@ in
               steps = common_steps ++ [
                 {
                   name = "Build devshell";
-                  run = ''nix develop --command "menu"'';
+                  run = ''nix develop --accept-flake-config --command "menu"'';
                 }
               ];
             };
@@ -348,7 +349,7 @@ in
             steps = common_steps ++ [
               {
                 name = "Build system configuration";
-                run = ''nix build ".#nixosConfigurations.''${{ inputs.configuration }}.config.system.build.toplevel"'';
+                run = ''nix build --accept-flake-config ".#nixosConfigurations.''${{ inputs.configuration }}.config.system.build.toplevel"'';
               }
             ];
           };
@@ -395,7 +396,7 @@ in
             {
               name = "Update nvfetcher packages";
               run = ''
-                nix develop '.#ci' --command bash -c "GITHUB_TOKEN=''${{ secrets.GITHUB_TOKEN }} update-cell-sources ALL"
+                nix develop --accept-flake-config '.#ci' --command bash -c "GITHUB_TOKEN=''${{ secrets.GITHUB_TOKEN }} update-cell-sources ALL"
                 git commit -am "deps(sources): Updated cell sources"
               '';
             }

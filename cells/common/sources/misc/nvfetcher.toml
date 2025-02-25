@@ -107,7 +107,7 @@ fetch.git = "https://github.com/ipxe/ipxe"
 
 ### :END: promnesia
 [python-pass]
-#  NOTE: https://github.com/aviau/python-pass/pull/34
+# NOTE: https://github.com/aviau/python-pass/pull/34
 src.manual = "6f51145a3bc12ee79d2881204b88a82d149f3228"
 fetch.github = "aviau/python-pass"
 
