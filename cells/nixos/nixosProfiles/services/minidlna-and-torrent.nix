@@ -9,40 +9,53 @@ let
     splitString
     concatStringsSep;
   download-dir = "/opt/media";
-  media_dirs =
-    with config.systemd.services.minidlna.serviceConfig;
-    map
-      (e: "chown --recursive ${User}:${Group} "
-        + (last (splitString "," e)))
-      config.services.minidlna.settings.media_dir;
+  # media_dirs =
+  #   with config.systemd.services.jellyfin.serviceConfig;
+  #   map
+  #     (e: "chown --recursive ${User}:${Group} "
+  #       + (last (splitString "," e)))
+  #     config.services.minidlna.settings.media_dir;
 
 in
 mkMerge [
   { boot.kernel.sysctl."fs.inotify.max_user_watches" = 524288; }
 
   {
-    # TODO: switch to jellyfin, instead of minidlna
-    services.minidlna.enable = true;
-    services.minidlna.openFirewall = true;
-    services.minidlna.settings.media_dir = [ "V,${download-dir}" ];
-    services.minidlna.settings.friendly_name = "dacha";
-    services.minidlna.settings.inotify = "yes";
+    services.jellyfin.enable = true;
+    services.jellyfin.openFirewall = true;
 
-    systemd.services.minidlna-fix-perms.wantedBy = [ "minidlna.service" ];
-    systemd.services.minidlna-fix-perms.script = ''
-      ${concatStringsSep "\n" media_dirs}
-    '';
+    systemd.services.jellyfin-fix-perms.wantedBy = [ "jellyfin.service" ];
+    systemd.services.jellyfin-fix-perms.script =
+      with config.systemd.services.jellyfin.serviceConfig;
+      ''
+        chown --recursive ${User}:${Group} ${download-dir}
+      '';
 
-    systemd.services.minidlna.after = [ "minidlna-fix-perms.service" ];
-    systemd.services.minidlna.preStart = ''
-      rm -rf ${config.services.minidlna.settings.db_dir}/*
-    '';
+    systemd.services.jellyfin.after = [ "jellyfin-fix-perms.service" ];
   }
+
+  # {
+  #   services.minidlna.enable = true;
+  #   services.minidlna.openFirewall = true;
+  #   services.minidlna.settings.media_dir = [ "V,${download-dir}" ];
+  #   services.minidlna.settings.friendly_name = "dacha";
+  #   services.minidlna.settings.inotify = "yes";
+
+  #   systemd.services.minidlna-fix-perms.wantedBy = [ "minidlna.service" ];
+  #   systemd.services.minidlna-fix-perms.script = ''
+  #     ${concatStringsSep "\n" media_dirs}
+  #   '';
+
+  #   systemd.services.minidlna.after = [ "minidlna-fix-perms.service" ];
+  #   systemd.services.minidlna.preStart = ''
+  #     rm -rf ${config.services.minidlna.settings.db_dir}/*
+  #   '';
+  # }
 
   {
     services.transmission.enable = true;
-    services.transmission.user = "minidlna";
-    services.transmission.group = "minidlna";
+    services.transmission.user = config.services.jellyfin.user;
+    services.transmission.group = config.services.jellyfin.group;
     services.transmission.package = pkgs.transmission_4.override {
       enableGTK3 = false;
       enableQt5 = false;
@@ -70,7 +83,9 @@ mkMerge [
   }
 
   {
-    systemd.services.minidlna.after = [ "opt-media.mount" ];
+    # systemd.services.minidlna.after = [ "opt-media.mount" ];
+
+    systemd.services.jellyfin.after = [ "opt-media.mount" ];
     systemd.services.transmission.after = [ "opt-media.mount" ];
 
     systemd.mounts = [{
@@ -78,8 +93,16 @@ mkMerge [
       where = "/opt/media";
       type = "ext4";
       options = "defaults,noatime";
-      before = [ "minidlna.service" "transmission.service" ];
-      requiredBy = [ "minidlna.service" "transmission.service" ];
+      before = [
+        # "minidlna.service"
+        "jellyfin.service"
+        "transmission.service"
+      ];
+      requiredBy = [
+        # "minidlna.service"
+        "jellyfin.service"
+        "transmission.service"
+      ];
     }];
   }
 ]

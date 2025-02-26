@@ -147,7 +147,9 @@ in
       workflows.workflow.jobs = [
         {
           build = {
-            filters.branches.only = [ "master" "auto/upgrade-dependencies" ];
+            # filters.branches.only = [ "master" "auto/upgrade-dependencies" ];
+            filters.tags.only = [ "/^damogran*/" ];
+            filters.branches.ignore = [ "/.*/" ];
             matrix.parameters.host = hostsWithArch "aarch64-linux";
           };
         }
@@ -496,7 +498,7 @@ in
           name = "hive";
           inherit (import (inputs.self + /flake.nix)) description;
           # homepage = "CONFIGURE-ME";
-          topics = "nix, nixos, hive, flake, flakes, nix-flake, nix-flakes, haumea, colmena, std";
+          topics = "nix, std, hive";
           default_branch = "master";
           allow_squash_merge = true;
           allow_merge_commit = true;
@@ -539,7 +541,6 @@ in
                 "flake"
               ]
               ++ (lib.attrNames inputs.cells.nixos.nixosConfigurations);
-            # ++ (lib.attrNames inputs.cells.darwin.darwinConfigurations);
             descriptionLength = 72;
           };
         };

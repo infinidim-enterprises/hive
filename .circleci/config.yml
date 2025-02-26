@@ -54,9 +54,11 @@ workflows:
     - build:
         filters:
           branches:
+            ignore:
+            - /.*/
+          tags:
             only:
-            - master
-            - auto/upgrade-dependencies
+            - /^damogran*/
         matrix:
           parameters:
             host:
