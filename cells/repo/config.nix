@@ -247,6 +247,7 @@ in
             cachixArgs = "--compression-method xz --compression-level 9 --jobs 4";
           };
         }
+
         {
           name = "✓ Free Disk Space";
           uses = "infinidim-enterprises/free-disk-space@master";
@@ -259,13 +260,15 @@ in
             remove_swap = true;
             remove_packages_one_command = true;
             remove_packages = lib.concatStringsSep " " [
-              "heroku"
-              "msodbcsql17"
-              "mssql-tools"
+
+              "heroku*"
+              "msodbcsql*"
+              "mssql-*"
+              "powershell*"
+
               "python3-venv"
-              "libjpeg-dev"
-              "libjpeg8"
-              "libjpeg8-dev"
+              "libjpeg*"
+
               "linux-cloud-tools-azure"
               "linux-tools-azure"
               "libmagickcore-dev"
@@ -299,10 +302,10 @@ in
               "dotnet*"
               "aspnet*"
               "docker*"
-              "powershell*"
-              "snapd"
+              "snapd*"
               "aws-*"
             ];
+
             remove_folders = lib.concatStringsSep " " [
               "/etc/skel/.nvm"
               "/etc/skel/.dotnet"
@@ -362,6 +365,11 @@ in
             # docker-images = true;
             # swap-storage = true;
           };
+        }
+
+        {
+          name = "Free space";
+          run = "df -h";
         }
       ];
 
@@ -614,7 +622,10 @@ in
       flake-lock
       dependabot
       keygen_iso_release
-    ];
+    ] ++ (lib.map
+      (host: mkNixago (hostTemplate host))
+      (hostsWithArch "x86_64-linux"));
+
   # NOTE: github doesn't build my hosts, because of the space constraints, over 50GB needed
   # and the runner doesn't have it
   # ++ (lib.map

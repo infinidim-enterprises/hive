@@ -3,11 +3,9 @@ let
   inherit (builtins)
     isNull
     hasAttr
-    toString
     baseNameOf;
   inherit (inputs.nixpkgs-lib.lib)
     optionals
-    hasAttrByPath
     optionalString;
 
   hasDiskoConfig = hasAttr host cell.diskoConfigurations;
@@ -23,7 +21,7 @@ rec {
     #  inherit (inputs.nixpkgs) system;
     system = "x86_64-linux";
     home = inputs.home-unstable;
-    pkgs = import inputs.nixpkgs-unstable {
+    pkgs = import inputs.nixos-24-11 {
       inherit (inputs.nixpkgs) system;
       config.allowUnfree = true;
       overlays = cell.overlays.base;

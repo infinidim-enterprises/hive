@@ -8,7 +8,7 @@ rec {
     # inherit (inputs.nixpkgs) system;
     system = "x86_64-linux";
     home = inputs.home-unstable;
-    pkgs = import inputs.nixpkgs-unstable {
+    pkgs = import inputs.nixos-24-11 {
       inherit (inputs.nixpkgs) system;
       config.allowUnfree = true;
       overlays = cell.overlays.default_desktop;

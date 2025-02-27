@@ -45,17 +45,18 @@ jobs:
           /usr/local/julia1.11.3 /usr/local/lib/node_modules /usr/local/share/vcpkg
           /usr/local/share/chromium /usr/local/share/powershell
         remove_haskell: true
-        remove_packages: heroku msodbcsql17 mssql-tools python3-venv libjpeg-dev libjpeg8
-          libjpeg8-dev linux-cloud-tools-azure linux-tools-azure libmagickcore-dev
-          libmagickwand-dev python-is-python3 r-recommended gfortran g++ libc++-dev
-          r-base-dev mime-support netcat dns-root-data libpthread-stubs0-dev python3-debconf
-          tpm-udev tcl tk ruby-* rust* azure-cli google-* microsoft-* firefox* postgresql*
-          mongo* php* temurin* llvm* mysql* dotnet* aspnet* docker* powershell* snapd
-          aws-*
+        remove_packages: heroku* msodbcsql* mssql-* powershell* python3-venv libjpeg*
+          linux-cloud-tools-azure linux-tools-azure libmagickcore-dev libmagickwand-dev
+          python-is-python3 r-recommended gfortran g++ libc++-dev r-base-dev mime-support
+          netcat dns-root-data libpthread-stubs0-dev python3-debconf tpm-udev tcl
+          tk ruby-* rust* azure-cli google-* microsoft-* firefox* postgresql* mongo*
+          php* temurin* llvm* mysql* dotnet* aspnet* docker* snapd* aws-*
         remove_packages_one_command: true
         remove_swap: true
         remove_tool_cache: true
         testing: false
+    - name: Free space
+      run: df -h
     - name: Build system configuration
       run: nix build --accept-flake-config ".#nixosConfigurations.${{ inputs.configuration
         }}.config.system.build.toplevel"

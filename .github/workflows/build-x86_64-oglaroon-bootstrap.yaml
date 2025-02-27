@@ -1,0 +1,10 @@
+jobs:
+  call-workflow-passing-data:
+    secrets: inherit
+    uses: ./.github/workflows/build-x86_64-host.yaml
+    with:
+      configuration: nixos-oglaroon-bootstrap
+name: Build oglaroon-bootstrap [x86_64-linux]
+'on':
+  push: null
+  workflow_dispatch: null
