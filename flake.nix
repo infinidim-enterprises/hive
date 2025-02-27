@@ -13,7 +13,7 @@
     "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
   ];
 
-  # nixConfig.extra-access-tokens = ["github.com=github_pat_XYZ"];
+  # nixConfig.download-buffer-size = builtins.toString (10 * 1024 * 1024);
 
   inputs = {
     # common for deduplication

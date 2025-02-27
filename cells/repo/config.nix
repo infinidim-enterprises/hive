@@ -208,10 +208,10 @@ in
         {
           name = "✓ Detached tmate session";
           uses = "mxschmitt/action-tmate@master";
-          # "if" = "\${{ failure() }}";
+          "if" = "\${{ failure() }}";
           "with" = {
-            detached = true;
-            # timeout-minutes = 5;
+            # detached = true;
+            timeout-minutes = 10;
             limit-access-to-actor = true;
           };
         }
@@ -231,6 +231,8 @@ in
               access-tokens = github.com=''${{ secrets.GITHUB_TOKEN }}
               experimental-features = nix-command flakes impure-derivations auto-allocate-uids cgroups
               system-features = nixos-test benchmark big-parallel kvm recursive-nix
+              download-buffer-size = 10485760
+              accept-flake-config = true
             '';
           };
         }
@@ -258,7 +260,7 @@ in
             swap-storage = true;
           };
         }
-      ] ++ debug_steps;
+      ];
 
       rpi4-damogran-linux = mkNixago {
         data = {
@@ -278,7 +280,7 @@ in
                   name = "Build damogran toplevel";
                   run = ''nix build --accept-flake-config .#nixosConfigurations.nixos-damogran.config.system.build.toplevel'';
                 }
-              ];
+              ] ++ debug_steps;
             };
           };
         };
@@ -288,52 +290,79 @@ in
         hook.mode = "copy";
       };
 
-      devshell-aarch64-linux = mkNixago {
+      devshell-multiarch-linux = mkNixago {
         data = {
-          name = "devshell [aarch64-linux]";
+          name = "devshell [aarch64-linux / x86_64-linux]";
           on.push = null;
           on.workflow_dispatch = null;
           jobs = {
             build_shell = {
-              runs-on = "ubuntu-22.04-arm";
+              runs-on = "\${{ matrix.runs-on }}";
+              strategy.matrix.include = [
+                { runs-on = "ubuntu-22.04"; arch = "x86_64-linux"; }
+                { runs-on = "ubuntu-22.04-arm"; arch = "aarch64-linux"; }
+              ];
               steps = common_steps ++ [
                 {
                   name = "Build devshell";
                   run = ''nix develop --accept-flake-config --command "menu"'';
                 }
-              ];
+              ] ++ debug_steps;
             };
           };
         };
 
-        output = ".github/workflows/build-aarch64-devshell.yaml";
+        output = ".github/workflows/build-devshell.yaml";
         format = "yaml";
         hook.mode = "copy";
       };
 
+      # devshell-aarch64-linux = mkNixago {
+      #   data = {
+      #     name = "devshell [aarch64-linux]";
+      #     on.push = null;
+      #     on.workflow_dispatch = null;
+      #     jobs = {
+      #       build_shell = {
+      #         runs-on = "ubuntu-22.04-arm";
+      #         steps = common_steps ++ [
+      #           {
+      #             name = "Build devshell";
+      #             run = ''nix develop --accept-flake-config --command "menu"'';
+      #           }
+      #         ] ++ debug_steps;
+      #       };
+      #     };
+      #   };
 
-      devshell-x86_64-linux = mkNixago {
-        data = {
-          name = "devshell [x86_64-linux]";
-          on.push = null;
-          on.workflow_dispatch = null;
-          jobs = {
-            build_shell = {
-              runs-on = "ubuntu-latest";
-              steps = common_steps ++ [
-                {
-                  name = "Build devshell";
-                  run = ''nix develop --accept-flake-config --command "menu"'';
-                }
-              ];
-            };
-          };
-        };
+      #   output = ".github/workflows/build-aarch64-devshell.yaml";
+      #   format = "yaml";
+      #   hook.mode = "copy";
+      # };
 
-        output = ".github/workflows/build-x86_64-devshell.yaml";
-        format = "yaml";
-        hook.mode = "copy";
-      };
+
+      # devshell-x86_64-linux = mkNixago {
+      #   data = {
+      #     name = "devshell [x86_64-linux]";
+      #     on.push = null;
+      #     on.workflow_dispatch = null;
+      #     jobs = {
+      #       build_shell = {
+      #         runs-on = "ubuntu-latest";
+      #         steps = common_steps ++ [
+      #           {
+      #             name = "Build devshell";
+      #             run = ''nix develop --accept-flake-config --command "menu"'';
+      #           }
+      #         ] ++ debug_steps;
+      #       };
+      #     };
+      #   };
+
+      #   output = ".github/workflows/build-x86_64-devshell.yaml";
+      #   format = "yaml";
+      #   hook.mode = "copy";
+      # };
 
       workflowHostTemplate = mkNixago {
         data = {
@@ -353,7 +382,7 @@ in
                 name = "Build system configuration";
                 run = ''nix build --accept-flake-config ".#nixosConfigurations.''${{ inputs.configuration }}.config.system.build.toplevel"'';
               }
-            ];
+            ] ++ debug_steps;
           };
         };
 
@@ -413,7 +442,7 @@ in
                 automated
               '';
             }
-          ];
+          ] ++ debug_steps;
         };
 
         output = ".github/workflows/update-flake.yaml";
@@ -464,7 +493,7 @@ in
                 };
               }
 
-            ];
+            ] ++ debug_steps;
           };
         };
         output = ".github/workflows/keygen_iso_release.yaml";
@@ -474,8 +503,9 @@ in
     in
     [
       # NOTE: garnix builds most things now!
-      devshell-x86_64-linux
-      devshell-aarch64-linux
+      # devshell-x86_64-linux
+      # devshell-aarch64-linux
+      devshell-multiarch-linux
       rpi4-damogran-linux
       workflowHostTemplate
       flake-lock

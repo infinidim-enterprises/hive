@@ -1,6 +1,6 @@
 jobs:
   build_shell:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.runs-on }}
     steps:
     - name: ⬆ Checkout
       uses: actions/checkout@v4.2.2
@@ -13,6 +13,10 @@ jobs:
           cgroups
 
           system-features = nixos-test benchmark big-parallel kvm recursive-nix
+
+          download-buffer-size = 10485760
+
+          accept-flake-config = true
 
           '
         nix_path: nixpkgs=channel:nixos-24.11
@@ -34,14 +38,22 @@ jobs:
         large-packages: true
         swap-storage: true
         tool-cache: true
-    - name: ✓ Detached tmate session
-      uses: mxschmitt/action-tmate@master
-      with:
-        detached: true
-        limit-access-to-actor: true
     - name: Build devshell
       run: nix develop --accept-flake-config --command "menu"
-name: devshell [x86_64-linux]
+    - if: ${{ failure() }}
+      name: ✓ Detached tmate session
+      uses: mxschmitt/action-tmate@master
+      with:
+        limit-access-to-actor: true
+        timeout-minutes: 10
+    strategy:
+      matrix:
+        include:
+        - arch: x86_64-linux
+          runs-on: ubuntu-22.04
+        - arch: aarch64-linux
+          runs-on: ubuntu-22.04-arm
+name: devshell [aarch64-linux / x86_64-linux]
 'on':
   push: null
   workflow_dispatch: null
