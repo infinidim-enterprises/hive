@@ -249,37 +249,111 @@ in
         }
         {
           name = "✓ Free Disk Space";
-          uses = "endersonmenezes/free-disk-space@main";
+          uses = "infinidim-enterprises/free-disk-space@master";
           "with" = {
             remove_android = true;
             remove_dotnet = true;
             remove_haskell = true;
+            remove_docker_images = true;
             remove_tool_cache = true;
             remove_swap = true;
             remove_packages_one_command = true;
             remove_packages = lib.concatStringsSep " " [
+              "heroku"
+              "msodbcsql17"
+              "mssql-tools"
+              "python3-venv"
+              "libjpeg-dev"
+              "libjpeg8"
+              "libjpeg8-dev"
+              "linux-cloud-tools-azure"
+              "linux-tools-azure"
+              "libmagickcore-dev"
+              "libmagickwand-dev"
+              "python-is-python3"
+              "r-recommended"
+              "gfortran"
+              "g++"
+              "libc++-dev"
+              "r-base-dev"
+              "mime-support"
+              "netcat"
+              "dns-root-data"
+              "libpthread-stubs0-dev"
+              "python3-debconf"
+              "tpm-udev"
+              "tcl"
+              "tk"
+              "ruby-*"
+              "rust*"
               "azure-cli"
-              "google-cloud*"
-              "microsoft-edge*"
-              "google-chrome*"
+              "google-*"
+              "microsoft-*"
               "firefox*"
               "postgresql*"
               "mongo*"
               "php*"
-              "temurin-*"
-              "*llvm*"
+              "temurin*"
+              "llvm*"
               "mysql*"
               "dotnet*"
               "aspnet*"
               "docker*"
+              "powershell*"
+              "snapd"
+              "aws-*"
             ];
             remove_folders = lib.concatStringsSep " " [
+              "/etc/skel/.nvm"
+              "/etc/skel/.dotnet"
+              "/etc/skel/.cargo"
+              "/etc/skel/.rustup"
+              "/opt/microsoft"
+              "/opt/pipx"
+              "/home/runner/.nvm"
+              "/home/runner/.dotnet"
+              "/home/runner/.cargo"
+              "/home/runner/.rustup"
+              "/home/runneradmin/.nvm"
+              "/home/runneradmin/.dotnet"
+              "/home/runneradmin/.cargo"
+              "/home/runneradmin/.rustup"
+              "/home/linuxbrew"
+              "/var/lib/postgresql"
+              "/var/lib/gems"
+              "/var/lib/mysql"
+              "/var/lib/snapd"
               "/var/lib/docker*"
+
               "/usr/share/swift"
               "/usr/share/miniconda"
               "/usr/share/az*"
               "/usr/share/glade*"
+              "/usr/share/ri"
+              "/usr/share/kotlinc"
+              "/usr/share/doc"
+              "/usr/share/gradle*"
+              "/usr/share/sbt"
+
+              "/usr/src"
+              "/usr/lib/R"
+              "/usr/lib/snapd"
+              "/usr/lib/python3"
+              "/usr/lib/heroku"
+              "/usr/lib/jvm"
+
+              # "/usr/lib/x86_64-linux-gnu"
+              # "/usr/lib/gcc"
+
+              "/usr/local/n"
+              "/usr/local/aws-sam-cli"
+              "/usr/local/aws-cli"
+              "/usr/local/julia1.11.3"
+              # "/usr/local/bin"
+
               "/usr/local/lib/node_modules"
+
+              "/usr/local/share/vcpkg"
               "/usr/local/share/chromium"
               "/usr/local/share/powershell"
             ];
