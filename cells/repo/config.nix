@@ -206,7 +206,7 @@ in
     let
       debug_steps = [
         {
-          name = "✓ Detached tmate session";
+          name = "✓ tmate.io session";
           uses = "mxschmitt/action-tmate@master";
           "if" = "\${{ failure() }}";
           "with" = {
@@ -249,15 +249,44 @@ in
         }
         {
           name = "✓ Free Disk Space";
-          uses = "jlumbroso/free-disk-space@main";
+          uses = "endersonmenezes/free-disk-space@main";
           "with" = {
-            tool-cache = true;
-            android = true;
-            dotnet = true;
-            haskell = true;
-            large-packages = true;
-            docker-images = true;
-            swap-storage = true;
+            remove_android = true;
+            remove_dotnet = true;
+            remove_haskell = true;
+            remove_tool_cache = true;
+            remove_swap = true;
+            remove_packages_one_command = true;
+            remove_packages = lib.concatStringsSep " " [
+              "azure-cli"
+              "google-cloud*"
+              "microsoft-edge*"
+              "google-chrome*"
+              "firefox*"
+              "postgresql*"
+              "mongo*"
+              "php*"
+              "temurin-*"
+              "*llvm*"
+              "mysql*"
+              "dotnet*"
+              "aspnet*"
+              "docker*"
+            ];
+            remove_folders = lib.concatStringsSep " " [
+              "/var/lib/docker*"
+              "/usr/share/swift"
+              "/usr/share/miniconda"
+              "/usr/share/az*"
+              "/usr/share/glade*"
+              "/usr/local/lib/node_modules"
+              "/usr/local/share/chromium"
+              "/usr/local/share/powershell"
+            ];
+            testing = false;
+            # large-packages = true;
+            # docker-images = true;
+            # swap-storage = true;
           };
         }
       ];

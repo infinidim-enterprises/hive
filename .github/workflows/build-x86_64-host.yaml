@@ -29,20 +29,25 @@ jobs:
         name: njk
         signingKey: ${{ secrets.CACHIX_SIGNING_KEY }}
     - name: ✓ Free Disk Space
-      uses: jlumbroso/free-disk-space@main
+      uses: endersonmenezes/free-disk-space@main
       with:
-        android: true
-        docker-images: true
-        dotnet: true
-        haskell: true
-        large-packages: true
-        swap-storage: true
-        tool-cache: true
+        remove_android: true
+        remove_dotnet: true
+        remove_folders: /var/lib/docker* /usr/share/swift /usr/share/miniconda /usr/share/az*
+          /usr/share/glade* /usr/local/lib/node_modules /usr/local/share/chromium
+          /usr/local/share/powershell
+        remove_haskell: true
+        remove_packages: azure-cli google-cloud* microsoft-edge* google-chrome* firefox*
+          postgresql* mongo* php* temurin-* *llvm* mysql* dotnet* aspnet* docker*
+        remove_packages_one_command: true
+        remove_swap: true
+        remove_tool_cache: true
+        testing: false
     - name: Build system configuration
       run: nix build --accept-flake-config ".#nixosConfigurations.${{ inputs.configuration
         }}.config.system.build.toplevel"
     - if: ${{ failure() }}
-      name: ✓ Detached tmate session
+      name: ✓ tmate.io session
       uses: mxschmitt/action-tmate@master
       with:
         limit-access-to-actor: true
