@@ -207,7 +207,7 @@ in
           "if" = "\${{ failure() }}";
           "with" = {
             # detached = true;
-            timeout-minutes = 10;
+            connect-timeout-seconds = 60 * 10;
             limit-access-to-actor = true;
           };
         }
@@ -243,7 +243,7 @@ in
             cachixArgs = "--compression-method xz --compression-level 9 --jobs 4";
           };
         }
-
+        /*
         {
           name = "✓ Free Disk Space";
           uses = "infinidim-enterprises/free-disk-space@master";
@@ -359,7 +359,7 @@ in
             testing = false;
           };
         }
-
+        */
         {
           name = "Free space";
           run = "df -h";
@@ -409,7 +409,7 @@ in
               steps = common_steps ++ [
                 {
                   name = "Build packages";
-                  run = ''nix build --accept-flake-config .#packages'';
+                  run = "nix build --accept-flake-config $(nix eval --impure --raw --expr 'with builtins; concatStringsSep \" \" (map (e: \".#packages.\${currentSystem}.\${e}\") (attrNames (getFlake (toString ./.)).packages.\${currentSystem}))')";
                 }
               ] ++ debug_steps;
             };

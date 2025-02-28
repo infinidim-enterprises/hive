@@ -28,33 +28,6 @@ jobs:
         extraPullNames: cuda-maintainers, mic92, nix-community, nrdxp
         name: njk
         signingKey: ${{ secrets.CACHIX_SIGNING_KEY }}
-    - name: ✓ Free Disk Space
-      uses: infinidim-enterprises/free-disk-space@master
-      with:
-        remove_android: true
-        remove_docker_images: true
-        remove_dotnet: true
-        remove_folders: /etc/skel/.nvm /etc/skel/.dotnet /etc/skel/.cargo /etc/skel/.rustup
-          /opt/microsoft /opt/pipx /home/runner/.nvm /home/runner/.dotnet /home/runner/.cargo
-          /home/runner/.rustup /home/runneradmin/.nvm /home/runneradmin/.dotnet /home/runneradmin/.cargo
-          /home/runneradmin/.rustup /home/linuxbrew /var/lib/postgresql /var/lib/gems
-          /var/lib/mysql /var/lib/snapd /var/lib/docker* /usr/share/swift /usr/share/miniconda
-          /usr/share/az* /usr/share/glade* /usr/share/ri /usr/share/kotlinc /usr/share/doc
-          /usr/share/gradle* /usr/share/sbt /usr/src /usr/lib/R /usr/lib/snapd /usr/lib/python3
-          /usr/lib/heroku /usr/lib/jvm /usr/local/n /usr/local/aws-sam-cli /usr/local/aws-cli
-          /usr/local/julia1.11.3 /usr/local/lib/node_modules /usr/local/share/vcpkg
-          /usr/local/share/chromium /usr/local/share/powershell
-        remove_haskell: true
-        remove_packages: heroku* msodbcsql* mssql-* powershell* python3-venv libjpeg*
-          linux-cloud-tools-azure linux-tools-azure libmagickcore-dev libmagickwand-dev
-          python-is-python3 r-recommended gfortran g++ libc++-dev r-base-dev mime-support
-          netcat dns-root-data libpthread-stubs0-dev python3-debconf tpm-udev tcl
-          tk ruby-* rust* azure-cli google-* microsoft-* firefox* postgresql* mongo*
-          php* temurin* llvm* mysql* dotnet* aspnet* docker* snapd* aws-*
-        remove_packages_one_command: true
-        remove_swap: true
-        remove_tool_cache: true
-        testing: false
     - name: Free space
       run: df -h
     - name: Configure git
@@ -85,8 +58,8 @@ jobs:
       name: ✓ tmate.io session
       uses: mxschmitt/action-tmate@master
       with:
+        connect-timeout-seconds: 600
         limit-access-to-actor: true
-        timeout-minutes: 10
 name: Update [flake.lock, nvfetcher sources]
 'on':
   schedule:
