@@ -71,4 +71,6 @@ let
   };
 
 in
-{ inherit ledger-app-dev-tools_nix; }
+{
+  # inherit ledger-app-dev-tools_nix;
+}
