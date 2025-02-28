@@ -124,13 +124,9 @@ in
 
   garnix_io = mkNixago {
     data = {
-      builds.branch = "release";
+      builds.branch = "master";
       builds.include = [
-        # "*.x86_64-linux.*"
-        # TODO: aarch64-linux
-        "devShells.aarch64-linux.*"
-        "devShells.x86_64-linux.*"
-        "packages.x86_64-linux.*"
+        # "packages.*.*"
         "nixosConfigurations.*"
       ];
     };
@@ -361,9 +357,6 @@ in
               "/usr/local/share/powershell"
             ];
             testing = false;
-            # large-packages = true;
-            # docker-images = true;
-            # swap-storage = true;
           };
         }
 
@@ -401,6 +394,33 @@ in
         hook.mode = "copy";
       };
 
+      packages-multiarch-linux = mkNixago {
+        data = {
+          name = "packages [aarch64-linux / x86_64-linux]";
+          on.push = null;
+          on.workflow_dispatch = null;
+          jobs = {
+            build_packages = {
+              runs-on = "\${{ matrix.runs-on }}";
+              strategy.matrix.include = [
+                { runs-on = "ubuntu-22.04"; arch = "x86_64-linux"; }
+                { runs-on = "ubuntu-22.04-arm"; arch = "aarch64-linux"; }
+              ];
+              steps = common_steps ++ [
+                {
+                  name = "Build packages";
+                  run = ''nix build --accept-flake-config .#packages'';
+                }
+              ] ++ debug_steps;
+            };
+          };
+        };
+
+        output = ".github/workflows/build-packages.yaml";
+        format = "yaml";
+        hook.mode = "copy";
+      };
+
       devshell-multiarch-linux = mkNixago {
         data = {
           name = "devshell [aarch64-linux / x86_64-linux]";
@@ -427,53 +447,6 @@ in
         format = "yaml";
         hook.mode = "copy";
       };
-
-      # devshell-aarch64-linux = mkNixago {
-      #   data = {
-      #     name = "devshell [aarch64-linux]";
-      #     on.push = null;
-      #     on.workflow_dispatch = null;
-      #     jobs = {
-      #       build_shell = {
-      #         runs-on = "ubuntu-22.04-arm";
-      #         steps = common_steps ++ [
-      #           {
-      #             name = "Build devshell";
-      #             run = ''nix develop --accept-flake-config --command "menu"'';
-      #           }
-      #         ] ++ debug_steps;
-      #       };
-      #     };
-      #   };
-
-      #   output = ".github/workflows/build-aarch64-devshell.yaml";
-      #   format = "yaml";
-      #   hook.mode = "copy";
-      # };
-
-
-      # devshell-x86_64-linux = mkNixago {
-      #   data = {
-      #     name = "devshell [x86_64-linux]";
-      #     on.push = null;
-      #     on.workflow_dispatch = null;
-      #     jobs = {
-      #       build_shell = {
-      #         runs-on = "ubuntu-latest";
-      #         steps = common_steps ++ [
-      #           {
-      #             name = "Build devshell";
-      #             run = ''nix develop --accept-flake-config --command "menu"'';
-      #           }
-      #         ] ++ debug_steps;
-      #       };
-      #     };
-      #   };
-
-      #   output = ".github/workflows/build-x86_64-devshell.yaml";
-      #   format = "yaml";
-      #   hook.mode = "copy";
-      # };
 
       workflowHostTemplate = mkNixago {
         data = {
@@ -504,7 +477,7 @@ in
 
       hostTemplate = host: {
         data = {
-          name = "Build ${hostname host} [x86_64-linux]";
+          name = "${hostname host} [x86_64-linux]";
           on.push = null;
           on.workflow_dispatch = null;
           jobs = {
@@ -614,20 +587,15 @@ in
     in
     [
       # NOTE: garnix builds most things now!
-      # devshell-x86_64-linux
-      # devshell-aarch64-linux
       devshell-multiarch-linux
+      packages-multiarch-linux
       rpi4-damogran-linux
-      workflowHostTemplate
+      # workflowHostTemplate
       flake-lock
       dependabot
       keygen_iso_release
-    ] ++ (lib.map
-      (host: mkNixago (hostTemplate host))
-      (hostsWithArch "x86_64-linux"));
-
-  # NOTE: github doesn't build my hosts, because of the space constraints, over 50GB needed
-  # and the runner doesn't have it
+    ];
+  # NOTE: github doesn't build my hosts, because of the 6h running job limit
   # ++ (lib.map
   #   (host: mkNixago (hostTemplate host))
   #   (hostsWithArch "x86_64-linux"));

@@ -1,6 +1,6 @@
 jobs:
-  build_system:
-    runs-on: ubuntu-latest
+  build_packages:
+    runs-on: ${{ matrix.runs-on }}
     steps:
     - name: ⬆ Checkout
       uses: actions/checkout@v4.2.2
@@ -57,24 +57,22 @@ jobs:
         testing: false
     - name: Free space
       run: df -h
-    - name: Build system configuration
-      run: nix build --accept-flake-config ".#nixosConfigurations.${{ inputs.configuration
-        }}.config.system.build.toplevel"
+    - name: Build packages
+      run: nix build --accept-flake-config .#packages
     - if: ${{ failure() }}
       name: ✓ tmate.io session
       uses: mxschmitt/action-tmate@master
       with:
         limit-access-to-actor: true
         timeout-minutes: 10
-name: Build x86_64 host
+    strategy:
+      matrix:
+        include:
+        - arch: x86_64-linux
+          runs-on: ubuntu-22.04
+        - arch: aarch64-linux
+          runs-on: ubuntu-22.04-arm
+name: packages [aarch64-linux / x86_64-linux]
 'on':
-  workflow_call:
-    inputs:
-      configuration:
-        required: true
-        type: string
-    secrets:
-      CACHIX_AUTH_TOKEN:
-        required: true
-      CACHIX_SIGNING_KEY:
-        required: true
+  push: null
+  workflow_dispatch: null
