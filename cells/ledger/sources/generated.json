@@ -1,7 +1,7 @@
 {
     "ledgerblue": {
         "cargoLocks": null,
-        "date": "2025-02-06",
+        "date": "2025-02-27",
         "extract": null,
         "name": "ledgerblue",
         "passthru": null,
@@ -11,13 +11,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "d453c7847555bac396b8e90f445c2abb8c5e7ad5",
-            "sha256": "sha256-GGE/pD63GKnfAUmg97mzBNDnOkum+DOgBdk1b2qVmiE=",
+            "rev": "c3609d5e42f3936ab7aa6b8452ba85c9a2125680",
+            "sha256": "sha256-5XCLq/04SStiLtmq5jX4boJMdqB+8Wd/qo33sluv9Tk=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/LedgerHQ/blue-loader-python"
         },
-        "version": "d453c7847555bac396b8e90f445c2abb8c5e7ad5"
+        "version": "c3609d5e42f3936ab7aa6b8452ba85c9a2125680"
     },
     "python-gnupg": {
         "cargoLocks": null,

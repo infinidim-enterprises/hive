@@ -29,16 +29,16 @@
   };
   lorri = {
     pname = "lorri";
-    version = "971dbc7b5c1663e4ead2e0af84398e88a5209bd1";
+    version = "d49fa36539821ba6b360909013675c424fd633c3";
     src = fetchFromGitHub {
       owner = "nix-community";
       repo = "lorri";
-      rev = "971dbc7b5c1663e4ead2e0af84398e88a5209bd1";
+      rev = "d49fa36539821ba6b360909013675c424fd633c3";
       fetchSubmodules = false;
-      sha256 = "sha256-Ne5OVGoEoGd6x5MbQwVVAQj4lVwyHEIx816wp5X/iKY=";
+      sha256 = "sha256-1MQovg4CEB0t462+YtlmkJ6tI0odonHQ5r1nyZL07Q4=";
     };
     cargoSha256 = "0000000000000000000000000000000000000000000000000000";
-    date = "2025-02-19";
+    date = "2025-02-27";
   };
   nix-index = {
     pname = "nix-index";

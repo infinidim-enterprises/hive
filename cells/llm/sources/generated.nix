@@ -29,8 +29,8 @@
     version = "latest";
     src = dockerTools.pullImage {
       imageName = "lobehub/lobe-chat";
-      imageDigest = "sha256:d27484d7c858ec2b1d553851f332a7543c3affed5dc4b2aa2af695f4c26f587e";
-      sha256 = "sha256-gGWc3Pk8sTa3FnwXns9pg2QqMAb1ARrXuB5Z1pUKRu8=";
+      imageDigest = "sha256:dc9ad5024d07bc90bd827ae8da8304184d3de4bedf392db367db016ef269aec3";
+      sha256 = "sha256-tUB2oFtJlB1e8cbSW8J7lUIwOCDiMMeV0oNIEQjlJag=";
       finalImageTag = "latest";
       os = "linux";
       arch = "amd64";
@@ -38,11 +38,11 @@
   };
   n8n = {
     pname = "n8n";
-    version = "n8n@1.78.1";
+    version = "n8n@1.80.5";
     src = fetchurl {
-      url = "https://github.com/n8n-io/n8n/archive/n8n@1.78.1.tar.gz";
+      url = "https://github.com/n8n-io/n8n/archive/n8n@1.80.5.tar.gz";
       name = "n8n.tar.gz";
-      sha256 = "sha256-fHJSY2DKy1VUlUSZcqy8rxJDJcjqAKAS17D1I1X9aJ4=";
+      sha256 = "sha256-Xe9YSKV0bzGDAEC5ENzONWs5E8iyPRbOtRxNGTkh6UI=";
     };
   };
 }

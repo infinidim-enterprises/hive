@@ -51,11 +51,11 @@
             "arch": "amd64",
             "finalImageName": null,
             "finalImageTag": null,
-            "imageDigest": "sha256:d27484d7c858ec2b1d553851f332a7543c3affed5dc4b2aa2af695f4c26f587e",
+            "imageDigest": "sha256:dc9ad5024d07bc90bd827ae8da8304184d3de4bedf392db367db016ef269aec3",
             "imageName": "lobehub/lobe-chat",
             "imageTag": "latest",
             "os": "linux",
-            "sha256": "sha256-gGWc3Pk8sTa3FnwXns9pg2QqMAb1ARrXuB5Z1pUKRu8=",
+            "sha256": "sha256-tUB2oFtJlB1e8cbSW8J7lUIwOCDiMMeV0oNIEQjlJag=",
             "tlsVerify": null
         },
         "version": "latest"
@@ -69,10 +69,10 @@
         "pinned": false,
         "src": {
             "name": "n8n.tar.gz",
-            "sha256": "sha256-fHJSY2DKy1VUlUSZcqy8rxJDJcjqAKAS17D1I1X9aJ4=",
+            "sha256": "sha256-Xe9YSKV0bzGDAEC5ENzONWs5E8iyPRbOtRxNGTkh6UI=",
             "type": "url",
-            "url": "https://github.com/n8n-io/n8n/archive/n8n@1.78.1.tar.gz"
+            "url": "https://github.com/n8n-io/n8n/archive/n8n@1.80.5.tar.gz"
         },
-        "version": "n8n@1.78.1"
+        "version": "n8n@1.80.5"
     }
 }
