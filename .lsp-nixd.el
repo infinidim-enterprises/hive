@@ -14,9 +14,5 @@
             lsp-nix-nixd-nixos-options-expr options-nixos
             lsp-nix-nixd-home-manager-options-expr options-home-manager))))
 
-(add-hook 'envrc-mode-hook #'dir-locals/setup-nixd)
-
-
-
-;; (provide '.lsp-nixd)
-;;; .lsp-nixd.el ends here
+(unless (memq 'dir-locals/setup-nixd envrc-mode-hook)
+  (add-hook 'envrc-mode-hook #'dir-locals/setup-nixd))
