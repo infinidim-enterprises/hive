@@ -102,7 +102,7 @@
     },
     "copilot-el": {
         "cargoLocks": null,
-        "date": "2025-02-19",
+        "date": "2025-02-23",
         "extract": null,
         "name": "copilot-el",
         "passthru": null,
@@ -112,13 +112,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "8a0068afcfb98af7f172d04f6f8cc932c1a22fe8",
-            "sha256": "sha256-7UIu/qVFI27lpwkX13k5CvuJbP9oted3KrT0vN/dJ1E=",
+            "rev": "7d105d708a23d16cdfd5240500be8bb02f95a46e",
+            "sha256": "sha256-ATIyNAnd1pU82xdGH7+z9zkOcDVJhYhh65QDQ73NiL0=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/zerolfx/copilot.el.git"
         },
-        "version": "8a0068afcfb98af7f172d04f6f8cc932c1a22fe8"
+        "version": "7d105d708a23d16cdfd5240500be8bb02f95a46e"
     },
     "grip": {
         "cargoLocks": null,
@@ -185,7 +185,7 @@
     },
     "nix-ts-mode": {
         "cargoLocks": null,
-        "date": "2024-11-18",
+        "date": "2025-02-28",
         "extract": null,
         "name": "nix-ts-mode",
         "passthru": null,
@@ -197,12 +197,12 @@
             "name": null,
             "owner": "remi-gelinas",
             "repo": "nix-ts-mode",
-            "rev": "cea932fd683bfab84234205f5f1d161e29a5adf6",
-            "sha256": "sha256-5tq/eZrS5Y8HWqW0ndFoMo/ybZOK13Sq33tCb6WcyFU=",
+            "rev": "62ce3a2dc39529c5db3516427e84b2c96b8efcfd",
+            "sha256": "sha256-+TkkeiL2Dx8Tj5csLghQJFWlV3RqCHKDh2gEHX3hdZQ=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "cea932fd683bfab84234205f5f1d161e29a5adf6"
+        "version": "62ce3a2dc39529c5db3516427e84b2c96b8efcfd"
     },
     "nyxt-el": {
         "cargoLocks": null,

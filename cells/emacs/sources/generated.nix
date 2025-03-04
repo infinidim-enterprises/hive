@@ -71,17 +71,17 @@
   };
   copilot-el = {
     pname = "copilot-el";
-    version = "8a0068afcfb98af7f172d04f6f8cc932c1a22fe8";
+    version = "7d105d708a23d16cdfd5240500be8bb02f95a46e";
     src = fetchgit {
       url = "https://github.com/zerolfx/copilot.el.git";
-      rev = "8a0068afcfb98af7f172d04f6f8cc932c1a22fe8";
+      rev = "7d105d708a23d16cdfd5240500be8bb02f95a46e";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-7UIu/qVFI27lpwkX13k5CvuJbP9oted3KrT0vN/dJ1E=";
+      sha256 = "sha256-ATIyNAnd1pU82xdGH7+z9zkOcDVJhYhh65QDQ73NiL0=";
     };
-    date = "2025-02-19";
+    date = "2025-02-23";
   };
   grip = {
     pname = "grip";
@@ -126,15 +126,15 @@
   };
   nix-ts-mode = {
     pname = "nix-ts-mode";
-    version = "cea932fd683bfab84234205f5f1d161e29a5adf6";
+    version = "62ce3a2dc39529c5db3516427e84b2c96b8efcfd";
     src = fetchFromGitHub {
       owner = "remi-gelinas";
       repo = "nix-ts-mode";
-      rev = "cea932fd683bfab84234205f5f1d161e29a5adf6";
+      rev = "62ce3a2dc39529c5db3516427e84b2c96b8efcfd";
       fetchSubmodules = false;
-      sha256 = "sha256-5tq/eZrS5Y8HWqW0ndFoMo/ybZOK13Sq33tCb6WcyFU=";
+      sha256 = "sha256-+TkkeiL2Dx8Tj5csLghQJFWlV3RqCHKDh2gEHX3hdZQ=";
     };
-    date = "2024-11-18";
+    date = "2025-02-28";
   };
   nyxt-el = {
     pname = "nyxt-el";

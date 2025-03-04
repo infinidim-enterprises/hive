@@ -3,17 +3,17 @@
 {
   ledgerblue = {
     pname = "ledgerblue";
-    version = "d453c7847555bac396b8e90f445c2abb8c5e7ad5";
+    version = "824d6c2bd1c619b7a9bf098336cdc273b5fc03d8";
     src = fetchgit {
       url = "https://github.com/LedgerHQ/blue-loader-python";
-      rev = "d453c7847555bac396b8e90f445c2abb8c5e7ad5";
+      rev = "824d6c2bd1c619b7a9bf098336cdc273b5fc03d8";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-GGE/pD63GKnfAUmg97mzBNDnOkum+DOgBdk1b2qVmiE=";
+      sha256 = "sha256-Ifr97SkzEL4sMl8iH4ViLqv41QMscC5pV4hIMnYQv4E=";
     };
-    date = "2025-02-06";
+    date = "2025-03-03";
   };
   python-gnupg = {
     pname = "python-gnupg";

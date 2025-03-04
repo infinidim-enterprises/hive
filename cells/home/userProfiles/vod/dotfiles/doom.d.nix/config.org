@@ -1689,6 +1689,14 @@ TODO: move it to local-setts in Nix
 (add-hook! 'before-save-hook 'font-lock-flush)
 #+end_src
 
+** dir-locals stuff
+#+begin_src emacs-lisp :tangle config.el
+(after! hack-local-variables
+  (add-hook 'hack-local-variables-hook
+            (lambda ()
+              (when (file-equal-p (expand-file-name "~/Projects/hive") (projectile-acquire-root))
+                (setq enable-local-variables :all)))))
+#+end_src
 ** local-setts from nix config
 #+begin_src emacs-lisp :tangle packages.el
 (package! local-setts :built-in t)
