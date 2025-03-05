@@ -3,11 +3,8 @@
 { lib, pkgs, config, ... }:
 let
   inherit (lib // builtins)
-    map
-    last
-    mkMerge
-    splitString
-    concatStringsSep;
+    mkMerge;
+
   download-dir = "/opt/media";
   # media_dirs =
   #   with config.systemd.services.jellyfin.serviceConfig;
@@ -26,26 +23,28 @@ mkMerge [
 
     systemd.services.jellyfin-fix-perms.wantedBy = [ "jellyfin.service" ];
     systemd.services.jellyfin-fix-perms.script =
-      with config.systemd.services.jellyfin.serviceConfig;
+      with config.services.jellyfin;
       ''
-        chown --recursive ${User}:${Group} ${download-dir}
+        chown --recursive ${user}:${group} ${download-dir}
       '';
 
     systemd.services.jellyfin.after = [ "jellyfin-fix-perms.service" ];
   }
 
-  (with config.systemd.services.jellyfin.serviceConfig;  {
+  {
     services.sonarr.enable = true;
-    services.sonarr.user = User;
-    services.sonarr.group = Group;
+    services.sonarr.user = config.services.jellyfin.user;
+    services.sonarr.group = config.services.jellyfin.group;
     services.sonarr.openFirewall = true;
     services.sonarr.dataDir = download-dir + "/sonarr";
+
     systemd.services.sonarr.after = [ "jellyfin.service" ];
 
     services.prowlarr.enable = true;
     services.prowlarr.openFirewall = true;
+
     systemd.services.prowlarr.after = [ "jellyfin.service" ];
-  })
+  }
 
   # {
   #   services.minidlna.enable = true;

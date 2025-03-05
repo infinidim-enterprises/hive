@@ -19,6 +19,7 @@ rec {
           inputs.raspberry-pi-nix.overlays.core
           inputs.raspberry-pi-nix.overlays.libcamera
           inputs.cells.common.overlays.minidlna
+          inputs.cells.common.overlays.prowlarr
         ];
     };
   };
