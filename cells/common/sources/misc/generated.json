@@ -21,7 +21,7 @@
   },
   "adguard-filters_adguardteam": {
     "cargoLocks": null,
-    "date": "2025-03-04",
+    "date": "2025-03-05",
     "extract": null,
     "name": "adguard-filters_adguardteam",
     "passthru": null,
@@ -31,13 +31,13 @@
       "fetchSubmodules": false,
       "leaveDotGit": false,
       "name": null,
-      "rev": "c3702c326ad1af2ff2519144bdd7a37c1045f6c7",
-      "sha256": "sha256-2MHgXs26Tx2MuPWJDvFCXlNKDGqTr2Kio9OHa1dE/iM=",
+      "rev": "3b4d14ec43249e5c5827473151169e2056d5a163",
+      "sha256": "sha256-pUAwEN/wpubt5UGwGcrs3KNIQAGSWdB+NrtWwqbtvJU=",
       "sparseCheckout": [],
       "type": "git",
       "url": "https://github.com/AdguardTeam/AdguardFilters"
     },
-    "version": "c3702c326ad1af2ff2519144bdd7a37c1045f6c7"
+    "version": "3b4d14ec43249e5c5827473151169e2056d5a163"
   },
   "adguard-filters_romania": {
     "cargoLocks": null,
@@ -404,12 +404,12 @@
       "name": null,
       "owner": "langchain-ai",
       "repo": "langchain",
-      "rev": "langchain-core==0.3.40",
-      "sha256": "sha256-MRkmL81zpJj2O+u9WH+9YHjwepbEb79BockwpmZGYko=",
+      "rev": "langchain-core==0.3.41",
+      "sha256": "sha256-KtDmXNA+h5saaczf6aj6o4iCtdJHmWhn7KjOa34kwf0=",
       "sparseCheckout": [],
       "type": "github"
     },
-    "version": "langchain-core==0.3.40"
+    "version": "langchain-core==0.3.41"
   },
   "listopia": {
     "cargoLocks": null,
@@ -563,6 +563,21 @@
       "type": "github"
     },
     "version": "42b4d08c0cb4b8ee527f729c1674e982eca409a7"
+  },
+  "prowlarr": {
+    "cargoLocks": null,
+    "date": null,
+    "extract": null,
+    "name": "prowlarr",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "name": null,
+      "sha256": "sha256-QJHJQEP5OBgMpCdOxURP98+e6mMBcNTAYSCORKnFXpw=",
+      "type": "url",
+      "url": "https://github.com/Prowlarr/Prowlarr/releases/download/v1.31.2.4975/Prowlarr.master.1.31.2.4975.linux-core-arm64.tar.gz"
+    },
+    "version": "1.31.2.4975"
   },
   "python-pass": {
     "cargoLocks": null,

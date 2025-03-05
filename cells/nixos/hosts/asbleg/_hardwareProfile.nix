@@ -66,7 +66,7 @@ in
     options i915 verbose_state_checks=0 guc_log_level=0
   '';
   boot.blacklistedKernelModules = [ "nouveau" ];
-  boot.kernelPackages = pkgs.linuxPackages_xanmod_stable;
+  boot.kernelPackages = pkgs.linuxPackages_xanmod;
   boot.kernelPatches = [
     {
       # NOTE: annoying messages removed on gpd micro-pc

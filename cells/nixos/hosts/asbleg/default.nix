@@ -13,6 +13,16 @@ rec {
     pkgs = import inputs.nixos-24-11 {
       inherit system;
       config.allowUnfree = true;
+      config.permittedInsecurePackages = [
+        # ISSUE: (emacs30.1): https://github.com/doomemacs/doomemacs/issues/8293
+        "emacs29-pgtk"
+        "emacs-pgtk-29.4"
+        "emacs-pgtk-with-packages-29.4"
+        "emacs-pgtk-with-doom-29.4"
+        # CVE-2024-53920
+        # CVE-2025-1244
+      ];
+
       overlays = cell.overlays.default_desktop;
     };
   };

@@ -2,7 +2,7 @@
 
 { config, lib, pkgs, modulesPath, ... }:
 {
-  boot.kernelPackages = pkgs.linuxPackages_xanmod_stable;
+  boot.kernelPackages = pkgs.linuxPackages_xanmod;
   # deploy.params.cpu = "amd";
   # deploy.params.gpu = "amd";
   # deploy.params.ram = 64;

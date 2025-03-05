@@ -67,7 +67,7 @@
   services.logind.lidSwitchExternalPower = "lock";
   services.logind.lidSwitch = "lock";
 
-  boot.kernelPackages = pkgs.linuxPackages_xanmod_stable;
+  boot.kernelPackages = pkgs.linuxPackages_xanmod;
   boot.initrd.availableKernelModules = [ "nvme" "nvme_core" ];
   boot.blacklistedKernelModules = [ "nouveau" ];
   boot.kernelParams = [

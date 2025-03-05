@@ -34,11 +34,6 @@ fetch.git = "https://github.com/MalditoBarbudo/solarized_sddm_theme"
 src.git = "https://github.com/tinted-theming/schemes"
 fetch.git = "https://github.com/tinted-theming/schemes"
 
-[transmissionic]
-# Remote for Transmission Daemon
-src.github = "6c65726f79/Transmissionic"
-fetch.url = "https://github.com/6c65726f79/Transmissionic/releases/download/$ver/Transmissionic-webui-$ver.zip"
-
 [tfenv]
 #  Terraform version manager
 src.git = "https://github.com/tfutils/tfenv"
@@ -319,3 +314,17 @@ fetch.github = "elbywan/crystalline"
 src.use_latest_release = true
 src.github = "zerotier/ZeroTierOne"
 fetch.url = "https://github.com/zerotier/ZeroTierOne/archive/refs/tags/$ver.tar.gz"
+
+###
+# Download assistants
+###
+[transmissionic]
+# Remote for Transmission Daemon
+src.github = "6c65726f79/Transmissionic"
+fetch.url = "https://github.com/6c65726f79/Transmissionic/releases/download/$ver/Transmissionic-webui-$ver.zip"
+
+[prowlarr]
+src.github = "Prowlarr/Prowlarr"
+src.use_latest_release = true
+src.prefix = "v"                                                                                                        # NOTE: remove "v" from $ver
+fetch.url = "https://github.com/Prowlarr/Prowlarr/releases/download/v$ver/Prowlarr.master.$ver.linux-core-arm64.tar.gz"

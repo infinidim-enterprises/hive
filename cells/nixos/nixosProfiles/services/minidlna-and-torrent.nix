@@ -34,6 +34,19 @@ mkMerge [
     systemd.services.jellyfin.after = [ "jellyfin-fix-perms.service" ];
   }
 
+  (with config.systemd.services.jellyfin.serviceConfig;  {
+    services.sonarr.enable = true;
+    services.sonarr.user = User;
+    services.sonarr.group = Group;
+    services.sonarr.openFirewall = true;
+    services.sonarr.dataDir = download-dir + "/sonarr";
+    systemd.services.sonarr.after = [ "jellyfin.service" ];
+
+    services.prowlarr.enable = true;
+    services.prowlarr.openFirewall = true;
+    systemd.services.prowlarr.after = [ "jellyfin.service" ];
+  })
+
   # {
   #   services.minidlna.enable = true;
   #   services.minidlna.openFirewall = true;

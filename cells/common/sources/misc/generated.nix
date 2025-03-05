@@ -17,17 +17,17 @@
   };
   adguard-filters_adguardteam = {
     pname = "adguard-filters_adguardteam";
-    version = "c3702c326ad1af2ff2519144bdd7a37c1045f6c7";
+    version = "3b4d14ec43249e5c5827473151169e2056d5a163";
     src = fetchgit {
       url = "https://github.com/AdguardTeam/AdguardFilters";
-      rev = "c3702c326ad1af2ff2519144bdd7a37c1045f6c7";
+      rev = "3b4d14ec43249e5c5827473151169e2056d5a163";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-2MHgXs26Tx2MuPWJDvFCXlNKDGqTr2Kio9OHa1dE/iM=";
+      sha256 = "sha256-pUAwEN/wpubt5UGwGcrs3KNIQAGSWdB+NrtWwqbtvJU=";
     };
-    date = "2025-03-04";
+    date = "2025-03-05";
   };
   adguard-filters_romania = {
     pname = "adguard-filters_romania";
@@ -245,13 +245,13 @@
   };
   langchain = {
     pname = "langchain";
-    version = "langchain-core==0.3.40";
+    version = "langchain-core==0.3.41";
     src = fetchFromGitHub {
       owner = "langchain-ai";
       repo = "langchain";
-      rev = "langchain-core==0.3.40";
+      rev = "langchain-core==0.3.41";
       fetchSubmodules = false;
-      sha256 = "sha256-MRkmL81zpJj2O+u9WH+9YHjwepbEb79BockwpmZGYko=";
+      sha256 = "sha256-KtDmXNA+h5saaczf6aj6o4iCtdJHmWhn7KjOa34kwf0=";
     };
   };
   listopia = {
@@ -347,6 +347,14 @@
       sha256 = "sha256-DI0vxfbewqlXocrvzPgCM66IuSVxHjFdL3hIPxzFou8=";
     };
     date = "2022-07-26";
+  };
+  prowlarr = {
+    pname = "prowlarr";
+    version = "1.31.2.4975";
+    src = fetchurl {
+      url = "https://github.com/Prowlarr/Prowlarr/releases/download/v1.31.2.4975/Prowlarr.master.1.31.2.4975.linux-core-arm64.tar.gz";
+      sha256 = "sha256-QJHJQEP5OBgMpCdOxURP98+e6mMBcNTAYSCORKnFXpw=";
+    };
   };
   python-pass = {
     pname = "python-pass";

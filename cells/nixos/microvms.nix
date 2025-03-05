@@ -163,7 +163,7 @@ in
     inherit bee;
     imports = [
       ({ pkgs, ... }: {
-        boot.kernelPackages = pkgs.linuxPackages_xanmod_stable;
+        boot.kernelPackages = pkgs.linuxPackages_xanmod;
         boot.zfs.enableUnstable = true;
         boot.zfs.removeLinuxDRM = true;
       })
