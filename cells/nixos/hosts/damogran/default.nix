@@ -32,7 +32,7 @@ rec {
 
       (import ./_hardwareProfile.nix { inherit inputs cell; })
 
-      cell.nixosProfiles.services.minidlna-and-torrent
+      cell.nixosProfiles.services.multimedia-downloads
 
       {
         deploy.enable = true;

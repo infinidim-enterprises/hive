@@ -55,7 +55,6 @@ let
   else null;
 
   Cells = Flake.${builtins.currentSystem};
-  # TODO: Me = with stdLib; let hostName = readFile /etc/hostname; in hostName;
 
   LedgerDev = import Flake.inputs.nixpkgs-unstable {
     system = builtins.currentSystem;
@@ -67,6 +66,16 @@ lib.optionalAttrs
   (!builtins.isNull host && lib.hasAttr "nixos-${host}" Flake.nixosConfigurations)
   {
     host = Flake.nixosConfigurations."nixos-${host}";
+    inherit (Flake.nixosConfigurations."nixos-${host}".pkgs)
+      writeScript
+      writeScriptBin
+      writeShellApplication
+      writeShellScript
+      writeShellScriptBin
+      writeText
+      writeTextDir
+      writeTextFile
+      writers;
   } //
 {
   inherit
