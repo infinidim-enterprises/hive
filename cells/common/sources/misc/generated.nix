@@ -17,17 +17,17 @@
   };
   adguard-filters_adguardteam = {
     pname = "adguard-filters_adguardteam";
-    version = "3b4d14ec43249e5c5827473151169e2056d5a163";
+    version = "e27f238263c86056aaec712d20ee69fd4ea9158a";
     src = fetchgit {
       url = "https://github.com/AdguardTeam/AdguardFilters";
-      rev = "3b4d14ec43249e5c5827473151169e2056d5a163";
+      rev = "e27f238263c86056aaec712d20ee69fd4ea9158a";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-pUAwEN/wpubt5UGwGcrs3KNIQAGSWdB+NrtWwqbtvJU=";
+      sha256 = "sha256-4llpa08xQGarQCLjXIJWVsds/OVDkmZMWazauzhbE84=";
     };
-    date = "2025-03-05";
+    date = "2025-03-08";
   };
   adguard-filters_romania = {
     pname = "adguard-filters_romania";
@@ -245,13 +245,13 @@
   };
   langchain = {
     pname = "langchain";
-    version = "langchain-core==0.3.41";
+    version = "langchain-core==0.3.43";
     src = fetchFromGitHub {
       owner = "langchain-ai";
       repo = "langchain";
-      rev = "langchain-core==0.3.41";
+      rev = "langchain-core==0.3.43";
       fetchSubmodules = false;
-      sha256 = "sha256-KtDmXNA+h5saaczf6aj6o4iCtdJHmWhn7KjOa34kwf0=";
+      sha256 = "sha256-NrUh/7+O5m3SisxeWEnKUpar99tNcwTdEzHsZxQbLzc=";
     };
   };
   listopia = {

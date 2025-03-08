@@ -57,17 +57,17 @@
   };
   color-rg = {
     pname = "color-rg";
-    version = "f61438668edee6358ad95d76308e43b3d872ea7f";
+    version = "41ad8fda5b6579a841889b2395c26cd642a006de";
     src = fetchgit {
       url = "https://github.com/manateelazycat/color-rg";
-      rev = "f61438668edee6358ad95d76308e43b3d872ea7f";
+      rev = "41ad8fda5b6579a841889b2395c26cd642a006de";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-PTlzJ73z4PyOoB5KaJtLhZOctE+5eing9vZthJ1rZEI=";
+      sha256 = "sha256-wmFaEDvLNMM0Fk6g0eGBHTzqqOf1Qxne/yMc1rGTrZM=";
     };
-    date = "2025-01-22";
+    date = "2025-03-07";
   };
   copilot-el = {
     pname = "copilot-el";

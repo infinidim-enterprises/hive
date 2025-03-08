@@ -3,13 +3,13 @@
 {
   aider-chat = {
     pname = "aider-chat";
-    version = "v0.74.0";
+    version = "v0.75.0";
     src = fetchFromGitHub {
       owner = "Aider-AI";
       repo = "aider";
-      rev = "v0.74.0";
+      rev = "v0.75.0";
       fetchSubmodules = false;
-      sha256 = "sha256-4KNAgNAmFxCnrgm2tnor+Hy6f9RAnoRinezg2rkSuOk=";
+      sha256 = "sha256-Y8tiQIOtge5W5rwf78Ax4wii7N8GtzEWHCLWuKbt3S8=";
     };
   };
   gluetun = {
@@ -29,8 +29,8 @@
     version = "latest";
     src = dockerTools.pullImage {
       imageName = "lobehub/lobe-chat";
-      imageDigest = "sha256:d27484d7c858ec2b1d553851f332a7543c3affed5dc4b2aa2af695f4c26f587e";
-      sha256 = "sha256-gGWc3Pk8sTa3FnwXns9pg2QqMAb1ARrXuB5Z1pUKRu8=";
+      imageDigest = "sha256:f97cdf49930911f27ccbd774e6025dbf5de5b52a776a848c5229e50d599d74ac";
+      sha256 = "sha256-aiQbeXORNyW11V2qcmUX4WWh3V+emrwPg2+C7zFJ+t8=";
       finalImageTag = "latest";
       os = "linux";
       arch = "amd64";

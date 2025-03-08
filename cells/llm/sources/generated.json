@@ -13,12 +13,12 @@
             "name": null,
             "owner": "Aider-AI",
             "repo": "aider",
-            "rev": "v0.74.0",
-            "sha256": "sha256-4KNAgNAmFxCnrgm2tnor+Hy6f9RAnoRinezg2rkSuOk=",
+            "rev": "v0.75.0",
+            "sha256": "sha256-Y8tiQIOtge5W5rwf78Ax4wii7N8GtzEWHCLWuKbt3S8=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v0.74.0"
+        "version": "v0.75.0"
     },
     "gluetun": {
         "cargoLocks": null,
@@ -51,11 +51,11 @@
             "arch": "amd64",
             "finalImageName": null,
             "finalImageTag": null,
-            "imageDigest": "sha256:d27484d7c858ec2b1d553851f332a7543c3affed5dc4b2aa2af695f4c26f587e",
+            "imageDigest": "sha256:f97cdf49930911f27ccbd774e6025dbf5de5b52a776a848c5229e50d599d74ac",
             "imageName": "lobehub/lobe-chat",
             "imageTag": "latest",
             "os": "linux",
-            "sha256": "sha256-gGWc3Pk8sTa3FnwXns9pg2QqMAb1ARrXuB5Z1pUKRu8=",
+            "sha256": "sha256-aiQbeXORNyW11V2qcmUX4WWh3V+emrwPg2+C7zFJ+t8=",
             "tlsVerify": null
         },
         "version": "latest"
