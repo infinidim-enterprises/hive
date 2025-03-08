@@ -3,11 +3,11 @@
 {
   lobe-chat = {
     pname = "lobe-chat";
-    version = "1.68.3";
+    version = "1.69.2";
     src = dockerTools.pullImage {
       imageName = "lobehub/lobe-chat";
-      imageDigest = "sha256:565149ad96961affafb3f3da4e6526fa9788c6a92422a3e11a4d9ebe746e9dad";
-      sha256 = "sha256-zqndklapfy0SgC1TXUserV/lVESzAI9dsnt24vo3cyQ=";
+      imageDigest = "sha256:f97cdf49930911f27ccbd774e6025dbf5de5b52a776a848c5229e50d599d74ac";
+      sha256 = "sha256-Y+LuXd9b1lj6bCRbwjtVzjh4lCHQ3PpmLDEjIHQVXAY=";
       finalImageTag = "latest";
     };
   };
