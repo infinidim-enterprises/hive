@@ -1,6 +1,5 @@
 ;;; .lsp-nixd.el --- Description -*- lexical-binding: t; -*-
 
-
 (defun dir-locals/setup-nixd ()
   (when (getenv "PRJ_ROOT")
     (let* ((prj_root (getenv "PRJ_ROOT"))
