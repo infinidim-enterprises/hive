@@ -16,5 +16,8 @@ final: prev: {
     inherit (final.sources.prowlarr) pname version src;
   });
 
-  inherit (nixpkgs-unstable) lidarr;
+  inherit (nixpkgs-unstable)
+    lidarr
+    readarr
+    whisparr;
 }
