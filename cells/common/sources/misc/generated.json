@@ -21,7 +21,7 @@
   },
   "adguard-filters_adguardteam": {
     "cargoLocks": null,
-    "date": "2025-03-05",
+    "date": "2025-03-14",
     "extract": null,
     "name": "adguard-filters_adguardteam",
     "passthru": null,
@@ -31,17 +31,17 @@
       "fetchSubmodules": false,
       "leaveDotGit": false,
       "name": null,
-      "rev": "3b4d14ec43249e5c5827473151169e2056d5a163",
-      "sha256": "sha256-pUAwEN/wpubt5UGwGcrs3KNIQAGSWdB+NrtWwqbtvJU=",
+      "rev": "b44f8b4e44c55b32af6390681e293a918df541b2",
+      "sha256": "sha256-rXyk/vEqg8kDbtAhlORMZpOjDlD8RdUMGRd5Lp9ZVbA=",
       "sparseCheckout": [],
       "type": "git",
       "url": "https://github.com/AdguardTeam/AdguardFilters"
     },
-    "version": "3b4d14ec43249e5c5827473151169e2056d5a163"
+    "version": "b44f8b4e44c55b32af6390681e293a918df541b2"
   },
   "adguard-filters_romania": {
     "cargoLocks": null,
-    "date": "2025-02-27",
+    "date": "2025-03-11",
     "extract": null,
     "name": "adguard-filters_romania",
     "passthru": null,
@@ -51,17 +51,17 @@
       "fetchSubmodules": false,
       "leaveDotGit": false,
       "name": null,
-      "rev": "cb6a642e6e6cdf1ab0a4b19b7c687fdd1d2aff44",
-      "sha256": "sha256-/meiN2m1oz/6t5yBpmpKHvRiyARBs/MC8fhI2lau31g=",
+      "rev": "b46d105f484768e3a48bae47f81de86ad42b6cb0",
+      "sha256": "sha256-4dmbHCmX7HdQiDeDoL9ourJxmHzsb1fcy2vfB32EzUQ=",
       "sparseCheckout": [],
       "type": "git",
       "url": "https://github.com/tcptomato/ROad-Block"
     },
-    "version": "cb6a642e6e6cdf1ab0a4b19b7c687fdd1d2aff44"
+    "version": "b46d105f484768e3a48bae47f81de86ad42b6cb0"
   },
   "base16-schemes": {
     "cargoLocks": null,
-    "date": "2025-02-23",
+    "date": "2025-03-11",
     "extract": null,
     "name": "base16-schemes",
     "passthru": null,
@@ -71,13 +71,13 @@
       "fetchSubmodules": false,
       "leaveDotGit": false,
       "name": null,
-      "rev": "a1bc2bd89e693e7e3f5764cfe8114e2ae150e184",
-      "sha256": "sha256-Hdk850xgAd3DL8KX0AbyU7tC834d3Lej1jOo3duWiOA=",
+      "rev": "d4a7c5b683fb4d4150162d163889a7882625022e",
+      "sha256": "sha256-XRwEa2+sau3jsVN4QcffFu7cWoxkKVs0oqysSu3Anxc=",
       "sparseCheckout": [],
       "type": "git",
       "url": "https://github.com/tinted-theming/schemes"
     },
-    "version": "a1bc2bd89e693e7e3f5764cfe8114e2ae150e184"
+    "version": "d4a7c5b683fb4d4150162d163889a7882625022e"
   },
   "chatgpt-wrapper": {
     "cargoLocks": null,
@@ -357,7 +357,7 @@
   },
   "ipxe": {
     "cargoLocks": null,
-    "date": "2025-02-28",
+    "date": "2025-03-13",
     "extract": null,
     "name": "ipxe",
     "passthru": null,
@@ -367,13 +367,13 @@
       "fetchSubmodules": false,
       "leaveDotGit": false,
       "name": null,
-      "rev": "be3a78eaf804a2c437aa055d5c1e2f4a1310a0c1",
-      "sha256": "sha256-W1nLhFc3OttPbDyf8e7OM+kHQajamvNJ550YdTwlOHA=",
+      "rev": "ddc2d928d25e3c87ba6153b96446113d59221b94",
+      "sha256": "sha256-ZVLoOZToGILlbRMlHVUPWSsaKtkW0TZ7NotNG53P+4U=",
       "sparseCheckout": [],
       "type": "git",
       "url": "https://github.com/ipxe/ipxe"
     },
-    "version": "be3a78eaf804a2c437aa055d5c1e2f4a1310a0c1"
+    "version": "ddc2d928d25e3c87ba6153b96446113d59221b94"
   },
   "iterable-io": {
     "cargoLocks": null,
@@ -404,12 +404,12 @@
       "name": null,
       "owner": "langchain-ai",
       "repo": "langchain",
-      "rev": "langchain-core==0.3.41",
-      "sha256": "sha256-KtDmXNA+h5saaczf6aj6o4iCtdJHmWhn7KjOa34kwf0=",
+      "rev": "langchain-core==0.3.45",
+      "sha256": "sha256-9aAA5HGjZADBppNFd9viIJcIh5RUtPYL8FmdqF0QqX8=",
       "sparseCheckout": [],
       "type": "github"
     },
-    "version": "langchain-core==0.3.41"
+    "version": "langchain-core==0.3.45"
   },
   "listopia": {
     "cargoLocks": null,
@@ -614,6 +614,21 @@
       "url": "https://beta.quicklisp.org/quicklisp.lisp"
     },
     "version": "latest"
+  },
+  "radarr": {
+    "cargoLocks": null,
+    "date": null,
+    "extract": null,
+    "name": "radarr",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "name": null,
+      "sha256": "sha256-4JgtHmNoJv9zURdFzRQaO0og07HpbVVOkBf+jViuM7E=",
+      "type": "url",
+      "url": "https://github.com/Radarr/Radarr/releases/download/v5.19.3.9730/Radarr.master.5.19.3.9730.linux-core-arm64.tar.gz"
+    },
+    "version": "5.19.3.9730"
   },
   "s5cmd": {
     "cargoLocks": null,

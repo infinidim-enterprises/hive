@@ -45,23 +45,65 @@ mkMerge [
     networking.firewall.allowedTCPPorts = [ 80 ];
 
     services.nginx.enable = true;
+    # NOTE: https://github.com/NixOS/nixpkgs/issues/156956#issuecomment-2282360607
     services.nginx.recommendedProxySettings = true;
     services.nginx.virtualHosts.${config.networking.fqdn} = {
 
-      locations."/transmission" = {
+      locations."~* ^/transmission(/rpc|/web)?(/.*)?$" = {
         proxyPass = "http://localhost:9091";
+        proxyWebsockets = true;
         extraConfig = ''
           proxy_pass_header  X-Transmission-Session-Id;
           client_max_body_size 50000M;
         '';
       };
 
-      locations."/transmission/rpc" = {
-        proxyPass = "http://localhost:9091";
+      locations."~* ^/jellyfin(/.*)?$" = {
+        proxyPass = "http://localhost:8096";
+        proxyWebsockets = true;
         extraConfig = ''
-          proxy_pass_header  X-Transmission-Session-Id;
-          client_max_body_size 50000M;
+          proxy_set_header Upgrade $http_upgrade;
+          proxy_set_header Connection "upgrade";
+
+          # proxy_set_header Host $host;
+
+          proxy_set_header Range $http_range;
+          proxy_set_header If-Range $http_if_range;
+
+          proxy_set_header X-Real-IP $remote_addr;
+          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+          proxy_set_header X-Forwarded-Proto $scheme;
+          proxy_set_header X-Forwarded-Protocol $scheme;
+          proxy_set_header X-Forwarded-Host $http_host;
+
+          proxy_buffering off;
+          client_max_body_size 20M;
         '';
+      };
+
+      locations."~* ^/radarr(/.*)?$" = {
+        proxyPass = "http://localhost:7878";
+        proxyWebsockets = true;
+      };
+
+      locations."~* ^/sonarr(/.*)?$" = {
+        proxyPass = "http://localhost:8989";
+        proxyWebsockets = true;
+      };
+
+      locations."~* ^/lidarr(/.*)?$" = {
+        proxyPass = "http://localhost:8686";
+        proxyWebsockets = true;
+      };
+
+      # locations."~* ^/whisparr(/.*)?$" = {
+      #   proxyPass = "http://localhost:";
+      #   proxyWebsockets = true;
+      # };
+
+      locations."~* ^/prowlarr(/.*)?$" = {
+        proxyPass = "http://localhost:9696";
+        proxyWebsockets = true;
       };
 
     };
@@ -72,85 +114,6 @@ mkMerge [
     services.httpd.virtualHosts.${config.networking.fqdn} = {
       listen = [{ ip = "*"; port = 80; }];
       documentRoot = pkgs.writeTextDir "index.html" index_html;
-      extraConfig = ''
-        ProxyVia On
-        timeout 240
-        ProxyTimeout 240
-        ProxyRequests Off
-        ProxyPreserveHost On
-        ProxyBadHeader Ignore
-        AllowEncodedSlashes NoDecode
-        RequestHeader set Connection upgrade
-        RequestHeader set X-Forwarded-For %{REMOTE_ADDR}s
-        RequestHeader set X-Forwarded-Host %{HTTP_HOST}s
-        RequestHeader set X-Original-URL %{REQUEST_URI}s
-      '';
-
-      /*
-
-      */
-
-      locations = {
-        # "/" = {
-        #   index = "index.html";
-        #   alias = pkgs.writeTextDir "index.html" index_html;
-        #   extraConfig = ''
-        #     SetHandler None
-        #   '';
-        # };
-
-        # TODO: transmission/rpc
-        "/transmission" = {
-          proxyPass = "http://localhost:9091/transmission/";
-          extraConfig = ''
-            Require all granted
-            CacheDisable on
-            ProxyPassReverseCookiePath /transmission/ /
-            ProxyPassReverseCookieDomain localhost ${config.networking.fqdn}
-            RequestHeader set X-Forwarded-Port 80
-            RequestHeader set X-Real-IP %{REMOTE_ADDR}s
-          '';
-        };
-
-        # "/transmission/rpc" = {
-        #   proxyPass = "http://localhost:9091/transmission/rpc";
-        #   extraConfig = ''
-        #     Require all granted
-        #     # Header always unset X-Transmission-Session-Id
-        #     # Header edit Set-Cookie "(X-Transmission-Session-Id=[^;]+);" "$1"
-        #     # RequestHeader set X-Transmission-Session-Id ""
-        #   '';
-        # };
-
-        "/sonarr" = {
-          proxyPass = "http://127.0.0.1:8989/sonarr/";
-          extraConfig = ''
-            ProxyPreserveHost on
-          '';
-        };
-
-        "/prowlarr" = {
-          proxyPass = "http://127.0.0.1:9696/prowlarr/";
-          extraConfig = ''
-            ProxyPreserveHost on
-          '';
-        };
-
-        "/jellyfin" = {
-          proxyPass = "http://127.0.0.1:8096/jellyfin";
-          # extraConfig = ''
-          #   Order allow,deny
-          #   Allow from all
-          # '';
-        };
-
-        "/jellyfin/socket" = {
-          proxyPass = "ws://127.0.0.1:8096/jellyfin/socket";
-          extraConfig = ''
-            ProxyPreserveHost on
-          '';
-        };
-      };
     };
   }
 
@@ -174,12 +137,30 @@ mkMerge [
   }
 
   {
+    services.radarr.enable = true;
+    services.radarr.user = config.services.jellyfin.user;
+    services.radarr.group = config.services.jellyfin.group;
+    services.radarr.openFirewall = false;
+    services.radarr.dataDir = download-dir + "/radarr";
+    systemd.services.radarr.after = [ "prowlarr.service" ];
+  }
+
+  {
     services.sonarr.enable = true;
     services.sonarr.user = config.services.jellyfin.user;
     services.sonarr.group = config.services.jellyfin.group;
     services.sonarr.openFirewall = false;
     services.sonarr.dataDir = download-dir + "/sonarr";
-    systemd.services.sonarr.after = [ "jellyfin.service" ];
+    systemd.services.sonarr.after = [ "prowlarr.service" ];
+  }
+
+  {
+    services.lidarr.enable = true;
+    services.lidarr.user = config.services.jellyfin.user;
+    services.lidarr.group = config.services.jellyfin.group;
+    services.lidarr.openFirewall = false;
+    services.lidarr.dataDir = download-dir + "/lidarr";
+    systemd.services.lidarr.after = [ "prowlarr.service" ];
   }
 
   {

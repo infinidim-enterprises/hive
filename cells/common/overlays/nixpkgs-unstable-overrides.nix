@@ -1,14 +1,14 @@
 { inputs, cell, ... }:
 final: prev:
 let
-  latest = import inputs.latest {
+  nixpkgs-unstable = import inputs.nixpkgs-unstable {
     inherit (inputs.nixpkgs) system;
     config.allowUnfree = true;
   };
 in
 {
   inherit
-    (latest)
+    (nixpkgs-unstable)
     gnupg
     sops
 

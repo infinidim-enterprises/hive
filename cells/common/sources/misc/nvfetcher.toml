@@ -323,8 +323,18 @@ fetch.url = "https://github.com/zerotier/ZeroTierOne/archive/refs/tags/$ver.tar.
 src.github = "6c65726f79/Transmissionic"
 fetch.url = "https://github.com/6c65726f79/Transmissionic/releases/download/$ver/Transmissionic-webui-$ver.zip"
 
+[radarr]
+src.github = "Radarr/Radarr"
+src.use_latest_release = true
+src.prefix = "v"                                                                                                  # NOTE: remove "v" from $ver
+fetch.url = "https://github.com/Radarr/Radarr/releases/download/v$ver/Radarr.master.$ver.linux-core-arm64.tar.gz"
+
 [prowlarr]
 src.github = "Prowlarr/Prowlarr"
 src.use_latest_release = true
 src.prefix = "v"                                                                                                        # NOTE: remove "v" from $ver
 fetch.url = "https://github.com/Prowlarr/Prowlarr/releases/download/v$ver/Prowlarr.master.$ver.linux-core-arm64.tar.gz"
+
+# TODO: [whisparr]
+# src.github = "Whisparr/Whisparr"
+# fetch.github = "Whisparr/Whisparr"
