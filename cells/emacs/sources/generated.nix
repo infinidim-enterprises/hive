@@ -57,17 +57,17 @@
   };
   color-rg = {
     pname = "color-rg";
-    version = "f61438668edee6358ad95d76308e43b3d872ea7f";
+    version = "41ad8fda5b6579a841889b2395c26cd642a006de";
     src = fetchgit {
       url = "https://github.com/manateelazycat/color-rg";
-      rev = "f61438668edee6358ad95d76308e43b3d872ea7f";
+      rev = "41ad8fda5b6579a841889b2395c26cd642a006de";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-PTlzJ73z4PyOoB5KaJtLhZOctE+5eing9vZthJ1rZEI=";
+      sha256 = "sha256-wmFaEDvLNMM0Fk6g0eGBHTzqqOf1Qxne/yMc1rGTrZM=";
     };
-    date = "2025-01-22";
+    date = "2025-03-07";
   };
   copilot-el = {
     pname = "copilot-el";
@@ -99,15 +99,15 @@
   };
   jinx = {
     pname = "jinx";
-    version = "12bfe55c1fe045e7b2d096c2ec72c689697a0548";
+    version = "9c778357ffaac972c86f4acd39d70c547abcaf46";
     src = fetchFromGitHub {
       owner = "minad";
       repo = "jinx";
-      rev = "12bfe55c1fe045e7b2d096c2ec72c689697a0548";
+      rev = "9c778357ffaac972c86f4acd39d70c547abcaf46";
       fetchSubmodules = false;
-      sha256 = "sha256-NmY8r/ykJgVL/p796xTXtWQhJEI/Nlv9JTqL4bB7WBQ=";
+      sha256 = "sha256-LsjLoyv1XfPwiOQsDZsb75s6YwapFoJUxz5xv3p2sPY=";
     };
-    date = "2025-02-19";
+    date = "2025-03-11";
   };
   nix-mode = {
     pname = "nix-mode";
