@@ -17,15 +17,15 @@
   };
   adguard-filters_adguardteam = {
     pname = "adguard-filters_adguardteam";
-    version = "b44f8b4e44c55b32af6390681e293a918df541b2";
+    version = "5fb009fd794dfabeddfda2f39e9d1c7d268d6cea";
     src = fetchgit {
       url = "https://github.com/AdguardTeam/AdguardFilters";
-      rev = "b44f8b4e44c55b32af6390681e293a918df541b2";
+      rev = "5fb009fd794dfabeddfda2f39e9d1c7d268d6cea";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-rXyk/vEqg8kDbtAhlORMZpOjDlD8RdUMGRd5Lp9ZVbA=";
+      sha256 = "sha256-0rON1JqhO9ijWNMMVgFCPX7vibRF9hlPYmJiWWn69CI=";
     };
     date = "2025-03-14";
   };
@@ -45,17 +45,17 @@
   };
   base16-schemes = {
     pname = "base16-schemes";
-    version = "d4a7c5b683fb4d4150162d163889a7882625022e";
+    version = "4ff7fe1cf77217393ed0981a1de314f418c28b49";
     src = fetchgit {
       url = "https://github.com/tinted-theming/schemes";
-      rev = "d4a7c5b683fb4d4150162d163889a7882625022e";
+      rev = "4ff7fe1cf77217393ed0981a1de314f418c28b49";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-XRwEa2+sau3jsVN4QcffFu7cWoxkKVs0oqysSu3Anxc=";
+      sha256 = "sha256-PX66lrB/aqFnr6sCQUBzpTSCbsLbC7CEt4q02D0fJ3M=";
     };
-    date = "2025-03-11";
+    date = "2025-03-14";
   };
   chatgpt-wrapper = {
     pname = "chatgpt-wrapper";
@@ -223,17 +223,17 @@
   };
   ipxe = {
     pname = "ipxe";
-    version = "ddc2d928d25e3c87ba6153b96446113d59221b94";
+    version = "829e2d1f299c7c0b15a5e9e07479f6e3aec121cf";
     src = fetchgit {
       url = "https://github.com/ipxe/ipxe";
-      rev = "ddc2d928d25e3c87ba6153b96446113d59221b94";
+      rev = "829e2d1f299c7c0b15a5e9e07479f6e3aec121cf";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-ZVLoOZToGILlbRMlHVUPWSsaKtkW0TZ7NotNG53P+4U=";
+      sha256 = "sha256-lU2P4Xs+KSYgdxw/PdsGwT11DcxIXp2chzEKlqe7n9U=";
     };
-    date = "2025-03-13";
+    date = "2025-03-14";
   };
   iterable-io = {
     pname = "iterable-io";
