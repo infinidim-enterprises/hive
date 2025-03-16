@@ -220,7 +220,7 @@ in
       services.transmission.openRPCPort = false;
       services.transmission.openFirewall = false;
       services.transmission.settings = {
-        inherit download-dir;
+        download-dir = download-dir + "/downloads";
         message-level = 0;
         # NOTE: https://samuel.forestier.app/blog/security/how-to-secure-transmission-behind-apache-as-tls-reverse-proxy
         rpc-enabled = true;
