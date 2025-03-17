@@ -56,6 +56,7 @@ in
 
   # Tool Homepage: https://numtide.github.io/treefmt/
   treefmt = mkNixago std.lib.cfg.treefmt {
+    # commands = [{ package = nixpkgs.treefmt; }];
     packages = [
       nixpkgs.nixpkgs-fmt
       nixpkgs.nodePackages.prettier
@@ -116,7 +117,7 @@ in
       };
       pre-commit = {
         skip = [{ ref = "update_flake_lock_action"; }];
-        commands.treefmt.run = "treefmt --fail-on-change {staged_files}";
+        commands.treefmt.run = "${lib.getExe nixpkgs.treefmt} --fail-on-change {staged_files}";
         commands.treefmt.skip = [ "merge" "rebase" ];
       };
     };

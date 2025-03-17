@@ -163,6 +163,13 @@ in
     }
 
     {
+      environment.systemPackages = with pkgs; [
+        shntool
+        flac
+        cuetools
+        ffmpeg-headless
+      ];
+
       services.lidarr.enable = true;
       services.lidarr.user = config.services.jellyfin.user;
       services.lidarr.group = config.services.jellyfin.group;

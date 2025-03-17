@@ -82,8 +82,7 @@
     arion.url = "github:hercules-ci/arion";
     arion.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
-    # std.url = "github:divnix/std/v0.33.1";
-    std.url = "github:divnix/std/v0.33.3";
+    std.url = "github:divnix/std/v0.33.4";
     std.inputs.nixpkgs.follows = "nixpkgs-unstable";
     std.inputs.n2c.follows = "n2c";
     std.inputs.devshell.follows = "devshell";

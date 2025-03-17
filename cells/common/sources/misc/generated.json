@@ -21,7 +21,7 @@
   },
   "adguard-filters_adguardteam": {
     "cargoLocks": null,
-    "date": "2025-03-14",
+    "date": "2025-03-17",
     "extract": null,
     "name": "adguard-filters_adguardteam",
     "passthru": null,
@@ -31,13 +31,13 @@
       "fetchSubmodules": false,
       "leaveDotGit": false,
       "name": null,
-      "rev": "b44f8b4e44c55b32af6390681e293a918df541b2",
-      "sha256": "sha256-rXyk/vEqg8kDbtAhlORMZpOjDlD8RdUMGRd5Lp9ZVbA=",
+      "rev": "09fc8e44449bc75e24078dc1be32cc5afa220ad0",
+      "sha256": "sha256-zBbIKpcDNY0kiT4rnR79q1fbyHVsQygP6MCPWh/dIxw=",
       "sparseCheckout": [],
       "type": "git",
       "url": "https://github.com/AdguardTeam/AdguardFilters"
     },
-    "version": "b44f8b4e44c55b32af6390681e293a918df541b2"
+    "version": "09fc8e44449bc75e24078dc1be32cc5afa220ad0"
   },
   "adguard-filters_romania": {
     "cargoLocks": null,
@@ -61,7 +61,7 @@
   },
   "base16-schemes": {
     "cargoLocks": null,
-    "date": "2025-03-11",
+    "date": "2025-03-14",
     "extract": null,
     "name": "base16-schemes",
     "passthru": null,
@@ -71,13 +71,13 @@
       "fetchSubmodules": false,
       "leaveDotGit": false,
       "name": null,
-      "rev": "d4a7c5b683fb4d4150162d163889a7882625022e",
-      "sha256": "sha256-XRwEa2+sau3jsVN4QcffFu7cWoxkKVs0oqysSu3Anxc=",
+      "rev": "4ff7fe1cf77217393ed0981a1de314f418c28b49",
+      "sha256": "sha256-PX66lrB/aqFnr6sCQUBzpTSCbsLbC7CEt4q02D0fJ3M=",
       "sparseCheckout": [],
       "type": "git",
       "url": "https://github.com/tinted-theming/schemes"
     },
-    "version": "d4a7c5b683fb4d4150162d163889a7882625022e"
+    "version": "4ff7fe1cf77217393ed0981a1de314f418c28b49"
   },
   "chatgpt-wrapper": {
     "cargoLocks": null,
@@ -357,7 +357,7 @@
   },
   "ipxe": {
     "cargoLocks": null,
-    "date": "2025-03-13",
+    "date": "2025-03-14",
     "extract": null,
     "name": "ipxe",
     "passthru": null,
@@ -367,13 +367,13 @@
       "fetchSubmodules": false,
       "leaveDotGit": false,
       "name": null,
-      "rev": "ddc2d928d25e3c87ba6153b96446113d59221b94",
-      "sha256": "sha256-ZVLoOZToGILlbRMlHVUPWSsaKtkW0TZ7NotNG53P+4U=",
+      "rev": "829e2d1f299c7c0b15a5e9e07479f6e3aec121cf",
+      "sha256": "sha256-lU2P4Xs+KSYgdxw/PdsGwT11DcxIXp2chzEKlqe7n9U=",
       "sparseCheckout": [],
       "type": "git",
       "url": "https://github.com/ipxe/ipxe"
     },
-    "version": "ddc2d928d25e3c87ba6153b96446113d59221b94"
+    "version": "829e2d1f299c7c0b15a5e9e07479f6e3aec121cf"
   },
   "iterable-io": {
     "cargoLocks": null,
@@ -484,7 +484,7 @@
   },
   "pam_usb": {
     "cargoLocks": null,
-    "date": "2024-11-03",
+    "date": "2025-03-15",
     "extract": null,
     "name": "pam_usb",
     "passthru": null,
@@ -494,13 +494,13 @@
       "fetchSubmodules": false,
       "leaveDotGit": false,
       "name": null,
-      "rev": "38a32d53e9710be0f8e5b89d4eb43b025a94c4e4",
-      "sha256": "sha256-Xxb6Wi+ss6iIvnkO1l4JCIOO2VV0WBrsKgZ3l9XdFN8=",
+      "rev": "ce3999d92d8de59ed4c5bbd6ad56df416aa2d42c",
+      "sha256": "sha256-aU6sf0t/872Qw+k5oOv5uANnTGl3yzgEy2utZuWmm3M=",
       "sparseCheckout": [],
       "type": "git",
       "url": "https://github.com/mcdope/pam_usb"
     },
-    "version": "38a32d53e9710be0f8e5b89d4eb43b025a94c4e4"
+    "version": "ce3999d92d8de59ed4c5bbd6ad56df416aa2d42c"
   },
   "paper-store": {
     "cargoLocks": null,
@@ -573,11 +573,11 @@
     "pinned": false,
     "src": {
       "name": null,
-      "sha256": "sha256-QJHJQEP5OBgMpCdOxURP98+e6mMBcNTAYSCORKnFXpw=",
+      "sha256": "sha256-4bqK+fEkYk9LK3suWgqoSzf9vKtPpbYGuEL62M/KHR4=",
       "type": "url",
-      "url": "https://github.com/Prowlarr/Prowlarr/releases/download/v1.31.2.4975/Prowlarr.master.1.31.2.4975.linux-core-arm64.tar.gz"
+      "url": "https://github.com/Prowlarr/Prowlarr/releases/download/v1.32.2.4987/Prowlarr.master.1.32.2.4987.linux-core-arm64.tar.gz"
     },
-    "version": "1.31.2.4975"
+    "version": "1.32.2.4987"
   },
   "python-pass": {
     "cargoLocks": null,
