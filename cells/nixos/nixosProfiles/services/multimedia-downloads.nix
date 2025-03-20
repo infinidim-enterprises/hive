@@ -45,6 +45,26 @@ let
     </body>
     </html>
   '';
+
+  process_flac = with pkgs; writeShellApplication {
+    name = "process_flac";
+    excludeShellChecks = [ "SC2153" ];
+    runtimeInputs = [
+      flac
+      id3v2
+      shntool
+      cuetools
+      vorbis-tools
+      ffmpeg-headless
+
+      coreutils-full
+      # findutils
+      # bash
+      # gnused
+    ];
+    text = lib.fileContents ./process_flac.sh;
+  };
+
 in
 {
   imports = [ "${inputs.nixpkgs-unstable}/nixos/modules/services/misc/servarr/whisparr.nix" ];
@@ -163,13 +183,6 @@ in
     }
 
     {
-      environment.systemPackages = with pkgs; [
-        shntool
-        flac
-        cuetools
-        ffmpeg-headless
-      ];
-
       services.lidarr.enable = true;
       services.lidarr.user = config.services.jellyfin.user;
       services.lidarr.group = config.services.jellyfin.group;
@@ -213,6 +226,18 @@ in
     }
 
     {
+      environment.systemPackages = with pkgs; [
+        process_flac
+
+        flac
+        id3v2
+        shntool
+        cuetools
+        vorbis-tools
+        ffmpeg-headless
+
+      ];
+
       services.transmission.enable = true;
       services.transmission.user = config.services.jellyfin.user;
       services.transmission.group = config.services.jellyfin.group;
@@ -250,6 +275,37 @@ in
         peer-limit-per-torrent = 100;
         idle-seeding-limit-enabled = true;
         idle-seeding-limit = 5;
+
+        script-torrent-done-enabled = true;
+        script-torrent-done-filename = "${process_flac}/bin/process_flac";
+      };
+    }
+
+    {
+      services.samba.enable = true;
+      services.samba.nmbd.enable = false;
+      services.samba.package = pkgs.sambaFull;
+      services.samba.openFirewall = true;
+      services.samba.settings = {
+        global = {
+          "usershare path" = "/var/lib/samba/usershares";
+          "usershare max shares" = "100";
+          "usershare allow guests" = "yes";
+          "usershare owner only" = "yes";
+          "disable netbios" = "yes";
+          "smb ports" = "445";
+          "guest account" = "nobody";
+          "map to guest" = "Bad User";
+        };
+
+        media = {
+          "path" = "/opt/media";
+          "read only" = false;
+          "browseable" = "yes";
+          "guest ok" = "yes";
+          "valid users" = "admin";
+          "force user" = "jellyfin";
+        };
       };
     }
 
