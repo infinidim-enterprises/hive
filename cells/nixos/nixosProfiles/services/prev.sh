@@ -1,4 +1,38 @@
 # Function to split a FLAC file into individual tracks
+
+_to_mp3() {
+
+  # Recursively find and process all .mp3 files
+  find . -type f -iname "*.mp3" | while IFS= read -r file; do
+    echo "Processing: $file"
+
+    # Check current bitrate using ffprobe and remove any trailing newlines or carriage returns
+    bitrate=$(ffprobe -v error -select_streams a:0 \
+      -show_entries stream=bit_rate \
+      -of default=noprint_wrappers=1:nokey=1 "$file" | tr -d '\r\n')
+
+    # Compare bitrate as a string to "128000"
+    if [ "$bitrate" = "128000" ]; then
+      echo "$file is already 128k bitrate. Skipping conversion."
+      continue
+    fi
+
+    # Create a temporary file name by appending _tmp before the .mp3 extension
+    tmpfile="${file%.*}_tmp.mp3"
+
+    # Check if conversion succeeded
+    if ffmpeg -threads 10 -i "$file" -b:a 128k -map_metadata 0 -id3v2_version 3 "$tmpfile" </dev/null; then
+      # Replace the original file with the new one
+      mv -f "$tmpfile" "$file"
+      echo "Replaced: $file"
+    else
+      echo "Conversion failed for $file"
+      # Remove the temporary file if conversion failed
+      rm -f "$tmpfile"
+    fi
+  done
+}
+
 split_flac() {
   local flac_file="$1"
   local cue_file="${flac_file%.flac}.cue"
@@ -48,7 +82,7 @@ process_directory() {
   local input_dir="$1"
 
   if ! cd "$input_dir"; then
-    echo "Directory not found: $input_dir"
+    echo "$input_dir is not a directory"
     exit 0
   fi
 

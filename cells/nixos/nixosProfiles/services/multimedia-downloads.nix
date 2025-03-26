@@ -46,23 +46,25 @@ let
     </html>
   '';
 
-  process_flac = with pkgs; writeShellApplication {
-    name = "process_flac";
-    excludeShellChecks = [ "SC2153" ];
+  process_audio_download = with pkgs; writeShellApplication {
+    name = "process_audio_download";
+    # excludeShellChecks = [ "SC2153" "SC2317" "SC2046" ];
     runtimeInputs = [
+      jq
+      sox
       flac
       id3v2
+      mp3splt
       shntool
       cuetools
       vorbis-tools
       ffmpeg-headless
 
+      gnugrep
+      findutils
       coreutils-full
-      # findutils
-      # bash
-      # gnused
     ];
-    text = lib.fileContents ./process_flac.sh;
+    text = lib.fileContents ./process_audio_download.sh;
   };
 
 in
@@ -227,15 +229,19 @@ in
 
     {
       environment.systemPackages = with pkgs; [
-        process_flac
+        process_audio_download
 
+        jq
+        sox
         flac
+        mp3splt
         id3v2
         shntool
         cuetools
         vorbis-tools
         ffmpeg-headless
 
+        tvnamer
       ];
 
       services.transmission.enable = true;
@@ -277,7 +283,7 @@ in
         idle-seeding-limit = 5;
 
         script-torrent-done-enabled = true;
-        script-torrent-done-filename = "${process_flac}/bin/process_flac";
+        script-torrent-done-filename = "${process_audio_download}/bin/process_audio_download";
       };
     }
 
