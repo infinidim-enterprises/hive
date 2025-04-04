@@ -62,6 +62,7 @@ let
 
       gnugrep
       findutils
+      util-linux
       coreutils-full
     ];
     text = lib.fileContents ./process_audio_download.sh;
@@ -151,6 +152,9 @@ in
       services.jellyfin.enable = true;
       services.jellyfin.openFirewall = false;
 
+      # NOTE: zt-central hosted
+      services.zerotierone.joinNetworks = [{ "272f5eae16028184" = "jellyfin"; }];
+
       networking.firewall.allowedUDPPorts = [
         1900 # DLNA
         7359 # jellyfin native clients
@@ -162,7 +166,7 @@ in
         ''
           chown --recursive ${user}:${group} ${download-dir}
         '';
-
+      systemd.services.jellyfin.serviceConfig.Restart = "always";
       systemd.services.jellyfin.after = [ "jellyfin-fix-perms.service" ];
     }
 
@@ -185,6 +189,7 @@ in
     }
 
     {
+      # TODO: beets with_plugins [ Chroma fetchart lyrics lastgenre mbsync scrub embedart badfiles thumbnails convert duplicates export fuzzy info ]
       services.lidarr.enable = true;
       services.lidarr.user = config.services.jellyfin.user;
       services.lidarr.group = config.services.jellyfin.group;
@@ -243,6 +248,9 @@ in
 
         tvnamer
       ];
+
+      # NOTE: timer_create required to use flock
+      systemd.services.transmission.serviceConfig.SystemCallFilter = [ "@timer" ];
 
       services.transmission.enable = true;
       services.transmission.user = config.services.jellyfin.user;

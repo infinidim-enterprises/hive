@@ -1,5 +1,4 @@
 set -eo pipefail
-set -x
 shopt -s nullglob nocaseglob
 
 trap "exit 0" EXIT INT TERM
@@ -10,7 +9,7 @@ BITRATE="128k"
 SAMPLE_RATE="44100"
 TARGET_CODEC="mp3"
 
-ffmpeg_cmd=("ffmpeg" "-threads" "$THREADS" "-hide_banner" "-loglevel" "error")
+ffmpeg_cmd=("ffmpeg" "-threads" "$THREADS" "-hide_banner" "-loglevel" "error" "-y")
 
 build_find_pattern() {
   local -n arr=$1
@@ -62,7 +61,6 @@ process_single_track() {
 
   if [[ ${extension,,} == "$TARGET_CODEC" ]]; then
     if validate_mp3 "$input"; then
-      echo "$(basename "$input") is compliant, skipping"
       return
     fi
     temp_file="$(mktemp -u -p "$dir" "$(basename "${input%.*}-temp.XXXXXX.$extension")")"
@@ -70,12 +68,13 @@ process_single_track() {
     temp_file="$(mktemp -u -p "$dir" "$(basename "${input%.*}.XXXXXX.$TARGET_CODEC")")"
   fi
 
-  echo "Converting: $(basename "$input") -> $(basename "$temp_file")"
+  echo "Converting (-> mp3): $(basename "$input")"
   if "${ffmpeg_cmd[@]}" -i "$input" \
     -b:a "$BITRATE" \
     -ar "$SAMPLE_RATE" \
     -map_metadata 0 \
     -id3v2_version 3 \
+    -write_id3v1 1 \
     -c:a "$TARGET_CODEC" \
     "$temp_file"; then
 
@@ -104,6 +103,7 @@ process_cue_image() {
   base="$(basename "$cue_file" .cue)"
 
   audio_file="$dir/$(get_audio_from_cue "$cue_file")"
+  # TODO: use the declared audio_file from the CUE, don't try to find it.
   [ -f "$audio_file" ] || {
     local -a find_pattern
     build_find_pattern find_pattern
@@ -117,14 +117,16 @@ process_cue_image() {
 
   local temp_wav
   temp_wav="$(mktemp -u -p "$dir" "${base}-temp.XXXXXX.wav")"
-  if ! shntool info "$audio_file" &>/dev/null; then
+  if ! shntool info -w -q "$audio_file" &>/dev/null; then
+    echo "Converting (-> wav): $(basename "$audio_file")"
     convert_compliant_wav "$audio_file" "$temp_wav"
   else
     cp "$audio_file" "$temp_wav"
   fi
 
-  if shntool split -f "$cue_file" -d "$dir" -t '%p - %a - %n - %t' "$temp_wav"; then
+  if shntool split -q -w -f "$cue_file" -d "$dir" -t '%p - %a - %n - %t' "$temp_wav"; then
     rm -f "$temp_wav" "$audio_file" "$cue_file"
+    rm -f "${dir}"/*pregap.*
     local -a find_pattern tracks
     build_find_pattern find_pattern
 
@@ -139,40 +141,32 @@ process_cue_image() {
   fi
 }
 
-# process_directory() {
-#   local dir="$1"
-#   local -a cue_files tracks find_pattern
-
-#   build_find_pattern find_pattern
-#   mapfile -t cue_files < <(find "$dir" -type f -iname "*.cue" -print)
-#   if [ ${#cue_files[@]} -gt 0 ]; then
-#     for cue in "${cue_files[@]}"; do
-#       process_cue_image "$cue"
-#     done
-#   else
-#     readarray -d '' tracks < <(find "$dir" -maxdepth 1 "${find_pattern[@]}" -print0)
-#     for track in "${tracks[@]}"; do
-#       process_single_track "$track"
-#     done
-#   fi
-# }
-
 process_directory() {
-  local dir="$1" cue_files find_pattern tracks subdirs
+  local dir cue_files tracks subdirs
+  local -a find_pattern
+  dir="$1"
+
   build_find_pattern find_pattern
 
   # Process current directory first
   mapfile -t cue_files < <(find "$dir" -maxdepth 1 -type f -iname "*.cue" -print)
   if ((${#cue_files[@]} > 0)); then
     for cue in "${cue_files[@]}"; do
+      echo "Found: $cue"
       process_cue_image "$cue"
+      echo "Done: $cue"
     done
   else
+    echo "Not found: cue file in ${dir}"
+
     # Process audio files in current directory
     readarray -d '' tracks < <(find "$dir" -maxdepth 1 "${find_pattern[@]}" -print0)
     if ((${#tracks[@]} > 0)); then
+      echo "Has tracks: $dir"
       for track in "${tracks[@]}"; do
+        echo "Found: $track"
         process_single_track "$track"
+        echo "Done: $track"
       done
     fi
   fi
@@ -184,8 +178,30 @@ process_directory() {
   done
 }
 
+f_lock() {
+  local timeout dir
+  timeout="$1"
+  dir="$2"
+
+  lock_file="/tmp/process_audio_download.lock"
+  exec 200>"$lock_file"
+
+  echo "Waiting to acquire lock for $dir"
+  while true; do
+    # Try to acquire lock with 10 second timeout
+    if flock -w "$timeout" -e 200; then
+      echo "Lock acquired for $dir"
+      echo "lock_file: $(realpath "$lock_file")"
+      break
+    else
+      echo "Still waiting to acquire lock for $dir ..."
+    fi
+  done
+}
+
 main() {
-  local input_dir
+  local input_dir lock_file tag_dir
+
   input_dir="${1:-${TR_TORRENT_DIR:+${TR_TORRENT_DIR}/${TR_TORRENT_NAME}}}"
 
   if [ -z "$input_dir" ]; then
@@ -194,7 +210,18 @@ main() {
   fi
 
   if [ -d "$input_dir" ] && has_audio_files "$input_dir"; then
+    f_lock "120" "$(realpath "$input_dir")"
+    echo "Processing: $(realpath "$input_dir")"
     process_directory "$input_dir"
+
+    tag_dir="$(dirname "$input_dir")"
+
+    if [[ -v TR_TORRENT_NAME ]] && [ "$(basename "$tag_dir")" = "lidarr" ]; then
+      echo "Moving $TR_TORRENT_NAME to ${tag_dir}/done"
+      mkdir -p "${tag_dir}/done"
+      mv -f "$input_dir" "${tag_dir}/done"
+    fi
+
   else
     echo "No audio files found in $input_dir" >&2
   fi

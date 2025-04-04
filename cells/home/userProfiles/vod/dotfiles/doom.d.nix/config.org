@@ -1283,7 +1283,8 @@ nixd setup function
       (message "nixd language server is not active in the current buffer."))))
 
 (defun local/setup-nixd ()
-;; NOTE: this has moved into .dir-locals.el
+  ;; NOTE: this has moved into .dir-locals.el
+  ;; TODO: https://github.com/nix-community/nixd/issues/651
   (when (getenv "PRJ_ROOT")
     (let* ((prj_root (getenv "PRJ_ROOT"))
            (username (getenv "USER"))
@@ -1294,9 +1295,9 @@ nixd setup function
            (options-home-manager (format "%s.homeConfigurations.home-nixd.options" flakeref)))
       (setq lsp-nix-nixd-server-path '("nixd" "--semantic-tokens=true" "--inlay-hints=true")
             lsp-nix-nixd-formatting-command [ "nixpkgs-fmt" ]
-            ;; lsp-nix-nixd-nixpkgs-expr "import <nixpkgs> { }"
-            ;; lsp-nix-nixd-nixos-options-expr options-nixos
-            ;; lsp-nix-nixd-home-manager-options-expr options-home-manager
+            lsp-nix-nixd-nixpkgs-expr "import <nixpkgs> { }"
+            lsp-nix-nixd-nixos-options-expr options-nixos
+            lsp-nix-nixd-home-manager-options-expr options-home-manager
             ;; NOTE: otherwise, lsp-mode errors out on hash-table-p
             lsp-use-plists nil))))
 #+end_src
