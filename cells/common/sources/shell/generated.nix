@@ -29,29 +29,29 @@
   };
   lorri = {
     pname = "lorri";
-    version = "d49fa36539821ba6b360909013675c424fd633c3";
+    version = "7d3bf012dc7da8b5d29acc89810fd93f24258548";
     src = fetchFromGitHub {
       owner = "nix-community";
       repo = "lorri";
-      rev = "d49fa36539821ba6b360909013675c424fd633c3";
+      rev = "7d3bf012dc7da8b5d29acc89810fd93f24258548";
       fetchSubmodules = false;
-      sha256 = "sha256-1MQovg4CEB0t462+YtlmkJ6tI0odonHQ5r1nyZL07Q4=";
+      sha256 = "sha256-LXvTviJrt92E68uWXHbe7jEv++zNdjHgjVYZDnNlqDE=";
     };
     cargoSha256 = "0000000000000000000000000000000000000000000000000000";
-    date = "2025-02-27";
+    date = "2025-03-26";
   };
   nix-index = {
     pname = "nix-index";
-    version = "8c0532bcf8da840ed18e99ad2bf948cb9f5190a9";
+    version = "03b861752c32141db8c3f923f51f733ad1f42e43";
     src = fetchFromGitHub {
       owner = "bennofs";
       repo = "nix-index";
-      rev = "8c0532bcf8da840ed18e99ad2bf948cb9f5190a9";
+      rev = "03b861752c32141db8c3f923f51f733ad1f42e43";
       fetchSubmodules = false;
-      sha256 = "sha256-3ym31/VGIC1IKBbkrFAO0lKsHO+XGQ+mgCQqHsE91dw=";
+      sha256 = "sha256-HuZVkVH7NCbI1KgQlS67Jq0FcUBc29DQz7n9CqHJEvc=";
     };
     cargoSha256 = "0000000000000000000000000000000000000000000000000000";
-    date = "2024-07-17";
+    date = "2025-03-24";
   };
   rainbowsh = {
     pname = "rainbowsh";
@@ -181,17 +181,17 @@
   };
   zsh-plugin_oh-my-zsh = {
     pname = "zsh-plugin_oh-my-zsh";
-    version = "f97e871c33da57d20e1b0411da6b1674126192a9";
+    version = "750d3ac4b493dca13ef0ced55fa6a2cd02dc7ee8";
     src = fetchgit {
       url = "https://github.com/robbyrussell/oh-my-zsh";
-      rev = "f97e871c33da57d20e1b0411da6b1674126192a9";
+      rev = "750d3ac4b493dca13ef0ced55fa6a2cd02dc7ee8";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-L2g9kw5mFfIz+IwTSfdHN4O48tew6D807gJvrgtkjJM=";
+      sha256 = "sha256-f0pwEhxCsPuGhkSQW4A/KTffwLzKMaVCKQ8o4ZFfVhM=";
     };
-    date = "2025-03-11";
+    date = "2025-04-03";
   };
   zsh-plugin_tipz = {
     pname = "zsh-plugin_tipz";

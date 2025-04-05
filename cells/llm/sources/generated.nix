@@ -3,13 +3,13 @@
 {
   aider-chat = {
     pname = "aider-chat";
-    version = "v0.77.0";
+    version = "v0.81.0";
     src = fetchFromGitHub {
       owner = "Aider-AI";
       repo = "aider";
-      rev = "v0.77.0";
+      rev = "v0.81.0";
       fetchSubmodules = false;
-      sha256 = "sha256-wGVkcccTNhNbAWhWwpprNrXOm7u1R7qtiPTT5Lqidkg=";
+      sha256 = "sha256-xWOXsffLAVBZvJM8PuAJ12IrmNLfXuqHrbIMtPM1leE=";
     };
   };
   gluetun = {
@@ -29,8 +29,8 @@
     version = "latest";
     src = dockerTools.pullImage {
       imageName = "lobehub/lobe-chat";
-      imageDigest = "sha256:d27484d7c858ec2b1d553851f332a7543c3affed5dc4b2aa2af695f4c26f587e";
-      sha256 = "sha256-gGWc3Pk8sTa3FnwXns9pg2QqMAb1ARrXuB5Z1pUKRu8=";
+      imageDigest = "sha256:1d123aae7e9e16830223d75c2ec9fd4e56b125745129a4c735d3a28ee79273ca";
+      sha256 = "sha256-LUxIwMtkZuFoNODPp+A9a4Dyk6QGpXYZIbjZ7xn9Cdc=";
       finalImageTag = "latest";
       os = "linux";
       arch = "amd64";
@@ -38,11 +38,11 @@
   };
   n8n = {
     pname = "n8n";
-    version = "n8n@1.82.3";
+    version = "n8n@1.85.4";
     src = fetchurl {
-      url = "https://github.com/n8n-io/n8n/archive/n8n@1.82.3.tar.gz";
+      url = "https://github.com/n8n-io/n8n/archive/n8n@1.85.4.tar.gz";
       name = "n8n.tar.gz";
-      sha256 = "sha256-QAMpbI3xdFnly+pkwlZP6jB+cSxgmxCgqVpl6z/b2DY=";
+      sha256 = "sha256-t2gleGZjiYbireuwdi4G0CS4Xomb0t3Q4CgNGxt9YZA=";
     };
   };
 }

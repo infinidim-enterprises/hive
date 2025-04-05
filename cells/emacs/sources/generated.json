@@ -102,7 +102,7 @@
     },
     "copilot-el": {
         "cargoLocks": null,
-        "date": "2025-02-23",
+        "date": "2025-04-04",
         "extract": null,
         "name": "copilot-el",
         "passthru": null,
@@ -112,13 +112,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "7d105d708a23d16cdfd5240500be8bb02f95a46e",
-            "sha256": "sha256-ATIyNAnd1pU82xdGH7+z9zkOcDVJhYhh65QDQ73NiL0=",
+            "rev": "bb517382be5d0dc673f9381e9c2a0956dfc9dc45",
+            "sha256": "sha256-OKjaeZaixOe0t2eZOoKQkhvH6eTN020lR1UxkGnH3pU=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/zerolfx/copilot.el.git"
         },
-        "version": "7d105d708a23d16cdfd5240500be8bb02f95a46e"
+        "version": "bb517382be5d0dc673f9381e9c2a0956dfc9dc45"
     },
     "grip": {
         "cargoLocks": null,
@@ -142,7 +142,7 @@
     },
     "jinx": {
         "cargoLocks": null,
-        "date": "2025-03-11",
+        "date": "2025-04-04",
         "extract": null,
         "name": "jinx",
         "passthru": null,
@@ -154,12 +154,12 @@
             "name": null,
             "owner": "minad",
             "repo": "jinx",
-            "rev": "9c778357ffaac972c86f4acd39d70c547abcaf46",
-            "sha256": "sha256-LsjLoyv1XfPwiOQsDZsb75s6YwapFoJUxz5xv3p2sPY=",
+            "rev": "84fc35aedddfbf24de144245fe9d1c8a61852f7a",
+            "sha256": "sha256-MbS4c0VhE6rVm/L04VTvjS0CMda8v2GI18T+U0zq3c0=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "9c778357ffaac972c86f4acd39d70c547abcaf46"
+        "version": "84fc35aedddfbf24de144245fe9d1c8a61852f7a"
     },
     "nix-mode": {
         "cargoLocks": null,
