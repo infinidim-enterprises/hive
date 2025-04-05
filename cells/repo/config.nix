@@ -221,7 +221,7 @@ in
         }
         {
           name = "✓ Install Nix";
-          uses = "cachix/install-nix-action@v30";
+          uses = "cachix/install-nix-action@v31";
           "with" = {
             nix_path = "nixpkgs=channel:nixos-24.11";
             extra_nix_config = ''
@@ -235,7 +235,7 @@ in
         }
         {
           name = "✓ Install cachix action";
-          uses = "cachix/cachix-action@v15";
+          uses = "cachix/cachix-action@v16";
           "with" = {
             name = "njk";
             extraPullNames = "cuda-maintainers, mic92, nix-community, nrdxp";
