@@ -166,7 +166,7 @@ in
         ''
           chown --recursive ${user}:${group} ${download-dir}
         '';
-      systemd.services.jellyfin.serviceConfig.Restart = "always";
+      systemd.services.jellyfin.serviceConfig.Restart = mkForce "always";
       systemd.services.jellyfin.after = [ "jellyfin-fix-perms.service" ];
     }
 
