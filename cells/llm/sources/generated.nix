@@ -3,13 +3,13 @@
 {
   aider-chat = {
     pname = "aider-chat";
-    version = "v0.77.0";
+    version = "v0.81.0";
     src = fetchFromGitHub {
       owner = "Aider-AI";
       repo = "aider";
-      rev = "v0.77.0";
+      rev = "v0.81.0";
       fetchSubmodules = false;
-      sha256 = "sha256-wGVkcccTNhNbAWhWwpprNrXOm7u1R7qtiPTT5Lqidkg=";
+      sha256 = "sha256-xWOXsffLAVBZvJM8PuAJ12IrmNLfXuqHrbIMtPM1leE=";
     };
   };
   gluetun = {
@@ -38,11 +38,11 @@
   };
   n8n = {
     pname = "n8n";
-    version = "n8n@1.82.3";
+    version = "n8n@1.85.4";
     src = fetchurl {
-      url = "https://github.com/n8n-io/n8n/archive/n8n@1.82.3.tar.gz";
+      url = "https://github.com/n8n-io/n8n/archive/n8n@1.85.4.tar.gz";
       name = "n8n.tar.gz";
-      sha256 = "sha256-QAMpbI3xdFnly+pkwlZP6jB+cSxgmxCgqVpl6z/b2DY=";
+      sha256 = "sha256-t2gleGZjiYbireuwdi4G0CS4Xomb0t3Q4CgNGxt9YZA=";
     };
   };
 }

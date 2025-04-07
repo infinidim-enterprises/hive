@@ -12,9 +12,15 @@ in
     gnupg
     sops
 
-    nix-prefetch-scripts
+    tigervnc
+    neatvnc
+    wayvnc
 
-    hyprlandPlugins
+    networkmanager
+    networkmanager-openconnect
+    networkmanagerapplet
+
+    nix-prefetch-scripts
 
     ### cli/shell/terminal
     atuin

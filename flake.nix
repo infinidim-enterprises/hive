@@ -28,7 +28,7 @@
     # hive / std
     ###
     devshell.url = "github:numtide/devshell";
-    devshell.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    # devshell.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
     n2c.url = "github:nlewo/nix2container";
     n2c.inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -60,12 +60,12 @@
     # colmena.inputs.flake-utils.follows = "flake-utils";
 
     nixago.url = "github:nix-community/nixago";
-    nixago.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    # nixago.inputs.nixpkgs.follows = "nixpkgs-unstable";
     nixago.inputs.flake-utils.follows = "flake-utils";
     nixago.inputs.nixago-exts.follows = "nixago-exts";
 
     nixago-exts.url = "github:nix-community/nixago-extensions";
-    nixago-exts.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    # nixago-exts.inputs.nixpkgs.follows = "nixpkgs-unstable";
     nixago-exts.inputs.flake-utils.follows = "flake-utils";
     nixago-exts.inputs.nixago.follows = "nixago";
 
@@ -83,7 +83,7 @@
     arion.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
     std.url = "github:divnix/std/v0.33.4";
-    std.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    # std.inputs.nixpkgs.follows = "nixpkgs-unstable";
     std.inputs.n2c.follows = "n2c";
     std.inputs.devshell.follows = "devshell";
     std.inputs.nixago.follows = "nixago";
@@ -103,7 +103,7 @@
     hive.inputs.paisano.follows = "paisano";
     hive.inputs.colmena.follows = "colmena";
     hive.inputs.nixago.follows = "nixago";
-    hive.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    # hive.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
     ###
     # system tools
@@ -117,7 +117,7 @@
     nixos-generators.inputs.nixpkgs.follows = "nixpkgs-unstable";
     nixos-generators.inputs.nixlib.follows = "nixpkgs-lib";
 
-    nixos-anywhere.url = "github:nix-community/nixos-anywhere/1.1.1";
+    nixos-anywhere.url = "github:nix-community/nixos-anywhere/1.8.0";
     nixos-anywhere.inputs.nixpkgs.follows = "nixpkgs-unstable";
     nixos-anywhere.inputs.disko.follows = "disko";
 
@@ -130,10 +130,10 @@
     # sops-nix.inputs.nixpkgs-stable.follows = "nixos";
 
     # NOTE: ssh root@host "cat /etc/ssh/ssh_host_rsa_key" | ssh-to-pgp -o nixos/secrets/keys/host.asc
-    sops-ssh-to-pgp.url = "github:Mic92/ssh-to-pgp/1.1.2";
+    sops-ssh-to-pgp.url = "github:Mic92/ssh-to-pgp/1.1.6";
     sops-ssh-to-pgp.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
-    sops-ssh-to-age.url = "github:Mic92/ssh-to-age/1.1.6";
+    sops-ssh-to-age.url = "github:Mic92/ssh-to-age/1.1.11";
     sops-ssh-to-age.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
     devos-ext-lib.url = "github:divnix/devos-ext-lib/?ref=refs/pull/8/head";
@@ -181,6 +181,7 @@
     # kubernetes and friends
     ###
     k8s.url = "github:nixos/nixpkgs/3005f20ce0aaa58169cdee57c8aa12e5f1b6e1b3";
+
     kubenix.url = "github:hall/kubenix";
     kubenix.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
@@ -221,17 +222,9 @@
       inputs.flake-utils.follows = "flake-utils";
       };*/
 
-    # TODO: rewrite auto-cpufreq in crystal
-    # auto-cpufreq.url = "github:AdnanHodzic/auto-cpufreq";
-    # auto-cpufreq.inputs.nixpkgs.follows = "nixpkgs-unstable";
-
     # TODO: netboot-nix.url = "github:grahamc/netboot.nix";
 
     nvfetcher.url = "github:berberman/nvfetcher/0.7.0";
-    # nvfetcher.url = "github:berberman/nvfetcher/0.6.2";
-    # nvfetcher.url = "github:berberman/nvfetcher";
-    # nvfetcher.inputs.nixpkgs.follows = "nixpkgs-unstable";
-    # nvfetcher.inputs.flake-utils.follows = "flake-utils";
 
     nur.url = "github:nix-community/NUR";
 
@@ -275,16 +268,14 @@
     # emacs-overlay.url = "github:nix-community/emacs-overlay/c16be6de78ea878aedd0292aa5d4a1ee0a5da501";
 
     # LSP for nix
-    # nixd.url = "github:nix-community/nixd?ref=refs/tags/2.5.1";
-    nixd.url = "github:nix-community/nixd?ref=refs/tags/2.6.1";
-    # nix4nixd.url = "github:NixOS/nix/2.26.1"; # 2.25.2 2.19.4
+    nixd.url = "github:nix-community/nixd?ref=refs/tags/2.6.2";
     # TODO: https://github.com/nix-community/nixd/blob/main/nixd/docs/user-guide.md
     # flake-compat, so options are visible
     # nixd.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
     ###
     # wayland stuff
-    # TODO: unstable has been keeping up with recent hyprland releases, switch to it, instead of using flake
+    # NOTE: unstable has been keeping up with recent hyprland releases, switched to it, instead of using flake
     ###
     # hyprland-nixpkgs-unstable.follows = "nixpkgs-unstable";
     # hyprland-nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";

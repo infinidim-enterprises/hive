@@ -966,12 +966,12 @@ This fails to build on nix currently
   :recipe (:host github
            :repo "natrys/whisper.el"
            :branch "master"))
-(package! aider
-  :pin "ebe03e12c05a857bc2b91fdff32a9ef6cdceaf13"
-  :recipe (:host github
-           :repo "tninja/aider.el"
-           :branch "main"
-           :files ("aider.el" "aider-doom.el")))
+;; (package! aider
+;;   :pin "ebe03e12c05a857bc2b91fdff32a9ef6cdceaf13"
+;;   :recipe (:host github
+;;            :repo "tninja/aider.el"
+;;            :branch "main"
+;;            :files ("aider.el" "aider-doom.el")))
 #+end_src
 
 package aider requires a dependency on helm when recipe files contains "aider-helm.el", however when the package is being built helm isn't available
@@ -1149,30 +1149,30 @@ FIXME: requires a dependency on helm "aider-helm.el"
   :demand t
   :after gptel)
 
-(use-package! aider
-  :after helm
-  :init
-  (set-popup-rule! (regexp-quote "*aider:")
-    :side 'right
-    :size 0.4
-    :vslot 50
-    :quit nil)
-  :config
-  (setenv "OPENROUTER_API_KEY" (auth-source-pick-first-password
-                                :host "openrouter.ai"
-                                :user "apikey"))
-  (setq! aider-args '("--no-auto-commits" "--model" "openrouter/deepseek/deepseek-chat"))
-  :custom
-  (aider-popular-models '("openrouter/deepseek/deepseek-chat"
-                          "openrouter/deepseek/deepseek-r1"
-                          "openrouter/deepseek/deepseek-coder"
-                          "openrouter/openai/gpt-4o"
-                          "openrouter/openai/o1"
-                          "openrouter/anthropic/claude-3.5-sonnet"
-                          "openrouter/anthropic/claude-3-5-haiku"
-                          "openrouter/anthropic/claude-3-opus"
-                          "openrouter/google/gemini-pro-1.5"
-                          "openrouter/google/gemini-pro-vision")))
+;; (use-package! aider
+;;   :after helm
+;;   :init
+;;   (set-popup-rule! (regexp-quote "*aider:")
+;;     :side 'right
+;;     :size 0.4
+;;     :vslot 50
+;;     :quit nil)
+;;   :config
+;;   (setenv "OPENROUTER_API_KEY" (auth-source-pick-first-password
+;;                                 :host "openrouter.ai"
+;;                                 :user "apikey"))
+;;   (setq! aider-args '("--no-auto-commits" "--model" "openrouter/deepseek/deepseek-chat"))
+;;   :custom
+;;   (aider-popular-models '("openrouter/deepseek/deepseek-chat"
+;;                           "openrouter/deepseek/deepseek-r1"
+;;                           "openrouter/deepseek/deepseek-coder"
+;;                           "openrouter/openai/gpt-4o"
+;;                           "openrouter/openai/o1"
+;;                           "openrouter/anthropic/claude-3.5-sonnet"
+;;                           "openrouter/anthropic/claude-3-5-haiku"
+;;                           "openrouter/anthropic/claude-3-opus"
+;;                           "openrouter/google/gemini-pro-1.5"
+;;                           "openrouter/google/gemini-pro-vision")))
 #+end_src
 ** color-rg
 

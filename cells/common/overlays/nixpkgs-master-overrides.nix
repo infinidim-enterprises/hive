@@ -13,29 +13,33 @@ let
     {
       inherit
         (nixpkgs-master)
-        hyprlock
-        hypridle
-        hyprutils
-        hyprkeys
-        hyprcursor
-        hyprdim
-        hyprnome
-        hyprnotify
-        hyprpaper
-        hyprpicker
-        hyprpolkitagent
-        hyprprop
-        hyprshade
-        hyprshot
-        hyprsome
-        hyprsunset
+        # hyprlock
+        # hypridle
+        # hyprutils
+        # hyprkeys
+        # hyprcursor
+        # hyprdim
+        # hyprnome
+        # hyprnotify
+        # hyprpaper
+        # hyprpicker
+        # hyprpolkitagent
+        # hyprprop
+        # hyprshade
+        # hyprshot
+        # hyprsome
+        # hyprsunset
+        # hyprgraphics
+        # hyprwayland-scanner
 
         aquamarine
-        hyprgraphics
-
         xdg-desktop-portal-hyprland
-        hyprwayland-scanner;
-    } // filterAttrs (n: _: hasPrefix "hyprland" n) nixpkgs-master;
+        weston
+        wlroots
+        sway
+        xwayland;
+
+    } // filterAttrs (n: _: hasPrefix "hypr" n) nixpkgs-master;
 in
 hyprland-pkgs //
 {
@@ -51,11 +55,12 @@ hyprland-pkgs //
     gimp-with-plugins
     aider-chat
     activitywatch;
-} //
-{
-  hyprlandCustom = mapAttrs
-    (n: v: prev.${n}.overrideAttrs (_: {
-      inherit (v) pname version src;
-    }))
-    hyprland-pkgs;
 }
+# //
+# {
+#   hyprlandCustom = mapAttrs
+#     (n: v: prev.${n}.overrideAttrs (_: {
+#       inherit (v) pname version src;
+#     }))
+#     hyprland-pkgs;
+# }

@@ -48,8 +48,8 @@ mkMerge
 
     {
       home.packages = with pkgs; [
-        font-manager # Simple font management for GTK desktop environments
-        foliate # A simple and modern GTK eBook reader
+        # font-manager # Simple font management for GTK desktop environments
+        # foliate # A simple and modern GTK eBook reader
         evince # GNOME's document viewer
       ];
     }

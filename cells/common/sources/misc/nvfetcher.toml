@@ -326,13 +326,27 @@ fetch.url = "https://github.com/6c65726f79/Transmissionic/releases/download/$ver
 [radarr]
 src.github = "Radarr/Radarr"
 src.use_latest_release = true
-src.prefix = "v"                                                                                                  # NOTE: remove "v" from $ver
+src.prefix = "v" # NOTE: remove "v" from $ver
 fetch.url = "https://github.com/Radarr/Radarr/releases/download/v$ver/Radarr.master.$ver.linux-core-arm64.tar.gz"
+
+[sonarr]
+src.github = "Sonarr/Sonarr"
+src.use_latest_release = true
+src.prefix = "v" # NOTE: remove "v" from $ver
+fetch.url = "https://github.com/Sonarr/Sonarr/releases/download/v$ver/Sonarr.main.$ver.linux-arm64.tar.gz"
+# https://github.com/Sonarr/Sonarr/releases/download/v4.0.14.2939/Sonarr.main.4.0.14.2939.linux-arm64.tar.gz
+
+[lidarr]
+src.github = "lidarr/Lidarr"
+src.use_latest_release = true
+src.prefix = "v" # NOTE: remove "v" from $ver
+fetch.url = "https://github.com/lidarr/Lidarr/releases/download/v$ver/Lidarr.master.$ver.linux-core-arm64.tar.gz"
+# https://github.com/Lidarr/Lidarr/releases/download/v2.10.3.4602/Lidarr.master.2.10.3.4602.linux-core-arm64.tar.gz
 
 [prowlarr]
 src.github = "Prowlarr/Prowlarr"
 src.use_latest_release = true
-src.prefix = "v"                                                                                                        # NOTE: remove "v" from $ver
+src.prefix = "v" # NOTE: remove "v" from $ver
 fetch.url = "https://github.com/Prowlarr/Prowlarr/releases/download/v$ver/Prowlarr.master.$ver.linux-core-arm64.tar.gz"
 
 # TODO: [whisparr]

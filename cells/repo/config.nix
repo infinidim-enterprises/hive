@@ -60,7 +60,6 @@ in
     packages = [
       nixpkgs.nixpkgs-fmt
       nixpkgs.nodePackages.prettier
-      nixpkgs.nodePackages.prettier-plugin-toml
       nixpkgs.shfmt
     ];
     data = {
@@ -73,11 +72,12 @@ in
         };
         prettier = {
           command = "prettier";
-          options = [
-            "--plugin"
-            "${nixpkgs.nodePackages.prettier-plugin-toml}/lib/node_modules/prettier-plugin-toml/lib/index.js"
-            "--write"
-          ];
+          # NOTE/BUG/TODO: [prettier-plugin-toml] Fuck you, dotlambda - https://github.com/NixOS/nixpkgs/pull/392478 - repackage!
+          # options = [
+          #   "--plugin"
+          #   "${nixpkgs.nodePackages.prettier-plugin-toml}/lib/node_modules/prettier-plugin-toml/lib/index.js"
+          #   "--write"
+          # ];
           includes = [
             "*.css"
             "*.html"
@@ -89,7 +89,7 @@ in
             "*.scss"
             "*.ts"
             "*.yaml"
-            "*.toml"
+            # "*.toml"
           ];
           excludes = [
             "test/*"

@@ -52,7 +52,7 @@ let
   doomCfgDirNix = "${doomCfgDir}/default.nix";
   doomCfgDirPkg = callPackage doomCfgDirNix { };
 
-  emacs = pkgs.emacs29-pgtk; # TODO: pkgs.emacsPgtkGcc;
+  emacs = pkgs.emacs-pgtk; # pkgs.emacs29-pgtk; # TODO: pkgs.emacsPgtkGcc;
   extraPackages =
     let
       orgRoot = config.xdg.userDirs.documents + "/org";
