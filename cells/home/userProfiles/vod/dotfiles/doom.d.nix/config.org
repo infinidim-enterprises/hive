@@ -104,7 +104,7 @@
         +dictionary
         +docsets)          ; navigate your code and its documentation
        (lsp +peek)         ; M-x vscode
-       tree-sitter
+       ;; tree-sitter
        (magit +forge)      ; a git porcelain for Emacs
        make                ; run make tasks from Emacs
        (pass +auth)              ; password manager for nerds
@@ -143,7 +143,8 @@
        ;;gdscript          ; the language you waited for
        (go
         +lsp
-        +tree-sitter)      ; the hipster dialect
+        ;; +tree-sitter
+        )      ; the hipster dialect
        ;; (graphql +lsp)
        ;;(haskell +lsp)    ; a language that's lazier than I am
        ;;hy                ; readability of scheme w/ speed of python
@@ -187,7 +188,7 @@
         +cython
         +pyenv
         +poetry
-        +treesitter
+        ;; +treesitter
         +lsp
         +pyright)          ; beautiful is better than ugly
        ;;qt                ; the 'cutest' gui framework ever
@@ -199,24 +200,28 @@
         +rails
         +lsp
         +rbenv
-        +tree-sitter)      ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
+        ;; +tree-sitter
+        )      ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
        ;; (rust
        ;;  +lsp) ;Fe2O3.unwrap().unwrap().unwrap().unwrap()
        ;;scala             ; java, but good
        ;; (scheme +guile)   ; a fully conniving family of lisps
        (sh
         +lsp
-        +tree-sitter)      ; she sells {ba,z,fi}sh shells on the C xor
+        ;; +tree-sitter
+        )      ; she sells {ba,z,fi}sh shells on the C xor
        ;;sml
        ;;solidity          ; do you need a blockchain? No.
        ;;swift             ; who asked for emoji variables?
        ;;terra             ; Earth and Moon in alignment for performance.
        (web
         +lsp
-        +tree-sitter)      ; the tubes
+        ;; +tree-sitter
+        )      ; the tubes
        (yaml
         +lsp
-        +tree-sitter)      ; JSON, but readable
+        ;; +tree-sitter
+        )      ; JSON, but readable
        ;;zig               ; C, but simpler
 
        :email
@@ -850,42 +855,42 @@ This fails to build on nix currently
 #+begin_src emacs-lisp :tangle packages.el
 (package! vertico
   :type 'core
-  :pin "e69ef62ffa4bc42dd42437881c251ecdcae0e0c5"
+  :pin "edee5c68972b9270ac4f23b2c34aa43fe4403d52"
   :recipe (:host github
            :repo "minad/vertico"
            :branch "main"))
 
 (package! corfu
   :type 'core
-  :pin "2c476b442ccfda9935e472b26d9cd60d45726560"
+  :pin "6460a3516ba6478114b947d7c18c2b9c5b45d0cc"
   :recipe (:host github
            :repo "minad/corfu"
            :branch "main"))
 
 (package! nerd-icons-corfu
   :type 'core
-  :pin "41110180ceab9d0edaa856d19633b2b3fdf82e75"
+  :pin "55b17ee20a5011c6a9be8beed6a9daf644815b5a"
   :recipe (:host github
            :repo "LuigiPiucco/nerd-icons-corfu"
            :branch "master"))
 
 (package! cape
   :type 'core
-  :pin "118db73710466ab03708e7511f4bff7827057000"
+  :pin "f72ebcaeff4252ca0d7a9ac4636d8db0fdf54c55"
   :recipe (:host github
            :repo "minad/cape"
            :branch "main"))
 
 (package! orderless
   :type 'core
-  :pin "c7cb04499d94ee1c17affb29b1cfcd2a45116c97"
+  :pin "254f2412489bbbf62700f9d3d5f18e537841dcc3"
   :recipe (:host github
            :repo "oantolin/orderless"
            :branch "main"))
 
 (package! tempel
   :type 'core
-  :pin "12a2072ce97d7489296dbb950da946b77d215506"
+  :pin "f52a99ebf6ee52a30d435ef1583dc8df3e5f2ca5"
   :recipe (:host github
            :repo "minad/tempel"
            :branch "main"))
@@ -953,7 +958,7 @@ This fails to build on nix currently
 
 #+begin_src emacs-lisp :tangle packages.el
 (package! gptel
-  :pin "aa649b013322a62d29e7507e22234f8000c68c48"
+  :pin "c818ce3426a7ebac78c737cf6106282f26dcbb80"
   :recipe (:host github
            :repo "karthink/gptel"
            :branch "master"))
@@ -966,16 +971,13 @@ This fails to build on nix currently
   :recipe (:host github
            :repo "natrys/whisper.el"
            :branch "master"))
-;; (package! aider
-;;   :pin "ebe03e12c05a857bc2b91fdff32a9ef6cdceaf13"
-;;   :recipe (:host github
-;;            :repo "tninja/aider.el"
-;;            :branch "main"
-;;            :files ("aider.el" "aider-doom.el")))
+(package! aider
+  :pin "cc049ca3c8ad0545b7de5b1eeefc63bbe401a630"
+  :recipe (:host github
+           :repo "tninja/aider.el"
+           :branch "main"
+           :files ("*")))
 #+end_src
-
-package aider requires a dependency on helm when recipe files contains "aider-helm.el", however when the package is being built helm isn't available
-FIXME: requires a dependency on helm "aider-helm.el"
 
 #+begin_src emacs-lisp :tangle config.el
 (defun +whisper-insert ()
@@ -1149,30 +1151,30 @@ FIXME: requires a dependency on helm "aider-helm.el"
   :demand t
   :after gptel)
 
-;; (use-package! aider
-;;   :after helm
-;;   :init
-;;   (set-popup-rule! (regexp-quote "*aider:")
-;;     :side 'right
-;;     :size 0.4
-;;     :vslot 50
-;;     :quit nil)
-;;   :config
-;;   (setenv "OPENROUTER_API_KEY" (auth-source-pick-first-password
-;;                                 :host "openrouter.ai"
-;;                                 :user "apikey"))
-;;   (setq! aider-args '("--no-auto-commits" "--model" "openrouter/deepseek/deepseek-chat"))
-;;   :custom
-;;   (aider-popular-models '("openrouter/deepseek/deepseek-chat"
-;;                           "openrouter/deepseek/deepseek-r1"
-;;                           "openrouter/deepseek/deepseek-coder"
-;;                           "openrouter/openai/gpt-4o"
-;;                           "openrouter/openai/o1"
-;;                           "openrouter/anthropic/claude-3.5-sonnet"
-;;                           "openrouter/anthropic/claude-3-5-haiku"
-;;                           "openrouter/anthropic/claude-3-opus"
-;;                           "openrouter/google/gemini-pro-1.5"
-;;                           "openrouter/google/gemini-pro-vision")))
+(use-package! aider
+  :after helm
+  :init
+  (set-popup-rule! (regexp-quote "*aider:")
+    :side 'right
+    :size 0.4
+    :vslot 50
+    :quit nil)
+  :config
+  (setenv "OPENROUTER_API_KEY" (auth-source-pick-first-password
+                                :host "openrouter.ai"
+                                :user "apikey"))
+  (setq! aider-args '("--no-auto-commits" "--model" "openrouter/deepseek/deepseek-chat"))
+  :custom
+  (aider-popular-models '("openrouter/deepseek/deepseek-chat"
+                          "openrouter/deepseek/deepseek-r1"
+                          "openrouter/deepseek/deepseek-coder"
+                          "openrouter/openai/gpt-4o"
+                          "openrouter/openai/o1"
+                          "openrouter/anthropic/claude-3.5-sonnet"
+                          "openrouter/anthropic/claude-3-5-haiku"
+                          "openrouter/anthropic/claude-3-opus"
+                          "openrouter/google/gemini-pro-1.5"
+                          "openrouter/google/gemini-pro-vision")))
 #+end_src
 ** color-rg
 
@@ -1239,13 +1241,33 @@ FIXME: requires a dependency on helm "aider-helm.el"
 
 #+end_src
 
+** tree-sitter
+As a workaround for nixpkgs [[https://github.com/marienz/nix-doom-emacs-unstraightened?tab=readme-ov-file#tree-sitter-error-on-initialization-with-file-error-opening-output-file-read-only-file-system][bug]]
+
+#+begin_src emacs-lisp :tangle packages.el
+(package! treesit-auto
+  :type 'core
+  :pin "016bd286a1ba4628f833a626f8b9d497882ecdf3"
+  :recipe (:host github
+           :repo "renzmann/treesit-auto"
+           :branch "main"))
+#+end_src
+
+#+begin_src emacs-lisp :tangle config.el
+(use-package! treesit-auto
+  :custom
+  (treesit-auto-install 'prompt)
+  :config
+  (treesit-auto-add-to-auto-mode-alist 'all)
+  (global-treesit-auto-mode))
+#+end_src
 ** Nix
 
 #+begin_src emacs-lisp :tangle packages.el
 ;; (unpin! nix-mode lsp-mode)
 (package! lsp-mode
   :type 'core
-  :pin "230608ad65809806481adab40ecf41d3780e7b8d"
+  :pin "1fb656e4e573d9dc0109eea82b433f5138850e86"
   :recipe (:host github
            :repo "emacs-lsp/lsp-mode"
            :branch "master"))
@@ -1257,7 +1279,7 @@ FIXME: requires a dependency on helm "aider-helm.el"
            :branch "master"))
 (package! nix-ts-mode
   :type 'core
-  :pin "cea932fd683bfab84234205f5f1d161e29a5adf6"
+  :pin "62ce3a2dc39529c5db3516427e84b2c96b8efcfd"
   :recipe (:host github
            :repo "nix-community/nix-ts-mode"
            :branch "trunk"))

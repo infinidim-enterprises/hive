@@ -221,6 +221,9 @@ in
     # https://github.com/SolDoesTech/HyprV4 - bunch of examples
     # exec-once = [ "hdrop -b $terminal" ]; # NOTE: conflicts with hy3
 
+    ecosystem.no_update_news = true;
+    ecosystem.no_donation_nag = true;
+
     exec-once = [ "brightnessctl set 30%" ];
 
     env = [
@@ -265,10 +268,15 @@ in
     misc.force_default_wallpaper = 0;
     misc.disable_hyprland_logo = true;
     misc.disable_splash_rendering = true;
+    misc.mouse_move_focuses_monitor = true;
     misc.font_family = "UbuntuMono Nerd Font Mono";
     misc.background_color = "0x002b36";
 
     cursor.hide_on_key_press = true;
+    cursor.inactive_timeout = 1;
+    cursor.persistent_warps = true;
+    cursor.warp_on_change_workspace = true;
+    cursor.sync_gsettings_theme = true;
 
     input.kb_layout = "us, ru";
     input.kb_variant = ",phonetic_YAZHERTY";

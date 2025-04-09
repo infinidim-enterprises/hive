@@ -21,6 +21,8 @@ let
     pandoc-imagine
     pandoc-plantuml-filter
 
+    emacsclient-commands
+
     aider-chat
 
     (sbcl.withPackages (p: with p; [
@@ -89,6 +91,7 @@ let
       };
     in
     with emacsPackages; epkgs: [
+      treesit-grammars.with-all-grammars
       localSetts
 
       # ISSUE: https://github.com/marienz/nix-doom-emacs-unstraightened?tab=readme-ov-file#tree-sitter-error-on-initialization-with-file-error-opening-output-file-read-only-file-system
