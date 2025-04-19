@@ -268,7 +268,7 @@
     # emacs-overlay.url = "github:nix-community/emacs-overlay/c16be6de78ea878aedd0292aa5d4a1ee0a5da501";
 
     # LSP for nix
-    nixd.url = "github:nix-community/nixd?ref=refs/tags/2.6.2";
+    nixd.url = "github:nix-community/nixd?ref=refs/tags/2.6.3";
     # TODO: https://github.com/nix-community/nixd/blob/main/nixd/docs/user-guide.md
     # flake-compat, so options are visible
     # nixd.inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -342,6 +342,9 @@
     hyprland-virtual-desktops.url = "github:levnikmyskin/hyprland-virtual-desktops";
     # hyprland-virtual-desktops.inputs.hyprland.follows = "hyprland";
     hyprland-virtual-desktops.inputs.nixpkgs.follows = "nixpkgs";
+
+    ### NOTE: atuin crap - fuck RUST, but no other choice
+    atuin.url = "github:atuinsh/atuin/v18.5.0";
   };
 
   outputs =

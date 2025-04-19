@@ -329,6 +329,16 @@ src.use_latest_release = true
 src.prefix = "v" # NOTE: remove "v" from $ver
 fetch.url = "https://github.com/Radarr/Radarr/releases/download/v$ver/Radarr.master.$ver.linux-core-arm64.tar.gz"
 
+[readarr]
+# src.github_tag = "Readarr/Readarr"
+# src.branch = "develop"
+# src.include_regex = "releases/gcc-10.*"
+# src.github = "Readarr/Readarr"
+# src.use_latest_release = true
+# src.prefix = "v" # NOTE: remove "v" from $ver
+src.manual = "0.4.13.2760"
+fetch.url = "https://github.com/Readarr/Readarr/releases/download/v$ver/Readarr.develop.$ver.linux-core-arm64.tar.gz"
+
 [sonarr]
 src.github = "Sonarr/Sonarr"
 src.use_latest_release = true

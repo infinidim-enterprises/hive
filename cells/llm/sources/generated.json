@@ -13,12 +13,12 @@
             "name": null,
             "owner": "Aider-AI",
             "repo": "aider",
-            "rev": "v0.81.0",
-            "sha256": "sha256-xWOXsffLAVBZvJM8PuAJ12IrmNLfXuqHrbIMtPM1leE=",
+            "rev": "v0.82.0",
+            "sha256": "sha256-UlPYUYAYDhPPgoIvEWRLYjCe3iQ2ltH5mT3GkX+IrGI=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v0.81.0"
+        "version": "v0.82.0"
     },
     "gluetun": {
         "cargoLocks": null,
@@ -69,10 +69,10 @@
         "pinned": false,
         "src": {
             "name": "n8n.tar.gz",
-            "sha256": "sha256-t2gleGZjiYbireuwdi4G0CS4Xomb0t3Q4CgNGxt9YZA=",
+            "sha256": "sha256-tf1M1tbK6UwbW8v6A+yOGOZgI25qsQdVUdXY1Ru1xJY=",
             "type": "url",
-            "url": "https://github.com/n8n-io/n8n/archive/n8n@1.85.4.tar.gz"
+            "url": "https://github.com/n8n-io/n8n/archive/n8n@1.88.0.tar.gz"
         },
-        "version": "n8n@1.85.4"
+        "version": "n8n@1.88.0"
     }
 }

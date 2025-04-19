@@ -120,6 +120,11 @@ in
           proxyWebsockets = true;
         };
 
+        # locations."~* ^/sickgear(/.*)?$" = {
+        #   proxyPass = "http://localhost:8081/sickgear";
+        #   proxyWebsockets = true;
+        # };
+
         locations."~* ^/sonarr(/.*)?$" = {
           proxyPass = "http://localhost:8989";
           proxyWebsockets = true;
@@ -179,7 +184,26 @@ in
       systemd.services.radarr.after = [ "prowlarr.service" ];
     }
 
+    # {
+    #   services.sickbeard.enable = true;
+    #   services.sickbeard.package = pkgs.sickgear;
+    #   services.sickbeard.user = config.services.jellyfin.user;
+    #   services.sickbeard.group = config.services.jellyfin.group;
+    #   services.sickbeard.dataDir = download-dir + "/sickgear";
+    #   services.sickbeard.configFile =
+    #     let
+    #       ini = (pkgs.formats.ini { }).generate;
+    #     in
+    #     ini "sickbeard.cfg" {
+    #       SickGear = {
+    #         web_root = "sickgear";
+    #         web_host = "0.0.0.0";
+    #       };
+    #     };
+    # }
+
     {
+      # TODO: replace with sickgear!
       services.sonarr.enable = true;
       services.sonarr.user = config.services.jellyfin.user;
       services.sonarr.group = config.services.jellyfin.group;

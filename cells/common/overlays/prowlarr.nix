@@ -16,8 +16,14 @@ final: prev: {
     inherit (final.sources.prowlarr) pname version src;
   });
 
+  lidarr = prev.lidarr.overrideAttrs (_: {
+    inherit (final.sources.lidarr) pname version src;
+  });
+
+  readarr = prev.readarr.overrideAttrs (_: {
+    inherit (final.sources.readarr) pname version src;
+  });
+
   inherit (nixpkgs-unstable)
-    lidarr
-    readarr
     whisparr;
 }

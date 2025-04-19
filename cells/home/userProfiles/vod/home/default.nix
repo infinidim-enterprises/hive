@@ -45,7 +45,7 @@ in
       # nix
       # direnv
       # git
-      # javascript
+      javascript
       dbtools.postgresql
       # dbtools.mysql
       # tools

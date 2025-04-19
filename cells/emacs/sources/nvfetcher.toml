@@ -1,24 +1,42 @@
-[acm-terminal]
-src.git = "https://github.com/twlz0ne/acm-terminal"
-fetch.github = "twlz0ne/acm-terminal"
+[lsp-mode]
+src.use_latest_release = true
+src.github = "emacs-lsp/lsp-mode"
+fetch.github = "emacs-lsp/lsp-mode"
 
-# [lsp-bridge]
-# src.git = "https://github.com/manateelazycat/lsp-bridge"
-# fetch.github = "manateelazycat/lsp-bridge"
+### NOTE: usability
+[maple-iedit]
+passthru = { ename = "maple-iedit" }
+src.git = "https://github.com/honmaple/emacs-maple-iedit"
+fetch.github = "honmaple/emacs-maple-iedit"
+
+[rainbow-delimiters]
+src.git = "https://github.com/Fanael/rainbow-delimiters"
+fetch.github = "Fanael/rainbow-delimiters"
+
+### NOTE: nix
+[nix-mode]
+passthru = { ename = "nix-mode" }
+src.git = "https://github.com/NixOS/nix-mode"
+fetch.git = "https://github.com/NixOS/nix-mode"
 
 [nix-ts-mode]
-src.git = "https://github.com/remi-gelinas/nix-ts-mode"
-fetch.github = "remi-gelinas/nix-ts-mode"
+src.use_latest_release = true
+src.github = "nix-community/nix-ts-mode"
+fetch.github = "nix-community/nix-ts-mode"
+
+[nixpkgs-fmt]
+src.git = "https://github.com/purcell/emacs-nixpkgs-fmt"
+fetch.github = "purcell/emacs-nixpkgs-fmt"
 
 [jinx]
 # Enchanted Spell Checker
-src.git = "https://github.com/minad/jinx"
+src.github_tag = "minad/jinx"
 fetch.github = "minad/jinx"
 
 ### NOTE: vod
 [chemacs]
 src.git = "https://github.com/plexus/chemacs2"
-fetch.git = "https://github.com/plexus/chemacs2"
+fetch.github = "plexus/chemacs2"
 
 # [spacemacs]
 # src.git = "https://github.com/syl20bnr/spacemacs"
@@ -34,40 +52,106 @@ fetch.git = "https://github.com/plexus/chemacs2"
 
 [all-the-icons]
 src.git = "https://github.com/domtronn/all-the-icons.el"
-fetch.git = "https://github.com/domtronn/all-the-icons.el"
+fetch.github = "domtronn/all-the-icons.el"
 
 [copilot-el]
-src.git = "https://github.com/zerolfx/copilot.el.git"
-fetch.git = "https://github.com/zerolfx/copilot.el.git"
+src.git = "https://github.com/zerolfx/copilot.el"
+fetch.github = "zerolfx/copilot.el"
 
 [color-rg]
 src.git = "https://github.com/manateelazycat/color-rg"
-fetch.git = "https://github.com/manateelazycat/color-rg"
+fetch.github = "manateelazycat/color-rg"
 
+### NOTE: org-mode stuff
 [org-pretty-table]
 src.git = "https://github.com/Fuco1/org-pretty-table"
-fetch.git = "https://github.com/Fuco1/org-pretty-table"
+fetch.github = "Fuco1/org-pretty-table"
 
 [org-protocol-capture-html]
 src.git = "https://github.com/alphapapa/org-protocol-capture-html"
-fetch.git = "https://github.com/alphapapa/org-protocol-capture-html"
+fetch.github = "alphapapa/org-protocol-capture-html"
 
-[activity-watch-mode]
-src.git = "https://github.com/pauldub/activity-watch-mode"
-fetch.git = "https://github.com/pauldub/activity-watch-mode"
+[zetteldeft]
+src.git = "https://github.com/EFLS/zetteldeft"
+fetch.github = "EFLS/zetteldeft"
 
-[nix-mode]
-passthru = { ename = "nix-mode" }
-src.git = "https://github.com/NixOS/nix-mode"
-fetch.git = "https://github.com/NixOS/nix-mode"
+### NOTE: Completion stuff
+[vertico]
+src.github_tag = "minad/vertico"
+fetch.github = "minad/vertico"
 
-### Non-emacs tools
-[grip]
-src.git = "https://github.com/joeyespo/grip"
-fetch.git = "https://github.com/joeyespo/grip"
+[corfu]
+src.github_tag = "minad/corfu"
+fetch.github = "minad/corfu"
 
+[corfu-terminal]
+src.git = "https://codeberg.org/akib/emacs-corfu-terminal"
+fetch.git = "https://codeberg.org/akib/emacs-corfu-terminal"
 
-### Nyxt extensions and stuff
+[cape]
+src.github_tag = "minad/cape"
+fetch.github = "minad/cape"
+
+[tempel]
+src.github_tag = "minad/tempel"
+fetch.github = "minad/tempel"
+
+[orderless]
+src.github_tag = "oantolin/orderless"
+fetch.github = "oantolin/orderless"
+
+[nerd-icons-corfu]
+src.github_tag = "LuigiPiucco/nerd-icons-corfu"
+fetch.github = "LuigiPiucco/nerd-icons-corfu"
+
+### NOTE: llm stuff
+[gptel]
+src.github_tag = "karthink/gptel"
+fetch.github = "karthink/gptel"
+
+[aider]
+src.github_tag = "tninja/aider.el"
+fetch.github = "tninja/aider.el"
+
+### NOTE: themes stuff
+[color-theme-sanityinc-solarized]
+src.git =  "https://github.com/purcell/color-theme-sanityinc-solarized"
+fetch.github = "purcell/color-theme-sanityinc-solarized"
+
+### LISP stuff
+[sly]
+src.git = "https://github.com/joaotavora/sly"
+fetch.github = "joaotavora/sly"
+
+[sly-asdf]
+src.git = "https://github.com/mmgeorge/sly-asdf"
+fetch.github = "mmgeorge/sly-asdf"
+
+[sly-overlay]
+src.git = "https://github.com/fosskers/sly-overlay"
+fetch.github = "fosskers/sly-overlay"
+
+[sly-quicklisp]
+src.git = "https://github.com/joaotavora/sly-quicklisp"
+fetch.github = "joaotavora/sly-quicklisp"
+
+[sly-macrostep]
+src.git = "https://github.com/joaotavora/sly-macrostep"
+fetch.github = "joaotavora/sly-macrostep"
+
+[sly-repl-ansi-color]
+src.git = "https://github.com/PuercoPop/sly-repl-ansi-color"
+fetch.github = "PuercoPop/sly-repl-ansi-color"
+
+[sly-named-readtables]
+src.git = "https://github.com/joaotavora/sly-named-readtables"
+fetch.github = "joaotavora/sly-named-readtables"
+
+[helm-sly]
+src.git = "https://github.com/emacs-helm/helm-sly"
+fetch.github = "emacs-helm/helm-sly"
+
+### NOTE: Nyxt extensions and stuff
 ### TODO: move into a separate cell
 [nyxt-el]
 src.git = "https://github.com/migalmoreno/nyxt.el"

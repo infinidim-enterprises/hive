@@ -25,7 +25,7 @@
     cell.homeProfiles.security.keybase
     cell.homeProfiles.security.password-store
     cell.homeProfiles.browsers.nyxt
-    # FIXME: cell.homeProfiles.messengers
+    cell.homeProfiles.messengers
     cell.homeProfiles.multimedia.players
   ];
 

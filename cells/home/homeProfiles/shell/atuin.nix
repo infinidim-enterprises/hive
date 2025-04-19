@@ -15,8 +15,10 @@
     filter_mode = "workspace";
     workspaces = true;
     # style = "compact";
-    style = "compact";
-    inline_height = 7;
+
+    # style = "compact";
+    # inline_height = 7;
+
     # auto_hide_height = 8;
     show_preview = true;
     secrets_filter = true;

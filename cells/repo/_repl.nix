@@ -18,6 +18,17 @@ let
 
   lib = Flake.inputs.nixpkgs-lib.lib;
 
+  getFreshNixpkgs = channel:
+    let
+      flakeUrl =
+        if isNull channel
+        then "github:nixos/nixpkgs"
+        else "github:nixos/nixpkgs/nixpkgs-${toString channel}";
+      flake = builtins.getFlake (toString flakeUrl);
+      pkgs = flake.legacyPackages.${builtins.currentSystem};
+    in
+    flake // { inherit pkgs; };
+
   Channels =
     lib.genAttrs [
       "nixpkgs"
@@ -84,6 +95,7 @@ lib.optionalAttrs
     Cells
     Channels
     Flake
+    getFreshNixpkgs
     # LoadFlake
 
     Lib

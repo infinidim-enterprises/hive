@@ -23,7 +23,6 @@ in
     nix-prefetch-scripts
 
     ### cli/shell/terminal
-    atuin
 
     tmux
     tmux-cssh

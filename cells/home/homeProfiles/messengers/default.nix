@@ -8,26 +8,24 @@ mkMerge [
       # TODO: move it into a separate profile
       # bisq-desktop
 
-      matterbridge
+      # matterbridge
       # dino # jabber/xmpp
-      tdesktop
+      # FIXME; tdesktop
       # TODO: signald # Unofficial daemon for interacting with Signal
       signal-desktop
       element-desktop
       # vesktop # Discord with Vencord built-in
       linphone
-      baresip
+      # baresip
       # NOTE: defunct jitsi
       # qtox # Qt Tox client
       # utox # Lightweight Tox client
       # nym # NOTE: fuck rust. Mixnet providing IP-level privacy
-      localsend # Open source cross-platform alternative to AirDrop
+      # localsend # Open source cross-platform alternative to AirDrop
     ];
   }
 
   (mkIf config.xdg.mimeApps.enable {
-
-
     xdg.mimeApps.defaultApplications =
       (genAttrs [
         "x-scheme-handler/tg"

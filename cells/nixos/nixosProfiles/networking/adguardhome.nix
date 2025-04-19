@@ -5,8 +5,25 @@ let
   inherit (lib)
     mkMerge
     mkIf
-    hasAttr
     mkDefault;
+
+  isFilterValid = input:
+    let
+      inherit (lib // builtins)
+        splitString
+        isString
+        hasPrefix
+        findFirst;
+      lines = splitString "\n" input;
+      nonCommentLine = line:
+        line != "" &&
+        !hasPrefix "!" line &&
+        # NOTE: weirdly invalid line in GermanFilter/sections/general_elemhide.txt
+        line != ''##aside[data-portal-id="leaderboard"]'';
+    in
+    if isString (findFirst nonCommentLine false lines)
+    then true
+    else false;
 
   filters = with (lib // builtins);
     let
@@ -25,10 +42,9 @@ let
         enabled = true;
         name = "filter_" + (toString id);
       })
-      filter_paths_list;
+      (filter (file: isFilterValid (fileContents file)) filter_paths_list);
 
-  safe_fs_patterns = with (lib // builtins);
-    map (e: e.url) filters;
+  safe_fs_patterns = map (e: e.url) filters;
 in
 mkMerge
   [
@@ -44,6 +60,7 @@ mkMerge
     })
 
     {
+
       services.adguardhome.enable = true;
       services.adguardhome.host = mkDefault "127.0.0.1";
       services.adguardhome.port = mkDefault 8888;

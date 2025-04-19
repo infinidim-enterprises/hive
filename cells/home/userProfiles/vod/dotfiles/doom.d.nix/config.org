@@ -8,21 +8,17 @@
 * Init
 #+begin_src emacs-lisp :tangle "init.el"
 (doom! :input
-       ;; chinese
-       ;;japanese
-       ;;layout            ; auie,ctsrnm is the superior home row
-
        :completion
        (corfu
         +orderless
         +icons
         +dabbrev
         +dict)
-       ;; company             ; the ultimate code completion backend
+       ;; company          ; the ultimate code completion backend
        (helm +fuzzy)       ; the *other* search engine for love and life
        ;;ido               ; the other *other* search engine...
        ;;ivy               ; a search engine for love and life
-       (vertico +icons)           ; the search engine of the future
+       (vertico +icons)    ; the search engine of the future
 
        :ui
        deft                ; notational velocity for Emacs
@@ -141,20 +137,16 @@
        ;;fsharp            ; ML stands for Microsoft's Language
        ;;fstar             ; (dependent) types and (monadic) effects and Z3
        ;;gdscript          ; the language you waited for
-       (go
-        +lsp
-        ;; +tree-sitter
-        )      ; the hipster dialect
+       (go +lsp)           ; the hipster dialect
        ;; (graphql +lsp)
        ;;(haskell +lsp)    ; a language that's lazier than I am
        ;;hy                ; readability of scheme w/ speed of python
        ;;idris             ; a language you can depend on
-       (json
-        +lsp)              ; At least it ain't XML
+       (json +lsp)         ; At least it ain't XML
        ;; (java
        ;;  +lsp
        ;;  +meghanada) ; the poster child for carpal tunnel syndrome
-       ;;javascript        ; all(hope(abandon(ye(who(enter(here))))))
+       (javascript +lsp)        ; all(hope(abandon(ye(who(enter(here))))))
        ;;julia             ; a better, faster MATLAB
        ;;kotlin            ; a better, slicker Java(Script)
        (latex +lsp)        ; writing papers in Emacs has never been so fun
@@ -163,10 +155,7 @@
        ;;lua               ; one-based indices? one-based indices
        (markdown +grip)    ; writing docs for people to ignore
        ;;nim               ; python + lisp at the speed of c
-       (nix
-        +lsp
-        ;; +tree-sitter
-        )      ; I hereby declare "nix geht mehr!"
+       (nix +lsp)
        ;;ocaml             ; an objective camel
        (org
         +brain
@@ -188,7 +177,6 @@
         +cython
         +pyenv
         +poetry
-        ;; +treesitter
         +lsp
         +pyright)          ; beautiful is better than ugly
        ;;qt                ; the 'cutest' gui framework ever
@@ -199,29 +187,20 @@
        (ruby
         +rails
         +lsp
-        +rbenv
-        ;; +tree-sitter
-        )      ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
+        +rbenv)            ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
        ;; (rust
        ;;  +lsp) ;Fe2O3.unwrap().unwrap().unwrap().unwrap()
        ;;scala             ; java, but good
        ;; (scheme +guile)   ; a fully conniving family of lisps
-       (sh
-        +lsp
-        ;; +tree-sitter
-        )      ; she sells {ba,z,fi}sh shells on the C xor
+       (sh +lsp)           ; she sells {ba,z,fi}sh shells on the C xor
        ;;sml
        ;;solidity          ; do you need a blockchain? No.
        ;;swift             ; who asked for emoji variables?
        ;;terra             ; Earth and Moon in alignment for performance.
        (web
-        +lsp
-        ;; +tree-sitter
-        )      ; the tubes
+        +lsp)              ; the tubes
        (yaml
-        +lsp
-        ;; +tree-sitter
-        )      ; JSON, but readable
+        +lsp)              ; JSON, but readable
        ;;zig               ; C, but simpler
 
        :email
@@ -288,9 +267,8 @@
 #+end_src
 ** General
 Maybe use (package! maple-iedit :recipe (:host github :repo "honmaple/emacs-maple-iedit")) instead of built-in mc/mark-next-like-this
-
-#+begin_src emacs-lisp :tangle packages.el
 (package! discover :recipe (:host github :repo "mickeynp/discover.el"))
+#+begin_src emacs-lisp :tangle packages.el
 (package! rainbow-mode)
 (package! docker-tramp :disable t)
 #+end_src
@@ -481,7 +459,7 @@ result instead of `message'."
 (package! org-ql)
 (package! helm-org-rifle)
 (package! org-books)
-;; FIXME: (package! org-pretty-table)
+;; (package! org-pretty-table)
 (package! org-mime)
 (package! org-rich-yank)
 ;; (package! ob-solidity)
@@ -493,12 +471,10 @@ result instead of `message'."
 (use-package! ox-jekyll-md)
 (use-package! org-ql)
 (use-package! helm-org-rifle)
-;; (use-package! org-pretty-table
-;;   :after org-mode
-;;   :commands (org-pretty-table-mode global-org-pretty-table-mode)
-;;   ;; (lambda () (org-pretty-table-mode))
-;;   ;;:hook (org-mode . org-pretty-table-mode))
-;; )
+;;(use-package! org-pretty-table
+;;  :after org-mode
+;;  :commands (org-pretty-table-mode global-org-pretty-table-mode)
+;;  :hook (org-mode . org-pretty-table-mode))
 (use-package! org-mime
   :config (setq org-mime-library 'semi))
 
@@ -784,7 +760,7 @@ https://github.com/SqrtMinusOne/eshell-atuin
 #+end_src
 *** irc
 ** Completion
-*** Github copilot
+*** TODO Github copilot
 This fails to build on nix currently
 #+begin_src emacs-lisp :tangle packages.el
 ;; (package! copilot)
@@ -801,57 +777,9 @@ This fails to build on nix currently
 ;;          ("TAB" . 'copilot-accept-completion)))
 #+end_src
 
-*** lsp-bridge
-#+begin_src emacs-lisp :tangle "packages.el"
-;; (disable-packages! tree-sitter-langs)
-;; (disable-packages! doom-snippets)
-#+end_src
-
-#+begin_src emacs-lisp :tangle "packages.el"
-;; (package! posframe)
-;; (package! popon)
-;; (package! lsp-bridge :recipe (:files ("*.el" "*.py" "core" "langserver" "acm")
-;;                              :build (:not compile)))
-#+end_src
-
-
-#+begin_src emacs-lisp :tangle "config.el"
-;; (use-package! lsp-bridge
-;;   :init
-;;   (setq lsp-bridge-flash-line-delay 1
-;;         lsp-bridge-ref-flash-line-delay 1
-;;         lsp-bridge-use-ds-pinyin-in-org-mode t
-;;         ;; acm-enable-tabnine-helper t
-;;         lsp-bridge-python-lsp-server "pylsp"
-;;         lsp-bridge-python-command "/run/current-system/sw/bin/python")
-;;   (setq lsp-bridge-org-babel-lang-list '("go" "python" "ipython"
-;;                                          "ruby" "js" "css" "sass"
-;;                                          "jupyter" "c" "rust" "java" "cpp" "jupyter-python"
-;;                                          "c++" "sh"))
-;;   :hook (doom-first-input . global-lsp-bridge-mode)
-;;   :config
-;;   ;; (add-hook 'lsp-bridge-mode-hook '(lambda () (company-mode -1)
-;;   ;;                                   ))
-;;   ;;(push '((nickel-mode nickel-ts-mode) . "nls") lsp-bridge-single-lang-server-mode-list)
-;;   (push '((nix-mode nix-ts-mode) . "nixd") lsp-bridge-single-lang-server-mode-list)
-;;   (setq acm-candidate-match-function 'orderless-flex))
-;; (after! lsp-bridge
-;;      (set-face-background 'acm-frame-default-face (face-attribute 'default :background))
-;;       (set-face-background 'acm-frame-select-face (face-attribute 'highlight :background))
-;;       (set-face-foreground 'acm-frame-select-face (face-attribute 'highlight :foreground)))
-#+end_src
-
-#+begin_src emacs-lisp :tangle "packages.el"
-;; (package! nix-ts-mode)
-#+end_src
-
-#+begin_src emacs-lisp :tangle "config.el"
-;; (unless (display-graphic-p)
-;;   (after! acm
-;;     (use-package! acm-terminal)))
-#+end_src
-
 *** corfu / vertico
+For the moment, will go with vendored versions in doomemacs
+
 #+begin_src emacs-lisp :tangle packages.el
 (package! vertico
   :type 'core
@@ -859,42 +787,36 @@ This fails to build on nix currently
   :recipe (:host github
            :repo "minad/vertico"
            :branch "main"))
-
 (package! corfu
   :type 'core
   :pin "6460a3516ba6478114b947d7c18c2b9c5b45d0cc"
   :recipe (:host github
            :repo "minad/corfu"
            :branch "main"))
-
 (package! nerd-icons-corfu
   :type 'core
   :pin "55b17ee20a5011c6a9be8beed6a9daf644815b5a"
   :recipe (:host github
            :repo "LuigiPiucco/nerd-icons-corfu"
            :branch "master"))
-
 (package! cape
   :type 'core
   :pin "f72ebcaeff4252ca0d7a9ac4636d8db0fdf54c55"
   :recipe (:host github
            :repo "minad/cape"
            :branch "main"))
-
 (package! orderless
   :type 'core
   :pin "254f2412489bbbf62700f9d3d5f18e537841dcc3"
   :recipe (:host github
            :repo "oantolin/orderless"
            :branch "main"))
-
 (package! tempel
   :type 'core
   :pin "f52a99ebf6ee52a30d435ef1583dc8df3e5f2ca5"
   :recipe (:host github
            :repo "minad/tempel"
            :branch "main"))
-
 (package! corfu-terminal
   :type 'core
   :pin "501548c3d51f926c687e8cd838c5865ec45d03cc"
@@ -911,19 +833,19 @@ This fails to build on nix currently
 #+end_src
 
 #+begin_src emacs-lisp :tangle config.el
-;; (use-package! vertico)
-;; (use-package! corfu)
-;; (use-package! corfu-terminal)
-;; (use-package! nerd-icons-corfu)
-;; (use-package! cape)
-;; (use-package! orderless)
-;; (use-package! tempel)
+(use-package! vertico)
+(use-package! corfu)
+(use-package! corfu-terminal)
+(use-package! nerd-icons-corfu)
+(use-package! cape)
+(use-package! orderless)
+(use-package! tempel)
 
 
-;; (use-package! corfu-terminal
-;;   :init
-;;   (unless (display-graphic-p)
-;;   (corfu-terminal-mode +1)))
+(use-package! corfu-terminal
+  :init
+  (unless (display-graphic-p)
+  (corfu-terminal-mode +1)))
 
 ;; (use-package! corfu-doc-terminal
 ;;   :init
@@ -962,10 +884,10 @@ This fails to build on nix currently
   :recipe (:host github
            :repo "karthink/gptel"
            :branch "master"))
-(package! gptel-extensions
-  :pin "671e5186153fc9bf105c91effb1ed7db06508677"
-  :recipe (:host github
-           :repo "kamushadenes/gptel-extensions.el"))
+;; (package! gptel-extensions
+;;   :pin "671e5186153fc9bf105c91effb1ed7db06508677"
+;;   :recipe (:host github
+;;            :repo "kamushadenes/gptel-extensions.el"))
 (package! whisper
   :pin "ee29777238fc089d66d8e4b6812fdd5743cad19a"
   :recipe (:host github
@@ -1203,8 +1125,6 @@ This fails to build on nix currently
    ("M-s M-s" . isearch-toggle-color-rg)))
 #+end_src
 
-** Snippets and such
-
 * Language support
 ** Indent Guides
 
@@ -1241,10 +1161,10 @@ This fails to build on nix currently
 
 #+end_src
 
-** tree-sitter
+** TODO tree-sitter
 As a workaround for nixpkgs [[https://github.com/marienz/nix-doom-emacs-unstraightened?tab=readme-ov-file#tree-sitter-error-on-initialization-with-file-error-opening-output-file-read-only-file-system][bug]]
 
-#+begin_src emacs-lisp :tangle packages.el
+#+begin_src emacs-lisp
 (package! treesit-auto
   :type 'core
   :pin "016bd286a1ba4628f833a626f8b9d497882ecdf3"
@@ -1253,7 +1173,8 @@ As a workaround for nixpkgs [[https://github.com/marienz/nix-doom-emacs-unstraig
            :branch "main"))
 #+end_src
 
-#+begin_src emacs-lisp :tangle config.el
+However, this borks up the nixd
+#+begin_src emacs-lisp
 (use-package! treesit-auto
   :custom
   (treesit-auto-install 'prompt)
@@ -1265,24 +1186,25 @@ As a workaround for nixpkgs [[https://github.com/marienz/nix-doom-emacs-unstraig
 
 #+begin_src emacs-lisp :tangle packages.el
 ;; (unpin! nix-mode lsp-mode)
-(package! lsp-mode
-  :type 'core
-  :pin "1fb656e4e573d9dc0109eea82b433f5138850e86"
-  :recipe (:host github
-           :repo "emacs-lsp/lsp-mode"
-           :branch "master"))
+;; NOTE: Only the vendored lsp-mode works atm.
+;; (package! lsp-mode
+;;   :type 'core
+;;   :pin "1fb656e4e573d9dc0109eea82b433f5138850e86"
+;;   :recipe (:host github
+;;            :repo "emacs-lsp/lsp-mode"
+;;            :branch "master"))
 (package! nix-mode
   :type 'core
   :pin "719feb7868fb567ecfe5578f6119892c771ac5e5"
   :recipe (:host github
            :repo "NixOS/nix-mode"
            :branch "master"))
-(package! nix-ts-mode
-  :type 'core
-  :pin "62ce3a2dc39529c5db3516427e84b2c96b8efcfd"
-  :recipe (:host github
-           :repo "nix-community/nix-ts-mode"
-           :branch "trunk"))
+;; (package! nix-ts-mode
+;;   :type 'core
+;;   :pin "62ce3a2dc39529c5db3516427e84b2c96b8efcfd"
+;;   :recipe (:host github
+;;            :repo "nix-community/nix-ts-mode"
+;;            :branch "trunk"))
 (package! nixpkgs-fmt
   :type 'core
   :pin "1f6fb42a5439589c44d99c661cc76958520323cc"
@@ -1305,7 +1227,6 @@ nixd setup function
       (message "nixd language server is not active in the current buffer."))))
 
 (defun local/setup-nixd ()
-  ;; NOTE: this has moved into .dir-locals.el
   ;; TODO: https://github.com/nix-community/nixd/issues/651
   (when (getenv "PRJ_ROOT")
     (let* ((prj_root (getenv "PRJ_ROOT"))
@@ -1315,7 +1236,8 @@ nixd setup function
            (flakeref (format "(builtins.getFlake \"%s\")" prj_root))
            (options-nixos (format "%s.nixosConfigurations.nixos-%s.options" flakeref hostname))
            (options-home-manager (format "%s.homeConfigurations.home-nixd.options" flakeref)))
-      (setq lsp-nix-nixd-server-path '("nixd" "--semantic-tokens=true" "--inlay-hints=true")
+      (setq lsp-nix-nixd-server-path "nixd"
+            lsp-nix-nixd-server-arguments '("--semantic-tokens=true" "--inlay-hints=true")
             lsp-nix-nixd-formatting-command [ "nixpkgs-fmt" ]
             lsp-nix-nixd-nixpkgs-expr "import <nixpkgs> { }"
             lsp-nix-nixd-nixos-options-expr options-nixos
@@ -1325,6 +1247,13 @@ nixd setup function
 #+end_src
 
 #+begin_src emacs-lisp :tangle config.el
+;; (use-package! nix-ts-mode
+;;   :after lsp-mode
+;;   :custom
+;;   (lsp-disabled-clients  '(nix-nil nix-rnix))
+;;   :config
+;;   (local/setup-nixd))
+
 (use-package! nix-mode
   :after lsp-mode
   :hook
@@ -1333,10 +1262,7 @@ nixd setup function
   :custom
   (lsp-disabled-clients  '(nix-nil nix-rnix))
   :config
-  (setq! lsp-nix-nixd-server-path '("nixd" "--semantic-tokens=true" "--inlay-hints=true")
-            lsp-nix-nixd-formatting-command [ "nixpkgs-fmt" ]
-            ;; NOTE: otherwise, lsp-mode errors out on hash-table-p
-            lsp-use-plists nil))
+  (local/setup-nixd))
 #+end_src
 
 #+begin_src emacs-lisp :tangle config.el
@@ -1353,7 +1279,9 @@ nixd setup function
   :defer t
   :config
   (setq! nix-nixfmt-bin "nixpkgs-fmt")
-  :hook (nix-mode . nixpkgs-fmt-on-save-mode))
+  :hook (nix-mode . nixpkgs-fmt-on-save-mode)
+        ;; (nix-ts-mode . nixpkgs-fmt-on-save-mode)
+        )
 #+end_src
 
 Also, needs to complete from pkgs and lib and project buffers
