@@ -71,17 +71,17 @@
   };
   copilot-el = {
     pname = "copilot-el";
-    version = "bb517382be5d0dc673f9381e9c2a0956dfc9dc45";
+    version = "229d8544834a8d446ec9747102ad160280a65620";
     src = fetchgit {
       url = "https://github.com/zerolfx/copilot.el.git";
-      rev = "bb517382be5d0dc673f9381e9c2a0956dfc9dc45";
+      rev = "229d8544834a8d446ec9747102ad160280a65620";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-OKjaeZaixOe0t2eZOoKQkhvH6eTN020lR1UxkGnH3pU=";
+      sha256 = "sha256-1OJwP0xoxAgleaxUGcCrlfHvo0Bqzf+tEH6jOwRBZ6c=";
     };
-    date = "2025-04-04";
+    date = "2025-04-17";
   };
   grip = {
     pname = "grip";
@@ -99,15 +99,15 @@
   };
   jinx = {
     pname = "jinx";
-    version = "84fc35aedddfbf24de144245fe9d1c8a61852f7a";
+    version = "9c71f2c896c3d004019aa45cff3a54e09f2d5aee";
     src = fetchFromGitHub {
       owner = "minad";
       repo = "jinx";
-      rev = "84fc35aedddfbf24de144245fe9d1c8a61852f7a";
+      rev = "9c71f2c896c3d004019aa45cff3a54e09f2d5aee";
       fetchSubmodules = false;
-      sha256 = "sha256-MbS4c0VhE6rVm/L04VTvjS0CMda8v2GI18T+U0zq3c0=";
+      sha256 = "sha256-PNa6xRsIquAecUvY/xTJMtoEugEEDP9Agv6rVQNskQs=";
     };
-    date = "2025-04-04";
+    date = "2025-04-06";
   };
   nix-mode = {
     pname = "nix-mode";
