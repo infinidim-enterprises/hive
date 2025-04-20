@@ -167,7 +167,9 @@
     nixos-22-11.url = "github:nixos/nixpkgs/release-22.11";
     nixos-23-11.url = "github:nixos/nixpkgs/release-23.11";
     nixos-24-05.url = "github:nixos/nixpkgs/release-24.05";
-    nixos-24-11.url = "github:nixos/nixpkgs/release-24.11";
+    # nixos-24-11.url = "github:nixos/nixpkgs/release-24.11";
+    # ISSUE: xdg.portal.enable is fucked on update (something to do with home-unstable)
+    nixos-24-11.url = "github:nixos/nixpkgs/785306ca6d78689fb32ab67843ac93ebd53be15e";
     # nixpkgs-22-11.follows = "nixos-22-11";
 
     ###

@@ -4,8 +4,8 @@
 let
   inherit (lib // builtins)
     mkIf
-    mkMerge
-    hasAttr;
+    mkForce
+    mkMerge;
   inherit (cell.lib) post_24-05;
 
   global = {
@@ -27,6 +27,10 @@ let
 in
 {
   # imports = [ inputs.hyprland.nixosModules.default ];
+  # imports = [
+  #   "${inputs.nixpkgs-master}/nixos/modules/programs/wayland/hyprland.nix"
+  #   "${inputs.nixpkgs-master}/nixos/modules/programs/wayland/uwsm.nix"
+  # ];
 
   config = mkMerge [
     (mkIf (post_24-05 { inherit pkgs; }) {
@@ -54,39 +58,19 @@ in
       # TODO: upower - /org/freedesktop/UPower
       services.upower.enable = true;
 
+      # disabledModules = [
+      #   "programs/wayland/hyprland.nix"
+      #   "programs/wayland/uwsm.nix"
+      # ];
+
       programs.hyprland.enable = true;
       programs.hyprland.withUWSM = true;
-
-      # programs.uwsm.enable = true;
-      # programs.uwsm.waylandCompositors = {
-      #   hyprland =
-      #     let
-      #       inherit (lib) concatStringsSep;
-      #       cmd = [
-      #         "${pkgs.dbus}/bin/dbus-update-activation-environment"
-      #         "--systemd"
-      #         "--all"
-      #         "&&"
-      #         "${config.programs.hyprland.package}/bin/Hyprland"
-      #       ];
-      #       hyprlandScript = pkgs.writeScriptBin "hyprland" ''
-      #         ${pkgs.bash}/bin/bash -l -c '${concatStringsSep " " cmd}'
-      #       '';
-      #     in
-      #     {
-      #       prettyName = "Hyprland";
-      #       comment = "Hyprland compositor managed by UWSM";
-      #       binPath = "${hyprlandScript}/bin/hyprland";
-      #     };
-      # };
 
       programs.hyprland.xwayland.enable = true;
       programs.hyprland.systemd.setPath.enable = true;
 
-      programs.xwayland.enable = true;
       security.pam.services.hyprlock = { };
 
-      xdg.portal.enable = true;
       xdg.portal.config.common.default = [ "hyprland;gtk" ];
 
       ### TODO: hyprland plugins:

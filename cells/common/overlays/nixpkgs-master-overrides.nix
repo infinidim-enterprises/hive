@@ -51,10 +51,11 @@ hyprland-pkgs //
     ###
     mesa
     ###
+    formats
 
-    gimp-with-plugins
-    aider-chat
-    activitywatch;
+    gimp3-with-plugins
+
+    aider-chat;
 }
 # //
 # {

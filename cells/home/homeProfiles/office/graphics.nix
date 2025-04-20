@@ -53,7 +53,7 @@ mkMerge [
     home.packages = with pkgs; [
       nomacs # Qt-based image viewer
       inkscape # Vector graphics editor
-      gimp-with-plugins # The GNU Image Manipulation Program
+      gimp3-with-plugins # The GNU Image Manipulation Program
       imagemagick # A software suite to create, edit, compose, or convert bitmap images
       # krita # A free and open source painting application
     ];

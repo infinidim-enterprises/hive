@@ -1,6 +1,6 @@
 { inputs, cell, ... }:
 let
-  inherit (builtins) toString baseNameOf;
+  inherit (builtins) baseNameOf;
   system = "x86_64-linux";
 in
 
@@ -8,22 +8,8 @@ rec {
   bee = {
     inherit system;
     home = inputs.home-unstable;
-    # away from nixpkgs-unstable
     pkgs = import inputs.nixos-24-11 {
       inherit (inputs.nixpkgs) system;
-      # FIXME: lollypop depends on youtube-dl
-      config.permittedInsecurePackages = [
-        # ISSUE: (emacs30.1): https://github.com/doomemacs/doomemacs/issues/8293
-        "emacs29-pgtk"
-        "emacs-pgtk-29.4"
-        "emacs-pgtk-with-packages-29.4"
-        "emacs-pgtk-with-doom-29.4"
-        # CVE-2024-53920
-        # CVE-2025-1244
-
-        "python3.12-youtube-dl-2021.12.17"
-        "jitsi-meet-1.0.8043"
-      ];
       config.allowUnfree = true;
       overlays = cell.overlays.default_desktop ++ cell.overlays.llm;
     };
