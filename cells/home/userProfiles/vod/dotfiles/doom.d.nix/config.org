@@ -1187,12 +1187,12 @@ However, this borks up the nixd
 #+begin_src emacs-lisp :tangle packages.el
 ;; (unpin! nix-mode lsp-mode)
 ;; NOTE: Only the vendored lsp-mode works atm.
-;; (package! lsp-mode
-;;   :type 'core
-;;   :pin "1fb656e4e573d9dc0109eea82b433f5138850e86"
-;;   :recipe (:host github
-;;            :repo "emacs-lsp/lsp-mode"
-;;            :branch "master"))
+(package! lsp-mode
+  :type 'core
+  :pin "a478e03cd1a5dc84ad496234fd57241ff9dca57a" ;; v9.0.0
+  :recipe (:host github
+           :repo "emacs-lsp/lsp-mode"
+           :branch "master"))
 (package! nix-mode
   :type 'core
   :pin "719feb7868fb567ecfe5578f6119892c771ac5e5"
@@ -1215,6 +1215,151 @@ However, this borks up the nixd
 
 nixd setup function
 #+begin_src emacs-lisp :tangle config.el
+;; (after! lsp-mode
+;;   ;; Log all JSON exchanged with the server
+;;   (setq lsp-log-io t)
+;;   ;; Trace at the server level (if supported)
+;;   (setq lsp-server-trace '("verbose"))
+;;   (setq lsp-completion-provider :capf)
+;;   ;; Optional: automatically open the log buffer on workspace start
+;;   (setq lsp-auto-show-log-buffer t)
+;;   (add-hook 'lsp-mode-hook #'lsp-completion-mode))
+
+;; (trace-function 'lsp-completion-at-point)
+;; (trace-function-background 'corfu--collect-matching-text)
+
+;; (advice-add 'corfu--collect-matching-text :around
+;;             (lambda (orig &rest args)
+;;               (message "[Corfu] args: %S" args)
+;;               (apply orig args)))
+;; (advice-add #'vertico--exhibit :around
+;;             (lambda (orig &rest args)
+;;               (condition-case e
+;;                   (apply orig args)
+;;                 ((debug error)
+;;                  (signal (car e) (cdr e)))))
+
+;; (setq debug-on-error t)  ;; ensure we catch it :contentReference[oaicite:5]{index=5}
+
+;; ------------------------------------------------------------
+;; LSP-Mode + nixd + Corfu/Vertico Debug & Completion Integration
+;; ------------------------------------------------------------
+(use-package! lsp-mode
+  :commands (lsp lsp-deferred)
+  :init
+  ;; Use standard CAPF for completions
+  (setq lsp-completion-provider :capf)
+  (add-hook 'lsp-mode-hook #'lsp-completion-mode)
+  (add-hook 'lsp-completion-mode-hook
+            (lambda ()
+              (setq completion-at-point-functions
+                    (cons (cape-capf-nonexclusive #'lsp-completion-at-point)
+                          (remove #'lsp-completion-at-point completion-at-point-functions)))))
+
+  ;; Interactive helper: call the CAPF function and show candidates
+  (defun my/lsp-capf-candidates ()
+    "Manually invoke `lsp-completion-at-point` and message its candidates."
+    (interactive)
+    (let* ((capf   (lsp-completion-at-point))
+           (beg    (nth 0 capf))
+           (end    (nth 1 capf))
+           (fn     (nth 2 capf))
+           (input  (buffer-substring-no-properties beg end))
+           (cands  (funcall fn input #'identity '(:all))))
+      (message "[LSP CAPF] %S" cands)))
+
+  ;; Toggle all debug settings on/off
+  (defvar my/lsp-nixd-debug-enabled nil
+    "Non-nil if LSP + nixd + Corfu/Vertico debug is enabled.")
+
+  (defun my/toggle-lsp-nixd-debug ()
+    "Toggle full debug mode for LSP + nixd + Corfu/Vertico."
+    (interactive)
+    (setq my/lsp-nixd-debug-enabled (not my/lsp-nixd-debug-enabled))
+    (if my/lsp-nixd-debug-enabled
+        (progn
+          ;; 1) LSP client
+          (setq lsp-log-io t
+                lsp-server-trace '("verbose")
+                lsp-auto-show-log-buffer t)
+          ;; 2) nixd args
+          (setq lsp-nix-nixd-args '("--log-level" "debug" "--trace" "true"))
+          ;; 3) Elisp debugger
+          (setq debug-on-error t)
+          ;; 4) debug-on-entry & trace
+          (debug-on-entry 'lsp-completion-at-point)
+          (debug-on-entry 'lsp-completion--create-items)
+          (require 'trace)
+          (trace-function-background 'lsp-completion-at-point)
+          (trace-function-background 'corfu--collect-matching-text)
+          ;; 5) Advice Corfu & Vertico
+          (advice-add 'corfu--collect-matching-text :around
+                      (lambda (orig &rest args)
+                        (message "[Corfu] args=%S" args)
+                        (apply orig args)))
+          (advice-add 'vertico--exhibit :around
+                      (lambda (orig &rest args)
+                        (condition-case e
+                            (apply orig args)
+                          ((error)
+                           (message "[Vertico] error: %S" e)
+                           (signal (car e) (cdr e))))))
+          (message "🛠️  LSP‑nixd debug ENABLED"))
+      (progn
+        ;; Disable everything
+        (setq lsp-log-io nil
+              lsp-server-trace nil
+              lsp-auto-show-log-buffer nil
+              lsp-nix-nixd-args nil
+              debug-on-error nil)
+        (dolist (sym '(lsp-completion-at-point
+                       lsp-completion--create-items
+                       corfu--collect-matching-text))
+          (ignore-errors (untrace-function sym)))
+        (advice-remove 'corfu--collect-matching-text #'identity)
+        (advice-remove 'vertico--exhibit              #'identity)
+        (message "✅ LSP‑nixd debug DISABLED"))))
+
+  :config
+  ;; Ensure CAPF is first in the chain
+  (add-hook 'lsp-completion-mode-hook
+            (lambda ()
+              (add-to-list 'completion-at-point-functions
+                           #'lsp-completion-at-point t))))
+
+;; ----------------
+;; Corfu (UI)
+;; ----------------
+(use-package! corfu
+  :after lsp-mode cape
+  :init
+  (global-corfu-mode)                       ; enable Corfu everywhere
+  (setq corfu-auto t
+        corfu-cycle t
+        corfu-separator ?\s))
+
+;; ----------------
+;; Vertico (minibuffer)
+;; ----------------
+(use-package! vertico
+  :init
+  (vertico-mode))
+
+;; ----------------
+;; Cape: Compose multiple CAPFs
+;; ----------------
+(use-package! cape
+  :after corfu
+  :init
+  ;; Add various Cape backends—wrapped non-exclusively
+  (dolist (fn '(cape-file
+                cape-dabbrev
+                cape-history
+                cape-line))
+    (add-to-list 'completion-at-point-functions
+                 (cape-capf-nonexclusive fn))))
+
+
 (defun local/print-nixd-capabilities ()
   "Print the capabilities of the `nixd` language server."
   (interactive)
@@ -1237,7 +1382,7 @@ nixd setup function
            (options-nixos (format "%s.nixosConfigurations.nixos-%s.options" flakeref hostname))
            (options-home-manager (format "%s.homeConfigurations.home-nixd.options" flakeref)))
       (setq lsp-nix-nixd-server-path "nixd"
-            lsp-nix-nixd-server-arguments '("--semantic-tokens=true" "--inlay-hints=true")
+            lsp-nix-nixd-server-arguments '("--semantic-tokens=true" "--inlay-hints=true" "--log=debug" "--pretty" "--nixpkgs-worker-stderr=/tmp/nixd-debug-nixpkgs" "--option-worker-stderr=/tmp/nixd-debug-options")
             lsp-nix-nixd-formatting-command [ "nixpkgs-fmt" ]
             lsp-nix-nixd-nixpkgs-expr "import <nixpkgs> { }"
             lsp-nix-nixd-nixos-options-expr options-nixos

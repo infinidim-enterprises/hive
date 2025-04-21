@@ -1,4 +1,4 @@
-{ inputs, cell, ... }:
+{ inputs, ... }:
 
 { lib, pkgs, config, ... }:
 let

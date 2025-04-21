@@ -571,7 +571,7 @@ in
               {
                 # NOTE: there's an alternative here: https://github.com/ncipollo/release-action
                 name = "Release";
-                uses = "softprops/action-gh-release@v2.2.1";
+                uses = "softprops/action-gh-release@v2.2.2";
                 "with" = {
                   files = ''/home/runner/work/_temp/iso_release/keygen-x86_64-linux.iso'';
                   tag_name = "v0.0.1";
