@@ -3,13 +3,13 @@
 {
   aider = {
     pname = "aider";
-    version = "v0.8.0";
+    version = "v0.8.1";
     src = fetchFromGitHub {
       owner = "tninja";
       repo = "aider.el";
-      rev = "v0.8.0";
+      rev = "v0.8.1";
       fetchSubmodules = false;
-      sha256 = "sha256-w9AHOc5Fd7PntoyvNT5CZz2XpWWSta7zRO6nFnpDdmc=";
+      sha256 = "sha256-lO0i2xb8pDZ7ohGczUNc2wx5Kb7wqa6GmPe5cr8ICnQ=";
     };
   };
   all-the-icons = {
@@ -73,25 +73,25 @@
   };
   copilot-el = {
     pname = "copilot-el";
-    version = "229d8544834a8d446ec9747102ad160280a65620";
+    version = "6c8ad4e4b65f5eec026325db2ac5a0aaedd8b22c";
     src = fetchFromGitHub {
       owner = "zerolfx";
       repo = "copilot.el";
-      rev = "229d8544834a8d446ec9747102ad160280a65620";
+      rev = "6c8ad4e4b65f5eec026325db2ac5a0aaedd8b22c";
       fetchSubmodules = false;
-      sha256 = "sha256-1OJwP0xoxAgleaxUGcCrlfHvo0Bqzf+tEH6jOwRBZ6c=";
+      sha256 = "sha256-y47yC8+8KnGCCpynTYfer8Hww221/MpyL9mPrAAkOXc=";
     };
-    date = "2025-04-17";
+    date = "2025-04-23";
   };
   corfu = {
     pname = "corfu";
-    version = "2.0";
+    version = "2.1";
     src = fetchFromGitHub {
       owner = "minad";
       repo = "corfu";
-      rev = "2.0";
+      rev = "2.1";
       fetchSubmodules = false;
-      sha256 = "sha256-uEf/DM72xkK0MEc5716E9C4oyXEys4g8TWw/efmCdZc=";
+      sha256 = "sha256-BZD5UjiaHDJG733Ild9mGSeqygPXVuC/zHhzb5H00FA=";
     };
   };
   corfu-terminal = {

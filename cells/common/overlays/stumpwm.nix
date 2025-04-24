@@ -6,7 +6,6 @@ let
   inherit (inputs.nixpkgs-lib.lib // builtins)
     attrValues
     filterAttrs
-    optionalAttrs
     mapAttrs'
     nameValuePair
     fold

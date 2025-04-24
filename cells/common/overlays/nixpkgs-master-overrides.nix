@@ -13,32 +13,12 @@ let
     {
       inherit
         (nixpkgs-master)
-        # hyprlock
-        # hypridle
-        # hyprutils
-        # hyprkeys
-        # hyprcursor
-        # hyprdim
-        # hyprnome
-        # hyprnotify
-        # hyprpaper
-        # hyprpicker
-        # hyprpolkitagent
-        # hyprprop
-        # hyprshade
-        # hyprshot
-        # hyprsome
-        # hyprsunset
-        # hyprgraphics
-        # hyprwayland-scanner
-
         aquamarine
         xdg-desktop-portal-hyprland
         weston
         wlroots
         sway
         xwayland;
-
     } // filterAttrs (n: _: hasPrefix "hypr" n) nixpkgs-master;
 in
 hyprland-pkgs //

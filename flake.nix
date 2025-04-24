@@ -20,9 +20,8 @@
     flake-compat.url = "github:edolstra/flake-compat";
     flake-utils.url = "github:numtide/flake-utils";
     nixpkgs-lib.url = "github:nix-community/nixpkgs.lib";
-    bird-nix-lib.url = "github:spikespaz/bird-nix-lib";
-
-    flake-schemas.url = "github:DeterminateSystems/flake-schemas";
+    # TODO: bird-nix-lib.url = "github:spikespaz/bird-nix-lib";
+    # TODO: flake-schemas.url = "github:DeterminateSystems/flake-schemas";
 
     ###
     # hive / std
@@ -109,7 +108,7 @@
     # system tools
     ###
     # TODO: inputs.nix-topology.url = "github:oddlama/nix-topology";
-    nix-super.url = "github:privatevoid-net/nix-super";
+    # TODO: nix-super.url = "github:privatevoid-net/nix-super";
 
     nix-filter.url = "github:numtide/nix-filter";
 
@@ -164,13 +163,12 @@
     ###
     # Compat nixpkgs
     ###
-    nixos-22-11.url = "github:nixos/nixpkgs/release-22.11";
-    nixos-23-11.url = "github:nixos/nixpkgs/release-23.11";
-    nixos-24-05.url = "github:nixos/nixpkgs/release-24.05";
+    # nixos-22-11.url = "github:nixos/nixpkgs/release-22.11";
+    # nixos-23-11.url = "github:nixos/nixpkgs/release-23.11";
+    # nixos-24-05.url = "github:nixos/nixpkgs/release-24.05";
     # nixos-24-11.url = "github:nixos/nixpkgs/release-24.11";
     # ISSUE: xdg.portal.enable is fucked on update (something to do with home-unstable)
     nixos-24-11.url = "github:nixos/nixpkgs/785306ca6d78689fb32ab67843ac93ebd53be15e";
-    # nixpkgs-22-11.follows = "nixos-22-11";
 
     ###
     # rpi stuff
@@ -194,18 +192,17 @@
     nixos-vscode-server.inputs.nixpkgs.follows = "nixpkgs";
     nixos-vscode-server.inputs.flake-utils.follows = "flake-utils";
 
-    flakey-devShells.url = "github:GetPsyched/not-so-flakey-devshells";
-    flakey-devShells.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    # flakey-devShells.url = "github:GetPsyched/not-so-flakey-devshells";
+    # flakey-devShells.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
-    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
-    nix-vscode-extensions.inputs.nixpkgs.follows = "nixpkgs";
-    nix-vscode-extensions.inputs.flake-utils.follows = "flake-utils";
+    # nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+    # nix-vscode-extensions.inputs.nixpkgs.follows = "nixpkgs";
+    # nix-vscode-extensions.inputs.flake-utils.follows = "flake-utils";
 
     # TODO: move to stylix!
-    stylix.url = "github:danth/stylix";
-    # stylix.url = "/home/vod/Public/github/stylix";
-    stylix.inputs.nixpkgs.follows = "nixpkgs-unstable";
-    stylix.inputs.home-manager.follows = "home-unstable";
+    # stylix.url = "github:danth/stylix";
+    # stylix.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    # stylix.inputs.home-manager.follows = "home-unstable";
 
     # TODO: hyprspace VPN
     # hyprspace.url = "github:hyprspace/hyprspace";
@@ -227,18 +224,16 @@
     # TODO: netboot-nix.url = "github:grahamc/netboot.nix";
 
     nvfetcher.url = "github:berberman/nvfetcher/0.7.0";
-
     nur.url = "github:nix-community/NUR";
-
     nurl.url = "github:nix-community/nurl";
 
     # go tools
-    gomod2nix.url = "github:nix-community/gomod2nix";
-    gomod2nix.inputs.nixpkgs.follows = "nixpkgs-master";
-    gomod2nix.inputs.flake-utils.follows = "flake-utils";
+    # gomod2nix.url = "github:nix-community/gomod2nix";
+    # gomod2nix.inputs.nixpkgs.follows = "nixpkgs-master";
+    # gomod2nix.inputs.flake-utils.follows = "flake-utils";
 
     # Just in case
-    call-flake.url = "github:divnix/call-flake";
+    # call-flake.url = "github:divnix/call-flake";
 
     # terraform
     terraform-providers-bin.url = "github:nix-community/nixpkgs-terraform-providers-bin";
@@ -246,28 +241,12 @@
 
     # AAA
     # TODO: authentik
-    authentik-nix.url = "github:nix-community/authentik-nix";
+    # authentik-nix.url = "github:nix-community/authentik-nix";
 
     ###
     # emacs & friends
     ###
     nix-doom-emacs-unstraightened.url = "github:marienz/nix-doom-emacs-unstraightened";
-
-    # nix-doom-emacs.url = "github:nix-community/nix-doom-emacs?ref=pull/316/head";
-    # NOTE: https://github.com/nix-community/nix-straight.el/pull/4
-    # nix-doom-emacs.inputs.nix-straight.follows = "nix-straight-fix-emacs29";
-    # nix-doom-emacs.inputs.nixpkgs.follows = "nixpkgs-unstable";
-    # nix-doom-emacs.inputs.emacs-overlay.follows = "emacs-overlay";
-    # nix-straight-fix-emacs29.url = "github:nix-community/nix-straight.el?ref=pull/4/head";
-    # nix-straight-fix-emacs29.flake = false;
-    # a99c6b9036bde2f60697ce9f2ac259dfa2266dbf
-    # nix-doom-emacs.inputs.doom-emacs.follows = "doom-emacs";
-    # doom-emacs.url = "github:doomemacs/doomemacs";
-    # doom-emacs.flake = false;
-    # emacs-overlay.url = "github:nix-community/emacs-overlay";
-    # emacs-overlay.inputs.nixpkgs.follows = "nixos";
-    # emacs-overlay.follows = "nix-doom-emacs/inputs/emacs-overlay";
-    # emacs-overlay.url = "github:nix-community/emacs-overlay/c16be6de78ea878aedd0292aa5d4a1ee0a5da501";
 
     # LSP for nix
     nixd.url = "github:nix-community/nixd?ref=refs/tags/2.6.3";
@@ -354,7 +333,7 @@
     , std
     , hive
     , ...
-    } @ inputs:
+    }@inputs:
     std.growOn
       {
         inherit inputs;

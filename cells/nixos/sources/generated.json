@@ -10,14 +10,14 @@
             "arch": null,
             "finalImageName": null,
             "finalImageTag": "latest",
-            "imageDigest": "sha256:4294416e3db789db09c694da9381dd411249cf3d771db94f4635a8d7306cf311",
+            "imageDigest": "sha256:ef94c0bd04a9fe587fa7b5736414be7d1f7f43c978f0d16f7333f9592b50a081",
             "imageName": "lobehub/lobe-chat",
-            "imageTag": "1.81.4",
+            "imageTag": "1.82.4",
             "os": null,
-            "sha256": "sha256-RrJcZxRM15tq1iBtkujHagfJfS2qnLVipYol0bu/Cpw=",
+            "sha256": "sha256-O4OPpkkHiY1c5Vg9fr0PEm1f8vi7JEIaBGaBewiqxjw=",
             "tlsVerify": null
         },
-        "version": "1.81.4"
+        "version": "1.82.4"
     },
     "rock-pi-x-firmware": {
         "cargoLocks": null,

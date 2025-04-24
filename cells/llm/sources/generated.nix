@@ -38,11 +38,11 @@
   };
   n8n = {
     pname = "n8n";
-    version = "n8n@1.88.0";
+    version = "n8n@1.89.2";
     src = fetchurl {
-      url = "https://github.com/n8n-io/n8n/archive/n8n@1.88.0.tar.gz";
+      url = "https://github.com/n8n-io/n8n/archive/n8n@1.89.2.tar.gz";
       name = "n8n.tar.gz";
-      sha256 = "sha256-tf1M1tbK6UwbW8v6A+yOGOZgI25qsQdVUdXY1Ru1xJY=";
+      sha256 = "sha256-DsfUVaOj5czd3vIWFiWsisNyRpni6vi0hw/lxqu6yNw=";
     };
   };
 }

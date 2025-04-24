@@ -5,18 +5,8 @@ let
     inherit (inputs.nixpkgs) system;
     config.allowUnfree = true;
   };
-
-  nixpkgs-release-24-05 = import inputs.nixos-24-05 {
-    inherit (inputs.nixpkgs) system;
-    config.allowUnfree = true;
-  };
-
 in
 {
-  # inherit
-  #   (nixpkgs-release-24-05)
-  #   atuin;
-
   inherit
     (nixpkgs-release)
 

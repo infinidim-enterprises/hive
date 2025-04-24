@@ -17,17 +17,17 @@
   };
   adguard-filters_adguardteam = {
     pname = "adguard-filters_adguardteam";
-    version = "b5940505406a26c6b40d7335459980054a551882";
+    version = "56426ec04cd863d9516504854c18bd5ccd5efc28";
     src = fetchgit {
       url = "https://github.com/AdguardTeam/AdguardFilters";
-      rev = "b5940505406a26c6b40d7335459980054a551882";
+      rev = "56426ec04cd863d9516504854c18bd5ccd5efc28";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-Jxm7LJFXX3fE7hjZ9OuMz9OGCMmX43Ff8IPvpm6QHs8=";
+      sha256 = "sha256-gHPhCH/9hpXab+CuHfrJ6kD27NowdA3c5rzjOCfPQxg=";
     };
-    date = "2025-04-19";
+    date = "2025-04-24";
   };
   adguard-filters_romania = {
     pname = "adguard-filters_romania";
@@ -145,13 +145,13 @@
   };
   crystalline = {
     pname = "crystalline";
-    version = "v0.17.0";
+    version = "v0.17.1";
     src = fetchFromGitHub {
       owner = "elbywan";
       repo = "crystalline";
-      rev = "v0.17.0";
+      rev = "v0.17.1";
       fetchSubmodules = false;
-      sha256 = "sha256-nbJYJBxflTh+F3MGhCF5N3HZMqktKtSVGy8ndAVoCoA=";
+      sha256 = "sha256-SIfInDY6KhEwEPZckgobOrpKXBDDd0KhQt/IjdGBhWo=";
     };
   };
   dbus = {
@@ -223,17 +223,17 @@
   };
   ipxe = {
     pname = "ipxe";
-    version = "0c482060d599ea678db5ffa263ccbe0d1c4f1e2a";
+    version = "e8ffe2cd644000c1cca51c40ba14edb546ca769b";
     src = fetchgit {
       url = "https://github.com/ipxe/ipxe";
-      rev = "0c482060d599ea678db5ffa263ccbe0d1c4f1e2a";
+      rev = "e8ffe2cd644000c1cca51c40ba14edb546ca769b";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-+jn5D2Xs/KaV8s26I7oNClYrO2Z6LAM4ZZ9zghEDlYI=";
+      sha256 = "sha256-e/MFOK5qgJFTjTwIK8RD68jRsSqN/8hN4LE8xjE4kpY=";
     };
-    date = "2025-04-17";
+    date = "2025-04-24";
   };
   iterable-io = {
     pname = "iterable-io";
@@ -245,13 +245,13 @@
   };
   langchain = {
     pname = "langchain";
-    version = "langchain-core==0.3.54";
+    version = "langchain-core==0.3.55";
     src = fetchFromGitHub {
       owner = "langchain-ai";
       repo = "langchain";
-      rev = "langchain-core==0.3.54";
+      rev = "langchain-core==0.3.55";
       fetchSubmodules = false;
-      sha256 = "sha256-A4Of6DGO9v/ufHeYbr1OiEoffmn6rfr6AHJPTYXCBQc=";
+      sha256 = "sha256-7y1eHaf5NRC0N43ZlJSxqzmaR9y5lAlHO7IcDN8Rtrw=";
     };
   };
   lidarr = {
@@ -358,10 +358,10 @@
   };
   prowlarr = {
     pname = "prowlarr";
-    version = "1.33.3.5008";
+    version = "1.34.1.5021";
     src = fetchurl {
-      url = "https://github.com/Prowlarr/Prowlarr/releases/download/v1.33.3.5008/Prowlarr.master.1.33.3.5008.linux-core-arm64.tar.gz";
-      sha256 = "sha256-oyeZrUC2l5O62fknNBdfwEH3p2tFXX8fFrEaA7vWoRg=";
+      url = "https://github.com/Prowlarr/Prowlarr/releases/download/v1.34.1.5021/Prowlarr.master.1.34.1.5021.linux-core-arm64.tar.gz";
+      sha256 = "sha256-Qhx/zh9E+5oBjf7vMvvAVQF05rJI0aB0KcBMXZaYlDA=";
     };
   };
   python-pass = {
@@ -385,10 +385,10 @@
   };
   radarr = {
     pname = "radarr";
-    version = "5.21.1.9799";
+    version = "5.22.4.9896";
     src = fetchurl {
-      url = "https://github.com/Radarr/Radarr/releases/download/v5.21.1.9799/Radarr.master.5.21.1.9799.linux-core-arm64.tar.gz";
-      sha256 = "sha256-VG1oiyYRzfeLoz2mbDbTE29MKvPtjvrZKANb1Hw1VFw=";
+      url = "https://github.com/Radarr/Radarr/releases/download/v5.22.4.9896/Radarr.master.5.22.4.9896.linux-core-arm64.tar.gz";
+      sha256 = "sha256-chVTeH+wv0RMjh3pVJFuHO9lDwpkgOpgnEQX4Dixmbk=";
     };
   };
   readarr = {

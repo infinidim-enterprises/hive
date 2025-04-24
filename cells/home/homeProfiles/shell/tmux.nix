@@ -54,6 +54,7 @@ in
     tmux-default = "${getExe config.programs.tmux.package} new-session -A -s default";
   };
 
+  # ISSUE: https://github.com/tmux/tmux/issues/4304
   programs.tmux = {
     enable = true;
     clock24 = true;
