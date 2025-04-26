@@ -21,7 +21,7 @@
     },
     "adguard-filters_adguardteam": {
         "cargoLocks": null,
-        "date": "2025-04-24",
+        "date": "2025-04-25",
         "extract": null,
         "name": "adguard-filters_adguardteam",
         "passthru": null,
@@ -31,13 +31,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "56426ec04cd863d9516504854c18bd5ccd5efc28",
-            "sha256": "sha256-gHPhCH/9hpXab+CuHfrJ6kD27NowdA3c5rzjOCfPQxg=",
+            "rev": "f3538c7b9ce6e929e737f7c2c2d3b6f08d569a57",
+            "sha256": "sha256-LfR4kT2Z0CH8ly/20w0kXIhLqxCTLjSwrpa5A3cYR14=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/AdguardTeam/AdguardFilters"
         },
-        "version": "56426ec04cd863d9516504854c18bd5ccd5efc28"
+        "version": "f3538c7b9ce6e929e737f7c2c2d3b6f08d569a57"
     },
     "adguard-filters_romania": {
         "cargoLocks": null,
@@ -357,7 +357,7 @@
     },
     "ipxe": {
         "cargoLocks": null,
-        "date": "2025-04-24",
+        "date": "2025-04-25",
         "extract": null,
         "name": "ipxe",
         "passthru": null,
@@ -367,13 +367,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "e8ffe2cd644000c1cca51c40ba14edb546ca769b",
-            "sha256": "sha256-e/MFOK5qgJFTjTwIK8RD68jRsSqN/8hN4LE8xjE4kpY=",
+            "rev": "4c8bf666f4afb578645269a5a81431d784fad771",
+            "sha256": "sha256-9yxUArp1kKA8deCnaHJkOnrL4Ox08u/7/VxCQjOUkvY=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/ipxe/ipxe"
         },
-        "version": "e8ffe2cd644000c1cca51c40ba14edb546ca769b"
+        "version": "4c8bf666f4afb578645269a5a81431d784fad771"
     },
     "iterable-io": {
         "cargoLocks": null,
@@ -404,12 +404,12 @@
             "name": null,
             "owner": "langchain-ai",
             "repo": "langchain",
-            "rev": "langchain-core==0.3.55",
-            "sha256": "sha256-7y1eHaf5NRC0N43ZlJSxqzmaR9y5lAlHO7IcDN8Rtrw=",
+            "rev": "langchain-core==0.3.56",
+            "sha256": "sha256-gsjYr22Phb71oKN4iVGsi6r1iETDhFHCKKOiwp0SuLU=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "langchain-core==0.3.55"
+        "version": "langchain-core==0.3.56"
     },
     "lidarr": {
         "cargoLocks": null,

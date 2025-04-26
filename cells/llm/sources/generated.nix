@@ -29,8 +29,8 @@
     version = "latest";
     src = dockerTools.pullImage {
       imageName = "lobehub/lobe-chat";
-      imageDigest = "sha256:d27484d7c858ec2b1d553851f332a7543c3affed5dc4b2aa2af695f4c26f587e";
-      sha256 = "sha256-gGWc3Pk8sTa3FnwXns9pg2QqMAb1ARrXuB5Z1pUKRu8=";
+      imageDigest = "sha256:0db6910b10143d532b68351eff0d8c259560522fc03912082311798c99830ecf";
+      sha256 = "sha256-6F4CbGnGJQWTCHJPCeM/YUYSWwJLQ6SvVqm+AXesKew=";
       finalImageTag = "latest";
       os = "linux";
       arch = "amd64";

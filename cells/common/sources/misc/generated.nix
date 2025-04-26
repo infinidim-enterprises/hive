@@ -17,17 +17,17 @@
   };
   adguard-filters_adguardteam = {
     pname = "adguard-filters_adguardteam";
-    version = "56426ec04cd863d9516504854c18bd5ccd5efc28";
+    version = "f3538c7b9ce6e929e737f7c2c2d3b6f08d569a57";
     src = fetchgit {
       url = "https://github.com/AdguardTeam/AdguardFilters";
-      rev = "56426ec04cd863d9516504854c18bd5ccd5efc28";
+      rev = "f3538c7b9ce6e929e737f7c2c2d3b6f08d569a57";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-gHPhCH/9hpXab+CuHfrJ6kD27NowdA3c5rzjOCfPQxg=";
+      sha256 = "sha256-LfR4kT2Z0CH8ly/20w0kXIhLqxCTLjSwrpa5A3cYR14=";
     };
-    date = "2025-04-24";
+    date = "2025-04-25";
   };
   adguard-filters_romania = {
     pname = "adguard-filters_romania";
@@ -223,17 +223,17 @@
   };
   ipxe = {
     pname = "ipxe";
-    version = "e8ffe2cd644000c1cca51c40ba14edb546ca769b";
+    version = "4c8bf666f4afb578645269a5a81431d784fad771";
     src = fetchgit {
       url = "https://github.com/ipxe/ipxe";
-      rev = "e8ffe2cd644000c1cca51c40ba14edb546ca769b";
+      rev = "4c8bf666f4afb578645269a5a81431d784fad771";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-e/MFOK5qgJFTjTwIK8RD68jRsSqN/8hN4LE8xjE4kpY=";
+      sha256 = "sha256-9yxUArp1kKA8deCnaHJkOnrL4Ox08u/7/VxCQjOUkvY=";
     };
-    date = "2025-04-24";
+    date = "2025-04-25";
   };
   iterable-io = {
     pname = "iterable-io";
@@ -245,13 +245,13 @@
   };
   langchain = {
     pname = "langchain";
-    version = "langchain-core==0.3.55";
+    version = "langchain-core==0.3.56";
     src = fetchFromGitHub {
       owner = "langchain-ai";
       repo = "langchain";
-      rev = "langchain-core==0.3.55";
+      rev = "langchain-core==0.3.56";
       fetchSubmodules = false;
-      sha256 = "sha256-7y1eHaf5NRC0N43ZlJSxqzmaR9y5lAlHO7IcDN8Rtrw=";
+      sha256 = "sha256-gsjYr22Phb71oKN4iVGsi6r1iETDhFHCKKOiwp0SuLU=";
     };
   };
   lidarr = {
