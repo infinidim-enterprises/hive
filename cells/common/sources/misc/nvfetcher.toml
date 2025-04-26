@@ -5,6 +5,19 @@ fetch.github = "adeverteuil/console-solarized"
 
 # TODO: https://github.com/lassekongo83/adw-colors
 # https://github.com/lassekongo83/adw-gtk3
+[themix-gui]
+git.fetchSubmodules = true
+src.git = "https://github.com/themix-project/themix-gui"
+fetch.git = "https://github.com/themix-project/themix-gui"
+
+[haishoku]
+src.git = "https://github.com/LanceGin/haishoku"
+fetch.git = "https://github.com/LanceGin/haishoku"
+
+[colorz]
+src.git = "https://github.com/metakirby5/colorz"
+fetch.git = "https://github.com/metakirby5/colorz"
+
 [numix-solarized-gtk-theme-git]
 src.git = "https://github.com/Ferdi265/numix-solarized-gtk-theme"
 fetch.git = "https://github.com/Ferdi265/numix-solarized-gtk-theme"
@@ -29,6 +42,10 @@ fetch.git = "https://github.com/rtlewis1/GTK"
 [solarized-sddm]
 src.git = "https://github.com/MalditoBarbudo/solarized_sddm_theme"
 fetch.git = "https://github.com/MalditoBarbudo/solarized_sddm_theme"
+
+[base16-solarized-scheme]
+src.git = "https://github.com/mk12/base16-solarized-scheme"
+fetch.git = "https://github.com/mk12/base16-solarized-scheme"
 
 [base16-schemes]
 src.git = "https://github.com/tinted-theming/schemes"

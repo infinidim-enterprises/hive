@@ -20,6 +20,47 @@
         },
         "version": "v0.82.0"
     },
+    "dashscope": {
+        "cargoLocks": null,
+        "date": "2025-04-02",
+        "extract": null,
+        "name": "dashscope",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "eabf28c17ec01bf98245b197c2efe662f4b77b15",
+            "sha256": "sha256-1FkVwcIXVJ8s+tof61GqPJ4DIWhL8lcvxDFTxibjTxE=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/dashscope/dashscope-sdk-python"
+        },
+        "version": "eabf28c17ec01bf98245b197c2efe662f4b77b15"
+    },
+    "faiss-cpu": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "faiss-cpu",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "kyamagu",
+            "repo": "faiss-wheels",
+            "rev": "v1.10.0",
+            "sha256": "sha256-mT90CzIup63RaRVR/zlvxMXBEhsK/WOAUgyL3I+kC/Y=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v1.10.0"
+    },
     "gluetun": {
         "cargoLocks": null,
         "date": null,
@@ -60,6 +101,27 @@
         },
         "version": "latest"
     },
+    "metagpt": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "metagpt",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "geekan",
+            "repo": "MetaGPT",
+            "rev": "v0.8.1",
+            "sha256": "sha256-wh3MK44X2HDvNUJnt5bha4TdaL6IBi3cDWfOjoX54uw=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v0.8.1"
+    },
     "n8n": {
         "cargoLocks": null,
         "date": null,
@@ -74,5 +136,71 @@
             "url": "https://github.com/n8n-io/n8n/archive/n8n@1.89.2.tar.gz"
         },
         "version": "n8n@1.89.2"
+    },
+    "qianfan": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "qianfan",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-HCfdmm/2j2nnGjSzUKJ2JLR7012erJ4LbiOk9RwC70s=",
+            "type": "url",
+            "url": "https://files.pythonhosted.org/packages/dd/16/684b3e232db520504bc4ccca7b639906f12bfcc729208d39c7a92bef0927/qianfan-0.4.12.3.tar.gz"
+        },
+        "version": "0.4.12.3"
+    },
+    "semantic-kernel": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "semantic-kernel",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-K8/hNPdSUfXCBtQQev2GDcsuwjB3zG1qMTDrb017qFc=",
+            "type": "url",
+            "url": "https://files.pythonhosted.org/packages/fd/02/efc002c427250355d8fccd7ffef04dc8fca98c049f145c776447b1eb392f/semantic_kernel-1.28.1.tar.gz"
+        },
+        "version": "1.28.1"
+    },
+    "ta": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "ta",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "bukosabino",
+            "repo": "ta",
+            "rev": "0.11.0",
+            "sha256": "sha256-2iPKfoqM+JFtcWME7Wyk+4GF5JiEXRDataRw2aXNFG4=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "0.11.0"
+    },
+    "zhipuai": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "zhipuai",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-Ef51TqEfXsfIBuwoHsxKFppDcfNHsc7Mzqbw5TjcF+o=",
+            "type": "url",
+            "url": "https://files.pythonhosted.org/packages/74/3a/622508148236575f9b80d0af9d51c2fe8b91133388a90b197be44d63ef16/zhipuai-2.1.5.20250421.tar.gz"
+        },
+        "version": "2.1.5.20250421"
     }
 }

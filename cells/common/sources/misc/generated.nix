@@ -17,17 +17,17 @@
   };
   adguard-filters_adguardteam = {
     pname = "adguard-filters_adguardteam";
-    version = "56426ec04cd863d9516504854c18bd5ccd5efc28";
+    version = "a3627775ce8be0c6f2fa00b81037590994cb0875";
     src = fetchgit {
       url = "https://github.com/AdguardTeam/AdguardFilters";
-      rev = "56426ec04cd863d9516504854c18bd5ccd5efc28";
+      rev = "a3627775ce8be0c6f2fa00b81037590994cb0875";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-gHPhCH/9hpXab+CuHfrJ6kD27NowdA3c5rzjOCfPQxg=";
+      sha256 = "sha256-pjsLFTV4cnMN0pXvEXHYKKfivaYPkGhKRM7TtO5pr/M=";
     };
-    date = "2025-04-24";
+    date = "2025-04-26";
   };
   adguard-filters_romania = {
     pname = "adguard-filters_romania";
@@ -131,6 +131,20 @@
     };
     date = "2006-11-28";
   };
+  colorz = {
+    pname = "colorz";
+    version = "11fd47a28d7a4af5b91d29978524335c8fef8cc9";
+    src = fetchgit {
+      url = "https://github.com/metakirby5/colorz";
+      rev = "11fd47a28d7a4af5b91d29978524335c8fef8cc9";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-J+vmBGsocVIuJqnjlM7yGlEmqWhn7o3jLP/VtLuhQEc=";
+    };
+    date = "2018-10-24";
+  };
   console-solarized = {
     pname = "console-solarized";
     version = "26929b5e303703ec527b6f6e4569f351d9831e52";
@@ -221,19 +235,33 @@
     vendorSha256 = "hkenInaS6PFnu/Z0oz32Y4B4BmM5+l5AB2/K1f/LxqA=";
     date = "2021-01-24";
   };
-  ipxe = {
-    pname = "ipxe";
-    version = "e8ffe2cd644000c1cca51c40ba14edb546ca769b";
+  haishoku = {
+    pname = "haishoku";
+    version = "9e4b16133f23ad1017841e3c0ec0b35dce70f93f";
     src = fetchgit {
-      url = "https://github.com/ipxe/ipxe";
-      rev = "e8ffe2cd644000c1cca51c40ba14edb546ca769b";
+      url = "https://github.com/LanceGin/haishoku";
+      rev = "9e4b16133f23ad1017841e3c0ec0b35dce70f93f";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-e/MFOK5qgJFTjTwIK8RD68jRsSqN/8hN4LE8xjE4kpY=";
+      sha256 = "sha256-LSoZopCaM5vbknGS9gG13OZIgghgqJvPtktUkBCH04Q=";
     };
-    date = "2025-04-24";
+    date = "2019-07-11";
+  };
+  ipxe = {
+    pname = "ipxe";
+    version = "4c8bf666f4afb578645269a5a81431d784fad771";
+    src = fetchgit {
+      url = "https://github.com/ipxe/ipxe";
+      rev = "4c8bf666f4afb578645269a5a81431d784fad771";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-9yxUArp1kKA8deCnaHJkOnrL4Ox08u/7/VxCQjOUkvY=";
+    };
+    date = "2025-04-25";
   };
   iterable-io = {
     pname = "iterable-io";
@@ -245,13 +273,13 @@
   };
   langchain = {
     pname = "langchain";
-    version = "langchain-core==0.3.55";
+    version = "langchain-core==0.3.56";
     src = fetchFromGitHub {
       owner = "langchain-ai";
       repo = "langchain";
-      rev = "langchain-core==0.3.55";
+      rev = "langchain-core==0.3.56";
       fetchSubmodules = false;
-      sha256 = "sha256-7y1eHaf5NRC0N43ZlJSxqzmaR9y5lAlHO7IcDN8Rtrw=";
+      sha256 = "sha256-gsjYr22Phb71oKN4iVGsi6r1iETDhFHCKKOiwp0SuLU=";
     };
   };
   lidarr = {
@@ -497,6 +525,20 @@
       sha256 = "sha256-h5ZHT4u7oAdwuWpUrL35G8bIAMasx6E81h15lTJSHhQ=";
     };
     date = "2023-12-19";
+  };
+  themix-gui = {
+    pname = "themix-gui";
+    version = "51c21b896212c9506656e22c565467101e96748a";
+    src = fetchgit {
+      url = "https://github.com/themix-project/themix-gui";
+      rev = "51c21b896212c9506656e22c565467101e96748a";
+      fetchSubmodules = true;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-/62qye9XTKlr0Uej9ZN4db+N8RZssHNl4Ty9ZkVkIj0=";
+    };
+    date = "2025-04-02";
   };
   transmissionic = {
     pname = "transmissionic";

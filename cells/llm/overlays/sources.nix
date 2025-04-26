@@ -1,8 +1,10 @@
-{ inputs, cell, ... }:
+{ inputs, ... }:
 
 final: prev:
-{
-  sources = prev.sources // {
-    llm = final.callPackage ../sources/generated.nix { };
-  };
-}
+let
+  inherit (inputs.nixpkgs-lib.lib // builtins) hasAttr;
+  sources = final.callPackage ../sources/generated.nix { };
+in
+if hasAttr "sources" prev
+then { sources = prev.sources // { llm = sources; }; }
+else { inherit sources; }

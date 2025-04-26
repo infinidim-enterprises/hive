@@ -21,7 +21,7 @@
     },
     "adguard-filters_adguardteam": {
         "cargoLocks": null,
-        "date": "2025-04-24",
+        "date": "2025-04-26",
         "extract": null,
         "name": "adguard-filters_adguardteam",
         "passthru": null,
@@ -31,13 +31,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "56426ec04cd863d9516504854c18bd5ccd5efc28",
-            "sha256": "sha256-gHPhCH/9hpXab+CuHfrJ6kD27NowdA3c5rzjOCfPQxg=",
+            "rev": "a3627775ce8be0c6f2fa00b81037590994cb0875",
+            "sha256": "sha256-pjsLFTV4cnMN0pXvEXHYKKfivaYPkGhKRM7TtO5pr/M=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/AdguardTeam/AdguardFilters"
         },
-        "version": "56426ec04cd863d9516504854c18bd5ccd5efc28"
+        "version": "a3627775ce8be0c6f2fa00b81037590994cb0875"
     },
     "adguard-filters_romania": {
         "cargoLocks": null,
@@ -204,6 +204,26 @@
         },
         "version": "f62d524874616383650e30f7f23320005fd310c1"
     },
+    "colorz": {
+        "cargoLocks": null,
+        "date": "2018-10-24",
+        "extract": null,
+        "name": "colorz",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "11fd47a28d7a4af5b91d29978524335c8fef8cc9",
+            "sha256": "sha256-J+vmBGsocVIuJqnjlM7yGlEmqWhn7o3jLP/VtLuhQEc=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/metakirby5/colorz"
+        },
+        "version": "11fd47a28d7a4af5b91d29978524335c8fef8cc9"
+    },
     "console-solarized": {
         "cargoLocks": null,
         "date": "2018-10-28",
@@ -355,9 +375,29 @@
         },
         "version": "12b3f421c19eb5548ae76b8c79c9581a428329e0"
     },
+    "haishoku": {
+        "cargoLocks": null,
+        "date": "2019-07-11",
+        "extract": null,
+        "name": "haishoku",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "9e4b16133f23ad1017841e3c0ec0b35dce70f93f",
+            "sha256": "sha256-LSoZopCaM5vbknGS9gG13OZIgghgqJvPtktUkBCH04Q=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/LanceGin/haishoku"
+        },
+        "version": "9e4b16133f23ad1017841e3c0ec0b35dce70f93f"
+    },
     "ipxe": {
         "cargoLocks": null,
-        "date": "2025-04-24",
+        "date": "2025-04-25",
         "extract": null,
         "name": "ipxe",
         "passthru": null,
@@ -367,13 +407,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "e8ffe2cd644000c1cca51c40ba14edb546ca769b",
-            "sha256": "sha256-e/MFOK5qgJFTjTwIK8RD68jRsSqN/8hN4LE8xjE4kpY=",
+            "rev": "4c8bf666f4afb578645269a5a81431d784fad771",
+            "sha256": "sha256-9yxUArp1kKA8deCnaHJkOnrL4Ox08u/7/VxCQjOUkvY=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/ipxe/ipxe"
         },
-        "version": "e8ffe2cd644000c1cca51c40ba14edb546ca769b"
+        "version": "4c8bf666f4afb578645269a5a81431d784fad771"
     },
     "iterable-io": {
         "cargoLocks": null,
@@ -404,12 +444,12 @@
             "name": null,
             "owner": "langchain-ai",
             "repo": "langchain",
-            "rev": "langchain-core==0.3.55",
-            "sha256": "sha256-7y1eHaf5NRC0N43ZlJSxqzmaR9y5lAlHO7IcDN8Rtrw=",
+            "rev": "langchain-core==0.3.56",
+            "sha256": "sha256-gsjYr22Phb71oKN4iVGsi6r1iETDhFHCKKOiwp0SuLU=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "langchain-core==0.3.55"
+        "version": "langchain-core==0.3.56"
     },
     "lidarr": {
         "cargoLocks": null,
@@ -817,6 +857,26 @@
             "type": "github"
         },
         "version": "39d8c27ad9862ffdec57989b66fd2720cb72e76c"
+    },
+    "themix-gui": {
+        "cargoLocks": null,
+        "date": "2025-04-02",
+        "extract": null,
+        "name": "themix-gui",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": true,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "51c21b896212c9506656e22c565467101e96748a",
+            "sha256": "sha256-/62qye9XTKlr0Uej9ZN4db+N8RZssHNl4Ty9ZkVkIj0=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/themix-project/themix-gui"
+        },
+        "version": "51c21b896212c9506656e22c565467101e96748a"
     },
     "transmissionic": {
         "cargoLocks": null,

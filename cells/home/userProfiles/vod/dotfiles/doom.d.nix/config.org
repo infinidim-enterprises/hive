@@ -433,6 +433,74 @@ result instead of `message'."
         ;; For warning about a problematic or misguiding code
         ("XXX" font-lock-constant-face bold))))
 #+end_src
+** dired stuff
+the treemacs and neotree suck donkey balls.
+#+begin_src emacs-lisp :tangle packages.el
+;; (package! f)
+;; (package! s)
+;; (package! dired-hacks-utils)
+
+(package! dired-sidebar
+  :type 'core
+  :pin "3bc8927ed4d14a017eefc75d5af65022343e2ac1"
+  :recipe (:host github
+           :repo "jojojames/dired-sidebar"
+           :branch "master"))
+(package! ibuffer-sidebar
+  :type 'core
+  :pin "fb685e1e43db979e25713081d8ae4073453bbd5e"
+  :recipe (:host github
+           :repo "jojojames/ibuffer-sidebar"
+           :branch "master"))
+;; (package! dired-hacks
+;;   :type 'core
+;;   :pin "e9e408e8571aee5574ca0a431ef15cac5a3585d4"
+;;   :recipe (:host github
+;;            :repo "Fuco1/dired-hacks"
+;;            :branch "master"))
+#+end_src
+
+#+begin_src emacs-lisp :tangle config.el
+(use-package! nerd-icons :defer t)
+(use-package! nerd-icons-dired
+  :commands (nerd-icons-dired-mode)
+  :init
+  (setq! dired-sidebar-theme 'nerd-icons))
+
+(use-package! dired-sidebar
+  :bind (("s-t" . dired-sidebar-toggle-sidebar))
+  :commands (dired-sidebar-toggle-sidebar)
+  :defer
+  :hook (dired-sidebar-mode . (lambda () (unless (file-remote-p default-directory)
+                                           (auto-revert-mode))))
+  :config
+  (push 'toggle-window-split dired-sidebar-toggle-hidden-commands)
+  (push 'rotate-windows dired-sidebar-toggle-hidden-commands)
+
+  (setq! ;; dired-sidebar-subtree-line-prefix "__"
+         dired-sidebar-theme 'nerd-icons
+         ;; dired-sidebar-use-custom-font t
+         dired-sidebar-use-term-integration t
+         dired-sidebar-width 25
+         dired-sidebar-tui-update-delay 5
+         dired-sidebar-recenter-cursor-on-tui-update t
+         dired-sidebar-no-delete-other-windows t
+         dired-sidebar-use-custom-modeline t)
+  (map! :map dired-sidebar-mode-map
+        :n "q" #'dired-sidebar-toggle-sidebar))
+
+(use-package! dired-subtree
+  :config
+  (setq! dired-subtree-cycle-depth 4
+         dired-subtree-line-prefix ">")
+  (map! :map dired-mode-map
+        [backtab] #'dired-subtree-cycle
+        [tab] #'dired-subtree-toggle
+        :n "g^" #'dired-subtree-beginning
+        :n "g$" #'dired-subtree-end
+        :n "gm" #'dired-subtree-mark-subtree
+        :n "gu" #'dired-subtree-unmark-subtree))
+#+end_src
 ** Rainbow delimiters
 [[https://github.com/Civitasv/pair-colorizer][Use a fork]]?
 
@@ -880,21 +948,21 @@ For the moment, will go with vendored versions in doomemacs
 
 #+begin_src emacs-lisp :tangle packages.el
 (package! gptel
-  :pin "118431efeacf0fa995e9d908a593aea6fff927b8"
+  :pin "975c3e64eb834b939e0d61dfc39fed8395afcc45"
   :recipe (:host github
            :repo "karthink/gptel"
            :branch "master"))
-;; (package! gptel-extensions
-;;   :pin "671e5186153fc9bf105c91effb1ed7db06508677"
-;;   :recipe (:host github
-;;            :repo "kamushadenes/gptel-extensions.el"))
+(package! gptel-extensions
+  :pin "671e5186153fc9bf105c91effb1ed7db06508677"
+  :recipe (:host github
+           :repo "kamushadenes/gptel-extensions.el"))
 (package! whisper
   :pin "ee29777238fc089d66d8e4b6812fdd5743cad19a"
   :recipe (:host github
            :repo "natrys/whisper.el"
            :branch "master"))
 (package! aider
-  :pin "772a3bfbdfa80adbd9fee4c11787c156cad7dae0"
+  :pin "4042f62a5ab96ad35cc09339c5134e5320c894f1"
   :recipe (:host github
            :repo "tninja/aider.el"
            :branch "main"
@@ -1138,8 +1206,8 @@ For the moment, will go with vendored versions in doomemacs
 (use-package! highlight-indent-guides
   :hook ((yaml-mode conf-mode python-mode) . highlight-indent-guides-mode)
   :init
-  (setq highlight-indent-guides-method 'character
-        highlight-indent-guides-suppress-auto-error t)
+  (setq! highlight-indent-guides-method 'character
+         highlight-indent-guides-suppress-auto-error t)
   :config
   (defun +indent-guides-init-faces-h (&rest _)
     (when (display-graphic-p)
@@ -1542,21 +1610,46 @@ Also, needs to complete from pkgs and lib and project buffers
 
 (setq default-input-method "russian-phonetic")
 #+end_src
-** translation services
+** TODO translation services
 #+begin_src emacs-lisp :tangle packages.el
-(package! google-translate)
+(package! plz
+  :type 'core
+  :pin "e2d07838e3b64ee5ebe59d4c3c9011adefb7b58e"
+  :recipe (:host github
+           :repo "alphapapa/plz.el"
+           :branch "master"))
+
+(package! go-translate
+  :type 'core
+  :pin "a924e0bd6b37d424c222377982e6f71a4ddf4452"
+  :recipe (:host github
+           :repo "lorniu/go-translate"
+           :branch "master"))
 #+end_src
 
 #+begin_src emacs-lisp :tangle config.el
-(use-package! google-translate
-  :config (setq google-translate-backend-method 'curl
-                google-translate-translation-directions-alist
-                '(("de" . "en")
-                  ("en" . "de")
-                  ("en" . "ru")
-                  ("ru" . "en")
-                  ("de" . "ru")
-                  ("ru" . "de"))))
+(use-package! go-translate
+  :config
+  (setq! ;; gt-langs '(de en)
+         ;; gt-default-translator (gt-translator :engines (gt-google-engine))
+         gt-preset-translators
+         `((ts-1 . ,(gt-translator
+                     :taker (gt-taker :langs '(de en)
+                                      :text 'word)
+                     :engines (gt-bing-engine)
+                     :render (gt-overlay-render)))
+           (ts-2 . ,(gt-translator
+                     :taker (gt-taker :langs '(en de ru)
+                                      :text 'sentence)
+                     :engines (gt-google-engine)
+                     :render (gt-buffer-render)))
+           (ts-3 . ,(gt-translator
+                     :taker (gt-taker :langs '(en de ru)
+                                      :text 'buffer
+                                      :pick 'word
+                                      :pick-pred (lambda (w) (length> w 6)))
+                     :engines (gt-google-engine)
+                     :render (gt-overlay-render :type 'help-echo))))))
 #+end_src
 * Look and feel
 ** Theme
@@ -1766,7 +1859,7 @@ TODO: move it to local-setts in Nix
       "C-x f" #'helm-recentf
       ;; "C-x b" #'helm-projectile-switch-to-buffer
       "C-x s-b" #'projectile-find-file-dwim
-      "s-t" #'+treemacs/toggle
+      ;; "s-t" #'+treemacs/toggle
       "M-s-." #'mc/mark-next-like-this
       "M-s-," #'mc/mark-previous-like-this
       "M-s-SPC" #'mc/mark-all-like-this

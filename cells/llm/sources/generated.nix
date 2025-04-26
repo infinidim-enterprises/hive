@@ -12,6 +12,31 @@
       sha256 = "sha256-UlPYUYAYDhPPgoIvEWRLYjCe3iQ2ltH5mT3GkX+IrGI=";
     };
   };
+  dashscope = {
+    pname = "dashscope";
+    version = "eabf28c17ec01bf98245b197c2efe662f4b77b15";
+    src = fetchgit {
+      url = "https://github.com/dashscope/dashscope-sdk-python";
+      rev = "eabf28c17ec01bf98245b197c2efe662f4b77b15";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-1FkVwcIXVJ8s+tof61GqPJ4DIWhL8lcvxDFTxibjTxE=";
+    };
+    date = "2025-04-02";
+  };
+  faiss-cpu = {
+    pname = "faiss-cpu";
+    version = "v1.10.0";
+    src = fetchFromGitHub {
+      owner = "kyamagu";
+      repo = "faiss-wheels";
+      rev = "v1.10.0";
+      fetchSubmodules = false;
+      sha256 = "sha256-mT90CzIup63RaRVR/zlvxMXBEhsK/WOAUgyL3I+kC/Y=";
+    };
+  };
   gluetun = {
     pname = "gluetun";
     version = "latest";
@@ -36,6 +61,17 @@
       arch = "amd64";
     };
   };
+  metagpt = {
+    pname = "metagpt";
+    version = "v0.8.1";
+    src = fetchFromGitHub {
+      owner = "geekan";
+      repo = "MetaGPT";
+      rev = "v0.8.1";
+      fetchSubmodules = false;
+      sha256 = "sha256-wh3MK44X2HDvNUJnt5bha4TdaL6IBi3cDWfOjoX54uw=";
+    };
+  };
   n8n = {
     pname = "n8n";
     version = "n8n@1.89.2";
@@ -43,6 +79,41 @@
       url = "https://github.com/n8n-io/n8n/archive/n8n@1.89.2.tar.gz";
       name = "n8n.tar.gz";
       sha256 = "sha256-DsfUVaOj5czd3vIWFiWsisNyRpni6vi0hw/lxqu6yNw=";
+    };
+  };
+  qianfan = {
+    pname = "qianfan";
+    version = "0.4.12.3";
+    src = fetchurl {
+      url = "https://files.pythonhosted.org/packages/dd/16/684b3e232db520504bc4ccca7b639906f12bfcc729208d39c7a92bef0927/qianfan-0.4.12.3.tar.gz";
+      sha256 = "sha256-HCfdmm/2j2nnGjSzUKJ2JLR7012erJ4LbiOk9RwC70s=";
+    };
+  };
+  semantic-kernel = {
+    pname = "semantic-kernel";
+    version = "1.28.1";
+    src = fetchurl {
+      url = "https://files.pythonhosted.org/packages/fd/02/efc002c427250355d8fccd7ffef04dc8fca98c049f145c776447b1eb392f/semantic_kernel-1.28.1.tar.gz";
+      sha256 = "sha256-K8/hNPdSUfXCBtQQev2GDcsuwjB3zG1qMTDrb017qFc=";
+    };
+  };
+  ta = {
+    pname = "ta";
+    version = "0.11.0";
+    src = fetchFromGitHub {
+      owner = "bukosabino";
+      repo = "ta";
+      rev = "0.11.0";
+      fetchSubmodules = false;
+      sha256 = "sha256-2iPKfoqM+JFtcWME7Wyk+4GF5JiEXRDataRw2aXNFG4=";
+    };
+  };
+  zhipuai = {
+    pname = "zhipuai";
+    version = "2.1.5.20250421";
+    src = fetchurl {
+      url = "https://files.pythonhosted.org/packages/74/3a/622508148236575f9b80d0af9d51c2fe8b91133388a90b197be44d63ef16/zhipuai-2.1.5.20250421.tar.gz";
+      sha256 = "sha256-Ef51TqEfXsfIBuwoHsxKFppDcfNHsc7Mzqbw5TjcF+o=";
     };
   };
 }

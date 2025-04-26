@@ -41,6 +41,8 @@ let
     bash-language-server
     yaml-language-server
 
+    curl
+
     (aspellWithDicts (dicts: with dicts; [
       en
       en-computers
@@ -95,9 +97,11 @@ let
       localSetts
 
       # ISSUE: https://github.com/marienz/nix-doom-emacs-unstraightened?tab=readme-ov-file#tree-sitter-error-on-initialization-with-file-error-opening-output-file-read-only-file-system
-      treesit-grammars.with-all-grammars
 
+      dired-hacks-utils
+      f
       s
+
       sqlite3
       grab-x-link
 
