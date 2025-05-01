@@ -326,6 +326,8 @@
 
     ### NOTE: atuin crap - fuck RUST, but no other choice
     atuin.url = "github:atuinsh/atuin/v18.5.0";
+
+    metagpt.url = "/home/vod/Public/github/metagpt-flake";
   };
 
   outputs =

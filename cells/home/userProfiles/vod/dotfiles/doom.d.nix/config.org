@@ -6,7 +6,12 @@
 #+tags: GTD(G) writing(w) export(e) manage(m) graphical(g) nix(n)
 
 * Init
-#+begin_src emacs-lisp :tangle "init.el"
+:PROPERTIES:
+:header-args: :tangle init.el
+:VISIBILITY: folded
+:END:
+
+#+begin_src emacs-lisp
 (doom! :input
        :completion
        (corfu
@@ -251,19 +256,19 @@
 #+end_src
 * Usability improvements
 ** frames/emacsclient
-#+begin_src emacs-lisp
+#+begin_src emacs-lisp :tangle config.el
 (after! persp-mode
-  (setq persp-emacsclient-init-frame-behaviour-override nil))
+  (setq! persp-emacsclient-init-frame-behaviour-override "master"))
 
-(defun local/inherit-last-active-perspective (frame)
-  "Assign the new FRAME to the perspective of the last active frame."
-  (when (and persp-mode (not (persp-frame-persp frame)))
-    (let ((last-persp (persp-get-by-name (persp-current-name))))
-      (when last-persp
-        (persp-frame-switch last-persp frame)))))
+;; (defun local/inherit-last-active-perspective (frame)
+;;   "Assign the new FRAME to the perspective of the last active frame."
+;;   (when (and persp-mode (not (persp-frame-persp frame)))
+;;     (let ((last-persp (persp-get-by-name (persp-current-name))))
+;;       (when last-persp
+;;         (persp-frame-switch last-persp frame)))))
 
-;; Add the function to the frame creation hook
-(add-hook 'after-make-frame-functions #'local/inherit-last-active-perspective)
+;; ;; Add the function to the frame creation hook
+;; (add-hook 'after-make-frame-functions #'local/inherit-last-active-perspective)
 #+end_src
 ** General
 Maybe use (package! maple-iedit :recipe (:host github :repo "honmaple/emacs-maple-iedit")) instead of built-in mc/mark-next-like-this
@@ -517,7 +522,7 @@ the treemacs and neotree suck donkey balls.
 (use-package! rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 #+end_src
-** org and friends
+** org-mode and friends
 *** General goodness
 [[https://github.com/EFLS/zetteldeft][Deft as Zettelkasten note-taking system]]
 
@@ -536,6 +541,22 @@ the treemacs and neotree suck donkey balls.
 #+end_src
 
 #+begin_src emacs-lisp :tangle config.el
+;;; ~/.doom.d/config.el
+
+(after! org
+  (add-to-list 'org-modules 'org-id)
+
+  (defun local/org-add-ids-to-headlines-in-file ()
+    "Add `:ID:` properties to all headlines in the current Org buffer."
+    (org-map-entries #'org-id-get-create))
+
+  (add-hook 'org-mode-hook
+            (lambda ()
+              (add-hook 'before-save-hook
+                        #'local/org-add-ids-to-headlines-in-file
+                        nil  ; append
+                        t)))) ; buffer-local
+
 (use-package! ox-jekyll-md)
 (use-package! org-ql)
 (use-package! helm-org-rifle)
@@ -1254,8 +1275,6 @@ However, this borks up the nixd
 ** Nix
 
 #+begin_src emacs-lisp :tangle packages.el
-;; (unpin! nix-mode lsp-mode)
-;; NOTE: Only the vendored lsp-mode works atm.
 (package! lsp-mode
   :type 'core
   :pin "a478e03cd1a5dc84ad496234fd57241ff9dca57a" ;; v9.0.0
@@ -1317,7 +1336,7 @@ nixd setup function
   :commands (lsp lsp-deferred)
   :init
   ;; Use standard CAPF for completions
-  (setq lsp-completion-provider :capf)
+  (setq! lsp-completion-provider :capf)
   (add-hook 'lsp-mode-hook #'lsp-completion-mode)
   (add-hook 'lsp-completion-mode-hook
             (lambda ()
@@ -1450,8 +1469,8 @@ nixd setup function
            (flakeref (format "(builtins.getFlake \"%s\")" prj_root))
            (options-nixos (format "%s.nixosConfigurations.nixos-%s.options" flakeref hostname))
            (options-home-manager (format "%s.homeConfigurations.home-nixd.options" flakeref)))
-      (setq lsp-nix-nixd-server-path "nixd"
-            lsp-nix-nixd-server-arguments '("--semantic-tokens=true" "--inlay-hints=true" "--log=debug" "--pretty" "--nixpkgs-worker-stderr=/tmp/nixd-debug-nixpkgs" "--option-worker-stderr=/tmp/nixd-debug-options")
+      (setq! lsp-nix-nixd-server-path "nixd"
+            lsp-nix-nixd-server-arguments '("--semantic-tokens=true" "--inlay-hints=true")
             lsp-nix-nixd-formatting-command [ "nixpkgs-fmt" ]
             lsp-nix-nixd-nixpkgs-expr "import <nixpkgs> { }"
             lsp-nix-nixd-nixos-options-expr options-nixos
@@ -1761,7 +1780,7 @@ savehist-file persp workspaces
            :branch "master"))
 #+end_src
 
-#+begin_src emacs-lisp :tangle "config.el"
+#+begin_src emacs-lisp :tangle config.el
 (use-package! sly
   :init (setq sly-ignore-protocol-mismatches t
               sly-compile-file-options (list :fasl-directory "/tmp")))

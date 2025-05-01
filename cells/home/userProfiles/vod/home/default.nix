@@ -27,6 +27,7 @@ in
     [
       ./ssh.nix
       ./waveterm.nix
+      ./ghostty.nix
       ./gitconfig.nix
       ./emacs-unstraightened.nix
 

@@ -19,6 +19,7 @@ rec {
 
     # TODO: separate desktop and cli environments completely
     inputs.cells.home.homeModules.programs.waveterm
+    cell.homeModules.programs.ghostty
   ];
 
   desktop = with cell.homeProfiles; [

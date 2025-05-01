@@ -212,4 +212,10 @@ mkMerge [
     programs.waveterm.settings."term:fontsize" = toInt HM_FONT_SIZE;
     programs.waveterm.settings."term:fontfamily" = HM_FONT_NAME;
   })
+
+  (mkIf (isGui osConfig && hasAttr "ghostty" config.programs && config.programs.ghostty.enable) {
+    programs.ghostty.settings."font-size" = toInt HM_FONT_SIZE;
+    programs.ghostty.settings."font-family" = HM_FONT_NAME;
+  })
+
 ]
