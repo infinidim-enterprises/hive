@@ -1,4 +1,4 @@
-{ inputs, cell, ... }:
+{ ... }:
 
 { self
 , config
@@ -16,10 +16,6 @@ let
     config.programs.git.package
     config.programs.fd.package
   ] ++ (with pkgs; [
-    # org-mode helpers
-    pandoc
-    pandoc-imagine
-    pandoc-plantuml-filter
 
     emacsclient-commands
 
@@ -31,9 +27,15 @@ let
       slynk-named-readtables
     ]))
 
-    ditaa
-    graphviz
-    plantuml
+    # org-mode helpers
+    pandoc
+    pandoc-imagine
+    pandoc-plantuml-filter
+
+    ditaa # Convert ascii art diagrams into proper bitmap graphics
+    graphviz # Graph visualization tools
+    plantuml # Draw UML diagrams using a simple and human readable text descriptio
+    d2 # Modern diagram scripting language that turns text to diagrams
     python3 # treemacs requirement
     bibtex2html
 

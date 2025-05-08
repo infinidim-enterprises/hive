@@ -5,5 +5,6 @@
   home.packages = with pkgs; [
     openai-whisper-cpp
     ffmpeg-full
+    d2
   ];
 }

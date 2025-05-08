@@ -3,7 +3,7 @@ final: prev:
 let
   inherit (inputs.nixpkgs-lib.lib // builtins)
     filterAttrs
-    mapAttrs
+    # mapAttrs
     hasPrefix;
   nixpkgs-master = import inputs.nixpkgs-master {
     inherit (inputs.nixpkgs) system;
@@ -34,6 +34,7 @@ hyprland-pkgs //
     formats
 
     gimp3-with-plugins
+    freecad
 
     aider-chat;
 }

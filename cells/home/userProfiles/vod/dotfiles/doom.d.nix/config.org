@@ -1518,7 +1518,23 @@ nixd setup function
 #+end_src
 
 Also, needs to complete from pkgs and lib and project buffers
+** D2 - diagramming
+This is likely better than plantuml
+#+begin_src emacs-lisp :tangle packages.el
+(package! d2-mode
+  :pin "e1fc7d6c1915acaf476060c0f79b8bdef6bd1952"
+  :recipe (:host github
+           :repo "andorsk/d2-mode"
+           :branch "main"))
+#+end_src
 
+:tangle config.el
+#+begin_src emacs-lisp
+(use-package! d2-mode
+  :init
+  (map! :map d2-mode-map
+        :localleader "c" #'d2-compile))
+#+end_src
 ** TODO LSP in docker
 [[https://github.com/emacs-lsp/lsp-docker][Uses docker to run language servers]]
 * Spoken languages support

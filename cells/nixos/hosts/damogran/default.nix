@@ -42,6 +42,8 @@ rec {
         deploy.params.lan.ipv4 = "192.168.1.133/24";
         deploy.params.lan.dhcpClient = false;
 
+        deploy.params.lan.dnsForwarder = true; # NOTE: expose adguardhome to local network
+
         networking.hostName = baseNameOf ./.;
         networking.hostId = "23e7e5ff";
 

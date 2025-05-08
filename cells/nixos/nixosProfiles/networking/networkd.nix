@@ -169,11 +169,17 @@ mkMerge [
       networking.nameservers = adguardhomeDNS;
       services.resolved.extraConfig = ''
         MulticastDNS=false
-      '';
+      '' + (optionalString config.deploy.params.lan.dnsForwarder ''
+        DNSStubListenerExtra=udp:${head (splitString "/" config.deploy.params.lan.ipv4)}
+      '');
 
       systemd.network.networks = optionalAttrs (!config.deploy.publicHost.enable) { lan.dns = adguardhomeDNS; };
     }
   ))
+
+  (mkIf config.deploy.params.lan.dnsForwarder {
+    networking.firewall.allowedUDPPorts = [ 53 ];
+  })
 
   (mkIf (config.services.timesyncd.enable && config.services.adguardhome.enable) {
     # NOTE: adguard has dns over https, it needs valid datetime to verify certificates.

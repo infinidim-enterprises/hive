@@ -55,6 +55,11 @@ mkMerge [
       inkscape # Vector graphics editor
       gimp3-with-plugins # The GNU Image Manipulation Program
       imagemagick # A software suite to create, edit, compose, or convert bitmap images
+      (freecad.override {
+        qtVersion = 6;
+        ifcSupport = true;
+        withWayland = true;
+      })
       # krita # A free and open source painting application
       themix-gui # Graphical application for designing themes and exporting them using plugins
     ];

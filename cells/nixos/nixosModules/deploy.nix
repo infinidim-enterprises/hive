@@ -24,6 +24,7 @@ let
       ipv4 = mkOption { type = nullOr str; default = null; };
       ipxe = mkEnableOption "use ipxe" // { default = false; };
       dhcpClient = mkEnableOption "use dhcp" // { default = false; };
+      dnsForwarder = mkEnableOption "forward DNS to local adguardhome" // { default = false; };
       server = mkOption { type = attrs; default = { }; };
     };
   };

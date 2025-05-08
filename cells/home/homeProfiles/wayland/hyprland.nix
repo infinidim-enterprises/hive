@@ -272,6 +272,7 @@ in
     misc.font_family = "UbuntuMono Nerd Font Mono";
     misc.background_color = "0x002b36";
 
+    cursor.no_hardware_cursors = true; # NOTE: https://github.com/hyprwm/Hyprland/issues/9324#issuecomment-2637924595
     cursor.hide_on_key_press = true;
     cursor.inactive_timeout = 1;
     cursor.persistent_warps = true;
@@ -287,6 +288,11 @@ in
     input.sensitivity = 0; # -1.0 - 1.0, 0 means no modification.
     input.accel_profile = "adaptive";
     input.touchpad.natural_scroll = false;
+
+    device = {
+      name = "yspringtech-usb-optical-mouse";
+      accel_profile = "flat";
+    };
 
     # https://wiki.hyprland.org/Configuring/Variables/#gestures
     gestures.workspace_swipe = false;
