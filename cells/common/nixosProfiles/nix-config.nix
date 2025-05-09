@@ -19,7 +19,6 @@ let
     "https://microvm.cachix.org" = "microvm.cachix.org-1:oXnBc6hRE3eX5rSYdRyMYXnfzcCxC7yKPTbZXALsqys=";
     "https://emacs.cachix.org" = "emacs.cachix.org-1:b1SMJNLY/mZF6GxQE+eDBeps7WnkT0Po55TAyzwOxTY=";
     "https://mic92.cachix.org" = "mic92.cachix.org-1:gi8IhgiT3CYZnJsaW7fxznzTkMUOn1RY4GmXdT/nXYQ=";
-    "https://nix-community.cachix.org" = "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=";
   };
 in
 
@@ -43,7 +42,7 @@ in
   nix.settings.fallback = true;
   nix.settings.warn-dirty = false;
   nix.settings.min-free = lib.mkDefault (5 * GB);
-  nix.settings.download-buffer-size = lib.mkDefault (10 * MB);
+  nix.settings.download-buffer-size = lib.mkDefault (100 * MB);
   nix.settings.builders-use-substitutes = true;
   nix.settings.auto-allocate-uids = true;
   nix.settings.use-cgroups = true;

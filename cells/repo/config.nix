@@ -228,7 +228,7 @@ in
               access-tokens = github.com=''${{ secrets.GITHUB_TOKEN }}
               experimental-features = nix-command flakes impure-derivations auto-allocate-uids cgroups
               system-features = nixos-test benchmark big-parallel kvm recursive-nix
-              download-buffer-size = 10485760
+              download-buffer-size = 104857600
               accept-flake-config = true
             '';
           };
