@@ -36,7 +36,9 @@ hyprland-pkgs //
     gimp3-with-plugins
     freecad
 
-    aider-chat;
+    aider-chat
+
+    kdePackages;
 }
 # //
 # {
