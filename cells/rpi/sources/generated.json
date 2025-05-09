@@ -1,7 +1,7 @@
 {
     "libcamera": {
         "cargoLocks": null,
-        "date": "2025-02-13",
+        "date": "2025-04-28",
         "extract": null,
         "name": "libcamera",
         "passthru": null,
@@ -13,16 +13,16 @@
             "name": null,
             "owner": "raspberrypi",
             "repo": "libcamera",
-            "rev": "29156679717bec7cc4784aeba3548807f2c27fca",
-            "sha256": "sha256-89uo3ajxozSpM4AGVIVb5GJ70giAQeyw0duIj5PRBgo=",
+            "rev": "d83ff0a4ae4503bc56b7ed48cd142c3dd423ad3b",
+            "sha256": "sha256-7nXoYgwV354T42QM9LA9U0xlG2f4Gc7I1inaEG/HwTI=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "29156679717bec7cc4784aeba3548807f2c27fca"
+        "version": "d83ff0a4ae4503bc56b7ed48cd142c3dd423ad3b"
     },
     "libcamera-apps": {
         "cargoLocks": null,
-        "date": "2025-04-22",
+        "date": "2025-04-28",
         "extract": null,
         "name": "libcamera-apps",
         "passthru": null,
@@ -34,16 +34,16 @@
             "name": null,
             "owner": "raspberrypi",
             "repo": "libcamera-apps",
-            "rev": "530b81288f88a899d8d06e65d3a55e36957f0577",
-            "sha256": "sha256-UJe25HJtLPVq0Sb9buWswyyn+Mh9HihCgCIl3CRfTlk=",
+            "rev": "5a3f5965aca96c2d575261e4e4045f0e0481279b",
+            "sha256": "sha256-79qpAfY83YOZdM5ZPyIOkg3s7x75hvjG6Cc96UAIdb0=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "530b81288f88a899d8d06e65d3a55e36957f0577"
+        "version": "5a3f5965aca96c2d575261e4e4045f0e0481279b"
     },
     "mediamtx": {
         "cargoLocks": null,
-        "date": "2025-04-23",
+        "date": "2025-05-06",
         "extract": null,
         "name": "mediamtx",
         "passthru": null,
@@ -55,11 +55,11 @@
             "name": null,
             "owner": "bluenviron",
             "repo": "mediamtx",
-            "rev": "d8e6be6fe8dd3b15394eca68cf1f9e20c17b7b79",
-            "sha256": "sha256-uvpyCOT8/Eeil0H7v1eCbfNwEkhqvR+WwfGWeFnKU/w=",
+            "rev": "84ed7a5f3b2f470695cbd3e32d969201c300de9b",
+            "sha256": "sha256-SRhMfu1NDGX3XJ/3Kvj/ME1V6DigrdlnRCNzYl121Io=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "d8e6be6fe8dd3b15394eca68cf1f9e20c17b7b79"
+        "version": "84ed7a5f3b2f470695cbd3e32d969201c300de9b"
     }
 }

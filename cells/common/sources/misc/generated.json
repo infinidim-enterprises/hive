@@ -21,7 +21,7 @@
     },
     "adguard-filters_adguardteam": {
         "cargoLocks": null,
-        "date": "2025-04-26",
+        "date": "2025-05-09",
         "extract": null,
         "name": "adguard-filters_adguardteam",
         "passthru": null,
@@ -31,17 +31,17 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "a3627775ce8be0c6f2fa00b81037590994cb0875",
-            "sha256": "sha256-pjsLFTV4cnMN0pXvEXHYKKfivaYPkGhKRM7TtO5pr/M=",
+            "rev": "6fadcc7ea7a9749546241a0bd135c8d8ea2d4b69",
+            "sha256": "sha256-TYMr15QI5WQKxu7rWE+PJT1D4aPFfovg8unBtsohJbs=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/AdguardTeam/AdguardFilters"
         },
-        "version": "a3627775ce8be0c6f2fa00b81037590994cb0875"
+        "version": "6fadcc7ea7a9749546241a0bd135c8d8ea2d4b69"
     },
     "adguard-filters_romania": {
         "cargoLocks": null,
-        "date": "2025-04-15",
+        "date": "2025-05-04",
         "extract": null,
         "name": "adguard-filters_romania",
         "passthru": null,
@@ -51,13 +51,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "8a09caacc8a4c5477d2c027b3bc0cc32c1064619",
-            "sha256": "sha256-FbYbGFqoqUQSLzuY6Yb4kZ1tqueCS7aegrNbOOVJCIA=",
+            "rev": "e7f9c3fbf5f7f47c9e138e1e6d15f8e9cd944525",
+            "sha256": "sha256-YRZYLSHT9fTTht+14kC9koQd6nqvqj7zTKOojpKizI0=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/tcptomato/ROad-Block"
         },
-        "version": "8a09caacc8a4c5477d2c027b3bc0cc32c1064619"
+        "version": "e7f9c3fbf5f7f47c9e138e1e6d15f8e9cd944525"
     },
     "base16-schemes": {
         "cargoLocks": null,
@@ -79,9 +79,29 @@
         },
         "version": "28c26a621123ad4ebd5bbfb34ab39421c0144bdd"
     },
+    "base16-solarized-scheme": {
+        "cargoLocks": null,
+        "date": "2020-05-16",
+        "extract": null,
+        "name": "base16-solarized-scheme",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "2d4a4b76688af3d2432e8849c7967c57b2afbfd7",
+            "sha256": "sha256-jXBCcGrkBuAtrdSXZle2L/ROVwH3RlyknWktdacnNeM=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/mk12/base16-solarized-scheme"
+        },
+        "version": "2d4a4b76688af3d2432e8849c7967c57b2afbfd7"
+    },
     "chatgpt-wrapper": {
         "cargoLocks": null,
-        "date": "2025-04-16",
+        "date": "2025-05-08",
         "extract": null,
         "name": "chatgpt-wrapper",
         "passthru": null,
@@ -93,12 +113,12 @@
             "name": null,
             "owner": "llm-workflow-engine",
             "repo": "llm-workflow-engine",
-            "rev": "50a00681c90aadbcacb5e5a1964604689cb2af69",
-            "sha256": "sha256-cbw6eK514F1+qoXBOX3BOYVDubfKRdKEl7zPNzb6VMQ=",
+            "rev": "66c8d62dccc793fbf8884d5d57acb5a219207693",
+            "sha256": "sha256-d+PLuUtIHbweUn1ZhHnSnMeEJ7frLZg8lPZuOlQ5hxE=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "50a00681c90aadbcacb5e5a1964604689cb2af69"
+        "version": "66c8d62dccc793fbf8884d5d57acb5a219207693"
     },
     "cl-hash-util": {
         "cargoLocks": null,
@@ -397,7 +417,7 @@
     },
     "ipxe": {
         "cargoLocks": null,
-        "date": "2025-04-25",
+        "date": "2025-05-08",
         "extract": null,
         "name": "ipxe",
         "passthru": null,
@@ -407,13 +427,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "4c8bf666f4afb578645269a5a81431d784fad771",
-            "sha256": "sha256-9yxUArp1kKA8deCnaHJkOnrL4Ox08u/7/VxCQjOUkvY=",
+            "rev": "8fe3c68b31f4ffd4cde367fec12db09468d1a1d6",
+            "sha256": "sha256-MZiFIQc5qYHGX/0iNNyOhvN0NbP4/r66CVCrxDaPfhw=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/ipxe/ipxe"
         },
-        "version": "4c8bf666f4afb578645269a5a81431d784fad771"
+        "version": "8fe3c68b31f4ffd4cde367fec12db09468d1a1d6"
     },
     "iterable-io": {
         "cargoLocks": null,
@@ -444,12 +464,12 @@
             "name": null,
             "owner": "langchain-ai",
             "repo": "langchain",
-            "rev": "langchain-core==0.3.56",
-            "sha256": "sha256-gsjYr22Phb71oKN4iVGsi6r1iETDhFHCKKOiwp0SuLU=",
+            "rev": "langchain-core==0.3.59",
+            "sha256": "sha256-qfNt6rH2nHIFfzqZCTsIhWfXntRXvSKnzfQrNS3LWcs=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "langchain-core==0.3.56"
+        "version": "langchain-core==0.3.59"
     },
     "lidarr": {
         "cargoLocks": null,
@@ -460,11 +480,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-uu7iVexyss29Q7mZ280KeDLZWp6wwCh+TJj9XeZc/lQ=",
+            "sha256": "sha256-UBXDuVTRb7EWVjWbeNUn1TLb5W7hkvvbpxZuLhohgaA=",
             "type": "url",
-            "url": "https://github.com/lidarr/Lidarr/releases/download/v2.10.3.4602/Lidarr.master.2.10.3.4602.linux-core-arm64.tar.gz"
+            "url": "https://github.com/lidarr/Lidarr/releases/download/v2.11.2.4629/Lidarr.master.2.11.2.4629.linux-core-arm64.tar.gz"
         },
-        "version": "2.10.3.4602"
+        "version": "2.11.2.4629"
     },
     "listopia": {
         "cargoLocks": null,
@@ -628,11 +648,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-Qhx/zh9E+5oBjf7vMvvAVQF05rJI0aB0KcBMXZaYlDA=",
+            "sha256": "sha256-xChYbzs4zTWe71xwn3TfUZHGTOHHjzDwbkzPgQEfQZk=",
             "type": "url",
-            "url": "https://github.com/Prowlarr/Prowlarr/releases/download/v1.34.1.5021/Prowlarr.master.1.34.1.5021.linux-core-arm64.tar.gz"
+            "url": "https://github.com/Prowlarr/Prowlarr/releases/download/v1.35.1.5034/Prowlarr.master.1.35.1.5034.linux-core-arm64.tar.gz"
         },
-        "version": "1.34.1.5021"
+        "version": "1.35.1.5034"
     },
     "python-pass": {
         "cargoLocks": null,
@@ -830,12 +850,12 @@
             "name": null,
             "owner": "braver",
             "repo": "Solarized",
-            "rev": "3.0.2",
-            "sha256": "sha256-tqqYXxKO9/8IRtFk5G4wU0ipObuTwARi9qiBy0K3IPA=",
+            "rev": "3.0.3",
+            "sha256": "sha256-ZzX1kTu131jVfl6NzZPwNUpZ1tR8b5FpT2CJ4ufdS/Y=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "3.0.2"
+        "version": "3.0.3"
     },
     "tfenv": {
         "cargoLocks": null,

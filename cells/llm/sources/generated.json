@@ -22,7 +22,7 @@
     },
     "dashscope": {
         "cargoLocks": null,
-        "date": "2025-04-02",
+        "date": "2025-04-27",
         "extract": null,
         "name": "dashscope",
         "passthru": null,
@@ -32,13 +32,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "eabf28c17ec01bf98245b197c2efe662f4b77b15",
-            "sha256": "sha256-1FkVwcIXVJ8s+tof61GqPJ4DIWhL8lcvxDFTxibjTxE=",
+            "rev": "e9a27c11932f828f7cdb3eb7c9af21377897dade",
+            "sha256": "sha256-76FnXrW/SZtxYmQi/dFR0F4HEPl2thkb6PDEe9Ikwt4=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/dashscope/dashscope-sdk-python"
         },
-        "version": "eabf28c17ec01bf98245b197c2efe662f4b77b15"
+        "version": "e9a27c11932f828f7cdb3eb7c9af21377897dade"
     },
     "faiss-cpu": {
         "cargoLocks": null,
@@ -54,12 +54,12 @@
             "name": null,
             "owner": "kyamagu",
             "repo": "faiss-wheels",
-            "rev": "v1.10.0",
-            "sha256": "sha256-mT90CzIup63RaRVR/zlvxMXBEhsK/WOAUgyL3I+kC/Y=",
+            "rev": "v1.11.0",
+            "sha256": "sha256-qCr2D6hTRub08Alp9hc5MrCgfCIzXSeqj24d0FwB4tw=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v1.10.0"
+        "version": "v1.11.0"
     },
     "gluetun": {
         "cargoLocks": null,
@@ -131,11 +131,11 @@
         "pinned": false,
         "src": {
             "name": "n8n.tar.gz",
-            "sha256": "sha256-DsfUVaOj5czd3vIWFiWsisNyRpni6vi0hw/lxqu6yNw=",
+            "sha256": "sha256-tytx5HpizYQ5IKeNF5nh7SZHRJrx0V/J6gz0RIfs1Tw=",
             "type": "url",
-            "url": "https://github.com/n8n-io/n8n/archive/n8n@1.89.2.tar.gz"
+            "url": "https://github.com/n8n-io/n8n/archive/n8n@1.91.3.tar.gz"
         },
-        "version": "n8n@1.89.2"
+        "version": "n8n@1.91.3"
     },
     "qianfan": {
         "cargoLocks": null,
@@ -165,7 +165,7 @@
             "type": "url",
             "url": "https://files.pythonhosted.org/packages/fd/02/efc002c427250355d8fccd7ffef04dc8fca98c049f145c776447b1eb392f/semantic_kernel-1.28.1.tar.gz"
         },
-        "version": "1.28.1"
+        "version": "1.29.0"
     },
     "ta": {
         "cargoLocks": null,

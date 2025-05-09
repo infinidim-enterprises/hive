@@ -15,7 +15,7 @@ rec {
 
   base = with inputs.cells.common.overlays; [
     inputs.atuin.overlays.default
-    (final: prev: { atuin = prev.atuin.overrideAttrs (_: { version = "18.5.0"; }); })
+    (final: prev: { atuin = prev.atuin.overrideAttrs (_: { version = "18.6.0"; }); })
     inputs.nixd.overlays.default
     inputs.nix-filter.overlays.default
     nixpkgs-unstable-overrides

@@ -325,7 +325,8 @@
     hyprland-virtual-desktops.inputs.nixpkgs.follows = "nixpkgs";
 
     ### NOTE: atuin crap - fuck RUST, but no other choice
-    atuin.url = "github:atuinsh/atuin/v18.5.0";
+    ### the commit is for v18.6.0 - 45460d4c31c793985970a53f125d1a5da42c8d25
+    atuin.url = "github:atuinsh/atuin/18.6.0";
 
     metagpt.url = "github:infinidim-enterprises/metagpt.nix";
   };

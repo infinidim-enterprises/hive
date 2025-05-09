@@ -14,27 +14,27 @@
   };
   dashscope = {
     pname = "dashscope";
-    version = "eabf28c17ec01bf98245b197c2efe662f4b77b15";
+    version = "e9a27c11932f828f7cdb3eb7c9af21377897dade";
     src = fetchgit {
       url = "https://github.com/dashscope/dashscope-sdk-python";
-      rev = "eabf28c17ec01bf98245b197c2efe662f4b77b15";
+      rev = "e9a27c11932f828f7cdb3eb7c9af21377897dade";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-1FkVwcIXVJ8s+tof61GqPJ4DIWhL8lcvxDFTxibjTxE=";
+      sha256 = "sha256-76FnXrW/SZtxYmQi/dFR0F4HEPl2thkb6PDEe9Ikwt4=";
     };
-    date = "2025-04-02";
+    date = "2025-04-27";
   };
   faiss-cpu = {
     pname = "faiss-cpu";
-    version = "v1.10.0";
+    version = "v1.11.0";
     src = fetchFromGitHub {
       owner = "kyamagu";
       repo = "faiss-wheels";
-      rev = "v1.10.0";
+      rev = "v1.11.0";
       fetchSubmodules = false;
-      sha256 = "sha256-mT90CzIup63RaRVR/zlvxMXBEhsK/WOAUgyL3I+kC/Y=";
+      sha256 = "sha256-qCr2D6hTRub08Alp9hc5MrCgfCIzXSeqj24d0FwB4tw=";
     };
   };
   gluetun = {
@@ -74,11 +74,11 @@
   };
   n8n = {
     pname = "n8n";
-    version = "n8n@1.89.2";
+    version = "n8n@1.91.3";
     src = fetchurl {
-      url = "https://github.com/n8n-io/n8n/archive/n8n@1.89.2.tar.gz";
+      url = "https://github.com/n8n-io/n8n/archive/n8n@1.91.3.tar.gz";
       name = "n8n.tar.gz";
-      sha256 = "sha256-DsfUVaOj5czd3vIWFiWsisNyRpni6vi0hw/lxqu6yNw=";
+      sha256 = "sha256-tytx5HpizYQ5IKeNF5nh7SZHRJrx0V/J6gz0RIfs1Tw=";
     };
   };
   qianfan = {
@@ -91,7 +91,7 @@
   };
   semantic-kernel = {
     pname = "semantic-kernel";
-    version = "1.28.1";
+    version = "1.29.0";
     src = fetchurl {
       url = "https://files.pythonhosted.org/packages/fd/02/efc002c427250355d8fccd7ffef04dc8fca98c049f145c776447b1eb392f/semantic_kernel-1.28.1.tar.gz";
       sha256 = "sha256-K8/hNPdSUfXCBtQQev2GDcsuwjB3zG1qMTDrb017qFc=";

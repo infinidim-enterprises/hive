@@ -1,3 +1,10 @@
+[atuin]
+src.github = "atuinsh/atuin"
+src.use_latest_release = true
+fetch.github = "atuinsh/atuin"
+extract = ["Cargo.lock"]
+# passthru = { cargoSha256 = "0000000000000000000000000000000000000000000000000000" }
+
 [spaceship-prompt]
 # Spaceship is a minimalistic, powerful and extremely customizable Zsh prompt
 src.git = "https://github.com/spaceship-prompt/spaceship-prompt"

@@ -29,7 +29,7 @@ mkIf config.programs.zsh.enable
   };
 
   programs.zsh.dotDir = dotDir;
-  programs.zsh.initExtra = ''
+  programs.zsh.initContent = ''
     autoload -Uz +X bashcompinit && bashcompinit
     for config_file ($ZDOTDIR/lib/*.zsh); do
       source $config_file

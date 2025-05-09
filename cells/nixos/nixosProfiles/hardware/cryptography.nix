@@ -9,7 +9,7 @@ let
   hmModule = { osConfig, lib, pkgs, config, ... }:
     let
       inherit (lib) mkDefault mkIf mkEnableOption;
-      pinentryPackage = (pkgs.writeShellScriptBin "pinentry-selector" ''
+      package = (pkgs.writeShellScriptBin "pinentry-selector" ''
         if [[ -n "$DISPLAY" || -n "$WAYLAND_DISPLAY" ]]; then
           exec ${pkgs.pinentry-all}/bin/pinentry-gnome3
         else
@@ -36,7 +36,7 @@ let
           home.packages = [ pkgs.pinentry-all ];
 
           services.gpg-agent = {
-            inherit pinentryPackage;
+            pinentry = { inherit package; };
             enable = mkDefault true;
             enableSshSupport = mkDefault true;
             enableExtraSocket = mkDefault true;

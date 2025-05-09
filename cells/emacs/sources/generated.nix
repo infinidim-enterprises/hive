@@ -3,13 +3,13 @@
 {
   aider = {
     pname = "aider";
-    version = "v0.8.1";
+    version = "v0.8.4";
     src = fetchFromGitHub {
       owner = "tninja";
       repo = "aider.el";
-      rev = "v0.8.1";
+      rev = "v0.8.4";
       fetchSubmodules = false;
-      sha256 = "sha256-lO0i2xb8pDZ7ohGczUNc2wx5Kb7wqa6GmPe5cr8ICnQ=";
+      sha256 = "sha256-i8Q1ZTrONd7AgP/pgZjta6bntJzlzSnpWpM8yM8Y6x4=";
     };
   };
   all-the-icons = {
@@ -73,15 +73,15 @@
   };
   copilot-el = {
     pname = "copilot-el";
-    version = "6c8ad4e4b65f5eec026325db2ac5a0aaedd8b22c";
+    version = "fe3f51b636dea1c9ac55a0d5dc5d7df02dcbaa48";
     src = fetchFromGitHub {
       owner = "zerolfx";
       repo = "copilot.el";
-      rev = "6c8ad4e4b65f5eec026325db2ac5a0aaedd8b22c";
+      rev = "fe3f51b636dea1c9ac55a0d5dc5d7df02dcbaa48";
       fetchSubmodules = false;
-      sha256 = "sha256-y47yC8+8KnGCCpynTYfer8Hww221/MpyL9mPrAAkOXc=";
+      sha256 = "sha256-reoIFMjx2Go/EPAxD+OQFxge/amqguZS+jteh0b9xgA=";
     };
-    date = "2025-04-23";
+    date = "2025-05-06";
   };
   corfu = {
     pname = "corfu";
@@ -348,15 +348,15 @@
   };
   sly = {
     pname = "sly";
-    version = "c48defcf58596e035d473f3a125fdd1485593146";
+    version = "ce17a568efd3673e9d6f41438acc4023379c198e";
     src = fetchFromGitHub {
       owner = "joaotavora";
       repo = "sly";
-      rev = "c48defcf58596e035d473f3a125fdd1485593146";
+      rev = "ce17a568efd3673e9d6f41438acc4023379c198e";
       fetchSubmodules = false;
-      sha256 = "sha256-GPEtbo67pjwHpipN1sKZofzRssQL31EdNThSe/zS61s=";
+      sha256 = "sha256-usVSRCoYEFKI02zDIxvXmYeMOkDpQr4FG5Bwcyxt3p8=";
     };
-    date = "2025-02-03";
+    date = "2025-05-01";
   };
   sly-asdf = {
     pname = "sly-asdf";
