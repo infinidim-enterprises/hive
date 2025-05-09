@@ -36,9 +36,10 @@ hyprland-pkgs //
     gimp3-with-plugins
     freecad
 
-    aider-chat
-
-    kdePackages;
+    aider-chat;
+} //
+{
+  kdeconnect-kde-recent = nixpkgs-master.kdePackages.kdeconnect-kde;
 }
 # //
 # {

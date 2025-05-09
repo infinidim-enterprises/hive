@@ -7,7 +7,7 @@
     intel-media-driver
     intel-vaapi-driver
     intel-ocl
-    mesa.drivers
+    mesa # NOTE: .drivers depcrecated
   ];
 
   # hardware.opengl.driSupport = true;
