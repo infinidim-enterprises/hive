@@ -3,13 +3,13 @@
 {
   aider-chat = {
     pname = "aider-chat";
-    version = "v0.82.0";
+    version = "v0.83.0";
     src = fetchFromGitHub {
       owner = "Aider-AI";
       repo = "aider";
-      rev = "v0.82.0";
+      rev = "v0.83.0";
       fetchSubmodules = false;
-      sha256 = "sha256-UlPYUYAYDhPPgoIvEWRLYjCe3iQ2ltH5mT3GkX+IrGI=";
+      sha256 = "sha256-hXKrjo/9Y3WLgluwEK2q123QcfBVA0ByEKaq8Rtd70E=";
     };
   };
   dashscope = {
@@ -54,8 +54,8 @@
     version = "latest";
     src = dockerTools.pullImage {
       imageName = "lobehub/lobe-chat";
-      imageDigest = "sha256:d27484d7c858ec2b1d553851f332a7543c3affed5dc4b2aa2af695f4c26f587e";
-      sha256 = "sha256-gGWc3Pk8sTa3FnwXns9pg2QqMAb1ARrXuB5Z1pUKRu8=";
+      imageDigest = "sha256:cd739b7b95731de54469c64014371c9310d725d5d1b407c1a5fcb56eb81a9781";
+      sha256 = "sha256-db1Y64WwgnZuZUfr1PbaU+73jh1y2P+zpCB3XQ5hseo=";
       finalImageTag = "latest";
       os = "linux";
       arch = "amd64";
