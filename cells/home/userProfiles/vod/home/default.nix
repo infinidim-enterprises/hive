@@ -37,11 +37,9 @@ in
       # profiles.pentester.traffic
       # profiles.security.keybase
       # profiles.security.password-store
-      # # FIXME: profiles.activitywatch
       # profiles.browsers.firefox
       # profiles.browsers.floorp
     ] ++ (with profiles.developer; [
-      # FIXME: extensions - vscode
       # ruby
       # nix
       # direnv

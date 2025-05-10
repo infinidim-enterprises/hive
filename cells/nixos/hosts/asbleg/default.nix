@@ -1,7 +1,6 @@
 { inputs, cell, ... }:
 let
-  inherit (builtins) toString baseNameOf;
-  # inherit (inputs.nixpkgs) system; # FIXME: Why does it default to aarch64-linux?
+  inherit (builtins) baseNameOf;
   system = "x86_64-linux";
 in
 

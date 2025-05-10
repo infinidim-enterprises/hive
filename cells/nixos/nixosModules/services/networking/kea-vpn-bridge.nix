@@ -195,7 +195,7 @@ in
     }
 
     (mkIf ((length (filter (f: f.IPMasquerade != null) (attrValues cfg.zerotierone))) > 0) {
-      # patch attrs FIXME: this implies gateway on the dhcp-server, which is wrong!
+      # patch attrs TODO: this implies gateway on the dhcp-server, which is wrong!
       systemd.network.networks = mapAttrs'
         (netName: netValue: nameValuePair "br.${netName}" {
           networkConfig = { inherit (netValue) IPMasquerade; };

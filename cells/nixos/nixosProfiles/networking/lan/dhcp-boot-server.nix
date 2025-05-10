@@ -72,7 +72,7 @@ mkMerge [
   # NOTE: https://github.com/networkboot/docker-dhcpd/issues/25
   # https://developers.redhat.com/blog/2018/10/22/introduction-to-linux-interfaces-for-virtual-networking#macvtap_ipvtap
   # https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/virtualization_deployment_and_administration_guide/sect-virtual_networking-directly_attaching_to_physical_interface
-  # BUG: unable to set macvlan to allow broadcasts.
+  # ISSUE: unable to set macvlan to allow broadcasts.
 
   {
     containers."${namespace}-dhcp-boot-server" = {

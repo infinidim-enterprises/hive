@@ -1,11 +1,4 @@
 { inputs, cell, ... }:
-let
-  # nixpkgs-pycrypto-pinned = import inputs.nixpkgs-pycrypto-pinned {
-  #   inherit (inputs.nixpkgs) system;
-  #   overlays = [ cell.overlays.sources ];
-  #   config.allowUnfree = true;
-  # };
-in
 
 cell.lib.importers.importPackagesRakeleaves
 {
@@ -13,7 +6,7 @@ cell.lib.importers.importPackagesRakeleaves
   overlays = [ cell.overlays.sources ];
   skip = [
     "pbkdf2-sha512"
-    "waveterm" # TODO: package it properly
+    "waveterm"
 
     "TakeTheTime"
     "age-plugin-yubikey"
@@ -51,12 +44,10 @@ cell.lib.importers.importPackagesRakeleaves
     "git-remote-ipfs"
 
     "trezor-agent-recover"
-    # FIXME:
     "xxhash2mac"
     "uhk-agent"
     "rtw89"
     "kea-ma"
-    # FIXME: ASAP
     "make-desktopitem"
     # FIXME: ipxe
     "ipxe"

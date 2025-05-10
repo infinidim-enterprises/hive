@@ -71,7 +71,6 @@ mkMerge [
             snmp
           ];
 
-          ### FIXME: default credentials
           ### echo -n "admin" | shasum -a 256
           services.graylog.passwordSecret = "9csIhz3DQmqAfiijOFyStn4S1TVdIllZwuKqlZ9C0va8kDXJhxIZnvCEPmdckgMFOHWRDZDE50BFhtBcAplc8RHpi1lTu65d";
           services.graylog.rootPasswordSha2 = "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918";

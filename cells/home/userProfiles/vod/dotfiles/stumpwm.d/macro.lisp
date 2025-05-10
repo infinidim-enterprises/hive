@@ -5,18 +5,6 @@
   `(remove-hook ,hook ,fn)
   `(add-hook ,hook ,fn))
 
-;; FIXME:
-;; (defmacro toggle-hook (hook fn)
-;;   "Add or remove HOOK from fn"
-;;   (if (member fn hook)
-;;       ;; (remove-hook hook fn)
-;;       ;; (message "hook found")
-;;       `(remove-hook ,hook ',fn)
-;;       `(add-hook ,hook ',fn)
-;;       ;; (message "hook not found")
-;;       ;; (add-hook hook fn)
-;;       ))
-
 (defmacro defkey-top (key cmd)
   `(define-key *top-map* (kbd ,key) ,cmd))
 

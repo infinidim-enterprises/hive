@@ -96,23 +96,6 @@ mkMerge [
 
   {
     services.emacs.enable = mkDefault true;
-    # FIXME: something is wrong with pkgs.runtimeShell -l -c (defaults to bash), so let's use users shell
-    # systemd.user.services.emacs.Service.ExecStart =
-    #   let
-    #     inherit (lib) optionalString escapeShellArg;
-    #     userShell = osConfig.users.users.${name}.shell;
-    #     shellBin = "${lib.getBin userShell}/bin/${userShell.pname}";
-    #   in
-    #   lib.mkForce ''${shellBin} -l -c "${config.services.emacs.package}/bin/emacs --fg-daemon'';
-    # ${
-    #       # In case the user sets 'server-directory' or 'server-name' in
-    #       # their Emacs config, we want to specify the socket path explicitly
-    #       # so launching 'emacs.service' manually doesn't break emacsclient
-    #       # when using socket activation.
-    #         optionalString cfg.socketActivation.enable
-    #         "=${escapeShellArg socketPath}"
-    #       } ${escapeShellArgs cfg.extraOptions}"'';
-
     services.emacs.client.enable = mkDefault true;
     services.emacs.defaultEditor = mkDefault true;
     systemd.user.services.emacs.Service.TimeoutStartSec = mkDefault 120;

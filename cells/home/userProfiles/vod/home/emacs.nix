@@ -50,7 +50,7 @@ in
 {
   imports = [ profiles.emacs ];
 
-  # FIXME: programs.promnesia.enable = true;
+  # programs.promnesia.enable = true;
   # programs.promnesia.configFile = ../dotfiles/promnesia/config.py;
 
   programs.doom-emacs.enable = true;
@@ -127,11 +127,6 @@ in
 
   programs.chemacs.enable = false;
 
-  ### FIXME: doomemacs doesn't recognize installed language servers.
-  # home.file."bin/json-ls".source = "${pkgs.nodePackages.vscode-json-languageserver-bin}/bin/json-languageserver";
-  # home.file."bin/html-ls".source = "${pkgs.nodePackages.vscode-html-languageserver-bin}/bin/html-languageserver";
-  # home.file."bin/css-ls".source = "${pkgs.nodePackages.vscode-css-languageserver-bin}/bin/css-languageserver";
-
   home.packages = with pkgs; [
     python3Packages.grip
     python3Full # treemacs seems to want that
@@ -148,7 +143,7 @@ in
     # nodePackages.vscode-json-languageserver-bin
     # nodePackages.vscode-css-languageserver-bin
     # nodePackages.vscode-html-languageserver-bin
-    # FIXME: ocamlPackages.digestif
+    ocamlPackages.digestif
 
     nodePackages.js-beautify
     nodePackages.stylelint

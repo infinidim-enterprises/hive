@@ -655,7 +655,7 @@ pgp_key_private_generate
 pgp_key_private_import
 
 pgp_key_public_export
-# pgp_key_private_revocation_cert # FIXME: something 'expect' doesn't handle
+# pgp_key_private_revocation_cert # FIXME: [pgp_key_private_revocation_cert] something 'expect' doesn't handle
 
 if "${WRITE_CARD}"; then
   pgp_card_reset

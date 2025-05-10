@@ -86,7 +86,11 @@ mkMerge
         "panic=10"
         "boot.panic_on_fail"
         "udev.log_level=err"
-        "quiet"
+        # "quiet"
       ];
+    })
+
+    (mkIf (!config.deploy.publicHost.enable) {
+      boot.kernelParams = mkAfter [ "quiet" ];
     })
   ]

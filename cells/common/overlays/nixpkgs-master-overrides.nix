@@ -33,6 +33,8 @@ hyprland-pkgs //
     ###
     formats
 
+    copyq
+
     gimp3-with-plugins
     freecad
 

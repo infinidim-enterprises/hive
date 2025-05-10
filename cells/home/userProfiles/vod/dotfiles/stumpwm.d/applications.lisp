@@ -42,7 +42,6 @@
 
 (defcommand dmenu () ()
   "Run j4-dmenu"
-  ;; FIXME: fonts are set via central location, use it!
   (run-shell-command "exec j4-dmenu-desktop --use-xdg-de --dmenu=\"dmenu -i -b -fn 'UbuntuMono Nerd Font Mono:pixelsize=28' -nb '#002b36' -nf '#839496' -sb '#002b36'\""))
 
 (defcommand passmenu () ()

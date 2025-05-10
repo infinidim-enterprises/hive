@@ -144,7 +144,7 @@ stdenv.mkDerivation rec {
     "TIME_CMD"
     "DIGEST_CMD"
     "VLAN_CMD"
-    # HACK: pkg doesn't build with this enabled - "PXE_CMD"
+    # ISSUE: pkg doesn't build with this enabled - "PXE_CMD"
     "REBOOT_CMD"
     "POWEROFF_CMD"
     "PCI_CMD"

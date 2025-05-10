@@ -119,7 +119,7 @@ rec {
       ];
     };
 
-  vod = { lib, ... }: {
+  vod = { ... }: {
     imports = [ default ];
 
     environment.persistence."/persist" = {
@@ -136,7 +136,7 @@ rec {
           "tmp"
           "Videos"
           "Logs"
-          "keybase" # REVIEW: maybe use keybase nixos module instead of home-manager one?
+          "keybase"
           ".cache"
           ".local"
           ".ssh"
@@ -145,25 +145,3 @@ rec {
     };
   };
 }
-/*
-  boot.initrd.systemd.services.rollback = {
-  description = "Rollback ZFS datasets to a pristine state";
-  wantedBy = [
-      "initrd.target"
-  ];
-  after = [
-      "zfs-import-zroot.service"
-  ];
-  before = [
-      "sysroot.mount"
-  ];
-  path = with pkgs; [
-      zfs
-  ];
-  unitConfig.DefaultDependencies = "no";
-  serviceConfig.Type = "oneshot";
-  script = ''
-      zfs rollback -r zroot/local/root@blank && echo "rollback complete"
-  '';
-  };
-*/

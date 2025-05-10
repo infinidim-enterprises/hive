@@ -23,7 +23,7 @@ mkMerge [
         ruby-linter
         ruby-symbols
         cucumberautocomplete
-        # FIXME: gherkintablealign
+        # ISSUE: gherkintablealign
       ];
     }
   )

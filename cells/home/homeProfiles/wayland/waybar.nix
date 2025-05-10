@@ -85,8 +85,7 @@ in
     clock.tooltip-format = "<tt>{calendar}</tt>"; # \n\n{tz_list}
     clock.timezone = osConfig.time.timeZone;
 
-    # clock.timezones = [
-    #   # FIXME: clock.timezones
+    # TODO: clock.timezones = [
     #   "Etc/UTC"
     #   "Europe/London"
     #   "Europe/Berlin"

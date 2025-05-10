@@ -62,8 +62,7 @@ rec {
       inputs.disko.nixosModules.disko
       cell.nixosProfiles.boot.systemd-boot
       cell.nixosProfiles.filesystems.impermanence.default
-      ({ lib, nodes, ... }: {
-        # FIXME: networking.hostId = lib.mkForce ${host}.networking.hostId;
+      ({ lib, ... }: {
         disko.devices = cell.diskoConfigurations.${host} { inherit lib; };
       })
     ];

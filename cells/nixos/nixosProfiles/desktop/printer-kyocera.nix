@@ -21,10 +21,7 @@ in
 
   # NOTE: own file systemd.packages = with pkgs; [ system-config-printer ];
   services.udev.packages = [ pkg ];
-  services.dbus.packages = [
-    pkg
-    pkgs.gcr # FIXME: why is gcr in printer config?
-  ];
+  services.dbus.packages = [ pkg ];
 
   services.printing.enable = true;
   services.printing.startWhenNeeded = true;

@@ -96,7 +96,6 @@
   #   "10.22.0.254" = [ "git.0a.njk.li" "frogstar.0a.njk.li" ];
   # };
 
-  # FIXME: remove after networking lab module works
   networking.hosts."10.11.1.254" = [ "frogstar.njk.local" ];
   networking.hosts."10.11.1.195" = [ "kyocera-printer.njk.local" "kyocera-printer" ];
 

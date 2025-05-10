@@ -22,10 +22,8 @@
     inputs.cells.common.packages.solarized-dark-gnome-shell
     inputs.cells.common.packages.solarized-material
 
-    # themechanger
-
     numix-cursor-theme
-    gnome.gnome-shell # HACK: gdm-wayland-session: No schemas installed
+    gnome.gnome-shell
     gsettings-desktop-schemas
   ];
 

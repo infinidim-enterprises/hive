@@ -5,7 +5,6 @@ let
   inherit (lib) mkDefault;
 in
 {
-  # FIXME: Unable to start GeoClue client: GDBus.Error:org.freedesktop.DBus.Error.AccessDenied: 'redshift' disallowed, no agent for UID 1000
   services.geoclue2.enable = mkDefault true;
   services.geoclue2.enableNmea = false;
   services.geoclue2.enable3G = false;

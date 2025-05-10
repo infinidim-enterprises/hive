@@ -57,8 +57,6 @@ in
         publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDdQGKtRw2lBNX/WQXTu61n24ULIzA9DSdH4RJdwjdpH";
       };
 
-      # FIXME: get things from hosts.nix for this:
-      # "http://hydra.0a.njk.li:5000"
       nix.binaryCaches = [ "http://argabuthon.0a.njk.li:5000" ];
       nix.trustedBinaryCaches = [ "http://argabuthon.0a.njk.li:5000" ];
       nix.binaryCachePublicKeys = [ (credentials [ "buildfarm" "nix-serve-public-key" ] "...") (credentials [ "buildfarm" "hydra-nix-serve-public-key" ] "...") ];

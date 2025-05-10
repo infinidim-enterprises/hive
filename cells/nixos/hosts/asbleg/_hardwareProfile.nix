@@ -1,6 +1,6 @@
 { inputs, cell, ... }:
 
-{ config, lib, pkgs, ... }:
+{ lib, pkgs, ... }:
 let
   inherit (builtins) baseNameOf;
 in
@@ -8,6 +8,7 @@ in
   deploy.params.cpu = "intel";
   deploy.params.gpu = "intel";
   deploy.params.ram = 8;
+  deploy.params.zfsCacheMax = 4;
 
   home-manager.sharedModules = [
     ({ config, lib, ... }: lib.mkIf config.services.kanshi.enable {
@@ -53,9 +54,6 @@ in
       })
   ];
 
-  # boot.plymouth.enable = true;
-  # pkgs.plymouth-matrix-theme
-
   boot.consoleLogLevel = 0;
   boot.kernelParams = [ "drm.debug=0" "modeset=1" ];
   # NOTE: tradeoff - get lower wifi speeds, but at least no interruptions
@@ -75,24 +73,6 @@ in
       patch = ./intel_dsi_vbt.patch;
     }
   ];
-
-  # services.xserver.deviceSection = ''
-  #   Option "AccelMethod" "glamor"
-  # '';
-
-  # services.xserver.moduleSection = ''
-  #   Load "dri2"
-  #   Load "glamoregl"
-  # '';
-
-  # services.xserver.monitorSection = ''
-  #   Option "Rotate" "right"
-  # '';
-
-  # services.xserver.videoDrivers = lib.mkIf config.services.xserver.enable [
-  #   # "modesetting"
-  #   "intel"
-  # ];
 
   services.logind.powerKeyLongPress = "suspend";
   services.logind.lidSwitchExternalPower = "ignore";

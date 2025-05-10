@@ -203,44 +203,9 @@ src.git = "https://github.com/google/git-pull-request-mirror"
 fetch.github = "google/git-pull-request-mirror"
 passthru = { vendorSha256 = "0789v1r6my256pncs0105yji28ifchj6ppfiy8gavglgclq3cgvn" }
 
-### cloud and friends
-# [vultr-cli]
-# src.github = "vultr/vultr-cli"
-# src.use_latest_release = true
-# fetch.github = "vultr/vultr-cli"
-#[cl-qrencode]
-#src.git = "https://github.com/jnjcc/cl-qrencode"
-#src.branch ="master"
-#fetch.github = "jnjcc/cl-qrencode"
-########
-
-### :BEGIN: lisp overlays stuff
-### TODO: migrate to a separate cell eventually
-# [stumpwm-release]
-# src.github = "stumpwm/stumpwm"
-# src.use_latest_release = true
-# fetch.github = "stumpwm/stumpwm"
-# passthru = { system = "stumpwm", asd = "stumpwm" }
-
-# [stumpwm-contrib]
-# src.git = "https://github.com/stumpwm/stumpwm-contrib"
-# fetch.github = "stumpwm/stumpwm-contrib"
-
-# [stumpwm-git]
-# src.git = "https://github.com/stumpwm/stumpwm"
-# fetch.github = "stumpwm/stumpwm"
-# passthru = { system = "stumpwm", asd = "stumpwm" }
-
 [quicklisp]
 src.manual = "latest"
 fetch.url = "https://beta.quicklisp.org/quicklisp.lisp"
-
-# FIXME: broken nix builds after 189a730f73266999d5b8f992faf939c11d7815ad
-# [stumpwm]
-# src.manual = "189a730f73266999d5b8f992faf939c11d7815ad"
-# # src.git = "https://github.com/stumpwm/stumpwm"
-# fetch.github = "stumpwm/stumpwm"
-# passthru = { system = "stumpwm", asd = "stumpwm" }
 
 [dbus]
 src.git = "https://github.com/death/dbus"
@@ -289,43 +254,14 @@ fetch.github = "braver/Solarized"
 
 # Office apps
 [masterpdfeditor]
-# http://code-industry.net/public/master-pdf-editor-5.9.85-qt5.x86_64-qt_include.tar.gz
 src.manual = "5.9.85"
 fetch.url = "https://code-industry.net/public/master-pdf-editor-$ver-qt5.x86_64-qt_include.tar.gz"
-
-# [ledger-live-desktop]
-# # src.manual = "2.57.0"
-# src.manual = "2.77.2"
-# fetch.url = "https://download.live.ledger.com/ledger-live-desktop-$ver-linux-x86_64.AppImage"
 
 ### crystal-lang
 [crystalline]
 src.use_latest_release = true
 src.github = "elbywan/crystalline"
 fetch.github = "elbywan/crystalline"
-
-### firefox stuff, but not addons
-# [firefox_user_js]
-# src.use_latest_release = true
-# src.github = "arkenfox/user.js"
-# fetch.github = "arkenfox/user.js"
-
-# [firefox_decrypt]
-# src.use_latest_tag = true
-# src.github_tag = "unode/firefox_decrypt"
-# fetch.github = "unode/firefox_decrypt"
-
-# [linux-firmware]
-# src.manual = "20240410"
-# fetch.url = "https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/linux-firmware-$ver.tar.gz"
-
-###
-# [waveterm]
-# FIXME: waveterm sources versions and update via nvfetcher
-# src.manual = "0.10.4"
-# src.use_latest_release = true
-# src.github = "wavetermdev/waveterm"
-# fetch.url = "https://github.com/wavetermdev/waveterm/releases/download/v$ver/waveterm-linux-x64-$ver.zip"
 
 [zerotierone]
 src.use_latest_release = true

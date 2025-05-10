@@ -68,7 +68,7 @@ in
       '';
 
       # fix nixos-option
-      # FIXME: nixos-option = "nixos-option -I nixpkgs=${self}/lib/compat";
+      # TODO: nixos-option = "nixos-option -I nixpkgs=${self}/lib/compat";
       nix-cleanup = "nix-collect-garbage -d && sudo nix-collect-garbage -d";
 
       # top matcha-dark-sea

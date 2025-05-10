@@ -65,7 +65,7 @@ with builtins;
 
   {
     # NOTE: Bios / non-efi
-    # FIXME: Try with real hardware clients, the boot-file-name might need to be without protocol spec!
+    # NOTE: Try with real hardware clients, the boot-file-name might need to be without protocol spec!
     name = "Legacy";
     test = "member('BIOS') and not (member('iPXE') or member('iPXE_COMPAT'))";
     boot-file-name = "undionly.kpxe";

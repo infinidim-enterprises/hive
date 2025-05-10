@@ -43,7 +43,7 @@ mkMerge [
 
     virtualisation.docker.enable = true;
     virtualisation.docker.enableOnBoot = true;
-    # REVIEW: virtualisation.docker.rootless.enable = true;
+    # NOTE: virtualisation.docker.rootless.enable = true;
     # virtualisation.docker.rootless.setSocketVariable = true;
     virtualisation.docker.storageDriver = storageDriver;
     virtualisation.docker.autoPrune.enable = mkDefault true;

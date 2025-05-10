@@ -141,7 +141,6 @@ mkMerge [
     # systemd.services."org.gnome.keyring.SystemPrompter".serviceConfig.StandardOutput = "null";
     # systemd.services."org.gnome.keyring.SystemPrompter".serviceConfig.StandardError = "null";
 
-    # FIXME: pkgs.gcr appear twice in services.dbus.packages. why?
     services.dbus.packages =
       let
         # TODO: reference a systemd service instead and have it redirect output to null

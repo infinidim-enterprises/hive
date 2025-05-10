@@ -475,7 +475,6 @@ in
         group = "remote-display";
       };
 
-      # FIXME: take dconf module from home-manager or make this work!
       programs.dconf.enable = true;
       programs.dconf.profiles.user = dconf.dconf_profile;
       programs.dconf.packages = [ dconf.customDconfDb ];
@@ -494,7 +493,6 @@ in
         mate-terminal
         mate-user-guide
         mate-netbook
-        # FIXME: https://github.com/mate-desktop/mate-power-manager/issues/342
         mate-power-manager
         mate-screensaver
         mate-media

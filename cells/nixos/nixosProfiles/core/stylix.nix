@@ -2,7 +2,7 @@
 let
   lib = inputs.nixpkgs-lib.lib // builtins;
   filteredStylix = import (inputs.nix-filter.lib.filter {
-    # BUG: https://github.com/danth/stylix/issues/47
+    # ISSUE: https://github.com/danth/stylix/issues/47
     # NOTE: I don't use gnome
     root = inputs.stylix.outPath;
     exclude = [

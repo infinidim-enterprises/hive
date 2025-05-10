@@ -57,9 +57,13 @@ in
     "nix-command"
     "flakes"
     "impure-derivations"
-    # https://github.com/NixOS/nix/issues/6666
-    # https://github.com/NixOS/nixpkgs/issues/177142
-    # BUG: "ca-derivations"
+    /*
+      Floating content-addressed derivations (CA derivations) extend Nix’s traditional model—where a derivation’s store path is hashed from its inputs—to instead hash the actual build output. This makes store paths output-addressed, guaranteeing that identical outputs share the same path, regardless of how they were built
+
+      # https://github.com/NixOS/nix/issues/6666
+      # https://github.com/NixOS/nixpkgs/issues/177142
+      # ISSUE: "ca-derivations"
+    */
     "auto-allocate-uids"
     "cgroups"
     # "recursive-nix"
@@ -71,6 +75,7 @@ in
   nix.registry = {
     home.flake = inputs.home;
     nixpkgs-unstable.flake = inputs.nixpkgs-unstable;
+    nixpkgs-master.flake = inputs.nixpkgs-master;
   };
   /*
     TODO: nixpkgs.flake.setNixPath nixpkgs.flake.setFlakeRegistry

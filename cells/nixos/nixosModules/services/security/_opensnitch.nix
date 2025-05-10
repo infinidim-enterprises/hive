@@ -83,7 +83,6 @@ in
 {
   options.services.opensnitch = {
     enable = mkEnableOption "Opensnitch application firewall";
-    # FIXME: opensnitch service: refactor to only use single var everywhere!
     rules-path = with types; mkOption { type = str; default = "/etc/opensnitchd/rules"; };
     allRules = mkOption { internal = true; default = allUserRules ++ cfg.defaultRules; };
     extraRules = with types; mkOption {

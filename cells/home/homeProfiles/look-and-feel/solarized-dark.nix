@@ -136,7 +136,7 @@ mkMerge [
   (mkIf IsDesktop {
     dconf.settings."org/mate/desktop/peripherals/keyboard/indicator" = {
       foreground-color = "131 148 150";
-      background-color = "0 0 0"; ### FIXME: invalid color and 0 43 54 doesnt work
+      background-color = "0 0 0";
     };
     dconf.settings."org/gnome/desktop/interface" = commonDefaults;
     dconf.settings."org/mate/desktop/interface" = commonDefaults;

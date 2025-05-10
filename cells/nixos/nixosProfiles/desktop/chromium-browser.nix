@@ -1,6 +1,6 @@
 { inputs, cell, ... }:
 
-{ lib, config, pkgs, ... }:
+{ lib, pkgs, ... }:
 
 lib.mkMerge [
   {
@@ -11,10 +11,9 @@ lib.mkMerge [
     # programs.chromium.defaultSearchProviderSuggestURL = "";
 
     programs.chromium.extensions = [
-      # "nglaklhklhcoonedhgnpgddginnjdadi" # TODO: mkIf hmModule activitywatch enabled.
       "nkbihfbeogaeaoehlefnkodbefgpgknn" # metamask
       "kcgpggonjhmeaejebeoeomdlohicfhce" # Removes cookies for the current site
-      # FIXME: "fialfmcgpibjgdoeodaondepigiiddio" # Braintool org-mode bookmarks and tabs collection
+      "fialfmcgpibjgdoeodaondepigiiddio" # Braintool org-mode bookmarks and tabs collection
       # "ldpochfccmkkmhdbclfhpagapcfdljkj" # Decentraleyes
       # "maekfnoeejhpjfkfmdlckioggdcdofpg" # Adblocker for Youtube™
       "bgnkhhnnamicmpeenaelnjfhikgbkllg" # AdGuard AdBlocker

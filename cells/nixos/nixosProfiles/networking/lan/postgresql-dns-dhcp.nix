@@ -80,7 +80,6 @@ mkMerge [
                   SET TIMEZONE = 'CET';
                 '';
               in
-              # FIXME: test credentials!
               lib.mkAfter ''
                 if test -e "${dataDir}/.first_startup_user"; then
                   $PSQL -f "${pkgs.powerdns}/share/doc/pdns/schema.pgsql.sql" -d powerdns

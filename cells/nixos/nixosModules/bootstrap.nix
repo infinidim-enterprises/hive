@@ -18,7 +18,7 @@ let
     toString
     attrValues;
 
-  # FIXME: ugly shit, git can have multiple remotes
+  # ISSUE: ugly shit, git can have multiple remotes
   flake_uri = pkgs.runCommandNoCC "flake_uri"
     {
       buildInputs = with pkgs; [ gawk gitMinimal ];

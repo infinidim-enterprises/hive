@@ -31,13 +31,13 @@ in
   programs.bat.enable = true;
   programs.dircolors.enable = true;
   home.packages = with pkgs; [
-    tmate #TODO: make a home-manager module - https://tmate.io Instant terminal sharing
+    tmate # TODO: [tmate] make a home-manager module - https://tmate.io Instant terminal sharing
     tty-share # Secure terminal-session sharing - https://tty-share.com
     upterm # Secure terminal-session sharing - https://upterm.dev
     eternal-terminal # TODO: Remote shell that automatically reconnects without interrupting the session
     tio # Serial console TTY
 
-    # TODO: shell-gpt - make a home-manager module for this!
+    # TODO: [shell-gpt] - make a home-manager module for this!
 
     patool # portable archive file manager - https://wummel.github.io/patool
     ouch # easily compressing and decompressing files and directories
@@ -53,7 +53,6 @@ in
     ncdu # Disk usage analyzer with an ncurses interface
     rsync # Fast incremental file transfer utility
     lsyncd # A utility that synchronizes local directories with remote targets
-    # FIXME: magic-wormhole # secure file sharing over cli
 
     ###
     iotop_task_delayacct # A tool to find out the processes doing the most IO

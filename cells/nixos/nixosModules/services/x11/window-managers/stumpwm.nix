@@ -114,7 +114,7 @@ in
       environment.sessionVariables.CPATH = "${pkgs.libfixposix}/include";
       # services.displayManager.sessionPackages = [ stumpwm_desktop.item ];
       environment.systemPackages = [
-        cfg.package # FIXME: have emacs use different inferrior lisps
+        cfg.package
         pkgs.stumpwm_release_latest.stumpish
         stumpwm_desktop.item
         stumpwm_desktop.icons

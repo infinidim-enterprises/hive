@@ -12,11 +12,9 @@ in
   config = mkMerge [
     {
       home-manager.users.admin.imports =
-        # FIXME: nixd won't build on 24.05 cell.homeSuites.developer.default
-        # FIXME:(for admin user only!) ++ cell.homeSuites.wayland
         [
           cell.homeProfiles.security.gpg
-          # ../vod/home/gitconfig.nix # FIXME: for testing
+          # ../vod/home/gitconfig.nix # NOTE: for testing
           # cell.homeProfiles.pentester.traffic
         ];
     }

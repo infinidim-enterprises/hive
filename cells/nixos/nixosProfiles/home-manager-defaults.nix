@@ -2,10 +2,6 @@
 
 { config, lib, ... }:
 {
-  # NOTE: https://github.com/NixOS/nixpkgs/issues/5200
-  # https://github.com/rycee/home-manager/issues/1011
-  # REVIEW: candidate for removal!
-
   environment.loginShellInit = ''
     [ -r $HOME/.profile ] && . $HOME/.profile || true
   '';

@@ -48,12 +48,9 @@ in
     "org/mate/caja/preferences".confirm-trash = false;
     "org/mate/caja/preferences".default-folder-viewer = "list-view";
     "org/mate/caja/preferences".ctrl-tab-switch-tabs = true;
-
-    # FIXME: "org/gnome/system/wsdd".display-mode = "disabled";
   };
 
-  # NOTE: cliphist sucks, switched to copyQ
-  services.copyq.enable = true;
+  services.copyq.enable = true; # TODO: [copyq] add https://github.com/hluk/copyq-commands
   services.copyq.forceXWayland = false;
   systemd.user.services.copyq.Unit.After = [ "waybar.service" ];
 

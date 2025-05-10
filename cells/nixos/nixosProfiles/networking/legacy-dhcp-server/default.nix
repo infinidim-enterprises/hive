@@ -125,7 +125,6 @@ let
   defaultInterface = "lan";
   tftpIp = "10.11.1.254";
   getCfg = host: self.nixosConfigurations.${host}.config;
-  # FIXME: getIP = ip: head (splitString "/" ip);
   getIP = ip: "10.11.1." + (last (splitString "." (head (splitString "/" ip))));
   lanHosts = filter
     (host:
@@ -314,7 +313,7 @@ in
 
             {
               # NOTE: Bios / non-efi
-              # FIXME: Try with real hardware clients, the boot-file-name might need to be without protocol spec!
+              # NOTE: Try with real hardware clients, the boot-file-name might need to be without protocol spec!
               name = "Legacy";
               test = "member('BIOS') and not (member('iPXE') or member('iPXE_COMPAT'))";
               boot-file-name = "undionly.kpxe";

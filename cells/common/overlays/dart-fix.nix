@@ -1,4 +1,4 @@
-# FIXME: / NOTE: this is because of the overlay named 'sources'
+# NOTE: this is because of the overlay named 'sources'
 # the dart package doesn't load its own sources, since an attribute is already found
 { inputs, cell, ... }:
 final: prev: {

@@ -56,11 +56,8 @@ mkMerge [
             until nc -d -z ${sqlHostAddress} 5432;do echo 'waiting for sql server for 5 sec.' && sleep 5;done
           '';
 
-          # FIXME: test credentials!
           services.powerdns = {
             enable = true;
-            # default-soa-name=njk.local <- removed with upgrade
-            # FIXME: https://docs.powerdns.com/authoritative/settings.html#setting-default-soa-content
             extraConfig = ''
               local-address=${localAddress}
               webserver-allow-from=${lan.network}

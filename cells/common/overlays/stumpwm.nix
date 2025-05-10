@@ -179,7 +179,7 @@ let
 
       ### Sly stuff
       slynk
-      # FIXME: slynk-quicklisp
+      # ISSUE: slynk-quicklisp
       slynk-asdf
       slynk-named-readtables
       slynk-macrostep
@@ -279,12 +279,12 @@ let
   stumpwm-contrib =
     let
       broken = [
-        "swm-clim-message" # BUG: default-icons-tmpAAURSO1.fasl
-        "clim-mode-line" # BUG: default-icons-tmpAAURSO1.fasl
+        "swm-clim-message" # ISSUE: default-icons-tmpAAURSO1.fasl
+        "clim-mode-line" # ISSUE: default-icons-tmpAAURSO1.fasl
 
         "passwd" # NOTE: some lisp bugs
 
-        /* BUG:
+        /* ISSUE:
           ; There is no applicable method for the generic function
           ; #<STANDARD-GENERIC-FUNCTION STUMPWM::SCREEN-CURRENT-GROUP (1)>
           ; when called with arguments
@@ -297,9 +297,9 @@ let
         "debian" # NOTE: because this is not debian
         "stumpish" # NOTE: stumpish is a shell-script and it's being installed separately
 
-        "screenshot" # BUG: BUILD FAILED: The name "STUMPWM" does not designate any package.
+        "screenshot" # ISSUE: BUILD FAILED: The name "STUMPWM" does not designate any package.
 
-        /* BUG:
+        /* ISSUE:
           ; caught ERROR:
           ;   (during macroexpansion of (AUTO-DEFINE-SURFRAW-COMMANDS-FROM-ELVIS-LIST))
           ;   The function SURFRAW::SURFRAW-ELVIS-LIST is undefined.

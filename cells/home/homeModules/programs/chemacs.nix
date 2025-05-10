@@ -145,7 +145,7 @@ in
         let
           elProfiles =
             map
-              # FIXME: emacsclient with correct --server string  and onCfgChangePerFile onChnage bin/doom
+              # TODO: emacsclient with correct --server string  and onCfgChangePerFile onChnage bin/doom
               (p:
                 ''
                   ("${p}" . ((user-emacs-directory . "${xdg.dataHome}/chemacs/${p}")
@@ -225,7 +225,6 @@ in
       # systemd.user.services.emacs.Unit.ConditionPathExistsGlob = "${xdg.configHome}/chemacs/${defaultProfile}/init.el";
       # systemd.user.services.emacs.Unit.After = [ "emacs-ready.service" ];
 
-      # FIXME: systemd.user.services.emacs.Unit.ConditionPathExists = "${xdg.configHome}/chemacs/${defaultProfile}/init.el";
       systemd.user.services.emacs.Service.TimeoutStartSec = 300;
       systemd.user.services.emacs.Service.ExecStartPre = mkIf (! isNull cfg.defaultProfile.updateCmd)
         (

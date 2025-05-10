@@ -23,7 +23,7 @@ mkMerge [
     networking.usePredictableInterfaceNames = mkDefault true;
     networking.resolvconf.dnsSingleRequest = true;
 
-    # services.resolved.dnssec = "false"; # FIXME: properly handle dnssec
+    # services.resolved.dnssec = "false"; # TODO: properly handle dnssec
     systemd.network = {
       enable = true;
       wait-online.enable = mkDefault false;
@@ -221,7 +221,7 @@ mkMerge [
   })
 
   (mkIf config.networking.networkmanager.enable {
-    # FIXME: systemd.services.domainname.after = [ "NetworkManager.service" ];
+    # TODO: systemd.services.domainname.after = [ "NetworkManager.service" ];
 
     # systemd.network.wait-online.anyInterface = true;
     systemd.network.wait-online.enable = false;
@@ -269,7 +269,7 @@ mkMerge [
 
     networking.wireless.userControlled.enable = true;
     networking.wireless.environmentFile = "/run/secrets/wifi_eadrax.env";
-    # FIXME: re-create groups networking.wireless.userControlled.group = "network";
+    # TODO: re-create groups networking.wireless.userControlled.group = "network";
     networking.wireless.networks = {
       # "EadraxHB".psk = "@PSK_EADRAX@";
       # "EadraxHB".priority = 9;

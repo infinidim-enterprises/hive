@@ -80,7 +80,7 @@ mkMerge [
 
     programs.vscode.extensions = with pkgs.vscode-extensions; [
       nix-ide
-      # FIXME: [login issues] codium
+      # ISSUE: [login issues] codium
     ];
   })
 
@@ -91,7 +91,7 @@ mkMerge [
       dconf2nix
       nix-bundle
       nix-diff
-      # FIXME: nix-du
+      nix-du
       nix-index
       nix-info
       # nix-plugins doesn't build with currently latest nix 2.6
@@ -101,11 +101,9 @@ mkMerge [
       nix-prefetch-docker
       nix-script
       nix-template
-      # FIXME: nix-template-rpm
+      nix-template
       dpkg
-      # nix-top # unmaintained and dropped from nixpkgs
       nix-tree
-      # nix-universal-prefetch # unmaintained and dropped from nixpkgs
       nix-update
       nix-update-source
       nixbang

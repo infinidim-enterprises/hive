@@ -11,7 +11,7 @@ in
   # console and X rotation upon sensor position.
   # "fbcon=rotate:3" <- for chuwi air10
 
-  # FIXME: newer kernels have an old bug with backlight not being detected/adjustable!
+  # NOTE: newer kernels have an old bug with backlight not being detected/adjustable!
   # Option "Backlight" "string"
   # For my HKC displays, this might help detect initial resolution properly
   # Option "CustomEDID" "string"

@@ -28,7 +28,6 @@ in
     staticHostMap = { "10.22.1.1" = [ "0.njk.li:65242" "192.168.8.1:65242" ]; };
     lighthouses = [ "10.22.1.1" ];
     listen.host = "0.0.0.0";
-    # FIXME: opensnitch integration for system rules, same thing as nfs
     listen.port = 65242;
     firewall.outbound = [{ port = "any"; proto = "any"; host = "any"; }];
     firewall.inbound = [{ port = "any"; proto = "any"; host = "any"; }];

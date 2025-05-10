@@ -21,7 +21,7 @@
       stumpwm:*timeout-frame-indicator-wait*  1
       stumpwm:*suppress-frame-indicator*      t
       stumpwm:*startup-message*               nil
-      stumpwm:*mouse-focus-policy*            :click ;; BUG: https://github.com/stumpwm/stumpwm/issues/252
+      stumpwm:*mouse-focus-policy*            :click
       stumpwm:*root-click-focuses-frame*      nil
       stumpwm::*grab-pointer-foreground*       (xlib:make-color :red 1.00 :green 0.85 :blue 0.00)
       stumpwm::*grab-pointer-background*       (lookup-color (current-screen) "DeepSkyBlue")
