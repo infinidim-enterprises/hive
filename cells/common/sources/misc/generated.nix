@@ -17,17 +17,17 @@
   };
   adguard-filters_adguardteam = {
     pname = "adguard-filters_adguardteam";
-    version = "6fadcc7ea7a9749546241a0bd135c8d8ea2d4b69";
+    version = "b5acc69c5d23ee33cec55de924d805f5771e9d73";
     src = fetchgit {
       url = "https://github.com/AdguardTeam/AdguardFilters";
-      rev = "6fadcc7ea7a9749546241a0bd135c8d8ea2d4b69";
+      rev = "b5acc69c5d23ee33cec55de924d805f5771e9d73";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-TYMr15QI5WQKxu7rWE+PJT1D4aPFfovg8unBtsohJbs=";
+      sha256 = "sha256-fRkd29cSR4O9/2MCwGrUgZhkSPbhvghWVWP3JwZZx2w=";
     };
-    date = "2025-05-09";
+    date = "2025-05-10";
   };
   adguard-filters_romania = {
     pname = "adguard-filters_romania";
@@ -265,17 +265,17 @@
   };
   ipxe = {
     pname = "ipxe";
-    version = "8fe3c68b31f4ffd4cde367fec12db09468d1a1d6";
+    version = "f988ec09e01b54d21d1b1fa0e2b3121d926ed7df";
     src = fetchgit {
       url = "https://github.com/ipxe/ipxe";
-      rev = "8fe3c68b31f4ffd4cde367fec12db09468d1a1d6";
+      rev = "f988ec09e01b54d21d1b1fa0e2b3121d926ed7df";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-MZiFIQc5qYHGX/0iNNyOhvN0NbP4/r66CVCrxDaPfhw=";
+      sha256 = "sha256-WPjBI9pj01tinAnXbw1ayMl2RvvT6UoJbkrN9O2bUzM=";
     };
-    date = "2025-05-08";
+    date = "2025-05-09";
   };
   iterable-io = {
     pname = "iterable-io";
