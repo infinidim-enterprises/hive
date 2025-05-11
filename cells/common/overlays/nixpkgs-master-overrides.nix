@@ -3,12 +3,13 @@ final: prev:
 let
   inherit (inputs.nixpkgs-lib.lib // builtins)
     filterAttrs
-    # mapAttrs
     hasPrefix;
+
   nixpkgs-master = import inputs.nixpkgs-master {
     inherit (inputs.nixpkgs) system;
     config.allowUnfree = true;
   };
+
   hyprland-pkgs =
     {
       inherit
@@ -21,7 +22,9 @@ let
         xwayland;
     } // filterAttrs (n: _: hasPrefix "hypr" n) nixpkgs-master;
 in
+
 hyprland-pkgs //
+
 {
   inherit
     (nixpkgs-master)
@@ -33,16 +36,21 @@ hyprland-pkgs //
     ###
     formats
 
-    copyq
-
     gimp3-with-plugins
     freecad
 
     aider-chat;
 } //
+
 {
   kdeconnect-kde-recent = nixpkgs-master.kdePackages.kdeconnect-kde;
+  copyq = prev.copyq.overrideAttrs (oldAttrs: {
+    inherit (nixpkgs-master.copyq) src version;
+    nativeBuildInputs = oldAttrs.nativeBuildInputs ++ [ prev.pkg-config ];
+    patches = [ ];
+  });
 }
+
 # //
 # {
 #   hyprlandCustom = mapAttrs

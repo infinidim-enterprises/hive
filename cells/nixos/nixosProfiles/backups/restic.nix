@@ -1,6 +1,6 @@
 { inputs, cell, ... }:
 
-{ user, extraDirs ? [ ], ... }:
+{ user, extraDirs ? [ ], OnCalendar ? "*-*-* 0/8:00:00", ... }:
 
 { config, lib, ... }:
 
@@ -38,8 +38,11 @@ in
     inherit paths;
     initialize = true;
     inhibitsSleep = true;
-    timerConfig.OnCalendar = "hourly";
-    timerConfig.Persistent = true;
+    timerConfig = {
+      # NOTE: defaults to every 8 hours, otherwise bandwidth limit exceeds on some rclone remotes
+      inherit OnCalendar;
+      Persistent = true;
+    };
     extraBackupArgs = [
       "--compression max"
       "--no-cache"
