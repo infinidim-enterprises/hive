@@ -5,6 +5,10 @@ fetch.github = "atuinsh/atuin"
 extract = ["Cargo.lock"]
 # passthru = { cargoSha256 = "0000000000000000000000000000000000000000000000000000" }
 
+[wofi-pass]
+src.git = "https://github.com/njkli/wofi-pass"
+fetch.git = "https://github.com/njkli/wofi-pass"
+
 [spaceship-prompt]
 # Spaceship is a minimalistic, powerful and extremely customizable Zsh prompt
 src.git = "https://github.com/spaceship-prompt/spaceship-prompt"

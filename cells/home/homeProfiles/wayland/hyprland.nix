@@ -7,21 +7,52 @@ let
     concatStringsSep
     splitString
     fileContents
+    hasPrefix
+    mapAttrsToList
+    filterAttrs
     tail;
-  cursorsize =
-    if config.gtk.enable && (isInt config.gtk.cursorTheme.size)
-    then toString config.gtk.cursorTheme.size
-    else "24";
+
+  env = (mapAttrsToList
+    (n: v: "${n},${toString v}")
+    (filterAttrs (n: _: !hasPrefix "XDG_" n) config.home.sessionVariables)) ++
+  [
+    "WLR_XWAYLAND,${pkgs.xwayland}/bin/Xwayland"
+    "GDK_BACKEND,wayland,x11,*"
+    "QT_QPA_PLATFORM,wayland;xcb"
+    "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
+    "SDL_VIDEODRIVER,wayland"
+    "CLUTTER_BACKEND,wayland"
+  ];
+
+  # cursorsize =
+  #   if config.gtk.enable && (isInt config.gtk.cursorTheme.size)
+  #   then toString config.gtk.cursorTheme.size
+  #   else "24";
+
   remove_shebang = txt: concatStringsSep "\n" (tail (splitString "\n" txt));
+
   focus_monitor = pkgs.writeShellApplication {
     name = "focus_monitor";
     runtimeInputs = with pkgs; [ jq hyprland ];
     text = remove_shebang (fileContents ./focus_monitor.sh);
   };
+
   volume_control = pkgs.writeShellApplication {
     name = "volume_control";
     runtimeInputs = with pkgs; [ hyprland gawk pulseaudio gnugrep ];
     text = remove_shebang (fileContents ./volume_control.sh);
+  };
+
+  wofi-pass-browser = pkgs.writeShellApplication {
+    name = "wofi-pass-browser";
+    runtimeInputs = with pkgs; [
+      python3Packages.tldextract
+      wofi-pass
+      hyprland
+      systemd
+      jq
+    ];
+    text = remove_shebang (fileContents ./wofi-pass-browser.sh);
   };
 
 in
@@ -35,6 +66,7 @@ in
     mate.caja-with-extensions
     focus_monitor
     volume_control
+    wofi-pass-browser
   ];
 
   xdg.mimeApps.defaultApplications = {
@@ -217,23 +249,12 @@ in
   wayland.windowManager.hyprland.settings = {
     # https://github.com/SolDoesTech/HyprV4 - bunch of examples
     # exec-once = [ "hdrop -b $terminal" ]; # NOTE: conflicts with hy3
+    inherit env;
 
     ecosystem.no_update_news = true;
     ecosystem.no_donation_nag = true;
-
+    #  ${lib.getBin pkgs.dbus}/bin/dbus-update-activation-environment --systemd --all
     exec-once = [ "brightnessctl set 30%" ];
-
-    env = [
-      "XCURSOR_THEME,${config.gtk.cursorTheme.name}"
-      "XCURSOR_SIZE,${cursorsize}"
-      # "HYPRCURSOR_SIZE,${cursorsize}"
-      "WLR_XWAYLAND,${pkgs.xwayland}/bin/Xwayland"
-      "GDK_BACKEND,wayland,x11,*"
-      "QT_QPA_PLATFORM,wayland;xcb"
-      "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
-      "SDL_VIDEODRIVER,wayland"
-      "CLUTTER_BACKEND,wayland"
-    ];
 
     xwayland.force_zero_scaling = true;
     # xwayland:use_nearest_neighbor
@@ -621,6 +642,15 @@ in
     bind = , i, exec, hyprprop | wl-copy
     bind = , i, submap, reset
 
+    bind = SHIFT, i, exec, env | wl-copy
+    bind = SHIFT, i, submap, reset
+
+    bind = , p, exec, wofi-pass-browser
+    bind = , p, submap, reset
+
+    bind = SHIFT, p, exec, ${pkgs.wofi-pass}/bin/wofi-pass
+    bind = SHIFT, p, submap, reset
+
     bind = , f, exec, $fileManager
     bind = , f, submap, reset
 
@@ -653,7 +683,8 @@ in
     bind = Control_L, g, submap, reset
     submap = reset
   '';
-  #   bind = $masterMod, apostrophe, submap, clipboard
+
+  # bind = $masterMod, apostrophe, submap, clipboard
   # submap = clipboard
   # submap = reset
 }

@@ -17,7 +17,7 @@ let
 
   PASSWORD_STORE_KEY = concatStringsSep " " [
     # NOTE: PASSWORD_STORE_KEY can use multiple fingerprints separated by a whitespace
-    "E3C4C12EDF24CA20F167CC7EE203A151BB3FD1AE" # yubikey
+    # NOTE: [no longer using it] "E3C4C12EDF24CA20F167CC7EE203A151BB3FD1AE" # yubikey
     "382A371CFB344166F69076BE8587AB791475DF76" # nitrokey
   ];
 in

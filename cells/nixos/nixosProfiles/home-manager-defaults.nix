@@ -2,9 +2,10 @@
 
 { config, lib, ... }:
 {
-  environment.loginShellInit = ''
-    [ -r $HOME/.profile ] && . $HOME/.profile || true
-  '';
+  # NOTE: at some point NixOS started doing it
+  # environment.loginShellInit = ''
+  #   [ -r $HOME/.profile ] && . $HOME/.profile || true
+  # '';
 
   programs.fuse.userAllowOther = true; # NOTE: needed for impermanence in home-manager
   programs.command-not-found.enable = true; # to use the home-manager version

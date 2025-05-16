@@ -113,6 +113,20 @@
     };
     date = "2025-04-23";
   };
+  wofi-pass = {
+    pname = "wofi-pass";
+    version = "aa29a8a6278589ea441bc38b8e561f5feee44dd1";
+    src = fetchgit {
+      url = "https://github.com/njkli/wofi-pass";
+      rev = "aa29a8a6278589ea441bc38b8e561f5feee44dd1";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-Z2eHs8APoKYxS73l68M9XeguatSgAcyKTUjPTVksUQM=";
+    };
+    date = "2025-05-16";
+  };
   zsh-plugin_any-nix-shell = {
     pname = "zsh-plugin_any-nix-shell";
     version = "b0223ee9cd187853b44e74cd8ebd418a14651eaa";
@@ -193,17 +207,17 @@
   };
   zsh-plugin_oh-my-zsh = {
     pname = "zsh-plugin_oh-my-zsh";
-    version = "62afbdebb96bf91c044a92b75d86f85a67da67a7";
+    version = "c95509ebfdbcc3c497f12697cfd2717bcb0a528b";
     src = fetchgit {
       url = "https://github.com/robbyrussell/oh-my-zsh";
-      rev = "62afbdebb96bf91c044a92b75d86f85a67da67a7";
+      rev = "c95509ebfdbcc3c497f12697cfd2717bcb0a528b";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-7h3yXbQ/1KiI4nwtuKghtqxi7jY3LfzyVXX19HY9dbg=";
+      sha256 = "sha256-abhfCm/7L866nLbucPNHfM5xLU7CYfb8fbK6auUOw3Q=";
     };
-    date = "2025-05-06";
+    date = "2025-05-14";
   };
   zsh-plugin_tipz = {
     pname = "zsh-plugin_tipz";

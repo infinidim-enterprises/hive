@@ -18,6 +18,7 @@ lib.mkMerge [
       # "maekfnoeejhpjfkfmdlckioggdcdofpg" # Adblocker for Youtube™
       "bgnkhhnnamicmpeenaelnjfhikgbkllg" # AdGuard AdBlocker
       # "jappgmhllahigjolfpgbjdfhciabdnde" # Link Map - Professional Tab Manager
+      "ignpacbgnbnkaiooknalneoeladjnfgb" # URL in title - required for password managers
       "edacconmaakjimmfgnblocblbcdcpbko" # session-buddy
       # "jpefmbpcbebpjpmelobfakahfdcgcmkl" # adblock for youtube
       # "kbbdabhdfibnancpjfhlkhafgdilcnji" # Screenity

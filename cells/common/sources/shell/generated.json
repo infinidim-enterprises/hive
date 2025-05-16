@@ -193,6 +193,26 @@
         },
         "version": "40ec1e7f94cf9987ed424fb58f7d7a66b10e4f38"
     },
+    "wofi-pass": {
+        "cargoLocks": null,
+        "date": "2025-05-16",
+        "extract": null,
+        "name": "wofi-pass",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "aa29a8a6278589ea441bc38b8e561f5feee44dd1",
+            "sha256": "sha256-Z2eHs8APoKYxS73l68M9XeguatSgAcyKTUjPTVksUQM=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/njkli/wofi-pass"
+        },
+        "version": "aa29a8a6278589ea441bc38b8e561f5feee44dd1"
+    },
     "zsh-plugin_any-nix-shell": {
         "cargoLocks": null,
         "date": "2024-09-02",
@@ -318,7 +338,7 @@
     },
     "zsh-plugin_oh-my-zsh": {
         "cargoLocks": null,
-        "date": "2025-05-06",
+        "date": "2025-05-14",
         "extract": null,
         "name": "zsh-plugin_oh-my-zsh",
         "passthru": null,
@@ -328,13 +348,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "62afbdebb96bf91c044a92b75d86f85a67da67a7",
-            "sha256": "sha256-7h3yXbQ/1KiI4nwtuKghtqxi7jY3LfzyVXX19HY9dbg=",
+            "rev": "c95509ebfdbcc3c497f12697cfd2717bcb0a528b",
+            "sha256": "sha256-abhfCm/7L866nLbucPNHfM5xLU7CYfb8fbK6auUOw3Q=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/robbyrussell/oh-my-zsh"
         },
-        "version": "62afbdebb96bf91c044a92b75d86f85a67da67a7"
+        "version": "c95509ebfdbcc3c497f12697cfd2717bcb0a528b"
     },
     "zsh-plugin_tipz": {
         "cargoLocks": null,

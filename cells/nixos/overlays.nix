@@ -24,6 +24,7 @@ rec {
     # dart-fix
     base16-schemes
     # linux-firmware-fix
+    wofi-pass
     sources
     python
   ];
