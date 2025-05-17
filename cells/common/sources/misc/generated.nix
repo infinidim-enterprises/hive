@@ -17,17 +17,17 @@
   };
   adguard-filters_adguardteam = {
     pname = "adguard-filters_adguardteam";
-    version = "6fadcc7ea7a9749546241a0bd135c8d8ea2d4b69";
+    version = "62ec6668d701c92b4d8e46096e5dcaada4536887";
     src = fetchgit {
       url = "https://github.com/AdguardTeam/AdguardFilters";
-      rev = "6fadcc7ea7a9749546241a0bd135c8d8ea2d4b69";
+      rev = "62ec6668d701c92b4d8e46096e5dcaada4536887";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-TYMr15QI5WQKxu7rWE+PJT1D4aPFfovg8unBtsohJbs=";
+      sha256 = "sha256-MMZaygrROlXrPHeUSwAKV+buLNXt6LW5MG6KUJ6GaL8=";
     };
-    date = "2025-05-09";
+    date = "2025-05-16";
   };
   adguard-filters_romania = {
     pname = "adguard-filters_romania";
@@ -45,17 +45,17 @@
   };
   base16-schemes = {
     pname = "base16-schemes";
-    version = "28c26a621123ad4ebd5bbfb34ab39421c0144bdd";
+    version = "8c00a361a99b6d356db9572240053a3f8716ea68";
     src = fetchgit {
       url = "https://github.com/tinted-theming/schemes";
-      rev = "28c26a621123ad4ebd5bbfb34ab39421c0144bdd";
+      rev = "8c00a361a99b6d356db9572240053a3f8716ea68";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-Fg+rdGs5FAgfkYNCs74lnl8vkQmiZVdBsziyPhVqrlY=";
+      sha256 = "sha256-pHfbM7mF2mF1beycGAmA+7Jt+vmJ2reU7BvRfKURyaY=";
     };
-    date = "2025-04-18";
+    date = "2025-05-14";
   };
   base16-solarized-scheme = {
     pname = "base16-solarized-scheme";
@@ -265,17 +265,17 @@
   };
   ipxe = {
     pname = "ipxe";
-    version = "8fe3c68b31f4ffd4cde367fec12db09468d1a1d6";
+    version = "83449702e09236dccebd4913d5823d5e00b643e0";
     src = fetchgit {
       url = "https://github.com/ipxe/ipxe";
-      rev = "8fe3c68b31f4ffd4cde367fec12db09468d1a1d6";
+      rev = "83449702e09236dccebd4913d5823d5e00b643e0";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-MZiFIQc5qYHGX/0iNNyOhvN0NbP4/r66CVCrxDaPfhw=";
+      sha256 = "sha256-od4ZX0Tgc0S/b73jIvPmCEHNijlKDYJPjmOhoRmyNSM=";
     };
-    date = "2025-05-08";
+    date = "2025-05-16";
   };
   iterable-io = {
     pname = "iterable-io";
@@ -287,13 +287,13 @@
   };
   langchain = {
     pname = "langchain";
-    version = "langchain-core==0.3.59";
+    version = "langchain-core==0.3.60";
     src = fetchFromGitHub {
       owner = "langchain-ai";
       repo = "langchain";
-      rev = "langchain-core==0.3.59";
+      rev = "langchain-core==0.3.60";
       fetchSubmodules = false;
-      sha256 = "sha256-qfNt6rH2nHIFfzqZCTsIhWfXntRXvSKnzfQrNS3LWcs=";
+      sha256 = "sha256-K/dQb1+mwcN6drp8pKy8Qt9aFxffJSgHJ2cvEw6Mx8s=";
     };
   };
   lidarr = {
@@ -542,17 +542,17 @@
   };
   themix-gui = {
     pname = "themix-gui";
-    version = "51c21b896212c9506656e22c565467101e96748a";
+    version = "5c987f303a2b6b2a9b6a4c68d4430df89978af3f";
     src = fetchgit {
       url = "https://github.com/themix-project/themix-gui";
-      rev = "51c21b896212c9506656e22c565467101e96748a";
+      rev = "5c987f303a2b6b2a9b6a4c68d4430df89978af3f";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-/62qye9XTKlr0Uej9ZN4db+N8RZssHNl4Ty9ZkVkIj0=";
+      sha256 = "sha256-NU56yDBD1x2CP92LrQZzgqz6jV0NRESKOYQh8atNzk8=";
     };
-    date = "2025-04-02";
+    date = "2025-05-12";
   };
   transmissionic = {
     pname = "transmissionic";

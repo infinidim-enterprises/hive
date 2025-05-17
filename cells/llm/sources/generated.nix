@@ -3,28 +3,28 @@
 {
   aider-chat = {
     pname = "aider-chat";
-    version = "v0.82.0";
+    version = "v0.83.0";
     src = fetchFromGitHub {
       owner = "Aider-AI";
       repo = "aider";
-      rev = "v0.82.0";
+      rev = "v0.83.0";
       fetchSubmodules = false;
-      sha256 = "sha256-UlPYUYAYDhPPgoIvEWRLYjCe3iQ2ltH5mT3GkX+IrGI=";
+      sha256 = "sha256-hXKrjo/9Y3WLgluwEK2q123QcfBVA0ByEKaq8Rtd70E=";
     };
   };
   dashscope = {
     pname = "dashscope";
-    version = "e9a27c11932f828f7cdb3eb7c9af21377897dade";
+    version = "31d4ff04c5e21a562a5d34660d9c27553f70b5e9";
     src = fetchgit {
       url = "https://github.com/dashscope/dashscope-sdk-python";
-      rev = "e9a27c11932f828f7cdb3eb7c9af21377897dade";
+      rev = "31d4ff04c5e21a562a5d34660d9c27553f70b5e9";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-76FnXrW/SZtxYmQi/dFR0F4HEPl2thkb6PDEe9Ikwt4=";
+      sha256 = "sha256-XL5hJaLB/D2rQDegl5knmmkm/RckMO9eyJt46MUNqbc=";
     };
-    date = "2025-04-27";
+    date = "2025-05-14";
   };
   faiss-cpu = {
     pname = "faiss-cpu";
@@ -54,8 +54,8 @@
     version = "latest";
     src = dockerTools.pullImage {
       imageName = "lobehub/lobe-chat";
-      imageDigest = "sha256:d27484d7c858ec2b1d553851f332a7543c3affed5dc4b2aa2af695f4c26f587e";
-      sha256 = "sha256-gGWc3Pk8sTa3FnwXns9pg2QqMAb1ARrXuB5Z1pUKRu8=";
+      imageDigest = "sha256:b227b14a52d1994320ea6e89355385efb11644cb647d8ad68f9a0928b4805f1f";
+      sha256 = "sha256-7qq0bt1zVn/9TGs5VH8Xy/4odnP6cMDb6D7VxiuPfCc=";
       finalImageTag = "latest";
       os = "linux";
       arch = "amd64";
@@ -91,7 +91,7 @@
   };
   semantic-kernel = {
     pname = "semantic-kernel";
-    version = "1.29.0";
+    version = "1.30.0";
     src = fetchurl {
       url = "https://files.pythonhosted.org/packages/fd/02/efc002c427250355d8fccd7ffef04dc8fca98c049f145c776447b1eb392f/semantic_kernel-1.28.1.tar.gz";
       sha256 = "sha256-K8/hNPdSUfXCBtQQev2GDcsuwjB3zG1qMTDrb017qFc=";
