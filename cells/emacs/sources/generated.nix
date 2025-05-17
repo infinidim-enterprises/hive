@@ -3,13 +3,13 @@
 {
   aider = {
     pname = "aider";
-    version = "v0.8.4";
+    version = "v0.9.0";
     src = fetchFromGitHub {
       owner = "tninja";
       repo = "aider.el";
-      rev = "v0.8.4";
+      rev = "v0.9.0";
       fetchSubmodules = false;
-      sha256 = "sha256-i8Q1ZTrONd7AgP/pgZjta6bntJzlzSnpWpM8yM8Y6x4=";
+      sha256 = "sha256-3ZROXUEvvk8pd5wSXKwomPGleiR+VfMJYpmHbs3tSmQ=";
     };
   };
   all-the-icons = {
