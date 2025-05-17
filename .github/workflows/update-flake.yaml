@@ -44,7 +44,7 @@ jobs:
 
         '
     - name: Update flake.lock
-      uses: DeterminateSystems/update-flake-lock@v24
+      uses: DeterminateSystems/update-flake-lock@v25
       with:
         branch: auto/upgrade-dependencies
         commit-msg: 'deps(flake-lock): Updated flake.lock'
