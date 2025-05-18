@@ -1,0 +1,127 @@
+{
+    "contrib": {
+        "cargoLocks": null,
+        "date": "2025-05-18",
+        "extract": null,
+        "name": "contrib",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "910dad4c5755c1735d30da10c96d9086aa2a608d",
+            "sha256": "sha256-PMQoXbfmWPuXnF8EaWqRmvTvl7+WFUrDVgufFRPgOM4=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/hyprwm/contrib"
+        },
+        "version": "910dad4c5755c1735d30da10c96d9086aa2a608d"
+    },
+    "hy3": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "hy3",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "outfoxxed",
+            "repo": "hy3",
+            "rev": "hl0.49.0",
+            "sha256": "sha256-dYxkdbg6yj8HhuBkCmklMQVR17N7P32R8ir7b7oNxm4=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "hl0.49.0"
+    },
+    "hypridle": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "hypridle",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "hyprwm",
+            "repo": "hypridle",
+            "rev": "v0.1.6",
+            "sha256": "sha256-uChAGmceKS9F9jqs1xb58BLTVZLF+sFU00MWDEVfYLg=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v0.1.6"
+    },
+    "hyprland-plugins": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "hyprland-plugins",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "hyprwm",
+            "repo": "hyprland-plugins",
+            "rev": "v0.49.0",
+            "sha256": "sha256-GpsLyK/U05q7QnyFIWrnGS2loVyjPZByTtPitwu9UNw=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v0.49.0"
+    },
+    "hyprlock": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "hyprlock",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "hyprwm",
+            "repo": "hyprlock",
+            "rev": "v0.8.2",
+            "sha256": "sha256-9amK5DEpueAD+aobmBmjbV+C16RO7lcDOdf5ucJtNvM=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v0.8.2"
+    },
+    "hyprpicker": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "hyprpicker",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": true,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "hyprwm",
+            "repo": "hyprpicker",
+            "rev": "v0.4.5",
+            "sha256": "sha256-ta3eCdXyKTVKhCU2/zC+XljU1Tq5huIyuFBtzOcUU4c=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v0.4.5"
+    }
+}

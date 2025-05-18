@@ -1,39 +1,41 @@
 { inputs, cell, ... }:
 final: prev:
 let
-  inherit (inputs.nixpkgs-lib.lib // builtins)
-    filterAttrs
-    hasPrefix;
+  # inherit (inputs.nixpkgs-lib.lib // builtins)
+  #   mapAttrs
+  #   filterAttrs
+  #   isDerivation
+  #   hasPrefix;
 
   nixpkgs-master = import inputs.nixpkgs-master {
     inherit (inputs.nixpkgs) system;
     config.allowUnfree = true;
   };
 
-  hyprland-pkgs =
-    {
-      inherit
-        (nixpkgs-master)
-        aquamarine
-        xdg-desktop-portal-hyprland
-        weston
-        wlroots
-        sway
-        xwayland;
-    } // filterAttrs (n: _: hasPrefix "hypr" n) nixpkgs-master;
+  # buildWithNewerSrc = attrs: mapAttrs
+  #   (n: v: prev.${n}.overrideAttrs (_: {
+  #     inherit (v) pname version src;
+  #   }))
+  #   (filterAttrs (_: v: isDerivation v) attrs);
+
+  # hyprland-pkgs =
+  #   {
+  #     inherit
+  #       (nixpkgs-master)
+  #       aquamarine
+  #       xdg-desktop-portal-hyprland
+  #       weston
+  #       wlroots
+  #       sway
+  #       xwayland;
+  #   } // filterAttrs (n: _: hasPrefix "hypr" n) nixpkgs-master;
 in
 
-hyprland-pkgs //
+# hyprland-pkgs //
 
 {
   inherit
     (nixpkgs-master)
-    # ISSUE: https://github.com/NixOS/nixpkgs/issues/368379#issuecomment-2563463801
-    # also related: https://github.com/hyprwm/Hyprland/issues/6967
-    # NOTE: latest hyprland wants at least mesa 24.3
-    ###
-    mesa
-    ###
     formats
 
     gimp3-with-plugins
@@ -57,5 +59,13 @@ hyprland-pkgs //
 #     (n: v: prev.${n}.overrideAttrs (_: {
 #       inherit (v) pname version src;
 #     }))
-#     hyprland-pkgs;
+#     (filterAttrs (_: v: isDerivation v) hyprland-pkgs);
+# }
+
+#   //
+# {
+#   hyprland = inputs.hyprland-hy3.inputs.hyprland.packages.${inputs.nixpkgs.system}.default;
+#   hyprlandPlugins = prev.hyprlandPlugins // {
+#     hy3 = inputs.hyprland-hy3.packages.default;
+#   };
 # }

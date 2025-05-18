@@ -1,0 +1,29 @@
+[hy3]
+src.use_latest_tag = true
+src.github_tag = "outfoxxed/hy3"
+fetch.github = "outfoxxed/hy3"
+
+[hyprlock]
+src.use_latest_tag = true
+src.github_tag = "hyprwm/hyprlock"
+fetch.github = "hyprwm/hyprlock"
+
+[hypridle]
+src.use_latest_tag = true
+src.github_tag = "hyprwm/hypridle"
+fetch.github = "hyprwm/hypridle"
+
+[hyprland-plugins]
+src.use_latest_tag = true
+src.github_tag = "hyprwm/hyprland-plugins"
+fetch.github = "hyprwm/hyprland-plugins"
+
+[hyprpicker]
+src.use_latest_tag = true
+src.github_tag = "hyprwm/hyprpicker"
+fetch.github = "hyprwm/hyprpicker"
+git.fetchSubmodules = true
+
+[contrib]
+src.git = "https://github.com/hyprwm/contrib"
+fetch.git = "https://github.com/hyprwm/contrib"

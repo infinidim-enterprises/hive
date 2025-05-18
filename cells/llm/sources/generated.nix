@@ -3,28 +3,28 @@
 {
   aider-chat = {
     pname = "aider-chat";
-    version = "v0.82.0";
+    version = "v0.83.0";
     src = fetchFromGitHub {
       owner = "Aider-AI";
       repo = "aider";
-      rev = "v0.82.0";
+      rev = "v0.83.0";
       fetchSubmodules = false;
-      sha256 = "sha256-UlPYUYAYDhPPgoIvEWRLYjCe3iQ2ltH5mT3GkX+IrGI=";
+      sha256 = "sha256-hXKrjo/9Y3WLgluwEK2q123QcfBVA0ByEKaq8Rtd70E=";
     };
   };
   dashscope = {
     pname = "dashscope";
-    version = "e9a27c11932f828f7cdb3eb7c9af21377897dade";
+    version = "31d4ff04c5e21a562a5d34660d9c27553f70b5e9";
     src = fetchgit {
       url = "https://github.com/dashscope/dashscope-sdk-python";
-      rev = "e9a27c11932f828f7cdb3eb7c9af21377897dade";
+      rev = "31d4ff04c5e21a562a5d34660d9c27553f70b5e9";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-76FnXrW/SZtxYmQi/dFR0F4HEPl2thkb6PDEe9Ikwt4=";
+      sha256 = "sha256-XL5hJaLB/D2rQDegl5knmmkm/RckMO9eyJt46MUNqbc=";
     };
-    date = "2025-04-27";
+    date = "2025-05-14";
   };
   faiss-cpu = {
     pname = "faiss-cpu";
@@ -91,7 +91,7 @@
   };
   semantic-kernel = {
     pname = "semantic-kernel";
-    version = "1.29.0";
+    version = "1.30.0";
     src = fetchurl {
       url = "https://files.pythonhosted.org/packages/fd/02/efc002c427250355d8fccd7ffef04dc8fca98c049f145c776447b1eb392f/semantic_kernel-1.28.1.tar.gz";
       sha256 = "sha256-K8/hNPdSUfXCBtQQev2GDcsuwjB3zG1qMTDrb017qFc=";

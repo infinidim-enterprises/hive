@@ -15,8 +15,9 @@ rec {
 
   base = with inputs.cells.common.overlays; [
     inputs.atuin.overlays.default
-    (final: prev: { atuin = prev.atuin.overrideAttrs (_: { version = "18.6.0"; }); })
-    inputs.nixd.overlays.default
+    (final: prev: { atuin = prev.atuin.overrideAttrs (_: { version = "18.6.1"; }); })
+    (final: prev: { inherit (inputs.nixd.packages) nixd; })
+    # inputs.nixd.overlays.default
     inputs.nix-filter.overlays.default
     nixpkgs-unstable-overrides
     nixpkgs-release-overrides
@@ -34,6 +35,7 @@ rec {
       numix-solarized-gtk-theme
       make-desktopitem
       masterpdfeditor # NOTE: required for 5.9.85
+      hyprland
       nyxt
       (final: prev:
         { sources = prev.sources // (final.callPackage ./sources/generated.nix { }); }
@@ -44,7 +46,7 @@ rec {
     inputs.waybar.overlays.default
     # inputs.hyprland.overlays.default
     # inputs.hyprland-plugins.overlays.default
-    inputs.hyprland-contrib.overlays.default
+    # inputs.hyprland-contrib.overlays.default
     # inputs.hyprland-hyprlock.overlays.default
     # inputs.hyprland-hypridle.overlays.default
     # inputs.hyprland-hyprpicker.overlays.default

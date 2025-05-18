@@ -20,6 +20,9 @@ lib.mkMerge [
       # "jappgmhllahigjolfpgbjdfhciabdnde" # Link Map - Professional Tab Manager
       "ignpacbgnbnkaiooknalneoeladjnfgb" # URL in title - required for password managers
       "edacconmaakjimmfgnblocblbcdcpbko" # session-buddy
+      #
+      # "naepdomgkenhinolocfifgehidddafch" # Browserpass
+      #
       # "jpefmbpcbebpjpmelobfakahfdcgcmkl" # adblock for youtube
       # "kbbdabhdfibnancpjfhlkhafgdilcnji" # Screenity
       # "kkkjlfejijcjgjllecmnejhogpbcigdc" # org-capture
