@@ -23,9 +23,11 @@ in
     onlyoffice-bin
     onlyoffice-bin_latest
 
-    gimp
-    gimpPlugins
-    gimp-with-plugins
+    # gimp
+    # gimpPlugins
+    # gimp-with-plugins
+
+    zenity
 
     libguestfs
     jekyll

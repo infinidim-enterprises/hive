@@ -19,9 +19,9 @@ rec {
     (final: prev: { inherit (inputs.nixd.packages) nixd; })
     # inputs.nixd.overlays.default
     inputs.nix-filter.overlays.default
+    nixpkgs-master-overrides
     nixpkgs-unstable-overrides
     nixpkgs-release-overrides
-    nixpkgs-master-overrides
     # dart-fix
     base16-schemes
     # linux-firmware-fix
@@ -35,8 +35,7 @@ rec {
       numix-solarized-gtk-theme
       make-desktopitem
       masterpdfeditor # NOTE: required for 5.9.85
-      hyprland
-      nyxt
+      # TODO: nyxt
       (final: prev:
         { sources = prev.sources // (final.callPackage ./sources/generated.nix { }); }
       )
@@ -44,23 +43,7 @@ rec {
 
   wayland = [
     inputs.waybar.overlays.default
-    # inputs.hyprland.overlays.default
-    # inputs.hyprland-plugins.overlays.default
-    # inputs.hyprland-contrib.overlays.default
-    # inputs.hyprland-hyprlock.overlays.default
-    # inputs.hyprland-hypridle.overlays.default
-    # inputs.hyprland-hyprpicker.overlays.default
-
-    # inputs.hyprland-hyprutils.overlays.default
-    # inputs.hyprland-hycov.overlays.default
-    # inputs.hyprland-xdg-desktop-portal.overlays.default
-
-    # (final: prev: {
-    #   hyprlandPlugins = prev.hyprlandPlugins // {
-    #     hy3 = inputs.hyprland-hy3.packages.${prev.system}.default;
-    #     virtual-desktops = inputs.hyprland-virtual-desktops.packages.${prev.system}.default;
-    #   };
-    # })
+    inputs.cells.common.overlays.hyprland
   ];
   /*
     mv "$tmp_dir/theme/gdm.css" "$tmp_dir/theme/original.css"

@@ -13,7 +13,7 @@ mkMerge [
       # FIXME; tdesktop
       # TODO: signald # Unofficial daemon for interacting with Signal
       signal-desktop
-      element-desktop
+      # element-desktop
       # vesktop # Discord with Vencord built-in
       linphone
       # baresip

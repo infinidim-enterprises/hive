@@ -169,7 +169,7 @@ mkMerge [
 
       # yubioath-desktop
       # yubioath-flutter
-      trezor-suite
+      # trezor-suite
       nitrokey-app
       ledger-live-desktop
     ];

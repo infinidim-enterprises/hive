@@ -49,7 +49,7 @@ in
     flameshot
 
     android-tools
-    libadwaita
+    # libadwaita
     vscode
 
     alejandra
@@ -87,8 +87,7 @@ in
 
     tailscale
     ffmpeg_5-full
-    openai-whisper-cpp
-    ;
+    openai-whisper-cpp;
 
   nvfetcher = inputs.nvfetcher.packages.default;
   ssh-to-pgp = inputs.sops-ssh-to-pgp.packages.default;

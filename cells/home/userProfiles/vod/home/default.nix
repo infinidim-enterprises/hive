@@ -27,7 +27,7 @@ in
     [
       ./ssh.nix
       ./waveterm.nix
-      ./ghostty.nix
+      # TODO: ./ghostty.nix
       ./gitconfig.nix
       ./emacs-unstraightened.nix
 
