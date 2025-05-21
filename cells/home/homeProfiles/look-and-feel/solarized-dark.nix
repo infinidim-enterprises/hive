@@ -122,6 +122,27 @@ mkMerge [
   (mkIf (IsDesktop && config.services.dunst.enable) {
     services.dunst.iconTheme.name = config.gtk.iconTheme.name;
     services.dunst.iconTheme.package = config.gtk.iconTheme.package;
+    services.dunst.settings = {
+      global.frame_color = "#839496";
+      global.background = "#002b36";
+      global.foreground = "#839496";
+
+      urgency_low.frame_color = "#859900";
+      urgency_low.background = "#002b36";
+      urgency_low.foreground = "#839496";
+      urgency_low.timeout = 4;
+
+      urgency_normal.frame_color = "#839496";
+      urgency_normal.background = "#002b36";
+      urgency_normal.foreground = "#839496";
+      urgency_normal.timeout = 6;
+
+      urgency_critical.frame_color = "#cb4b16";
+      urgency_critical.background = "#002b36";
+      urgency_critical.foreground = "#839496";
+      urgency_critical.timeout = 0;
+    };
+
   })
 
   (mkIf (IsDesktop && config.wayland.windowManager.hyprland.enable) {

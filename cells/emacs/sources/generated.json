@@ -55,12 +55,12 @@
             "name": null,
             "owner": "minad",
             "repo": "cape",
-            "rev": "2.0",
-            "sha256": "sha256-KYP26pKRrKAvujrwQ49PF65SWBp53x/b+t/lL1DyoHI=",
+            "rev": "2.1",
+            "sha256": "sha256-8BfMla3R8/q/ihId7PIOPv0iwkh/w3BgO1fPSqKYtEk=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "2.0"
+        "version": "2.1"
     },
     "chemacs": {
         "cargoLocks": null,

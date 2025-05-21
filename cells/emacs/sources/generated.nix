@@ -26,13 +26,13 @@
   };
   cape = {
     pname = "cape";
-    version = "2.0";
+    version = "2.1";
     src = fetchFromGitHub {
       owner = "minad";
       repo = "cape";
-      rev = "2.0";
+      rev = "2.1";
       fetchSubmodules = false;
-      sha256 = "sha256-KYP26pKRrKAvujrwQ49PF65SWBp53x/b+t/lL1DyoHI=";
+      sha256 = "sha256-8BfMla3R8/q/ihId7PIOPv0iwkh/w3BgO1fPSqKYtEk=";
     };
   };
   chemacs = {

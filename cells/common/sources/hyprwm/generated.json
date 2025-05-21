@@ -1,10 +1,34 @@
 {
+    "Hyprspace": {
+        "cargoLocks": null,
+        "date": "2025-05-18",
+        "extract": null,
+        "name": "Hyprspace",
+        "passthru": {
+            "flake": "true"
+        },
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "511d399120bdcafb43e57ca5ff35167c2bba6db8",
+            "sha256": "sha256-uDhXNURTJgQSpiaCgzqAizbblpcEWEB1WGWEqtCnLLM=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/KZDKM/Hyprspace"
+        },
+        "version": "511d399120bdcafb43e57ca5ff35167c2bba6db8"
+    },
     "contrib": {
         "cargoLocks": null,
         "date": "2025-05-18",
         "extract": null,
         "name": "contrib",
-        "passthru": null,
+        "passthru": {
+            "flake": "true"
+        },
         "pinned": false,
         "src": {
             "deepClone": false,
@@ -19,12 +43,36 @@
         },
         "version": "910dad4c5755c1735d30da10c96d9086aa2a608d"
     },
+    "grim-hyprland": {
+        "cargoLocks": null,
+        "date": "2025-03-11",
+        "extract": null,
+        "name": "grim-hyprland",
+        "passthru": {
+            "flake": "true"
+        },
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "4a3d6f5b87b01e92c404b9393b79057b85f58c60",
+            "sha256": "sha256-4m2QFT8mY6CM3YSebMJhd/kJWaRxTYOS/nvAs2TaIQs=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/eriedaberrie/grim-hyprland"
+        },
+        "version": "4a3d6f5b87b01e92c404b9393b79057b85f58c60"
+    },
     "hy3": {
         "cargoLocks": null,
         "date": null,
         "extract": null,
         "name": "hy3",
-        "passthru": null,
+        "passthru": {
+            "flake": "true"
+        },
         "pinned": false,
         "src": {
             "deepClone": false,
@@ -45,7 +93,9 @@
         "date": null,
         "extract": null,
         "name": "hypridle",
-        "passthru": null,
+        "passthru": {
+            "flake": "true"
+        },
         "pinned": false,
         "src": {
             "deepClone": false,
@@ -66,7 +116,9 @@
         "date": null,
         "extract": null,
         "name": "hyprland-plugins",
-        "passthru": null,
+        "passthru": {
+            "flake": "true"
+        },
         "pinned": false,
         "src": {
             "deepClone": false,
@@ -87,7 +139,9 @@
         "date": null,
         "extract": null,
         "name": "hyprlock",
-        "passthru": null,
+        "passthru": {
+            "flake": "true"
+        },
         "pinned": false,
         "src": {
             "deepClone": false,
@@ -108,7 +162,9 @@
         "date": null,
         "extract": null,
         "name": "hyprpicker",
-        "passthru": null,
+        "passthru": {
+            "flake": "true"
+        },
         "pinned": false,
         "src": {
             "deepClone": false,
@@ -123,5 +179,97 @@
             "type": "github"
         },
         "version": "v0.4.5"
+    },
+    "hyprsunset": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "hyprsunset",
+        "passthru": {
+            "flake": "true"
+        },
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "hyprwm",
+            "repo": "hyprsunset",
+            "rev": "v0.2.0",
+            "sha256": "sha256-EIJka3UtSEtmkDBjYiGeR/hO6s6R4x3K+rbUlc9KPBE=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v0.2.0"
+    },
+    "hyprsysteminfo": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "hyprsysteminfo",
+        "passthru": {
+            "flake": "true"
+        },
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "hyprwm",
+            "repo": "hyprsysteminfo",
+            "rev": "v0.1.3",
+            "sha256": "sha256-KDxT9B+1SATWiZdUBAQvZu17vk3xmyXcw2Zy56bdWbY=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v0.1.3"
+    },
+    "pyprland": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "pyprland",
+        "passthru": {
+            "flake": "true"
+        },
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "hyprland-community",
+            "repo": "pyprland",
+            "rev": "2.4.5",
+            "sha256": "sha256-s93zuBS2jpGLTKKGvna1Zc+ph6A6kemgfkl8j7uSdKY=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "2.4.5"
+    },
+    "waybar": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "waybar",
+        "passthru": {
+            "flake": "true"
+        },
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "Alexays",
+            "repo": "Waybar",
+            "rev": "0.12.0",
+            "sha256": "sha256-VpT3ePqmo75Ni6/02KFGV6ltnpiV70/ovG/p1f2wKkU=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "0.12.0"
     }
 }

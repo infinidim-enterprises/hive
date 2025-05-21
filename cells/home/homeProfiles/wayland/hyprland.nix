@@ -1,7 +1,6 @@
 { osConfig, config, lib, pkgs, ... }:
 let
   inherit (lib // builtins)
-    isInt
     toString
     hasAttr
     concatStringsSep
@@ -23,11 +22,6 @@ let
     "SDL_VIDEODRIVER,wayland"
     "CLUTTER_BACKEND,wayland"
   ];
-
-  # cursorsize =
-  #   if config.gtk.enable && (isInt config.gtk.cursorTheme.size)
-  #   then toString config.gtk.cursorTheme.size
-  #   else "24";
 
   remove_shebang = txt: concatStringsSep "\n" (tail (splitString "\n" txt));
 
@@ -59,14 +53,15 @@ in
 {
   services.network-manager-applet.enable = osConfig.networking.networkmanager.enable;
   systemd.user.services.network-manager-applet.Unit.After = [ "waybar.service" ];
-  # TODO: investigate mate-wayland-session with hyprland
 
-  # NOTE: kinda need a filemanager
   home.packages = with pkgs; [
     mate.caja-with-extensions
     focus_monitor
     volume_control
     wofi-pass-browser
+
+    grim # Grab images from Hyprland
+    wf-recorder # Utility program for screen recording of wlroots-based compositors
   ];
 
   xdg.mimeApps.defaultApplications = {
@@ -240,9 +235,7 @@ in
   wayland.windowManager.hyprland.systemd.enableXdgAutostart = true;
   wayland.windowManager.hyprland.xwayland.enable = osConfig.programs.hyprland.xwayland.enable;
   wayland.windowManager.hyprland.plugins = with pkgs.hyprlandPlugins; [
-    # hycov
-    # virtual-desktops
-    # hyprexpo
+    Hyprspace
     hy3
   ];
 
@@ -325,30 +318,6 @@ in
     # plugin.hyprexpo.bg_col = "rgb(0, 43, 54)";
     # plugin.hyprexpo.workspace_method = "center current"; # [center/first] [workspace] e.g. first 1 or center m+1
     # plugin.hyprexpo.enable_gesture = false; # laptop touchpad
-
-    # plugin.hycov = {
-    #   overview_gappo = 10; # gaps width from screen edge
-    #   overview_gappi = 10; # gaps width from clients
-    #   enable_click_action = 1; # enable mouse left button jump and right button kill in overview mode
-    #   # enable_hotarea = 1; # enable mouse cursor hotarea, when cursor enter hotarea, it will toggle overview
-    #   # hotarea_monitor = "all"; # monitor name which hotarea is in, default is all
-    #   # hotarea_pos = 1; # position of hotarea (1: bottom left, 2: bottom right, 3: top left, 4: top right)
-    #   # hotarea_size = 10; # hotarea size, 10x10
-    #   # swipe_fingers = 4; # finger number of gesture,move any directory
-    #   # move_focus_distance = 100; # distance for movefocus,only can use 3 finger to move
-    #   enable_gesture = 0; # enable gesture
-    #   auto_exit = 1; # enable auto exit when no client in overview
-    #   auto_fullscreen = 0; # auto make active window maximize after exit overview
-    #   only_active_workspace = 0; # only overview the active workspace
-    #   only_active_monitor = 0; # only overview the active monitor
-    #   enable_alt_release_exit = 0; # alt swith mode arg,see readme for detail
-    #   alt_replace_key = "Alt_L"; # alt swith mode arg,see readme for detail
-    #   alt_toggle_auto_next = 0; # auto focus next window when toggle overview in alt swith mode
-    #   click_in_cursor = 1; # when click to jump,the target windwow is find by cursor, not the current foucus window.
-    #   hight_of_titlebar = 0; # height deviation of title bar height
-    #   show_special = 0; # show windwos in special workspace in overview.
-    #   raise_float_to_top = 1; # raise the window that is floating before to top after leave overview mode
-    # };
 
     plugin.hy3 = {
       # disable gaps when only one window is onscreen
@@ -489,7 +458,7 @@ in
       # "$masterMod, P, pseudo"
       # "$masterMod, J, togglesplit"
 
-      # "$masterMod, grave, hyprexpo:expo, toggle" # hyprexpo plugin
+      # "$masterMod, grave, overview:toggle" # Hyprspace plugin
 
       # Move focus with mainMod + arrow keys
       # "$masterMod, Left, movefocus, l"
@@ -633,6 +602,9 @@ in
     bind = Control_L, period, exec, $menu
     bind = Control_L, period, submap, reset
 
+    bind = , grave, overview:toggle
+    bind = , grave, submap, reset
+
     bind = SHIFT, k, hy3:killactive
     bind = SHIFT, k, submap, reset
 
@@ -642,7 +614,7 @@ in
     bind = , i, exec, hyprprop | wl-copy
     bind = , i, submap, reset
 
-    bind = SHIFT, i, exec, env | wl-copy
+    bind = SHIFT, i, exec, ${pkgs.hyprsysteminfo}/bin/hyprsysteminfo
     bind = SHIFT, i, submap, reset
 
     bind = , p, exec, wofi-pass-browser

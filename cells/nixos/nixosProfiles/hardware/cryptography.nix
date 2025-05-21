@@ -157,6 +157,7 @@ mkMerge [
           Exec=${pkgs.gcr}/libexec/gcr-prompter
         '';
       in
+      # TODO: replace gcr with pkgs.wayprompt -  https://git.sr.ht/~leon_plickat/wayprompt
       [ pkgs.gcr ];
     environment.systemPackages = with pkgs; [
       # gcr

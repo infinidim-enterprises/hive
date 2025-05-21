@@ -5,10 +5,15 @@
 #+options: H:3 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t pri:t
 #+tags: GTD(G) writing(w) export(e) manage(m) graphical(g) nix(n)
 
-* Init
+* startup
+:PROPERTIES:
+:ID:       e5bbebcf-8764-43df-a74a-ce89c7e170d7
+:END:
+** init
 :PROPERTIES:
 :header-args: :tangle init.el
 :VISIBILITY: folded
+:ID:       78f1630d-4b2c-4487-b8fd-a6988e388f5d
 :END:
 
 #+begin_src emacs-lisp
@@ -254,8 +259,40 @@
 (after! (doom-packages straight)
   (setq straight--native-comp-available t))
 #+end_src
+** Tracing and debugging emacs
+:PROPERTIES:
+:ID:       894d9c7c-5d67-41ab-906d-98ad686fff30
+:END:
+#+begin_src emacs-lisp :tangle config.el
+(defun log-auth-source-access (orig-fun &rest args)
+  "Advice function to log auth-source access with backtrace."
+  (let* ((bt (with-output-to-string
+               (backtrace)))
+         (caller (cl-loop for frame in (backtrace-frames)
+                          for i from 0 to 30  ; Limit stack depth
+                          for fn = (cl-second frame)
+                          unless (or (string-prefix-p "auth" (symbol-name fn))
+                                    (memq fn '(apply funcall)))
+                          return fn)))
+    (message "Auth-source access triggered by: %s\nBacktrace:\n%s"
+             (or caller 'unknown) bt)
+    (apply orig-fun args)))
+
+;; Add advice to auth-source main entry point
+;; (advice-add 'auth-source-search :around #'log-auth-source-access)
+
+;; To remove the tracing later:
+;; (advice-remove 'auth-source-search #'log-auth-source-access)
+#+end_src
+
 * Usability improvements
+:PROPERTIES:
+:ID:       15e3b0d6-34e4-48e4-a966-c1cb53665efd
+:END:
 ** frames/emacsclient
+:PROPERTIES:
+:ID:       3f3972b2-472c-4594-95ff-a143dd74efbd
+:END:
 #+begin_src emacs-lisp :tangle config.el
 (after! persp-mode
   (setq! persp-emacsclient-init-frame-behaviour-override "master"))
@@ -271,6 +308,9 @@
 ;; (add-hook 'after-make-frame-functions #'local/inherit-last-active-perspective)
 #+end_src
 ** General
+:PROPERTIES:
+:ID:       a0eed0db-46dd-49d4-9411-78e9d95e2c67
+:END:
 Maybe use (package! maple-iedit :recipe (:host github :repo "honmaple/emacs-maple-iedit")) instead of built-in mc/mark-next-like-this
 (package! discover :recipe (:host github :repo "mickeynp/discover.el"))
 #+begin_src emacs-lisp :tangle packages.el
@@ -408,8 +448,14 @@ result instead of `message'."
   :bind ("C-x b" . local/helm-switch-to-project-buffer))
 #+end_src
 ** TODO SFS Search/Indexing
+:PROPERTIES:
+:ID:       dfee529a-ba11-4238-8355-9d28ec8344ce
+:END:
 [[https://github.com/Overdr0ne/sfs][Search File System]]
 ** hl-todo
+:PROPERTIES:
+:ID:       beda4954-a0a7-458b-9a6a-284a4405a70a
+:END:
 #+begin_src emacs-lisp :tangle config.el
 (use-package! hl-todo
   :config
@@ -439,6 +485,9 @@ result instead of `message'."
         ("XXX" font-lock-constant-face bold))))
 #+end_src
 ** dired stuff
+:PROPERTIES:
+:ID:       679d25b9-dcd9-492c-a50b-b5c1a3bc12f1
+:END:
 the treemacs and neotree suck donkey balls.
 #+begin_src emacs-lisp :tangle packages.el
 ;; (package! f)
@@ -507,6 +556,9 @@ the treemacs and neotree suck donkey balls.
         :n "gu" #'dired-subtree-unmark-subtree))
 #+end_src
 ** Rainbow delimiters
+:PROPERTIES:
+:ID:       78487c34-5fb7-4eb7-baa6-a5a9a1573921
+:END:
 [[https://github.com/Civitasv/pair-colorizer][Use a fork]]?
 
 #+begin_src emacs-lisp :tangle packages.el
@@ -523,7 +575,13 @@ the treemacs and neotree suck donkey balls.
   :hook (prog-mode . rainbow-delimiters-mode))
 #+end_src
 ** org-mode and friends
+:PROPERTIES:
+:ID:       09b4214f-fa09-4a58-869c-21bb2a84bb1a
+:END:
 *** General goodness
+:PROPERTIES:
+:ID:       03f692ae-8272-4ebb-8376-f5f634f4d5ba
+:END:
 [[https://github.com/EFLS/zetteldeft][Deft as Zettelkasten note-taking system]]
 
 #+begin_src emacs-lisp :tangle packages.el
@@ -585,6 +643,9 @@ the treemacs and neotree suck donkey balls.
   :config (zetteldeft-set-classic-keybindings))
 #+end_src
 *** org-capture
+:PROPERTIES:
+:ID:       ae25876b-1cd6-4c2e-93e7-6000cc5c7b02
+:END:
 There's a better way of doing this, maybe :config section in use-package!
 
 #+begin_src emacs-lisp :tangle packages.el
@@ -672,6 +733,9 @@ There's a better way of doing this, maybe :config section in use-package!
                                 :file +org-capture-project-changelog-file))))))
 #+end_src
 *** TODO orgfu
+:PROPERTIES:
+:ID:       3441cd3c-b0d0-4abb-baf5-e5c4d1070115
+:END:
 - [[https://github.com/abo-abo/org-fu/blob/master/org-fu.el][Example here]]
 
 - counsel package is an orca requirement, because it does things with git
@@ -722,6 +786,9 @@ This is what we want to overwrite with defadvice
 #+end_src
 
 ** Helm - finetune the doom provided stuff
+:PROPERTIES:
+:ID:       372be095-60cd-41e7-940a-c472ff3230e5
+:END:
 A nice start here - https://github.com/thierryvolpiatto/emacs-config/blob/main/init-helm.el
 
 helm-swoop can be replaced by (package! ctrlf :recipe (:host github :repo "raxod502/ctrlf"))
@@ -755,6 +822,9 @@ helm-swoop can be replaced by (package! ctrlf :recipe (:host github :repo "raxod
 #+end_src
 
 ** Terminals
+:PROPERTIES:
+:ID:       48e90acd-0b41-457d-817c-c1f160d4ed5d
+:END:
 https://github.com/SqrtMinusOne/eshell-atuin
 #+begin_src emacs-lisp :tangle packages.el
 ;;(package! multi-vterm)
@@ -772,6 +842,9 @@ https://github.com/SqrtMinusOne/eshell-atuin
 ;;   ("s-l" . multi-vterm-next)))
 #+end_src
 *** Tramp
+:PROPERTIES:
+:ID:       698ad9a5-678d-498d-9e79-ab74947fd049
+:END:
 #+begin_src emacs-lisp :tangle config.el
 (after! tramp
   ;; tramp sets tramp-default-remote-path via `getconf PATH` which doesn't seem
@@ -785,6 +858,9 @@ https://github.com/SqrtMinusOne/eshell-atuin
     (setq tramp-histfile-override (expand-file-name "tramp_history" data-home))))
 #+end_src
 ** Poly Mode
+:PROPERTIES:
+:ID:       564ed708-d137-464c-9db4-8a4e2f51e44d
+:END:
 
 - [[https://github.com/ShuguangSun/ess-view-data][ShuguangSun/ess-view-data: View data support for ESS]]
 
@@ -799,6 +875,9 @@ https://github.com/SqrtMinusOne/eshell-atuin
 #+end_src
 
 *** Poly Mode Markdown
+:PROPERTIES:
+:ID:       1918408b-5e43-42e3-aa02-ddff94a0d560
+:END:
 
 #+begin_src emacs-lisp :tangle packages.el
 (package! poly-markdown :recipe (:build (:not compile)))
@@ -811,6 +890,9 @@ https://github.com/SqrtMinusOne/eshell-atuin
 #+end_src
 
 ** windsize
+:PROPERTIES:
+:ID:       395bb9fb-b3b9-484c-9c3c-fc8b5871ec89
+:END:
 
 #+begin_src emacs-lisp :tangle packages.el
 (package! windsize)
@@ -828,6 +910,9 @@ https://github.com/SqrtMinusOne/eshell-atuin
 #+end_src
 
 ** Magit and friends
+:PROPERTIES:
+:ID:       7a5ec69b-41ec-4b37-b8ae-ef728779949d
+:END:
 
 #+begin_src emacs-lisp :tangle packages.el
 (package! gitignore-templates)
@@ -839,7 +924,13 @@ https://github.com/SqrtMinusOne/eshell-atuin
     :hook (magit-status-mode . magit-todos-mode))
 #+end_src
 ** Chat
+:PROPERTIES:
+:ID:       d0008319-f07b-4709-8c1b-5b5dba5fdd62
+:END:
 *** matrix
+:PROPERTIES:
+:ID:       a7c4a19e-6f64-4e83-9f7d-5ff53eebf66f
+:END:
 #+begin_src emacs-lisp :tangle packages.el
 ;; (package! ement)
 #+end_src
@@ -848,8 +939,17 @@ https://github.com/SqrtMinusOne/eshell-atuin
 ;; (use-package! ement)
 #+end_src
 *** irc
+:PROPERTIES:
+:ID:       5e139aaa-d089-41d4-a500-c0492df1641a
+:END:
 ** Completion
+:PROPERTIES:
+:ID:       e6c74f3f-7c21-4c90-9c72-caae5ba13a11
+:END:
 *** TODO Github copilot
+:PROPERTIES:
+:ID:       3133c642-fc2c-4461-949f-1964a5684729
+:END:
 This fails to build on nix currently
 #+begin_src emacs-lisp :tangle packages.el
 ;; (package! copilot)
@@ -867,6 +967,9 @@ This fails to build on nix currently
 #+end_src
 
 *** corfu / vertico
+:PROPERTIES:
+:ID:       c47beba9-64fa-4990-a78e-3dadcec0208b
+:END:
 For the moment, will go with vendored versions in doomemacs
 
 #+begin_src emacs-lisp :tangle packages.el
@@ -942,6 +1045,9 @@ For the moment, will go with vendored versions in doomemacs
 ;;   (corfu-doc-terminal-mode +1)))
 #+end_src
 ** IDEA clipboard
+:PROPERTIES:
+:ID:       c289625d-60cd-4415-acb8-73eec16780f8
+:END:
 :tangle packages.el
 #+begin_src emacs-lisp
 (package! clipmon)
@@ -955,6 +1061,9 @@ For the moment, will go with vendored versions in doomemacs
   (setq clipmon-timer-interval 2))
 #+end_src
 ** devdocs
+:PROPERTIES:
+:ID:       f23ebb70-63cd-451a-9fca-5df34f5e16ab
+:END:
 #+begin_src emacs-lisp :tangle packages.el
 (package! devdocs)
 #+end_src
@@ -966,24 +1075,31 @@ For the moment, will go with vendored versions in doomemacs
   ("C-h D" . devdocs-lookup))
 #+end_src
 ** llm
+:PROPERTIES:
+:ID:       433a90ca-792c-4de8-bf34-ea42bc930ea4
+:END:
 
 #+begin_src emacs-lisp :tangle packages.el
 (package! gptel
-  :pin "975c3e64eb834b939e0d61dfc39fed8395afcc45"
+  :pin "c03e4f3a4768c46cc7c581e52ee130e76a2e0173"
   :recipe (:host github
            :repo "karthink/gptel"
            :branch "master"))
-(package! gptel-extensions
-  :pin "671e5186153fc9bf105c91effb1ed7db06508677"
+
+(package! mcp
+  :pin "60f48d2ad386583dd3338b338444339e3f27f1d8"
   :recipe (:host github
-           :repo "kamushadenes/gptel-extensions.el"))
+           :repo "lizqwerscott/mcp.el"
+           :branch "master"))
+
 (package! whisper
   :pin "ee29777238fc089d66d8e4b6812fdd5743cad19a"
   :recipe (:host github
            :repo "natrys/whisper.el"
            :branch "master"))
+
 (package! aider
-  :pin "4042f62a5ab96ad35cc09339c5134e5320c894f1"
+  :pin "d7c2d696444a1438d8a3ddf6a629d743d6c022fe"
   :recipe (:host github
            :repo "tninja/aider.el"
            :branch "main"
@@ -1064,14 +1180,64 @@ For the moment, will go with vendored versions in doomemacs
   :commands (gptel gptel-send)
   :bind (("M-s-<return>" . gptel-send)
          ("M-s-="        . gptel-add))
+  :defer t
   :init
-  (setq! gptel-default-mode 'org-mode
-         gptel-temperature 0.8
-         gptel-model 'deepseek/deepseek-r1:free)
-  ;; (defadvice! +gptel-cleanup-default-buffer (&rest args)
-  ;;   :before #'gptel
-  ;;   (+gptel-kill-default-buffer))
-  ;; "^\\*ChatGPT\\*$"
+  (defun openrouter-get-model-ids ()
+    "Fetch models from OpenRouter API and return a list of model IDs.
+Wait up to 30 seconds for the HTTP response. If the timeout expires,
+return a default list of model IDs."
+    (require 'url)
+    (require 'json)
+    (let* ((url "https://openrouter.ai/api/v1/models")
+           (default-model-ids '(meta-llama/llama-3.3-8b-instruct:free
+                                nousresearch/deephermes-3-mistral-24b-preview:free
+                                microsoft/phi-4-reasoning-plus:free
+                                microsoft/phi-4-reasoning:free
+                                opengvlab/internvl3-14b:free
+                                deepseek/deepseek-prover-v2:free
+                                qwen/qwen3-235b-a22b:free
+                                tngtech/deepseek-r1t-chimera:free
+                                arliai/qwq-32b-arliai-rpr-v1:free
+                                agentica-org/deepcoder-14b-preview:free
+                                nvidia/llama-3.1-nemotron-ultra-253b-v1:free
+                                meta-llama/llama-4-maverick:free
+                                meta-llama/llama-4-scout:free
+                                deepseek/deepseek-v3-base:free
+                                deepseek/deepseek-chat-v3-0324:free
+                                featherless/qwerky-72b:free
+                                open-r1/olympiccoder-32b:free
+                                rekaai/reka-flash-3:free
+                                google/gemma-3-27b-it:free
+                                deepseek/deepseek-r1-zero:free
+                                cognitivecomputations/dolphin3.0-r1-mistral-24b:free
+                                cognitivecomputations/dolphin3.0-mistral-24b:free
+                                deepseek/deepseek-r1-distill-llama-70b:free
+                                deepseek/deepseek-r1:free
+                                deepseek/deepseek-chat:free
+                                meta-llama/llama-3.3-70b-instruct:free
+                                qwen/qwen-2.5-coder-32b-instruct:free
+                                qwen/qwen-2.5-72b-instruct:free
+                                meta-llama/llama-3.1-405b:free))
+           (buffer (url-retrieve-synchronously url nil nil 30)))
+      (if (not buffer)
+          default-model-ids
+        (with-current-buffer buffer
+          (unwind-protect
+              (progn
+                (goto-char (point-min))
+                (re-search-forward "^$")
+                (forward-char)
+                (let* ((json-object-type 'hash-table)
+                       (json-array-type 'list)
+                       (json-key-type 'string)
+                       (json-response (json-read))
+                       (models (gethash "data" json-response))
+                       (model-ids (mapcar (lambda (model)
+                                            (gethash "id" model))
+                                          models)))
+                  model-ids))
+            (kill-buffer buffer))))))
+
   (set-popup-rule! "^\\*\\(?:ChatGPT\\|OpenRouter\\)\\*$"
     ;; (concat "^" (regexp-opt (mapcar 'regexp-quote '("*ChatGPT*" "*OpenRouter*"))) "$")
     :side 'right
@@ -1079,88 +1245,36 @@ For the moment, will go with vendored versions in doomemacs
     ;; :vslot 100
     :quit nil)
 
-  ;; (defun +gptel-set-model (model)
-  ;;   "Set the GPTel model interactively."
-  ;;   (interactive
-  ;;    (list (completing-read "Select model: " (mapcar 'car gptel--openrouter-models))))
-  ;;   (setq gptel-model model)
-  ;;   (message "GPTel model set to %s" model))
   :config
-  (setq! gptel--openai
-         (gptel-make-openai "ChatGPT"
-           :key (lambda ()
-                  (or (auth-source-pick-first-password :host "api.openai.com")
-                      (user-error "GPTel: OpenRouter API key not found in auth-source.")))
-           ;; :key (auth-source-pick-first-password :host "api.openai.com")
-           :stream nil
-           :host "api.openai.com"
-           :models
-           '((gpt-4o-mini
-              :capabilities (media tool json url)
-              :description "Affordable and intelligent small model for fast, lightweight tasks"
-              :mime-types ("image/jpeg" "image/png" "image/gif" "image/webp"))
-             (gpt-4o
-              :capabilities (media tool json url)
-              :description "High-intelligence flagship model for complex, multi-step tasks"
-              :mime-types ("image/jpeg" "image/png" "image/gif" "image/webp"))))
-         gptel--openrouter
-         (gptel-make-openai "OpenRouter"
-           :stream nil
-           :host "openrouter.ai"
-           :key (lambda ()
-                  (or (auth-source-pick-first-password :host "openrouter.ai")
-                      (user-error "GPTel: OpenRouter API key not found in auth-source.")))
-           ;; :key (auth-source-pick-first-password :host "openrouter.ai")
-           :endpoint "/api/v1/chat/completions"
-           :models
-           '(deepseek/deepseek-r1:free
-             sophosympatheia/rogue-rose-103b-v0.2:free
-             google/gemini-2.0-flash-thinking-exp:free
-             google/gemini-2.0-flash-thinking-exp-1219:free
-             google/gemini-2.0-flash-exp:free
-             ;; google/gemini-exp-1206:free
-             ;; google/gemini-exp-1121:free
-             ;; google/learnlm-1.5-pro-experimental:free
-             ;; google/gemini-exp-1114:free
-             ;; meta-llama/llama-3.2-3b-instruct:free
-             ;; meta-llama/llama-3.2-1b-instruct:free
-             meta-llama/llama-3.2-90b-vision-instruct:free
-             ;; meta-llama/llama-3.2-11b-vision-instruct:free
-             ;; google/gemini-flash-1.5-exp:free
-             ;; meta-llama/llama-3.1-405b-instruct:free
-             ;; meta-llama/llama-3.1-8b-instruct:free
-             ;; meta-llama/llama-3.1-70b-instruct:free
-             qwen/qwen-2-7b-instruct:free
-             google/gemma-2-9b-it:free
-             mistralai/mistral-7b-instruct:free
-             ;; microsoft/phi-3-mini-128k-instruct:free
-             microsoft/phi-3-medium-128k-instruct:free
-             ;; meta-llama/llama-3-8b-instruct:free
-             openchat/openchat-7b:free
-             undi95/toppy-m-7b:free
-             huggingfaceh4/zephyr-7b-beta:free
-             gryphe/mythomax-l2-13b:free
-             ;; and the paid models
-             deepseek/deepseek-chat
-             openai/gpt-4
-             openai/gpt-4o-mini
-             openai/chatgpt-4o-latest
-             anthropic/claude-3.5-sonnet:beta
-             mistralai/mixtral-8x7b-instruct
-             ;; and the autorouting
-             openrouter/auto)))
-  (setq! gptel-post-response-functions nil
-         gptel-backend gptel--openrouter)
-  (add-hook! 'gptel-post-response-functions '+gptel-save-buffer)
-  (setq! gptel-directives
-        '((default . "You are a large language model living in Emacs and a helpful assistant. Respond concisely.")
-          (programming . "You are a large language model and a careful programmer. Provide code and only code as output without any additional text, prompt or note.")
-          (writing . "You are a large language model and a writing assistant. Respond concisely.")
-          (chat . "You are a large language model and a conversation partner. Respond concisely."))))
+  (defvar gptel--backends-initialized nil)
+  (defun gptel-init-backends (&rest _)
+    "Initialize GPTel backends upon first use."
+    (unless gptel--backends-initialized
+      (setq! gptel--openrouter
+             (gptel-make-openai "OpenRouter"
+               :stream nil
+               :host "openrouter.ai"
+               :key (lambda ()
+                      (or (auth-source-pick-first-password :host "openrouter.ai")
+                          (user-error "GPTel: OpenRouter API key not found in auth-source")))
+               :endpoint "/api/v1/chat/completions"
+               :models
+               (openrouter-get-model-ids))
+             gptel-backend gptel--openrouter
+             gptel-default-mode 'org-mode
+             gptel-temperature 0.8
+             gptel-model 'deepseek/deepseek-chat:free
+             gptel--backends-initialized t
+             gptel-directives
+             '((default . "You are a large language model living in Emacs and a helpful assistant. Respond concisely.")
+               (programming . "You are a large language model and a careful programmer. Provide code and only code as output without any additional text, prompt or note.")
+               (writing . "You are a large language model and a writing assistant. Respond concisely.")
+               (chat . "You are a large language model and a conversation partner. Respond concisely.")))))
+  (advice-add 'gptel :before #'gptel-init-backends)
+  (advice-add 'gptel-send :before (lambda (&rest _) (gptel-init-backends)))
 
-(use-package! gptel-extensions
-  :demand t
-  :after gptel)
+  (setq! gptel-post-response-functions nil)
+  (add-hook! 'gptel-post-response-functions '+gptel-save-buffer))
 
 (use-package! aider
   :after helm
@@ -1170,25 +1284,37 @@ For the moment, will go with vendored versions in doomemacs
     :size 0.4
     :vslot 50
     :quit nil)
+  :bind (:map global-map ("C-c A" . aider-transient-menu))
   :config
-  (setenv "OPENROUTER_API_KEY" (auth-source-pick-first-password
-                                :host "openrouter.ai"
-                                :user "apikey"))
-  (setq! aider-args '("--no-auto-commits" "--model" "openrouter/deepseek/deepseek-chat"))
-  (require 'aider-doom)
+  (defvar aider--backends-initialized nil)
+  (defun aider-init-backends (&rest _)
+    "Init aider backend"
+    (unless aider--backends-initialized
+      (setenv "OPENROUTER_API_KEY" (auth-source-pick-first-password
+                                    :host "openrouter.ai"
+                                    :user "apikey"))
+      (setq! aider-args '("--no-auto-commits" "--model" "openrouter/anthropic/claude-3.7-sonnet")
+             aider-backends-initialized t)))
+
+  (advice-add 'aider-run-aider :around
+              (lambda (orig-fn &rest args)
+                "Ensure backends are initialized before running Aider."
+                (aider-init-backends)
+                (apply orig-fn args)))
+
   :custom
   (aider-popular-models '("openrouter/deepseek/deepseek-chat"
                           "openrouter/deepseek/deepseek-r1"
                           "openrouter/deepseek/deepseek-coder"
                           "openrouter/openai/gpt-4o"
                           "openrouter/openai/o1"
-                          "openrouter/anthropic/claude-3.5-sonnet"
-                          "openrouter/anthropic/claude-3-5-haiku"
-                          "openrouter/anthropic/claude-3-opus"
-                          "openrouter/google/gemini-pro-1.5"
-                          "openrouter/google/gemini-pro-vision")))
+                          "openrouter/anthropic/claude-3.7-sonnet"
+                          "openrouter/google/gemini-2.5-pro-exp-03-25")))
 #+end_src
 ** color-rg
+:PROPERTIES:
+:ID:       ac172945-07cc-4347-ac62-6281015209ff
+:END:
 
 :tangle packages.el
 #+begin_src emacs-lisp
@@ -1216,7 +1342,13 @@ For the moment, will go with vendored versions in doomemacs
 #+end_src
 
 * Language support
+:PROPERTIES:
+:ID:       7edbd775-c01f-4c6b-8ec9-2d931a96718a
+:END:
 ** Indent Guides
+:PROPERTIES:
+:ID:       09cf20ed-d0c3-4038-9198-bab598ca65ec
+:END:
 
 #+begin_src emacs-lisp :tangle packages.el
 (package! highlight-indent-guides)
@@ -1252,6 +1384,9 @@ For the moment, will go with vendored versions in doomemacs
 #+end_src
 
 ** TODO tree-sitter
+:PROPERTIES:
+:ID:       9629d4ed-eb5b-401e-bb54-332d7aad622c
+:END:
 As a workaround for nixpkgs [[https://github.com/marienz/nix-doom-emacs-unstraightened?tab=readme-ov-file#tree-sitter-error-on-initialization-with-file-error-opening-output-file-read-only-file-system][bug]]
 
 #+begin_src emacs-lisp
@@ -1273,6 +1408,9 @@ However, this borks up the nixd
   (global-treesit-auto-mode))
 #+end_src
 ** Nix
+:PROPERTIES:
+:ID:       a8fc8a2f-1295-4587-a227-896decf5e784
+:END:
 
 #+begin_src emacs-lisp :tangle packages.el
 (package! lsp-mode
@@ -1519,6 +1657,9 @@ nixd setup function
 
 Also, needs to complete from pkgs and lib and project buffers
 ** D2 - diagramming
+:PROPERTIES:
+:ID:       0e75795a-5120-4c98-821d-e568752e17c2
+:END:
 This is likely better than plantuml
 #+begin_src emacs-lisp :tangle packages.el
 (package! d2-mode
@@ -1536,9 +1677,18 @@ This is likely better than plantuml
         :localleader "c" #'d2-compile))
 #+end_src
 ** TODO LSP in docker
+:PROPERTIES:
+:ID:       dee2c380-4b19-4edb-8312-c9729cae00de
+:END:
 [[https://github.com/emacs-lsp/lsp-docker][Uses docker to run language servers]]
 * Spoken languages support
+:PROPERTIES:
+:ID:       0005284c-0512-4f67-9e1e-2cee73314172
+:END:
 ** Russian phonetic
+:PROPERTIES:
+:ID:       dabd0429-a392-4187-9084-9df8f84b8d27
+:END:
 #+begin_src emacs-lisp :tangle config.el
 (quail-define-package
  "russian-phonetic" "Cyrillic" "[Русский]" nil
@@ -1646,6 +1796,9 @@ This is likely better than plantuml
 (setq default-input-method "russian-phonetic")
 #+end_src
 ** TODO translation services
+:PROPERTIES:
+:ID:       e60ff69f-97c9-41dd-bdda-aa2f01e86000
+:END:
 #+begin_src emacs-lisp :tangle packages.el
 (package! plz
   :type 'core
@@ -1687,7 +1840,13 @@ This is likely better than plantuml
                      :render (gt-overlay-render :type 'help-echo))))))
 #+end_src
 * Look and feel
+:PROPERTIES:
+:ID:       06d2f17b-771d-4c77-89fd-2d080d626f7d
+:END:
 ** Theme
+:PROPERTIES:
+:ID:       f35d164e-97e4-4a31-87f7-f41029560ce5
+:END:
 #+begin_src emacs-lisp :tangle packages.el
 (package! solarized-theme)
 (package! base16-theme)
@@ -1704,6 +1863,9 @@ This is likely better than plantuml
 (setq doom-theme 'solarized-dark)
 #+end_src
 ** Fonts
+:PROPERTIES:
+:ID:       675bc166-bdde-477f-a320-25a1915e2bca
+:END:
 For whatever reason, emacs doesn't want to properly render font sizes, might have something to do with doom or perhaps some other part of this config.
 #+begin_src emacs-lisp :tangle config.el
 (defun font-size-by-emacs-version ()
@@ -1725,13 +1887,18 @@ For whatever reason, emacs doesn't want to properly render font sizes, might hav
         doom-serif-font env-default-font))
 #+end_src
 * Performance improvements
+:PROPERTIES:
+:ID:       30f827b2-cfa0-40a8-a666-e3de999e3813
+:END:
 
 #+begin_src emacs-lisp :tangle config.el
 (setq gcmh-high-cons-threshold most-positive-fixnum
       max-specpdl-size 100000)
 #+end_src
-
 ** Very Large Files
+:PROPERTIES:
+:ID:       0150ee21-90d1-46a7-a98b-f8d5b7cd198c
+:END:
 Perhaps a better option is [[https://github.com/m00natic/vlfi][vlfi]] - it seems a bit newer
 
 #+begin_src emacs-lisp :tangle packages.el
@@ -1747,10 +1914,19 @@ Perhaps a better option is [[https://github.com/m00natic/vlfi][vlfi]] - it seems
 #+end_src
 
 ** TODO Littering and file locations
+:PROPERTIES:
+:ID:       1de478ac-3786-4201-b59c-21af6273ab66
+:END:
 savehist-file persp workspaces
 
 * nyxt-browser integration
+:PROPERTIES:
+:ID:       eaee2c77-fe9d-4e6f-9fc9-aad823311694
+:END:
 ** Sly
+:PROPERTIES:
+:ID:       9ec2bb07-88b4-4e29-9d78-5dab6ae19307
+:END:
 #+begin_src emacs-lisp :tangle packages.el
 (package! sly
   :pin "c48defcf58596e035d473f3a125fdd1485593146"
@@ -1822,7 +1998,13 @@ savehist-file persp workspaces
   (kill-buffer (get-buffer "*sly-mrepl for sbcl*")))
 #+end_src
 * setts
+:PROPERTIES:
+:ID:       6ab648f4-89ab-4cbd-a769-382ce2f98263
+:END:
 ** TODO gpg
+:PROPERTIES:
+:ID:       0c3e6dbe-3d25-456e-a070-ec2b3be58d72
+:END:
 
 #+begin_src nix :tangle nil
 {
@@ -1844,6 +2026,9 @@ TODO: move it to local-setts in Nix
 #+end_src
 
 ** uncategorized
+:PROPERTIES:
+:ID:       662e686c-87ef-4739-b50e-b7b972cfe496
+:END:
 #+begin_src emacs-lisp :tangle config.el
 (set-language-environment "UTF-8")
 (set-default-coding-systems 'utf-8)
@@ -1915,6 +2100,9 @@ TODO: move it to local-setts in Nix
 #+end_src
 
 ** dir-locals stuff
+:PROPERTIES:
+:ID:       83844d45-ed87-42a2-87da-1cd7c774d9c2
+:END:
 #+begin_src emacs-lisp :tangle config.el
 (after! hack-local-variables
   (add-hook 'hack-local-variables-hook
@@ -1923,6 +2111,9 @@ TODO: move it to local-setts in Nix
                 (setq enable-local-variables :all)))))
 #+end_src
 ** local-setts from nix config
+:PROPERTIES:
+:ID:       3fd87dc2-bc4b-4a4b-aaef-e72db239a7ff
+:END:
 #+begin_src emacs-lisp :tangle packages.el
 (package! local-setts :built-in t)
 #+end_src

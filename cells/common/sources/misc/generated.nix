@@ -17,31 +17,31 @@
   };
   adguard-filters_adguardteam = {
     pname = "adguard-filters_adguardteam";
-    version = "a08b2a6d7eec9685e87831f67f7f49009208fe31";
+    version = "b2c49f37e2bfeeb373502591a09f04f4bbc3f0a2";
     src = fetchgit {
       url = "https://github.com/AdguardTeam/AdguardFilters";
-      rev = "a08b2a6d7eec9685e87831f67f7f49009208fe31";
+      rev = "b2c49f37e2bfeeb373502591a09f04f4bbc3f0a2";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-tWB3v8zWJYjPaFsPN1p0rv43onzWydReTVEK6Olotqk=";
+      sha256 = "sha256-2TUZ1uAbA6o/gUd2MmIErxBXExKf2C+YAjm/P8U12Wg=";
     };
-    date = "2025-05-18";
+    date = "2025-05-21";
   };
   adguard-filters_romania = {
     pname = "adguard-filters_romania";
-    version = "0ca4ca7284d9a487673a181ea4660d7f71108d05";
+    version = "e9854d6308627cb5f45c0ad07c50d37437bdd7d1";
     src = fetchgit {
       url = "https://github.com/tcptomato/ROad-Block";
-      rev = "0ca4ca7284d9a487673a181ea4660d7f71108d05";
+      rev = "e9854d6308627cb5f45c0ad07c50d37437bdd7d1";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-/b9UnUoydXk8XfL7ydxFpBdPoXnQwPj2u5K7C1RAK6U=";
+      sha256 = "sha256-1nLywTdVVUqdW1Rrw/xMoAFVTX8jaHLcPAn5FS/EWRM=";
     };
-    date = "2025-05-17";
+    date = "2025-05-19";
   };
   base16-schemes = {
     pname = "base16-schemes";
@@ -265,17 +265,17 @@
   };
   ipxe = {
     pname = "ipxe";
-    version = "83449702e09236dccebd4913d5823d5e00b643e0";
+    version = "d15a11f3a4f49999447e9bd0c499455d1d9ef078";
     src = fetchgit {
       url = "https://github.com/ipxe/ipxe";
-      rev = "83449702e09236dccebd4913d5823d5e00b643e0";
+      rev = "d15a11f3a4f49999447e9bd0c499455d1d9ef078";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-od4ZX0Tgc0S/b73jIvPmCEHNijlKDYJPjmOhoRmyNSM=";
+      sha256 = "sha256-tfRPzyHcgKWOxie/CywPFA+Vc7BxYlulfpshPeTyq+0=";
     };
-    date = "2025-05-16";
+    date = "2025-05-20";
   };
   iterable-io = {
     pname = "iterable-io";

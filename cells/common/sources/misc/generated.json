@@ -21,7 +21,7 @@
     },
     "adguard-filters_adguardteam": {
         "cargoLocks": null,
-        "date": "2025-05-18",
+        "date": "2025-05-21",
         "extract": null,
         "name": "adguard-filters_adguardteam",
         "passthru": null,
@@ -31,17 +31,17 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "a08b2a6d7eec9685e87831f67f7f49009208fe31",
-            "sha256": "sha256-tWB3v8zWJYjPaFsPN1p0rv43onzWydReTVEK6Olotqk=",
+            "rev": "b2c49f37e2bfeeb373502591a09f04f4bbc3f0a2",
+            "sha256": "sha256-2TUZ1uAbA6o/gUd2MmIErxBXExKf2C+YAjm/P8U12Wg=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/AdguardTeam/AdguardFilters"
         },
-        "version": "a08b2a6d7eec9685e87831f67f7f49009208fe31"
+        "version": "b2c49f37e2bfeeb373502591a09f04f4bbc3f0a2"
     },
     "adguard-filters_romania": {
         "cargoLocks": null,
-        "date": "2025-05-17",
+        "date": "2025-05-19",
         "extract": null,
         "name": "adguard-filters_romania",
         "passthru": null,
@@ -51,13 +51,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "0ca4ca7284d9a487673a181ea4660d7f71108d05",
-            "sha256": "sha256-/b9UnUoydXk8XfL7ydxFpBdPoXnQwPj2u5K7C1RAK6U=",
+            "rev": "e9854d6308627cb5f45c0ad07c50d37437bdd7d1",
+            "sha256": "sha256-1nLywTdVVUqdW1Rrw/xMoAFVTX8jaHLcPAn5FS/EWRM=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/tcptomato/ROad-Block"
         },
-        "version": "0ca4ca7284d9a487673a181ea4660d7f71108d05"
+        "version": "e9854d6308627cb5f45c0ad07c50d37437bdd7d1"
     },
     "base16-schemes": {
         "cargoLocks": null,
@@ -417,7 +417,7 @@
     },
     "ipxe": {
         "cargoLocks": null,
-        "date": "2025-05-16",
+        "date": "2025-05-20",
         "extract": null,
         "name": "ipxe",
         "passthru": null,
@@ -427,13 +427,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "83449702e09236dccebd4913d5823d5e00b643e0",
-            "sha256": "sha256-od4ZX0Tgc0S/b73jIvPmCEHNijlKDYJPjmOhoRmyNSM=",
+            "rev": "d15a11f3a4f49999447e9bd0c499455d1d9ef078",
+            "sha256": "sha256-tfRPzyHcgKWOxie/CywPFA+Vc7BxYlulfpshPeTyq+0=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/ipxe/ipxe"
         },
-        "version": "83449702e09236dccebd4913d5823d5e00b643e0"
+        "version": "d15a11f3a4f49999447e9bd0c499455d1d9ef078"
     },
     "iterable-io": {
         "cargoLocks": null,

@@ -2,22 +2,29 @@
 final: prev:
 let
   inherit (inputs.nixpkgs-lib.lib // builtins)
-    toString
+    hasAttrByPath
+    removeAttrs
+    filterAttrs
     mapAttrs
-    removeAttrs;
+    hasAttr;
 
   flakeGet = path: _:
-    let
-      drv = final.sources.hyprwm.${path}.src;
-      Path = builtins.path {
-        path = drv.outPath;
-        name = "realized-${drv.name}";
-      };
-    in
-    inputs.call-flake (toString Path);
+    cell.lib.callFlake final.sources.hyprwm.${path}.src;
 
-  hyprwm_flakes = mapAttrs flakeGet
-    (removeAttrs final.sources.hyprwm [ "override" "overrideDerivation" ]);
+  hyprwm_flakes_all = mapAttrs flakeGet
+    (filterAttrs (_: v: hasAttr "flake" v && v.flake == "true")
+      (removeAttrs final.sources.hyprwm [ "override" "overrideDerivation" ]));
+
+  hyprwm_flakes_with_input_hyprland = mapAttrs
+    (_: v: cell.lib.callFlakeWithOverrides {
+      src = v.outPath;
+      overrides = { hyprland = hyprwm_flakes.hy3.inputs.hyprland.outPath; };
+    })
+    (filterAttrs
+      (n: v: n != "hy3" && hasAttrByPath [ "inputs" "hyprland" ] v)
+      hyprwm_flakes_all);
+
+  hyprwm_flakes = hyprwm_flakes_all // hyprwm_flakes_with_input_hyprland;
 
   master = import inputs.nixpkgs-master {
     inherit (inputs.nixpkgs) system;
@@ -46,6 +53,9 @@ let
       hyprwm_flakes.hyprland-plugins.overlays.default
       hyprwm_flakes.hyprpicker.overlays.default
       hyprwm_flakes.contrib.overlays.default
+      hyprwm_flakes.waybar.overlays.default
+      hyprwm_flakes.hyprsysteminfo.overlays.default
+      hyprwm_flakes.grim-hyprland.overlays.default
       hyprwm_flakes.hy3.inputs.hyprland.overlays.default
     ];
   };
@@ -53,7 +63,7 @@ let
 in
 
 {
-  # sources = prev.sources // { inherit hyprwm_flakes; };
+  sources = prev.sources // { inherit hyprwm_flakes; };
 
   inherit (release)
     mesa
@@ -62,6 +72,9 @@ in
     wlroots
     sway
     xwayland
+
+    waybar
+    hyprsysteminfo
 
     hyprlock
     hypridle
@@ -73,6 +86,8 @@ in
     scratchpad
     shellevents
     try_swap_workspace
+
+    grim
 
     aquamarine
     hyprcursor
@@ -88,10 +103,15 @@ in
     sdbus-cpp_2
     hyprland;
 
+  inherit (hyprwm_flakes.pyprland.packages.${inputs.nixpkgs.system}) pyprland;
+
   hyprlandPlugins =
     prev.hyprlandPlugins //
     release.hyprlandPlugins //
-    { hy3 = hyprwm_flakes.hy3.packages.${inputs.nixpkgs.system}.default; };
+    {
+      Hyprspace = hyprwm_flakes.Hyprspace.packages.${inputs.nixpkgs.system}.default;
+      hy3 = hyprwm_flakes.hy3.packages.${inputs.nixpkgs.system}.default;
+    };
 }
 
 /*

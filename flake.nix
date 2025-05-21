@@ -254,22 +254,6 @@
     # flake-compat, so options are visible
     # nixd.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
-    ###
-    # wayland stuff
-    # NOTE: unstable has been keeping up with recent hyprland releases, switched to it, instead of using flake
-    ###
-    # hyprland-nixpkgs-unstable.follows = "nixpkgs-unstable";
-    # hyprland-nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    # hyprland-systems.url = "github:nix-systems/default-linux";
-
-    waybar.url = "github:Alexays/Waybar";
-    waybar.inputs.nixpkgs.follows = "nixpkgs";
-    # waybar.inputs.nixpkgs.follows = "hyprland/nixpkgs";
-
-    hyprland-contrib.url = "git+https://github.com/hyprwm/contrib";
-    hyprland-contrib.inputs.nixpkgs.follows = "nixpkgs";
-    # hyprland-contrib.inputs.nixpkgs.follows = "hyprland/nixpkgs";
-
     ### NOTE: atuin crap - fuck RUST, but no other choice
     ### the commit is for v18.6.0 - 45460d4c31c793985970a53f125d1a5da42c8d25
     atuin.url = "github:atuinsh/atuin/v18.6.1";

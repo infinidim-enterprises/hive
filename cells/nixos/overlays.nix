@@ -35,16 +35,13 @@ rec {
       numix-solarized-gtk-theme
       make-desktopitem
       masterpdfeditor # NOTE: required for 5.9.85
-      # TODO: nyxt
+      # TODO: nyxt with sly-quicklisp
       (final: prev:
         { sources = prev.sources // (final.callPackage ./sources/generated.nix { }); }
       )
     ];
 
-  wayland = [
-    inputs.waybar.overlays.default
-    inputs.cells.common.overlays.hyprland
-  ];
+  wayland = [ inputs.cells.common.overlays.hyprland ];
   /*
     mv "$tmp_dir/theme/gdm.css" "$tmp_dir/theme/original.css"
     echo '@import url("resource:///org/gnome/shell/theme/original.css");

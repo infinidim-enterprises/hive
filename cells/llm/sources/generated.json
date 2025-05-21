@@ -131,11 +131,11 @@
         "pinned": false,
         "src": {
             "name": "n8n.tar.gz",
-            "sha256": "sha256-tytx5HpizYQ5IKeNF5nh7SZHRJrx0V/J6gz0RIfs1Tw=",
+            "sha256": "sha256-Fw8Ce6F+OBE1/QbvgJrQhqlS21GMEuxS/y63GePnUlw=",
             "type": "url",
-            "url": "https://github.com/n8n-io/n8n/archive/n8n@1.91.3.tar.gz"
+            "url": "https://github.com/n8n-io/n8n/archive/n8n@1.93.0.tar.gz"
         },
-        "version": "n8n@1.91.3"
+        "version": "n8n@1.93.0"
     },
     "qianfan": {
         "cargoLocks": null,
@@ -165,7 +165,7 @@
             "type": "url",
             "url": "https://files.pythonhosted.org/packages/fd/02/efc002c427250355d8fccd7ffef04dc8fca98c049f145c776447b1eb392f/semantic_kernel-1.28.1.tar.gz"
         },
-        "version": "1.30.0"
+        "version": "1.31.0"
     },
     "ta": {
         "cargoLocks": null,
