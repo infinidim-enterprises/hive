@@ -1086,6 +1086,12 @@ For the moment, will go with vendored versions in doomemacs
            :repo "karthink/gptel"
            :branch "master"))
 
+(package! ob-aider
+  :pin "f611b0e733323c04bbbcab710a78a87f47e5fc74"
+  :recipe (:host github
+           :repo "localredhead/ob-aider.el"
+           :branch "main"))
+
 (package! mcp
   :pin "60f48d2ad386583dd3338b338444339e3f27f1d8"
   :recipe (:host github
@@ -1310,6 +1316,12 @@ return a default list of model IDs."
                           "openrouter/openai/o1"
                           "openrouter/anthropic/claude-3.7-sonnet"
                           "openrouter/google/gemini-2.5-pro-exp-03-25")))
+
+(use-package! ob-aider
+  :after org
+  :config
+  (add-to-list 'org-babel-load-languages '(aider . t))
+  (org-babel-do-load-languages 'org-babel-load-languages org-babel-load-languages))
 #+end_src
 ** color-rg
 :PROPERTIES:
