@@ -154,8 +154,8 @@
     home-unstable.url = "github:nix-community/home-manager";
     home-unstable.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
-    srvos.url = "github:nix-community/srvos";
-    srvos.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    # srvos.url = "github:nix-community/srvos";
+    # srvos.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
     # Nix flake for "too much bleeding-edge" and unreleased packages
     # nyx.url = "github:chaotic-cx/nyx";
@@ -166,9 +166,9 @@
     # nixos-22-11.url = "github:nixos/nixpkgs/release-22.11";
     # nixos-23-11.url = "github:nixos/nixpkgs/release-23.11";
     # nixos-24-05.url = "github:nixos/nixpkgs/release-24.05";
-    # nixos-24-11.url = "github:nixos/nixpkgs/release-24.11";
+    nixos-24-11.url = "github:nixos/nixpkgs/release-24.11";
     # ISSUE: xdg.portal.enable is fucked on update (something to do with home-unstable)
-    nixos-24-11.url = "github:nixos/nixpkgs/785306ca6d78689fb32ab67843ac93ebd53be15e";
+    # nixos-24-11.url = "github:nixos/nixpkgs/785306ca6d78689fb32ab67843ac93ebd53be15e";
 
     ###
     # rpi stuff
@@ -180,7 +180,7 @@
     ###
     # kubernetes and friends
     ###
-    k8s.url = "github:nixos/nixpkgs/3005f20ce0aaa58169cdee57c8aa12e5f1b6e1b3";
+    # k8s.url = "github:nixos/nixpkgs/3005f20ce0aaa58169cdee57c8aa12e5f1b6e1b3";
 
     kubenix.url = "github:hall/kubenix";
     kubenix.inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -188,9 +188,9 @@
     ###
     # tools
     ###
-    nixos-vscode-server.url = "github:nix-community/nixos-vscode-server";
-    nixos-vscode-server.inputs.nixpkgs.follows = "nixpkgs";
-    nixos-vscode-server.inputs.flake-utils.follows = "flake-utils";
+    # nixos-vscode-server.url = "github:nix-community/nixos-vscode-server";
+    # nixos-vscode-server.inputs.nixpkgs.follows = "nixpkgs";
+    # nixos-vscode-server.inputs.flake-utils.follows = "flake-utils";
 
     # flakey-devShells.url = "github:GetPsyched/not-so-flakey-devshells";
     # flakey-devShells.inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -224,8 +224,6 @@
     # TODO: netboot-nix.url = "github:grahamc/netboot.nix";
 
     nvfetcher.url = "github:berberman/nvfetcher/0.7.0";
-    nur.url = "github:nix-community/NUR";
-    nurl.url = "github:nix-community/nurl";
 
     # go tools
     # gomod2nix.url = "github:nix-community/gomod2nix";
@@ -253,10 +251,6 @@
     # TODO: https://github.com/nix-community/nixd/blob/main/nixd/docs/user-guide.md
     # flake-compat, so options are visible
     # nixd.inputs.nixpkgs.follows = "nixpkgs-unstable";
-
-    ### NOTE: atuin crap - fuck RUST, but no other choice
-    ### the commit is for v18.6.0 - 45460d4c31c793985970a53f125d1a5da42c8d25
-    atuin.url = "github:atuinsh/atuin/v18.6.1";
 
     metagpt.url = "github:infinidim-enterprises/metagpt.nix";
   };

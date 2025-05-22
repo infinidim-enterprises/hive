@@ -5,7 +5,7 @@ let
   inherit (prev.python3Packages) callPackage;
   haishokuPkg = { lib, buildPythonPackage, pillow }:
     buildPythonPackage {
-      inherit (final.sources.haishoku) pname src version;
+      inherit (final.sources.misc.haishoku) pname src version;
 
       propagatedBuildInputs = [ pillow ];
       doCheck = false;
@@ -21,7 +21,7 @@ let
 
   colorzPkg = { lib, buildPythonPackage, pillow, scipy }:
     buildPythonPackage {
-      inherit (final.sources.colorz) pname src version;
+      inherit (final.sources.misc.colorz) pname src version;
 
       propagatedBuildInputs = [ pillow scipy ];
       doCheck = false;
@@ -39,7 +39,7 @@ in
 
 {
   numix-solarized-gtk-theme = prev.numix-solarized-gtk-theme.overrideAttrs (_: {
-    inherit (final.sources.numix-solarized-gtk-theme-git) src version;
+    inherit (final.sources.misc.numix-solarized-gtk-theme-git) src version;
   });
 
   pythonPackagesExtensions = prev.pythonPackagesExtensions ++ [
@@ -51,7 +51,7 @@ in
 
   themix-gui = prev.themix-gui.overrideAttrs
     (old: rec {
-      inherit (final.sources.themix-gui) src version;
+      inherit (final.sources.misc.themix-gui) src version;
       # NOTE: https://github.com/themix-project/themix-gui/blob/master/docs_markdown/Manual_Installation.md
       propagatedBuildInputs = (old.propagatedBuildInputs or [ ]) ++ (with prev; [
         xorg.xrdb

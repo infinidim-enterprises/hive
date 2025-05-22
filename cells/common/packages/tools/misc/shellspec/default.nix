@@ -1,7 +1,7 @@
 { lib, stdenv, sources }:
 
 stdenv.mkDerivation rec {
-  inherit (sources.shellspec) src pname version;
+  inherit (sources.shell.shellspec) src pname version;
 
   phases = [ "unpackPhase" "installPhase" ];
   installFlags = [ "PREFIX=$(out)" ];

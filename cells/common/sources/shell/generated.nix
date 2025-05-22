@@ -11,7 +11,19 @@
       fetchSubmodules = false;
       sha256 = "sha256-aRaUiGH2CTPtmbfrtLlNfoQzQWG817eazWctqwRlOCE=";
     };
-    "Cargo.lock" = builtins.readFile ./atuin-v18.6.1/Cargo.lock;
+    flake = "true";
+  };
+  console-solarized = {
+    pname = "console-solarized";
+    version = "26929b5e303703ec527b6f6e4569f351d9831e52";
+    src = fetchFromGitHub {
+      owner = "adeverteuil";
+      repo = "console-solarized";
+      rev = "26929b5e303703ec527b6f6e4569f351d9831e52";
+      fetchSubmodules = false;
+      sha256 = "sha256-QMxhuDuVHgw8+DpQAavtC3Dyg4rBmbrYoA8tKtamy3Y=";
+    };
+    date = "2018-10-28";
   };
   dircolors-solarized = {
     pname = "dircolors-solarized";
@@ -38,32 +50,6 @@
       sha256 = "sha256-hapOGPibqt2Mm6k73v63gHxrX+lifZ8xcwzj8vWbtgo=";
     };
     date = "2024-08-18";
-  };
-  lorri = {
-    pname = "lorri";
-    version = "7d3bf012dc7da8b5d29acc89810fd93f24258548";
-    src = fetchFromGitHub {
-      owner = "nix-community";
-      repo = "lorri";
-      rev = "7d3bf012dc7da8b5d29acc89810fd93f24258548";
-      fetchSubmodules = false;
-      sha256 = "sha256-LXvTviJrt92E68uWXHbe7jEv++zNdjHgjVYZDnNlqDE=";
-    };
-    cargoSha256 = "0000000000000000000000000000000000000000000000000000";
-    date = "2025-03-26";
-  };
-  nix-index = {
-    pname = "nix-index";
-    version = "03b861752c32141db8c3f923f51f733ad1f42e43";
-    src = fetchFromGitHub {
-      owner = "bennofs";
-      repo = "nix-index";
-      rev = "03b861752c32141db8c3f923f51f733ad1f42e43";
-      fetchSubmodules = false;
-      sha256 = "sha256-HuZVkVH7NCbI1KgQlS67Jq0FcUBc29DQz7n9CqHJEvc=";
-    };
-    cargoSha256 = "0000000000000000000000000000000000000000000000000000";
-    date = "2025-03-24";
   };
   rainbowsh = {
     pname = "rainbowsh";
@@ -100,18 +86,6 @@
       sha256 = "sha256-IJJEi8xmIco/IuN9LSf6qMacsG6jHQek9F0dPKEwviI=";
     };
     date = "2023-08-24";
-  };
-  spaceship-prompt = {
-    pname = "spaceship-prompt";
-    version = "40ec1e7f94cf9987ed424fb58f7d7a66b10e4f38";
-    src = fetchFromGitHub {
-      owner = "spaceship-prompt";
-      repo = "spaceship-prompt";
-      rev = "40ec1e7f94cf9987ed424fb58f7d7a66b10e4f38";
-      fetchSubmodules = false;
-      sha256 = "sha256-MVN9XOhri64ecmPt9oE7jPmGmLuhYZ9eP3rIbgLz8zs=";
-    };
-    date = "2025-04-23";
   };
   wofi-pass = {
     pname = "wofi-pass";

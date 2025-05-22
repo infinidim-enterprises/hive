@@ -1,0 +1,122 @@
+{
+    "nyxt-el": {
+        "cargoLocks": null,
+        "date": "2024-11-04",
+        "extract": null,
+        "name": "nyxt-el",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "f26834d37ae16e82ac8666a05959182652b412af",
+            "sha256": "sha256-m6xnx4RjKGYej+z5Q1eXuHcQTCeaD4TDHcTSm3oyDuc=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/migalmoreno/nyxt.el"
+        },
+        "version": "f26834d37ae16e82ac8666a05959182652b412af"
+    },
+    "nyxt-ext_nx-ace": {
+        "cargoLocks": null,
+        "date": "2023-06-30",
+        "extract": null,
+        "name": "nyxt-ext_nx-ace",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "83aac18448c05fc9ef1ff5058c3def668dc8d81a",
+            "sha256": "sha256-+/utlTZ/dvc2N/7whjMaE+Iv1HQGKa24gL2Hl8ASaYs=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/atlas-engineer/nx-ace"
+        },
+        "version": "83aac18448c05fc9ef1ff5058c3def668dc8d81a"
+    },
+    "nyxt-ext_nx-dark-reader": {
+        "cargoLocks": null,
+        "date": "2023-06-20",
+        "extract": null,
+        "name": "nyxt-ext_nx-dark-reader",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "57dc1a9482a81d7c15b00c4b9d647bf1b129d8e4",
+            "sha256": "sha256-CKJGCk7ATd0naFhill5rrvay6V2JE4Bstu4tFpaAjB0=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/aartaka/nx-dark-reader"
+        },
+        "version": "57dc1a9482a81d7c15b00c4b9d647bf1b129d8e4"
+    },
+    "nyxt-ext_nx-reader": {
+        "cargoLocks": null,
+        "date": "2020-06-14",
+        "extract": null,
+        "name": "nyxt-ext_nx-reader",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "cb08d2a1c794c8a9942bc5e7b793b2811a025074",
+            "sha256": "sha256-v0EPZKNfpKvY3LD1YZBuU//4/wCXJRyE8WBJBknfL/M=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/atlas-engineer/nx-reader"
+        },
+        "version": "cb08d2a1c794c8a9942bc5e7b793b2811a025074"
+    },
+    "nyxt-ext_nx-search-engines": {
+        "cargoLocks": null,
+        "date": "2023-06-07",
+        "extract": null,
+        "name": "nyxt-ext_nx-search-engines",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "f81f47df82f8e322f0a8919d05fc513297095a0b",
+            "sha256": "sha256-Q+6B3lDzlhfHnS306yLh5LpxdIXESdH/Y2D3GJodbXs=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/aartaka/nx-search-engines"
+        },
+        "version": "f81f47df82f8e322f0a8919d05fc513297095a0b"
+    },
+    "nyxt-ext_nx-tailor": {
+        "cargoLocks": null,
+        "date": "2024-11-04",
+        "extract": null,
+        "name": "nyxt-ext_nx-tailor",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "cdd8253e8a6d7bd3638458610c4971ffc58be0a8",
+            "sha256": "sha256-f5T4ptMQQhooqTsj2TmaMOUqtD5zEuuPkNGihdf2Lcc=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/migalmoreno/nx-tailor"
+        },
+        "version": "cdd8253e8a6d7bd3638458610c4971ffc58be0a8"
+    }
+}

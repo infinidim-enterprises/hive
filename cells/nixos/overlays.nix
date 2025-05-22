@@ -14,8 +14,6 @@ rec {
     ++ vscode;
 
   base = with inputs.cells.common.overlays; [
-    inputs.atuin.overlays.default
-    (final: prev: { atuin = prev.atuin.overrideAttrs (_: { version = "18.6.1"; }); })
     (final: prev: { inherit (inputs.nixd.packages) nixd; })
     # inputs.nixd.overlays.default
     inputs.nix-filter.overlays.default
@@ -25,6 +23,7 @@ rec {
     # dart-fix
     base16-schemes
     # linux-firmware-fix
+    atuin
     wofi-pass
     sources
     python

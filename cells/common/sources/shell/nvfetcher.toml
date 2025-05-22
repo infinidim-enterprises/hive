@@ -2,17 +2,15 @@
 src.github = "atuinsh/atuin"
 src.use_latest_release = true
 fetch.github = "atuinsh/atuin"
-extract = ["Cargo.lock"]
-# passthru = { cargoSha256 = "0000000000000000000000000000000000000000000000000000" }
+passthru = { flake = "true" }
+
+[console-solarized]
+src.git = "https://github.com/adeverteuil/console-solarized"
+fetch.github = "adeverteuil/console-solarized"
 
 [wofi-pass]
 src.git = "https://github.com/njkli/wofi-pass"
 fetch.git = "https://github.com/njkli/wofi-pass"
-
-[spaceship-prompt]
-# Spaceship is a minimalistic, powerful and extremely customizable Zsh prompt
-src.git = "https://github.com/spaceship-prompt/spaceship-prompt"
-fetch.github = "spaceship-prompt/spaceship-prompt"
 
 [shflags]
 # shFlags is a port of the Google gflags library for Unix shell
@@ -34,18 +32,9 @@ fetch.github = "ko1nksm/getoptions"
 src.git = "https://github.com/xr09/rainbow.sh"
 fetch.github = "xr09/rainbow.sh"
 
-[nix-index]
-# nix-index is a tool to quickly locate the package providing a certain file in nixpkgs.
-src.git = "https://github.com/bennofs/nix-index"
-fetch.github = "bennofs/nix-index"
-passthru = { cargoSha256 = "0000000000000000000000000000000000000000000000000000" }
-
-[lorri]
-# lorri is a nix-shell replacement for project development
-src.git = "https://github.com/nix-community/lorri"
-src.branch = "canon"
-fetch.github = "nix-community/lorri"
-passthru = { cargoSha256 = "0000000000000000000000000000000000000000000000000000" }
+[dircolors-solarized]
+src.git = "https://github.com/seebi/dircolors-solarized"
+fetch.git = "https://github.com/seebi/dircolors-solarized"
 
 ### ZSH plugins
 [zsh-plugin_any-nix-shell]
@@ -105,7 +94,3 @@ fetch.git = "https://github.com/chrissicool/zsh-256color"
 [zsh-plugin_zsh-autoenv]
 src.git = "https://github.com/Tarrasch/zsh-autoenv"
 fetch.git = "https://github.com/Tarrasch/zsh-autoenv"
-
-[dircolors-solarized]
-src.git = "https://github.com/seebi/dircolors-solarized"
-fetch.git = "https://github.com/seebi/dircolors-solarized"

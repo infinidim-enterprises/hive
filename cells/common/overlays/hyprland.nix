@@ -3,7 +3,6 @@ final: prev:
 let
   inherit (inputs.nixpkgs-lib.lib // builtins)
     hasAttrByPath
-    removeAttrs
     filterAttrs
     mapAttrs
     hasAttr;
@@ -13,7 +12,7 @@ let
 
   hyprwm_flakes_all = mapAttrs flakeGet
     (filterAttrs (_: v: hasAttr "flake" v && v.flake == "true")
-      (removeAttrs final.sources.hyprwm [ "override" "overrideDerivation" ]));
+      final.sources.hyprwm);
 
   hyprwm_flakes_with_input_hyprland = mapAttrs
     (_: v: cell.lib.callFlakeWithOverrides {
@@ -63,7 +62,7 @@ let
 in
 
 {
-  sources = prev.sources // { inherit hyprwm_flakes; };
+  # sources = prev.sources // { inherit hyprwm_flakes; };
 
   inherit (release)
     mesa

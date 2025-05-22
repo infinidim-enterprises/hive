@@ -2,11 +2,11 @@
     "atuin": {
         "cargoLocks": null,
         "date": null,
-        "extract": {
-            "Cargo.lock": "./atuin-v18.6.1/Cargo.lock"
-        },
+        "extract": null,
         "name": "atuin",
-        "passthru": null,
+        "passthru": {
+            "flake": "true"
+        },
         "pinned": false,
         "src": {
             "deepClone": false,
@@ -21,6 +21,27 @@
             "type": "github"
         },
         "version": "v18.6.1"
+    },
+    "console-solarized": {
+        "cargoLocks": null,
+        "date": "2018-10-28",
+        "extract": null,
+        "name": "console-solarized",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "adeverteuil",
+            "repo": "console-solarized",
+            "rev": "26929b5e303703ec527b6f6e4569f351d9831e52",
+            "sha256": "sha256-QMxhuDuVHgw8+DpQAavtC3Dyg4rBmbrYoA8tKtamy3Y=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "26929b5e303703ec527b6f6e4569f351d9831e52"
     },
     "dircolors-solarized": {
         "cargoLocks": null,
@@ -62,52 +83,6 @@
             "type": "github"
         },
         "version": "139d121807db67f632b412b2a00ece851df73203"
-    },
-    "lorri": {
-        "cargoLocks": null,
-        "date": "2025-03-26",
-        "extract": null,
-        "name": "lorri",
-        "passthru": {
-            "cargoSha256": "0000000000000000000000000000000000000000000000000000"
-        },
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "nix-community",
-            "repo": "lorri",
-            "rev": "7d3bf012dc7da8b5d29acc89810fd93f24258548",
-            "sha256": "sha256-LXvTviJrt92E68uWXHbe7jEv++zNdjHgjVYZDnNlqDE=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "7d3bf012dc7da8b5d29acc89810fd93f24258548"
-    },
-    "nix-index": {
-        "cargoLocks": null,
-        "date": "2025-03-24",
-        "extract": null,
-        "name": "nix-index",
-        "passthru": {
-            "cargoSha256": "0000000000000000000000000000000000000000000000000000"
-        },
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "bennofs",
-            "repo": "nix-index",
-            "rev": "03b861752c32141db8c3f923f51f733ad1f42e43",
-            "sha256": "sha256-HuZVkVH7NCbI1KgQlS67Jq0FcUBc29DQz7n9CqHJEvc=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "03b861752c32141db8c3f923f51f733ad1f42e43"
     },
     "rainbowsh": {
         "cargoLocks": null,
@@ -171,27 +146,6 @@
             "type": "github"
         },
         "version": "96694d58ce92065fdd8f8761d930765cb9a8d066"
-    },
-    "spaceship-prompt": {
-        "cargoLocks": null,
-        "date": "2025-04-23",
-        "extract": null,
-        "name": "spaceship-prompt",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "spaceship-prompt",
-            "repo": "spaceship-prompt",
-            "rev": "40ec1e7f94cf9987ed424fb58f7d7a66b10e4f38",
-            "sha256": "sha256-MVN9XOhri64ecmPt9oE7jPmGmLuhYZ9eP3rIbgLz8zs=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "40ec1e7f94cf9987ed424fb58f7d7a66b10e4f38"
     },
     "wofi-pass": {
         "cargoLocks": null,

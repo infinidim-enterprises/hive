@@ -1,7 +1,7 @@
 { lib, stdenv, sources }:
 
-stdenv.mkDerivation rec {
-  inherit (sources.getoptions) pname src version;
+stdenv.mkDerivation {
+  inherit (sources.shell.getoptions) pname src version;
 
   phases = [ "installPhase" ];
   doCheck = false;

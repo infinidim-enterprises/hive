@@ -66,7 +66,7 @@ mkIf config.programs.zsh.enable
           (name: {
             inherit name;
             file = "plugins/${name}/${name}.plugin.zsh";
-            src = pkgs.sources.zsh-plugin_oh-my-zsh.src;
+            src = pkgs.sources.shell.zsh-plugin_oh-my-zsh.src;
           }) [
           "urltools"
           "transfer"
@@ -90,7 +90,7 @@ mkIf config.programs.zsh.enable
     (optional (!config.programs.atuin.enable) {
       name = "zsh-history-substring-search";
       file = "zsh-history-substring-search.plugin.zsh";
-      src = pkgs.sources.zsh-plugin_zsh-history-substring-search.src;
+      src = pkgs.sources.shell.zsh-plugin_zsh-history-substring-search.src;
     }) ++
 
     [
@@ -98,51 +98,51 @@ mkIf config.programs.zsh.enable
       {
         name = "zsh-completions";
         file = "zsh-completions.plugin.zsh";
-        src = pkgs.sources.zsh-plugin_zsh-completions.src;
+        src = pkgs.sources.shell.zsh-plugin_zsh-completions.src;
       }
 
       # NOTE: obsoleted by direnv
       # {
       #   name = "autoenv";
       #   file = "autoenv.plugin.zsh";
-      #   src = pkgs.sources.zsh-plugin_zsh-autoenv.src;
+      #   src = pkgs.sources.shell.zsh-plugin_zsh-autoenv.src;
       # }
 
       # NOTE: This doesn't work with Wayland
       # {
       #   name = "clipboard";
       #   file = "clipboard.plugin.zsh";
-      #   src = pkgs.sources.zsh-plugin_clipboard.src;
+      #   src = pkgs.sources.shell.zsh-plugin_clipboard.src;
       # }
 
       {
         name = "k";
         file = "k.plugin.zsh";
-        src = pkgs.sources.zsh-plugin_k.src;
+        src = pkgs.sources.shell.zsh-plugin_k.src;
       }
 
       {
         name = "zsh-syntax-highlighting";
         file = "zsh-syntax-highlighting.plugin.zsh";
-        src = pkgs.sources.zsh-plugin_zsh-syntax-highlighting.src;
+        src = pkgs.sources.shell.zsh-plugin_zsh-syntax-highlighting.src;
       }
 
       {
         name = "tipz";
         file = "tipz.zsh";
-        src = pkgs.sources.zsh-plugin_tipz.src;
+        src = pkgs.sources.shell.zsh-plugin_tipz.src;
       }
 
       {
         name = "zsh-autopair";
         file = "zsh-autopair.plugin.zsh";
-        src = pkgs.sources.zsh-plugin_zsh-autopair.src;
+        src = pkgs.sources.shell.zsh-plugin_zsh-autopair.src;
       }
 
       {
         name = "zsh-256color";
         file = "zsh-256color.plugin.zsh";
-        src = pkgs.sources.zsh-plugin_zsh-256color.src;
+        src = pkgs.sources.shell.zsh-plugin_zsh-256color.src;
       }
 
     ];

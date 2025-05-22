@@ -17,17 +17,17 @@
   };
   adguard-filters_adguardteam = {
     pname = "adguard-filters_adguardteam";
-    version = "b2c49f37e2bfeeb373502591a09f04f4bbc3f0a2";
+    version = "d811cf439beeb004e179a9f4fd93bd6c190f8355";
     src = fetchgit {
       url = "https://github.com/AdguardTeam/AdguardFilters";
-      rev = "b2c49f37e2bfeeb373502591a09f04f4bbc3f0a2";
+      rev = "d811cf439beeb004e179a9f4fd93bd6c190f8355";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-2TUZ1uAbA6o/gUd2MmIErxBXExKf2C+YAjm/P8U12Wg=";
+      sha256 = "sha256-BB6cE1n9qGKoDdTiAh9HRTAPtRW6xcbhEDywe+sy9k4=";
     };
-    date = "2025-05-21";
+    date = "2025-05-22";
   };
   adguard-filters_romania = {
     pname = "adguard-filters_romania";
@@ -159,18 +159,6 @@
     };
     date = "2018-10-24";
   };
-  console-solarized = {
-    pname = "console-solarized";
-    version = "26929b5e303703ec527b6f6e4569f351d9831e52";
-    src = fetchFromGitHub {
-      owner = "adeverteuil";
-      repo = "console-solarized";
-      rev = "26929b5e303703ec527b6f6e4569f351d9831e52";
-      fetchSubmodules = false;
-      sha256 = "sha256-QMxhuDuVHgw8+DpQAavtC3Dyg4rBmbrYoA8tKtamy3Y=";
-    };
-    date = "2018-10-28";
-  };
   crystalline = {
     pname = "crystalline";
     version = "v0.17.1";
@@ -265,17 +253,17 @@
   };
   ipxe = {
     pname = "ipxe";
-    version = "d15a11f3a4f49999447e9bd0c499455d1d9ef078";
+    version = "a53456334512f8de2e5d744abbc0a0cddd0eb962";
     src = fetchgit {
       url = "https://github.com/ipxe/ipxe";
-      rev = "d15a11f3a4f49999447e9bd0c499455d1d9ef078";
+      rev = "a53456334512f8de2e5d744abbc0a0cddd0eb962";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-tfRPzyHcgKWOxie/CywPFA+Vc7BxYlulfpshPeTyq+0=";
+      sha256 = "sha256-9pF2sRvgU3LQHGCV4vX82NJWINhJ881mAN8mpmavUOE=";
     };
-    date = "2025-05-20";
+    date = "2025-05-21";
   };
   iterable-io = {
     pname = "iterable-io";
@@ -296,14 +284,6 @@
       sha256 = "sha256-K/dQb1+mwcN6drp8pKy8Qt9aFxffJSgHJ2cvEw6Mx8s=";
     };
   };
-  lidarr = {
-    pname = "lidarr";
-    version = "2.11.2.4629";
-    src = fetchurl {
-      url = "https://github.com/lidarr/Lidarr/releases/download/v2.11.2.4629/Lidarr.master.2.11.2.4629.linux-core-arm64.tar.gz";
-      sha256 = "sha256-UBXDuVTRb7EWVjWbeNUn1TLb5W7hkvvbpxZuLhohgaA=";
-    };
-  };
   listopia = {
     pname = "listopia";
     version = "2d2a1a3c35580252ca0085e15ebf625f73230d60";
@@ -315,14 +295,6 @@
       sha256 = "sha256-IEoPmF0QC1S6xF/enlqy1rDX8qi/2bvacxWpCHaro0k=";
     };
     date = "2021-03-17";
-  };
-  logseq = {
-    pname = "logseq";
-    version = "0.10.9";
-    src = fetchurl {
-      url = "https://github.com/logseq/logseq/releases/download/0.10.9/logseq-linux-x64-0.10.9.AppImage";
-      sha256 = "sha256-XROuY2RlKnGvK1VNvzauHuLJiveXVKrIYPppoz8fCmc=";
-    };
   };
   masterpdfeditor = {
     pname = "masterpdfeditor";
@@ -345,6 +317,21 @@
       sha256 = "sha256-r5xCe8Ew+/SuCUaZ0yjlumORTy/y1VwbQQjQ6uEyGsY=";
     };
     date = "2023-03-05";
+  };
+  nur = {
+    pname = "nur";
+    version = "83e3c7a2d3f5b90d381eb1951f13588daa2ec8af";
+    src = fetchgit {
+      url = "https://github.com/nix-community/NUR";
+      rev = "83e3c7a2d3f5b90d381eb1951f13588daa2ec8af";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-fWXSzuYKtZAhbPt9D5wUEJi6YDfWubSNyzywS+uor2k=";
+    };
+    flake = "true";
+    date = "2025-05-22";
   };
   pam_usb = {
     pname = "pam_usb";
@@ -398,14 +385,6 @@
     };
     date = "2022-07-26";
   };
-  prowlarr = {
-    pname = "prowlarr";
-    version = "1.35.1.5034";
-    src = fetchurl {
-      url = "https://github.com/Prowlarr/Prowlarr/releases/download/v1.35.1.5034/Prowlarr.master.1.35.1.5034.linux-core-arm64.tar.gz";
-      sha256 = "sha256-xChYbzs4zTWe71xwn3TfUZHGTOHHjzDwbkzPgQEfQZk=";
-    };
-  };
   python-pass = {
     pname = "python-pass";
     version = "6f51145a3bc12ee79d2881204b88a82d149f3228";
@@ -423,22 +402,6 @@
     src = fetchurl {
       url = "https://beta.quicklisp.org/quicklisp.lisp";
       sha256 = "sha256-SnpcKuvgcWQXBHhUJnOX4kpE0MzglhJ0EenOnM/rLBc=";
-    };
-  };
-  radarr = {
-    pname = "radarr";
-    version = "5.23.3.9987";
-    src = fetchurl {
-      url = "https://github.com/Radarr/Radarr/releases/download/v5.23.3.9987/Radarr.master.5.23.3.9987.linux-core-arm64.tar.gz";
-      sha256 = "sha256-MiP0xgQu+SPG65JBozT0dcbR24vajl/qjiG/RwkLJo4=";
-    };
-  };
-  readarr = {
-    pname = "readarr";
-    version = "0.4.13.2760";
-    src = fetchurl {
-      url = "https://github.com/Readarr/Readarr/releases/download/v0.4.13.2760/Readarr.develop.0.4.13.2760.linux-core-arm64.tar.gz";
-      sha256 = "sha256-qYG1uFyn26J6ElTeeI8Ozf6kVhm6EZKKMJ+4UFRhlqQ=";
     };
   };
   s5cmd = {
@@ -509,14 +472,6 @@
     };
     date = "2019-01-03";
   };
-  sonarr = {
-    pname = "sonarr";
-    version = "4.0.14.2939";
-    src = fetchurl {
-      url = "https://github.com/Sonarr/Sonarr/releases/download/v4.0.14.2939/Sonarr.main.4.0.14.2939.linux-arm64.tar.gz";
-      sha256 = "sha256-Kc2nMUYwyRxzas9Dr+jGp+uaeCHh/jhxLhfPpqQ19pI=";
-    };
-  };
   sublimeSolarized = {
     pname = "sublimeSolarized";
     version = "3.0.3";
@@ -553,14 +508,6 @@
       sha256 = "sha256-NU56yDBD1x2CP92LrQZzgqz6jV0NRESKOYQh8atNzk8=";
     };
     date = "2025-05-12";
-  };
-  transmissionic = {
-    pname = "transmissionic";
-    version = "v1.8.0";
-    src = fetchurl {
-      url = "https://github.com/6c65726f79/Transmissionic/releases/download/v1.8.0/Transmissionic-webui-v1.8.0.zip";
-      sha256 = "sha256-IhbJCv9SWjLspJYv6dBKrooGk+vA7sq1N3WzMne6PEw=";
-    };
   };
   zerotierone = {
     pname = "zerotierone";

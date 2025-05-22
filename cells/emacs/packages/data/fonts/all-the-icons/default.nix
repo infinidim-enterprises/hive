@@ -1,6 +1,6 @@
-{ sources-emacs, stdenv }:
+{ sources, stdenv }:
 stdenv.mkDerivation rec {
-  inherit (sources-emacs.all-the-icons) version src pname;
+  inherit (sources.emacs.all-the-icons) version src pname;
   phases = [ "installPhase" ];
 
   installPhase = ''

@@ -167,7 +167,7 @@ mkMerge [
   (mkIf config.programs.bat.enable {
     programs.bat.config.theme = "Solarized (dark)";
     programs.bat.themes.solarized = {
-      inherit (pkgs.sources.sublimeSolarized) src;
+      inherit (pkgs.sources.misc.sublimeSolarized) src;
       file = "Solarized (dark).sublime-color-scheme";
     };
   })
@@ -330,7 +330,7 @@ mkMerge [
   })
 
   (mkIf config.programs.dircolors.enable {
-    programs.dircolors.extraConfig = fileContents "${pkgs.sources.dircolors-solarized.src}//dircolors.256dark";
+    programs.dircolors.extraConfig = fileContents "${pkgs.sources.shell.dircolors-solarized.src}//dircolors.256dark";
   })
 ]
 

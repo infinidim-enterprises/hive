@@ -25,7 +25,7 @@ let
   linkConfig = with builtins; pathExists "${self}/users/${name}/dotfiles/nyxt.d";
   nyxt-extensions = pkgs.linkFarm "nyxt-ext"
     (mapAttrsToList (k: v: { name = (removePrefix "nyxt-ext_" k); path = v.src; })
-      (filterAttrs (k: v: hasPrefix "nyxt-ext_" k) pkgs.sources-emacs));
+      (filterAttrs (k: v: hasPrefix "nyxt-ext_" k) pkgs.sources.nyxt));
 in
 mkMerge [
   { home.packages = [ pkgs.nyxt ]; }

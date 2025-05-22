@@ -87,7 +87,7 @@ mkMerge [
   {
     home.packages = with pkgs; [
       niv
-      nurl
+      # nurl
       dconf2nix
       nix-bundle
       nix-diff

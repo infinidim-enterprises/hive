@@ -1,7 +1,7 @@
 { lib, stdenv, sources }:
 
 stdenv.mkDerivation rec {
-  inherit (sources.rainbowsh) src pname version;
+  inherit (sources.shell.rainbowsh) src pname version;
 
   phases = [ "unpackPhase" "installPhase" ];
   doCheck = false;
@@ -13,7 +13,7 @@ stdenv.mkDerivation rec {
 
   meta = with lib; {
     description = "Colors for your scripts, the easy way.";
-    homepage = https://github.com/xr09/rainbow.sh;
+    homepage = "https://github.com/xr09/rainbow.sh";
     platforms = platforms.unix;
     license = licenses.mit;
   };

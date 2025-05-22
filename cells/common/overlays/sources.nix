@@ -1,17 +1,12 @@
 { inputs, cell, ... }:
-
+# TODO: refactor sources into attrset sources.shell, sources.emacs, sources.misc etc...
 final: prev:
 {
-  sources =
-    # let
-    #   src = [
-    #     (final.callPackage ../sources/misc/generated.nix { })
-    #     (final.callPackage ../sources/shell/generated.nix { })
-    #   ];
-    # in
-    (final.callPackage ../sources/misc/generated.nix { }) //
-    (final.callPackage ../sources/shell/generated.nix { }) //
-    {
-      hyprwm = final.callPackage ../sources/hyprwm/generated.nix { };
-    };
+  sources = (prev.sources or { }) // (
+    inputs.cells.common.lib.importers.importSourcesNvfetcher {
+      inherit (final) callPackage;
+      dir = ../sources;
+    }
+  ) //
+    (final.callPackage ../sources/misc/generated.nix { });
 }

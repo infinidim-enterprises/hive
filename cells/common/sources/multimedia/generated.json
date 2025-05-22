@@ -1,0 +1,92 @@
+{
+    "lidarr": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "lidarr",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-UBXDuVTRb7EWVjWbeNUn1TLb5W7hkvvbpxZuLhohgaA=",
+            "type": "url",
+            "url": "https://github.com/lidarr/Lidarr/releases/download/v2.11.2.4629/Lidarr.master.2.11.2.4629.linux-core-arm64.tar.gz"
+        },
+        "version": "2.11.2.4629"
+    },
+    "prowlarr": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "prowlarr",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-xChYbzs4zTWe71xwn3TfUZHGTOHHjzDwbkzPgQEfQZk=",
+            "type": "url",
+            "url": "https://github.com/Prowlarr/Prowlarr/releases/download/v1.35.1.5034/Prowlarr.master.1.35.1.5034.linux-core-arm64.tar.gz"
+        },
+        "version": "1.35.1.5034"
+    },
+    "radarr": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "radarr",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-MiP0xgQu+SPG65JBozT0dcbR24vajl/qjiG/RwkLJo4=",
+            "type": "url",
+            "url": "https://github.com/Radarr/Radarr/releases/download/v5.23.3.9987/Radarr.master.5.23.3.9987.linux-core-arm64.tar.gz"
+        },
+        "version": "5.23.3.9987"
+    },
+    "readarr": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "readarr",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-qYG1uFyn26J6ElTeeI8Ozf6kVhm6EZKKMJ+4UFRhlqQ=",
+            "type": "url",
+            "url": "https://github.com/Readarr/Readarr/releases/download/v0.4.13.2760/Readarr.develop.0.4.13.2760.linux-core-arm64.tar.gz"
+        },
+        "version": "0.4.13.2760"
+    },
+    "sonarr": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "sonarr",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-Kc2nMUYwyRxzas9Dr+jGp+uaeCHh/jhxLhfPpqQ19pI=",
+            "type": "url",
+            "url": "https://github.com/Sonarr/Sonarr/releases/download/v4.0.14.2939/Sonarr.main.4.0.14.2939.linux-arm64.tar.gz"
+        },
+        "version": "4.0.14.2939"
+    },
+    "transmissionic": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "transmissionic",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-IhbJCv9SWjLspJYv6dBKrooGk+vA7sq1N3WzMne6PEw=",
+            "type": "url",
+            "url": "https://github.com/6c65726f79/Transmissionic/releases/download/v1.8.0/Transmissionic-webui-v1.8.0.zip"
+        },
+        "version": "v1.8.0"
+    }
+}

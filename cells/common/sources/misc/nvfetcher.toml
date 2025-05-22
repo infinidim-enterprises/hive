@@ -1,7 +1,4 @@
 ### look-and-feel
-[console-solarized]
-src.git = "https://github.com/adeverteuil/console-solarized"
-fetch.github = "adeverteuil/console-solarized"
 
 # TODO: https://github.com/lassekongo83/adw-colors
 # https://github.com/lassekongo83/adw-gtk3
@@ -85,10 +82,6 @@ fetch.git = "https://github.com/AdguardTeam/AdguardFilters"
 src.git = "https://github.com/tcptomato/ROad-Block"
 fetch.git = "https://github.com/tcptomato/ROad-Block"
 
-# [adguardhome]
-# src.github = "AdguardTeam/AdGuardHome"
-# fetch.url = "https://github.com/AdguardTeam/AdGuardHome/releases/download/$ver/AdGuardHome_linux_amd64.tar.gz"
-
 ### :START: ipxe
 [ipxe]
 src.git = "https://github.com/ipxe/ipxe"
@@ -126,11 +119,6 @@ fetch.github = "aviau/python-pass"
 [iterable-io]
 src.pypi = "iterable-io"
 fetch.pypi = "iterable-io"
-
-[logseq]
-# A privacy-first, open-source platform for knowledge management and collaboration
-src.github = "logseq/logseq"
-fetch.url = "https://github.com/logseq/logseq/releases/download/$ver/logseq-linux-x64-$ver.AppImage"
 
 ###################
 # hardware crypto stuff
@@ -268,50 +256,7 @@ src.use_latest_release = true
 src.github = "zerotier/ZeroTierOne"
 fetch.url = "https://github.com/zerotier/ZeroTierOne/archive/refs/tags/$ver.tar.gz"
 
-###
-# Download assistants
-###
-[transmissionic]
-# Remote for Transmission Daemon
-src.github = "6c65726f79/Transmissionic"
-fetch.url = "https://github.com/6c65726f79/Transmissionic/releases/download/$ver/Transmissionic-webui-$ver.zip"
-
-[radarr]
-src.github = "Radarr/Radarr"
-src.use_latest_release = true
-src.prefix = "v" # NOTE: remove "v" from $ver
-fetch.url = "https://github.com/Radarr/Radarr/releases/download/v$ver/Radarr.master.$ver.linux-core-arm64.tar.gz"
-
-[readarr]
-# src.github_tag = "Readarr/Readarr"
-# src.branch = "develop"
-# src.include_regex = "releases/gcc-10.*"
-# src.github = "Readarr/Readarr"
-# src.use_latest_release = true
-# src.prefix = "v" # NOTE: remove "v" from $ver
-src.manual = "0.4.13.2760"
-fetch.url = "https://github.com/Readarr/Readarr/releases/download/v$ver/Readarr.develop.$ver.linux-core-arm64.tar.gz"
-
-[sonarr]
-src.github = "Sonarr/Sonarr"
-src.use_latest_release = true
-src.prefix = "v" # NOTE: remove "v" from $ver
-fetch.url = "https://github.com/Sonarr/Sonarr/releases/download/v$ver/Sonarr.main.$ver.linux-arm64.tar.gz"
-# https://github.com/Sonarr/Sonarr/releases/download/v4.0.14.2939/Sonarr.main.4.0.14.2939.linux-arm64.tar.gz
-
-[lidarr]
-src.github = "lidarr/Lidarr"
-src.use_latest_release = true
-src.prefix = "v" # NOTE: remove "v" from $ver
-fetch.url = "https://github.com/lidarr/Lidarr/releases/download/v$ver/Lidarr.master.$ver.linux-core-arm64.tar.gz"
-# https://github.com/Lidarr/Lidarr/releases/download/v2.10.3.4602/Lidarr.master.2.10.3.4602.linux-core-arm64.tar.gz
-
-[prowlarr]
-src.github = "Prowlarr/Prowlarr"
-src.use_latest_release = true
-src.prefix = "v" # NOTE: remove "v" from $ver
-fetch.url = "https://github.com/Prowlarr/Prowlarr/releases/download/v$ver/Prowlarr.master.$ver.linux-core-arm64.tar.gz"
-
-# TODO: [whisparr]
-# src.github = "Whisparr/Whisparr"
-# fetch.github = "Whisparr/Whisparr"
+[nur]
+src.git = "https://github.com/nix-community/NUR"
+fetch.git = "https://github.com/nix-community/NUR"
+passthru = { flake = "true" }

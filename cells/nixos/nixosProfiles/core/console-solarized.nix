@@ -17,7 +17,7 @@ in
       StandardOutput = "tty";
       TTYPath = "/dev/%i";
       TTYVTDisallocate = "yes";
-      ExecStart = "${pkgs.sources.console-solarized.src}/console-solarized";
+      ExecStart = "${pkgs.sources.shell.console-solarized.src}/console-solarized";
     };
   };
   systemd.services."getty@".requires = [ "console-solarized@%i.service" ];
