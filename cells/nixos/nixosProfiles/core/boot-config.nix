@@ -10,6 +10,8 @@ let
 in
 mkMerge
   [
+    { system.nixos.versionSuffix = ""; }
+
     {
       boot.kernelParams = mkAfter [
         "consoleblank=90"

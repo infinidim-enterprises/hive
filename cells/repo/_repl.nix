@@ -34,6 +34,7 @@ let
       "nixpkgs"
       "nixpkgs-unstable"
       "nixpkgs-master"
+      "nixpkgs-release"
     ]
       (x: Flake.inputs.${x} // {
         pkgs = Flake.inputs.${x}.legacyPackages.${builtins.currentSystem}.appendOverlays [

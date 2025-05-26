@@ -5,6 +5,9 @@
   boot.kernel.sysctl."vm.swappiness" = 1;
 
   boot.zfs.package = with config.boot.kernelPackages;
+    let
+      zfs = config.boot.kernelPackages.${pkgs.zfs.kernelModuleAttribute};
+    in
     if (zfs.meta.broken && zfs_unstable.meta.broken)
     then (abort "kernel v${kernel.version} has no zfs userland!")
     else

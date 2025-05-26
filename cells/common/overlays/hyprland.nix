@@ -25,37 +25,26 @@ let
 
   hyprwm_flakes = hyprwm_flakes_all // hyprwm_flakes_with_input_hyprland;
 
-  master = import inputs.nixpkgs-master {
-    inherit (inputs.nixpkgs) system;
-    config.allowUnfree = true;
-  };
-
   release = import inputs.nixpkgs {
     inherit (inputs.nixpkgs) system;
     config.allowUnfree = true;
     overlays = [
-      (fin: prev: {
-        inherit (master)
-          # ISSUE: https://github.com/NixOS/nixpkgs/issues/368379#issuecomment-2563463801
-          # also related: https://github.com/hyprwm/Hyprland/issues/6967
-          # NOTE: latest hyprland wants at least mesa 24.3
-          ###
-          mesa
-          libgbm
-          weston
-          wlroots
-          sway
-          xwayland;
-      })
       hyprwm_flakes.hyprlock.overlays.default
       hyprwm_flakes.hypridle.overlays.default
       hyprwm_flakes.hyprland-plugins.overlays.default
       hyprwm_flakes.hyprpicker.overlays.default
       hyprwm_flakes.contrib.overlays.default
-      hyprwm_flakes.waybar.overlays.default
       hyprwm_flakes.hyprsysteminfo.overlays.default
       hyprwm_flakes.grim-hyprland.overlays.default
       hyprwm_flakes.hy3.inputs.hyprland.overlays.default
+
+      hyprwm_flakes.waybar.overlays.default
+      (_: prv: {
+        waybar = prv.waybar.overrideAttrs (_: {
+          __intentionallyOverridingVersion = true;
+          inherit (final.sources.hyprwm.waybar) version;
+        });
+      })
     ];
   };
 
@@ -65,13 +54,6 @@ in
   # sources = prev.sources // { inherit hyprwm_flakes; };
 
   inherit (release)
-    mesa
-    libgbm
-    weston
-    wlroots
-    sway
-    xwayland
-
     waybar
     hyprsysteminfo
 

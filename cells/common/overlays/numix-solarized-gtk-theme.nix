@@ -60,7 +60,8 @@ in
         gnugrep
         bc
         zip
-        breeze-icons
+        libsForQt5.breeze-icons
+        # breeze-icons
         polkit
         polkit_gnome
         librsvg

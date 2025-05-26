@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    libreoffice
+    libreoffice-still
     (hunspellWithDicts
       (with hunspellDicts; [
         ru_RU

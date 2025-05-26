@@ -12,38 +12,28 @@
       sha256 = "sha256-hXKrjo/9Y3WLgluwEK2q123QcfBVA0ByEKaq8Rtd70E=";
     };
   };
-  dashscope = {
-    pname = "dashscope";
-    version = "31d4ff04c5e21a562a5d34660d9c27553f70b5e9";
+  dspy = {
+    pname = "dspy";
+    version = "334b07ea0203a5149f0c5ee9572569ffbbc8e711";
     src = fetchgit {
-      url = "https://github.com/dashscope/dashscope-sdk-python";
-      rev = "31d4ff04c5e21a562a5d34660d9c27553f70b5e9";
+      url = "https://git.smart-cactus.org/ben/dspy-nix";
+      rev = "334b07ea0203a5149f0c5ee9572569ffbbc8e711";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-XL5hJaLB/D2rQDegl5knmmkm/RckMO9eyJt46MUNqbc=";
+      sha256 = "sha256-qKEeM2SbQ5jpYVkRU00Zkdzyzjpek7fcoFWLmsVoRsk=";
     };
-    date = "2025-05-14";
+    flake = "true";
+    date = "2025-01-12";
   };
-  faiss-cpu = {
-    pname = "faiss-cpu";
-    version = "v1.11.0";
-    src = fetchFromGitHub {
-      owner = "kyamagu";
-      repo = "faiss-wheels";
-      rev = "v1.11.0";
-      fetchSubmodules = false;
-      sha256 = "sha256-qCr2D6hTRub08Alp9hc5MrCgfCIzXSeqj24d0FwB4tw=";
-    };
-  };
-  gluetun = {
-    pname = "gluetun";
+  kestra = {
+    pname = "kestra";
     version = "latest";
     src = dockerTools.pullImage {
-      imageName = "qmcgaw/gluetun";
-      imageDigest = "sha256:183c74263a07f4c931979140ac99ff4fbc44dcb1ca5b055856ef580b0fafdf1c";
-      sha256 = "sha256-pwLX41ulCmZi0F4hbUTlZCG7tSUYez5LPl2Mg2ecbcw=";
+      imageName = "kestra/kestra";
+      imageDigest = "sha256:6622e3288da7a637029f27b438b8471268490442cfa1c160e14b971d7220ec3c";
+      sha256 = "sha256-Cq9Rv/OfKYZgoZQi4x8KRQEZu1XQeUZWf/xK6SjeEjs=";
       finalImageTag = "latest";
       os = "linux";
       arch = "amd64";
@@ -63,14 +53,18 @@
   };
   metagpt = {
     pname = "metagpt";
-    version = "v0.8.1";
-    src = fetchFromGitHub {
-      owner = "geekan";
-      repo = "MetaGPT";
-      rev = "v0.8.1";
+    version = "a67ff78348b40fa2d301c271166fbba17d72f0e2";
+    src = fetchgit {
+      url = "https://github.com/infinidim-enterprises/metagpt.nix";
+      rev = "a67ff78348b40fa2d301c271166fbba17d72f0e2";
       fetchSubmodules = false;
-      sha256 = "sha256-wh3MK44X2HDvNUJnt5bha4TdaL6IBi3cDWfOjoX54uw=";
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-CMU744F9n7/PGgMTDYqOOJlqLC8zAjin9MNf3Dehnrs=";
     };
+    flake = "true";
+    date = "2025-05-16";
   };
   n8n = {
     pname = "n8n";
@@ -79,41 +73,6 @@
       url = "https://github.com/n8n-io/n8n/archive/n8n@1.93.0.tar.gz";
       name = "n8n.tar.gz";
       sha256 = "sha256-Fw8Ce6F+OBE1/QbvgJrQhqlS21GMEuxS/y63GePnUlw=";
-    };
-  };
-  qianfan = {
-    pname = "qianfan";
-    version = "0.4.12.3";
-    src = fetchurl {
-      url = "https://files.pythonhosted.org/packages/dd/16/684b3e232db520504bc4ccca7b639906f12bfcc729208d39c7a92bef0927/qianfan-0.4.12.3.tar.gz";
-      sha256 = "sha256-HCfdmm/2j2nnGjSzUKJ2JLR7012erJ4LbiOk9RwC70s=";
-    };
-  };
-  semantic-kernel = {
-    pname = "semantic-kernel";
-    version = "1.31.0";
-    src = fetchurl {
-      url = "https://files.pythonhosted.org/packages/fd/02/efc002c427250355d8fccd7ffef04dc8fca98c049f145c776447b1eb392f/semantic_kernel-1.28.1.tar.gz";
-      sha256 = "sha256-K8/hNPdSUfXCBtQQev2GDcsuwjB3zG1qMTDrb017qFc=";
-    };
-  };
-  ta = {
-    pname = "ta";
-    version = "0.11.0";
-    src = fetchFromGitHub {
-      owner = "bukosabino";
-      repo = "ta";
-      rev = "0.11.0";
-      fetchSubmodules = false;
-      sha256 = "sha256-2iPKfoqM+JFtcWME7Wyk+4GF5JiEXRDataRw2aXNFG4=";
-    };
-  };
-  zhipuai = {
-    pname = "zhipuai";
-    version = "2.1.5.20250421";
-    src = fetchurl {
-      url = "https://files.pythonhosted.org/packages/74/3a/622508148236575f9b80d0af9d51c2fe8b91133388a90b197be44d63ef16/zhipuai-2.1.5.20250421.tar.gz";
-      sha256 = "sha256-Ef51TqEfXsfIBuwoHsxKFppDcfNHsc7Mzqbw5TjcF+o=";
     };
   };
 }

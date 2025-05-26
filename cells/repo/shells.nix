@@ -186,16 +186,24 @@ let
     in
     bin;
 
-  inherit (nixpkgs-master)
-    ledger-live-desktop;
+  # inherit (nixpkgs-master)
+  #   ledger-live-desktop;
+
+  # inherit
+  #   (nixpkgs.appendOverlays [ inputs.cells.common.overlays.nixpkgs-unstable-overrides ])
+  #   ;
 
   inherit
-    (nixpkgs.appendOverlays [ inputs.cells.common.overlays.nixpkgs-unstable-overrides ])
+    (nixpkgs)
+    mdbook
+    writeShellApplication
+    writeShellScriptBin
+    writeScriptBin
+
     gnupg
-    alejandra
-    # nixUnstable
+    # alejandra
     nixpkgs-fmt
-    editorconfig-checker
+    # editorconfig-checker
     cachix
     nix-index
     statix
@@ -207,16 +215,7 @@ let
     findutils
     bash
     gnused
-    remarshal
-    ;
-
-  inherit
-    (nixpkgs)
-    mdbook
-    writeShellApplication
-    writeShellScriptBin
-    writeScriptBin
-    ;
+    remarshal;
 
   pkgWithCategory = category: package: { inherit package category; };
   nix = pkgWithCategory "nix";
@@ -227,7 +226,7 @@ let
 
   repl =
     let
-      nixBinary = nixpkgs-unstable.nixVersions.latest;
+      nixBinary = nixpkgs.nixVersions.latest;
     in
       /*
       if [ -z "$1" ]; then
@@ -346,8 +345,8 @@ lib.mapAttrs (_: std.lib.dev.mkShell) {
       # nixpkgs-unstable.crystal
       # nixpkgs-unstable.crystalline
       # nixpkgs-unstable.shards
-      nixpkgs-unstable.nixos-install-tools
-      nixpkgs-unstable.nix-output-monitor
+      nixpkgs.nixos-install-tools
+      nixpkgs.nix-output-monitor
 
       nvfetcher
       gnupg
@@ -355,7 +354,7 @@ lib.mapAttrs (_: std.lib.dev.mkShell) {
     ];
 
     commands = [
-      (nix nixpkgs-unstable.nixVersions.latest)
+      (nix nixpkgs.nixVersions.latest)
       (nix cachix)
       (nix nix-index)
       (nix statix)

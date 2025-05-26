@@ -3,7 +3,7 @@ let
   inherit (inputs) std;
   inherit (std.lib.dev) mkNixago;
   lib = inputs.nixpkgs-lib.lib // builtins;
-  nixpkgs = import inputs.nixpkgs-unstable {
+  nixpkgs = import inputs.nixpkgs {
     inherit (inputs.nixpkgs) system;
     config.allowUnfree = true;
   };

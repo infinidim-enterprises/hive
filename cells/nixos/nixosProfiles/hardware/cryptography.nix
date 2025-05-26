@@ -164,7 +164,7 @@ mkMerge [
       # sirikali # GUI front end to sshfs,ecryptfs,cryfs,gocryptfs,securefs,fscrypt,encfs
       gpa # Graphical user interface for the GnuPG
       yubikey-personalization-gui
-      yubikey-manager-qt
+      yubioath-flutter
       zbar
       pcsctools
 

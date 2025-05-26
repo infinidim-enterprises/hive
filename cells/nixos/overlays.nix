@@ -16,10 +16,10 @@ rec {
   base = with inputs.cells.common.overlays; [
     (final: prev: { inherit (inputs.nixd.packages) nixd; })
     # inputs.nixd.overlays.default
-    inputs.nix-filter.overlays.default
+    # inputs.nix-filter.overlays.default
     nixpkgs-master-overrides
-    nixpkgs-unstable-overrides
-    nixpkgs-release-overrides
+    # NOTE: switched to release-25.05 nixpkgs-unstable-overrides
+    # NOTE: switched to release-25.05 nixpkgs-release-overrides
     # dart-fix
     base16-schemes
     # linux-firmware-fix

@@ -404,7 +404,8 @@ result instead of `message'."
     (let* ((filtered-buffers
             (cl-remove-if
              (lambda (buf)
-               (string-prefix-p "*" (buffer-name buf)))
+               (or (string-prefix-p "*" (buffer-name buf))
+                   (eq buf (current-buffer))))
              buffers))
            (max-name-length
             (apply #'max

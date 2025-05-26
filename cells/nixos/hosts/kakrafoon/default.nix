@@ -8,7 +8,7 @@ rec {
   bee = {
     inherit system;
     home = inputs.home-unstable;
-    pkgs = import inputs.nixos-24-11 {
+    pkgs = import inputs.nixos {
       inherit system;
       config.allowUnfree = true;
       overlays = cell.overlays.base;

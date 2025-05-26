@@ -8,19 +8,18 @@ rec {
   bee = {
     inherit system;
     home = inputs.home-unstable;
-    # nixpkgs-unstable
-    pkgs = import inputs.nixos-24-11 {
+    pkgs = import inputs.nixos {
       inherit system;
       config.allowUnfree = true;
-      config.permittedInsecurePackages = [
-        # ISSUE: (emacs30.1): https://github.com/doomemacs/doomemacs/issues/8293
-        "emacs29-pgtk"
-        "emacs-pgtk-29.4"
-        "emacs-pgtk-with-packages-29.4"
-        "emacs-pgtk-with-doom-29.4"
-        # CVE-2024-53920
-        # CVE-2025-1244
-      ];
+      # config.permittedInsecurePackages = [
+      #   # ISSUE: (emacs30.1): https://github.com/doomemacs/doomemacs/issues/8293
+      #   "emacs29-pgtk"
+      #   "emacs-pgtk-29.4"
+      #   "emacs-pgtk-with-packages-29.4"
+      #   "emacs-pgtk-with-doom-29.4"
+      #   # CVE-2024-53920
+      #   # CVE-2025-1244
+      # ];
 
       overlays = cell.overlays.default_desktop;
     };
@@ -37,13 +36,11 @@ rec {
       { home-manager.sharedModules = [{ home.enableNixpkgsReleaseCheck = false; }]; }
       (import ./_hardwareProfile.nix { inherit inputs cell; })
 
-      ({ pkgs, ... }:
-        {
-          systemd.network.networks.local-eth.matchConfig.Name = "eno1";
-          networking.wireless.enable = false;
-          networking.networkmanager.enable = true;
-          environment.systemPackages = with pkgs; [ ventoy-full ];
-        })
+      {
+        systemd.network.networks.local-eth.matchConfig.Name = "eno1";
+        networking.wireless.enable = false;
+        networking.networkmanager.enable = true;
+      }
 
       {
         deploy.enable = true;

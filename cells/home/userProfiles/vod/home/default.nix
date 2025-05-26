@@ -63,7 +63,7 @@ in
       home.packages = with pkgs; [
         httpie-desktop # Painlessly test REST, GraphQL, and HTTP APIs
         tigervnc
-        ventoy-full
+        # ventoy-full
       ];
     })
 

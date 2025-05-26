@@ -38,20 +38,20 @@ in
     (nixpkgs-master)
     formats
 
-    wf-recorder
-    gimp3-with-plugins
-    freecad
+    # wf-recorder
+    # gimp3-with-plugins
+    # freecad
 
     aider-chat;
 } //
 
 {
   kdeconnect-kde-recent = nixpkgs-master.kdePackages.kdeconnect-kde;
-  copyq = prev.copyq.overrideAttrs (oldAttrs: {
-    inherit (nixpkgs-master.copyq) src version;
-    nativeBuildInputs = oldAttrs.nativeBuildInputs ++ [ prev.pkg-config ];
-    patches = [ ];
-  });
+  # copyq = prev.copyq.overrideAttrs (oldAttrs: {
+  #   inherit (nixpkgs-master.copyq) src version;
+  #   nativeBuildInputs = oldAttrs.nativeBuildInputs ++ [ prev.pkg-config ];
+  #   patches = [ ];
+  # });
 }
 
 # //

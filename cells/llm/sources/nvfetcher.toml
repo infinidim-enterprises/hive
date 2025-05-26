@@ -1,8 +1,30 @@
-[gluetun]
-# Lightweight swiss-army-knife-like VPN client to multiple VPN service providers
-src.container = "qmcgaw/gluetun"
+[dspy]
+src.git = "https://git.smart-cactus.org/ben/dspy-nix"
+fetch.git = "https://git.smart-cactus.org/ben/dspy-nix"
+passthru = { flake = "true" }
+
+[metagpt]
+src.git = "https://github.com/infinidim-enterprises/metagpt.nix"
+fetch.git = "https://github.com/infinidim-enterprises/metagpt.nix"
+passthru = { flake = "true" }
+
+[aider-chat]
+src.use_latest_release = true
+src.github = "Aider-AI/aider"
+fetch.github = "Aider-AI/aider"
+
+[n8n]
+src.use_latest_release = true
+src.github = "n8n-io/n8n"
+# NOTE: is not a valid store path: name 'n8n@1.78.1.tar.gz' contains illegal character '@'
+# ISSUE: https://github.com/berberman/nvfetcher/issues/112
+fetch.url = "https://github.com/n8n-io/n8n/archive/$ver.tar.gz"
+url.name = "n8n.tar.gz"
+
+[kestra]
+src.container = "kestra/kestra"
 src.include_regex = "latest"
-fetch.docker = "qmcgaw/gluetun"
+fetch.docker = "kestra/kestra"
 docker.os = "linux"
 docker.arch = "amd64"
 
@@ -13,47 +35,10 @@ fetch.docker = "lobehub/lobe-chat"
 docker.os = "linux"
 docker.arch = "amd64"
 
-[aider-chat]
-src.use_latest_release = true
-src.github = "Aider-AI/aider"
-fetch.github = "Aider-AI/aider"
-
-### metagpt
-[faiss-cpu]
-src.use_latest_release = true
-src.github = "kyamagu/faiss-wheels"
-fetch.github = "kyamagu/faiss-wheels"
-
-[ta]
-src.github_tag = "bukosabino/ta"
-fetch.github = "bukosabino/ta"
-
-[semantic-kernel]
-src.pypi = "semantic-kernel"
-fetch.url = "https://files.pythonhosted.org/packages/fd/02/efc002c427250355d8fccd7ffef04dc8fca98c049f145c776447b1eb392f/semantic_kernel-1.28.1.tar.gz"
-
-[zhipuai]
-src.pypi = "zhipuai"
-fetch.url = "https://files.pythonhosted.org/packages/74/3a/622508148236575f9b80d0af9d51c2fe8b91133388a90b197be44d63ef16/zhipuai-2.1.5.20250421.tar.gz"
-
-[qianfan]
-src.pypi = "qianfan"
-fetch.url = "https://files.pythonhosted.org/packages/dd/16/684b3e232db520504bc4ccca7b639906f12bfcc729208d39c7a92bef0927/qianfan-0.4.12.3.tar.gz"
-
-[dashscope]
-# src.pypi = "dashscope"
-src.git = "https://github.com/dashscope/dashscope-sdk-python"
-fetch.git = "https://github.com/dashscope/dashscope-sdk-python"
-
-[metagpt]
-src.use_latest_release = true
-src.github = "geekan/MetaGPT"
-fetch.github = "geekan/MetaGPT"
-
-[n8n]
-src.use_latest_release = true
-src.github = "n8n-io/n8n"
-# NOTE: is not a valid store path: name 'n8n@1.78.1.tar.gz' contains illegal character '@'
-# ISSUE: https://github.com/berberman/nvfetcher/issues/112
-fetch.url = "https://github.com/n8n-io/n8n/archive/$ver.tar.gz"
-url.name = "n8n.tar.gz"
+# [gluetun]
+# # Lightweight swiss-army-knife-like VPN client to multiple VPN service providers
+# src.container = "qmcgaw/gluetun"
+# src.include_regex = "latest"
+# fetch.docker = "qmcgaw/gluetun"
+# docker.os = "linux"
+# docker.arch = "amd64"

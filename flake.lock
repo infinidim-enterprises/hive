@@ -1162,6 +1162,22 @@
         "type": "github"
       }
     },
+    "nixos-25-05": {
+      "locked": {
+        "lastModified": 1748153090,
+        "narHash": "sha256-ZLI8p9FaIKBz8mNhR2pTRp6hRfJ2Cvd/CS0oUIra9Ls=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "36d0fbd80aabbb119791ff2aacc792f74b98e426",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "release-25.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixos-anywhere": {
       "inputs": {
         "disko": [
@@ -1799,17 +1815,21 @@
         "nixago-exts": "nixago-exts",
         "nixd": "nixd",
         "nixos": [
-          "nixos-24-11"
+          "nixos-25-05"
         ],
         "nixos-24-11": "nixos-24-11",
+        "nixos-25-05": "nixos-25-05",
         "nixos-anywhere": "nixos-anywhere",
         "nixos-generators": "nixos-generators",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": [
-          "nixos-24-11"
+          "nixos-25-05"
         ],
         "nixpkgs-lib": "nixpkgs-lib_2",
         "nixpkgs-master": "nixpkgs-master",
+        "nixpkgs-release": [
+          "nixos-25-05"
+        ],
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nvfetcher": "nvfetcher",
         "paisano": "paisano",

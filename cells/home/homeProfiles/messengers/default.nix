@@ -12,7 +12,7 @@ mkMerge [
       # dino # jabber/xmpp
       # FIXME; tdesktop
       # TODO: signald # Unofficial daemon for interacting with Signal
-      signal-desktop
+      signal-desktop-bin
       # element-desktop
       # vesktop # Discord with Vencord built-in
       linphone

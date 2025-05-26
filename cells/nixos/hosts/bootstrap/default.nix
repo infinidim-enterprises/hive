@@ -21,7 +21,7 @@ rec {
     #  inherit (inputs.nixpkgs) system;
     system = "x86_64-linux";
     home = inputs.home-unstable;
-    pkgs = import inputs.nixos-24-11 {
+    pkgs = import inputs.nixos {
       inherit (inputs.nixpkgs) system;
       config.allowUnfree = true;
       overlays = cell.overlays.base;
