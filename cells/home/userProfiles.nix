@@ -44,7 +44,7 @@ in
           optional config.programs.wireshark.enable "wireshark" ++
           optional config.hardware.nitrokey.enable "nitrokey" ++
           optional config.networking.networkmanager.enable "networkmanager" ++
-          optional config.services.pulseaudio.enable "pulse-access" ++
+          optional (config.services.pulseaudio.enable or config.hardware.pulseaudio.enable) "pulse-access" ++
           optional config.programs.adb.enable "adbusers" ++
           optional config.services.trezord.enable "trezord";
         }
