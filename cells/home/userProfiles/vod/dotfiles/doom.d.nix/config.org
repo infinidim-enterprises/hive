@@ -1119,7 +1119,19 @@ For the moment, will go with vendored versions in doomemacs
            :repo "natrys/whisper.el"
            :branch "master"))
 
-;; NOTE: latest aider requires newer transient.
+;; NOTE: latest aider requires newer transient. and newer transient needs newer forge and magit.
+(package! forge
+  :pin "d139e9ecae6df514dfb3c3ae06115df96a1b8392"
+  :recipe (:host github
+           :repo "magit/forge"
+           :branch "main"))
+
+(package! magit
+  :pin "e3806cbb7dd38ab73624ad48024998705f9d0d20"
+  :recipe (:host github
+           :repo "magit/magit"
+           :branch "main"))
+
 (package! transient
   :pin "df5856bb960933c91ec391de79f75ecd2cb55e52"
   :recipe (:host github
