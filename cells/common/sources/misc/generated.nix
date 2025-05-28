@@ -17,15 +17,15 @@
   };
   adguard-filters_adguardteam = {
     pname = "adguard-filters_adguardteam";
-    version = "7279caf21e39410d6e91269763d258b87e63aacb";
+    version = "3816431b62de5fc2a8ddf46e012aef34a551668d";
     src = fetchgit {
       url = "https://github.com/AdguardTeam/AdguardFilters";
-      rev = "7279caf21e39410d6e91269763d258b87e63aacb";
+      rev = "3816431b62de5fc2a8ddf46e012aef34a551668d";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-Wl30dUQslhEUL7bUqxfkLDTg5CSVose8spZtaMPxI9Y=";
+      sha256 = "sha256-rokxdi92Wub3nX4fZuaGBTzB3ipaZTkNC2gUnu9PKZM=";
     };
     date = "2025-05-28";
   };
@@ -70,6 +70,21 @@
       sha256 = "sha256-jXBCcGrkBuAtrdSXZle2L/ROVwH3RlyknWktdacnNeM=";
     };
     date = "2020-05-16";
+  };
+  bip39key = {
+    pname = "bip39key";
+    version = "v1.3.0";
+    src = fetchFromGitHub {
+      owner = "jpdarago";
+      repo = "bip39key";
+      rev = "v1.3.0";
+      fetchSubmodules = false;
+      sha256 = "sha256-bFoY4neAuL89Jw//iKbazQwS6YbjvsSzDNiUa9QcVEY=";
+    };
+    cargoLock."Cargo.lock" = {
+      lockFile = ./bip39key-v1.3.0/Cargo.lock;
+      outputHashes = { };
+    };
   };
   chatgpt-wrapper = {
     pname = "chatgpt-wrapper";
@@ -320,15 +335,15 @@
   };
   nur = {
     pname = "nur";
-    version = "c92043af90520825edc93ead4489c48f680eb49b";
+    version = "cc59c871120ee0ea17ba17dd3f26d60bb21bc49d";
     src = fetchgit {
       url = "https://github.com/nix-community/NUR";
-      rev = "c92043af90520825edc93ead4489c48f680eb49b";
+      rev = "cc59c871120ee0ea17ba17dd3f26d60bb21bc49d";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-5aPs4Ni8J039CVywe/+sb83Q2v/wTNoz8TU3MztyIlk=";
+      sha256 = "sha256-gZaw+Y0KSNnNCO86kED3y5NMWrG06TXq6L4vl/UQ3vU=";
     };
     flake = "true";
     date = "2025-05-28";
@@ -384,6 +399,17 @@
       sha256 = "sha256-DI0vxfbewqlXocrvzPgCM66IuSVxHjFdL3hIPxzFou8=";
     };
     date = "2022-07-26";
+  };
+  pynitrokey = {
+    pname = "pynitrokey";
+    version = "v0.8.4";
+    src = fetchFromGitHub {
+      owner = "Nitrokey";
+      repo = "pynitrokey";
+      rev = "v0.8.4";
+      fetchSubmodules = false;
+      sha256 = "sha256-QH/HGcQk9GkaCaB6RG5uwfRakd3jWJMzgb04c1ahC3A=";
+    };
   };
   python-pass = {
     pname = "python-pass";

@@ -36,6 +36,7 @@ in
     upterm # Secure terminal-session sharing - https://upterm.dev
     eternal-terminal # TODO: Remote shell that automatically reconnects without interrupting the session
     tio # Serial console TTY
+    vhs # Tool for generating terminal GIFs with code
 
     # TODO: [shell-gpt] - make a home-manager module for this!
 
@@ -51,6 +52,7 @@ in
     mc # File Manager and User Shell for the GNU Project, known as Midnight Commander
     nnn # File manager
     ncdu # Disk usage analyzer with an ncurses interface
+    gdu # modern ncdu
     rsync # Fast incremental file transfer utility
     lsyncd # A utility that synchronizes local directories with remote targets
 

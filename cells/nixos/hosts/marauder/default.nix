@@ -11,15 +11,6 @@ rec {
     pkgs = import inputs.nixos {
       inherit (inputs.nixpkgs) system;
       config.allowUnfree = true;
-      # config.permittedInsecurePackages = [
-      #   # ISSUE: (emacs30.1): https://github.com/doomemacs/doomemacs/issues/8293
-      #   "emacs29-pgtk"
-      #   "emacs-pgtk-29.4"
-      #   "emacs-pgtk-with-packages-29.4"
-      #   "emacs-pgtk-with-doom-29.4"
-      #   # CVE-2024-53920
-      #   # CVE-2025-1244
-      # ];
       overlays = cell.overlays.default_desktop;
     };
   };
@@ -30,6 +21,7 @@ rec {
         bee.home.nixosModules.home-manager
         (import ./_hardwareProfile.nix { inherit inputs cell; })
         (cell.lib.mkHome "vod" "zsh")
+        { home-manager.sharedModules = [{ home.enableNixpkgsReleaseCheck = false; }]; }
       ];
     in
 

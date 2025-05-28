@@ -31,13 +31,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "7279caf21e39410d6e91269763d258b87e63aacb",
-            "sha256": "sha256-Wl30dUQslhEUL7bUqxfkLDTg5CSVose8spZtaMPxI9Y=",
+            "rev": "3816431b62de5fc2a8ddf46e012aef34a551668d",
+            "sha256": "sha256-rokxdi92Wub3nX4fZuaGBTzB3ipaZTkNC2gUnu9PKZM=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/AdguardTeam/AdguardFilters"
         },
-        "version": "7279caf21e39410d6e91269763d258b87e63aacb"
+        "version": "3816431b62de5fc2a8ddf46e012aef34a551668d"
     },
     "adguard-filters_romania": {
         "cargoLocks": null,
@@ -98,6 +98,32 @@
             "url": "https://github.com/mk12/base16-solarized-scheme"
         },
         "version": "2d4a4b76688af3d2432e8849c7967c57b2afbfd7"
+    },
+    "bip39key": {
+        "cargoLocks": {
+            "Cargo.lock": [
+                "./bip39key-v1.3.0/Cargo.lock",
+                {}
+            ]
+        },
+        "date": null,
+        "extract": null,
+        "name": "bip39key",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "jpdarago",
+            "repo": "bip39key",
+            "rev": "v1.3.0",
+            "sha256": "sha256-bFoY4neAuL89Jw//iKbazQwS6YbjvsSzDNiUa9QcVEY=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v1.3.0"
     },
     "chatgpt-wrapper": {
         "cargoLocks": null,
@@ -520,13 +546,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "c92043af90520825edc93ead4489c48f680eb49b",
-            "sha256": "sha256-5aPs4Ni8J039CVywe/+sb83Q2v/wTNoz8TU3MztyIlk=",
+            "rev": "cc59c871120ee0ea17ba17dd3f26d60bb21bc49d",
+            "sha256": "sha256-gZaw+Y0KSNnNCO86kED3y5NMWrG06TXq6L4vl/UQ3vU=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/nix-community/NUR"
         },
-        "version": "c92043af90520825edc93ead4489c48f680eb49b"
+        "version": "cc59c871120ee0ea17ba17dd3f26d60bb21bc49d"
     },
     "pam_usb": {
         "cargoLocks": null,
@@ -609,6 +635,27 @@
             "type": "github"
         },
         "version": "42b4d08c0cb4b8ee527f729c1674e982eca409a7"
+    },
+    "pynitrokey": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "pynitrokey",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "Nitrokey",
+            "repo": "pynitrokey",
+            "rev": "v0.8.4",
+            "sha256": "sha256-QH/HGcQk9GkaCaB6RG5uwfRakd3jWJMzgb04c1ahC3A=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v0.8.4"
     },
     "python-pass": {
         "cargoLocks": null,

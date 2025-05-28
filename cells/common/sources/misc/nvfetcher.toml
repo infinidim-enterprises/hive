@@ -137,6 +137,17 @@ fetch.git = "https://github.com/nurupo/paper-store"
 src.git = "https://github.com/mcdope/pam_usb"
 fetch.git = "https://github.com/mcdope/pam_usb"
 
+[bip39key]
+cargo_locks = [ "Cargo.lock" ]
+src.use_latest_tag = true
+src.github = "jpdarago/bip39key"
+fetch.github = "jpdarago/bip39key"
+
+[pynitrokey]
+src.use_latest_tag = true
+src.github = "Nitrokey/pynitrokey"
+fetch.github = "Nitrokey/pynitrokey"
+
 [pgp-key-generation]
 # Deterministic GPG key generator
 src.git = "https://github.com/summitto/pgp-key-generation"

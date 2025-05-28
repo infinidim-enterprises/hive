@@ -1096,7 +1096,7 @@ For the moment, will go with vendored versions in doomemacs
 
 #+begin_src emacs-lisp :tangle packages.el
 (package! gptel
-  :pin "c03e4f3a4768c46cc7c581e52ee130e76a2e0173"
+  :pin "4330cb282a28d712b53f6e226252b94a95f206b3"
   :recipe (:host github
            :repo "karthink/gptel"
            :branch "master"))
@@ -1108,7 +1108,7 @@ For the moment, will go with vendored versions in doomemacs
            :branch "main"))
 
 (package! mcp
-  :pin "60f48d2ad386583dd3338b338444339e3f27f1d8"
+  :pin "18f762b88c49ca3cbd858525bebc223bce7512d8"
   :recipe (:host github
            :repo "lizqwerscott/mcp.el"
            :branch "master"))
@@ -1119,8 +1119,15 @@ For the moment, will go with vendored versions in doomemacs
            :repo "natrys/whisper.el"
            :branch "master"))
 
+;; NOTE: latest aider requires newer transient.
+(package! transient
+  :pin "df5856bb960933c91ec391de79f75ecd2cb55e52"
+  :recipe (:host github
+           :repo "magit/transient"
+           :branch "main"))
+
 (package! aider
-  :pin "d7c2d696444a1438d8a3ddf6a629d743d6c022fe"
+  :pin "0dc66268f1e49ea21c07d9a748bcd918765fda1d"
   :recipe (:host github
            :repo "tninja/aider.el"
            :branch "main"

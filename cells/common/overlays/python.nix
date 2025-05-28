@@ -31,6 +31,13 @@ in
         ];
       });
     })
+
+    (python-final: python-prev: {
+      pynitrokey = python-prev.pynitrokey.overridePythonAttrs (oldAttrs: {
+        inherit (final.sources.misc.pynitrokey) src version pname;
+      });
+    })
+
     (python-final: python-prev: {
       pypass = python-prev.pypass.overridePythonAttrs (oldAttrs: {
         inherit (final.sources.python-pass) src version pname;

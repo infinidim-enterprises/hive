@@ -181,7 +181,7 @@ mkMerge [
   # }
 
   {
-    # home.packages = extraBinPackages;
+    home.packages = extraBinPackages;
 
     programs.doom-emacs = {
       inherit emacs extraPackages;

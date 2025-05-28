@@ -5,7 +5,7 @@ with lib;
 
 let
   inherit (lib // builtins)
-    concatMapStringsSep
+    # concatMapStringsSep
     mapAttrsToList
     flatten
     mkAfter
@@ -60,10 +60,10 @@ in
 
       time.timeZone = mkForce "CET";
       services.postgresql = {
-        # TODO: maybe use .initialScript
         enable = true;
         enableTCPIP = true;
-        extensions = [ pkgs.postgresql.pkgs.pg_ed25519 ];
+        extensions = [ pkgs.postgresql_15.pkgs.pg_ed25519 ];
+        package = pkgs.postgresql_15; # NOTE: version 15 required for pg_ed25519
 
         # NOTE: must be set the same as on the machine running kea-dhcp
         # https://gitlab.isc.org/isc-projects/kea/-/issues/1731
@@ -77,8 +77,8 @@ in
 
         ensureDatabases = [ "powerdns" "kea" ];
         ensureUsers = map
-          (user: {
-            name = user;
+          (name: {
+            inherit name;
             ensureDBOwnership = true;
             ensureClauses.login = true;
             ensureClauses."inherit" = true;

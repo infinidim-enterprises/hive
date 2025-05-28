@@ -6,7 +6,7 @@ let
   overrides = {
     # asbleg-bootstrap = { deployment.targetHost = "192.168.1.135"; };
     asbleg = { deployment.targetHost = "asbleg.njk.local"; deployment.allowLocalDeployment = true; };
-    marauder = { deployment.targetHost = "192.168.1.129"; };
+    marauder = { deployment.targetHost = "marauder.njk.local"; };
     oglaroon = { deployment.targetHost = "localhost"; deployment.allowLocalDeployment = true; };
     damogran = { deployment.targetHost = "damogran.njk.local"; };
     kakrafoon = { deployment.targetHost = "kakrafoon.njk.local"; deployment.targetPort = 65522; };

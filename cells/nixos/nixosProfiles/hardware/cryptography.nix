@@ -79,6 +79,7 @@ mkMerge [
     # services.pcscd.plugins = [ pkgs.acsccid ];
     # programs.gnupg.dirmngr.enable = true;
 
+    # nitrokey-udev-rules
     services.udev.packages = with pkgs; [ yubikey-personalization ];
 
     environment.systemPackages = with pkgs; [
@@ -87,6 +88,8 @@ mkMerge [
       # trezorctl
 
       # NOTE: https://github.com/dhess/nixos-yubikey
+      python3Packages.pynitrokey # Python client for Nitrokey devices
+
       yubikey-personalization
       yubikey-manager
       yubikey-touch-detector
@@ -111,6 +114,9 @@ mkMerge [
       ###
       inputs.cells.common.packages.pgp-key-generation # Deterministic ssh-keys from BIP39
       inputs.cells.common.packages.dkeygen # helper script for pgp-key-generation
+      inputs.cells.common.packages.bip39key # Generate an OpenPGP key from a BIP39 mnemonic
+      passphrase2pgp # Predictable, passphrase-based PGP key generator
+      enc # Modern and friendly alternative to GnuPG
     ];
 
     environment.interactiveShellInit = ''

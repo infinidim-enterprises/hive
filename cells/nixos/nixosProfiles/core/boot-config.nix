@@ -10,7 +10,7 @@ let
 in
 mkMerge
   [
-    { system.nixos.versionSuffix = ""; }
+    { system.nixos.versionSuffix = mkDefault ""; }
 
     {
       boot.kernelParams = mkAfter [
