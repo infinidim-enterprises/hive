@@ -284,6 +284,19 @@
 ;; To remove the tracing later:
 ;; (advice-remove 'auth-source-search #'log-auth-source-access)
 #+end_src
+** setup nvfetcher integration
+:PROPERTIES:
+:ID:       7f4b09a5-0c25-4ebf-95b8-a411f2fa497c
+:END:
+
+#+begin_src emacs-lisp :tangle packages.el
+(package! nvfetcher-pins :built-in t)
+;; (load-file "/nix/store/jhcnd8nssl3gkxfpa9ja3ms291vn36xc-nvfetcher-pins")
+#+end_src
+
+#+begin_src emacs-lisp :tangle config.el
+;; (use-package! nvfetcher-pins)
+#+end_src
 
 * Usability improvements
 :PROPERTIES:
@@ -312,10 +325,10 @@
 :ID:       a0eed0db-46dd-49d4-9411-78e9d95e2c67
 :END:
 Maybe use (package! maple-iedit :recipe (:host github :repo "honmaple/emacs-maple-iedit")) instead of built-in mc/mark-next-like-this
-(package! discover :recipe (:host github :repo "mickeynp/discover.el"))
+
 #+begin_src emacs-lisp :tangle packages.el
-(package! rainbow-mode)
-(package! docker-tramp :disable t)
+(package! rainbow-mode) ;; Colorize color names in buffers
+(package! docker-tramp :disable t) ;; Obsolete
 #+end_src
 
 [[https://github.com/doomemacs/doomemacs/issues/6463][emmet-mode conflicts with copilot]]
@@ -472,7 +485,7 @@ result instead of `message'."
         ;; For tidbits that are unconventional and not intended uses of the
         ;; constituent parts, and may break in a future update.
         ("HACK" font-lock-constant-face bold)
-        ;; For things that were done hastily and/or hasn't been thoroughly
+        ;; For things that were done hastily and/or haven't been thoroughly
         ;; tested. It may not even be necessary!
         ("REVIEW" font-lock-keyword-face bold)
         ;; For especially important gotchas with a given implementation,
@@ -1012,6 +1025,7 @@ For the moment, will go with vendored versions in doomemacs
            :branch "main"))
 (package! corfu-terminal
   :type 'core
+  ;; :pin pin-corfu-terminal
   :pin "501548c3d51f926c687e8cd838c5865ec45d03cc"
   :recipe (:type git
            :repo "https://codeberg.org/akib/emacs-corfu-terminal.git"

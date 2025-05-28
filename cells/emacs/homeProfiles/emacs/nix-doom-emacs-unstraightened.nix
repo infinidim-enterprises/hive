@@ -64,6 +64,40 @@ let
       orgRoot = config.xdg.userDirs.documents + "/org";
 
       emacsPackages = pkgs.emacsPackagesFor emacs;
+
+      nvfetcher-pins = emacsPackages.trivialBuild {
+        pname = "nvfetcher-pins";
+        ename = "nvfetcher-pins";
+        version = "1.0";
+
+        src =
+          let
+            inherit (lib // builtins)
+              hasAttr
+              mapAttrsToList
+              optionalString
+              concatStringsSep;
+            pins = mapAttrsToList
+              (n: v:
+                "(defvar pin-${v.pname}" +
+                " " +
+                ''"${v.version}"'' +
+                (if (hasAttr "date" v || hasAttr "description" v)
+                then
+                  " " + '' "'' +
+                  optionalString (hasAttr "description" v) "${v.description}. " +
+                  optionalString (hasAttr "date" v) "Updated on ${v.date}." +
+                  ''")''
+                else ")"))
+              pkgs.sources.emacs;
+          in
+          pkgs.writeText "nvfetcher-pins.el" ''
+            ${concatStringsSep "\n" pins}
+
+            (provide 'nvfetcher-pins)
+          '';
+      };
+
       localSetts = emacsPackages.trivialBuild rec {
         pname = "local-setts";
         ename = pname;
@@ -75,7 +109,7 @@ let
           (defvar vod-setts-custom-from-nix "${pkgs.nodejs}/bin/node")
 
           (defun load-nix-setts ()
-            (setq langtool-language-tool-server-jar "${pkgs.languagetool}/share/languagetool-server.jar"
+            (setq! langtool-language-tool-server-jar "${pkgs.languagetool}/share/languagetool-server.jar"
                   plantuml-jar-path "${pkgs.plantuml}/lib/plantuml.jar"
                   org-plantuml-jar-path "${pkgs.plantuml}/lib/plantuml.jar"
                   org-directory "${orgRoot}"
@@ -96,7 +130,9 @@ let
     in
     with emacsPackages; epkgs: [
       treesit-grammars.with-all-grammars
+
       localSetts
+      # TODO: nvfetcher-pins
 
       # ISSUE: https://github.com/marienz/nix-doom-emacs-unstraightened?tab=readme-ov-file#tree-sitter-error-on-initialization-with-file-error-opening-output-file-read-only-file-system
 
@@ -145,7 +181,7 @@ mkMerge [
   # }
 
   {
-    home.packages = extraBinPackages;
+    # home.packages = extraBinPackages;
 
     programs.doom-emacs = {
       inherit emacs extraPackages;
@@ -167,24 +203,4 @@ mkMerge [
 
     systemd.user.services.emacs.Service.TimeoutStartSec = mkDefault 120;
   }
-
-  # (mkIf ((!pathExists doomCfgDir) || !config.programs.doom-emacs.enable) {
-  #   programs.emacs.enable = mkDefault true;
-  #   programs.emacs.package = mkDefault pkgs.emacsPgtkNativeComp;
-  #   # programs.emacs.extraPackages = mkDefault emacs_pkgs_fn;
-  # })
-
-  # (mkIf (pathExists doomCfgDir) {
-  #   programs.doom-emacs.enable = mkDefault true;
-  #   programs.doom-emacs.emacsPackage = mkDefault emacsPkg;
-  #   # programs.doom-emacs.extraPackages = mkDefault emacs_pkgs;
-  # })
-
-  # (mkIf ((pathExists doomCfgDir) && (!pathExists doomCfgDirNix)) {
-  #   programs.doom-emacs.doomPrivateDir = mkDefault doomCfgDir;
-  # })
-
-  # (mkIf ((pathExists doomCfgDir) && (pathExists doomCfgDirNix)) {
-  #   programs.doom-emacs.doomPrivateDir = mkDefault (callPackage doomCfgDir { });
-  # })
 ]

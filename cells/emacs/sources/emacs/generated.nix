@@ -3,26 +3,26 @@
 {
   aider = {
     pname = "aider";
-    version = "v0.9.0";
+    version = "v0.10.0";
     src = fetchFromGitHub {
       owner = "tninja";
       repo = "aider.el";
-      rev = "v0.9.0";
+      rev = "v0.10.0";
       fetchSubmodules = false;
-      sha256 = "sha256-3ZROXUEvvk8pd5wSXKwomPGleiR+VfMJYpmHbs3tSmQ=";
+      sha256 = "sha256-sY1zTjfS/K2qRfjt0EqB658xLPjiP9zA2nKKOX1qc4M=";
     };
   };
   all-the-icons = {
     pname = "all-the-icons";
-    version = "39ef44f810c34e8900978788467cc675870bcd19";
+    version = "4778632b29c8c8d2b7cd9ce69535d0be01d846f9";
     src = fetchFromGitHub {
       owner = "domtronn";
       repo = "all-the-icons.el";
-      rev = "39ef44f810c34e8900978788467cc675870bcd19";
+      rev = "4778632b29c8c8d2b7cd9ce69535d0be01d846f9";
       fetchSubmodules = false;
-      sha256 = "sha256-SlqJ8erFtiydEdgZFGJ23DQ9fZH4FF09iO6t3gf5pwE=";
+      sha256 = "sha256-3OhM+dEzAYDlvJL4bbvQMxherEwyC3wKC7Tjb168J6Q=";
     };
-    date = "2024-06-23";
+    date = "27 May 2025";
   };
   cape = {
     pname = "cape";
@@ -45,7 +45,7 @@
       fetchSubmodules = false;
       sha256 = "sha256-/WtacZPr45lurS0hv+W8UGzsXY3RujkU5oGGGqjqG0Q=";
     };
-    date = "2023-01-20";
+    date = "20 Jan 2023";
   };
   color-rg = {
     pname = "color-rg";
@@ -57,7 +57,7 @@
       fetchSubmodules = false;
       sha256 = "sha256-wmFaEDvLNMM0Fk6g0eGBHTzqqOf1Qxne/yMc1rGTrZM=";
     };
-    date = "2025-03-07";
+    date = "07 Mar 2025";
   };
   color-theme-sanityinc-solarized = {
     pname = "color-theme-sanityinc-solarized";
@@ -69,7 +69,7 @@
       fetchSubmodules = false;
       sha256 = "sha256-CImGELoSOfvbGPQvl99jcCMksOmc4sGw//JIX5/K4pw=";
     };
-    date = "2024-11-26";
+    date = "26 Nov 2024";
   };
   copilot-el = {
     pname = "copilot-el";
@@ -81,17 +81,17 @@
       fetchSubmodules = false;
       sha256 = "sha256-reoIFMjx2Go/EPAxD+OQFxge/amqguZS+jteh0b9xgA=";
     };
-    date = "2025-05-06";
+    date = "06 May 2025";
   };
   corfu = {
     pname = "corfu";
-    version = "2.1";
+    version = "2.2";
     src = fetchFromGitHub {
       owner = "minad";
       repo = "corfu";
-      rev = "2.1";
+      rev = "2.2";
       fetchSubmodules = false;
-      sha256 = "sha256-BZD5UjiaHDJG733Ild9mGSeqygPXVuC/zHhzb5H00FA=";
+      sha256 = "sha256-PpV1OQu1M7mq1Dz7WLpjEd9N/wtjT5DYtstGKUSP0v8=";
     };
   };
   corfu-terminal = {
@@ -106,7 +106,22 @@
       sparseCheckout = [ ];
       sha256 = "sha256-0qdSsuPE2s+DVu6yuqebMEt/29ypRlvb7TbvWEMHsjU=";
     };
-    date = "2023-08-10";
+    date = "10 Aug 2023";
+  };
+  dired-sidebar = {
+    pname = "dired-sidebar";
+    version = "3bc8927ed4d14a017eefc75d5af65022343e2ac1";
+    src = fetchgit {
+      url = "https://github.com/jojojames/dired-sidebar";
+      rev = "3bc8927ed4d14a017eefc75d5af65022343e2ac1";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-5NZDHDKiiHzBMapEDv4rRGrKXY9VS9js5l28eaouvW0=";
+    };
+    description = "Sidebar for Emacs leveraging Dired";
+    date = "12 Feb 2025";
   };
   gptel = {
     pname = "gptel";
@@ -129,29 +144,45 @@
       fetchSubmodules = false;
       sha256 = "sha256-faIdZtWgDN6sz2/srTEZ+2sW/qNz0T2nVkeDHLrnqBs=";
     };
-    date = "2021-02-05";
+    date = "05 Feb 2021";
+  };
+  ibuffer-sidebar = {
+    pname = "ibuffer-sidebar";
+    version = "fb685e1e43db979e25713081d8ae4073453bbd5e";
+    src = fetchgit {
+      url = "https://github.com/jojojames/ibuffer-sidebar";
+      rev = "fb685e1e43db979e25713081d8ae4073453bbd5e";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-ww4Npzgz/dnmGCU83WfcEyyTZYKjtoCdJdLv+uw7qBM=";
+    };
+    description = "A sidebar for IBuffer";
+    date = "08 May 2021";
   };
   jinx = {
     pname = "jinx";
-    version = "2.1";
+    version = "2.2";
     src = fetchFromGitHub {
       owner = "minad";
       repo = "jinx";
-      rev = "2.1";
+      rev = "2.2";
       fetchSubmodules = false;
-      sha256 = "sha256-MbS4c0VhE6rVm/L04VTvjS0CMda8v2GI18T+U0zq3c0=";
+      sha256 = "sha256-/Q+GqsXMrLX0IxufK2iu74rtgEiiT2G7q9DuQeRvNrI=";
     };
   };
   lsp-mode = {
     pname = "lsp-mode";
-    version = "9.0.0";
+    version = "df11f28fd391e009fcb53d93ff050dec9b906078";
     src = fetchFromGitHub {
       owner = "emacs-lsp";
       repo = "lsp-mode";
-      rev = "9.0.0";
+      rev = "df11f28fd391e009fcb53d93ff050dec9b906078";
       fetchSubmodules = false;
-      sha256 = "sha256-oy1jk2ZDu/UZrky1TEK9RP3ZdQW0elu/rpXSunA6idw=";
+      sha256 = "sha256-8nC/awIL19hGDYmKMt1hKYX/bSdn3S8FBoTp34K3ctM=";
     };
+    date = "27 May 2025";
   };
   maple-iedit = {
     pname = "maple-iedit";
@@ -163,8 +194,8 @@
       fetchSubmodules = false;
       sha256 = "sha256-JEQiAQFEjYxlgyBQVWKiF9PmpaAlMEaqGeHWrrf0n58=";
     };
-    ename = "maple-iedit";
-    date = "2024-09-19";
+    description = "Emacs multiple cursors support based on iedit";
+    date = "19 Sep 2024";
   };
   nerd-icons-corfu = {
     pname = "nerd-icons-corfu";
@@ -189,19 +220,21 @@
       sparseCheckout = [ ];
       sha256 = "sha256-W/bxCAn4cvzKGbhILxtTiWJ5Wln2w6g4TPgk+ziCXsQ=";
     };
-    ename = "nix-mode";
-    date = "2023-04-21";
+    date = "21 Apr 2023";
   };
   nix-ts-mode = {
     pname = "nix-ts-mode";
-    version = "v0.1.4";
-    src = fetchFromGitHub {
-      owner = "nix-community";
-      repo = "nix-ts-mode";
-      rev = "v0.1.4";
+    version = "62ce3a2dc39529c5db3516427e84b2c96b8efcfd";
+    src = fetchgit {
+      url = "https://github.com/nix-community/nix-ts-mode";
+      rev = "62ce3a2dc39529c5db3516427e84b2c96b8efcfd";
       fetchSubmodules = false;
-      sha256 = "sha256-hVJyVoTrHx3BJ5Te1ovEFgAqmALe4vX2oKyMl1FlU+g=";
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-+TkkeiL2Dx8Tj5csLghQJFWlV3RqCHKDh2gEHX3hdZQ=";
     };
+    date = "28 Feb 2025";
   };
   nixpkgs-fmt = {
     pname = "nixpkgs-fmt";
@@ -213,7 +246,7 @@
       fetchSubmodules = false;
       sha256 = "sha256-7Kxho74Av7FBvdlWXTD4dAw7Nl3pdY3j4C8MBq+vnTU=";
     };
-    date = "2024-11-06";
+    date = "06 Nov 2024";
   };
   orderless = {
     pname = "orderless";
@@ -236,7 +269,7 @@
       fetchSubmodules = false;
       sha256 = "sha256-IeHnoB9hpISwuzI+pKiU+5wvGvz9YJrG5amGg6DGgq4=";
     };
-    date = "2023-03-19";
+    date = "19 Mar 2023";
   };
   org-protocol-capture-html = {
     pname = "org-protocol-capture-html";
@@ -248,7 +281,7 @@
       fetchSubmodules = false;
       sha256 = "sha256-X+t8E+0Bxtl6YMU0SwA/vRD8kn1lSXd2PcBhIY001Xo=";
     };
-    date = "2022-10-05";
+    date = "05 Oct 2022";
   };
   rainbow-delimiters = {
     pname = "rainbow-delimiters";
@@ -260,19 +293,20 @@
       fetchSubmodules = false;
       sha256 = "sha256-JcNRW0+L65NtOBronwyT7SHP9QsNa3ysj4cHv88yfoI=";
     };
-    date = "2023-08-30";
+    description = "Emacs rainbow delimiters mode";
+    date = "30 Aug 2023";
   };
   sly = {
     pname = "sly";
-    version = "ce17a568efd3673e9d6f41438acc4023379c198e";
+    version = "63131ef965d8ff3a6b79cc7aff8e8f5fc1a82aec";
     src = fetchFromGitHub {
       owner = "joaotavora";
       repo = "sly";
-      rev = "ce17a568efd3673e9d6f41438acc4023379c198e";
+      rev = "63131ef965d8ff3a6b79cc7aff8e8f5fc1a82aec";
       fetchSubmodules = false;
-      sha256 = "sha256-usVSRCoYEFKI02zDIxvXmYeMOkDpQr4FG5Bwcyxt3p8=";
+      sha256 = "sha256-C2MBBcNsmvI9xhY/gy2ongV9vulIacKeMxYAtsWwhJw=";
     };
-    date = "2025-05-01";
+    date = "23 May 2025";
   };
   sly-asdf = {
     pname = "sly-asdf";
@@ -284,7 +318,7 @@
       fetchSubmodules = false;
       sha256 = "sha256-IKAqgByGd+HYcuTxscndvbQjP7Jn3jWy0w13ESCwqi8=";
     };
-    date = "2022-11-19";
+    date = "19 Nov 2022";
   };
   sly-macrostep = {
     pname = "sly-macrostep";
@@ -296,7 +330,7 @@
       fetchSubmodules = false;
       sha256 = "sha256-GVDlwWUIT/IiTPqDQ3w54Tsz6NNl2bMtB3Y4Yh8Srts=";
     };
-    date = "2019-12-11";
+    date = "11 Dec 2019";
   };
   sly-named-readtables = {
     pname = "sly-named-readtables";
@@ -308,7 +342,7 @@
       fetchSubmodules = false;
       sha256 = "sha256-mJTXfxrYN3nWxv+/XqwqXiIdZ/YGC30poxn/nEJoWpk=";
     };
-    date = "2019-10-13";
+    date = "13 Oct 2019";
   };
   sly-overlay = {
     pname = "sly-overlay";
@@ -320,7 +354,7 @@
       fetchSubmodules = false;
       sha256 = "sha256-ZfkZJkpVtJmseGwqrhLSF3XtK1q3s3JXVCZ+2MeGgaM=";
     };
-    date = "2024-08-28";
+    date = "28 Aug 2024";
   };
   sly-quicklisp = {
     pname = "sly-quicklisp";
@@ -332,7 +366,7 @@
       fetchSubmodules = false;
       sha256 = "sha256-YIP4yIuYFPXTs3GODcJuf9txDen0LX/3Ouvf9TTTEo8=";
     };
-    date = "2021-12-06";
+    date = "06 Dec 2021";
   };
   sly-repl-ansi-color = {
     pname = "sly-repl-ansi-color";
@@ -344,7 +378,7 @@
       fetchSubmodules = false;
       sha256 = "sha256-HfQu+2THLKMhEJLcSfDdL6uoDYpuHqC+9B79x5ex7Dk=";
     };
-    date = "2017-10-20";
+    date = "20 Oct 2017";
   };
   tempel = {
     pname = "tempel";
@@ -359,13 +393,13 @@
   };
   vertico = {
     pname = "vertico";
-    version = "2.1";
+    version = "2.2";
     src = fetchFromGitHub {
       owner = "minad";
       repo = "vertico";
-      rev = "2.1";
+      rev = "2.2";
       fetchSubmodules = false;
-      sha256 = "sha256-7a+LIh7ASQj+b9Lr+xZUAzsFwuo1yfV/ReywTo+Z2LM=";
+      sha256 = "sha256-CJdd8elfaqLehZQ7UOrHaxQg+7zwlRJbbckqEeQE7pc=";
     };
   };
   zetteldeft = {
@@ -378,6 +412,6 @@
       fetchSubmodules = false;
       sha256 = "sha256-eUwwZsVTNY1ZjIqk/5grpWjhLhy3aNKBD/2kAkQOSzQ=";
     };
-    date = "2023-03-17";
+    date = "17 Mar 2023";
   };
 }

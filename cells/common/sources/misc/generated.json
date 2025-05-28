@@ -21,7 +21,7 @@
     },
     "adguard-filters_adguardteam": {
         "cargoLocks": null,
-        "date": "2025-05-22",
+        "date": "2025-05-28",
         "extract": null,
         "name": "adguard-filters_adguardteam",
         "passthru": null,
@@ -31,17 +31,17 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "d811cf439beeb004e179a9f4fd93bd6c190f8355",
-            "sha256": "sha256-BB6cE1n9qGKoDdTiAh9HRTAPtRW6xcbhEDywe+sy9k4=",
+            "rev": "7279caf21e39410d6e91269763d258b87e63aacb",
+            "sha256": "sha256-Wl30dUQslhEUL7bUqxfkLDTg5CSVose8spZtaMPxI9Y=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/AdguardTeam/AdguardFilters"
         },
-        "version": "d811cf439beeb004e179a9f4fd93bd6c190f8355"
+        "version": "7279caf21e39410d6e91269763d258b87e63aacb"
     },
     "adguard-filters_romania": {
         "cargoLocks": null,
-        "date": "2025-05-19",
+        "date": "2025-05-26",
         "extract": null,
         "name": "adguard-filters_romania",
         "passthru": null,
@@ -51,17 +51,17 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "e9854d6308627cb5f45c0ad07c50d37437bdd7d1",
-            "sha256": "sha256-1nLywTdVVUqdW1Rrw/xMoAFVTX8jaHLcPAn5FS/EWRM=",
+            "rev": "43d7401f1a2dd2b4d789f90e4bb1008c787d08fa",
+            "sha256": "sha256-C/FwuB867DdK5UT/CTH8eO2l8tbD8JlH6yfikr9HiGg=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/tcptomato/ROad-Block"
         },
-        "version": "e9854d6308627cb5f45c0ad07c50d37437bdd7d1"
+        "version": "43d7401f1a2dd2b4d789f90e4bb1008c787d08fa"
     },
     "base16-schemes": {
         "cargoLocks": null,
-        "date": "2025-05-14",
+        "date": "2025-05-25",
         "extract": null,
         "name": "base16-schemes",
         "passthru": null,
@@ -71,13 +71,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "8c00a361a99b6d356db9572240053a3f8716ea68",
-            "sha256": "sha256-pHfbM7mF2mF1beycGAmA+7Jt+vmJ2reU7BvRfKURyaY=",
+            "rev": "87d652edd26f5c0c99deda5ae13dfb8ece2ffe31",
+            "sha256": "sha256-7n0XiZiEHl2zRhDwZd/g+p38xwEoWtT0/aESwTMXWG4=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/tinted-theming/schemes"
         },
-        "version": "8c00a361a99b6d356db9572240053a3f8716ea68"
+        "version": "87d652edd26f5c0c99deda5ae13dfb8ece2ffe31"
     },
     "base16-solarized-scheme": {
         "cargoLocks": null,
@@ -101,7 +101,7 @@
     },
     "chatgpt-wrapper": {
         "cargoLocks": null,
-        "date": "2025-05-08",
+        "date": "2025-05-26",
         "extract": null,
         "name": "chatgpt-wrapper",
         "passthru": null,
@@ -113,12 +113,12 @@
             "name": null,
             "owner": "llm-workflow-engine",
             "repo": "llm-workflow-engine",
-            "rev": "66c8d62dccc793fbf8884d5d57acb5a219207693",
-            "sha256": "sha256-d+PLuUtIHbweUn1ZhHnSnMeEJ7frLZg8lPZuOlQ5hxE=",
+            "rev": "e13688c174c2e38c52d998efdda61a48966ca6f3",
+            "sha256": "sha256-thQGberqDkRBoFpH7KCg8lZQLuAPiELpsYkk8AoCmKw=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "66c8d62dccc793fbf8884d5d57acb5a219207693"
+        "version": "e13688c174c2e38c52d998efdda61a48966ca6f3"
     },
     "cl-hash-util": {
         "cargoLocks": null,
@@ -396,7 +396,7 @@
     },
     "ipxe": {
         "cargoLocks": null,
-        "date": "2025-05-21",
+        "date": "2025-05-27",
         "extract": null,
         "name": "ipxe",
         "passthru": null,
@@ -406,13 +406,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "a53456334512f8de2e5d744abbc0a0cddd0eb962",
-            "sha256": "sha256-9pF2sRvgU3LQHGCV4vX82NJWINhJ881mAN8mpmavUOE=",
+            "rev": "3fe321c42a6032f9608026486015cda185f0d5f0",
+            "sha256": "sha256-kc1FdkyVerqs8mmzf1WWRvzkP7Nkw3wKltlrJIvyHBw=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/ipxe/ipxe"
         },
-        "version": "a53456334512f8de2e5d744abbc0a0cddd0eb962"
+        "version": "3fe321c42a6032f9608026486015cda185f0d5f0"
     },
     "iterable-io": {
         "cargoLocks": null,
@@ -443,12 +443,12 @@
             "name": null,
             "owner": "langchain-ai",
             "repo": "langchain",
-            "rev": "langchain-core==0.3.60",
-            "sha256": "sha256-K/dQb1+mwcN6drp8pKy8Qt9aFxffJSgHJ2cvEw6Mx8s=",
+            "rev": "langchain-core==0.3.62",
+            "sha256": "sha256-24y3XGY5AayCtD2PlzVNcHaBiwUC/1GOHL2V0BbCWn0=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "langchain-core==0.3.60"
+        "version": "langchain-core==0.3.62"
     },
     "listopia": {
         "cargoLocks": null,
@@ -508,7 +508,7 @@
     },
     "nur": {
         "cargoLocks": null,
-        "date": "2025-05-22",
+        "date": "2025-05-28",
         "extract": null,
         "name": "nur",
         "passthru": {
@@ -520,13 +520,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "83e3c7a2d3f5b90d381eb1951f13588daa2ec8af",
-            "sha256": "sha256-fWXSzuYKtZAhbPt9D5wUEJi6YDfWubSNyzywS+uor2k=",
+            "rev": "c92043af90520825edc93ead4489c48f680eb49b",
+            "sha256": "sha256-5aPs4Ni8J039CVywe/+sb83Q2v/wTNoz8TU3MztyIlk=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/nix-community/NUR"
         },
-        "version": "83e3c7a2d3f5b90d381eb1951f13588daa2ec8af"
+        "version": "c92043af90520825edc93ead4489c48f680eb49b"
     },
     "pam_usb": {
         "cargoLocks": null,

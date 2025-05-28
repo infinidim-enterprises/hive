@@ -16,7 +16,7 @@
     },
     "rtl88x2bu": {
         "cargoLocks": null,
-        "date": "2025-05-08",
+        "date": "2025-05-26",
         "extract": null,
         "name": "rtl88x2bu",
         "passthru": null,
@@ -28,12 +28,12 @@
             "name": null,
             "owner": "RinCat",
             "repo": "RTL88x2BU-Linux-Driver",
-            "rev": "9624bd8943dc9998fc09355ea725ef7d59f80cb2",
-            "sha256": "sha256-L2m0UyJFmAoUeW0zgUOtbDa/B4gnWcYjyxwblJNOQNw=",
+            "rev": "1f0005d9be0f4471b3b83d8172cd109a2b7855e8",
+            "sha256": "sha256-QWeqymX6mfDOmOkLHRjDPC8+GelLyQ9ka62Ui/td4Fg=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "9624bd8943dc9998fc09355ea725ef7d59f80cb2"
+        "version": "1f0005d9be0f4471b3b83d8172cd109a2b7855e8"
     },
     "rtw89": {
         "cargoLocks": null,

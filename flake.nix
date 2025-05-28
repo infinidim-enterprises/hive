@@ -249,6 +249,7 @@
     # emacs & friends
     ###
     nix-doom-emacs-unstraightened.url = "github:marienz/nix-doom-emacs-unstraightened";
+    nix-doom-emacs-unstraightened.inputs.nixpkgs.follows = "nixpkgs-release";
 
     # LSP for nix
     nixd.url = "github:nix-community/nixd?ref=refs/tags/2.6.4";

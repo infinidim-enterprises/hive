@@ -1,40 +1,62 @@
+# NOTE: Always use src.git to have a git commit date in the package!
+
 [lsp-mode]
+git.date_format = "%d %b %Y"
 src.use_latest_release = true
-src.github = "emacs-lsp/lsp-mode"
+src.git = "https://github.com/emacs-lsp/lsp-mode"
 fetch.github = "emacs-lsp/lsp-mode"
 
 ### NOTE: usability
 [maple-iedit]
-passthru = { ename = "maple-iedit" }
+git.date_format = "%d %b %Y"
 src.git = "https://github.com/honmaple/emacs-maple-iedit"
 fetch.github = "honmaple/emacs-maple-iedit"
+passthru = { description = "Emacs multiple cursors support based on iedit" }
 
 [rainbow-delimiters]
+git.date_format = "%d %b %Y"
 src.git = "https://github.com/Fanael/rainbow-delimiters"
 fetch.github = "Fanael/rainbow-delimiters"
+passthru = { description = "Emacs rainbow delimiters mode" }
+
+[dired-sidebar]
+git.date_format = "%d %b %Y"
+src.git = "https://github.com/jojojames/dired-sidebar"
+fetch.git = "https://github.com/jojojames/dired-sidebar"
+passthru = { description = "Sidebar for Emacs leveraging Dired" }
+
+[ibuffer-sidebar]
+git.date_format = "%d %b %Y"
+src.git = "https://github.com/jojojames/ibuffer-sidebar"
+fetch.git = "https://github.com/jojojames/ibuffer-sidebar"
+passthru = { description = "A sidebar for IBuffer" }
 
 ### NOTE: nix
 [nix-mode]
-passthru = { ename = "nix-mode" }
+git.date_format = "%d %b %Y"
 src.git = "https://github.com/NixOS/nix-mode"
 fetch.git = "https://github.com/NixOS/nix-mode"
 
 [nix-ts-mode]
-src.use_latest_release = true
-src.github = "nix-community/nix-ts-mode"
-fetch.github = "nix-community/nix-ts-mode"
+git.date_format = "%d %b %Y"
+# src.use_latest_release = true
+src.git = "https://github.com/nix-community/nix-ts-mode"
+fetch.git = "https://github.com/nix-community/nix-ts-mode"
 
 [nixpkgs-fmt]
+git.date_format = "%d %b %Y"
 src.git = "https://github.com/purcell/emacs-nixpkgs-fmt"
 fetch.github = "purcell/emacs-nixpkgs-fmt"
 
 [jinx]
 # Enchanted Spell Checker
+git.date_format = "%d %b %Y"
 src.github_tag = "minad/jinx"
 fetch.github = "minad/jinx"
 
 ### NOTE: vod
 [chemacs]
+git.date_format = "%d %b %Y"
 src.git = "https://github.com/plexus/chemacs2"
 fetch.github = "plexus/chemacs2"
 
@@ -51,102 +73,126 @@ fetch.github = "plexus/chemacs2"
 # git.leaveDotGit = true
 
 [all-the-icons]
+git.date_format = "%d %b %Y"
 src.git = "https://github.com/domtronn/all-the-icons.el"
 fetch.github = "domtronn/all-the-icons.el"
 
 [copilot-el]
+git.date_format = "%d %b %Y"
 src.git = "https://github.com/zerolfx/copilot.el"
 fetch.github = "zerolfx/copilot.el"
 
 [color-rg]
+git.date_format = "%d %b %Y"
 src.git = "https://github.com/manateelazycat/color-rg"
 fetch.github = "manateelazycat/color-rg"
 
 ### NOTE: org-mode stuff
 [org-pretty-table]
+git.date_format = "%d %b %Y"
 src.git = "https://github.com/Fuco1/org-pretty-table"
 fetch.github = "Fuco1/org-pretty-table"
 
 [org-protocol-capture-html]
+git.date_format = "%d %b %Y"
 src.git = "https://github.com/alphapapa/org-protocol-capture-html"
 fetch.github = "alphapapa/org-protocol-capture-html"
 
 [zetteldeft]
+git.date_format = "%d %b %Y"
 src.git = "https://github.com/EFLS/zetteldeft"
 fetch.github = "EFLS/zetteldeft"
 
 ### NOTE: Completion stuff
 [vertico]
+git.date_format = "%d %b %Y"
 src.github_tag = "minad/vertico"
 fetch.github = "minad/vertico"
 
 [corfu]
+git.date_format = "%d %b %Y"
 src.github_tag = "minad/corfu"
 fetch.github = "minad/corfu"
 
 [corfu-terminal]
+git.date_format = "%d %b %Y"
 src.git = "https://codeberg.org/akib/emacs-corfu-terminal"
 fetch.git = "https://codeberg.org/akib/emacs-corfu-terminal"
 
 [cape]
+git.date_format = "%d %b %Y"
 src.github_tag = "minad/cape"
 fetch.github = "minad/cape"
 
 [tempel]
+git.date_format = "%d %b %Y"
 src.github_tag = "minad/tempel"
 fetch.github = "minad/tempel"
 
 [orderless]
+git.date_format = "%d %b %Y"
 src.github_tag = "oantolin/orderless"
 fetch.github = "oantolin/orderless"
 
 [nerd-icons-corfu]
+git.date_format = "%d %b %Y"
 src.github_tag = "LuigiPiucco/nerd-icons-corfu"
 fetch.github = "LuigiPiucco/nerd-icons-corfu"
 
 ### NOTE: llm stuff
 [gptel]
+git.date_format = "%d %b %Y"
 src.github_tag = "karthink/gptel"
 fetch.github = "karthink/gptel"
 
 [aider]
+git.date_format = "%d %b %Y"
 src.github_tag = "tninja/aider.el"
 fetch.github = "tninja/aider.el"
 
 ### NOTE: themes stuff
 [color-theme-sanityinc-solarized]
+git.date_format = "%d %b %Y"
 src.git =  "https://github.com/purcell/color-theme-sanityinc-solarized"
 fetch.github = "purcell/color-theme-sanityinc-solarized"
 
 ### LISP stuff
 [sly]
+git.date_format = "%d %b %Y"
 src.git = "https://github.com/joaotavora/sly"
 fetch.github = "joaotavora/sly"
 
 [sly-asdf]
+git.date_format = "%d %b %Y"
 src.git = "https://github.com/mmgeorge/sly-asdf"
 fetch.github = "mmgeorge/sly-asdf"
 
 [sly-overlay]
+git.date_format = "%d %b %Y"
 src.git = "https://github.com/fosskers/sly-overlay"
 fetch.github = "fosskers/sly-overlay"
 
 [sly-quicklisp]
+git.date_format = "%d %b %Y"
 src.git = "https://github.com/joaotavora/sly-quicklisp"
 fetch.github = "joaotavora/sly-quicklisp"
 
 [sly-macrostep]
+git.date_format = "%d %b %Y"
 src.git = "https://github.com/joaotavora/sly-macrostep"
 fetch.github = "joaotavora/sly-macrostep"
 
 [sly-repl-ansi-color]
+git.date_format = "%d %b %Y"
 src.git = "https://github.com/PuercoPop/sly-repl-ansi-color"
 fetch.github = "PuercoPop/sly-repl-ansi-color"
 
 [sly-named-readtables]
+git.date_format = "%d %b %Y"
 src.git = "https://github.com/joaotavora/sly-named-readtables"
 fetch.github = "joaotavora/sly-named-readtables"
 
 [helm-sly]
+git.date_format = "%d %b %Y"
 src.git = "https://github.com/emacs-helm/helm-sly"
 fetch.github = "emacs-helm/helm-sly"

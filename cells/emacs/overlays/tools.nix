@@ -2,6 +2,7 @@
 final: prev:
 
 {
+
   # NOTE: [Closed] https://github.com/NixOS/nixpkgs/issues/288478
   # pythonPackagesExtensions = prev.pythonPackagesExtensions ++ [
   #   (python-final: python-prev: {

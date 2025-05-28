@@ -13,16 +13,16 @@
             "name": null,
             "owner": "tninja",
             "repo": "aider.el",
-            "rev": "v0.9.0",
-            "sha256": "sha256-3ZROXUEvvk8pd5wSXKwomPGleiR+VfMJYpmHbs3tSmQ=",
+            "rev": "v0.10.0",
+            "sha256": "sha256-sY1zTjfS/K2qRfjt0EqB658xLPjiP9zA2nKKOX1qc4M=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v0.9.0"
+        "version": "v0.10.0"
     },
     "all-the-icons": {
         "cargoLocks": null,
-        "date": "2024-06-23",
+        "date": "27 May 2025",
         "extract": null,
         "name": "all-the-icons",
         "passthru": null,
@@ -34,12 +34,12 @@
             "name": null,
             "owner": "domtronn",
             "repo": "all-the-icons.el",
-            "rev": "39ef44f810c34e8900978788467cc675870bcd19",
-            "sha256": "sha256-SlqJ8erFtiydEdgZFGJ23DQ9fZH4FF09iO6t3gf5pwE=",
+            "rev": "4778632b29c8c8d2b7cd9ce69535d0be01d846f9",
+            "sha256": "sha256-3OhM+dEzAYDlvJL4bbvQMxherEwyC3wKC7Tjb168J6Q=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "39ef44f810c34e8900978788467cc675870bcd19"
+        "version": "4778632b29c8c8d2b7cd9ce69535d0be01d846f9"
     },
     "cape": {
         "cargoLocks": null,
@@ -64,7 +64,7 @@
     },
     "chemacs": {
         "cargoLocks": null,
-        "date": "2023-01-20",
+        "date": "20 Jan 2023",
         "extract": null,
         "name": "chemacs",
         "passthru": null,
@@ -85,7 +85,7 @@
     },
     "color-rg": {
         "cargoLocks": null,
-        "date": "2025-03-07",
+        "date": "07 Mar 2025",
         "extract": null,
         "name": "color-rg",
         "passthru": null,
@@ -106,7 +106,7 @@
     },
     "color-theme-sanityinc-solarized": {
         "cargoLocks": null,
-        "date": "2024-11-26",
+        "date": "26 Nov 2024",
         "extract": null,
         "name": "color-theme-sanityinc-solarized",
         "passthru": null,
@@ -127,7 +127,7 @@
     },
     "copilot-el": {
         "cargoLocks": null,
-        "date": "2025-05-06",
+        "date": "06 May 2025",
         "extract": null,
         "name": "copilot-el",
         "passthru": null,
@@ -160,16 +160,16 @@
             "name": null,
             "owner": "minad",
             "repo": "corfu",
-            "rev": "2.1",
-            "sha256": "sha256-BZD5UjiaHDJG733Ild9mGSeqygPXVuC/zHhzb5H00FA=",
+            "rev": "2.2",
+            "sha256": "sha256-PpV1OQu1M7mq1Dz7WLpjEd9N/wtjT5DYtstGKUSP0v8=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "2.1"
+        "version": "2.2"
     },
     "corfu-terminal": {
         "cargoLocks": null,
-        "date": "2023-08-10",
+        "date": "10 Aug 2023",
         "extract": null,
         "name": "corfu-terminal",
         "passthru": null,
@@ -186,6 +186,28 @@
             "url": "https://codeberg.org/akib/emacs-corfu-terminal"
         },
         "version": "501548c3d51f926c687e8cd838c5865ec45d03cc"
+    },
+    "dired-sidebar": {
+        "cargoLocks": null,
+        "date": "12 Feb 2025",
+        "extract": null,
+        "name": "dired-sidebar",
+        "passthru": {
+            "description": "Sidebar for Emacs leveraging Dired"
+        },
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "3bc8927ed4d14a017eefc75d5af65022343e2ac1",
+            "sha256": "sha256-5NZDHDKiiHzBMapEDv4rRGrKXY9VS9js5l28eaouvW0=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/jojojames/dired-sidebar"
+        },
+        "version": "3bc8927ed4d14a017eefc75d5af65022343e2ac1"
     },
     "gptel": {
         "cargoLocks": null,
@@ -210,7 +232,7 @@
     },
     "helm-sly": {
         "cargoLocks": null,
-        "date": "2021-02-05",
+        "date": "05 Feb 2021",
         "extract": null,
         "name": "helm-sly",
         "passthru": null,
@@ -229,6 +251,28 @@
         },
         "version": "3691626c80620e992a338c3222283d9149f1ecb5"
     },
+    "ibuffer-sidebar": {
+        "cargoLocks": null,
+        "date": "08 May 2021",
+        "extract": null,
+        "name": "ibuffer-sidebar",
+        "passthru": {
+            "description": "A sidebar for IBuffer"
+        },
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "fb685e1e43db979e25713081d8ae4073453bbd5e",
+            "sha256": "sha256-ww4Npzgz/dnmGCU83WfcEyyTZYKjtoCdJdLv+uw7qBM=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/jojojames/ibuffer-sidebar"
+        },
+        "version": "fb685e1e43db979e25713081d8ae4073453bbd5e"
+    },
     "jinx": {
         "cargoLocks": null,
         "date": null,
@@ -243,16 +287,16 @@
             "name": null,
             "owner": "minad",
             "repo": "jinx",
-            "rev": "2.1",
-            "sha256": "sha256-MbS4c0VhE6rVm/L04VTvjS0CMda8v2GI18T+U0zq3c0=",
+            "rev": "2.2",
+            "sha256": "sha256-/Q+GqsXMrLX0IxufK2iu74rtgEiiT2G7q9DuQeRvNrI=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "2.1"
+        "version": "2.2"
     },
     "lsp-mode": {
         "cargoLocks": null,
-        "date": null,
+        "date": "27 May 2025",
         "extract": null,
         "name": "lsp-mode",
         "passthru": null,
@@ -264,20 +308,20 @@
             "name": null,
             "owner": "emacs-lsp",
             "repo": "lsp-mode",
-            "rev": "9.0.0",
-            "sha256": "sha256-oy1jk2ZDu/UZrky1TEK9RP3ZdQW0elu/rpXSunA6idw=",
+            "rev": "df11f28fd391e009fcb53d93ff050dec9b906078",
+            "sha256": "sha256-8nC/awIL19hGDYmKMt1hKYX/bSdn3S8FBoTp34K3ctM=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "9.0.0"
+        "version": "df11f28fd391e009fcb53d93ff050dec9b906078"
     },
     "maple-iedit": {
         "cargoLocks": null,
-        "date": "2024-09-19",
+        "date": "19 Sep 2024",
         "extract": null,
         "name": "maple-iedit",
         "passthru": {
-            "ename": "maple-iedit"
+            "description": "Emacs multiple cursors support based on iedit"
         },
         "pinned": false,
         "src": {
@@ -317,12 +361,10 @@
     },
     "nix-mode": {
         "cargoLocks": null,
-        "date": "2023-04-21",
+        "date": "21 Apr 2023",
         "extract": null,
         "name": "nix-mode",
-        "passthru": {
-            "ename": "nix-mode"
-        },
+        "passthru": null,
         "pinned": false,
         "src": {
             "deepClone": false,
@@ -339,7 +381,7 @@
     },
     "nix-ts-mode": {
         "cargoLocks": null,
-        "date": null,
+        "date": "28 Feb 2025",
         "extract": null,
         "name": "nix-ts-mode",
         "passthru": null,
@@ -349,18 +391,17 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "owner": "nix-community",
-            "repo": "nix-ts-mode",
-            "rev": "v0.1.4",
-            "sha256": "sha256-hVJyVoTrHx3BJ5Te1ovEFgAqmALe4vX2oKyMl1FlU+g=",
+            "rev": "62ce3a2dc39529c5db3516427e84b2c96b8efcfd",
+            "sha256": "sha256-+TkkeiL2Dx8Tj5csLghQJFWlV3RqCHKDh2gEHX3hdZQ=",
             "sparseCheckout": [],
-            "type": "github"
+            "type": "git",
+            "url": "https://github.com/nix-community/nix-ts-mode"
         },
-        "version": "v0.1.4"
+        "version": "62ce3a2dc39529c5db3516427e84b2c96b8efcfd"
     },
     "nixpkgs-fmt": {
         "cargoLocks": null,
-        "date": "2024-11-06",
+        "date": "06 Nov 2024",
         "extract": null,
         "name": "nixpkgs-fmt",
         "passthru": null,
@@ -402,7 +443,7 @@
     },
     "org-pretty-table": {
         "cargoLocks": null,
-        "date": "2023-03-19",
+        "date": "19 Mar 2023",
         "extract": null,
         "name": "org-pretty-table",
         "passthru": null,
@@ -423,7 +464,7 @@
     },
     "org-protocol-capture-html": {
         "cargoLocks": null,
-        "date": "2022-10-05",
+        "date": "05 Oct 2022",
         "extract": null,
         "name": "org-protocol-capture-html",
         "passthru": null,
@@ -444,10 +485,12 @@
     },
     "rainbow-delimiters": {
         "cargoLocks": null,
-        "date": "2023-08-30",
+        "date": "30 Aug 2023",
         "extract": null,
         "name": "rainbow-delimiters",
-        "passthru": null,
+        "passthru": {
+            "description": "Emacs rainbow delimiters mode"
+        },
         "pinned": false,
         "src": {
             "deepClone": false,
@@ -465,7 +508,7 @@
     },
     "sly": {
         "cargoLocks": null,
-        "date": "2025-05-01",
+        "date": "23 May 2025",
         "extract": null,
         "name": "sly",
         "passthru": null,
@@ -477,16 +520,16 @@
             "name": null,
             "owner": "joaotavora",
             "repo": "sly",
-            "rev": "ce17a568efd3673e9d6f41438acc4023379c198e",
-            "sha256": "sha256-usVSRCoYEFKI02zDIxvXmYeMOkDpQr4FG5Bwcyxt3p8=",
+            "rev": "63131ef965d8ff3a6b79cc7aff8e8f5fc1a82aec",
+            "sha256": "sha256-C2MBBcNsmvI9xhY/gy2ongV9vulIacKeMxYAtsWwhJw=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "ce17a568efd3673e9d6f41438acc4023379c198e"
+        "version": "63131ef965d8ff3a6b79cc7aff8e8f5fc1a82aec"
     },
     "sly-asdf": {
         "cargoLocks": null,
-        "date": "2022-11-19",
+        "date": "19 Nov 2022",
         "extract": null,
         "name": "sly-asdf",
         "passthru": null,
@@ -507,7 +550,7 @@
     },
     "sly-macrostep": {
         "cargoLocks": null,
-        "date": "2019-12-11",
+        "date": "11 Dec 2019",
         "extract": null,
         "name": "sly-macrostep",
         "passthru": null,
@@ -528,7 +571,7 @@
     },
     "sly-named-readtables": {
         "cargoLocks": null,
-        "date": "2019-10-13",
+        "date": "13 Oct 2019",
         "extract": null,
         "name": "sly-named-readtables",
         "passthru": null,
@@ -549,7 +592,7 @@
     },
     "sly-overlay": {
         "cargoLocks": null,
-        "date": "2024-08-28",
+        "date": "28 Aug 2024",
         "extract": null,
         "name": "sly-overlay",
         "passthru": null,
@@ -570,7 +613,7 @@
     },
     "sly-quicklisp": {
         "cargoLocks": null,
-        "date": "2021-12-06",
+        "date": "06 Dec 2021",
         "extract": null,
         "name": "sly-quicklisp",
         "passthru": null,
@@ -591,7 +634,7 @@
     },
     "sly-repl-ansi-color": {
         "cargoLocks": null,
-        "date": "2017-10-20",
+        "date": "20 Oct 2017",
         "extract": null,
         "name": "sly-repl-ansi-color",
         "passthru": null,
@@ -645,16 +688,16 @@
             "name": null,
             "owner": "minad",
             "repo": "vertico",
-            "rev": "2.1",
-            "sha256": "sha256-7a+LIh7ASQj+b9Lr+xZUAzsFwuo1yfV/ReywTo+Z2LM=",
+            "rev": "2.2",
+            "sha256": "sha256-CJdd8elfaqLehZQ7UOrHaxQg+7zwlRJbbckqEeQE7pc=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "2.1"
+        "version": "2.2"
     },
     "zetteldeft": {
         "cargoLocks": null,
-        "date": "2023-03-17",
+        "date": "17 Mar 2023",
         "extract": null,
         "name": "zetteldeft",
         "passthru": null,
