@@ -213,46 +213,28 @@ in
           };
         }
       ];
+      cleanup_steps = [
+        {
+          name = "✓ Maximize build space";
+          uses = "easimon/maximize-build-space@master";
+          "with" = {
+            swap-size-mb = 0;
+            remove-dotnet = true;
+            remove-android = true;
+            remove-haskell = true;
+            remove-codeql = true;
+            remove-docker-images = true;
+          };
+        }
 
-      common_steps = [
-        {
-          name = "⬆ Checkout";
-          uses = "actions/checkout@v4.2.2";
-        }
-        {
-          name = "✓ Install Nix";
-          uses = "cachix/install-nix-action@v31";
-          "with" = {
-            nix_path = "nixpkgs=channel:nixos-24.11";
-            extra_nix_config = ''
-              access-tokens = github.com=''${{ secrets.GITHUB_TOKEN }}
-              experimental-features = nix-command flakes impure-derivations auto-allocate-uids cgroups
-              system-features = nixos-test benchmark big-parallel kvm recursive-nix
-              download-buffer-size = 104857600
-              accept-flake-config = true
-            '';
-          };
-        }
-        {
-          name = "✓ Install cachix action";
-          uses = "cachix/cachix-action@v16";
-          "with" = {
-            name = "njk";
-            extraPullNames = "cuda-maintainers, mic92, nix-community, nrdxp";
-            authToken = "\${{ secrets.CACHIX_AUTH_TOKEN }}";
-            signingKey = "\${{ secrets.CACHIX_SIGNING_KEY }}";
-            cachixArgs = "--compression-method xz --compression-level 9 --jobs 4";
-          };
-        }
-        /*
         {
           name = "✓ Free Disk Space";
           uses = "infinidim-enterprises/free-disk-space@master";
           "with" = {
-            remove_android = true;
-            remove_dotnet = true;
-            remove_haskell = true;
-            remove_docker_images = true;
+            # remove_android = true;
+            # remove_dotnet = true;
+            # remove_haskell = true;
+            # remove_docker_images = true;
             remove_tool_cache = true;
             remove_swap = true;
             remove_packages_one_command = true;
@@ -360,7 +342,38 @@ in
             testing = false;
           };
         }
-        */
+      ];
+
+      common_steps = [
+        {
+          name = "⬆ Checkout";
+          uses = "actions/checkout@v4.2.2";
+        }
+        {
+          name = "✓ Install Nix";
+          uses = "cachix/install-nix-action@v31";
+          "with" = {
+            nix_path = "nixpkgs=channel:nixos-24.11";
+            extra_nix_config = ''
+              access-tokens = github.com=''${{ secrets.GITHUB_TOKEN }}
+              experimental-features = nix-command flakes impure-derivations auto-allocate-uids cgroups
+              system-features = nixos-test benchmark big-parallel kvm recursive-nix
+              download-buffer-size = 104857600
+              accept-flake-config = true
+            '';
+          };
+        }
+        {
+          name = "✓ Install cachix action";
+          uses = "cachix/cachix-action@v16";
+          "with" = {
+            name = "njk";
+            extraPullNames = "cuda-maintainers, mic92, nix-community, nrdxp";
+            authToken = "\${{ secrets.CACHIX_AUTH_TOKEN }}";
+            signingKey = "\${{ secrets.CACHIX_SIGNING_KEY }}";
+            cachixArgs = "--compression-method xz --compression-level 9 --jobs 4";
+          };
+        }
         {
           name = "Free space";
           run = "df -h";
@@ -375,12 +388,11 @@ in
           jobs = {
             build_damogran = {
               runs-on = "ubuntu-22.04-arm";
-              steps = common_steps ++ [
+              steps = cleanup_steps ++ common_steps ++ [
                 # {
                 #   name = "Build damogran sdImage";
                 #   run = ''nix build .#nixosConfigurations.nixos-damogran.config.system.build.sdImage'';
                 # }
-
                 {
                   name = "Build damogran toplevel";
                   run = ''nix build --accept-flake-config .#nixosConfigurations.nixos-damogran.config.system.build.toplevel'';

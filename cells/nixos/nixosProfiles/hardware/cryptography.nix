@@ -116,7 +116,9 @@ mkMerge [
       inputs.cells.common.packages.bip39key # Generate an OpenPGP key from a BIP39 mnemonic
       passphrase2pgp # Predictable, passphrase-based PGP key generator
       enc # Modern and friendly alternative to GnuPG
-    ] ++ (optional (config.networking.hostName != "damogran") python3Packages.pynitrokey); # Python client for Nitrokey devices - doesn't run on aarm64
+    ] ++ (optional
+      (pkgs.system != "aarch64-linux")
+      python3Packages.pynitrokey); # Python client for Nitrokey devices - doesn't run on aarm64
 
     environment.interactiveShellInit = ''
       rbtohex() {
