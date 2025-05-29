@@ -10,7 +10,7 @@ jobs:
         remove-docker-images: true
         remove-dotnet: true
         remove-haskell: true
-        swap-size-mb: 0
+        swap-size-mb: 1
     - name: ✓ Free Disk Space
       uses: infinidim-enterprises/free-disk-space@master
       with:

@@ -218,7 +218,7 @@ in
           name = "✓ Maximize build space";
           uses = "easimon/maximize-build-space@master";
           "with" = {
-            swap-size-mb = 0;
+            swap-size-mb = 1;
             remove-dotnet = true;
             remove-android = true;
             remove-haskell = true;
