@@ -296,7 +296,7 @@
     },
     "lsp-mode": {
         "cargoLocks": null,
-        "date": "27 May 2025",
+        "date": "29 May 2025",
         "extract": null,
         "name": "lsp-mode",
         "passthru": null,
@@ -308,12 +308,12 @@
             "name": null,
             "owner": "emacs-lsp",
             "repo": "lsp-mode",
-            "rev": "df11f28fd391e009fcb53d93ff050dec9b906078",
-            "sha256": "sha256-8nC/awIL19hGDYmKMt1hKYX/bSdn3S8FBoTp34K3ctM=",
+            "rev": "dc75f2ad9fb7e516be30585653fd40452e752441",
+            "sha256": "sha256-kdLMQ2SLJvRXwwk8VZhRWpLUPJjOGmdFrtbtX3b8zqo=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "df11f28fd391e009fcb53d93ff050dec9b906078"
+        "version": "dc75f2ad9fb7e516be30585653fd40452e752441"
     },
     "maple-iedit": {
         "cargoLocks": null,
