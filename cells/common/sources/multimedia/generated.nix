@@ -11,10 +11,10 @@
   };
   prowlarr = {
     pname = "prowlarr";
-    version = "1.36.3.5071";
+    version = "1.37.0.5076";
     src = fetchurl {
-      url = "https://github.com/Prowlarr/Prowlarr/releases/download/v1.36.3.5071/Prowlarr.master.1.36.3.5071.linux-core-arm64.tar.gz";
-      sha256 = "sha256-uwg5Ec9MC6jLwNdauF1tj2gSkhWdyhvWnUTLt8P1OZw=";
+      url = "https://github.com/Prowlarr/Prowlarr/releases/download/v1.37.0.5076/Prowlarr.master.1.37.0.5076.linux-core-arm64.tar.gz";
+      sha256 = "sha256-uf4DmzjvqJSqjusVMg3hlaH+NfYRNLDKBPLX75ycojQ=";
     };
   };
   radarr = {
