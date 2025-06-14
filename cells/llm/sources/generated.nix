@@ -3,13 +3,13 @@
 {
   aider-chat = {
     pname = "aider-chat";
-    version = "v0.83.0";
+    version = "v0.84.0";
     src = fetchFromGitHub {
       owner = "Aider-AI";
       repo = "aider";
-      rev = "v0.83.0";
+      rev = "v0.84.0";
       fetchSubmodules = false;
-      sha256 = "sha256-hXKrjo/9Y3WLgluwEK2q123QcfBVA0ByEKaq8Rtd70E=";
+      sha256 = "sha256-TOlqwJM9wIAURSimuh9mysYDwgH9AfFev8jY9elLNk8=";
     };
   };
   dspy = {
@@ -32,8 +32,8 @@
     version = "latest";
     src = dockerTools.pullImage {
       imageName = "kestra/kestra";
-      imageDigest = "sha256:6622e3288da7a637029f27b438b8471268490442cfa1c160e14b971d7220ec3c";
-      sha256 = "sha256-Cq9Rv/OfKYZgoZQi4x8KRQEZu1XQeUZWf/xK6SjeEjs=";
+      imageDigest = "sha256:01f43bfcd9097f9f9279f23c738f8a0b1fb60a18ae9e51487232e23b2540c794";
+      sha256 = "sha256-O5Ax4M11J5sdGCC/cMx/DB7BH3U7FK+4V1U+bJ4F2Yc=";
       finalImageTag = "latest";
       os = "linux";
       arch = "amd64";
@@ -44,8 +44,8 @@
     version = "latest";
     src = dockerTools.pullImage {
       imageName = "lobehub/lobe-chat";
-      imageDigest = "sha256:d27484d7c858ec2b1d553851f332a7543c3affed5dc4b2aa2af695f4c26f587e";
-      sha256 = "sha256-gGWc3Pk8sTa3FnwXns9pg2QqMAb1ARrXuB5Z1pUKRu8=";
+      imageDigest = "sha256:23e3bfe2e27adcff0e4b929503b355d4a561d95e3efa0a6afbbb316052469cb4";
+      sha256 = "sha256-PP8FF+9qbN9EfOqqdTxgv4tt58bKYQB3R5aOVbF8v+4=";
       finalImageTag = "latest";
       os = "linux";
       arch = "amd64";
@@ -53,26 +53,26 @@
   };
   metagpt = {
     pname = "metagpt";
-    version = "0f3b26f24f49ba5da0c547bdc614aa9731eac2f1";
+    version = "ca33ae573be60d12322b27f5f2dd0f7f3e50b62f";
     src = fetchgit {
       url = "https://github.com/infinidim-enterprises/metagpt.nix";
-      rev = "0f3b26f24f49ba5da0c547bdc614aa9731eac2f1";
+      rev = "ca33ae573be60d12322b27f5f2dd0f7f3e50b62f";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-LFLagjIkjqXwvvFDhkCxOkP6tAIS0L6mhlHV8V5X56g=";
+      sha256 = "sha256-n77fpAdxejl/kJTzAI2ZP+P92xiyInPKSFvgqazd+hQ=";
     };
     flake = "true";
-    date = "2025-05-28";
+    date = "2025-06-14";
   };
   n8n = {
     pname = "n8n";
-    version = "n8n@1.94.1";
+    version = "n8n@1.97.1";
     src = fetchurl {
-      url = "https://github.com/n8n-io/n8n/archive/n8n@1.94.1.tar.gz";
+      url = "https://github.com/n8n-io/n8n/archive/n8n@1.97.1.tar.gz";
       name = "n8n.tar.gz";
-      sha256 = "sha256-/bxow83jwZtnwJonNkNNGbRUXlFDQ/J2e03c1/iJaYg=";
+      sha256 = "sha256-kD93WQawMzzBKlBVjASdnKSLtPiaW/v6lYgWwi5157w=";
     };
   };
 }

@@ -17,45 +17,45 @@
   };
   adguard-filters_adguardteam = {
     pname = "adguard-filters_adguardteam";
-    version = "3816431b62de5fc2a8ddf46e012aef34a551668d";
+    version = "4a76a549596b45c350d3d8082dd1ea68378c48cb";
     src = fetchgit {
       url = "https://github.com/AdguardTeam/AdguardFilters";
-      rev = "3816431b62de5fc2a8ddf46e012aef34a551668d";
+      rev = "4a76a549596b45c350d3d8082dd1ea68378c48cb";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-rokxdi92Wub3nX4fZuaGBTzB3ipaZTkNC2gUnu9PKZM=";
+      sha256 = "sha256-03++73H+Eoh/RIzY3pSr623uXP+LF5SqlKlIKkVFpHc=";
     };
-    date = "2025-05-28";
+    date = "2025-06-13";
   };
   adguard-filters_romania = {
     pname = "adguard-filters_romania";
-    version = "43d7401f1a2dd2b4d789f90e4bb1008c787d08fa";
+    version = "105d0c68282d9cf02b1494e5b1406e2e49943c29";
     src = fetchgit {
       url = "https://github.com/tcptomato/ROad-Block";
-      rev = "43d7401f1a2dd2b4d789f90e4bb1008c787d08fa";
+      rev = "105d0c68282d9cf02b1494e5b1406e2e49943c29";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-C/FwuB867DdK5UT/CTH8eO2l8tbD8JlH6yfikr9HiGg=";
+      sha256 = "sha256-K7m8EL4e97GSQxQ6fbl11yQcxUD0PElDFfiZ7sc8fCY=";
     };
-    date = "2025-05-26";
+    date = "2025-06-13";
   };
   base16-schemes = {
     pname = "base16-schemes";
-    version = "87d652edd26f5c0c99deda5ae13dfb8ece2ffe31";
+    version = "b15ea410ff2091a064a92d0f6b8bae80a2f27798";
     src = fetchgit {
       url = "https://github.com/tinted-theming/schemes";
-      rev = "87d652edd26f5c0c99deda5ae13dfb8ece2ffe31";
+      rev = "b15ea410ff2091a064a92d0f6b8bae80a2f27798";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-7n0XiZiEHl2zRhDwZd/g+p38xwEoWtT0/aESwTMXWG4=";
+      sha256 = "sha256-pDz3SALMXwLvqvVPKj2pQn1Cr6WsPTWICaUhWfmXAYI=";
     };
-    date = "2025-05-25";
+    date = "2025-06-09";
   };
   base16-solarized-scheme = {
     pname = "base16-solarized-scheme";
@@ -73,30 +73,32 @@
   };
   bip39key = {
     pname = "bip39key";
-    version = "v1.3.0";
+    version = "v1.4.0";
     src = fetchFromGitHub {
       owner = "jpdarago";
       repo = "bip39key";
-      rev = "v1.3.0";
+      rev = "v1.4.0";
       fetchSubmodules = false;
-      sha256 = "sha256-bFoY4neAuL89Jw//iKbazQwS6YbjvsSzDNiUa9QcVEY=";
+      sha256 = "sha256-U28settSyuTvrgx+pWeOBjer0Zi9CVjL/KjW7FhHmJ4=";
     };
     cargoLock."Cargo.lock" = {
-      lockFile = ./bip39key-v1.3.0/Cargo.lock;
-      outputHashes = { };
+      lockFile = ./bip39key-v1.4.0/Cargo.lock;
+      outputHashes = {
+        
+      };
     };
   };
   chatgpt-wrapper = {
     pname = "chatgpt-wrapper";
-    version = "e13688c174c2e38c52d998efdda61a48966ca6f3";
+    version = "90281e3cb9d6c9e83e2099869d445285ec16251d";
     src = fetchFromGitHub {
       owner = "llm-workflow-engine";
       repo = "llm-workflow-engine";
-      rev = "e13688c174c2e38c52d998efdda61a48966ca6f3";
+      rev = "90281e3cb9d6c9e83e2099869d445285ec16251d";
       fetchSubmodules = false;
-      sha256 = "sha256-thQGberqDkRBoFpH7KCg8lZQLuAPiELpsYkk8AoCmKw=";
+      sha256 = "sha256-kF2S0QlF0r2J/URkG9l0iLqzDaR5Hem42yS6oOasu54=";
     };
-    date = "2025-05-26";
+    date = "2025-06-10";
   };
   cl-hash-util = {
     pname = "cl-hash-util";
@@ -268,17 +270,17 @@
   };
   ipxe = {
     pname = "ipxe";
-    version = "3fe321c42a6032f9608026486015cda185f0d5f0";
+    version = "5783a10f721d8f10d535dd2f69a9382c5ef7be7b";
     src = fetchgit {
       url = "https://github.com/ipxe/ipxe";
-      rev = "3fe321c42a6032f9608026486015cda185f0d5f0";
+      rev = "5783a10f721d8f10d535dd2f69a9382c5ef7be7b";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-kc1FdkyVerqs8mmzf1WWRvzkP7Nkw3wKltlrJIvyHBw=";
+      sha256 = "sha256-deeBWgag9PlNTakngTXpCixg+MmQrf1kHQAYE7mWHTA=";
     };
-    date = "2025-05-27";
+    date = "2025-06-12";
   };
   iterable-io = {
     pname = "iterable-io";
@@ -290,13 +292,13 @@
   };
   langchain = {
     pname = "langchain";
-    version = "langchain-core==0.3.62";
+    version = "langchain-core==0.3.65";
     src = fetchFromGitHub {
       owner = "langchain-ai";
       repo = "langchain";
-      rev = "langchain-core==0.3.62";
+      rev = "langchain-core==0.3.65";
       fetchSubmodules = false;
-      sha256 = "sha256-24y3XGY5AayCtD2PlzVNcHaBiwUC/1GOHL2V0BbCWn0=";
+      sha256 = "sha256-2iEUrLjvjVpArOPXzF5Z6ZeeQbIGZxuZUTC2buYTOCQ=";
     };
   };
   listopia = {
@@ -335,18 +337,18 @@
   };
   nur = {
     pname = "nur";
-    version = "cc59c871120ee0ea17ba17dd3f26d60bb21bc49d";
+    version = "3e455b7fdd014d35cccffb7a0b0aa61270c10b00";
     src = fetchgit {
       url = "https://github.com/nix-community/NUR";
-      rev = "cc59c871120ee0ea17ba17dd3f26d60bb21bc49d";
+      rev = "3e455b7fdd014d35cccffb7a0b0aa61270c10b00";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-gZaw+Y0KSNnNCO86kED3y5NMWrG06TXq6L4vl/UQ3vU=";
+      sha256 = "sha256-jNdZqEbJO3fh7TAfhc+8C6oszRERAy26zdZCmFjSduc=";
     };
     flake = "true";
-    date = "2025-05-28";
+    date = "2025-06-14";
   };
   pam_usb = {
     pname = "pam_usb";
@@ -402,13 +404,13 @@
   };
   pynitrokey = {
     pname = "pynitrokey";
-    version = "v0.8.4";
+    version = "v0.8.5";
     src = fetchFromGitHub {
       owner = "Nitrokey";
       repo = "pynitrokey";
-      rev = "v0.8.4";
+      rev = "v0.8.5";
       fetchSubmodules = false;
-      sha256 = "sha256-QH/HGcQk9GkaCaB6RG5uwfRakd3jWJMzgb04c1ahC3A=";
+      sha256 = "sha256-oHOO1vCovnbui6QO1lls7cWiM1FEHN04A+IrdoGPdfY=";
     };
   };
   python-pass = {
@@ -432,15 +434,15 @@
   };
   s5cmd = {
     pname = "s5cmd";
-    version = "7e56e29c6e7fbf511729bab3a8685274b5c41713";
+    version = "54d6a8a955688f07e5acc40d61f9c42ceac6c33b";
     src = fetchFromGitHub {
       owner = "peak";
       repo = "s5cmd";
-      rev = "7e56e29c6e7fbf511729bab3a8685274b5c41713";
+      rev = "54d6a8a955688f07e5acc40d61f9c42ceac6c33b";
       fetchSubmodules = false;
-      sha256 = "sha256-JuBNlIw2w2EwVNkuDTlULDqSCwdGMDKUA/iiHykyMK8=";
+      sha256 = "sha256-2uEA7Szi3vPI851CiuR1G2n+0RTPyKG6erWzjtT+L0U=";
     };
-    date = "2025-01-17";
+    date = "2025-06-13";
   };
   solarized-dark-gnome-shell-2020 = {
     pname = "solarized-dark-gnome-shell-2020";
