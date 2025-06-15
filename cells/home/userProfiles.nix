@@ -38,6 +38,7 @@ in
             (filterAttrs
               (n: v: elem n extraGroups)
               config.users.groups)) ++
+          [ "plugdev" ] ++ # allow access to yubikey from ssh logins.
           optional config.virtualisation.docker.enable "docker" ++
           optional config.virtualisation.podman.enable "podman" ++
           optional config.virtualisation.libvirtd.enable "libvirtd" ++

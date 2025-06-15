@@ -143,6 +143,11 @@ src.use_latest_tag = true
 src.github = "jpdarago/bip39key"
 fetch.github = "jpdarago/bip39key"
 
+[bip39key-yubikey]
+cargo_locks = [ "Cargo.lock" ]
+src.git = "https://github.com/voobscout/bip39key"
+fetch.git = "https://github.com/voobscout/bip39key"
+
 [pynitrokey]
 src.use_latest_tag = true
 src.github = "Nitrokey/pynitrokey"

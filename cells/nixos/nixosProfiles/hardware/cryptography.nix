@@ -76,6 +76,17 @@ mkMerge [
     services.trezord.enable = mkDefault true;
     services.pcscd.enable = mkDefault true;
 
+    # NOTE: Enable smartcard access for ssh connections.
+    users.groups.plugdev = { };
+    security.polkit.extraConfig = ''
+      polkit.addRule(function(action, subject) {
+        if ((action.id == "org.debian.pcsc-lite.access_pcsc" || action.id ==  "org.debian.pcsc-lite.access_card") &&
+            subject.isInGroup("plugdev")) {
+          return polkit.Result.YES;
+        }
+      });
+    '';
+
     # services.pcscd.plugins = [ pkgs.acsccid ];
     # programs.gnupg.dirmngr.enable = true;
 

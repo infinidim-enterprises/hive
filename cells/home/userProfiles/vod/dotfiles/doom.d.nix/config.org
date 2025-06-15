@@ -198,8 +198,8 @@
         +rails
         +lsp
         +rbenv)            ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
-       ;; (rust
-       ;;  +lsp) ;Fe2O3.unwrap().unwrap().unwrap().unwrap()
+       (rust
+        +lsp)
        ;;scala             ; java, but good
        ;; (scheme +guile)   ; a fully conniving family of lisps
        (sh +lsp)           ; she sells {ba,z,fi}sh shells on the C xor
@@ -288,13 +288,16 @@
 :PROPERTIES:
 :ID:       7f4b09a5-0c25-4ebf-95b8-a411f2fa497c
 :END:
+It's actually pretty hard to make it work properly.
 
-#+begin_src emacs-lisp :tangle packages.el
+the nix-doom-emacs-unstraightened collects package information by itself, so the variables from nvfetcher-pins aren't evaluated or even present.
+
+#+begin_src emacs-lisp
 (package! nvfetcher-pins :built-in t)
 ;; (load-file "/nix/store/jhcnd8nssl3gkxfpa9ja3ms291vn36xc-nvfetcher-pins")
 #+end_src
 
-#+begin_src emacs-lisp :tangle config.el
+#+begin_src emacs-lisp
 ;; (use-package! nvfetcher-pins)
 #+end_src
 
@@ -308,17 +311,16 @@
 :END:
 #+begin_src emacs-lisp :tangle config.el
 (after! persp-mode
-  (setq! persp-emacsclient-init-frame-behaviour-override "master"))
+  (setq! persp-initial-frame-name "master"))
+;; persp-emacsclient-init-frame-behaviour-override "master"
+;; 2. Rename the initial workspace on startup
+(add-hook 'window-setup-hook
+          (lambda ()
+            (when (and (fboundp 'persp-curr)
+                       (persp-curr)
+                       (not (persp-get-by-name persp-initial-frame-name)))
+              (persp-rename persp-initial-frame-name))))
 
-;; (defun local/inherit-last-active-perspective (frame)
-;;   "Assign the new FRAME to the perspective of the last active frame."
-;;   (when (and persp-mode (not (persp-frame-persp frame)))
-;;     (let ((last-persp (persp-get-by-name (persp-current-name))))
-;;       (when last-persp
-;;         (persp-frame-switch last-persp frame)))))
-
-;; ;; Add the function to the frame creation hook
-;; (add-hook 'after-make-frame-functions #'local/inherit-last-active-perspective)
 #+end_src
 ** General
 :PROPERTIES:
@@ -1096,7 +1098,7 @@ For the moment, will go with vendored versions in doomemacs
 
 #+begin_src emacs-lisp :tangle packages.el
 (package! gptel
-  :pin "4330cb282a28d712b53f6e226252b94a95f206b3"
+  :pin "35b752f00bf22682659350f07b4ea5c2dfb9a36b"
   :recipe (:host github
            :repo "karthink/gptel"
            :branch "master"))
@@ -1108,113 +1110,84 @@ For the moment, will go with vendored versions in doomemacs
            :branch "main"))
 
 (package! mcp
-  :pin "18f762b88c49ca3cbd858525bebc223bce7512d8"
+  :pin "d023e4858af5cc4c8cb0a6f28262c88485a06b2b"
   :recipe (:host github
            :repo "lizqwerscott/mcp.el"
            :branch "master"))
 
-(package! whisper
-  :pin "ee29777238fc089d66d8e4b6812fdd5743cad19a"
-  :recipe (:host github
-           :repo "natrys/whisper.el"
-           :branch "master"))
+;; (package! whisper
+;;   :pin "ee29777238fc089d66d8e4b6812fdd5743cad19a"
+;;   :recipe (:host github
+;;            :repo "natrys/whisper.el"
+;;            :branch "master"))
 
 ;; NOTE: latest aider requires newer transient. and newer transient needs newer forge and magit.
-(package! forge
-  :pin "d139e9ecae6df514dfb3c3ae06115df96a1b8392"
-  :recipe (:host github
-           :repo "magit/forge"
-           :branch "main"))
+;; (package! forge
+;;   :pin "d139e9ecae6df514dfb3c3ae06115df96a1b8392"
+;;   :recipe (:host github
+;;            :repo "magit/forge"
+;;            :branch "main"))
 
-(package! magit
-  :pin "e3806cbb7dd38ab73624ad48024998705f9d0d20"
-  :recipe (:host github
-           :repo "magit/magit"
-           :branch "main"))
+;; (package! magit
+;;   :pin "e3806cbb7dd38ab73624ad48024998705f9d0d20"
+;;   :recipe (:host github
+;;            :repo "magit/magit"
+;;            :branch "main"))
 
-(package! transient
-  :pin "df5856bb960933c91ec391de79f75ecd2cb55e52"
-  :recipe (:host github
-           :repo "magit/transient"
-           :branch "main"))
+;; (package! transient
+;;   :pin "df5856bb960933c91ec391de79f75ecd2cb55e52"
+;;   :recipe (:host github
+;;            :repo "magit/transient"
+;;            :branch "main"))
 
 (package! aider
-  :pin "0dc66268f1e49ea21c07d9a748bcd918765fda1d"
+  ;; "v0.10.0"
+  :pin "ddaa748907764694f4a83a35b67bf6584a73e961"
+  ;; :pin "d7c2d696444a1438d8a3ddf6a629d743d6c022fe" ;; NOTE: newer commits require newer magit/forge/transient and it breaks stuff
   :recipe (:host github
            :repo "tninja/aider.el"
            :branch "main"
            :files ("*")))
+
+(package! org-ai
+  :pin "cc4a4eb778e4689573ebd2d472b8164f4477e8b8"
+  :recipe (:host github
+           :repo "rksm/org-ai"))
 #+end_src
 
 #+begin_src emacs-lisp :tangle config.el
-(defun +whisper-insert ()
-  (interactive)
-  (whisper-run)
-  (if (y-or-n-p "Trans?")
-      (progn
-        (whisper-run)
-        (when (and (boundp #'gptel-mode) gptel-mode)
-          (if (y-or-n-p "Query?")
-              (progn (goto-char (point-max))
-                     (gptel-send))
-            (goto-char (point-max)))))
-    (when (process-live-p whisper--recording-process)
-      (kill-process whisper--recording-process))))
+;; (defun +whisper-insert ()
+;;   (interactive)
+;;   (whisper-run)
+;;   (if (y-or-n-p "Trans?")
+;;       (progn
+;;         (whisper-run)
+;;         (when (and (boundp #'gptel-mode) gptel-mode)
+;;           (if (y-or-n-p "Query?")
+;;               (progn (goto-char (point-max))
+;;                      (gptel-send))
+;;             (goto-char (point-max)))))
+;;     (when (process-live-p whisper--recording-process)
+;;       (kill-process whisper--recording-process))))
 
-(defun +whisper-run ()
-  (interactive)
-  (cond
-   ((eq current-prefix-arg 1)
-    (+whisper-zh-lang-model))
-   ((not current-prefix-arg)
-    (+whisper-default-lang-model)))
-  (call-interactively '+whisper-insert))
+;; (defun +whisper-run ()
+;;   (interactive)
+;;   (cond
+;;    ((eq current-prefix-arg 1)
+;;     (+whisper-zh-lang-model))
+;;    ((not current-prefix-arg)
+;;     (+whisper-default-lang-model)))
+;;   (call-interactively '+whisper-insert))
 
-(defun +chat-with-ai ()
-  (interactive)
-  (cond
-   ((and current-prefix-arg (and (boundp #'gptel-mode) gptel-mode))
-    (progn
-      (call-interactively #'gptel)
-      (when-let ((buf (get-buffer gptel-default-session)))
-        (with-current-buffer buf
-          (call-interactively #'+whisper-run)))))
-   ((and (boundp #'gptel-mode) gptel-mode)
-    (call-interactively #'+whisper-run))
-   (t
-    (progn
-      (call-interactively #'gptel)
-      (when-let ((buf (get-buffer gptel-default-session)))
-        (with-current-buffer buf
-          (call-interactively #'+whisper-run)))))))
-
-(defun +gptel-save-buffer (&rest args)
-  (interactive)
-  (when-let ((buf (current-buffer)))
-    (with-current-buffer buf
-      (if buffer-file-name
-          (save-buffer)
-        (write-file
-         (format
-          (expand-file-name
-           "~/Documents/org/gptel/gptel-%s.org")
-          (format-time-string
-           "%Y%m%d-%H%M%S-%3N")))))))
-
-(defun +gptel-kill-default-buffer ()
-  (interactive)
-  (when-let ((buf (get-buffer gptel-default-session)))
-    (kill-buffer buf)))
-
-(use-package! whisper
-  :bind ("s-w" . whisper-run)
-  :config
-  (setq! whisper-model "base"
-         ;; whisper-install-directory "/tmp/"
-         whisper-language "en"
-         whisper-translate nil
-         whisper-install-whispercpp nil
-         whisper-use-threads (/ (num-processors) 2)))
+;; (use-package! whisper
+;;   :bind ("s-w" . whisper-run)
+;;   :config
+;;   (setq! whisper-model "base"
+;;          ;; whisper-install-directory "/tmp/"
+;;          whisper-language "en"
+;;          whisper-translate nil
+;;          whisper-install-whispercpp nil
+;;          whisper-use-threads (/ (num-processors) 2)))
 
 (use-package! gptel
   :commands (gptel gptel-send)
@@ -1222,6 +1195,42 @@ For the moment, will go with vendored versions in doomemacs
          ("M-s-="        . gptel-add))
   :defer t
   :init
+  (defun +chat-with-ai ()
+    (interactive)
+    (cond
+     ((and current-prefix-arg (and (boundp #'gptel-mode) gptel-mode))
+      (progn
+        (call-interactively #'gptel)
+        (when-let ((buf (get-buffer gptel-default-session)))
+          (with-current-buffer buf
+            (call-interactively #'+whisper-run)))))
+     ((and (boundp #'gptel-mode) gptel-mode)
+      (call-interactively #'+whisper-run))
+     (t
+      (progn
+        (call-interactively #'gptel)
+        (when-let ((buf (get-buffer gptel-default-session)))
+          (with-current-buffer buf
+            (call-interactively #'+whisper-run)))))))
+
+  (defun +gptel-save-buffer (&rest args)
+    (interactive)
+    (when-let ((buf (current-buffer)))
+      (with-current-buffer buf
+        (if buffer-file-name
+            (save-buffer)
+          (write-file
+           (format
+            (expand-file-name
+             "~/Documents/org/gptel/gptel-%s.org")
+            (format-time-string
+             "%Y%m%d-%H%M%S-%3N")))))))
+
+  (defun +gptel-kill-default-buffer ()
+    (interactive)
+    (when-let ((buf (get-buffer gptel-default-session)))
+      (kill-buffer buf)))
+
   (defun openrouter-get-model-ids ()
     "Fetch models from OpenRouter API and return a list of model IDs.
 Wait up to 30 seconds for the HTTP response. If the timeout expires,
@@ -1333,8 +1342,9 @@ return a default list of model IDs."
       (setenv "OPENROUTER_API_KEY" (auth-source-pick-first-password
                                     :host "openrouter.ai"
                                     :user "apikey"))
-      (setq! aider-args '("--no-auto-commits" "--model" "openrouter/anthropic/claude-3.7-sonnet")
-             aider-backends-initialized t)))
+      (setq! aider-args '("--no-auto-commits" "--model" "openrouter/google/gemini-2.5-flash-preview-05-20:thinking")
+             aider-backends-initialized t
+             aider-read-string-history nil)))
 
   (advice-add 'aider-run-aider :around
               (lambda (orig-fn &rest args)
@@ -1346,10 +1356,11 @@ return a default list of model IDs."
   (aider-popular-models '("openrouter/deepseek/deepseek-chat"
                           "openrouter/deepseek/deepseek-r1"
                           "openrouter/deepseek/deepseek-coder"
-                          "openrouter/openai/gpt-4o"
-                          "openrouter/openai/o1"
-                          "openrouter/anthropic/claude-3.7-sonnet"
-                          "openrouter/google/gemini-2.5-pro-exp-03-25")))
+                          "openrouter/tngtech/deepseek-r1t-chimera:free"
+                          "openrouter/openai/gpt-4.1"
+                          "openrouter/anthropic/claude-sonnet-4"
+                          "openrouter/anthropic/claude-opus-4"
+                          "openrouter/google/gemini-2.5-pro-preview")))
 
 (use-package! ob-aider
   :after org
@@ -1459,24 +1470,27 @@ However, this borks up the nixd
 :END:
 
 #+begin_src emacs-lisp :tangle packages.el
-(package! lsp-mode
-  :type 'core
-  :pin "a478e03cd1a5dc84ad496234fd57241ff9dca57a" ;; v9.0.0
-  :recipe (:host github
-           :repo "emacs-lsp/lsp-mode"
-           :branch "master"))
+;; (package! lsp-mode
+;;   :type 'core
+;;   :pin "a478e03cd1a5dc84ad496234fd57241ff9dca57a" ;; v9.0.0
+;;   :recipe (:host github
+;;            :repo "emacs-lsp/lsp-mode"
+;;            :branch "master"))
+
 (package! nix-mode
   :type 'core
   :pin "719feb7868fb567ecfe5578f6119892c771ac5e5"
   :recipe (:host github
            :repo "NixOS/nix-mode"
            :branch "master"))
+
 ;; (package! nix-ts-mode
 ;;   :type 'core
 ;;   :pin "62ce3a2dc39529c5db3516427e84b2c96b8efcfd"
 ;;   :recipe (:host github
 ;;            :repo "nix-community/nix-ts-mode"
 ;;            :branch "trunk"))
+
 (package! nixpkgs-fmt
   :type 'core
   :pin "1f6fb42a5439589c44d99c661cc76958520323cc"
@@ -1516,6 +1530,15 @@ nixd setup function
 ;; ------------------------------------------------------------
 ;; LSP-Mode + nixd + Corfu/Vertico Debug & Completion Integration
 ;; ------------------------------------------------------------
+
+(after! lsp-mode
+  (defun ignore-semgrep-rulesRefreshed (_workspace notification)
+    "Ignore semgrep/rulesRefreshed notifications."
+    (when (string= (gethash "method" notification) "semgrep/rulesRefreshed")
+      (lsp--info "Ignored semgrep/rulesRefreshed notification")
+      t))
+  (advice-add 'lsp--on-notification :before-until #'ignore-semgrep-rulesRefreshed))
+
 (use-package! lsp-mode
   :commands (lsp lsp-deferred)
   :init

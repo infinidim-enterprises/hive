@@ -151,7 +151,7 @@
     nixpkgs-release.follows = "nixos-25-05";
     latest.follows = "nixpkgs-unstable";
 
-    home.url = "github:nix-community/home-manager/release-24.11";
+    home.url = "github:nix-community/home-manager/release-25.05";
     home.inputs.nixpkgs.follows = "nixos";
 
     home-unstable.url = "github:nix-community/home-manager";

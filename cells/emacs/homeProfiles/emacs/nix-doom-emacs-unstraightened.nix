@@ -11,15 +11,15 @@
 let
   inherit (lib) mkMerge mkIf mkDefault;
   inherit (pkgs) callPackage;
+
   extraBinPackages = [
     config.programs.ripgrep.package
     config.programs.git.package
     config.programs.fd.package
   ] ++ (with pkgs; [
-
     emacsclient-commands
 
-    aider-chat
+    (aider-chat.withOptional { withAll = true; })
 
     (sbcl.withPackages (p: with p; [
       slynk
@@ -40,8 +40,10 @@ let
     bibtex2html
 
     semgrep
+    semgrep-core
     bash-language-server
     yaml-language-server
+    rust-analyzer
 
     curl
 

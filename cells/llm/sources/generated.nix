@@ -3,13 +3,13 @@
 {
   aider-chat = {
     pname = "aider-chat";
-    version = "v0.83.0";
+    version = "v0.84.0";
     src = fetchFromGitHub {
       owner = "Aider-AI";
       repo = "aider";
-      rev = "v0.83.0";
+      rev = "v0.84.0";
       fetchSubmodules = false;
-      sha256 = "sha256-hXKrjo/9Y3WLgluwEK2q123QcfBVA0ByEKaq8Rtd70E=";
+      sha256 = "sha256-TOlqwJM9wIAURSimuh9mysYDwgH9AfFev8jY9elLNk8=";
     };
   };
   dspy = {
@@ -53,18 +53,18 @@
   };
   metagpt = {
     pname = "metagpt";
-    version = "0f3b26f24f49ba5da0c547bdc614aa9731eac2f1";
+    version = "711bd63d942d0bfe3fd0c519e23f35aca657afd8";
     src = fetchgit {
       url = "https://github.com/infinidim-enterprises/metagpt.nix";
-      rev = "0f3b26f24f49ba5da0c547bdc614aa9731eac2f1";
+      rev = "711bd63d942d0bfe3fd0c519e23f35aca657afd8";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-LFLagjIkjqXwvvFDhkCxOkP6tAIS0L6mhlHV8V5X56g=";
+      sha256 = "sha256-Co7jjETUjUwgHHj4B4LDbkx1a4ObktXorweYwk7yuWc=";
     };
     flake = "true";
-    date = "2025-05-28";
+    date = "2025-06-01";
   };
   n8n = {
     pname = "n8n";

@@ -214,18 +214,18 @@ in
         }
       ];
       cleanup_steps = [
-        {
-          name = "✓ Maximize build space";
-          uses = "easimon/maximize-build-space@master";
-          "with" = {
-            swap-size-mb = 1;
-            remove-dotnet = true;
-            remove-android = true;
-            remove-haskell = true;
-            remove-codeql = true;
-            remove-docker-images = true;
-          };
-        }
+        # {
+        #   name = "✓ Maximize build space";
+        #   uses = "easimon/maximize-build-space@master";
+        #   "with" = {
+        #     swap-size-mb = 1;
+        #     remove-dotnet = true;
+        #     remove-android = true;
+        #     remove-haskell = true;
+        #     remove-codeql = true;
+        #     remove-docker-images = true;
+        #   };
+        # }
 
         {
           name = "✓ Free Disk Space";

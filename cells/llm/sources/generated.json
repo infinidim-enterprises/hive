@@ -13,12 +13,12 @@
             "name": null,
             "owner": "Aider-AI",
             "repo": "aider",
-            "rev": "v0.83.0",
-            "sha256": "sha256-hXKrjo/9Y3WLgluwEK2q123QcfBVA0ByEKaq8Rtd70E=",
+            "rev": "v0.84.0",
+            "sha256": "sha256-TOlqwJM9wIAURSimuh9mysYDwgH9AfFev8jY9elLNk8=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v0.83.0"
+        "version": "v0.84.0"
     },
     "dspy": {
         "cargoLocks": null,
@@ -84,7 +84,7 @@
     },
     "metagpt": {
         "cargoLocks": null,
-        "date": "2025-05-28",
+        "date": "2025-06-01",
         "extract": null,
         "name": "metagpt",
         "passthru": {
@@ -96,13 +96,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "0f3b26f24f49ba5da0c547bdc614aa9731eac2f1",
-            "sha256": "sha256-LFLagjIkjqXwvvFDhkCxOkP6tAIS0L6mhlHV8V5X56g=",
+            "rev": "711bd63d942d0bfe3fd0c519e23f35aca657afd8",
+            "sha256": "sha256-Co7jjETUjUwgHHj4B4LDbkx1a4ObktXorweYwk7yuWc=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/infinidim-enterprises/metagpt.nix"
         },
-        "version": "0f3b26f24f49ba5da0c547bdc614aa9731eac2f1"
+        "version": "711bd63d942d0bfe3fd0c519e23f35aca657afd8"
     },
     "n8n": {
         "cargoLocks": null,

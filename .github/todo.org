@@ -1,39 +1,103 @@
 #+title: Todo
 * AI stuff
+:PROPERTIES:
+:ID:       7b24f164-1e86-4695-b837-820c3cee3d12
+:END:
 ** UIs
+:PROPERTIES:
+:ID:       e24d7c00-c8a5-4fca-9665-1bdf7d616dc0
+:END:
 https://github.com/lobehub/lobe-chat
 https://github.com/zylon-ai/private-gpt
 ** API
+:PROPERTIES:
+:ID:       3f0393ed-979c-4df9-85a7-44dddb8865b9
+:END:
 https://localai.io
 * Filesystems
+:PROPERTIES:
+:ID:       3863bbfc-97ec-4ac1-88ce-6ce1670fa956
+:END:
 ** unionfs
+:PROPERTIES:
+:ID:       2e990fcb-6b39-45d8-acb1-0936121ee14e
+:END:
 mergerfs aufs overlayfs
 ** pkgs.google-drive-ocamlfuse
+:PROPERTIES:
+:ID:       4198f42c-ea4f-4d2d-9055-ac451ada6c97
+:END:
 Write a home-manager module for this
 * k8s
+:PROPERTIES:
+:ID:       41e38baa-b334-4e00-b78e-93aec93855ef
+:END:
 ** Use it
+:PROPERTIES:
+:ID:       c79709e6-9613-4e63-8b3c-1a5f6a414436
+:END:
 https://github.com/argoproj/argo-workflows
 https://github.com/kubevela/kubevela
 https://github.com/meshery/meshery
 https://github.com/helm/chartmuseum
 * Cloud services
+:PROPERTIES:
+:ID:       075e2565-c4fd-46fc-b035-fb0bb5498ae4
+:END:
 ** VPN
+:PROPERTIES:
+:ID:       45f6d0a3-6a04-40d8-9a7c-98db1063d3e6
+:END:
 https://github.com/hyprspace/hyprspace
 ** auth
+:PROPERTIES:
+:ID:       6ce9fe62-18fd-4c76-8690-d0271c82372e
+:END:
 https://github.com/nix-community/authentik-nix
 ** https://unifiedpush.org/
+:PROPERTIES:
+:ID:       134ad9d4-526f-4bb4-8124-98a8a3103cb7
+:END:
 * Cool stuff I want
+:PROPERTIES:
+:ID:       b399871a-4b35-4b8c-b376-5f7480482a7b
+:END:
+** Personal cloud
+:PROPERTIES:
+:ID:       d2edc434-d48d-4a91-96b6-379a4bc757d8
+:END:
+https://github.com/ente-io/ente
+https://github.com/Ylianst/MeshCentral
+
 ** Package and make modules
+:PROPERTIES:
+:ID:       4004819f-6cb8-4964-9a13-c85377d76934
+:END:
 *** TODO [[https://github.com/mujx/hakatime/pull/100][hakatime]]
+:PROPERTIES:
+:ID:       9eb06f37-eaf5-4894-b0a6-96a03c4a63d1
+:END:
 ** stats services
+:PROPERTIES:
+:ID:       bc8d1b8b-40b9-4cf8-88d6-8dd8adc2f185
+:END:
 https://wakapi.dev - wakatime replacement with self hosting
 ** filesystems
+:PROPERTIES:
+:ID:       99971de1-058b-470d-8528-8ef2801efab0
+:END:
 https://github.com/netheril96/securefs
 ** shell things
+:PROPERTIES:
+:ID:       fbce2c78-f219-4487-8bcd-f43e2492c9a0
+:END:
 https://github.com/fastfetch-cli/fastfetch
 https://github.com/charmbracelet/gum
 https://github.com/DannyBen/bashly
 ** use modules in nixos
+:PROPERTIES:
+:ID:       c6c6203c-44e0-4d4c-949c-0a1009ea11f6
+:END:
 https://docs.searxng.org/
 https://docs.gerbera.io/en/stable/index.html
 #+begin_src nix
@@ -52,45 +116,93 @@ https://github.com/Vladimir-csp/xdg-terminal-exec
 https://github.com/ReimuNotMoe/ydotool
 https://github.com/Athou/commafeed
 ** collect system stats
+:PROPERTIES:
+:ID:       345d470f-6085-4d80-8a36-8a055d7f7b08
+:END:
 https://github.com/mann1x/ryzen_monitor_ng
 https://gitlab.com/leogx9r/ryzen_smu
 https://github.com/AnalogJ/scrutiny
 ** TODO eliminate perl
+:PROPERTIES:
+:ID:       ceb7bcd3-eaad-4c4c-84f3-c8c3020a89c6
+:END:
 #+begin_src nix
 { modulesPath, ... }: {
   imports = [ "${modulesPath}/profiles/perlless.nix" ];
 }
 #+end_src
 ** TODO NixOS secrets management
+:PROPERTIES:
+:ID:       40cf0d9e-490a-4f73-8918-e5d456134178
+:END:
 https://github.com/oddlama/agenix-rekey
 Find auto-rekey for sops-nix
 
 *** Integrate eval-time secrets with nix-plugins exec
+:PROPERTIES:
+:ID:       9ca4c195-3ab3-4c2e-a173-755e5cd5f708
+:END:
 https://oddlama.org/blog/evaluation-time-secrets-in-nix/
 ** github alternatives
+:PROPERTIES:
+:ID:       adffb753-93a4-4392-9041-fbd030ebd5ae
+:END:
 https://radicle.xyz/
 https://onedev.io
 https://forgejo.org/
 https://github.com/harness/gitness
 ** Nix / flakes
+:PROPERTIES:
+:ID:       c61fbc85-c1f4-4229-aa19-e9614c425e9c
+:END:
 https://github.com/cachix/devenv
 https://github.com/sellout/project-manager
 https://github.com/hercules-ci/flake-parts
 https://github.com/maralorn/nix-output-monitor
 ** Security
+:PROPERTIES:
+:ID:       261ae2ae-d32f-4a55-8ded-e3aa61bf00a2
+:END:
 https://github.com/aquasecurity/tracee/
 * TODO installers
+:PROPERTIES:
+:ID:       45aa504b-e65d-4db4-abb9-4810fce7a22e
+:END:
 ** DONE Add disko-install script to iso
+:PROPERTIES:
+:ID:       194e5ce6-4066-46f6-88d5-2e77661457bb
+:END:
 https://github.com/nix-community/disko/blob/master/docs/disko-install.md
 https://github.com/nix-community/disko/blob/master/tests/disko-install/default.nix
 ** [ ] Reuse parts of https://github.com/nix-community/nixos-images
+:PROPERTIES:
+:ID:       95b406a6-3a8b-4891-8107-1e59137db259
+:END:
 * home-manager
+:PROPERTIES:
+:ID:       4c1f7749-40c2-4f79-97c3-82a1545a5deb
+:END:
 ** TODO modules/services/barrier.nix
+:PROPERTIES:
+:ID:       763250df-a91a-413a-ad5c-9be6d13daf19
+:END:
 ** TODO programs/boxxy.nix
+:PROPERTIES:
+:ID:       b4090350-3506-47e5-965c-9d351654e2e7
+:END:
 ** TODO programs.freetube.enable
+:PROPERTIES:
+:ID:       22698d5c-48bf-4b00-b0cb-f3b8f3fa9db8
+:END:
 * chromium extensions
+:PROPERTIES:
+:ID:       231ec13a-ac92-4373-ac26-ef7e6071e831
+:END:
 https://github.com/iamadamdev/bypass-paywalls-chrome
 * TODO BUGS
+:PROPERTIES:
+:ID:       f12e6764-d423-4cd5-9e26-9b8d5adaf7aa
+:END:
 ---
 ⛔ Error (sh-mode-local-vars-hook): Error running hook "tree-sitter!" because: (tsc-lang-abi-too-new 14 (13 . 13) /nix/store/wyyb8cmj26v7il37qf9n8s7jl9qbb5mv-emacs-tree-sitter-grammars/langs/bin/bash.so)
 ⛔ Warning (lsp-mode): Unknown notification: semgrep/rulesRefreshed

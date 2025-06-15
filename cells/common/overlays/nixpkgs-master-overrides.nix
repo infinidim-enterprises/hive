@@ -38,10 +38,6 @@ in
     (nixpkgs-master)
     formats
 
-    # wf-recorder
-    # gimp3-with-plugins
-    # freecad
-
     aider-chat;
 } //
 
