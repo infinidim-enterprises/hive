@@ -13,12 +13,12 @@
             "name": null,
             "owner": "tninja",
             "repo": "aider.el",
-            "rev": "v0.10.0",
-            "sha256": "sha256-sY1zTjfS/K2qRfjt0EqB658xLPjiP9zA2nKKOX1qc4M=",
+            "rev": "v0.12.1",
+            "sha256": "sha256-9YOGOEtGKWsSzeNPYZF9skQ+KRBDHxkCPB9w3/w28pk=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v0.10.0"
+        "version": "v0.12.1"
     },
     "all-the-icons": {
         "cargoLocks": null,
@@ -160,12 +160,12 @@
             "name": null,
             "owner": "minad",
             "repo": "corfu",
-            "rev": "2.2",
-            "sha256": "sha256-PpV1OQu1M7mq1Dz7WLpjEd9N/wtjT5DYtstGKUSP0v8=",
+            "rev": "2.3",
+            "sha256": "sha256-+so01wEST4XXNu4cknPfr788SWx9UXNLc7E4cFL4ULg=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "2.2"
+        "version": "2.3"
     },
     "corfu-terminal": {
         "cargoLocks": null,
@@ -223,12 +223,12 @@
             "name": null,
             "owner": "karthink",
             "repo": "gptel",
-            "rev": "v0.9.8",
-            "sha256": "sha256-rVp4nP2uJRztfL0BpT7UlglLXXOEecNpZdQ8dtPYX/I=",
+            "rev": "v0.9.8.5",
+            "sha256": "sha256-5/X4kuN3i7KeqSmdz0aetkiY+udFBxj5iquGtFuaoEc=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v0.9.8"
+        "version": "v0.9.8.5"
     },
     "helm-sly": {
         "cargoLocks": null,
@@ -296,7 +296,7 @@
     },
     "lsp-mode": {
         "cargoLocks": null,
-        "date": "31 May 2025",
+        "date": "10 Jun 2025",
         "extract": null,
         "name": "lsp-mode",
         "passthru": null,
@@ -308,12 +308,12 @@
             "name": null,
             "owner": "emacs-lsp",
             "repo": "lsp-mode",
-            "rev": "f426c2942ebb84aac12cf37ea520973e681c595d",
-            "sha256": "sha256-96AmX5BIzKeTAtSKByJOUz785nhOBhfU+vKRY55kBmU=",
+            "rev": "3a96df0dd7ca8e53c5ed6f72edbd64fa1f0d9d2c",
+            "sha256": "sha256-j510sNb/HSb3iEd4FKq9NTzseyIhiIZRmxPwX3RZTs8=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "f426c2942ebb84aac12cf37ea520973e681c595d"
+        "version": "3a96df0dd7ca8e53c5ed6f72edbd64fa1f0d9d2c"
     },
     "maple-iedit": {
         "cargoLocks": null,
@@ -688,12 +688,12 @@
             "name": null,
             "owner": "minad",
             "repo": "vertico",
-            "rev": "2.2",
-            "sha256": "sha256-CJdd8elfaqLehZQ7UOrHaxQg+7zwlRJbbckqEeQE7pc=",
+            "rev": "2.3",
+            "sha256": "sha256-8MmMQYildWf3aB3A9zEPGTYl7uwd8h96Q2ADxCUJcCs=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "2.2"
+        "version": "2.3"
     },
     "zetteldeft": {
         "cargoLocks": null,

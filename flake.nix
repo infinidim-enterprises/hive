@@ -31,7 +31,7 @@
 
     n2c.url = "github:nlewo/nix2container";
     n2c.inputs.nixpkgs.follows = "nixpkgs-unstable";
-    n2c.inputs.flake-utils.follows = "flake-utils";
+    # n2c.inputs.flake-utils.follows = "flake-utils";
 
     makes.url = "github:fluidattacks/makes/24.01";
     makes.inputs.nixpkgs.follows = "nixpkgs-lib";

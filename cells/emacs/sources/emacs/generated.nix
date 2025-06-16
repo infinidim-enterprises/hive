@@ -3,13 +3,13 @@
 {
   aider = {
     pname = "aider";
-    version = "v0.10.0";
+    version = "v0.12.1";
     src = fetchFromGitHub {
       owner = "tninja";
       repo = "aider.el";
-      rev = "v0.10.0";
+      rev = "v0.12.1";
       fetchSubmodules = false;
-      sha256 = "sha256-sY1zTjfS/K2qRfjt0EqB658xLPjiP9zA2nKKOX1qc4M=";
+      sha256 = "sha256-9YOGOEtGKWsSzeNPYZF9skQ+KRBDHxkCPB9w3/w28pk=";
     };
   };
   all-the-icons = {
@@ -85,13 +85,13 @@
   };
   corfu = {
     pname = "corfu";
-    version = "2.2";
+    version = "2.3";
     src = fetchFromGitHub {
       owner = "minad";
       repo = "corfu";
-      rev = "2.2";
+      rev = "2.3";
       fetchSubmodules = false;
-      sha256 = "sha256-PpV1OQu1M7mq1Dz7WLpjEd9N/wtjT5DYtstGKUSP0v8=";
+      sha256 = "sha256-+so01wEST4XXNu4cknPfr788SWx9UXNLc7E4cFL4ULg=";
     };
   };
   corfu-terminal = {
@@ -125,13 +125,13 @@
   };
   gptel = {
     pname = "gptel";
-    version = "v0.9.8";
+    version = "v0.9.8.5";
     src = fetchFromGitHub {
       owner = "karthink";
       repo = "gptel";
-      rev = "v0.9.8";
+      rev = "v0.9.8.5";
       fetchSubmodules = false;
-      sha256 = "sha256-rVp4nP2uJRztfL0BpT7UlglLXXOEecNpZdQ8dtPYX/I=";
+      sha256 = "sha256-5/X4kuN3i7KeqSmdz0aetkiY+udFBxj5iquGtFuaoEc=";
     };
   };
   helm-sly = {
@@ -174,15 +174,15 @@
   };
   lsp-mode = {
     pname = "lsp-mode";
-    version = "f426c2942ebb84aac12cf37ea520973e681c595d";
+    version = "3a96df0dd7ca8e53c5ed6f72edbd64fa1f0d9d2c";
     src = fetchFromGitHub {
       owner = "emacs-lsp";
       repo = "lsp-mode";
-      rev = "f426c2942ebb84aac12cf37ea520973e681c595d";
+      rev = "3a96df0dd7ca8e53c5ed6f72edbd64fa1f0d9d2c";
       fetchSubmodules = false;
-      sha256 = "sha256-96AmX5BIzKeTAtSKByJOUz785nhOBhfU+vKRY55kBmU=";
+      sha256 = "sha256-j510sNb/HSb3iEd4FKq9NTzseyIhiIZRmxPwX3RZTs8=";
     };
-    date = "31 May 2025";
+    date = "10 Jun 2025";
   };
   maple-iedit = {
     pname = "maple-iedit";
@@ -393,13 +393,13 @@
   };
   vertico = {
     pname = "vertico";
-    version = "2.2";
+    version = "2.3";
     src = fetchFromGitHub {
       owner = "minad";
       repo = "vertico";
-      rev = "2.2";
+      rev = "2.3";
       fetchSubmodules = false;
-      sha256 = "sha256-CJdd8elfaqLehZQ7UOrHaxQg+7zwlRJbbckqEeQE7pc=";
+      sha256 = "sha256-8MmMQYildWf3aB3A9zEPGTYl7uwd8h96Q2ADxCUJcCs=";
     };
   };
   zetteldeft = {

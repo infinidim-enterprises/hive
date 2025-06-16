@@ -18,18 +18,18 @@
   };
   contrib = {
     pname = "contrib";
-    version = "910dad4c5755c1735d30da10c96d9086aa2a608d";
+    version = "9d4963e7394485ba4735779519c59275901de6ab";
     src = fetchgit {
       url = "https://github.com/hyprwm/contrib";
-      rev = "910dad4c5755c1735d30da10c96d9086aa2a608d";
+      rev = "9d4963e7394485ba4735779519c59275901de6ab";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-PMQoXbfmWPuXnF8EaWqRmvTvl7+WFUrDVgufFRPgOM4=";
+      sha256 = "sha256-nlmU6lpm8zGe6EnexauHr9Y/4AknE4j+ATcyjIsO1jw=";
     };
     flake = "true";
-    date = "2025-05-18";
+    date = "2025-06-14";
   };
   grim-hyprland = {
     pname = "grim-hyprland";
