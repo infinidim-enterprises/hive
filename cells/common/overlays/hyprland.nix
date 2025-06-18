@@ -14,6 +14,15 @@ let
     (filterAttrs (_: v: hasAttr "flake" v && v.flake == "true")
       final.sources.hyprwm);
 
+  hyprwm_flakes_with_input_nixpkgs = mapAttrs
+    (_: v: cell.lib.callFlakeWithOverrides {
+      src = v.outPath;
+      overrides = { nixpkgs = final.path; };
+    })
+    (filterAttrs
+      (n: v: hasAttrByPath [ "inputs" "nixpkgs" ] v)
+      hyprwm_flakes_all);
+
   hyprwm_flakes_with_input_hyprland = mapAttrs
     (_: v: cell.lib.callFlakeWithOverrides {
       src = v.outPath;
@@ -21,9 +30,9 @@ let
     })
     (filterAttrs
       (n: v: n != "hy3" && hasAttrByPath [ "inputs" "hyprland" ] v)
-      hyprwm_flakes_all);
+      hyprwm_flakes_with_input_nixpkgs);
 
-  hyprwm_flakes = hyprwm_flakes_all // hyprwm_flakes_with_input_hyprland;
+  hyprwm_flakes = hyprwm_flakes_all // hyprwm_flakes_with_input_nixpkgs // hyprwm_flakes_with_input_hyprland;
 
   release = import inputs.nixpkgs {
     inherit (inputs.nixpkgs) system;

@@ -1,14 +1,13 @@
 { lib, ... }:
 let
   inherit (lib // builtins)
-    filterSource
+    toLower
     filterAttrs
     isDerivation
     hasAttrByPath
     concatStringsSep
     match
-    elem
-    toString;
+    elem;
 
   findPackageByDescription = {
     __functor = _self:
@@ -20,15 +19,14 @@ let
           hasAttrByPath [ "meta" "description" ] v &&
           hasAttrByPath [ "meta" "platforms" ] v &&
           elem platform v.meta.platforms &&
-          # TODO: (?i) - match ignore case
-          (match ".*(${concatStringsSep "|" patterns})" v.meta.description) != null)
+          (match ".*(${concatStringsSep "|" patterns})" (toLower v.meta.description)) != null)
         pkgs;
 
     doc = ''
-      Filters packages, that have matched regex on their meta.description attribute
+      Filters packages, that have matched regex on their meta.description attribute, ignore case sensitivity
 
       Example:
-        findPackageByDescription { patterns = [ "" "value2" ]; inherit (Flake.nixosConfigurations.nixos-oglaroon) pkgs; }
+        findPackageByDescription { patterns = [ "" "value2" ]; inherit (host) pkgs; }
       =>
         { pkg = drv; }
     '';
