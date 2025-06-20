@@ -203,6 +203,18 @@ https://github.com/iamadamdev/bypass-paywalls-chrome
 :PROPERTIES:
 :ID:       f12e6764-d423-4cd5-9e26-9b8d5adaf7aa
 :END:
+Jun 19 09:29:02 oglaroon stage-2-init: running activation script...
+Jun 19 09:29:02 oglaroon stage-2-init: touch: cannot touch '/etc/ssh/ssh_host_rsa_key': No such file or directory
+Jun 19 09:29:02 oglaroon stage-2-init: Error when executing touch "$mountPoint" at line 39!
+Jun 19 09:29:02 oglaroon stage-2-init: touch: cannot touch '/etc/ssh/ssh_host_ed25519_key': No such file or directory
+Jun 19 09:29:02 oglaroon stage-2-init: Error when executing touch "$mountPoint" at line 39!
+Jun 19 09:29:02 oglaroon stage-2-init: Activation script snippet 'persist-files' failed (1)
+
+Jun 19 09:29:02 oglaroon kernel: bridge: filtering via arp/ip/ip6tables is no longer available by default. Update your scripts to load br_netfilter if you need this.
+
+kernel: ccp 0000:03:00.2: ccp: unable to access the device: you might be running a broken BIOS.
+
+
 ---
 ⛔ Error (sh-mode-local-vars-hook): Error running hook "tree-sitter!" because: (tsc-lang-abi-too-new 14 (13 . 13) /nix/store/wyyb8cmj26v7il37qf9n8s7jl9qbb5mv-emacs-tree-sitter-grammars/langs/bin/bash.so)
 ⛔ Warning (lsp-mode): Unknown notification: semgrep/rulesRefreshed
@@ -212,72 +224,3 @@ To find out what capabilities support your server use ‘M-x lsp-describe-sessio
 and expand the capabilities section")
 
 --------
-
-
-Nov 28 10:03:31 oglaroon kernel: ACPI BIOS Error (bug): Could not resolve symbol [\_SB.PCI0.28.EC0], AE_NOT_FOUND (20240322/dswload2-162)
-Nov 28 10:03:31 oglaroon kernel: fbcon: Taking over console
-Nov 28 10:03:31 oglaroon kernel: ACPI Error: AE_NOT_FOUND, During name lookup/catalog (20240322/psobject-220)
-
-Nov 28 10:03:31 oglaroon kernel: pnp 00:03: disabling [io  0xff00-0xfffe] because it overlaps 0000:00:02.2 BAR 13 [io  0xf000-0xffff]
-
-Nov 28 10:03:31 oglaroon kernel: nvme nvme0: missing or invalid SUBNQN field.
-
-Nov 28 10:03:31 oglaroon stage-1-init: [Thu Nov 28 10:03:27 UTC 2024] File descriptor 8 (/dev/console) leaked on lvm invocation. Parent PID 1: /nix/store/fn036gayk8jcxcdim3ig2icvsc86bjmb-ext>
-Nov 28 10:03:31 oglaroon stage-1-init: [Thu Nov 28 10:03:27 UTC 2024] File descriptor 9 (/dev/console) leaked on lvm invocation. Parent PID 1: /nix/store/fn036gayk8jcxcdim3ig2icvsc86bjmb-ext>
-Nov 28 10:03:31 oglaroon stage-1-init: [Thu Nov 28 10:03:27 UTC 2024] mount: mounting rpool/persist on /persist-tmp-mnt/persist failed: No such file or directory
-Nov 28 10:03:31 oglaroon stage-1-init: [Thu Nov 28 10:03:27 UTC 2024] umount: can't unmount /persist-tmp-mnt/persist: Invalid argument
-Nov 28 10:03:31 oglaroon stage-1-init: [Thu Nov 28 10:03:27 UTC 2024] cannot open 'rpool/root@blank': dataset does not exist
-
-Nov 28 10:03:32 oglaroon kernel: ccp 0000:03:00.2: ccp: unable to access the device: you might be running a broken BIOS.
-
-Nov 28 10:03:32 oglaroon systemd[1]: Invalid unit name "actkbd@/dev/input/event2.service" escaped as "actkbd@-dev-input-event2.service" (maybe you should use systemd-escape?).
-
-Nov 28 10:03:32 oglaroon systemd[1]: Invalid unit name "actkbd@/dev/input/event0.service" escaped as "actkbd@-dev-input-event0.service" (maybe you should use systemd-escape?).
-
-Nov 28 10:03:32 oglaroon systemd[1]: Invalid unit name "actkbd@/dev/input/event3.service" escaped as "actkbd@-dev-input-event3.service" (maybe you should use systemd-escape?).
-
-Nov 28 10:03:32 oglaroon systemd[1]: Invalid unit name "actkbd@/dev/input/event1.service" escaped as "actkbd@-dev-input-event1.service" (maybe you should use systemd-escape?).
-
-Nov 28 10:03:32 oglaroon systemd[1]: Invalid unit name "actkbd@/dev/input/event5.service" escaped as "actkbd@-dev-input-event5.service" (maybe you should use systemd-escape?).
-
-Nov 28 10:03:32 oglaroon systemd[1]: home.mount: Directory /home to mount over is not empty, mounting anyway.
-
-Nov 28 10:03:32 oglaroon (rpcbind)[2076]: rpcbind.service: Referenced but unset environment variable evaluates to an empty string: RPCBIND_OPTIONS
-
-Nov 28 10:03:33 oglaroon dbus-broker-launch[2154]: Invalid user-name in /nix/store/xs8v1b6xi2pvw8551p1kypbc4nhfhvyl-system-path/share/dbus-1/system.d/pulseaudio-system.conf +27: user="pulse"
-Nov 28 10:03:33 oglaroon dbus-broker-launch[2154]: Invalid user-name in /nix/store/drdz2gycz8qrxixw600vfxy1099g1f9r-NetworkManager-openconnect-1.2.10/share/dbus-1/system.d/nm-openconnect-serv
-ice.conf +9: user="nm-openconnect"
-
-# journalctl -b0|grep 'Ignoring duplicate name'
-
-Nov 28 10:03:33 oglaroon (uetoothd)[2165]: bluetooth.service: ConfigurationDirectory 'bluetooth' already exists but the mode is different. (File system: 755 ConfigurationDirectoryMode: 555)
-
-Nov 28 10:03:33 oglaroon dpf7iqbmjr6lj3iz66g00c0rbwg0j9sn-audit-disable[2178]: No rules
-
-Nov 28 10:03:34 oglaroon bluetoothd[2165]: src/plugin.c:init_plugin() System does not support asha plugin
-
-Nov 28 10:03:34 oglaroon sm-notify[2736]: Failed to open sm: No such file or directory
-Nov 28 10:03:34 oglaroon sm-notify[2736]: Failed to open directory sm.bak: No such file or directory
-
-Nov 28 10:03:34 oglaroon hm-activate-admin[3476]: Failed to load one or more themes from '/home/admin/.config/bat/themes' (reason: 'Invalid syntax theme settings')
-
-Nov 28 10:03:34 oglaroon adguardhome[2808]: 2024/11/28 10:03:34.720939 [info] permcheck: SECURITY WARNING: directory "/var/lib/private/AdGuardHome" has unexpected permissions 0755; want 0700
-Nov 28 10:03:34 oglaroon adguardhome[2808]: 2024/11/28 10:03:34.720959 [info] permcheck: SECURITY WARNING: directory "/var/lib/private/AdGuardHome/data" has unexpected permissions 0755; want 0700
-Nov 28 10:03:34 oglaroon adguardhome[2808]: 2024/11/28 10:03:34.720970 [info] permcheck: SECURITY WARNING: directory "/var/lib/private/AdGuardHome/data/filters" has unexpected permissions 0755; want 0700
-Nov 28 10:03:34 oglaroon adguardhome[2808]: 2024/11/28 10:03:34.720977 [info] permcheck: SECURITY WARNING: file "/var/lib/private/AdGuardHome/data/sessions.db" has unexpected permissions 0644; want 0600
-Nov 28 10:03:34 oglaroon adguardhome[2808]: 2024/11/28 10:03:34.721038 [info] permcheck: SECURITY WARNING: file "/var/lib/private/AdGuardHome/data/querylog.json" has unexpected permissions 0644; want 0600
-Nov 28 10:03:34 oglaroon adguardhome[2808]: 2024/11/28 10:03:34.721057 [info] permcheck: SECURITY WARNING: file "/var/lib/private/AdGuardHome/data/stats.db" has unexpected permissions 0644; want 0600
-
-Nov 28 10:03:35 oglaroon systemd[3856]: Geoclue agent was skipped because of an unmet condition check (ConditionUser=!@system).
-
-Nov 28 10:03:36 oglaroon dbus-broker-launch[4123]: Service file '/run/current-system/sw/share/dbus-1/services/obex-data-server.service' is not named after the D-Bus name 'org.openobex'.
-
-Nov 28 10:03:36 oglaroon tlp[4201]: Error in configuration at CPU_SCALING_GOVERNOR_ON_AC="ondemand": governor not available.
-
-adguardhome journalctl -b0|grep 'does not match safe patterns'
-journalctl -b0|grep 'dbus-broker-launch
-
-Nov 28 10:03:43 oglaroon systemd[4451]: hypridle was skipped because of an unmet condition check (ConditionEnvironment=WAYLAND_DISPLAY).
-
-NYXT:
-Failed to read portal settings: GDBus.Error:org.freedesktop.DBus.Error.UnknownMethod: No such interface “org.freedesktop.portal.Settings” on object at path /org/freedesktop/portal/desktop

@@ -9,7 +9,7 @@ let
   inherit (cell.lib) post_24-05;
 
   global = {
-    "usershare path" = "/var/lib/samba/usershares";
+    # "usershare path" = "/var/lib/samba/usershares";
     "usershare max shares" = "100";
     "usershare allow guests" = "yes";
     "usershare owner only" = "yes";
@@ -48,6 +48,7 @@ in
     {
       # NOTE: caja will be able to use net usershare
       services.samba.enable = true;
+      services.samba.usershares.enable = true;
       services.samba.package = pkgs.sambaFull;
       services.samba.openFirewall = true;
 

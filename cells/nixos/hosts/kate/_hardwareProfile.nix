@@ -60,7 +60,7 @@ in
   # hardware.bumblebee.driver = "nvidia";
 
   boot.consoleLogLevel = 0;
-  boot.kernelParams = [ "drm.debug=0" "modeset=1" ];
+  boot.kernelParams = [ "drm.debug=0" ];
   boot.extraModprobeConfig = ''
     options i915 verbose_state_checks=0 guc_log_level=0
   '';

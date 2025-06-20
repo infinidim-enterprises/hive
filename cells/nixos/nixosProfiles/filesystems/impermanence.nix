@@ -44,60 +44,62 @@ rec {
           environment.persistence."${persistentStoragePath}" = {
             hideMounts = true;
 
-            directories = with config; [
-              "/var/log"
-              "/var/lib/nixos"
+            directories = with config;
+              (optionals services.samba.enable [
+                "/var/lib/samba/usershares"
+                "/var/lib/samba/private"
+              ]) ++
+              [
+                "/var/log"
+                "/var/lib/nixos"
 
-              (mkIf services.samba.enable
-                "/var/lib/samba/usershares")
+                # (mkIf sound.enable
+                #   "/var/lib/alsa")
 
-              # (mkIf sound.enable
-              #   "/var/lib/alsa")
+                (mkIf (networking.wireless.enable || hardware.bluetooth.enable)
+                  "/var/lib/systemd/rfkill")
 
-              (mkIf (networking.wireless.enable || hardware.bluetooth.enable)
-                "/var/lib/systemd/rfkill")
+                (mkIf networking.networkmanager.enable
+                  "/etc/NetworkManager/system-connections")
 
-              (mkIf networking.networkmanager.enable
-                "/etc/NetworkManager/system-connections")
+                (mkIf hardware.bluetooth.enable
+                  "/var/lib/bluetooth")
 
-              (mkIf hardware.bluetooth.enable
-                "/var/lib/bluetooth")
+                # (mkIf services.xserver.displayManager.lightdm.enable
+                #   "/var/cache/lightdm")
 
-              # (mkIf services.xserver.displayManager.lightdm.enable
-              #   "/var/cache/lightdm")
+                (mkIf services.opensnitch.enable
+                  "/etc/opensnitchd/rules")
 
-              (mkIf services.opensnitch.enable
-                "/etc/opensnitchd/rules")
+                (mkIf virtualisation.docker.enable
+                  "/var/lib/docker")
 
-              (mkIf virtualisation.docker.enable
-                "/var/lib/docker")
+                (mkIf virtualisation.libvirtd.enable
+                  "/var/lib/libvirt")
 
-              (mkIf virtualisation.libvirtd.enable
-                "/var/lib/libvirt")
-
-              # (mkIf services.zerotierone.enable
-              #   config.services.zerotierone.homeDir)
-            ] ++ (optionals config.services.ollama.enable (
-              let
-                pathList = splitString "/" config.services.ollama.home;
-                pathPrivate = concatMapStringsSep "/"
-                  (e:
-                    if e == (last pathList)
-                    then "private/" + e
-                    else e)
-                  pathList;
-              in
-              map
-                (directory: {
-                  inherit directory;
-                  inherit (config.services.ollama) user group;
-                  mode = "0700";
-                })
-                [
-                  pathPrivate
-                  config.services.ollama.home
-                ]
-            ));
+                # (mkIf services.zerotierone.enable
+                #   config.services.zerotierone.homeDir)
+              ] ++ (optionals config.services.ollama.enable (
+                let
+                  pathList = splitString "/" config.services.ollama.home;
+                  pathPrivate = concatMapStringsSep "/"
+                    (e:
+                      if e == (last pathList)
+                      then "private/" + e
+                      else e)
+                    pathList;
+                in
+                map
+                  (directory: {
+                    inherit directory;
+                    inherit (config.services.ollama) user group;
+                    mode = "0700";
+                  })
+                  [
+                    pathPrivate
+                    config.services.ollama.home
+                  ]
+              ));
 
             files =
               (optional (cell.lib.isZfs config) "/etc/machine-id") ++

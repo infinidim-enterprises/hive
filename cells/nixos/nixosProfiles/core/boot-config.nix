@@ -36,7 +36,11 @@ mkMerge
       systemd.services.NetworkManager-wait-online.enable = false;
 
       # systemd.enableUnifiedCgroupHierarchy = true;
-      systemd.tmpfiles.rules = mkAfter [ "d /mnt 0755 root root - -" ];
+      systemd.tmpfiles.rules = mkAfter [
+        "d /mnt 0755 root root - -"
+        "d /var/lib/nfs/sm 0755 root root - -"
+        "d /var/lib/nfs/sm.bak 0755 root root - -"
+      ];
       systemd.extraConfig = ''
         DefaultTimeoutStopSec=15s
       '';

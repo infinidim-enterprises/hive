@@ -6,8 +6,8 @@
   services.tlp = {
     enable = lib.mkDefault (!pkgs.stdenv.isAarch64);
     settings = {
-      CPU_SCALING_GOVERNOR_ON_AC = "ondemand";
-      CPU_SCALING_GOVERNOR_ON_BAT = "conservative";
+      CPU_SCALING_GOVERNOR_ON_AC = "performance";
+      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
 
       PLATFORM_PROFILE_ON_AC = "performance";
       PLATFORM_PROFILE_ON_BAT = "low-power";

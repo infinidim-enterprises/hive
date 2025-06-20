@@ -19,6 +19,8 @@ let
 
     "dialout"
     "i2c"
+
+    "samba"
   ];
 in
 
@@ -47,6 +49,7 @@ in
           optional config.networking.networkmanager.enable "networkmanager" ++
           optional (config.services.pulseaudio.enable or config.hardware.pulseaudio.enable) "pulse-access" ++
           optional config.programs.adb.enable "adbusers" ++
+          optional config.services.samba.enable config.services.samba.usershares.group ++
           optional config.services.trezord.enable "trezord";
         }
       ];

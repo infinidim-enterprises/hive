@@ -283,7 +283,7 @@ in
     misc.font_family = "UbuntuMono Nerd Font Mono";
     misc.background_color = "0x002b36";
 
-    cursor.no_hardware_cursors = true; # NOTE: https://github.com/hyprwm/Hyprland/issues/9324#issuecomment-2637924595
+    # cursor.no_hardware_cursors = true; # NOTE: https://github.com/hyprwm/Hyprland/issues/9324#issuecomment-2637924595
     cursor.hide_on_key_press = true;
     cursor.inactive_timeout = 1;
     cursor.persistent_warps = true;
