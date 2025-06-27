@@ -128,7 +128,8 @@ in
       builds.branch = "master";
       builds.include = [
         # "packages.*.*"
-        "nixosConfigurations.*"
+        # "nixosConfigurations.*"
+        "nixosConfigurations.nixos-damogran"
       ];
     };
 

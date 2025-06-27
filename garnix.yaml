@@ -1,4 +1,4 @@
 builds:
   branch: master
   include:
-  - nixosConfigurations.*
+  - nixosConfigurations.nixos-damogran
