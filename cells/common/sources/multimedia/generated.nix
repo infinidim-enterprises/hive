@@ -35,10 +35,10 @@
   };
   sonarr = {
     pname = "sonarr";
-    version = "4.0.14.2939";
+    version = "4.0.15.2941";
     src = fetchurl {
-      url = "https://github.com/Sonarr/Sonarr/releases/download/v4.0.14.2939/Sonarr.main.4.0.14.2939.linux-arm64.tar.gz";
-      sha256 = "sha256-Kc2nMUYwyRxzas9Dr+jGp+uaeCHh/jhxLhfPpqQ19pI=";
+      url = "https://github.com/Sonarr/Sonarr/releases/download/v4.0.15.2941/Sonarr.main.4.0.15.2941.linux-arm64.tar.gz";
+      sha256 = "sha256-L6ukLTaXkXNhJuUR85T6EpzxRCS5eMyYCbygRWMJCQ8=";
     };
   };
   transmissionic = {

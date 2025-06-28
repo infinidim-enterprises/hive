@@ -3,13 +3,13 @@
 {
   aider = {
     pname = "aider";
-    version = "v0.12.1";
+    version = "v0.13.0";
     src = fetchFromGitHub {
       owner = "tninja";
       repo = "aider.el";
-      rev = "v0.12.1";
+      rev = "v0.13.0";
       fetchSubmodules = false;
-      sha256 = "sha256-9YOGOEtGKWsSzeNPYZF9skQ+KRBDHxkCPB9w3/w28pk=";
+      sha256 = "sha256-6TKklKxmgV4WNKjRN2vFhpti/oOskiaVLjwM3T8iHC8=";
     };
   };
   all-the-icons = {
@@ -73,15 +73,15 @@
   };
   copilot-el = {
     pname = "copilot-el";
-    version = "fe3f51b636dea1c9ac55a0d5dc5d7df02dcbaa48";
+    version = "acea1487a5d47dce1fc75dc06abe18c7fd119f6e";
     src = fetchFromGitHub {
       owner = "zerolfx";
       repo = "copilot.el";
-      rev = "fe3f51b636dea1c9ac55a0d5dc5d7df02dcbaa48";
+      rev = "acea1487a5d47dce1fc75dc06abe18c7fd119f6e";
       fetchSubmodules = false;
-      sha256 = "sha256-reoIFMjx2Go/EPAxD+OQFxge/amqguZS+jteh0b9xgA=";
+      sha256 = "sha256-oMOVku7u8P+u3MFljixgcJCl7OOp8y2OKjwAlTlysF0=";
     };
-    date = "06 May 2025";
+    date = "22 Jun 2025";
   };
   corfu = {
     pname = "corfu";
@@ -174,15 +174,15 @@
   };
   lsp-mode = {
     pname = "lsp-mode";
-    version = "3a96df0dd7ca8e53c5ed6f72edbd64fa1f0d9d2c";
+    version = "8579c6c7771bc65564302e76296fb48855c558a4";
     src = fetchFromGitHub {
       owner = "emacs-lsp";
       repo = "lsp-mode";
-      rev = "3a96df0dd7ca8e53c5ed6f72edbd64fa1f0d9d2c";
+      rev = "8579c6c7771bc65564302e76296fb48855c558a4";
       fetchSubmodules = false;
-      sha256 = "sha256-j510sNb/HSb3iEd4FKq9NTzseyIhiIZRmxPwX3RZTs8=";
+      sha256 = "sha256-V1qMao/eApZBC3Be0oIv2LqzWOV3Z+ceTFAlYx7B3p4=";
     };
-    date = "10 Jun 2025";
+    date = "24 Jun 2025";
   };
   maple-iedit = {
     pname = "maple-iedit";
@@ -382,24 +382,24 @@
   };
   tempel = {
     pname = "tempel";
-    version = "1.4";
+    version = "1.5";
     src = fetchFromGitHub {
       owner = "minad";
       repo = "tempel";
-      rev = "1.4";
+      rev = "1.5";
       fetchSubmodules = false;
-      sha256 = "sha256-Q2OX3kDsSo4xQKE5WKw5lWBlEZJ+LNjBXJBQIH1jmbY=";
+      sha256 = "sha256-fVZ7J/YgVM7HZXslP6jGDQ7Xazb5jW90h2bSh5uLnIA=";
     };
   };
   vertico = {
     pname = "vertico";
-    version = "2.3";
+    version = "2.4";
     src = fetchFromGitHub {
       owner = "minad";
       repo = "vertico";
-      rev = "2.3";
+      rev = "2.4";
       fetchSubmodules = false;
-      sha256 = "sha256-8MmMQYildWf3aB3A9zEPGTYl7uwd8h96Q2ADxCUJcCs=";
+      sha256 = "sha256-Psxywo9xH+Rk3S7h2Xlircauxb0VFuFoBxpvNbp9NiE=";
     };
   };
   zetteldeft = {

@@ -68,11 +68,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-Kc2nMUYwyRxzas9Dr+jGp+uaeCHh/jhxLhfPpqQ19pI=",
+            "sha256": "sha256-L6ukLTaXkXNhJuUR85T6EpzxRCS5eMyYCbygRWMJCQ8=",
             "type": "url",
-            "url": "https://github.com/Sonarr/Sonarr/releases/download/v4.0.14.2939/Sonarr.main.4.0.14.2939.linux-arm64.tar.gz"
+            "url": "https://github.com/Sonarr/Sonarr/releases/download/v4.0.15.2941/Sonarr.main.4.0.15.2941.linux-arm64.tar.gz"
         },
-        "version": "4.0.14.2939"
+        "version": "4.0.15.2941"
     },
     "transmissionic": {
         "cargoLocks": null,

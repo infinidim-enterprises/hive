@@ -18,18 +18,18 @@
   };
   contrib = {
     pname = "contrib";
-    version = "9d4963e7394485ba4735779519c59275901de6ab";
+    version = "189f32f56285aae9646bf1292976392beba5a2e2";
     src = fetchgit {
       url = "https://github.com/hyprwm/contrib";
-      rev = "9d4963e7394485ba4735779519c59275901de6ab";
+      rev = "189f32f56285aae9646bf1292976392beba5a2e2";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-nlmU6lpm8zGe6EnexauHr9Y/4AknE4j+ATcyjIsO1jw=";
+      sha256 = "sha256-LPwgPRBTfnA76rHUr7KYvwq2pNt5IfxymNAZUJFvn/M=";
     };
     flake = "true";
-    date = "2025-06-14";
+    date = "2025-06-20";
   };
   grim-hyprland = {
     pname = "grim-hyprland";
@@ -144,13 +144,13 @@
   };
   waybar = {
     pname = "waybar";
-    version = "0.12.0";
+    version = "0.13.0";
     src = fetchFromGitHub {
       owner = "Alexays";
       repo = "Waybar";
-      rev = "0.12.0";
+      rev = "0.13.0";
       fetchSubmodules = false;
-      sha256 = "sha256-VpT3ePqmo75Ni6/02KFGV6ltnpiV70/ovG/p1f2wKkU=";
+      sha256 = "sha256-KfWjYDqJf2jNmYAnmV7EQHweMObEBreUc2G7/LpvvC0=";
     };
     flake = "true";
   };
