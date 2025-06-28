@@ -23,7 +23,7 @@
     },
     "contrib": {
         "cargoLocks": null,
-        "date": "2025-06-14",
+        "date": "2025-06-20",
         "extract": null,
         "name": "contrib",
         "passthru": {
@@ -35,13 +35,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "9d4963e7394485ba4735779519c59275901de6ab",
-            "sha256": "sha256-nlmU6lpm8zGe6EnexauHr9Y/4AknE4j+ATcyjIsO1jw=",
+            "rev": "189f32f56285aae9646bf1292976392beba5a2e2",
+            "sha256": "sha256-LPwgPRBTfnA76rHUr7KYvwq2pNt5IfxymNAZUJFvn/M=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/hyprwm/contrib"
         },
-        "version": "9d4963e7394485ba4735779519c59275901de6ab"
+        "version": "189f32f56285aae9646bf1292976392beba5a2e2"
     },
     "grim-hyprland": {
         "cargoLocks": null,
@@ -265,11 +265,11 @@
             "name": null,
             "owner": "Alexays",
             "repo": "Waybar",
-            "rev": "0.12.0",
-            "sha256": "sha256-VpT3ePqmo75Ni6/02KFGV6ltnpiV70/ovG/p1f2wKkU=",
+            "rev": "0.13.0",
+            "sha256": "sha256-KfWjYDqJf2jNmYAnmV7EQHweMObEBreUc2G7/LpvvC0=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "0.12.0"
+        "version": "0.13.0"
     }
 }
