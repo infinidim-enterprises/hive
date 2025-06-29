@@ -1,6 +1,7 @@
 keys:
   - &vod E3C4C12EDF24CA20F167CC7EE203A151BB3FD1AE
   - &vod_new 382A371CFB344166F69076BE8587AB791475DF76
+  - &vod_yk5 D299B0B3CCB1D97714DAD6A154CA4193F1572167
   - &oglaroon 2657B33B3B8D5B127760A6523FC94255AF7B50F8
   - &asbleg 383717918D3D86D5AC5687AA3E7793D3B1830782
   - &marauder F000AE3CA8A68C0F4392D3D3E19E70EE13C86ECD
@@ -12,12 +13,14 @@ creation_rules:
       - pgp:
           - *vod
           - *vod_new
+          - *vod_yk5
 
   - path_regex: cells/secrets/sops/nixos-common.yaml
     key_groups:
       - pgp:
           - *vod
           - *vod_new
+          - *vod_yk5
           - *asbleg
           - *marauder
           - *oglaroon
@@ -31,6 +34,7 @@ creation_rules:
       - pgp:
           - *vod
           - *vod_new
+          - *vod_yk5
           - *asbleg
           - *marauder
           - *oglaroon
@@ -41,6 +45,7 @@ creation_rules:
       - pgp:
           - *vod
           - *vod_new
+          - *vod_yk5
           - *asbleg
           - *marauder
           - *oglaroon
@@ -51,12 +56,14 @@ creation_rules:
       - pgp:
           - *vod
           - *vod_new
+          - *vod_yk5
 
-  - path_regex: cells/secrets/sops/ssh.*$
-    key_groups:
-      - pgp:
-          - *vod
-          - *vod_new
+  # - path_regex: cells/secrets/sops/ssh.*$
+  #   key_groups:
+  #     - pgp:
+  #         - *vod
+  #         - *vod_new
+  #         - *vod_yk5
 
   # zerotier keys
   - path_regex: cells/secrets/sops/zerotier/oglaroon/ca4d6753c1
@@ -64,6 +71,7 @@ creation_rules:
       - pgp:
           - *vod
           - *vod_new
+          - *vod_yk5
           - *oglaroon
 
   - path_regex: cells/secrets/sops/zerotier/kakrafoon/ba8ec53f7a
@@ -71,6 +79,7 @@ creation_rules:
       - pgp:
           - *vod
           - *vod_new
+          - *vod_yk5
           - *kakrafoon
 
   - path_regex: cells/secrets/sops/zerotier/asbleg/edc7b5c56e
@@ -78,6 +87,7 @@ creation_rules:
       - pgp:
           - *vod
           - *vod_new
+          - *vod_yk5
           - *asbleg
 
   - path_regex: cells/secrets/sops/zerotier/marauder/1747defb79
@@ -85,6 +95,7 @@ creation_rules:
       - pgp:
           - *vod
           - *vod_new
+          - *vod_yk5
           - *marauder
 
   - path_regex: cells/secrets/sops/zerotier/damogran/cb324d4155
@@ -92,6 +103,7 @@ creation_rules:
       - pgp:
           - *vod
           - *vod_new
+          - *vod_yk5
           - *damogran
 
   - path_regex: cells/secrets/sops/powerdns
@@ -99,6 +111,7 @@ creation_rules:
       - pgp:
           - *vod
           - *vod_new
+          - *vod_yk5
           - *asbleg
           - *marauder
           - *oglaroon
