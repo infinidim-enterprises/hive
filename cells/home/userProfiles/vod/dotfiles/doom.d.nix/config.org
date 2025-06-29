@@ -938,6 +938,11 @@ https://github.com/SqrtMinusOne/eshell-atuin
 #+begin_src emacs-lisp :tangle config.el
   (use-package! magit-todos
     :hook (magit-status-mode . magit-todos-mode))
+(after! magit
+  (defun +magit-always-sign-tags (orig-fn &rest args)
+    (let ((magit-tag-args (cons "--sign" magit-tag-args)))
+      (apply orig-fn args)))
+  (advice-add 'magit-create-tag :around #'+magit-always-sign-tags))
 #+end_src
 ** Chat
 :PROPERTIES:
