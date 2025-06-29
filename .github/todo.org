@@ -77,6 +77,23 @@ https://github.com/Ylianst/MeshCentral
 :PROPERTIES:
 :ID:       9eb06f37-eaf5-4894-b0a6-96a03c4a63d1
 :END:
+*** script to migrate password-store
+:PROPERTIES:
+:ID:       32f7a48a-b993-4ccf-9ce7-ca65dedd9634
+:END:
+#+begin_src bash
+find ./ -name '*.gpg' -exec sh -c '
+  for f do
+    tmp=$(mktemp)
+    if gpg --decrypt "$f" | gpg --yes --encrypt --recipient voobofdoom@njk.li --recipient v@njk.li -o "$tmp"; then
+      mv "$tmp" "$f"
+    else
+      echo "Failed to process: $f" >&2
+      rm -f "$tmp"
+    fi
+  done
+' sh {} +
+#+end_src
 ** stats services
 :PROPERTIES:
 :ID:       bc8d1b8b-40b9-4cf8-88d6-8dd8adc2f185

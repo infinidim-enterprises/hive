@@ -2089,8 +2089,8 @@ TODO: move it to local-setts in Nix
 (use-package! org-crypt
   :config
   (org-crypt-use-before-save-magic)
-  (setq org-crypt-key "382A371CFB344166F69076BE8587AB791475DF76"
-        epa-file-encrypt-to '("v@njk.li" "vod@njk.li")
+  (setq org-crypt-key "D299B0B3CCB1D97714DAD6A154CA4193F1572167"
+        epa-file-encrypt-to '("v@njk.li" "vod@njk.li" "voobofdoom@njk.li")
         org-tags-exclude-from-inheritance (quote ("crypt"))))
 #+end_src
 
