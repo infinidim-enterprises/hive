@@ -11,8 +11,8 @@ creation_rules:
   - path_regex: cells/secrets/sops/envs.yaml
     key_groups:
       - pgp:
-          - *vod
-          - *vod_new
+          # - *vod
+          # - *vod_new
           - *vod_yk5
 
   - path_regex: cells/secrets/sops/nixos-common.yaml

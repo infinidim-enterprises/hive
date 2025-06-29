@@ -45,7 +45,7 @@ let
 
   window = win_name:
     if name == "vod"
-    then ''"${win_name}" "$SHELL -c 'if gpg --card-status 2>/dev/null | grep -q '77033511|10952475' && [ -d \"$HOME/Projects/hive\" ]; then cd \"$HOME/Projects/hive\"; fi; exec $SHELL'"''
+    then ''"${win_name}" "$SHELL -c 'if gpg --card-status 2>/dev/null | grep -q 10952475 && [ -d \"$HOME/Projects/hive\" ]; then cd \"$HOME/Projects/hive\"; fi; exec $SHELL'"''
     else ''"-=shell=-" "$SHELL"'';
 in
 {

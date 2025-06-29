@@ -322,6 +322,8 @@ lib.mapAttrs (_: std.lib.dev.mkShell) {
   default = {
     name = "infra";
 
+    env = [{ name = "SOPS_PGP_FP"; value = "D299B0B3CCB1D97714DAD6A154CA4193F1572167"; }];
+
     imports = [
       ./_sops.nix
       std.std.devshellProfiles.default
