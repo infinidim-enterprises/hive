@@ -4,6 +4,7 @@
 
 {
   imports = [
+    (inputs.cells.nixos.nixosProfiles.developer.dbus { user = "vod"; })
     (inputs.cells.nixos.nixosProfiles.backups.restic {
       user = "vod";
       extraDirs = [

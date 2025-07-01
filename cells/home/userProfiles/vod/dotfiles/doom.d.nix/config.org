@@ -1347,7 +1347,7 @@ return a default list of model IDs."
       (setenv "OPENROUTER_API_KEY" (auth-source-pick-first-password
                                     :host "openrouter.ai"
                                     :user "apikey"))
-      (setq! aider-args '("--no-auto-commits" "--model" "openrouter/google/gemini-2.5-flash-preview-05-20:thinking")
+      (setq! aider-args '("--model" "openrouter/google/gemini-2.5-pro") ;; :thinking
              aider-backends-initialized t
              aider-read-string-history nil)))
 
@@ -1359,13 +1359,11 @@ return a default list of model IDs."
 
   :custom
   (aider-popular-models '("openrouter/deepseek/deepseek-chat"
-                          "openrouter/deepseek/deepseek-r1"
-                          "openrouter/deepseek/deepseek-coder"
-                          "openrouter/tngtech/deepseek-r1t-chimera:free"
                           "openrouter/openai/gpt-4.1"
                           "openrouter/anthropic/claude-sonnet-4"
                           "openrouter/anthropic/claude-opus-4"
-                          "openrouter/google/gemini-2.5-pro-preview")))
+                          "openrouter/google/gemini-2.5-pro"
+                          "openrouter/google/gemini-2.5-flash")))
 
 (use-package! ob-aider
   :after org
@@ -1730,6 +1728,38 @@ nixd setup function
 #+end_src
 
 Also, needs to complete from pkgs and lib and project buffers
+** Crystal
+:PROPERTIES:
+:ID:       97778f98-8df4-4b85-a63e-8d9aa585749d
+:END:
+#+begin_src emacs-lisp :tangle config.el
+(after! crystal-mode
+  (defun +crystal/crystal-format-buffer (&rest _)
+    "Format current Crystal buffer using `crystal tool format`, preserving point and mode."
+    (when (and buffer-file-name (eq major-mode 'crystal-mode))
+      (save-buffer)  ;; save current buffer first
+      (let ((line (line-number-at-pos))
+            (col (current-column))
+            (file buffer-file-name))
+        (let ((exit-code (call-process "crystal" nil "*crystal-format*" nil "tool" "format" file)))
+          (if (zerop exit-code)
+              (progn
+                ;; Use preserve-modes to keep crystal-mode after revert
+                (revert-buffer :ignore-auto :noconfirm :preserve-modes)
+                (goto-char (point-min))
+                (forward-line (1- line))
+                (move-to-column col)
+                (recenter-top-bottom))
+            (message "crystal format failed, see *crystal-format* buffer"))))))
+
+  ;; Option 1: Add to save hook (preferred if you want this to run always)
+  (add-hook 'crystal-mode-local-vars-hook
+            (lambda () (add-hook 'before-save-hook #'+crystal/crystal-format-buffer nil t)))
+
+  ;; Option 2: If you prefer to integrate with Doom's `format!`, advise it
+  ;; (advice-add 'crystal-tool-format :override #'+crystal/crystal-format-buffer)
+  )
+#+end_src
 ** D2 - diagramming
 :PROPERTIES:
 :ID:       0e75795a-5120-4c98-821d-e568752e17c2
