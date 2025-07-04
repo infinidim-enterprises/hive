@@ -27,6 +27,13 @@ rec {
     wofi-pass
     sources
     python
+    (fina: prev: {
+      libs3 = prev.libs3.overrideAttrs (old: {
+        postPatch = old.postPatch or "" + ''
+          sed -i 's/-Werror[=a-z\-]*//g' GNUmakefile
+        '';
+      });
+    })
   ];
 
   desktop = with inputs.cells.common.overlays;

@@ -73,15 +73,15 @@
   };
   copilot-el = {
     pname = "copilot-el";
-    version = "acea1487a5d47dce1fc75dc06abe18c7fd119f6e";
+    version = "4f51b3c21c42756d09ee17011201ea7d6e18ff69";
     src = fetchFromGitHub {
       owner = "zerolfx";
       repo = "copilot.el";
-      rev = "acea1487a5d47dce1fc75dc06abe18c7fd119f6e";
+      rev = "4f51b3c21c42756d09ee17011201ea7d6e18ff69";
       fetchSubmodules = false;
-      sha256 = "sha256-oMOVku7u8P+u3MFljixgcJCl7OOp8y2OKjwAlTlysF0=";
+      sha256 = "sha256-5nB+skW0yjKvLUkDcwFJGSsCcRPZnJ44KoiTJno2iRM=";
     };
-    date = "22 Jun 2025";
+    date = "30 Jun 2025";
   };
   corfu = {
     pname = "corfu";

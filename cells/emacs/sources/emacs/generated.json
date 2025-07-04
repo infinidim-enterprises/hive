@@ -127,7 +127,7 @@
     },
     "copilot-el": {
         "cargoLocks": null,
-        "date": "22 Jun 2025",
+        "date": "30 Jun 2025",
         "extract": null,
         "name": "copilot-el",
         "passthru": null,
@@ -139,12 +139,12 @@
             "name": null,
             "owner": "zerolfx",
             "repo": "copilot.el",
-            "rev": "acea1487a5d47dce1fc75dc06abe18c7fd119f6e",
-            "sha256": "sha256-oMOVku7u8P+u3MFljixgcJCl7OOp8y2OKjwAlTlysF0=",
+            "rev": "4f51b3c21c42756d09ee17011201ea7d6e18ff69",
+            "sha256": "sha256-5nB+skW0yjKvLUkDcwFJGSsCcRPZnJ44KoiTJno2iRM=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "acea1487a5d47dce1fc75dc06abe18c7fd119f6e"
+        "version": "4f51b3c21c42756d09ee17011201ea7d6e18ff69"
     },
     "corfu": {
         "cargoLocks": null,

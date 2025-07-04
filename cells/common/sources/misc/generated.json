@@ -21,7 +21,7 @@
     },
     "adguard-filters_adguardteam": {
         "cargoLocks": null,
-        "date": "2025-06-30",
+        "date": "2025-07-04",
         "extract": null,
         "name": "adguard-filters_adguardteam",
         "passthru": null,
@@ -31,13 +31,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "872d68f468abc438201d123748cd84e8261a8c28",
-            "sha256": "sha256-9J6+Lue3jIx4rf8T72BdKg5vaLecGEotzIElAVAhXjc=",
+            "rev": "0b06d842594a3e030d40702edf8238bd54b13483",
+            "sha256": "sha256-FzkFehQAghapzKKZOP4hgxWLbNOVQKeMClCxwWY45PU=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/AdguardTeam/AdguardFilters"
         },
-        "version": "872d68f468abc438201d123748cd84e8261a8c28"
+        "version": "0b06d842594a3e030d40702edf8238bd54b13483"
     },
     "adguard-filters_romania": {
         "cargoLocks": null,
@@ -447,7 +447,7 @@
     },
     "ipxe": {
         "cargoLocks": null,
-        "date": "2025-06-29",
+        "date": "2025-07-02",
         "extract": null,
         "name": "ipxe",
         "passthru": null,
@@ -457,13 +457,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "126366ac47920ac5ea4ec1a1a4e5863ea3e612a3",
-            "sha256": "sha256-e45iTntk9Cwu0lujU5S9nlfDBwdjTRurr2sYB0TPGUI=",
+            "rev": "6bc55d65b16fefdc53837ecd7bcee44eda03b3ac",
+            "sha256": "sha256-xmj4nnTFIFuCI57EZM+HXe1Iq2jlFWB9cO3Ee3MlLc4=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/ipxe/ipxe"
         },
-        "version": "126366ac47920ac5ea4ec1a1a4e5863ea3e612a3"
+        "version": "6bc55d65b16fefdc53837ecd7bcee44eda03b3ac"
     },
     "iterable-io": {
         "cargoLocks": null,
@@ -494,12 +494,12 @@
             "name": null,
             "owner": "langchain-ai",
             "repo": "langchain",
-            "rev": "langchain-core==0.3.66",
-            "sha256": "sha256-k9B2ApNyX3w6RTt/XdOl2FvU87NuZSi96vvfJOnBltM=",
+            "rev": "langchain-core==0.3.68",
+            "sha256": "sha256-TfGsjsJ/95TGk8IihaNGGjfm1uOot0Gs4Sn9ndx5QE8=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "langchain-core==0.3.66"
+        "version": "langchain-core==0.3.68"
     },
     "listopia": {
         "cargoLocks": null,
@@ -559,7 +559,7 @@
     },
     "nur": {
         "cargoLocks": null,
-        "date": "2025-06-30",
+        "date": "2025-07-04",
         "extract": null,
         "name": "nur",
         "passthru": {
@@ -571,13 +571,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "e9da5b425cdd3c4af9cce87f410bd61f4301d4d5",
-            "sha256": "sha256-USNK0RUR+bmd20V23h+p9M3kyQ/kqAh99LpD8ohEAq4=",
+            "rev": "7f7cef81cce49ed8fbc2d82a3e4160648e928c8e",
+            "sha256": "sha256-iqw+V/DKIge0SrXLR6XPkMdHRFdamN4EOUJiSGPl7QY=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/nix-community/NUR"
         },
-        "version": "e9da5b425cdd3c4af9cce87f410bd61f4301d4d5"
+        "version": "7f7cef81cce49ed8fbc2d82a3e4160648e928c8e"
     },
     "pam_usb": {
         "cargoLocks": null,
@@ -842,7 +842,7 @@
     },
     "tfenv": {
         "cargoLocks": null,
-        "date": "2023-12-19",
+        "date": "2025-07-02",
         "extract": null,
         "name": "tfenv",
         "passthru": null,
@@ -854,12 +854,12 @@
             "name": null,
             "owner": "tfutils",
             "repo": "tfenv",
-            "rev": "39d8c27ad9862ffdec57989b66fd2720cb72e76c",
-            "sha256": "sha256-h5ZHT4u7oAdwuWpUrL35G8bIAMasx6E81h15lTJSHhQ=",
+            "rev": "51cce09b373650c50de62172f47f89c501982ca1",
+            "sha256": "sha256-1UUoRxfEb5fr7ucM38MNbaUV5Ipx73x/7NaCjtivgPQ=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "39d8c27ad9862ffdec57989b66fd2720cb72e76c"
+        "version": "51cce09b373650c50de62172f47f89c501982ca1"
     },
     "themix-gui": {
         "cargoLocks": null,

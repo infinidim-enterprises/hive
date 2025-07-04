@@ -3,18 +3,18 @@
 {
   Hyprspace = {
     pname = "Hyprspace";
-    version = "511d399120bdcafb43e57ca5ff35167c2bba6db8";
+    version = "847a770436e1ecebdbe5ed006a93db7666937ff2";
     src = fetchgit {
       url = "https://github.com/KZDKM/Hyprspace";
-      rev = "511d399120bdcafb43e57ca5ff35167c2bba6db8";
+      rev = "847a770436e1ecebdbe5ed006a93db7666937ff2";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-uDhXNURTJgQSpiaCgzqAizbblpcEWEB1WGWEqtCnLLM=";
+      sha256 = "sha256-493llKN7yyLkKlz8uYVAyvXH261IpDzuVA+TnewFIAg=";
     };
     flake = "true";
-    date = "2025-05-18";
+    date = "2025-06-30";
   };
   contrib = {
     pname = "contrib";
