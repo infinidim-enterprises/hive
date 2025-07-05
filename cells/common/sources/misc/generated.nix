@@ -17,17 +17,17 @@
   };
   adguard-filters_adguardteam = {
     pname = "adguard-filters_adguardteam";
-    version = "0b06d842594a3e030d40702edf8238bd54b13483";
+    version = "4df0137fa5becc5ab0729f2645845b626d5c1d83";
     src = fetchgit {
       url = "https://github.com/AdguardTeam/AdguardFilters";
-      rev = "0b06d842594a3e030d40702edf8238bd54b13483";
+      rev = "4df0137fa5becc5ab0729f2645845b626d5c1d83";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-FzkFehQAghapzKKZOP4hgxWLbNOVQKeMClCxwWY45PU=";
+      sha256 = "sha256-hyKc6Q7wuKPKfqGGRsUcYqzwuBGNFZvrTR0P9ogmg5U=";
     };
-    date = "2025-07-04";
+    date = "2025-07-05";
   };
   adguard-filters_romania = {
     pname = "adguard-filters_romania";
@@ -286,17 +286,17 @@
   };
   ipxe = {
     pname = "ipxe";
-    version = "6bc55d65b16fefdc53837ecd7bcee44eda03b3ac";
+    version = "c21443f0b9a4dee56ab0f47b096540d6443cda9f";
     src = fetchgit {
       url = "https://github.com/ipxe/ipxe";
-      rev = "6bc55d65b16fefdc53837ecd7bcee44eda03b3ac";
+      rev = "c21443f0b9a4dee56ab0f47b096540d6443cda9f";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-xmj4nnTFIFuCI57EZM+HXe1Iq2jlFWB9cO3Ee3MlLc4=";
+      sha256 = "sha256-rCMTtzNZM3KElNYwnpQOINU4CsMhIgla8JQT5Fgx2tQ=";
     };
-    date = "2025-07-02";
+    date = "2025-07-04";
   };
   iterable-io = {
     pname = "iterable-io";
@@ -353,18 +353,18 @@
   };
   nur = {
     pname = "nur";
-    version = "7f7cef81cce49ed8fbc2d82a3e4160648e928c8e";
+    version = "ff6e470d2e26b173e6e3ec18ad80cc5c667a51f7";
     src = fetchgit {
       url = "https://github.com/nix-community/NUR";
-      rev = "7f7cef81cce49ed8fbc2d82a3e4160648e928c8e";
+      rev = "ff6e470d2e26b173e6e3ec18ad80cc5c667a51f7";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-iqw+V/DKIge0SrXLR6XPkMdHRFdamN4EOUJiSGPl7QY=";
+      sha256 = "sha256-iq5PwAP7HFJ5I9942RvaJwU/F0vBjuORC8U2Yf6qMUw=";
     };
     flake = "true";
-    date = "2025-07-04";
+    date = "2025-07-05";
   };
   pam_usb = {
     pname = "pam_usb";
@@ -529,15 +529,15 @@
   };
   tfenv = {
     pname = "tfenv";
-    version = "51cce09b373650c50de62172f47f89c501982ca1";
+    version = "fe8767dcae85c3a8c0ea72417f6dcf5863d28dab";
     src = fetchFromGitHub {
       owner = "tfutils";
       repo = "tfenv";
-      rev = "51cce09b373650c50de62172f47f89c501982ca1";
+      rev = "fe8767dcae85c3a8c0ea72417f6dcf5863d28dab";
       fetchSubmodules = false;
-      sha256 = "sha256-1UUoRxfEb5fr7ucM38MNbaUV5Ipx73x/7NaCjtivgPQ=";
+      sha256 = "sha256-1tZ0eTdz8g1+tiKpEmg9aV8bXSswz8Igx4YipBWxzWE=";
     };
-    date = "2025-07-02";
+    date = "2025-07-04";
   };
   themix-gui = {
     pname = "themix-gui";

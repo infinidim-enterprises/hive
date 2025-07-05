@@ -21,7 +21,7 @@
     },
     "adguard-filters_adguardteam": {
         "cargoLocks": null,
-        "date": "2025-07-04",
+        "date": "2025-07-05",
         "extract": null,
         "name": "adguard-filters_adguardteam",
         "passthru": null,
@@ -31,13 +31,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "0b06d842594a3e030d40702edf8238bd54b13483",
-            "sha256": "sha256-FzkFehQAghapzKKZOP4hgxWLbNOVQKeMClCxwWY45PU=",
+            "rev": "4df0137fa5becc5ab0729f2645845b626d5c1d83",
+            "sha256": "sha256-hyKc6Q7wuKPKfqGGRsUcYqzwuBGNFZvrTR0P9ogmg5U=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/AdguardTeam/AdguardFilters"
         },
-        "version": "0b06d842594a3e030d40702edf8238bd54b13483"
+        "version": "4df0137fa5becc5ab0729f2645845b626d5c1d83"
     },
     "adguard-filters_romania": {
         "cargoLocks": null,
@@ -447,7 +447,7 @@
     },
     "ipxe": {
         "cargoLocks": null,
-        "date": "2025-07-02",
+        "date": "2025-07-04",
         "extract": null,
         "name": "ipxe",
         "passthru": null,
@@ -457,13 +457,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "6bc55d65b16fefdc53837ecd7bcee44eda03b3ac",
-            "sha256": "sha256-xmj4nnTFIFuCI57EZM+HXe1Iq2jlFWB9cO3Ee3MlLc4=",
+            "rev": "c21443f0b9a4dee56ab0f47b096540d6443cda9f",
+            "sha256": "sha256-rCMTtzNZM3KElNYwnpQOINU4CsMhIgla8JQT5Fgx2tQ=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/ipxe/ipxe"
         },
-        "version": "6bc55d65b16fefdc53837ecd7bcee44eda03b3ac"
+        "version": "c21443f0b9a4dee56ab0f47b096540d6443cda9f"
     },
     "iterable-io": {
         "cargoLocks": null,
@@ -559,7 +559,7 @@
     },
     "nur": {
         "cargoLocks": null,
-        "date": "2025-07-04",
+        "date": "2025-07-05",
         "extract": null,
         "name": "nur",
         "passthru": {
@@ -571,13 +571,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "7f7cef81cce49ed8fbc2d82a3e4160648e928c8e",
-            "sha256": "sha256-iqw+V/DKIge0SrXLR6XPkMdHRFdamN4EOUJiSGPl7QY=",
+            "rev": "ff6e470d2e26b173e6e3ec18ad80cc5c667a51f7",
+            "sha256": "sha256-iq5PwAP7HFJ5I9942RvaJwU/F0vBjuORC8U2Yf6qMUw=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/nix-community/NUR"
         },
-        "version": "7f7cef81cce49ed8fbc2d82a3e4160648e928c8e"
+        "version": "ff6e470d2e26b173e6e3ec18ad80cc5c667a51f7"
     },
     "pam_usb": {
         "cargoLocks": null,
@@ -842,7 +842,7 @@
     },
     "tfenv": {
         "cargoLocks": null,
-        "date": "2025-07-02",
+        "date": "2025-07-04",
         "extract": null,
         "name": "tfenv",
         "passthru": null,
@@ -854,12 +854,12 @@
             "name": null,
             "owner": "tfutils",
             "repo": "tfenv",
-            "rev": "51cce09b373650c50de62172f47f89c501982ca1",
-            "sha256": "sha256-1UUoRxfEb5fr7ucM38MNbaUV5Ipx73x/7NaCjtivgPQ=",
+            "rev": "fe8767dcae85c3a8c0ea72417f6dcf5863d28dab",
+            "sha256": "sha256-1tZ0eTdz8g1+tiKpEmg9aV8bXSswz8Igx4YipBWxzWE=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "51cce09b373650c50de62172f47f89c501982ca1"
+        "version": "fe8767dcae85c3a8c0ea72417f6dcf5863d28dab"
     },
     "themix-gui": {
         "cargoLocks": null,
