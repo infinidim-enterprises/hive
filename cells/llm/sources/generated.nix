@@ -32,8 +32,8 @@
     version = "latest";
     src = dockerTools.pullImage {
       imageName = "kestra/kestra";
-      imageDigest = "sha256:6622e3288da7a637029f27b438b8471268490442cfa1c160e14b971d7220ec3c";
-      sha256 = "sha256-Cq9Rv/OfKYZgoZQi4x8KRQEZu1XQeUZWf/xK6SjeEjs=";
+      imageDigest = "sha256:c7dadb6e368038540e4ff27d9be556c037544d54fa69f4d3a8cba4f97774d311";
+      sha256 = "sha256-dBmjqH8MbiM7pwdd5Pw15pMTXWp62oCTXxTp8upiYSY=";
       finalImageTag = "latest";
       os = "linux";
       arch = "amd64";
@@ -44,8 +44,8 @@
     version = "latest";
     src = dockerTools.pullImage {
       imageName = "lobehub/lobe-chat";
-      imageDigest = "sha256:d27484d7c858ec2b1d553851f332a7543c3affed5dc4b2aa2af695f4c26f587e";
-      sha256 = "sha256-gGWc3Pk8sTa3FnwXns9pg2QqMAb1ARrXuB5Z1pUKRu8=";
+      imageDigest = "sha256:3387ea87ccc230ad6a01329cad5758fe6bb15938f2605d6ab4f879cad0934269";
+      sha256 = "sha256-Ys1RyzLV48p0XZvJhV7e0r2STZQVU69icN4X6yttWQo=";
       finalImageTag = "latest";
       os = "linux";
       arch = "amd64";
