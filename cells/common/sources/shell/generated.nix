@@ -251,17 +251,17 @@
   };
   zsh-plugin_zsh-completions = {
     pname = "zsh-plugin_zsh-completions";
-    version = "e07f6fb780725e9c0f50a7666700cf91ded30222";
+    version = "922abfe7073bc7af2d6950712670ceb5de73d4aa";
     src = fetchgit {
       url = "https://github.com/zsh-users/zsh-completions";
-      rev = "e07f6fb780725e9c0f50a7666700cf91ded30222";
+      rev = "922abfe7073bc7af2d6950712670ceb5de73d4aa";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-xjGx1kvWioVwSS/n1rcud83ZtGZzZoUp+xx+sfu8hJU=";
+      sha256 = "sha256-j90c4Ua9LlSOeHiK4IIWUOCb9gJ3fLMHEimv/IwTQbY=";
     };
-    date = "2025-06-12";
+    date = "2025-07-11";
   };
   zsh-plugin_zsh-history-substring-search = {
     pname = "zsh-plugin_zsh-history-substring-search";
