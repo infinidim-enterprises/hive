@@ -32,11 +32,13 @@ in
       });
     })
 
-    (python-final: python-prev: {
-      pynitrokey = python-prev.pynitrokey.overridePythonAttrs (oldAttrs: {
-        inherit (final.sources.misc.pynitrokey) src version pname;
-      });
-    })
+    # FIXME: pynitrokey
+    # (python-final: python-prev: {
+    #   pynitrokey = python-prev.pynitrokey.overridePythonAttrs (oldAttrs: {
+    #     inherit (final.sources.misc.pynitrokey) src version pname;
+    #     buildInputs = oldAttrs.buildInputs or [ ] ++ [ python-prev.poetry-core ];
+    #   });
+    # })
 
     (python-final: python-prev: {
       pypass = python-prev.pypass.overridePythonAttrs (oldAttrs: {

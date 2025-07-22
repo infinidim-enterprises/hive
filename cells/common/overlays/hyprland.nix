@@ -34,6 +34,11 @@ let
 
   hyprwm_flakes = hyprwm_flakes_all // hyprwm_flakes_with_input_nixpkgs // hyprwm_flakes_with_input_hyprland;
 
+  unstable = import inputs.nixpkgs-unstable {
+    inherit (inputs.nixpkgs) system;
+    config.allowUnfree = true;
+  };
+
   release = import inputs.nixpkgs {
     inherit (inputs.nixpkgs) system;
     config.allowUnfree = true;
@@ -45,7 +50,24 @@ let
       hyprwm_flakes.contrib.overlays.default
       hyprwm_flakes.hyprsysteminfo.overlays.default
       hyprwm_flakes.grim-hyprland.overlays.default
+
       hyprwm_flakes.hy3.inputs.hyprland.overlays.default
+      (_: prv: {
+        # hyprland = prv.hyprland.overrideAttrs (oldAttrs: {
+        #   buildInputs = oldAttrs.buildInputs or [ ] ++ (with unstable; [
+        #     libexecinfo
+        #     # epoll-shim
+        #     tracy
+        #     # libinotify
+        #     libinput
+        #   ]);
+        # });
+        hyprland = prv.hyprland.override {
+          inherit (unstable)
+            libexecinfo
+            libinput;
+        };
+      })
 
       hyprwm_flakes.waybar.overlays.default
       (_: prv: {
@@ -60,7 +82,12 @@ let
 in
 
 {
-  # sources = prev.sources // { inherit hyprwm_flakes; };
+  # inherit (unstable)
+  #   libexecinfo
+  #   epoll-shim
+  #   tracy
+  #   libinotify
+  #   libinput;
 
   inherit (release)
     waybar
@@ -103,10 +130,3 @@ in
       hy3 = hyprwm_flakes.hy3.packages.${inputs.nixpkgs.system}.default;
     };
 }
-
-/*
-  execinfo
-  epoll-shim
-  libinotify
-  tracy
-*/
