@@ -174,15 +174,15 @@
   };
   lsp-mode = {
     pname = "lsp-mode";
-    version = "8579c6c7771bc65564302e76296fb48855c558a4";
+    version = "147233313576c844e2bf56640827b0d0e5c2ee6c";
     src = fetchFromGitHub {
       owner = "emacs-lsp";
       repo = "lsp-mode";
-      rev = "8579c6c7771bc65564302e76296fb48855c558a4";
+      rev = "147233313576c844e2bf56640827b0d0e5c2ee6c";
       fetchSubmodules = false;
-      sha256 = "sha256-V1qMao/eApZBC3Be0oIv2LqzWOV3Z+ceTFAlYx7B3p4=";
+      sha256 = "sha256-FEzsCCNz0M4GWQfsZfqxBkEKkPPY5UczWz1XEB8/YZA=";
     };
-    date = "24 Jun 2025";
+    date = "07 Jul 2025";
   };
   maple-iedit = {
     pname = "maple-iedit";
