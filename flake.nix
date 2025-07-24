@@ -68,9 +68,8 @@
     nixago-exts.inputs.flake-utils.follows = "flake-utils";
     nixago-exts.inputs.nixago.follows = "nixago";
 
-    terranix.url = "github:terranix/terranix/2.7.0";
+    terranix.url = "github:terranix/terranix/2.8.0";
     terranix.inputs.nixpkgs.follows = "nixpkgs-unstable";
-    terranix.inputs.flake-utils.follows = "flake-utils";
 
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs-unstable";
