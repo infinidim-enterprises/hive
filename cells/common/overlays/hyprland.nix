@@ -53,15 +53,6 @@ let
 
       hyprwm_flakes.hy3.inputs.hyprland.overlays.default
       (_: prv: {
-        # hyprland = prv.hyprland.overrideAttrs (oldAttrs: {
-        #   buildInputs = oldAttrs.buildInputs or [ ] ++ (with unstable; [
-        #     libexecinfo
-        #     # epoll-shim
-        #     tracy
-        #     # libinotify
-        #     libinput
-        #   ]);
-        # });
         hyprland = prv.hyprland.override {
           inherit (unstable)
             libexecinfo
@@ -82,13 +73,6 @@ let
 in
 
 {
-  # inherit (unstable)
-  #   libexecinfo
-  #   epoll-shim
-  #   tracy
-  #   libinotify
-  #   libinput;
-
   inherit (release)
     waybar
     hyprsysteminfo

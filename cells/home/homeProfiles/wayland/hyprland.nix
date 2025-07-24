@@ -235,7 +235,7 @@ in
   wayland.windowManager.hyprland.systemd.enableXdgAutostart = true;
   wayland.windowManager.hyprland.xwayland.enable = osConfig.programs.hyprland.xwayland.enable;
   wayland.windowManager.hyprland.plugins = with pkgs.hyprlandPlugins; [
-    Hyprspace
+    # FIXME: Hyprspace
     hy3
   ];
 
@@ -602,8 +602,8 @@ in
     bind = Control_L, period, exec, $menu
     bind = Control_L, period, submap, reset
 
-    bind = , grave, overview:toggle
-    bind = , grave, submap, reset
+    # bind = , grave, overview:toggle
+    # bind = , grave, submap, reset
 
     bind = SHIFT, k, hy3:killactive
     bind = SHIFT, k, submap, reset

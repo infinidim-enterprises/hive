@@ -1103,7 +1103,8 @@ For the moment, will go with vendored versions in doomemacs
 
 #+begin_src emacs-lisp :tangle packages.el
 (package! gptel
-  :pin "35b752f00bf22682659350f07b4ea5c2dfb9a36b"
+  :pin "a5af15c770b66a61d0609a736e1db37495655559" ;; Version v0.9.8.5
+  ;; :pin "35b752f00bf22682659350f07b4ea5c2dfb9a36b"
   :recipe (:host github
            :repo "karthink/gptel"
            :branch "master"))
@@ -1115,7 +1116,8 @@ For the moment, will go with vendored versions in doomemacs
            :branch "main"))
 
 (package! mcp
-  :pin "d023e4858af5cc4c8cb0a6f28262c88485a06b2b"
+  :pin "2fcda27b15395fe1ed55d15a88e6187a69af09e9"
+  ;; :pin "d023e4858af5cc4c8cb0a6f28262c88485a06b2b"
   :recipe (:host github
            :repo "lizqwerscott/mcp.el"
            :branch "master"))
