@@ -17,17 +17,17 @@
   };
   adguard-filters_adguardteam = {
     pname = "adguard-filters_adguardteam";
-    version = "9f16dce4127243b0e722a7030b216974b81e7501";
+    version = "13034c8b618e4f3df0f5441c219c935704649daa";
     src = fetchgit {
       url = "https://github.com/AdguardTeam/AdguardFilters";
-      rev = "9f16dce4127243b0e722a7030b216974b81e7501";
+      rev = "13034c8b618e4f3df0f5441c219c935704649daa";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-RD1AY4t/KvcsH0itlkiR2JMo8fNJ7wGgeJinvka009U=";
+      sha256 = "sha256-QiQrOH7xbopQaGI84PkHm72Z3mY2MigmlsXT0vFQuwU=";
     };
-    date = "2025-07-22";
+    date = "2025-07-26";
   };
   adguard-filters_romania = {
     pname = "adguard-filters_romania";
@@ -286,17 +286,17 @@
   };
   ipxe = {
     pname = "ipxe";
-    version = "e01e5ff7c6863a7825d58fb414181a0209dce6f9";
+    version = "e3a6e9230c4e513e6a529427d71a714849b6f788";
     src = fetchgit {
       url = "https://github.com/ipxe/ipxe";
-      rev = "e01e5ff7c6863a7825d58fb414181a0209dce6f9";
+      rev = "e3a6e9230c4e513e6a529427d71a714849b6f788";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-hWVYb9BvLQ4BFN1ky0Yc9zCs1ubXbYgJGc5EksI69ws=";
+      sha256 = "sha256-/09YxHQGbSdiLwhxOIWh2lPPabTL9QQsOUYpo8zp2f0=";
     };
-    date = "2025-07-21";
+    date = "2025-07-24";
   };
   iterable-io = {
     pname = "iterable-io";
@@ -308,13 +308,13 @@
   };
   langchain = {
     pname = "langchain";
-    version = "langchain-core==0.3.70";
+    version = "langchain-core==0.3.72";
     src = fetchFromGitHub {
       owner = "langchain-ai";
       repo = "langchain";
-      rev = "langchain-core==0.3.70";
+      rev = "langchain-core==0.3.72";
       fetchSubmodules = false;
-      sha256 = "sha256-2ZvUsdygsGkKSpK4y7LIwBcjLKAgombyJGKSxe9pyH4=";
+      sha256 = "sha256-Q2uGMiODUtwkPdOyuSqp8vqjlLjiXk75QjXp7rr20tc=";
     };
   };
   listopia = {
@@ -353,18 +353,18 @@
   };
   nur = {
     pname = "nur";
-    version = "9348a46fdbc48c352116e708498c2dbe792a9c36";
+    version = "0e5f33f4637ade4fb614b81cfdba101099bf8b84";
     src = fetchgit {
       url = "https://github.com/nix-community/NUR";
-      rev = "9348a46fdbc48c352116e708498c2dbe792a9c36";
+      rev = "0e5f33f4637ade4fb614b81cfdba101099bf8b84";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-mJ7DLXWiITFAlGkYezluEnCRoQgEaZAO6QWUqejBDX4=";
+      sha256 = "sha256-25+71ECEhQqx1teqZJRRDizIspzLFBZUEzIAz8FGu7U=";
     };
     flake = "true";
-    date = "2025-07-22";
+    date = "2025-07-26";
   };
   pam_usb = {
     pname = "pam_usb";

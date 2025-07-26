@@ -21,7 +21,7 @@
     },
     "adguard-filters_adguardteam": {
         "cargoLocks": null,
-        "date": "2025-07-22",
+        "date": "2025-07-26",
         "extract": null,
         "name": "adguard-filters_adguardteam",
         "passthru": null,
@@ -31,13 +31,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "9f16dce4127243b0e722a7030b216974b81e7501",
-            "sha256": "sha256-RD1AY4t/KvcsH0itlkiR2JMo8fNJ7wGgeJinvka009U=",
+            "rev": "13034c8b618e4f3df0f5441c219c935704649daa",
+            "sha256": "sha256-QiQrOH7xbopQaGI84PkHm72Z3mY2MigmlsXT0vFQuwU=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/AdguardTeam/AdguardFilters"
         },
-        "version": "9f16dce4127243b0e722a7030b216974b81e7501"
+        "version": "13034c8b618e4f3df0f5441c219c935704649daa"
     },
     "adguard-filters_romania": {
         "cargoLocks": null,
@@ -447,7 +447,7 @@
     },
     "ipxe": {
         "cargoLocks": null,
-        "date": "2025-07-21",
+        "date": "2025-07-24",
         "extract": null,
         "name": "ipxe",
         "passthru": null,
@@ -457,13 +457,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "e01e5ff7c6863a7825d58fb414181a0209dce6f9",
-            "sha256": "sha256-hWVYb9BvLQ4BFN1ky0Yc9zCs1ubXbYgJGc5EksI69ws=",
+            "rev": "e3a6e9230c4e513e6a529427d71a714849b6f788",
+            "sha256": "sha256-/09YxHQGbSdiLwhxOIWh2lPPabTL9QQsOUYpo8zp2f0=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/ipxe/ipxe"
         },
-        "version": "e01e5ff7c6863a7825d58fb414181a0209dce6f9"
+        "version": "e3a6e9230c4e513e6a529427d71a714849b6f788"
     },
     "iterable-io": {
         "cargoLocks": null,
@@ -494,12 +494,12 @@
             "name": null,
             "owner": "langchain-ai",
             "repo": "langchain",
-            "rev": "langchain-core==0.3.70",
-            "sha256": "sha256-2ZvUsdygsGkKSpK4y7LIwBcjLKAgombyJGKSxe9pyH4=",
+            "rev": "langchain-core==0.3.72",
+            "sha256": "sha256-Q2uGMiODUtwkPdOyuSqp8vqjlLjiXk75QjXp7rr20tc=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "langchain-core==0.3.70"
+        "version": "langchain-core==0.3.72"
     },
     "listopia": {
         "cargoLocks": null,
@@ -559,7 +559,7 @@
     },
     "nur": {
         "cargoLocks": null,
-        "date": "2025-07-22",
+        "date": "2025-07-26",
         "extract": null,
         "name": "nur",
         "passthru": {
@@ -571,13 +571,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "9348a46fdbc48c352116e708498c2dbe792a9c36",
-            "sha256": "sha256-mJ7DLXWiITFAlGkYezluEnCRoQgEaZAO6QWUqejBDX4=",
+            "rev": "0e5f33f4637ade4fb614b81cfdba101099bf8b84",
+            "sha256": "sha256-25+71ECEhQqx1teqZJRRDizIspzLFBZUEzIAz8FGu7U=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/nix-community/NUR"
         },
-        "version": "9348a46fdbc48c352116e708498c2dbe792a9c36"
+        "version": "0e5f33f4637ade4fb614b81cfdba101099bf8b84"
     },
     "pam_usb": {
         "cargoLocks": null,

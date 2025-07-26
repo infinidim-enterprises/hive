@@ -181,17 +181,17 @@
   };
   zsh-plugin_oh-my-zsh = {
     pname = "zsh-plugin_oh-my-zsh";
-    version = "537807c863a90c51a4ec6fbb6b818c3668472425";
+    version = "70f0e5285f802ce6eb7feea4588ff8917246233e";
     src = fetchgit {
       url = "https://github.com/robbyrussell/oh-my-zsh";
-      rev = "537807c863a90c51a4ec6fbb6b818c3668472425";
+      rev = "70f0e5285f802ce6eb7feea4588ff8917246233e";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-Lyc31NHeBMbhpjb3uP6ZAgaqTKA7x0ZmO9gXzCd7/mc=";
+      sha256 = "sha256-rvvzSV4K6CCJKQH7ynMosAjfe0N5FwYwbCUvrC/c4eQ=";
     };
-    date = "2025-07-21";
+    date = "2025-07-25";
   };
   zsh-plugin_tipz = {
     pname = "zsh-plugin_tipz";

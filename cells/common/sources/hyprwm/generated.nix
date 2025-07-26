@@ -18,18 +18,18 @@
   };
   contrib = {
     pname = "contrib";
-    version = "481175e17e155f19a3b31416530b6edf725e7034";
+    version = "6839b23345b71db17cd408373de4f5605bf589b8";
     src = fetchgit {
       url = "https://github.com/hyprwm/contrib";
-      rev = "481175e17e155f19a3b31416530b6edf725e7034";
+      rev = "6839b23345b71db17cd408373de4f5605bf589b8";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-usBNOT/uzFdsKDe5Ik+C36zqL+BfT7Lp2rqKWrpQuqk=";
+      sha256 = "sha256-PFAJoEqQWMlo1J+yZb+4HixmhbRVmmNl58e/AkLYDDI=";
     };
     flake = "true";
-    date = "2025-07-18";
+    date = "2025-07-23";
   };
   grim-hyprland = {
     pname = "grim-hyprland";
@@ -108,13 +108,13 @@
   };
   hyprsunset = {
     pname = "hyprsunset";
-    version = "v0.3.0";
+    version = "v0.3.1";
     src = fetchFromGitHub {
       owner = "hyprwm";
       repo = "hyprsunset";
-      rev = "v0.3.0";
+      rev = "v0.3.1";
       fetchSubmodules = false;
-      sha256 = "sha256-Cp5kHNfWFFyJpA5eRxZh/7fJcHU1uM2tBehQyeyKEUA=";
+      sha256 = "sha256-Ctk7zophp8obM/u9S2c8a6nOWV+VeIzq6ma+dI5BE3s=";
     };
     flake = "true";
   };

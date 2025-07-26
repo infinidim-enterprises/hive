@@ -53,26 +53,26 @@
   };
   metagpt = {
     pname = "metagpt";
-    version = "01e9e39d8bf8bf747df8071b879d17257ad12605";
+    version = "d25bb43cb075644adc8abedb80a7d242a13508c6";
     src = fetchgit {
       url = "https://github.com/infinidim-enterprises/metagpt.nix";
-      rev = "01e9e39d8bf8bf747df8071b879d17257ad12605";
+      rev = "d25bb43cb075644adc8abedb80a7d242a13508c6";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-peLZmnPFCOpNAEFfrRyFih6O2e6KW+yqv+glPCrxBgs=";
+      sha256 = "sha256-MBgy0EpNzF/TuToHDS7UCdwO29sI2oZkO64ZA6O0anI=";
     };
     flake = "true";
-    date = "2025-07-19";
+    date = "2025-07-26";
   };
   n8n = {
     pname = "n8n";
-    version = "n8n@1.102.4";
+    version = "n8n@1.103.2";
     src = fetchurl {
-      url = "https://github.com/n8n-io/n8n/archive/n8n@1.102.4.tar.gz";
+      url = "https://github.com/n8n-io/n8n/archive/n8n@1.103.2.tar.gz";
       name = "n8n.tar.gz";
-      sha256 = "sha256-uuANnoSqzpZQ07oQxXRaHeZGwK8/n8qc5aaiJ5IR9WI=";
+      sha256 = "sha256-9y9SMxFsAaMgt2s8BkekH+Pd20xJLclxhNdu/rm1FT4=";
     };
   };
 }
