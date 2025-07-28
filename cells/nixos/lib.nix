@@ -29,38 +29,43 @@ let
   isZfs = config:
     (filterAttrs (n: v: v.fsType == "zfs") config.fileSystems) != { };
 
-  localLib = {
-    post_24-05 = { pkgs }:
-      let
-        version =
-          if hasSuffix "pre-git" pkgs.lib.version
-          then removeSuffix "pre-git" pkgs.lib.version
-          else pkgs.lib.version;
-      in
-      versionAtLeast version "24.11";
+  localLib =
+    let
+      clean = v:
+        if hasSuffix "pre-git" v
+        then removeSuffix "pre-git" v
+        else v;
+    in
+    {
+      post_24-05 = { pkgs }:
+        versionAtLeast (clean pkgs.lib.version) "24.11";
 
-    networkdSyntax = { pkgs, Address }:
-      if cell.lib.post_24-05 { inherit pkgs; }
-      then { inherit Address; }
-      else { addressConfig = { inherit Address; }; };
+      post_25-05 = { pkgs }:
+        versionAtLeast (clean pkgs.lib.version) "25.05";
 
-    pkgInstalled = { pkg, combinedPkgs }:
-      elem pkg combinedPkgs;
+      networkdSyntax = { pkgs, Address }:
+        if cell.lib.post_24-05 { inherit pkgs; }
+        then { inherit Address; }
+        else { addressConfig = { inherit Address; }; };
 
-    fontPkg = { name, osConfig }:
-      findFirst (e: (!isString e) && hasAttr "pname" e && e.pname == name)
-        null
-        osConfig.fonts.packages;
+      pkgInstalled = { pkg, combinedPkgs }:
+        elem pkg combinedPkgs;
 
-    # NOTE: displayManager.enable will be true, when any DM is enabled
-    isGui = config: config.services.displayManager.enable;
-  };
+      fontPkg = { name, osConfig }:
+        findFirst (e: (!isString e) && hasAttr "pname" e && e.pname == name)
+          null
+          osConfig.fonts.packages;
+
+      # NOTE: displayManager.enable will be true, when any DM is enabled
+      isGui = config: config.services.displayManager.enable;
+    };
 
 in
 {
   inherit (localLib)
     isGui
     post_24-05
+    post_25-05
     networkdSyntax;
 
   inherit

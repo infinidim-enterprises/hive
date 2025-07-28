@@ -1,6 +1,14 @@
 { inputs, cell, ... }:
 
-{ config, lib, ... }:
+{ config, lib, pkgs, ... }:
+let
+  inherit (lib)
+    mkOption
+    mkMerge
+    mkForce
+    mkIf;
+  inherit (inputs.cells.nixos.lib) post_25-05;
+in
 {
   # NOTE: at some point NixOS started doing it
   # environment.loginShellInit = ''
@@ -16,6 +24,14 @@
   home-manager.verbose = false; # DEBUG disabled!
   home-manager.sharedModules =
     [
+      (mkIf (!post_25-05 { inherit pkgs; })
+        {
+          disabledModules = [
+            "programs/ashell.nix"
+            "programs/codex.nix"
+          ];
+        })
+
       {
         programs.starship.enable = true;
         programs.command-not-found.enable = !config.programs.command-not-found.enable;
@@ -24,8 +40,8 @@
         home.sessionVariables.HM_FONT_SIZE = "15";
       }
 
-      ({ config, lib, osConfig, ... }:
-        lib.mkIf config.xdg.enable
+      ({ config, osConfig, ... }:
+        mkIf config.xdg.enable
           {
             xdg.userDirs.extraConfig.XDG_LOGS_DIR = "${config.home.homeDirectory}/Logs";
             xdg.userDirs.extraConfig.XDG_SCREENSHOTS_DIR = "${config.xdg.userDirs.pictures}/screenshots";

@@ -2,6 +2,11 @@
 let
   inherit (builtins) baseNameOf;
   system = "aarch64-linux";
+  nixpkgs-unstable = import inputs.nixpkgs-unstable {
+    inherit system;
+    config.allowUnfree = true;
+  };
+
 in
 
 rec {
@@ -20,6 +25,8 @@ rec {
           inputs.raspberry-pi-nix.overlays.libcamera
           inputs.cells.common.overlays.minidlna
           inputs.cells.common.overlays.prowlarr
+          # NOTE: workaround for home-unstable to work on 24.11
+          (_: _: { inherit (nixpkgs-unstable) ashell codex; })
         ];
     };
   };
