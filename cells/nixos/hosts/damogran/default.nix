@@ -61,7 +61,16 @@ rec {
       }
 
       ({ pkgs, lib, ... }: {
-        home-manager.sharedModules = [{ home.enableNixpkgsReleaseCheck = false; }];
+        home-manager.sharedModules = [
+          { home.enableNixpkgsReleaseCheck = false; }
+          (lib.mkIf (!cell.lib.post_25-05 { inherit pkgs; })
+            {
+              disabledModules = [
+                "programs/ashell.nix"
+                "programs/codex.nix"
+              ];
+            })
+        ];
 
         home-manager.users.admin.gui.enable = false;
         home-manager.users.admin.fonts.fontconfig.enable = false;
