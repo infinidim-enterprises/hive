@@ -39,7 +39,7 @@ mkIf config.programs.zsh.enable
   programs.zsh.autocd = true;
 
   programs.zsh.defaultKeymap = "emacs";
-  programs.zsh.history.path = "$HOME/Logs/zsh_history";
+  programs.zsh.history.path = "${config.xdg.userDirs.extraConfig.XDG_LOGS_DIR}/zsh_history";
   programs.zsh.history.size = 1000000;
   programs.zsh.history.ignoreDups = true;
   programs.zsh.history.extended = true;
