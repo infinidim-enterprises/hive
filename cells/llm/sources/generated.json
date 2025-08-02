@@ -53,11 +53,11 @@
             "arch": "amd64",
             "finalImageName": null,
             "finalImageTag": null,
-            "imageDigest": "sha256:6622e3288da7a637029f27b438b8471268490442cfa1c160e14b971d7220ec3c",
+            "imageDigest": "sha256:fb49f85784c307a3d7220fcbb67f4626d894dafa48aac78dd400fbde9383ce18",
             "imageName": "kestra/kestra",
             "imageTag": "latest",
             "os": "linux",
-            "sha256": "sha256-Cq9Rv/OfKYZgoZQi4x8KRQEZu1XQeUZWf/xK6SjeEjs=",
+            "sha256": "sha256-rHxasfCsj5lgLmESA/JtK8BUWVb5pYELmneDEZamY3k=",
             "tlsVerify": null
         },
         "version": "latest"
@@ -73,18 +73,18 @@
             "arch": "amd64",
             "finalImageName": null,
             "finalImageTag": null,
-            "imageDigest": "sha256:d27484d7c858ec2b1d553851f332a7543c3affed5dc4b2aa2af695f4c26f587e",
+            "imageDigest": "sha256:5a0955593ec7a4c5f18d02d45b63a9fb3f1a8d56418f5e84c43d78650bce1560",
             "imageName": "lobehub/lobe-chat",
             "imageTag": "latest",
             "os": "linux",
-            "sha256": "sha256-gGWc3Pk8sTa3FnwXns9pg2QqMAb1ARrXuB5Z1pUKRu8=",
+            "sha256": "sha256-Bp9f0ZRLOoHl3yZR6acVcOofIMG7P6WcJpo/URsVuIo=",
             "tlsVerify": null
         },
         "version": "latest"
     },
     "metagpt": {
         "cargoLocks": null,
-        "date": "2025-07-26",
+        "date": "2025-08-01",
         "extract": null,
         "name": "metagpt",
         "passthru": {
@@ -96,13 +96,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "d25bb43cb075644adc8abedb80a7d242a13508c6",
-            "sha256": "sha256-MBgy0EpNzF/TuToHDS7UCdwO29sI2oZkO64ZA6O0anI=",
+            "rev": "3e17fe734cbd8057c7892e7000c7bf0651c64958",
+            "sha256": "sha256-kMK95gGn/S0GCUfRPqBiAQXnL92/77tfDwMwhRlS8i8=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/infinidim-enterprises/metagpt.nix"
         },
-        "version": "d25bb43cb075644adc8abedb80a7d242a13508c6"
+        "version": "3e17fe734cbd8057c7892e7000c7bf0651c64958"
     },
     "n8n": {
         "cargoLocks": null,
@@ -113,10 +113,10 @@
         "pinned": false,
         "src": {
             "name": "n8n.tar.gz",
-            "sha256": "sha256-9y9SMxFsAaMgt2s8BkekH+Pd20xJLclxhNdu/rm1FT4=",
+            "sha256": "sha256-4Nihr1rLPSYgoLRYLNzn2pXyvK44BTua0MtP9ACtqU8=",
             "type": "url",
-            "url": "https://github.com/n8n-io/n8n/archive/n8n@1.103.2.tar.gz"
+            "url": "https://github.com/n8n-io/n8n/archive/n8n@1.104.2.tar.gz"
         },
-        "version": "n8n@1.103.2"
+        "version": "n8n@1.104.2"
     }
 }

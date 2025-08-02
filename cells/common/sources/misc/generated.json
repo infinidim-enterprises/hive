@@ -21,7 +21,7 @@
     },
     "adguard-filters_adguardteam": {
         "cargoLocks": null,
-        "date": "2025-07-26",
+        "date": "2025-08-01",
         "extract": null,
         "name": "adguard-filters_adguardteam",
         "passthru": null,
@@ -31,13 +31,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "13034c8b618e4f3df0f5441c219c935704649daa",
-            "sha256": "sha256-QiQrOH7xbopQaGI84PkHm72Z3mY2MigmlsXT0vFQuwU=",
+            "rev": "fd546d203b31ec188d6c849ea8247572c3b79053",
+            "sha256": "sha256-EfR1t8NnNiDTsSxC8fDpxoh0FT8D373Qh3KtZcroIvs=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/AdguardTeam/AdguardFilters"
         },
-        "version": "13034c8b618e4f3df0f5441c219c935704649daa"
+        "version": "fd546d203b31ec188d6c849ea8247572c3b79053"
     },
     "adguard-filters_romania": {
         "cargoLocks": null,
@@ -61,7 +61,7 @@
     },
     "base16-schemes": {
         "cargoLocks": null,
-        "date": "2025-06-24",
+        "date": "2025-07-31",
         "extract": null,
         "name": "base16-schemes",
         "passthru": null,
@@ -71,13 +71,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "5a775c6ffd6e6125947b393872cde95867d85a2a",
-            "sha256": "sha256-LI+BnRoFNRa2ffbe3dcuIRYAUcGklBx0+EcFxlHj0SY=",
+            "rev": "7ef9b3144e0ccd3f8d80aeaccc49ef62c501fafe",
+            "sha256": "sha256-TrVL5MmmuUi2ahfbYUpHWgZIK93WgbzecXmgOTQGSXE=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/tinted-theming/schemes"
         },
-        "version": "5a775c6ffd6e6125947b393872cde95867d85a2a"
+        "version": "7ef9b3144e0ccd3f8d80aeaccc49ef62c501fafe"
     },
     "base16-solarized-scheme": {
         "cargoLocks": null,
@@ -447,7 +447,7 @@
     },
     "ipxe": {
         "cargoLocks": null,
-        "date": "2025-07-24",
+        "date": "2025-07-30",
         "extract": null,
         "name": "ipxe",
         "passthru": null,
@@ -457,13 +457,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "e3a6e9230c4e513e6a529427d71a714849b6f788",
-            "sha256": "sha256-/09YxHQGbSdiLwhxOIWh2lPPabTL9QQsOUYpo8zp2f0=",
+            "rev": "f7a1e9ef8e1dc22ebded786507b872a45e3fb05d",
+            "sha256": "sha256-dNnZH6ENxx3K2lAIE0B8mLjOo05D/TBguarrGrxXozc=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/ipxe/ipxe"
         },
-        "version": "e3a6e9230c4e513e6a529427d71a714849b6f788"
+        "version": "f7a1e9ef8e1dc22ebded786507b872a45e3fb05d"
     },
     "iterable-io": {
         "cargoLocks": null,
@@ -559,7 +559,7 @@
     },
     "nur": {
         "cargoLocks": null,
-        "date": "2025-07-26",
+        "date": "2025-08-02",
         "extract": null,
         "name": "nur",
         "passthru": {
@@ -571,13 +571,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "0e5f33f4637ade4fb614b81cfdba101099bf8b84",
-            "sha256": "sha256-25+71ECEhQqx1teqZJRRDizIspzLFBZUEzIAz8FGu7U=",
+            "rev": "526a5dad499b6907414aef7b90ece1c8008d08e4",
+            "sha256": "sha256-8ZSTwsy44yKnc3BWLYo63WDUo92ziydSvGHrvTUmFJU=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/nix-community/NUR"
         },
-        "version": "0e5f33f4637ade4fb614b81cfdba101099bf8b84"
+        "version": "526a5dad499b6907414aef7b90ece1c8008d08e4"
     },
     "pam_usb": {
         "cargoLocks": null,

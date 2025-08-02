@@ -3,18 +3,18 @@
 {
   Hyprspace = {
     pname = "Hyprspace";
-    version = "0a82e3724f929de8ad8fb04d2b7fa128493f24f7";
+    version = "a847f1d6a7326395d17fe9b6b4ab63a10eb152eb";
     src = fetchgit {
       url = "https://github.com/KZDKM/Hyprspace";
-      rev = "0a82e3724f929de8ad8fb04d2b7fa128493f24f7";
+      rev = "a847f1d6a7326395d17fe9b6b4ab63a10eb152eb";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-rTItuAWpzICMREF8Ww8cK4hYgNMRXJ4wjkN0akLlaWE=";
+      sha256 = "sha256-Q30DFlPwD1ZK52TD4wSnqDO5gk9Kvifr923siI8AdVQ=";
     };
     flake = "true";
-    date = "2025-07-16";
+    date = "2025-07-27";
   };
   contrib = {
     pname = "contrib";
@@ -84,13 +84,13 @@
   };
   hyprlock = {
     pname = "hyprlock";
-    version = "v0.9.0";
+    version = "v0.9.1";
     src = fetchFromGitHub {
       owner = "hyprwm";
       repo = "hyprlock";
-      rev = "v0.9.0";
+      rev = "v0.9.1";
       fetchSubmodules = false;
-      sha256 = "sha256-YndFlXC9ZM7uiC75MfnYFk4S9s1Xqq3GTnW0xMBlG7g=";
+      sha256 = "sha256-hHTJ65uOiGqQgI2XbH9jqIGHUcA86K+GJbnhAKhRWNo=";
     };
     flake = "true";
   };
