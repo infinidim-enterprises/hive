@@ -32,8 +32,8 @@
     version = "latest";
     src = dockerTools.pullImage {
       imageName = "kestra/kestra";
-      imageDigest = "sha256:6622e3288da7a637029f27b438b8471268490442cfa1c160e14b971d7220ec3c";
-      sha256 = "sha256-Cq9Rv/OfKYZgoZQi4x8KRQEZu1XQeUZWf/xK6SjeEjs=";
+      imageDigest = "sha256:fb49f85784c307a3d7220fcbb67f4626d894dafa48aac78dd400fbde9383ce18";
+      sha256 = "sha256-rHxasfCsj5lgLmESA/JtK8BUWVb5pYELmneDEZamY3k=";
       finalImageTag = "latest";
       os = "linux";
       arch = "amd64";
@@ -44,8 +44,8 @@
     version = "latest";
     src = dockerTools.pullImage {
       imageName = "lobehub/lobe-chat";
-      imageDigest = "sha256:d27484d7c858ec2b1d553851f332a7543c3affed5dc4b2aa2af695f4c26f587e";
-      sha256 = "sha256-gGWc3Pk8sTa3FnwXns9pg2QqMAb1ARrXuB5Z1pUKRu8=";
+      imageDigest = "sha256:5a0955593ec7a4c5f18d02d45b63a9fb3f1a8d56418f5e84c43d78650bce1560";
+      sha256 = "sha256-Bp9f0ZRLOoHl3yZR6acVcOofIMG7P6WcJpo/URsVuIo=";
       finalImageTag = "latest";
       os = "linux";
       arch = "amd64";
@@ -53,26 +53,26 @@
   };
   metagpt = {
     pname = "metagpt";
-    version = "d25bb43cb075644adc8abedb80a7d242a13508c6";
+    version = "3e17fe734cbd8057c7892e7000c7bf0651c64958";
     src = fetchgit {
       url = "https://github.com/infinidim-enterprises/metagpt.nix";
-      rev = "d25bb43cb075644adc8abedb80a7d242a13508c6";
+      rev = "3e17fe734cbd8057c7892e7000c7bf0651c64958";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-MBgy0EpNzF/TuToHDS7UCdwO29sI2oZkO64ZA6O0anI=";
+      sha256 = "sha256-kMK95gGn/S0GCUfRPqBiAQXnL92/77tfDwMwhRlS8i8=";
     };
     flake = "true";
-    date = "2025-07-26";
+    date = "2025-08-01";
   };
   n8n = {
     pname = "n8n";
-    version = "n8n@1.103.2";
+    version = "n8n@1.104.2";
     src = fetchurl {
-      url = "https://github.com/n8n-io/n8n/archive/n8n@1.103.2.tar.gz";
+      url = "https://github.com/n8n-io/n8n/archive/n8n@1.104.2.tar.gz";
       name = "n8n.tar.gz";
-      sha256 = "sha256-9y9SMxFsAaMgt2s8BkekH+Pd20xJLclxhNdu/rm1FT4=";
+      sha256 = "sha256-4Nihr1rLPSYgoLRYLNzn2pXyvK44BTua0MtP9ACtqU8=";
     };
   };
 }

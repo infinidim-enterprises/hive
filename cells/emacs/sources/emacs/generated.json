@@ -287,16 +287,16 @@
             "name": null,
             "owner": "minad",
             "repo": "jinx",
-            "rev": "2.2",
-            "sha256": "sha256-/Q+GqsXMrLX0IxufK2iu74rtgEiiT2G7q9DuQeRvNrI=",
+            "rev": "2.3",
+            "sha256": "sha256-XDZAJnjo48VuyWM8E8RC21ykgDplvGMNqARG/1uS9Z4=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "2.2"
+        "version": "2.3"
     },
     "lsp-mode": {
         "cargoLocks": null,
-        "date": "07 Jul 2025",
+        "date": "30 Jul 2025",
         "extract": null,
         "name": "lsp-mode",
         "passthru": null,
@@ -308,12 +308,12 @@
             "name": null,
             "owner": "emacs-lsp",
             "repo": "lsp-mode",
-            "rev": "147233313576c844e2bf56640827b0d0e5c2ee6c",
-            "sha256": "sha256-FEzsCCNz0M4GWQfsZfqxBkEKkPPY5UczWz1XEB8/YZA=",
+            "rev": "1aa47406dc1b171304f29563c9125e5abc761fc0",
+            "sha256": "sha256-dUU6QLug7mFi5WPKVDetPNoLbA45Y5xZaFSxnMglJPA=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "147233313576c844e2bf56640827b0d0e5c2ee6c"
+        "version": "1aa47406dc1b171304f29563c9125e5abc761fc0"
     },
     "maple-iedit": {
         "cargoLocks": null,
@@ -352,12 +352,12 @@
             "name": null,
             "owner": "LuigiPiucco",
             "repo": "nerd-icons-corfu",
-            "rev": "v0.5.1",
-            "sha256": "sha256-3CCdcb7zetHLQAxIpkiiWGx//oSuJGlJcOc8pSG8UUA=",
+            "rev": "v1.0.0",
+            "sha256": "sha256-QayHcSE786PcvJ+I6Yx86awqqn7D6rJ7sRBnjnkh1ww=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v0.5.1"
+        "version": "v1.0.0"
     },
     "nix-mode": {
         "cargoLocks": null,
@@ -434,12 +434,12 @@
             "name": null,
             "owner": "oantolin",
             "repo": "orderless",
-            "rev": "1.4",
-            "sha256": "sha256-iGpDDteSXzaWC++RTX4lhLVs1OlbWU4gAMYKMaYLSdE=",
+            "rev": "1.5",
+            "sha256": "sha256-+z17BBbg+7CTdkt1R7381+rVW9iYDQsOzU7vJKqi8zE=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "1.4"
+        "version": "1.5"
     },
     "org-pretty-table": {
         "cargoLocks": null,

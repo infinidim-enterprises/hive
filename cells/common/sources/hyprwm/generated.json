@@ -1,7 +1,7 @@
 {
     "Hyprspace": {
         "cargoLocks": null,
-        "date": "2025-07-16",
+        "date": "2025-07-27",
         "extract": null,
         "name": "Hyprspace",
         "passthru": {
@@ -13,13 +13,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "0a82e3724f929de8ad8fb04d2b7fa128493f24f7",
-            "sha256": "sha256-rTItuAWpzICMREF8Ww8cK4hYgNMRXJ4wjkN0akLlaWE=",
+            "rev": "a847f1d6a7326395d17fe9b6b4ab63a10eb152eb",
+            "sha256": "sha256-Q30DFlPwD1ZK52TD4wSnqDO5gk9Kvifr923siI8AdVQ=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/KZDKM/Hyprspace"
         },
-        "version": "0a82e3724f929de8ad8fb04d2b7fa128493f24f7"
+        "version": "a847f1d6a7326395d17fe9b6b4ab63a10eb152eb"
     },
     "contrib": {
         "cargoLocks": null,
@@ -150,12 +150,12 @@
             "name": null,
             "owner": "hyprwm",
             "repo": "hyprlock",
-            "rev": "v0.9.0",
-            "sha256": "sha256-YndFlXC9ZM7uiC75MfnYFk4S9s1Xqq3GTnW0xMBlG7g=",
+            "rev": "v0.9.1",
+            "sha256": "sha256-hHTJ65uOiGqQgI2XbH9jqIGHUcA86K+GJbnhAKhRWNo=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v0.9.0"
+        "version": "v0.9.1"
     },
     "hyprpicker": {
         "cargoLocks": null,
