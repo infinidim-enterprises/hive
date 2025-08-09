@@ -27,7 +27,7 @@ rec {
     wofi-pass
     sources
     python
-    (fina: prev: {
+    (final: prev: {
       libs3 = prev.libs3.overrideAttrs (old: {
         postPatch = old.postPatch or "" + ''
           sed -i 's/-Werror[=a-z\-]*//g' GNUmakefile

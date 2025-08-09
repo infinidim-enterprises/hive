@@ -21,6 +21,7 @@ rec {
         ++ (inputs.nixpkgs-lib.lib.subtractLists [ inputs.nixd.overlays.default ]
           cell.overlays.base)
         ++ [
+          # TODO: https://github.com/nix-community/raspberry-pi-nix/issues/134
           inputs.raspberry-pi-nix.overlays.core
           inputs.raspberry-pi-nix.overlays.libcamera
           inputs.cells.common.overlays.minidlna

@@ -1,11 +1,17 @@
 { ... }:
-# with (lib // builtins);
+
 let
-  raiseDefault = {
-    __functor = _self:
-      _: v: v.default or v;
-    doc = ''
-    '';
-  };
+  inherit (builtins)
+    removeAttrs
+    isAttrs;
 in
-raiseDefault
+{
+  __functor = _: _: mod:
+    if mod ? default then
+      if isAttrs mod.default
+      then (removeAttrs mod [ "default" ]) // mod.default
+      else mod.default
+    else mod;
+
+  doc = "";
+}
