@@ -163,26 +163,26 @@
   };
   jinx = {
     pname = "jinx";
-    version = "2.2";
+    version = "2.3";
     src = fetchFromGitHub {
       owner = "minad";
       repo = "jinx";
-      rev = "2.2";
+      rev = "2.3";
       fetchSubmodules = false;
-      sha256 = "sha256-/Q+GqsXMrLX0IxufK2iu74rtgEiiT2G7q9DuQeRvNrI=";
+      sha256 = "sha256-XDZAJnjo48VuyWM8E8RC21ykgDplvGMNqARG/1uS9Z4=";
     };
   };
   lsp-mode = {
     pname = "lsp-mode";
-    version = "147233313576c844e2bf56640827b0d0e5c2ee6c";
+    version = "65a414ddeb84d0282eda357cbd41ea674a42fd0b";
     src = fetchFromGitHub {
       owner = "emacs-lsp";
       repo = "lsp-mode";
-      rev = "147233313576c844e2bf56640827b0d0e5c2ee6c";
+      rev = "65a414ddeb84d0282eda357cbd41ea674a42fd0b";
       fetchSubmodules = false;
-      sha256 = "sha256-FEzsCCNz0M4GWQfsZfqxBkEKkPPY5UczWz1XEB8/YZA=";
+      sha256 = "sha256-Vqr9hbrYIWEy0bfn0NduIB3cZo5C9tb99PYxQtAIBfQ=";
     };
-    date = "07 Jul 2025";
+    date = "06 Aug 2025";
   };
   maple-iedit = {
     pname = "maple-iedit";
@@ -199,13 +199,13 @@
   };
   nerd-icons-corfu = {
     pname = "nerd-icons-corfu";
-    version = "v0.5.1";
+    version = "v1.0.0";
     src = fetchFromGitHub {
       owner = "LuigiPiucco";
       repo = "nerd-icons-corfu";
-      rev = "v0.5.1";
+      rev = "v1.0.0";
       fetchSubmodules = false;
-      sha256 = "sha256-3CCdcb7zetHLQAxIpkiiWGx//oSuJGlJcOc8pSG8UUA=";
+      sha256 = "sha256-QayHcSE786PcvJ+I6Yx86awqqn7D6rJ7sRBnjnkh1ww=";
     };
   };
   nix-mode = {
@@ -250,13 +250,13 @@
   };
   orderless = {
     pname = "orderless";
-    version = "1.4";
+    version = "1.5";
     src = fetchFromGitHub {
       owner = "oantolin";
       repo = "orderless";
-      rev = "1.4";
+      rev = "1.5";
       fetchSubmodules = false;
-      sha256 = "sha256-iGpDDteSXzaWC++RTX4lhLVs1OlbWU4gAMYKMaYLSdE=";
+      sha256 = "sha256-+z17BBbg+7CTdkt1R7381+rVW9iYDQsOzU7vJKqi8zE=";
     };
   };
   org-pretty-table = {
