@@ -17,45 +17,45 @@
   };
   adguard-filters_adguardteam = {
     pname = "adguard-filters_adguardteam";
-    version = "13034c8b618e4f3df0f5441c219c935704649daa";
+    version = "c53ca99db8ca345ce6c7dbd214035953909c5352";
     src = fetchgit {
       url = "https://github.com/AdguardTeam/AdguardFilters";
-      rev = "13034c8b618e4f3df0f5441c219c935704649daa";
+      rev = "c53ca99db8ca345ce6c7dbd214035953909c5352";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-QiQrOH7xbopQaGI84PkHm72Z3mY2MigmlsXT0vFQuwU=";
+      sha256 = "sha256-J1sqxijYnx4NxXHR5MYkbXP9OMmleglF6qZdnh3erEE=";
     };
-    date = "2025-07-26";
+    date = "2025-08-10";
   };
   adguard-filters_romania = {
     pname = "adguard-filters_romania";
-    version = "017ac25df317cf06a5b9133946ab6f87b3eae7ab";
+    version = "3039af436403e3eb22e46bfa07532c9704749dc7";
     src = fetchgit {
       url = "https://github.com/tcptomato/ROad-Block";
-      rev = "017ac25df317cf06a5b9133946ab6f87b3eae7ab";
+      rev = "3039af436403e3eb22e46bfa07532c9704749dc7";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-+bTBpx8ojCDFgbE0yiLAY3F+WZrR99HNNQRXK15wqFg=";
+      sha256 = "sha256-iR/n/Hc7hvAc/TwtNj4tCBY2xoWuM+bi9im0pQ5dpfs=";
     };
-    date = "2025-07-21";
+    date = "2025-08-07";
   };
   base16-schemes = {
     pname = "base16-schemes";
-    version = "5a775c6ffd6e6125947b393872cde95867d85a2a";
+    version = "097d751b9e3c8b97ce158e7d141e5a292545b502";
     src = fetchgit {
       url = "https://github.com/tinted-theming/schemes";
-      rev = "5a775c6ffd6e6125947b393872cde95867d85a2a";
+      rev = "097d751b9e3c8b97ce158e7d141e5a292545b502";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-LI+BnRoFNRa2ffbe3dcuIRYAUcGklBx0+EcFxlHj0SY=";
+      sha256 = "sha256-8KG2lXGaXLUE0F/JVwLQe7kOVm21IDfNEo0gfga5P4M=";
     };
-    date = "2025-06-24";
+    date = "2025-08-10";
   };
   base16-solarized-scheme = {
     pname = "base16-solarized-scheme";
@@ -104,17 +104,28 @@
     };
     date = "2025-05-30";
   };
+  bip39tools = {
+    pname = "bip39tools";
+    version = "v0.9.15";
+    src = fetchFromGitHub {
+      owner = "bluescan";
+      repo = "bip39tools";
+      rev = "v0.9.15";
+      fetchSubmodules = false;
+      sha256 = "sha256-/tQGUiSxnj192cXI69CMWr33U9UjizlaKtfa368Kt4s=";
+    };
+  };
   chatgpt-wrapper = {
     pname = "chatgpt-wrapper";
-    version = "47a6de3640137cb0aec50ff770b53c6935a4474a";
+    version = "aa02ea64d00fc9397641c312d0330ce43d129223";
     src = fetchFromGitHub {
       owner = "llm-workflow-engine";
       repo = "llm-workflow-engine";
-      rev = "47a6de3640137cb0aec50ff770b53c6935a4474a";
+      rev = "aa02ea64d00fc9397641c312d0330ce43d129223";
       fetchSubmodules = false;
-      sha256 = "sha256-nlywOxh2Ex8E4N4HAh4+K2x2/iBfZrF746EMkacsAB8=";
+      sha256 = "sha256-DlMGaIk/wl9sykwkPHX/YfvpD7v48MdWNDMk7QPo2pE=";
     };
-    date = "2025-07-08";
+    date = "2025-08-10";
   };
   cl-hash-util = {
     pname = "cl-hash-util";
@@ -286,17 +297,17 @@
   };
   ipxe = {
     pname = "ipxe";
-    version = "e3a6e9230c4e513e6a529427d71a714849b6f788";
+    version = "8460dc4e8ffc98db62377d1c5502d6aac40f5a64";
     src = fetchgit {
       url = "https://github.com/ipxe/ipxe";
-      rev = "e3a6e9230c4e513e6a529427d71a714849b6f788";
+      rev = "8460dc4e8ffc98db62377d1c5502d6aac40f5a64";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-/09YxHQGbSdiLwhxOIWh2lPPabTL9QQsOUYpo8zp2f0=";
+      sha256 = "sha256-Xk1lbExR4dyiba4tF0Dm9/KtTVxc78Fs8gjmZU7pdpI=";
     };
-    date = "2025-07-24";
+    date = "2025-08-07";
   };
   iterable-io = {
     pname = "iterable-io";
@@ -308,13 +319,13 @@
   };
   langchain = {
     pname = "langchain";
-    version = "langchain-core==0.3.72";
+    version = "langchain-core==0.3.74";
     src = fetchFromGitHub {
       owner = "langchain-ai";
       repo = "langchain";
-      rev = "langchain-core==0.3.72";
+      rev = "langchain-core==0.3.74";
       fetchSubmodules = false;
-      sha256 = "sha256-Q2uGMiODUtwkPdOyuSqp8vqjlLjiXk75QjXp7rr20tc=";
+      sha256 = "sha256-oF/IK7Z0L7Z4I9d5JjUCAbQnvQZ8hX7PZXXnVlOUy6A=";
     };
   };
   listopia = {
@@ -353,18 +364,18 @@
   };
   nur = {
     pname = "nur";
-    version = "0e5f33f4637ade4fb614b81cfdba101099bf8b84";
+    version = "9c6f428670762cad26ca74b3cc0f4f18c38ffa5c";
     src = fetchgit {
       url = "https://github.com/nix-community/NUR";
-      rev = "0e5f33f4637ade4fb614b81cfdba101099bf8b84";
+      rev = "9c6f428670762cad26ca74b3cc0f4f18c38ffa5c";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-25+71ECEhQqx1teqZJRRDizIspzLFBZUEzIAz8FGu7U=";
+      sha256 = "sha256-4uYsY7I5zcpmerUqzzWXIMfRnR+vgwLliQM2oi1ffaU=";
     };
     flake = "true";
-    date = "2025-07-26";
+    date = "2025-08-10";
   };
   pam_usb = {
     pname = "pam_usb";
@@ -420,13 +431,13 @@
   };
   pynitrokey = {
     pname = "pynitrokey";
-    version = "v0.9.3";
+    version = "v0.10.0";
     src = fetchFromGitHub {
       owner = "Nitrokey";
       repo = "pynitrokey";
-      rev = "v0.9.3";
+      rev = "v0.10.0";
       fetchSubmodules = false;
-      sha256 = "sha256-aEQOcSzHBv7PEZTupfdCnRycz28qjF3JHHUfOUFoYIY=";
+      sha256 = "sha256-COJoKRhHrpZvCKzv3v2INdA88nH5HN4FsB9fXPTUbDY=";
     };
   };
   python-pass = {
@@ -525,6 +536,17 @@
       rev = "3.0.3";
       fetchSubmodules = false;
       sha256 = "sha256-ZzX1kTu131jVfl6NzZPwNUpZ1tR8b5FpT2CJ4ufdS/Y=";
+    };
+  };
+  tacent = {
+    pname = "tacent";
+    version = "v0.8.16";
+    src = fetchFromGitHub {
+      owner = "bluescan";
+      repo = "tacent";
+      rev = "v0.8.16";
+      fetchSubmodules = false;
+      sha256 = "sha256-UpkWMQBt149OUUvbuJCXFzJnM0h6dhEqlHp4TyEwBmM=";
     };
   };
   tfenv = {

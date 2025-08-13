@@ -125,6 +125,7 @@ mkMerge [
       inputs.cells.common.packages.pgp-key-generation # Deterministic ssh-keys from BIP39
       inputs.cells.common.packages.dkeygen # helper script for pgp-key-generation
       inputs.cells.common.packages.bip39key # Generate an OpenPGP key from a BIP39 mnemonic
+      # FIXME: inputs.cells.common.packages.bip39tools #  BIP39 mnemonic generation and validation
       passphrase2pgp # Predictable, passphrase-based PGP key generator
       enc # Modern and friendly alternative to GnuPG
     ] ++ (optional
