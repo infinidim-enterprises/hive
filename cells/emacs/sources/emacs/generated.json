@@ -287,16 +287,16 @@
             "name": null,
             "owner": "minad",
             "repo": "jinx",
-            "rev": "2.2",
-            "sha256": "sha256-/Q+GqsXMrLX0IxufK2iu74rtgEiiT2G7q9DuQeRvNrI=",
+            "rev": "2.3",
+            "sha256": "sha256-XDZAJnjo48VuyWM8E8RC21ykgDplvGMNqARG/1uS9Z4=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "2.2"
+        "version": "2.3"
     },
     "lsp-mode": {
         "cargoLocks": null,
-        "date": "07 Jul 2025",
+        "date": "11 Aug 2025",
         "extract": null,
         "name": "lsp-mode",
         "passthru": null,
@@ -308,12 +308,12 @@
             "name": null,
             "owner": "emacs-lsp",
             "repo": "lsp-mode",
-            "rev": "147233313576c844e2bf56640827b0d0e5c2ee6c",
-            "sha256": "sha256-FEzsCCNz0M4GWQfsZfqxBkEKkPPY5UczWz1XEB8/YZA=",
+            "rev": "11f7b17625b6f22a3900ebb55e0c506e59ef280c",
+            "sha256": "sha256-0/WrGZVRO64ctdKm7MaIBcQ3yWrmHm3OxaRUXMGcxqg=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "147233313576c844e2bf56640827b0d0e5c2ee6c"
+        "version": "11f7b17625b6f22a3900ebb55e0c506e59ef280c"
     },
     "maple-iedit": {
         "cargoLocks": null,
@@ -352,12 +352,12 @@
             "name": null,
             "owner": "LuigiPiucco",
             "repo": "nerd-icons-corfu",
-            "rev": "v0.5.1",
-            "sha256": "sha256-3CCdcb7zetHLQAxIpkiiWGx//oSuJGlJcOc8pSG8UUA=",
+            "rev": "v1.0.0",
+            "sha256": "sha256-QayHcSE786PcvJ+I6Yx86awqqn7D6rJ7sRBnjnkh1ww=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v0.5.1"
+        "version": "v1.0.0"
     },
     "nix-mode": {
         "cargoLocks": null,
@@ -381,7 +381,7 @@
     },
     "nix-ts-mode": {
         "cargoLocks": null,
-        "date": "28 Feb 2025",
+        "date": "10 Aug 2025",
         "extract": null,
         "name": "nix-ts-mode",
         "passthru": null,
@@ -391,13 +391,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "62ce3a2dc39529c5db3516427e84b2c96b8efcfd",
-            "sha256": "sha256-+TkkeiL2Dx8Tj5csLghQJFWlV3RqCHKDh2gEHX3hdZQ=",
+            "rev": "5281d671e3eea9bf737b79f955caadc4769f5da0",
+            "sha256": "sha256-3ZDPTd6T5x1NEbvJ8QEG24pIjlWYxnIRopYbpgW688Q=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/nix-community/nix-ts-mode"
         },
-        "version": "62ce3a2dc39529c5db3516427e84b2c96b8efcfd"
+        "version": "5281d671e3eea9bf737b79f955caadc4769f5da0"
     },
     "nixpkgs-fmt": {
         "cargoLocks": null,
@@ -434,12 +434,12 @@
             "name": null,
             "owner": "oantolin",
             "repo": "orderless",
-            "rev": "1.4",
-            "sha256": "sha256-iGpDDteSXzaWC++RTX4lhLVs1OlbWU4gAMYKMaYLSdE=",
+            "rev": "1.5",
+            "sha256": "sha256-+z17BBbg+7CTdkt1R7381+rVW9iYDQsOzU7vJKqi8zE=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "1.4"
+        "version": "1.5"
     },
     "org-pretty-table": {
         "cargoLocks": null,

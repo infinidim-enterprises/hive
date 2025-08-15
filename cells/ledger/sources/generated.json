@@ -1,7 +1,7 @@
 {
     "ledgerblue": {
         "cargoLocks": null,
-        "date": "2025-07-22",
+        "date": "2025-07-30",
         "extract": null,
         "name": "ledgerblue",
         "passthru": null,
@@ -11,13 +11,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "8607c1dd5040218c89866c89fc57cb7596929170",
-            "sha256": "sha256-cLX1MGC5TLPRXa7F2mm7imV67pkHRgIvzho3hwK6+hE=",
+            "rev": "6a39324368a5406b37c38ffc53c3a4ede0b6ce0f",
+            "sha256": "sha256-redSCVuC7VpCPB6qDrq7TG4EfIX8mJtFHZ8JDlhH4yI=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/LedgerHQ/blue-loader-python"
         },
-        "version": "8607c1dd5040218c89866c89fc57cb7596929170"
+        "version": "6a39324368a5406b37c38ffc53c3a4ede0b6ce0f"
     },
     "python-gnupg": {
         "cargoLocks": null,
@@ -33,11 +33,11 @@
             "name": null,
             "owner": "vsajip",
             "repo": "python-gnupg",
-            "rev": "0.5.4",
-            "sha256": "sha256-TGf9yRGJcx8K/8SrJ8UZEVpqO8HgTgAngSI2pyshOrk=",
+            "rev": "0.5.5",
+            "sha256": "sha256-Fj5kIhV5PwwR4R4tQL1YVeDnY7xENATWJT99sE+luNA=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "0.5.4"
+        "version": "0.5.5"
     }
 }

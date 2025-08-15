@@ -21,7 +21,7 @@
     },
     "adguard-filters_adguardteam": {
         "cargoLocks": null,
-        "date": "2025-08-10",
+        "date": "2025-08-14",
         "extract": null,
         "name": "adguard-filters_adguardteam",
         "passthru": null,
@@ -31,13 +31,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "c53ca99db8ca345ce6c7dbd214035953909c5352",
-            "sha256": "sha256-J1sqxijYnx4NxXHR5MYkbXP9OMmleglF6qZdnh3erEE=",
+            "rev": "972b7a6458fad4a3833d7a0d2956e028ee23ea3b",
+            "sha256": "sha256-/kVG63dHlQEAeLSM7Mo3We490QIN2LkrffPduo95gog=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/AdguardTeam/AdguardFilters"
         },
-        "version": "c53ca99db8ca345ce6c7dbd214035953909c5352"
+        "version": "972b7a6458fad4a3833d7a0d2956e028ee23ea3b"
     },
     "adguard-filters_romania": {
         "cargoLocks": null,
@@ -173,7 +173,7 @@
     },
     "chatgpt-wrapper": {
         "cargoLocks": null,
-        "date": "2025-08-10",
+        "date": "2025-08-11",
         "extract": null,
         "name": "chatgpt-wrapper",
         "passthru": null,
@@ -185,12 +185,12 @@
             "name": null,
             "owner": "llm-workflow-engine",
             "repo": "llm-workflow-engine",
-            "rev": "aa02ea64d00fc9397641c312d0330ce43d129223",
-            "sha256": "sha256-DlMGaIk/wl9sykwkPHX/YfvpD7v48MdWNDMk7QPo2pE=",
+            "rev": "79cb98d22c6acbb34603f9a7ee156a9b45a39201",
+            "sha256": "sha256-fntzImlwhl7zwqvYUo0mJFgCrjXwkhHyxg5yuwTZqas=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "aa02ea64d00fc9397641c312d0330ce43d129223"
+        "version": "79cb98d22c6acbb34603f9a7ee156a9b45a39201"
     },
     "cl-hash-util": {
         "cargoLocks": null,
@@ -379,7 +379,7 @@
     },
     "git-get": {
         "cargoLocks": null,
-        "date": "2021-08-07",
+        "date": "2025-08-11",
         "extract": null,
         "name": "git-get",
         "passthru": {
@@ -393,12 +393,12 @@
             "name": null,
             "owner": "grdl",
             "repo": "git-get",
-            "rev": "8cd27a8f629317bd27432f2e9a4bd00561b3b21e",
-            "sha256": "sha256-dBZNrhg4df7NDECq8B333dY/7OXEyPIByD7YHdV9moo=",
+            "rev": "71e7f760635a2e32e726f318b469d3f348dcb298",
+            "sha256": "sha256-8yOKJ5yxEG3GHxHDyYDAfADWg7v7DjwW/F3FETQlXrI=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "8cd27a8f629317bd27432f2e9a4bd00561b3b21e"
+        "version": "71e7f760635a2e32e726f318b469d3f348dcb298"
     },
     "git-pull-request-mirror": {
         "cargoLocks": null,
@@ -468,7 +468,7 @@
     },
     "ipxe": {
         "cargoLocks": null,
-        "date": "2025-08-07",
+        "date": "2025-08-13",
         "extract": null,
         "name": "ipxe",
         "passthru": null,
@@ -478,13 +478,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "8460dc4e8ffc98db62377d1c5502d6aac40f5a64",
-            "sha256": "sha256-Xk1lbExR4dyiba4tF0Dm9/KtTVxc78Fs8gjmZU7pdpI=",
+            "rev": "a53ec449327788e2015642bff21443d3a399c05b",
+            "sha256": "sha256-rcRWkuOgtHs6ZzcECbsVXCN+HS5cG/HlrVPP5+ZF+EM=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/ipxe/ipxe"
         },
-        "version": "8460dc4e8ffc98db62377d1c5502d6aac40f5a64"
+        "version": "a53ec449327788e2015642bff21443d3a399c05b"
     },
     "iterable-io": {
         "cargoLocks": null,
@@ -580,7 +580,7 @@
     },
     "nur": {
         "cargoLocks": null,
-        "date": "2025-08-10",
+        "date": "2025-08-13",
         "extract": null,
         "name": "nur",
         "passthru": {
@@ -592,13 +592,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "9c6f428670762cad26ca74b3cc0f4f18c38ffa5c",
-            "sha256": "sha256-4uYsY7I5zcpmerUqzzWXIMfRnR+vgwLliQM2oi1ffaU=",
+            "rev": "94c6c5b9798480dc220ee2cc8b1ce93a472a8d8f",
+            "sha256": "sha256-ecWsZvrU/v7phSRIulxUYoCZ+i8s+mQ0ecmxxcgHUko=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/nix-community/NUR"
         },
-        "version": "9c6f428670762cad26ca74b3cc0f4f18c38ffa5c"
+        "version": "94c6c5b9798480dc220ee2cc8b1ce93a472a8d8f"
     },
     "pam_usb": {
         "cargoLocks": null,

@@ -3,18 +3,18 @@
 {
   Hyprspace = {
     pname = "Hyprspace";
-    version = "0a82e3724f929de8ad8fb04d2b7fa128493f24f7";
+    version = "2b61fd2115262243b03aa9afe8dfd8a78e71636c";
     src = fetchgit {
       url = "https://github.com/KZDKM/Hyprspace";
-      rev = "0a82e3724f929de8ad8fb04d2b7fa128493f24f7";
+      rev = "2b61fd2115262243b03aa9afe8dfd8a78e71636c";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-rTItuAWpzICMREF8Ww8cK4hYgNMRXJ4wjkN0akLlaWE=";
+      sha256 = "sha256-npC+H+Wl60EdrV75sjqm+bbbLbKgCCGn4ALSM0B2OWA=";
     };
     flake = "true";
-    date = "2025-07-16";
+    date = "2025-08-11";
   };
   contrib = {
     pname = "contrib";
@@ -84,13 +84,13 @@
   };
   hyprlock = {
     pname = "hyprlock";
-    version = "v0.9.0";
+    version = "v0.9.1";
     src = fetchFromGitHub {
       owner = "hyprwm";
       repo = "hyprlock";
-      rev = "v0.9.0";
+      rev = "v0.9.1";
       fetchSubmodules = false;
-      sha256 = "sha256-YndFlXC9ZM7uiC75MfnYFk4S9s1Xqq3GTnW0xMBlG7g=";
+      sha256 = "sha256-hHTJ65uOiGqQgI2XbH9jqIGHUcA86K+GJbnhAKhRWNo=";
     };
     flake = "true";
   };
@@ -108,13 +108,13 @@
   };
   hyprsunset = {
     pname = "hyprsunset";
-    version = "v0.3.1";
+    version = "v0.3.2";
     src = fetchFromGitHub {
       owner = "hyprwm";
       repo = "hyprsunset";
-      rev = "v0.3.1";
+      rev = "v0.3.2";
       fetchSubmodules = false;
-      sha256 = "sha256-Ctk7zophp8obM/u9S2c8a6nOWV+VeIzq6ma+dI5BE3s=";
+      sha256 = "sha256-eYLtZJayWWbKBC3u/gvDSqVyffuD+egryr7zPWRAeyY=";
     };
     flake = "true";
   };
@@ -132,25 +132,25 @@
   };
   pyprland = {
     pname = "pyprland";
-    version = "2.4.6";
+    version = "2.4.7";
     src = fetchFromGitHub {
       owner = "hyprland-community";
       repo = "pyprland";
-      rev = "2.4.6";
+      rev = "2.4.7";
       fetchSubmodules = false;
-      sha256 = "sha256-OH+BTPw574FykVYWG6TIOpSPeYB39UxyMy/gzMDw0z4=";
+      sha256 = "sha256-rtAw6tdZY0BKb6Qjk/LHYYMB9nCPzkmw95wdjhJ191s=";
     };
     flake = "true";
   };
   waybar = {
     pname = "waybar";
-    version = "0.13.0";
+    version = "0.14.0";
     src = fetchFromGitHub {
       owner = "Alexays";
       repo = "Waybar";
-      rev = "0.13.0";
+      rev = "0.14.0";
       fetchSubmodules = false;
-      sha256 = "sha256-KfWjYDqJf2jNmYAnmV7EQHweMObEBreUc2G7/LpvvC0=";
+      sha256 = "sha256-mGiBZjfvtZZkSHrha4UF2l1Ogbij8J//r2h4gcZAJ6w=";
     };
     flake = "true";
   };

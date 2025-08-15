@@ -163,26 +163,26 @@
   };
   jinx = {
     pname = "jinx";
-    version = "2.2";
+    version = "2.3";
     src = fetchFromGitHub {
       owner = "minad";
       repo = "jinx";
-      rev = "2.2";
+      rev = "2.3";
       fetchSubmodules = false;
-      sha256 = "sha256-/Q+GqsXMrLX0IxufK2iu74rtgEiiT2G7q9DuQeRvNrI=";
+      sha256 = "sha256-XDZAJnjo48VuyWM8E8RC21ykgDplvGMNqARG/1uS9Z4=";
     };
   };
   lsp-mode = {
     pname = "lsp-mode";
-    version = "147233313576c844e2bf56640827b0d0e5c2ee6c";
+    version = "11f7b17625b6f22a3900ebb55e0c506e59ef280c";
     src = fetchFromGitHub {
       owner = "emacs-lsp";
       repo = "lsp-mode";
-      rev = "147233313576c844e2bf56640827b0d0e5c2ee6c";
+      rev = "11f7b17625b6f22a3900ebb55e0c506e59ef280c";
       fetchSubmodules = false;
-      sha256 = "sha256-FEzsCCNz0M4GWQfsZfqxBkEKkPPY5UczWz1XEB8/YZA=";
+      sha256 = "sha256-0/WrGZVRO64ctdKm7MaIBcQ3yWrmHm3OxaRUXMGcxqg=";
     };
-    date = "07 Jul 2025";
+    date = "11 Aug 2025";
   };
   maple-iedit = {
     pname = "maple-iedit";
@@ -199,13 +199,13 @@
   };
   nerd-icons-corfu = {
     pname = "nerd-icons-corfu";
-    version = "v0.5.1";
+    version = "v1.0.0";
     src = fetchFromGitHub {
       owner = "LuigiPiucco";
       repo = "nerd-icons-corfu";
-      rev = "v0.5.1";
+      rev = "v1.0.0";
       fetchSubmodules = false;
-      sha256 = "sha256-3CCdcb7zetHLQAxIpkiiWGx//oSuJGlJcOc8pSG8UUA=";
+      sha256 = "sha256-QayHcSE786PcvJ+I6Yx86awqqn7D6rJ7sRBnjnkh1ww=";
     };
   };
   nix-mode = {
@@ -224,17 +224,17 @@
   };
   nix-ts-mode = {
     pname = "nix-ts-mode";
-    version = "62ce3a2dc39529c5db3516427e84b2c96b8efcfd";
+    version = "5281d671e3eea9bf737b79f955caadc4769f5da0";
     src = fetchgit {
       url = "https://github.com/nix-community/nix-ts-mode";
-      rev = "62ce3a2dc39529c5db3516427e84b2c96b8efcfd";
+      rev = "5281d671e3eea9bf737b79f955caadc4769f5da0";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-+TkkeiL2Dx8Tj5csLghQJFWlV3RqCHKDh2gEHX3hdZQ=";
+      sha256 = "sha256-3ZDPTd6T5x1NEbvJ8QEG24pIjlWYxnIRopYbpgW688Q=";
     };
-    date = "28 Feb 2025";
+    date = "10 Aug 2025";
   };
   nixpkgs-fmt = {
     pname = "nixpkgs-fmt";
@@ -250,13 +250,13 @@
   };
   orderless = {
     pname = "orderless";
-    version = "1.4";
+    version = "1.5";
     src = fetchFromGitHub {
       owner = "oantolin";
       repo = "orderless";
-      rev = "1.4";
+      rev = "1.5";
       fetchSubmodules = false;
-      sha256 = "sha256-iGpDDteSXzaWC++RTX4lhLVs1OlbWU4gAMYKMaYLSdE=";
+      sha256 = "sha256-+z17BBbg+7CTdkt1R7381+rVW9iYDQsOzU7vJKqi8zE=";
     };
   };
   org-pretty-table = {

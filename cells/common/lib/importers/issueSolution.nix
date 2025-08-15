@@ -7,8 +7,6 @@ let
     concatMapAttrs
       (name: value:
         if isAttrs value then
-        # If the directory contains a `default` attribute, we've found a package.
-        # Use the directory name as the key and the default path as the value.
           if value ? default
           then { ${name} = value.default; }
           else flatten value
