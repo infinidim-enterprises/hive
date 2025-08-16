@@ -17,17 +17,17 @@
   };
   adguard-filters_adguardteam = {
     pname = "adguard-filters_adguardteam";
-    version = "972b7a6458fad4a3833d7a0d2956e028ee23ea3b";
+    version = "0b7f2be0b541f7c34cc3fbf47c06c9d67667701f";
     src = fetchgit {
       url = "https://github.com/AdguardTeam/AdguardFilters";
-      rev = "972b7a6458fad4a3833d7a0d2956e028ee23ea3b";
+      rev = "0b7f2be0b541f7c34cc3fbf47c06c9d67667701f";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-/kVG63dHlQEAeLSM7Mo3We490QIN2LkrffPduo95gog=";
+      sha256 = "sha256-d+NrIia6fcyxxXLgzQl/CL6Ruz5sAgf8YcYfmSNKMz4=";
     };
-    date = "2025-08-14";
+    date = "2025-08-15";
   };
   adguard-filters_romania = {
     pname = "adguard-filters_romania";
@@ -83,7 +83,9 @@
     };
     cargoLock."Cargo.lock" = {
       lockFile = ./bip39key-v1.4.0/Cargo.lock;
-      outputHashes = { };
+      outputHashes = {
+        
+      };
     };
   };
   bip39key-yubikey = {
@@ -100,7 +102,9 @@
     };
     cargoLock."Cargo.lock" = {
       lockFile = ./bip39key-yubikey-4e14c1c29d2ca20cbddc4df53fc378f4d9c98797/Cargo.lock;
-      outputHashes = { };
+      outputHashes = {
+        
+      };
     };
     date = "2025-05-30";
   };
@@ -364,18 +368,18 @@
   };
   nur = {
     pname = "nur";
-    version = "94c6c5b9798480dc220ee2cc8b1ce93a472a8d8f";
+    version = "43d5a0b27087d0b592f985e5368ce14cb157c532";
     src = fetchgit {
       url = "https://github.com/nix-community/NUR";
-      rev = "94c6c5b9798480dc220ee2cc8b1ce93a472a8d8f";
+      rev = "43d5a0b27087d0b592f985e5368ce14cb157c532";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-ecWsZvrU/v7phSRIulxUYoCZ+i8s+mQ0ecmxxcgHUko=";
+      sha256 = "sha256-94V3rHf97o7ogdWs27+cwVYAiQm95te2DIj5pkaxq0A=";
     };
     flake = "true";
-    date = "2025-08-13";
+    date = "2025-08-16";
   };
   pam_usb = {
     pname = "pam_usb";
@@ -515,17 +519,17 @@
   };
   solarized-sddm = {
     pname = "solarized-sddm";
-    version = "2b5bdf1045f2a5c8b880b482840be8983ca06191";
+    version = "918dd07b9238f5672bb5573c5e5682ab050600ad";
     src = fetchgit {
       url = "https://github.com/MalditoBarbudo/solarized_sddm_theme";
-      rev = "2b5bdf1045f2a5c8b880b482840be8983ca06191";
+      rev = "918dd07b9238f5672bb5573c5e5682ab050600ad";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-uVNYmpPM2o9Fq3A1gP04ffXeWdc7y2HP1g7vkiuJZtg=";
+      sha256 = "sha256-UKyZx1i8uW7n3r80iaz+IMQWBY+xFvnyIH2YpbYriaw=";
     };
-    date = "2019-01-03";
+    date = "2025-08-14";
   };
   sublimeSolarized = {
     pname = "sublimeSolarized";
