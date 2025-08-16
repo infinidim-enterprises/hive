@@ -32,8 +32,8 @@
     version = "latest";
     src = dockerTools.pullImage {
       imageName = "kestra/kestra";
-      imageDigest = "sha256:6622e3288da7a637029f27b438b8471268490442cfa1c160e14b971d7220ec3c";
-      sha256 = "sha256-Cq9Rv/OfKYZgoZQi4x8KRQEZu1XQeUZWf/xK6SjeEjs=";
+      imageDigest = "sha256:114bf4fafd4a0ad8ea22b1988e88f53a7de44b9455593f5ad44d56203352369e";
+      sha256 = "sha256-0K/QKqeIOnjrCatZbssYbP14SrZMVUCI/oB5aTJuQXg=";
       finalImageTag = "latest";
       os = "linux";
       arch = "amd64";
@@ -44,8 +44,8 @@
     version = "latest";
     src = dockerTools.pullImage {
       imageName = "lobehub/lobe-chat";
-      imageDigest = "sha256:d27484d7c858ec2b1d553851f332a7543c3affed5dc4b2aa2af695f4c26f587e";
-      sha256 = "sha256-gGWc3Pk8sTa3FnwXns9pg2QqMAb1ARrXuB5Z1pUKRu8=";
+      imageDigest = "sha256:9f50b5c991f4dcb931aba98eee14eb1c1d2b62de25ce2630c2cc274cdd7f81fa";
+      sha256 = "sha256-Hooh+nNlUJK/px+eVSy5TbTxm/PuK9OCiGbzaHHfICk=";
       finalImageTag = "latest";
       os = "linux";
       arch = "amd64";
@@ -53,18 +53,18 @@
   };
   metagpt = {
     pname = "metagpt";
-    version = "fa092272cc8a39c68a37662fa87d13db2c38d699";
+    version = "88e2efedbc1edccab53dfd3a2fc85b39f8856186";
     src = fetchgit {
       url = "https://github.com/infinidim-enterprises/metagpt.nix";
-      rev = "fa092272cc8a39c68a37662fa87d13db2c38d699";
+      rev = "88e2efedbc1edccab53dfd3a2fc85b39f8856186";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-HMX84YwxoUq9psVby4chSIlgalBecy4kuQzu2Z1+dM4=";
+      sha256 = "sha256-nuWRMH2QPWr86nG6Do53FEaum2PhAtsxwpXiDTXv1SQ=";
     };
     flake = "true";
-    date = "2025-08-12";
+    date = "2025-08-15";
   };
   n8n = {
     pname = "n8n";

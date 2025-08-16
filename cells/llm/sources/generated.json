@@ -53,11 +53,11 @@
             "arch": "amd64",
             "finalImageName": null,
             "finalImageTag": null,
-            "imageDigest": "sha256:6622e3288da7a637029f27b438b8471268490442cfa1c160e14b971d7220ec3c",
+            "imageDigest": "sha256:114bf4fafd4a0ad8ea22b1988e88f53a7de44b9455593f5ad44d56203352369e",
             "imageName": "kestra/kestra",
             "imageTag": "latest",
             "os": "linux",
-            "sha256": "sha256-Cq9Rv/OfKYZgoZQi4x8KRQEZu1XQeUZWf/xK6SjeEjs=",
+            "sha256": "sha256-0K/QKqeIOnjrCatZbssYbP14SrZMVUCI/oB5aTJuQXg=",
             "tlsVerify": null
         },
         "version": "latest"
@@ -73,18 +73,18 @@
             "arch": "amd64",
             "finalImageName": null,
             "finalImageTag": null,
-            "imageDigest": "sha256:d27484d7c858ec2b1d553851f332a7543c3affed5dc4b2aa2af695f4c26f587e",
+            "imageDigest": "sha256:9f50b5c991f4dcb931aba98eee14eb1c1d2b62de25ce2630c2cc274cdd7f81fa",
             "imageName": "lobehub/lobe-chat",
             "imageTag": "latest",
             "os": "linux",
-            "sha256": "sha256-gGWc3Pk8sTa3FnwXns9pg2QqMAb1ARrXuB5Z1pUKRu8=",
+            "sha256": "sha256-Hooh+nNlUJK/px+eVSy5TbTxm/PuK9OCiGbzaHHfICk=",
             "tlsVerify": null
         },
         "version": "latest"
     },
     "metagpt": {
         "cargoLocks": null,
-        "date": "2025-08-12",
+        "date": "2025-08-15",
         "extract": null,
         "name": "metagpt",
         "passthru": {
@@ -96,13 +96,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "fa092272cc8a39c68a37662fa87d13db2c38d699",
-            "sha256": "sha256-HMX84YwxoUq9psVby4chSIlgalBecy4kuQzu2Z1+dM4=",
+            "rev": "88e2efedbc1edccab53dfd3a2fc85b39f8856186",
+            "sha256": "sha256-nuWRMH2QPWr86nG6Do53FEaum2PhAtsxwpXiDTXv1SQ=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/infinidim-enterprises/metagpt.nix"
         },
-        "version": "fa092272cc8a39c68a37662fa87d13db2c38d699"
+        "version": "88e2efedbc1edccab53dfd3a2fc85b39f8856186"
     },
     "n8n": {
         "cargoLocks": null,
