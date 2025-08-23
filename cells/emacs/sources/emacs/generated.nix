@@ -3,13 +3,13 @@
 {
   aider = {
     pname = "aider";
-    version = "v0.13.0";
+    version = "v0.13.1";
     src = fetchFromGitHub {
       owner = "tninja";
       repo = "aider.el";
-      rev = "v0.13.0";
+      rev = "v0.13.1";
       fetchSubmodules = false;
-      sha256 = "sha256-6TKklKxmgV4WNKjRN2vFhpti/oOskiaVLjwM3T8iHC8=";
+      sha256 = "sha256-p/RuYmCGTqHkKrmUKrPu6adVOeJ1SgRKqeR2Vx/QyKc=";
     };
   };
   all-the-icons = {
@@ -174,15 +174,15 @@
   };
   lsp-mode = {
     pname = "lsp-mode";
-    version = "11f7b17625b6f22a3900ebb55e0c506e59ef280c";
+    version = "c0cafd07ea7e0a2d82fcd0680eb36da10356d700";
     src = fetchFromGitHub {
       owner = "emacs-lsp";
       repo = "lsp-mode";
-      rev = "11f7b17625b6f22a3900ebb55e0c506e59ef280c";
+      rev = "c0cafd07ea7e0a2d82fcd0680eb36da10356d700";
       fetchSubmodules = false;
-      sha256 = "sha256-0/WrGZVRO64ctdKm7MaIBcQ3yWrmHm3OxaRUXMGcxqg=";
+      sha256 = "sha256-8pZ7vCL/3yaXljDD70IlhlDezHljLmaplalf0Bvd/Ww=";
     };
-    date = "11 Aug 2025";
+    date = "21 Aug 2025";
   };
   maple-iedit = {
     pname = "maple-iedit";
@@ -224,17 +224,17 @@
   };
   nix-ts-mode = {
     pname = "nix-ts-mode";
-    version = "5281d671e3eea9bf737b79f955caadc4769f5da0";
+    version = "414b18a8a7c9335a1d67c87acc57d5ef2a06a30e";
     src = fetchgit {
       url = "https://github.com/nix-community/nix-ts-mode";
-      rev = "5281d671e3eea9bf737b79f955caadc4769f5da0";
+      rev = "414b18a8a7c9335a1d67c87acc57d5ef2a06a30e";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-3ZDPTd6T5x1NEbvJ8QEG24pIjlWYxnIRopYbpgW688Q=";
+      sha256 = "sha256-moWUPlRphFiJZCPswLC9TmEbm7+I4rMYkj002B6nYC8=";
     };
-    date = "10 Aug 2025";
+    date = "20 Aug 2025";
   };
   nixpkgs-fmt = {
     pname = "nixpkgs-fmt";
@@ -346,15 +346,15 @@
   };
   sly-overlay = {
     pname = "sly-overlay";
-    version = "d62945059035f8097a6f222ed2700cfd99609d11";
+    version = "345b554ad005421b447b2e64c34314ee79f5f8b9";
     src = fetchFromGitHub {
       owner = "fosskers";
       repo = "sly-overlay";
-      rev = "d62945059035f8097a6f222ed2700cfd99609d11";
+      rev = "345b554ad005421b447b2e64c34314ee79f5f8b9";
       fetchSubmodules = false;
-      sha256 = "sha256-ZfkZJkpVtJmseGwqrhLSF3XtK1q3s3JXVCZ+2MeGgaM=";
+      sha256 = "sha256-WYhwbwmCSfUifF3gCOe22ibo+p6nQGffwkrT9F8D2+8=";
     };
-    date = "28 Aug 2024";
+    date = "16 Aug 2025";
   };
   sly-quicklisp = {
     pname = "sly-quicklisp";
