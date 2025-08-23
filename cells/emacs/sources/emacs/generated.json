@@ -13,12 +13,12 @@
             "name": null,
             "owner": "tninja",
             "repo": "aider.el",
-            "rev": "v0.13.0",
-            "sha256": "sha256-6TKklKxmgV4WNKjRN2vFhpti/oOskiaVLjwM3T8iHC8=",
+            "rev": "v0.13.1",
+            "sha256": "sha256-p/RuYmCGTqHkKrmUKrPu6adVOeJ1SgRKqeR2Vx/QyKc=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v0.13.0"
+        "version": "v0.13.1"
     },
     "all-the-icons": {
         "cargoLocks": null,
@@ -296,7 +296,7 @@
     },
     "lsp-mode": {
         "cargoLocks": null,
-        "date": "11 Aug 2025",
+        "date": "21 Aug 2025",
         "extract": null,
         "name": "lsp-mode",
         "passthru": null,
@@ -308,12 +308,12 @@
             "name": null,
             "owner": "emacs-lsp",
             "repo": "lsp-mode",
-            "rev": "11f7b17625b6f22a3900ebb55e0c506e59ef280c",
-            "sha256": "sha256-0/WrGZVRO64ctdKm7MaIBcQ3yWrmHm3OxaRUXMGcxqg=",
+            "rev": "c0cafd07ea7e0a2d82fcd0680eb36da10356d700",
+            "sha256": "sha256-8pZ7vCL/3yaXljDD70IlhlDezHljLmaplalf0Bvd/Ww=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "11f7b17625b6f22a3900ebb55e0c506e59ef280c"
+        "version": "c0cafd07ea7e0a2d82fcd0680eb36da10356d700"
     },
     "maple-iedit": {
         "cargoLocks": null,
@@ -381,7 +381,7 @@
     },
     "nix-ts-mode": {
         "cargoLocks": null,
-        "date": "10 Aug 2025",
+        "date": "20 Aug 2025",
         "extract": null,
         "name": "nix-ts-mode",
         "passthru": null,
@@ -391,13 +391,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "5281d671e3eea9bf737b79f955caadc4769f5da0",
-            "sha256": "sha256-3ZDPTd6T5x1NEbvJ8QEG24pIjlWYxnIRopYbpgW688Q=",
+            "rev": "414b18a8a7c9335a1d67c87acc57d5ef2a06a30e",
+            "sha256": "sha256-moWUPlRphFiJZCPswLC9TmEbm7+I4rMYkj002B6nYC8=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/nix-community/nix-ts-mode"
         },
-        "version": "5281d671e3eea9bf737b79f955caadc4769f5da0"
+        "version": "414b18a8a7c9335a1d67c87acc57d5ef2a06a30e"
     },
     "nixpkgs-fmt": {
         "cargoLocks": null,
@@ -592,7 +592,7 @@
     },
     "sly-overlay": {
         "cargoLocks": null,
-        "date": "28 Aug 2024",
+        "date": "16 Aug 2025",
         "extract": null,
         "name": "sly-overlay",
         "passthru": null,
@@ -604,12 +604,12 @@
             "name": null,
             "owner": "fosskers",
             "repo": "sly-overlay",
-            "rev": "d62945059035f8097a6f222ed2700cfd99609d11",
-            "sha256": "sha256-ZfkZJkpVtJmseGwqrhLSF3XtK1q3s3JXVCZ+2MeGgaM=",
+            "rev": "345b554ad005421b447b2e64c34314ee79f5f8b9",
+            "sha256": "sha256-WYhwbwmCSfUifF3gCOe22ibo+p6nQGffwkrT9F8D2+8=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "d62945059035f8097a6f222ed2700cfd99609d11"
+        "version": "345b554ad005421b447b2e64c34314ee79f5f8b9"
     },
     "sly-quicklisp": {
         "cargoLocks": null,

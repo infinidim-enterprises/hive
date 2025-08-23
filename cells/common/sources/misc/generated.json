@@ -21,7 +21,7 @@
     },
     "adguard-filters_adguardteam": {
         "cargoLocks": null,
-        "date": "2025-08-14",
+        "date": "2025-08-22",
         "extract": null,
         "name": "adguard-filters_adguardteam",
         "passthru": null,
@@ -31,17 +31,17 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "972b7a6458fad4a3833d7a0d2956e028ee23ea3b",
-            "sha256": "sha256-/kVG63dHlQEAeLSM7Mo3We490QIN2LkrffPduo95gog=",
+            "rev": "a5f1cd3046747d819651954725ac771dea76d3d3",
+            "sha256": "sha256-4ilgChBNNIOkwBWky/9yC7yDR5214/oKVyqckq6l4ZM=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/AdguardTeam/AdguardFilters"
         },
-        "version": "972b7a6458fad4a3833d7a0d2956e028ee23ea3b"
+        "version": "a5f1cd3046747d819651954725ac771dea76d3d3"
     },
     "adguard-filters_romania": {
         "cargoLocks": null,
-        "date": "2025-08-07",
+        "date": "2025-08-19",
         "extract": null,
         "name": "adguard-filters_romania",
         "passthru": null,
@@ -51,13 +51,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "3039af436403e3eb22e46bfa07532c9704749dc7",
-            "sha256": "sha256-iR/n/Hc7hvAc/TwtNj4tCBY2xoWuM+bi9im0pQ5dpfs=",
+            "rev": "b7719b20b9b1c1b95bb4920c6eee817d38471d28",
+            "sha256": "sha256-Y8vgOBX7A4JpfatKEO+Z0lqA3dq/XoFSVUDX0+bxlxc=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/tcptomato/ROad-Block"
         },
-        "version": "3039af436403e3eb22e46bfa07532c9704749dc7"
+        "version": "b7719b20b9b1c1b95bb4920c6eee817d38471d28"
     },
     "base16-schemes": {
         "cargoLocks": null,
@@ -580,7 +580,7 @@
     },
     "nur": {
         "cargoLocks": null,
-        "date": "2025-08-13",
+        "date": "2025-08-22",
         "extract": null,
         "name": "nur",
         "passthru": {
@@ -592,13 +592,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "94c6c5b9798480dc220ee2cc8b1ce93a472a8d8f",
-            "sha256": "sha256-ecWsZvrU/v7phSRIulxUYoCZ+i8s+mQ0ecmxxcgHUko=",
+            "rev": "edffca2954feecc63f406d9b16c31f3e47420f8c",
+            "sha256": "sha256-+HqaiSm85fjMWgCYeubjZ1cT2Jp+Tm2sZrHs/DXCFxs=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/nix-community/NUR"
         },
-        "version": "94c6c5b9798480dc220ee2cc8b1ce93a472a8d8f"
+        "version": "edffca2954feecc63f406d9b16c31f3e47420f8c"
     },
     "pam_usb": {
         "cargoLocks": null,
@@ -822,7 +822,7 @@
     },
     "solarized-sddm": {
         "cargoLocks": null,
-        "date": "2019-01-03",
+        "date": "2025-08-14",
         "extract": null,
         "name": "solarized-sddm",
         "passthru": null,
@@ -832,13 +832,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "2b5bdf1045f2a5c8b880b482840be8983ca06191",
-            "sha256": "sha256-uVNYmpPM2o9Fq3A1gP04ffXeWdc7y2HP1g7vkiuJZtg=",
+            "rev": "918dd07b9238f5672bb5573c5e5682ab050600ad",
+            "sha256": "sha256-UKyZx1i8uW7n3r80iaz+IMQWBY+xFvnyIH2YpbYriaw=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/MalditoBarbudo/solarized_sddm_theme"
         },
-        "version": "2b5bdf1045f2a5c8b880b482840be8983ca06191"
+        "version": "918dd07b9238f5672bb5573c5e5682ab050600ad"
     },
     "sublimeSolarized": {
         "cargoLocks": null,
