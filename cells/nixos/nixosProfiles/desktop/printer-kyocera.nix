@@ -46,8 +46,8 @@ in
           MediaType = "Plain";
           OutputMode = "Normal";
         };
-        # deviceUri = "usb://Kyocera/ECOSYS%20P5021cdn?serial=VDH1854712";
-        deviceUri = "socket://kyocera-printer.njk.local:9100";
+        deviceUri = "usb://Kyocera/ECOSYS%20P5021cdn?serial=VDH1854712";
+        # deviceUri = "socket://kyocera-printer.njk.local:9100";
         #
         # lpinfo -m
         model = "Kyocera/Kyocera ECOSYS P5021cdn.PPD";

@@ -122,6 +122,7 @@ mkIf config.programs.zsh.enable
       }
 
       {
+        # TODO: https://github.com/zdharma-continuum/fast-syntax-highlighting
         name = "zsh-syntax-highlighting";
         file = "zsh-syntax-highlighting.plugin.zsh";
         src = pkgs.sources.shell.zsh-plugin_zsh-syntax-highlighting.src;
