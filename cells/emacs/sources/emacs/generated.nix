@@ -3,13 +3,13 @@
 {
   aider = {
     pname = "aider";
-    version = "v0.13.0";
+    version = "v0.13.1";
     src = fetchFromGitHub {
       owner = "tninja";
       repo = "aider.el";
-      rev = "v0.13.0";
+      rev = "v0.13.1";
       fetchSubmodules = false;
-      sha256 = "sha256-6TKklKxmgV4WNKjRN2vFhpti/oOskiaVLjwM3T8iHC8=";
+      sha256 = "sha256-p/RuYmCGTqHkKrmUKrPu6adVOeJ1SgRKqeR2Vx/QyKc=";
     };
   };
   all-the-icons = {
@@ -125,13 +125,13 @@
   };
   gptel = {
     pname = "gptel";
-    version = "v0.9.8.5";
+    version = "v0.9.9";
     src = fetchFromGitHub {
       owner = "karthink";
       repo = "gptel";
-      rev = "v0.9.8.5";
+      rev = "v0.9.9";
       fetchSubmodules = false;
-      sha256 = "sha256-5/X4kuN3i7KeqSmdz0aetkiY+udFBxj5iquGtFuaoEc=";
+      sha256 = "sha256-8iGeWpx1OFb243S1HFpCQALpC+32MouNjfYCp15IwwE=";
     };
   };
   helm-sly = {
@@ -174,15 +174,15 @@
   };
   lsp-mode = {
     pname = "lsp-mode";
-    version = "11f7b17625b6f22a3900ebb55e0c506e59ef280c";
+    version = "7fcd17e7d8a06e9943dde059bb940ae80e3974fc";
     src = fetchFromGitHub {
       owner = "emacs-lsp";
       repo = "lsp-mode";
-      rev = "11f7b17625b6f22a3900ebb55e0c506e59ef280c";
+      rev = "7fcd17e7d8a06e9943dde059bb940ae80e3974fc";
       fetchSubmodules = false;
-      sha256 = "sha256-0/WrGZVRO64ctdKm7MaIBcQ3yWrmHm3OxaRUXMGcxqg=";
+      sha256 = "sha256-hPQLYBRAJoYeyxPTUjRgyJrijauVfxNUeI3H5J2Sz08=";
     };
-    date = "11 Aug 2025";
+    date = "09 Sep 2025";
   };
   maple-iedit = {
     pname = "maple-iedit";
@@ -224,17 +224,17 @@
   };
   nix-ts-mode = {
     pname = "nix-ts-mode";
-    version = "5281d671e3eea9bf737b79f955caadc4769f5da0";
+    version = "d769e53ccc0f40026fd11c7e23bf419c2caf4732";
     src = fetchgit {
       url = "https://github.com/nix-community/nix-ts-mode";
-      rev = "5281d671e3eea9bf737b79f955caadc4769f5da0";
+      rev = "d769e53ccc0f40026fd11c7e23bf419c2caf4732";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-3ZDPTd6T5x1NEbvJ8QEG24pIjlWYxnIRopYbpgW688Q=";
+      sha256 = "sha256-wzzLt1wA1/XzkwgEkal9Bxais5uc6FJNXVzxgPN4TR8=";
     };
-    date = "10 Aug 2025";
+    date = "12 Sep 2025";
   };
   nixpkgs-fmt = {
     pname = "nixpkgs-fmt";
@@ -346,15 +346,15 @@
   };
   sly-overlay = {
     pname = "sly-overlay";
-    version = "d62945059035f8097a6f222ed2700cfd99609d11";
+    version = "345b554ad005421b447b2e64c34314ee79f5f8b9";
     src = fetchFromGitHub {
       owner = "fosskers";
       repo = "sly-overlay";
-      rev = "d62945059035f8097a6f222ed2700cfd99609d11";
+      rev = "345b554ad005421b447b2e64c34314ee79f5f8b9";
       fetchSubmodules = false;
-      sha256 = "sha256-ZfkZJkpVtJmseGwqrhLSF3XtK1q3s3JXVCZ+2MeGgaM=";
+      sha256 = "sha256-WYhwbwmCSfUifF3gCOe22ibo+p6nQGffwkrT9F8D2+8=";
     };
-    date = "28 Aug 2024";
+    date = "16 Aug 2025";
   };
   sly-quicklisp = {
     pname = "sly-quicklisp";
@@ -382,24 +382,24 @@
   };
   tempel = {
     pname = "tempel";
-    version = "1.5";
+    version = "1.6";
     src = fetchFromGitHub {
       owner = "minad";
       repo = "tempel";
-      rev = "1.5";
+      rev = "1.6";
       fetchSubmodules = false;
-      sha256 = "sha256-fVZ7J/YgVM7HZXslP6jGDQ7Xazb5jW90h2bSh5uLnIA=";
+      sha256 = "sha256-GlUIC18839mALfJCwh87GQfHGQL8NjgOfJ94BgCYt6g=";
     };
   };
   vertico = {
     pname = "vertico";
-    version = "2.4";
+    version = "2.5";
     src = fetchFromGitHub {
       owner = "minad";
       repo = "vertico";
-      rev = "2.4";
+      rev = "2.5";
       fetchSubmodules = false;
-      sha256 = "sha256-Psxywo9xH+Rk3S7h2Xlircauxb0VFuFoBxpvNbp9NiE=";
+      sha256 = "sha256-/eBn47ygZucvQyF9oLMqsLm3mAkJXAf0zIZpkbyvh7E=";
     };
   };
   zetteldeft = {

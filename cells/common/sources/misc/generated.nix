@@ -17,45 +17,45 @@
   };
   adguard-filters_adguardteam = {
     pname = "adguard-filters_adguardteam";
-    version = "972b7a6458fad4a3833d7a0d2956e028ee23ea3b";
+    version = "1cd8dd8629f2ee09e4903e61c2751e75f0661dd9";
     src = fetchgit {
       url = "https://github.com/AdguardTeam/AdguardFilters";
-      rev = "972b7a6458fad4a3833d7a0d2956e028ee23ea3b";
+      rev = "1cd8dd8629f2ee09e4903e61c2751e75f0661dd9";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-/kVG63dHlQEAeLSM7Mo3We490QIN2LkrffPduo95gog=";
+      sha256 = "sha256-bwvzWhPt7PmZdJYg1LFBr5wLltBqjhQ0UR6HLx9BxBI=";
     };
-    date = "2025-08-14";
+    date = "2025-09-13";
   };
   adguard-filters_romania = {
     pname = "adguard-filters_romania";
-    version = "3039af436403e3eb22e46bfa07532c9704749dc7";
+    version = "587ae025d5dfa87ec3693cdd13f5ed8e99540d5a";
     src = fetchgit {
       url = "https://github.com/tcptomato/ROad-Block";
-      rev = "3039af436403e3eb22e46bfa07532c9704749dc7";
+      rev = "587ae025d5dfa87ec3693cdd13f5ed8e99540d5a";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-iR/n/Hc7hvAc/TwtNj4tCBY2xoWuM+bi9im0pQ5dpfs=";
+      sha256 = "sha256-Xvnvh25KOmBSJfiTNZGjouq+vEHpi7tguBMHOJ1Q1gU=";
     };
-    date = "2025-08-07";
+    date = "2025-09-11";
   };
   base16-schemes = {
     pname = "base16-schemes";
-    version = "097d751b9e3c8b97ce158e7d141e5a292545b502";
+    version = "317a5e10c35825a6c905d912e480dfe8e71c7559";
     src = fetchgit {
       url = "https://github.com/tinted-theming/schemes";
-      rev = "097d751b9e3c8b97ce158e7d141e5a292545b502";
+      rev = "317a5e10c35825a6c905d912e480dfe8e71c7559";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-8KG2lXGaXLUE0F/JVwLQe7kOVm21IDfNEo0gfga5P4M=";
+      sha256 = "sha256-d4km8W7w2zCUEmPAPUoLk1NlYrGODuVa3P7St+UrqkM=";
     };
-    date = "2025-08-10";
+    date = "2025-09-13";
   };
   base16-solarized-scheme = {
     pname = "base16-solarized-scheme";
@@ -83,7 +83,9 @@
     };
     cargoLock."Cargo.lock" = {
       lockFile = ./bip39key-v1.4.0/Cargo.lock;
-      outputHashes = { };
+      outputHashes = {
+        
+      };
     };
   };
   bip39key-yubikey = {
@@ -100,7 +102,9 @@
     };
     cargoLock."Cargo.lock" = {
       lockFile = ./bip39key-yubikey-4e14c1c29d2ca20cbddc4df53fc378f4d9c98797/Cargo.lock;
-      outputHashes = { };
+      outputHashes = {
+        
+      };
     };
     date = "2025-05-30";
   };
@@ -244,16 +248,16 @@
   };
   git-get = {
     pname = "git-get";
-    version = "71e7f760635a2e32e726f318b469d3f348dcb298";
+    version = "70b936e063ab63c36e8c4747c2bb50a0df42e649";
     src = fetchFromGitHub {
       owner = "grdl";
       repo = "git-get";
-      rev = "71e7f760635a2e32e726f318b469d3f348dcb298";
+      rev = "70b936e063ab63c36e8c4747c2bb50a0df42e649";
       fetchSubmodules = false;
-      sha256 = "sha256-8yOKJ5yxEG3GHxHDyYDAfADWg7v7DjwW/F3FETQlXrI=";
+      sha256 = "sha256-uxm67vxtmXITl2EmoUNirAx6QjwchNwexoCbC4knf4A=";
     };
     vendorHash = "05k6w4knk7fdjm9qm272nlrk47rzjr18g0fp4j57f5ncq26cxr8b";
-    date = "2025-08-11";
+    date = "2025-08-25";
   };
   git-pull-request-mirror = {
     pname = "git-pull-request-mirror";
@@ -297,17 +301,17 @@
   };
   ipxe = {
     pname = "ipxe";
-    version = "a53ec449327788e2015642bff21443d3a399c05b";
+    version = "969ce2c559a6841a949a1b73a3967b1889e0c999";
     src = fetchgit {
       url = "https://github.com/ipxe/ipxe";
-      rev = "a53ec449327788e2015642bff21443d3a399c05b";
+      rev = "969ce2c559a6841a949a1b73a3967b1889e0c999";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-rcRWkuOgtHs6ZzcECbsVXCN+HS5cG/HlrVPP5+ZF+EM=";
+      sha256 = "sha256-a9Nmo9ZAzbsePwS/LFh3qMMfsezu0194WV98BXhiT0Y=";
     };
-    date = "2025-08-13";
+    date = "2025-08-29";
   };
   iterable-io = {
     pname = "iterable-io";
@@ -319,13 +323,13 @@
   };
   langchain = {
     pname = "langchain";
-    version = "langchain-core==0.3.74";
+    version = "langchain-core==0.3.76";
     src = fetchFromGitHub {
       owner = "langchain-ai";
       repo = "langchain";
-      rev = "langchain-core==0.3.74";
+      rev = "langchain-core==0.3.76";
       fetchSubmodules = false;
-      sha256 = "sha256-oF/IK7Z0L7Z4I9d5JjUCAbQnvQZ8hX7PZXXnVlOUy6A=";
+      sha256 = "sha256-PoFqOUyYYEgltUplpOYjHp6owyla8cDrxgsp4izjDHI=";
     };
   };
   listopia = {
@@ -364,32 +368,32 @@
   };
   nur = {
     pname = "nur";
-    version = "94c6c5b9798480dc220ee2cc8b1ce93a472a8d8f";
+    version = "567f0297e5c1fdf9484b30319727e8e587456ce9";
     src = fetchgit {
       url = "https://github.com/nix-community/NUR";
-      rev = "94c6c5b9798480dc220ee2cc8b1ce93a472a8d8f";
+      rev = "567f0297e5c1fdf9484b30319727e8e587456ce9";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-ecWsZvrU/v7phSRIulxUYoCZ+i8s+mQ0ecmxxcgHUko=";
+      sha256 = "sha256-LqbyKrFIcgKJxkQfDenOELErQyugbw2SaQ2A7hkmmYA=";
     };
     flake = "true";
-    date = "2025-08-13";
+    date = "2025-09-13";
   };
   pam_usb = {
     pname = "pam_usb";
-    version = "ce3999d92d8de59ed4c5bbd6ad56df416aa2d42c";
+    version = "d976762c4c6e5ee267266faacbff868a4ab641d6";
     src = fetchgit {
       url = "https://github.com/mcdope/pam_usb";
-      rev = "ce3999d92d8de59ed4c5bbd6ad56df416aa2d42c";
+      rev = "d976762c4c6e5ee267266faacbff868a4ab641d6";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-aU6sf0t/872Qw+k5oOv5uANnTGl3yzgEy2utZuWmm3M=";
+      sha256 = "sha256-8wIA6REyeKxvN0Nu9LokAs34Isa7ezTKlvJACoT/8qs=";
     };
-    date = "2025-03-15";
+    date = "2025-09-06";
   };
   paper-store = {
     pname = "paper-store";
@@ -515,17 +519,17 @@
   };
   solarized-sddm = {
     pname = "solarized-sddm";
-    version = "2b5bdf1045f2a5c8b880b482840be8983ca06191";
+    version = "918dd07b9238f5672bb5573c5e5682ab050600ad";
     src = fetchgit {
       url = "https://github.com/MalditoBarbudo/solarized_sddm_theme";
-      rev = "2b5bdf1045f2a5c8b880b482840be8983ca06191";
+      rev = "918dd07b9238f5672bb5573c5e5682ab050600ad";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-uVNYmpPM2o9Fq3A1gP04ffXeWdc7y2HP1g7vkiuJZtg=";
+      sha256 = "sha256-UKyZx1i8uW7n3r80iaz+IMQWBY+xFvnyIH2YpbYriaw=";
     };
-    date = "2019-01-03";
+    date = "2025-08-14";
   };
   sublimeSolarized = {
     pname = "sublimeSolarized";
@@ -577,10 +581,10 @@
   };
   zerotierone = {
     pname = "zerotierone";
-    version = "1.14.2";
+    version = "1.16.0";
     src = fetchurl {
-      url = "https://github.com/zerotier/ZeroTierOne/archive/refs/tags/1.14.2.tar.gz";
-      sha256 = "sha256-wvZDOfzPUUinrwibiWZ41lX7/MrFLdzncUMUpZ173bs=";
+      url = "https://github.com/zerotier/ZeroTierOne/archive/refs/tags/1.16.0.tar.gz";
+      sha256 = "sha256-qp3jE9Nlvw77OHGqpW8tMjoI9G30e2J8Tv9PQgP6f8U=";
     };
   };
 }
