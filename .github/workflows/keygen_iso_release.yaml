@@ -36,7 +36,7 @@ jobs:
       run: mkdir -p /home/runner/work/_temp/iso_release && cp $(cat /home/runner/work/_temp/iso_location.txt)
         /home/runner/work/_temp/iso_release/keygen-x86_64-linux.iso
     - name: Release
-      uses: softprops/action-gh-release@v2.3.2
+      uses: softprops/action-gh-release@v2.3.4
       with:
         files: /home/runner/work/_temp/iso_release/keygen-x86_64-linux.iso
         tag_name: v0.0.1
