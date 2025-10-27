@@ -251,7 +251,8 @@
     nix-doom-emacs-unstraightened.inputs.nixpkgs.follows = "nixpkgs-release";
 
     # LSP for nix
-    nixd.url = "github:nix-community/nixd?ref=refs/tags/2.6.4";
+    nixd.url = "github:nix-community/nixd?ref=refs/tags/2.7.0";
+    # nixd.url = "github:nix-community/nixd?ref=refs/tags/2.6.4";
     # TODO: https://github.com/nix-community/nixd/blob/main/nixd/docs/user-guide.md
     # flake-compat, so options are visible
     # nixd.inputs.nixpkgs.follows = "nixpkgs-unstable";

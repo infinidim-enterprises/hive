@@ -44,6 +44,8 @@ in
 
     {
       services.powerdns = {
+        # secretsFile.shit = { path = "/tmp"; };
+
         debug = true;
         settings = {
           api = "yes";

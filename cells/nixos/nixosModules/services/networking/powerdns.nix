@@ -239,6 +239,22 @@ let
         };
       };
     };
+
+  # secretsFileOptions = { name, config, ... }@all: with types;
+  #   {
+  #     options.path =
+  #       mkOption {
+  #         type = nullOr path;
+  #         apply = x: with builtins; trace ((concatStringsSep " : " (attrNames all)) + " [] " + name) x;
+  #         default = null;
+  #         example = "/run/keys/powerdns.env";
+  #         description = ''
+  #           Values will be appended to config.
+  #           cat configFile secretsFile > finalConfig
+  #         '';
+  #       };
+  #   };
+
 in
 {
   imports = [{ disabledModules = [ "services/networking/powerdns.nix" ]; }];
@@ -262,7 +278,7 @@ in
         '';
       };
       # secretsFile = mkOption {
-      #   type = nullOr (submodule [ secretsFileOptions ]);
+      #   type = nullOr (attrsOf (submodule [ secretsFileOptions ]));
       #   default = null;
       #   description = ''
       #     Global secrets for all virtual instances.
