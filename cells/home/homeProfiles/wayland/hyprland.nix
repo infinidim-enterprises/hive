@@ -271,7 +271,7 @@ in
     };
 
     animations.enabled = false;
-    animations.first_launch_animation = false;
+    # animations.first_launch_animation = false;
 
     # dwindle.pseudotile = true;
     # dwindle.preserve_split = true; # You probably want this
@@ -306,7 +306,7 @@ in
     };
 
     # https://wiki.hyprland.org/Configuring/Variables/#gestures
-    gestures.workspace_swipe = false;
+    # gestures.workspace_swipe = false;
 
     "$masterMod" = "SUPER";
     "$terminal" = "tilix";

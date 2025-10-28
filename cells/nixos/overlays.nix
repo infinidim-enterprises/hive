@@ -27,6 +27,13 @@ rec {
     wofi-pass
     sources
     python
+
+    (final: prev: {
+      keybase = prev.keybase.overrideAttrs (_: {
+        meta.mainProgram = "keybase";
+      });
+    })
+
     (final: prev: {
       libs3 = prev.libs3.overrideAttrs (old: {
         postPatch = old.postPatch or "" + ''

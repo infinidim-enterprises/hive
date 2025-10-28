@@ -1,6 +1,6 @@
 { lib, pkgs, config, ... }:
 let
-  dotDir = ".config/zsh";
+  dotDir = "${config.xdg.configHome}/zsh";
   inherit (lib) mkIf optional;
 in
 mkIf config.programs.zsh.enable

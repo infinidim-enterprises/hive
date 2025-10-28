@@ -55,6 +55,9 @@ let
       (_: prv: {
         hyprland = prv.hyprland.override {
           inherit (unstable)
+            wayland-protocols
+            epoll-shim
+            # libinotify
             libexecinfo
             libinput;
         };
@@ -99,10 +102,17 @@ in
     hyprutils
     hyprwayland-scanner
     udis86
-    wayland-protocols
+
     xdg-desktop-portal-hyprland
     sdbus-cpp_2
     hyprland;
+
+  inherit (unstable)
+    wayland-protocols
+    libexecinfo
+    epoll-shim
+    libinotify
+    libinput;
 
   inherit (hyprwm_flakes.pyprland.packages.${inputs.nixpkgs.system}) pyprland;
 

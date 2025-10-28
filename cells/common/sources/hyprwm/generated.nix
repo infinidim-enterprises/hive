@@ -3,33 +3,33 @@
 {
   Hyprspace = {
     pname = "Hyprspace";
-    version = "2b61fd2115262243b03aa9afe8dfd8a78e71636c";
+    version = "e54884da1d6a1af76af9d053887bf3750dd554fd";
     src = fetchgit {
       url = "https://github.com/KZDKM/Hyprspace";
-      rev = "2b61fd2115262243b03aa9afe8dfd8a78e71636c";
+      rev = "e54884da1d6a1af76af9d053887bf3750dd554fd";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-npC+H+Wl60EdrV75sjqm+bbbLbKgCCGn4ALSM0B2OWA=";
+      sha256 = "sha256-QhcOFLJYC9CiSVPkci62ghMEAJChzl+L98To1pKvnRQ=";
     };
     flake = "true";
-    date = "2025-08-11";
+    date = "2025-09-28";
   };
   contrib = {
     pname = "contrib";
-    version = "6839b23345b71db17cd408373de4f5605bf589b8";
+    version = "32e1a75b65553daefb419f0906ce19e04815aa3a";
     src = fetchgit {
       url = "https://github.com/hyprwm/contrib";
-      rev = "6839b23345b71db17cd408373de4f5605bf589b8";
+      rev = "32e1a75b65553daefb419f0906ce19e04815aa3a";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-PFAJoEqQWMlo1J+yZb+4HixmhbRVmmNl58e/AkLYDDI=";
+      sha256 = "sha256-PzgQJydp+RlKvwDi807pXPlURdIAVqLppZDga3DwPqg=";
     };
     flake = "true";
-    date = "2025-07-23";
+    date = "2025-10-05";
   };
   grim-hyprland = {
     pname = "grim-hyprland";
@@ -48,49 +48,49 @@
   };
   hy3 = {
     pname = "hy3";
-    version = "hl0.50.0";
+    version = "hl0.51.0";
     src = fetchFromGitHub {
       owner = "outfoxxed";
       repo = "hy3";
-      rev = "hl0.50.0";
+      rev = "hl0.51.0";
       fetchSubmodules = false;
-      sha256 = "sha256-1BTJSqkj+lkIry27HuqA5UB7uRqAUvGT7LAUDQhKjU0=";
+      sha256 = "sha256-HjbofK4rSLkkUvOZHdoAY6kn7Ok2bXo14eOKr8hKRHE=";
     };
     flake = "true";
   };
   hypridle = {
     pname = "hypridle";
-    version = "v0.1.6";
+    version = "v0.1.7";
     src = fetchFromGitHub {
       owner = "hyprwm";
       repo = "hypridle";
-      rev = "v0.1.6";
+      rev = "v0.1.7";
       fetchSubmodules = false;
-      sha256 = "sha256-uChAGmceKS9F9jqs1xb58BLTVZLF+sFU00MWDEVfYLg=";
+      sha256 = "sha256-YzRWE3rCnsY0WDRJcn4KvyWUoe+5zdkUYNIaHGP9BZ4=";
     };
     flake = "true";
   };
   hyprland-plugins = {
     pname = "hyprland-plugins";
-    version = "v0.50.0";
+    version = "v0.51.0";
     src = fetchFromGitHub {
       owner = "hyprwm";
       repo = "hyprland-plugins";
-      rev = "v0.50.0";
+      rev = "v0.51.0";
       fetchSubmodules = false;
-      sha256 = "sha256-XJJ+frO4NOxVkoSGc1Mag8ESumzx2FmVRspOgFlMqF8=";
+      sha256 = "sha256-6jAtMjnWq8kty/dpPbIKxIupUG+WAE2AKMIKhxdLYNo=";
     };
     flake = "true";
   };
   hyprlock = {
     pname = "hyprlock";
-    version = "v0.9.1";
+    version = "v0.9.2";
     src = fetchFromGitHub {
       owner = "hyprwm";
       repo = "hyprlock";
-      rev = "v0.9.1";
+      rev = "v0.9.2";
       fetchSubmodules = false;
-      sha256 = "sha256-hHTJ65uOiGqQgI2XbH9jqIGHUcA86K+GJbnhAKhRWNo=";
+      sha256 = "sha256-ucJ5C83hJy8XFO8Y+PL9hVcwdrQnj63BjXcO5A4qyNU=";
     };
     flake = "true";
   };
@@ -108,13 +108,13 @@
   };
   hyprsunset = {
     pname = "hyprsunset";
-    version = "v0.3.2";
+    version = "v0.3.3";
     src = fetchFromGitHub {
       owner = "hyprwm";
       repo = "hyprsunset";
-      rev = "v0.3.2";
+      rev = "v0.3.3";
       fetchSubmodules = false;
-      sha256 = "sha256-eYLtZJayWWbKBC3u/gvDSqVyffuD+egryr7zPWRAeyY=";
+      sha256 = "sha256-Yk6nDzCXrOehX3At8qdZ0cLr1kPySqACsihMYuP6T8w=";
     };
     flake = "true";
   };

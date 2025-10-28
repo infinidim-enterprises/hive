@@ -45,18 +45,35 @@ in
         inherit (final.sources.python-pass) src version pname;
         doCheck = false;
         patches = [
-          (with prev; substituteAll {
+          (with prev; replaceVarsWith {
             # NOTE: https://github.com/aviau/python-pass/pull/34
             # https://github.com/nazarewk-iac/nix-configs/blob/main/packages/pass-secret-service/default.nix
             # NOTE: maybe switch to this - https://github.com/mdellweg/pass_secret_service/pull/37
             src = ./pypass-mark-executables.patch;
-            version = "0.2.2dev";
-            git_exec = "${git}/bin/git";
-            grep_exec = "${gnugrep}/bin/grep";
-            gpg_exec = "${gnupg}/bin/gpg2";
-            tree_exec = "${tree}/bin/tree";
-            xclip_exec = "${xclip}/bin/xclip";
+
+            replacements = {
+              version = "0.2.2dev";
+              git_exec = "${git}/bin/git";
+              grep_exec = "${gnugrep}/bin/grep";
+              gpg_exec = "${gnupg}/bin/gpg2";
+              tree_exec = "${tree}/bin/tree";
+              xclip_exec = "${xclip}/bin/xclip";
+            };
           })
+
+          # (with prev; substituteAll {
+          #   # NOTE: https://github.com/aviau/python-pass/pull/34
+          #   # https://github.com/nazarewk-iac/nix-configs/blob/main/packages/pass-secret-service/default.nix
+          #   # NOTE: maybe switch to this - https://github.com/mdellweg/pass_secret_service/pull/37
+          #   src = ./pypass-mark-executables.patch;
+          #   version = "0.2.2dev";
+          #   git_exec = "${git}/bin/git";
+          #   grep_exec = "${gnugrep}/bin/grep";
+          #   gpg_exec = "${gnupg}/bin/gpg2";
+          #   tree_exec = "${tree}/bin/tree";
+          #   xclip_exec = "${xclip}/bin/xclip";
+          # })
+
         ];
 
       });

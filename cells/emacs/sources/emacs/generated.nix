@@ -3,13 +3,13 @@
 {
   aider = {
     pname = "aider";
-    version = "v0.13.0";
+    version = "v0.13.1";
     src = fetchFromGitHub {
       owner = "tninja";
       repo = "aider.el";
-      rev = "v0.13.0";
+      rev = "v0.13.1";
       fetchSubmodules = false;
-      sha256 = "sha256-6TKklKxmgV4WNKjRN2vFhpti/oOskiaVLjwM3T8iHC8=";
+      sha256 = "sha256-p/RuYmCGTqHkKrmUKrPu6adVOeJ1SgRKqeR2Vx/QyKc=";
     };
   };
   all-the-icons = {
@@ -26,13 +26,13 @@
   };
   cape = {
     pname = "cape";
-    version = "2.1";
+    version = "2.2";
     src = fetchFromGitHub {
       owner = "minad";
       repo = "cape";
-      rev = "2.1";
+      rev = "2.2";
       fetchSubmodules = false;
-      sha256 = "sha256-8BfMla3R8/q/ihId7PIOPv0iwkh/w3BgO1fPSqKYtEk=";
+      sha256 = "sha256-N8+N9/kViaLZD3PY984xhGyIc0w4sdPf0C/G5SOM0pQ=";
     };
   };
   chemacs = {
@@ -73,25 +73,25 @@
   };
   copilot-el = {
     pname = "copilot-el";
-    version = "4f51b3c21c42756d09ee17011201ea7d6e18ff69";
+    version = "6a2ad80489b8a0d021df95293eb7ac370aea140b";
     src = fetchFromGitHub {
       owner = "zerolfx";
       repo = "copilot.el";
-      rev = "4f51b3c21c42756d09ee17011201ea7d6e18ff69";
+      rev = "6a2ad80489b8a0d021df95293eb7ac370aea140b";
       fetchSubmodules = false;
-      sha256 = "sha256-5nB+skW0yjKvLUkDcwFJGSsCcRPZnJ44KoiTJno2iRM=";
+      sha256 = "sha256-aiVRefuH4jpAtTgMMDa7jI0Yy08J4+fV59f8nd7vT7g=";
     };
-    date = "30 Jun 2025";
+    date = "16 Sep 2025";
   };
   corfu = {
     pname = "corfu";
-    version = "2.3";
+    version = "2.4";
     src = fetchFromGitHub {
       owner = "minad";
       repo = "corfu";
-      rev = "2.3";
+      rev = "2.4";
       fetchSubmodules = false;
-      sha256 = "sha256-+so01wEST4XXNu4cknPfr788SWx9UXNLc7E4cFL4ULg=";
+      sha256 = "sha256-UgBEEg92z9Vs/bOsiUPq05jHNvM4rhOJ0dGPjVkyJHQ=";
     };
   };
   corfu-terminal = {
@@ -125,13 +125,13 @@
   };
   gptel = {
     pname = "gptel";
-    version = "v0.9.8.5";
+    version = "v0.9.9";
     src = fetchFromGitHub {
       owner = "karthink";
       repo = "gptel";
-      rev = "v0.9.8.5";
+      rev = "v0.9.9";
       fetchSubmodules = false;
-      sha256 = "sha256-5/X4kuN3i7KeqSmdz0aetkiY+udFBxj5iquGtFuaoEc=";
+      sha256 = "sha256-8iGeWpx1OFb243S1HFpCQALpC+32MouNjfYCp15IwwE=";
     };
   };
   helm-sly = {
@@ -163,26 +163,26 @@
   };
   jinx = {
     pname = "jinx";
-    version = "2.3";
+    version = "2.4";
     src = fetchFromGitHub {
       owner = "minad";
       repo = "jinx";
-      rev = "2.3";
+      rev = "2.4";
       fetchSubmodules = false;
-      sha256 = "sha256-XDZAJnjo48VuyWM8E8RC21ykgDplvGMNqARG/1uS9Z4=";
+      sha256 = "sha256-owG4qMSWJSX9ZGk6K/0zXw2eXe1tFDSzB7ctgrYrmD8=";
     };
   };
   lsp-mode = {
     pname = "lsp-mode";
-    version = "11f7b17625b6f22a3900ebb55e0c506e59ef280c";
+    version = "c68142eb2746d1608733cc2cd07c8f6839c15c35";
     src = fetchFromGitHub {
       owner = "emacs-lsp";
       repo = "lsp-mode";
-      rev = "11f7b17625b6f22a3900ebb55e0c506e59ef280c";
+      rev = "c68142eb2746d1608733cc2cd07c8f6839c15c35";
       fetchSubmodules = false;
-      sha256 = "sha256-0/WrGZVRO64ctdKm7MaIBcQ3yWrmHm3OxaRUXMGcxqg=";
+      sha256 = "sha256-rFZuhEeOfEimWlzQ8N62hqewAKKJCzSb+IjKEmx7xmA=";
     };
-    date = "11 Aug 2025";
+    date = "25 Oct 2025";
   };
   maple-iedit = {
     pname = "maple-iedit";
@@ -224,17 +224,17 @@
   };
   nix-ts-mode = {
     pname = "nix-ts-mode";
-    version = "5281d671e3eea9bf737b79f955caadc4769f5da0";
+    version = "d769e53ccc0f40026fd11c7e23bf419c2caf4732";
     src = fetchgit {
       url = "https://github.com/nix-community/nix-ts-mode";
-      rev = "5281d671e3eea9bf737b79f955caadc4769f5da0";
+      rev = "d769e53ccc0f40026fd11c7e23bf419c2caf4732";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-3ZDPTd6T5x1NEbvJ8QEG24pIjlWYxnIRopYbpgW688Q=";
+      sha256 = "sha256-wzzLt1wA1/XzkwgEkal9Bxais5uc6FJNXVzxgPN4TR8=";
     };
-    date = "10 Aug 2025";
+    date = "12 Sep 2025";
   };
   nixpkgs-fmt = {
     pname = "nixpkgs-fmt";
@@ -298,15 +298,15 @@
   };
   sly = {
     pname = "sly";
-    version = "63131ef965d8ff3a6b79cc7aff8e8f5fc1a82aec";
+    version = "3041c402169ab1d2f63cbbe1aae2dc35f0928e1e";
     src = fetchFromGitHub {
       owner = "joaotavora";
       repo = "sly";
-      rev = "63131ef965d8ff3a6b79cc7aff8e8f5fc1a82aec";
+      rev = "3041c402169ab1d2f63cbbe1aae2dc35f0928e1e";
       fetchSubmodules = false;
-      sha256 = "sha256-C2MBBcNsmvI9xhY/gy2ongV9vulIacKeMxYAtsWwhJw=";
+      sha256 = "sha256-hOyGaE77MgXZGlXKTtUoPUnPTXLEhTro5mD2Pclk3Mg=";
     };
-    date = "23 May 2025";
+    date = "30 Sep 2025";
   };
   sly-asdf = {
     pname = "sly-asdf";
@@ -346,15 +346,15 @@
   };
   sly-overlay = {
     pname = "sly-overlay";
-    version = "d62945059035f8097a6f222ed2700cfd99609d11";
+    version = "345b554ad005421b447b2e64c34314ee79f5f8b9";
     src = fetchFromGitHub {
       owner = "fosskers";
       repo = "sly-overlay";
-      rev = "d62945059035f8097a6f222ed2700cfd99609d11";
+      rev = "345b554ad005421b447b2e64c34314ee79f5f8b9";
       fetchSubmodules = false;
-      sha256 = "sha256-ZfkZJkpVtJmseGwqrhLSF3XtK1q3s3JXVCZ+2MeGgaM=";
+      sha256 = "sha256-WYhwbwmCSfUifF3gCOe22ibo+p6nQGffwkrT9F8D2+8=";
     };
-    date = "28 Aug 2024";
+    date = "16 Aug 2025";
   };
   sly-quicklisp = {
     pname = "sly-quicklisp";
@@ -382,24 +382,24 @@
   };
   tempel = {
     pname = "tempel";
-    version = "1.5";
+    version = "1.7";
     src = fetchFromGitHub {
       owner = "minad";
       repo = "tempel";
-      rev = "1.5";
+      rev = "1.7";
       fetchSubmodules = false;
-      sha256 = "sha256-fVZ7J/YgVM7HZXslP6jGDQ7Xazb5jW90h2bSh5uLnIA=";
+      sha256 = "sha256-4zVB3q/dYX8x475/7MXhBG1sfF8K86H4HR79cfZHw9M=";
     };
   };
   vertico = {
     pname = "vertico";
-    version = "2.4";
+    version = "2.5";
     src = fetchFromGitHub {
       owner = "minad";
       repo = "vertico";
-      rev = "2.4";
+      rev = "2.5";
       fetchSubmodules = false;
-      sha256 = "sha256-Psxywo9xH+Rk3S7h2Xlircauxb0VFuFoBxpvNbp9NiE=";
+      sha256 = "sha256-/eBn47ygZucvQyF9oLMqsLm3mAkJXAf0zIZpkbyvh7E=";
     };
   };
   zetteldeft = {

@@ -3,26 +3,26 @@
 {
   lidarr = {
     pname = "lidarr";
-    version = "2.12.4.4658";
+    version = "2.14.5.4836";
     src = fetchurl {
-      url = "https://github.com/lidarr/Lidarr/releases/download/v2.12.4.4658/Lidarr.master.2.12.4.4658.linux-core-arm64.tar.gz";
-      sha256 = "sha256-9Zv0YCR7CvgcDFGYXuc55BhFmIH1iled9WDeEvwAMoI=";
+      url = "https://github.com/lidarr/Lidarr/releases/download/v2.14.5.4836/Lidarr.master.2.14.5.4836.linux-core-arm64.tar.gz";
+      sha256 = "sha256-eS4MccKhISJBc68lhrYwbESV0FcqtAI/b4ojfQO/9m8=";
     };
   };
   prowlarr = {
     pname = "prowlarr";
-    version = "1.37.0.5076";
+    version = "2.1.5.5216";
     src = fetchurl {
-      url = "https://github.com/Prowlarr/Prowlarr/releases/download/v1.37.0.5076/Prowlarr.master.1.37.0.5076.linux-core-arm64.tar.gz";
-      sha256 = "sha256-uf4DmzjvqJSqjusVMg3hlaH+NfYRNLDKBPLX75ycojQ=";
+      url = "https://github.com/Prowlarr/Prowlarr/releases/download/v2.1.5.5216/Prowlarr.master.2.1.5.5216.linux-core-arm64.tar.gz";
+      sha256 = "sha256-2ofxzTMMhxsoOqmTBsg++1VXqJpycnyovrwYfEXOj/k=";
     };
   };
   radarr = {
     pname = "radarr";
-    version = "5.26.2.10099";
+    version = "5.28.0.10274";
     src = fetchurl {
-      url = "https://github.com/Radarr/Radarr/releases/download/v5.26.2.10099/Radarr.master.5.26.2.10099.linux-core-arm64.tar.gz";
-      sha256 = "sha256-eO13nf/a3SQzlcTMmg1qLXu7Rzk8yeFp7wbHb8Ih07Q=";
+      url = "https://github.com/Radarr/Radarr/releases/download/v5.28.0.10274/Radarr.master.5.28.0.10274.linux-core-arm64.tar.gz";
+      sha256 = "sha256-gj3SLkcPqBSigVZZn/Xqoqrd//mHxVV5DGG9QzL/+2c=";
     };
   };
   readarr = {
