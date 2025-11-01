@@ -127,7 +127,7 @@
     },
     "copilot-el": {
         "cargoLocks": null,
-        "date": "16 Sep 2025",
+        "date": "30 Oct 2025",
         "extract": null,
         "name": "copilot-el",
         "passthru": null,
@@ -139,12 +139,12 @@
             "name": null,
             "owner": "zerolfx",
             "repo": "copilot.el",
-            "rev": "6a2ad80489b8a0d021df95293eb7ac370aea140b",
-            "sha256": "sha256-aiVRefuH4jpAtTgMMDa7jI0Yy08J4+fV59f8nd7vT7g=",
+            "rev": "952fc7a8ae06091a46995d32ebde4380e0c71142",
+            "sha256": "sha256-0MRTmWgM8UhdBIkVrM0jseLu/LGOTkeTQQv+DlO+nyw=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "6a2ad80489b8a0d021df95293eb7ac370aea140b"
+        "version": "952fc7a8ae06091a46995d32ebde4380e0c71142"
     },
     "corfu": {
         "cargoLocks": null,
@@ -296,7 +296,7 @@
     },
     "lsp-mode": {
         "cargoLocks": null,
-        "date": "25 Oct 2025",
+        "date": "31 Oct 2025",
         "extract": null,
         "name": "lsp-mode",
         "passthru": null,
@@ -308,12 +308,12 @@
             "name": null,
             "owner": "emacs-lsp",
             "repo": "lsp-mode",
-            "rev": "c68142eb2746d1608733cc2cd07c8f6839c15c35",
-            "sha256": "sha256-rFZuhEeOfEimWlzQ8N62hqewAKKJCzSb+IjKEmx7xmA=",
+            "rev": "c3b5fea5d6c3227801a69ea14080be29b6c3080e",
+            "sha256": "sha256-o2zwEDx6QL+o+RYWPmasayRF23cljlzKkbEL1hmah8o=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "c68142eb2746d1608733cc2cd07c8f6839c15c35"
+        "version": "c3b5fea5d6c3227801a69ea14080be29b6c3080e"
     },
     "maple-iedit": {
         "cargoLocks": null,
