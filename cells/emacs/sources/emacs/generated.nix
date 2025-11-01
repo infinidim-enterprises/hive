@@ -73,15 +73,15 @@
   };
   copilot-el = {
     pname = "copilot-el";
-    version = "6a2ad80489b8a0d021df95293eb7ac370aea140b";
+    version = "952fc7a8ae06091a46995d32ebde4380e0c71142";
     src = fetchFromGitHub {
       owner = "zerolfx";
       repo = "copilot.el";
-      rev = "6a2ad80489b8a0d021df95293eb7ac370aea140b";
+      rev = "952fc7a8ae06091a46995d32ebde4380e0c71142";
       fetchSubmodules = false;
-      sha256 = "sha256-aiVRefuH4jpAtTgMMDa7jI0Yy08J4+fV59f8nd7vT7g=";
+      sha256 = "sha256-0MRTmWgM8UhdBIkVrM0jseLu/LGOTkeTQQv+DlO+nyw=";
     };
-    date = "16 Sep 2025";
+    date = "30 Oct 2025";
   };
   corfu = {
     pname = "corfu";
@@ -174,15 +174,15 @@
   };
   lsp-mode = {
     pname = "lsp-mode";
-    version = "c68142eb2746d1608733cc2cd07c8f6839c15c35";
+    version = "c3b5fea5d6c3227801a69ea14080be29b6c3080e";
     src = fetchFromGitHub {
       owner = "emacs-lsp";
       repo = "lsp-mode";
-      rev = "c68142eb2746d1608733cc2cd07c8f6839c15c35";
+      rev = "c3b5fea5d6c3227801a69ea14080be29b6c3080e";
       fetchSubmodules = false;
-      sha256 = "sha256-rFZuhEeOfEimWlzQ8N62hqewAKKJCzSb+IjKEmx7xmA=";
+      sha256 = "sha256-o2zwEDx6QL+o+RYWPmasayRF23cljlzKkbEL1hmah8o=";
     };
-    date = "25 Oct 2025";
+    date = "31 Oct 2025";
   };
   maple-iedit = {
     pname = "maple-iedit";

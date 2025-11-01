@@ -3,10 +3,10 @@
 {
   lidarr = {
     pname = "lidarr";
-    version = "2.14.5.4836";
+    version = "3.0.1.4866";
     src = fetchurl {
-      url = "https://github.com/lidarr/Lidarr/releases/download/v2.14.5.4836/Lidarr.master.2.14.5.4836.linux-core-arm64.tar.gz";
-      sha256 = "sha256-eS4MccKhISJBc68lhrYwbESV0FcqtAI/b4ojfQO/9m8=";
+      url = "https://github.com/lidarr/Lidarr/releases/download/v3.0.1.4866/Lidarr.master.3.0.1.4866.linux-core-arm64.tar.gz";
+      sha256 = "sha256-RWVlTnOENQ+/H6Mmkcim+Lu5tJvMBB26v/to4q61P40=";
     };
   };
   prowlarr = {
