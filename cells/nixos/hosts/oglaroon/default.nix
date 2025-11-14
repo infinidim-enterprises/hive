@@ -12,6 +12,7 @@ rec {
       inherit (inputs.nixpkgs) system;
       config.allowUnfree = true;
       overlays = cell.overlays.default_desktop ++ cell.overlays.llm;
+      config.permittedInsecurePackages = [ "python3.12-ecdsa-0.19.1" "mbedtls-2.28.10" ];
     };
   };
 
