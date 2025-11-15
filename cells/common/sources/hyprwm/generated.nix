@@ -72,13 +72,13 @@
   };
   hyprland-plugins = {
     pname = "hyprland-plugins";
-    version = "v0.51.0";
+    version = "v0.52.0";
     src = fetchFromGitHub {
       owner = "hyprwm";
       repo = "hyprland-plugins";
-      rev = "v0.51.0";
+      rev = "v0.52.0";
       fetchSubmodules = false;
-      sha256 = "sha256-6jAtMjnWq8kty/dpPbIKxIupUG+WAE2AKMIKhxdLYNo=";
+      sha256 = "sha256-hr53AWO96ooLCwS1a2v416eT1/aWQZmuQV0ULqhaBTY=";
     };
     flake = "true";
   };

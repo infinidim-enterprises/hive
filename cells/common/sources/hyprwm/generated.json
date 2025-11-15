@@ -127,12 +127,12 @@
             "name": null,
             "owner": "hyprwm",
             "repo": "hyprland-plugins",
-            "rev": "v0.51.0",
-            "sha256": "sha256-6jAtMjnWq8kty/dpPbIKxIupUG+WAE2AKMIKhxdLYNo=",
+            "rev": "v0.52.0",
+            "sha256": "sha256-hr53AWO96ooLCwS1a2v416eT1/aWQZmuQV0ULqhaBTY=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v0.51.0"
+        "version": "v0.52.0"
     },
     "hyprlock": {
         "cargoLocks": null,
