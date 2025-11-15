@@ -73,15 +73,15 @@
   };
   copilot-el = {
     pname = "copilot-el";
-    version = "6a2ad80489b8a0d021df95293eb7ac370aea140b";
+    version = "952fc7a8ae06091a46995d32ebde4380e0c71142";
     src = fetchFromGitHub {
       owner = "zerolfx";
       repo = "copilot.el";
-      rev = "6a2ad80489b8a0d021df95293eb7ac370aea140b";
+      rev = "952fc7a8ae06091a46995d32ebde4380e0c71142";
       fetchSubmodules = false;
-      sha256 = "sha256-aiVRefuH4jpAtTgMMDa7jI0Yy08J4+fV59f8nd7vT7g=";
+      sha256 = "sha256-0MRTmWgM8UhdBIkVrM0jseLu/LGOTkeTQQv+DlO+nyw=";
     };
-    date = "16 Sep 2025";
+    date = "30 Oct 2025";
   };
   corfu = {
     pname = "corfu";
@@ -125,13 +125,13 @@
   };
   gptel = {
     pname = "gptel";
-    version = "v0.9.9";
+    version = "v0.9.9.3";
     src = fetchFromGitHub {
       owner = "karthink";
       repo = "gptel";
-      rev = "v0.9.9";
+      rev = "v0.9.9.3";
       fetchSubmodules = false;
-      sha256 = "sha256-8iGeWpx1OFb243S1HFpCQALpC+32MouNjfYCp15IwwE=";
+      sha256 = "sha256-yWPNgifEckRi42xcj7e4iPHgOPIQU8z6dLvGAAKYDSA=";
     };
   };
   helm-sly = {
@@ -174,15 +174,15 @@
   };
   lsp-mode = {
     pname = "lsp-mode";
-    version = "c68142eb2746d1608733cc2cd07c8f6839c15c35";
+    version = "3fb02931a876158c3766dcdf1c0750049870000b";
     src = fetchFromGitHub {
       owner = "emacs-lsp";
       repo = "lsp-mode";
-      rev = "c68142eb2746d1608733cc2cd07c8f6839c15c35";
+      rev = "3fb02931a876158c3766dcdf1c0750049870000b";
       fetchSubmodules = false;
-      sha256 = "sha256-rFZuhEeOfEimWlzQ8N62hqewAKKJCzSb+IjKEmx7xmA=";
+      sha256 = "sha256-kj3dRoSEWxcbrn3BfdMP/5GI5PbeNXiVvAzqJ0ePjdk=";
     };
-    date = "25 Oct 2025";
+    date = "11 Nov 2025";
   };
   maple-iedit = {
     pname = "maple-iedit";
@@ -224,17 +224,17 @@
   };
   nix-ts-mode = {
     pname = "nix-ts-mode";
-    version = "d769e53ccc0f40026fd11c7e23bf419c2caf4732";
+    version = "03c77fdbbd22d9b87a654169c26339b28c97d8cd";
     src = fetchgit {
       url = "https://github.com/nix-community/nix-ts-mode";
-      rev = "d769e53ccc0f40026fd11c7e23bf419c2caf4732";
+      rev = "03c77fdbbd22d9b87a654169c26339b28c97d8cd";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-wzzLt1wA1/XzkwgEkal9Bxais5uc6FJNXVzxgPN4TR8=";
+      sha256 = "sha256-tgwWg/dEquGU+B6W/QcF6vJdLS+5FeEq3rjnfRKmDvU=";
     };
-    date = "12 Sep 2025";
+    date = "15 Nov 2025";
   };
   nixpkgs-fmt = {
     pname = "nixpkgs-fmt";
@@ -298,15 +298,15 @@
   };
   sly = {
     pname = "sly";
-    version = "3041c402169ab1d2f63cbbe1aae2dc35f0928e1e";
+    version = "87722894da6d8d64ac83c7d4a29382b450f669ea";
     src = fetchFromGitHub {
       owner = "joaotavora";
       repo = "sly";
-      rev = "3041c402169ab1d2f63cbbe1aae2dc35f0928e1e";
+      rev = "87722894da6d8d64ac83c7d4a29382b450f669ea";
       fetchSubmodules = false;
-      sha256 = "sha256-hOyGaE77MgXZGlXKTtUoPUnPTXLEhTro5mD2Pclk3Mg=";
+      sha256 = "sha256-o5d0QebTCTR3N0v4kdi6yY2EmZlwkRzvv9t25TShlcE=";
     };
-    date = "30 Sep 2025";
+    date = "11 Nov 2025";
   };
   sly-asdf = {
     pname = "sly-asdf";

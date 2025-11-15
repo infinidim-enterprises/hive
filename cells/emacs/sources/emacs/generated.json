@@ -127,7 +127,7 @@
     },
     "copilot-el": {
         "cargoLocks": null,
-        "date": "16 Sep 2025",
+        "date": "30 Oct 2025",
         "extract": null,
         "name": "copilot-el",
         "passthru": null,
@@ -139,12 +139,12 @@
             "name": null,
             "owner": "zerolfx",
             "repo": "copilot.el",
-            "rev": "6a2ad80489b8a0d021df95293eb7ac370aea140b",
-            "sha256": "sha256-aiVRefuH4jpAtTgMMDa7jI0Yy08J4+fV59f8nd7vT7g=",
+            "rev": "952fc7a8ae06091a46995d32ebde4380e0c71142",
+            "sha256": "sha256-0MRTmWgM8UhdBIkVrM0jseLu/LGOTkeTQQv+DlO+nyw=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "6a2ad80489b8a0d021df95293eb7ac370aea140b"
+        "version": "952fc7a8ae06091a46995d32ebde4380e0c71142"
     },
     "corfu": {
         "cargoLocks": null,
@@ -223,12 +223,12 @@
             "name": null,
             "owner": "karthink",
             "repo": "gptel",
-            "rev": "v0.9.9",
-            "sha256": "sha256-8iGeWpx1OFb243S1HFpCQALpC+32MouNjfYCp15IwwE=",
+            "rev": "v0.9.9.3",
+            "sha256": "sha256-yWPNgifEckRi42xcj7e4iPHgOPIQU8z6dLvGAAKYDSA=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v0.9.9"
+        "version": "v0.9.9.3"
     },
     "helm-sly": {
         "cargoLocks": null,
@@ -296,7 +296,7 @@
     },
     "lsp-mode": {
         "cargoLocks": null,
-        "date": "25 Oct 2025",
+        "date": "11 Nov 2025",
         "extract": null,
         "name": "lsp-mode",
         "passthru": null,
@@ -308,12 +308,12 @@
             "name": null,
             "owner": "emacs-lsp",
             "repo": "lsp-mode",
-            "rev": "c68142eb2746d1608733cc2cd07c8f6839c15c35",
-            "sha256": "sha256-rFZuhEeOfEimWlzQ8N62hqewAKKJCzSb+IjKEmx7xmA=",
+            "rev": "3fb02931a876158c3766dcdf1c0750049870000b",
+            "sha256": "sha256-kj3dRoSEWxcbrn3BfdMP/5GI5PbeNXiVvAzqJ0ePjdk=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "c68142eb2746d1608733cc2cd07c8f6839c15c35"
+        "version": "3fb02931a876158c3766dcdf1c0750049870000b"
     },
     "maple-iedit": {
         "cargoLocks": null,
@@ -381,7 +381,7 @@
     },
     "nix-ts-mode": {
         "cargoLocks": null,
-        "date": "12 Sep 2025",
+        "date": "15 Nov 2025",
         "extract": null,
         "name": "nix-ts-mode",
         "passthru": null,
@@ -391,13 +391,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "d769e53ccc0f40026fd11c7e23bf419c2caf4732",
-            "sha256": "sha256-wzzLt1wA1/XzkwgEkal9Bxais5uc6FJNXVzxgPN4TR8=",
+            "rev": "03c77fdbbd22d9b87a654169c26339b28c97d8cd",
+            "sha256": "sha256-tgwWg/dEquGU+B6W/QcF6vJdLS+5FeEq3rjnfRKmDvU=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/nix-community/nix-ts-mode"
         },
-        "version": "d769e53ccc0f40026fd11c7e23bf419c2caf4732"
+        "version": "03c77fdbbd22d9b87a654169c26339b28c97d8cd"
     },
     "nixpkgs-fmt": {
         "cargoLocks": null,
@@ -508,7 +508,7 @@
     },
     "sly": {
         "cargoLocks": null,
-        "date": "30 Sep 2025",
+        "date": "11 Nov 2025",
         "extract": null,
         "name": "sly",
         "passthru": null,
@@ -520,12 +520,12 @@
             "name": null,
             "owner": "joaotavora",
             "repo": "sly",
-            "rev": "3041c402169ab1d2f63cbbe1aae2dc35f0928e1e",
-            "sha256": "sha256-hOyGaE77MgXZGlXKTtUoPUnPTXLEhTro5mD2Pclk3Mg=",
+            "rev": "87722894da6d8d64ac83c7d4a29382b450f669ea",
+            "sha256": "sha256-o5d0QebTCTR3N0v4kdi6yY2EmZlwkRzvv9t25TShlcE=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "3041c402169ab1d2f63cbbe1aae2dc35f0928e1e"
+        "version": "87722894da6d8d64ac83c7d4a29382b450f669ea"
     },
     "sly-asdf": {
         "cargoLocks": null,
