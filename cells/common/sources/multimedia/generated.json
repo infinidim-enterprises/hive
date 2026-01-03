@@ -8,11 +8,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-eS4MccKhISJBc68lhrYwbESV0FcqtAI/b4ojfQO/9m8=",
+            "sha256": "sha256-/1gCHUt3sDEMkEE6vU8wNs/VAxL+exkunWiNSC5MvzY=",
             "type": "url",
-            "url": "https://github.com/lidarr/Lidarr/releases/download/v2.14.5.4836/Lidarr.master.2.14.5.4836.linux-core-arm64.tar.gz"
+            "url": "https://github.com/lidarr/Lidarr/releases/download/v3.1.0.4875/Lidarr.master.3.1.0.4875.linux-core-arm64.tar.gz"
         },
-        "version": "2.14.5.4836"
+        "version": "3.1.0.4875"
     },
     "prowlarr": {
         "cargoLocks": null,
@@ -23,11 +23,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-2ofxzTMMhxsoOqmTBsg++1VXqJpycnyovrwYfEXOj/k=",
+            "sha256": "sha256-q0ZrWJc10CajljLLzN5Ri/wjCa6cIdWarHt6H9J0/44=",
             "type": "url",
-            "url": "https://github.com/Prowlarr/Prowlarr/releases/download/v2.1.5.5216/Prowlarr.master.2.1.5.5216.linux-core-arm64.tar.gz"
+            "url": "https://github.com/Prowlarr/Prowlarr/releases/download/v2.3.0.5236/Prowlarr.master.2.3.0.5236.linux-core-arm64.tar.gz"
         },
-        "version": "2.1.5.5216"
+        "version": "2.3.0.5236"
     },
     "radarr": {
         "cargoLocks": null,
@@ -38,11 +38,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-gj3SLkcPqBSigVZZn/Xqoqrd//mHxVV5DGG9QzL/+2c=",
+            "sha256": "sha256-yzLQ8647icGe8VTLIkJ12vaf2KSD+d4HCKtABVdbEe4=",
             "type": "url",
-            "url": "https://github.com/Radarr/Radarr/releases/download/v5.28.0.10274/Radarr.master.5.28.0.10274.linux-core-arm64.tar.gz"
+            "url": "https://github.com/Radarr/Radarr/releases/download/v6.0.4.10291/Radarr.master.6.0.4.10291.linux-core-arm64.tar.gz"
         },
-        "version": "5.28.0.10274"
+        "version": "6.0.4.10291"
     },
     "readarr": {
         "cargoLocks": null,
@@ -68,11 +68,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-L6ukLTaXkXNhJuUR85T6EpzxRCS5eMyYCbygRWMJCQ8=",
+            "sha256": "sha256-BEwsWqx/6t7haXBjkHnwkQebV6eBZldJi01YmjLRpTY=",
             "type": "url",
-            "url": "https://github.com/Sonarr/Sonarr/releases/download/v4.0.15.2941/Sonarr.main.4.0.15.2941.linux-arm64.tar.gz"
+            "url": "https://github.com/Sonarr/Sonarr/releases/download/v4.0.16.2944/Sonarr.main.4.0.16.2944.linux-arm64.tar.gz"
         },
-        "version": "4.0.15.2941"
+        "version": "4.0.16.2944"
     },
     "transmissionic": {
         "cargoLocks": null,

@@ -3,38 +3,38 @@
 {
   libcamera = {
     pname = "libcamera";
-    version = "bfd68f786964636b09f8122e6c09c230367390e7";
+    version = "f0e40f1c50bd0afe65727d6e407d0dcb42666ada";
     src = fetchFromGitHub {
       owner = "raspberrypi";
       repo = "libcamera";
-      rev = "bfd68f786964636b09f8122e6c09c230367390e7";
+      rev = "f0e40f1c50bd0afe65727d6e407d0dcb42666ada";
       fetchSubmodules = false;
-      sha256 = "sha256-4rNV9TMDvVpMBmgeRftO51ptOyHh4QOgoyZ6F/Iwdnw=";
+      sha256 = "sha256-sJKzmeeXD/66P5o+X9w3J2gwxDNsdBUdXEqU6goJdN4=";
     };
-    date = "2025-09-01";
+    date = "2025-12-02";
   };
   libcamera-apps = {
     pname = "libcamera-apps";
-    version = "24906da670e9f2468ac18f2885218b2ba3491a20";
+    version = "d92a65175b4b553d7b606fcf4fd64dd3275fff09";
     src = fetchFromGitHub {
       owner = "raspberrypi";
       repo = "libcamera-apps";
-      rev = "24906da670e9f2468ac18f2885218b2ba3491a20";
+      rev = "d92a65175b4b553d7b606fcf4fd64dd3275fff09";
       fetchSubmodules = false;
-      sha256 = "sha256-yyZlZSpYYt1DLAI7rW8lnpR6p9HnqcV6SrEJcAyS6Aw=";
+      sha256 = "sha256-3f0ThN4C9ZZ/6Is51Q6QA2tnEDnLKCLbxlCNqsGzw14=";
     };
-    date = "2025-10-24";
+    date = "2025-12-18";
   };
   mediamtx = {
     pname = "mediamtx";
-    version = "285959054426bed893275b28cd1d3468ed775e28";
+    version = "9cb64d98ac0c1b5588c6a361841793f04c378849";
     src = fetchFromGitHub {
       owner = "bluenviron";
       repo = "mediamtx";
-      rev = "285959054426bed893275b28cd1d3468ed775e28";
+      rev = "9cb64d98ac0c1b5588c6a361841793f04c378849";
       fetchSubmodules = false;
-      sha256 = "sha256-xrL+g89Ch3uyM0FPiOS0VVTBuBWoRG8HuYDz1UMtM9g=";
+      sha256 = "sha256-S39ay+Zbqqb3N3O74tV30qW3kx0jyaNWKNPAiRPFOyM=";
     };
-    date = "2025-10-26";
+    date = "2026-01-01";
   };
 }

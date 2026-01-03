@@ -3,17 +3,17 @@
 {
   nyxt-el = {
     pname = "nyxt-el";
-    version = "f26834d37ae16e82ac8666a05959182652b412af";
+    version = "955c0a06e81d681f719c63ede65069394d521cdc";
     src = fetchgit {
       url = "https://github.com/migalmoreno/nyxt.el";
-      rev = "f26834d37ae16e82ac8666a05959182652b412af";
+      rev = "955c0a06e81d681f719c63ede65069394d521cdc";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-m6xnx4RjKGYej+z5Q1eXuHcQTCeaD4TDHcTSm3oyDuc=";
+      sha256 = "sha256-xgDVbMI3xiHkne52pRJJhFYTBEl79cd4jEcFqmMy9hM=";
     };
-    date = "2024-11-04";
+    date = "2025-11-16";
   };
   nyxt-ext_nx-ace = {
     pname = "nyxt-ext_nx-ace";
@@ -73,16 +73,16 @@
   };
   nyxt-ext_nx-tailor = {
     pname = "nyxt-ext_nx-tailor";
-    version = "cdd8253e8a6d7bd3638458610c4971ffc58be0a8";
+    version = "2fa070a7636ad848a61e8e9126dac6c04256df7d";
     src = fetchgit {
       url = "https://github.com/migalmoreno/nx-tailor";
-      rev = "cdd8253e8a6d7bd3638458610c4971ffc58be0a8";
+      rev = "2fa070a7636ad848a61e8e9126dac6c04256df7d";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-f5T4ptMQQhooqTsj2TmaMOUqtD5zEuuPkNGihdf2Lcc=";
+      sha256 = "sha256-Gk18rqcYY2H28NymxDKUnB03PfcFTa1rTShst5WxIrs=";
     };
-    date = "2024-11-04";
+    date = "2025-11-16";
   };
 }

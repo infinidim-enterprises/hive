@@ -1,7 +1,7 @@
 {
     "nyxt-el": {
         "cargoLocks": null,
-        "date": "2024-11-04",
+        "date": "2025-11-16",
         "extract": null,
         "name": "nyxt-el",
         "passthru": null,
@@ -11,13 +11,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "f26834d37ae16e82ac8666a05959182652b412af",
-            "sha256": "sha256-m6xnx4RjKGYej+z5Q1eXuHcQTCeaD4TDHcTSm3oyDuc=",
+            "rev": "955c0a06e81d681f719c63ede65069394d521cdc",
+            "sha256": "sha256-xgDVbMI3xiHkne52pRJJhFYTBEl79cd4jEcFqmMy9hM=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/migalmoreno/nyxt.el"
         },
-        "version": "f26834d37ae16e82ac8666a05959182652b412af"
+        "version": "955c0a06e81d681f719c63ede65069394d521cdc"
     },
     "nyxt-ext_nx-ace": {
         "cargoLocks": null,
@@ -101,7 +101,7 @@
     },
     "nyxt-ext_nx-tailor": {
         "cargoLocks": null,
-        "date": "2024-11-04",
+        "date": "2025-11-16",
         "extract": null,
         "name": "nyxt-ext_nx-tailor",
         "passthru": null,
@@ -111,12 +111,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "cdd8253e8a6d7bd3638458610c4971ffc58be0a8",
-            "sha256": "sha256-f5T4ptMQQhooqTsj2TmaMOUqtD5zEuuPkNGihdf2Lcc=",
+            "rev": "2fa070a7636ad848a61e8e9126dac6c04256df7d",
+            "sha256": "sha256-Gk18rqcYY2H28NymxDKUnB03PfcFTa1rTShst5WxIrs=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/migalmoreno/nx-tailor"
         },
-        "version": "cdd8253e8a6d7bd3638458610c4971ffc58be0a8"
+        "version": "2fa070a7636ad848a61e8e9126dac6c04256df7d"
     }
 }
