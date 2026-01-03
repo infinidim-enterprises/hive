@@ -33,11 +33,11 @@
             "name": null,
             "owner": "vsajip",
             "repo": "python-gnupg",
-            "rev": "0.5.5",
-            "sha256": "sha256-Fj5kIhV5PwwR4R4tQL1YVeDnY7xENATWJT99sE+luNA=",
+            "rev": "0.5.6",
+            "sha256": "sha256-ztwITune/rO4c3wUCsw6wBN09jnpWpElgwQx7JCXsVw=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "0.5.5"
+        "version": "0.5.6"
     }
 }

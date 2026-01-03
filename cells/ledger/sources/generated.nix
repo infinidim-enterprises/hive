@@ -17,13 +17,13 @@
   };
   python-gnupg = {
     pname = "python-gnupg";
-    version = "0.5.5";
+    version = "0.5.6";
     src = fetchFromGitHub {
       owner = "vsajip";
       repo = "python-gnupg";
-      rev = "0.5.5";
+      rev = "0.5.6";
       fetchSubmodules = false;
-      sha256 = "sha256-Fj5kIhV5PwwR4R4tQL1YVeDnY7xENATWJT99sE+luNA=";
+      sha256 = "sha256-ztwITune/rO4c3wUCsw6wBN09jnpWpElgwQx7JCXsVw=";
     };
   };
 }
