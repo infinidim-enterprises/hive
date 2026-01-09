@@ -31,12 +31,11 @@ mkMerge [
   {
     programs.ssh = {
       enable = true;
-      compression = true;
-      serverAliveInterval = 30;
       extraOptionOverrides.StrictHostKeyChecking = "no";
       extraOptionOverrides.IdentitiesOnly = "no";
 
       matchBlocks = {
+        "*" = { serverAliveInterval = 30; compression = true; };
         "eadrax eadrax.njk.*" = defaults_njk // { user = name; };
         "arm64 arm64.njk.*" = defaults_njk // { user = "root"; port = 65522; };
         "git.0a.njk.li" = defaults_njk_gitea;

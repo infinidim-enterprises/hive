@@ -25,7 +25,7 @@ rec {
           inputs.raspberry-pi-nix.overlays.core
           inputs.raspberry-pi-nix.overlays.libcamera
           inputs.cells.common.overlays.minidlna
-          inputs.cells.common.overlays.prowlarr
+          inputs.cells.common.overlays.arr
           # NOTE: workaround for home-unstable to work on 24.11
           (_: _: { inherit (nixpkgs-unstable) ashell codex; })
         ];

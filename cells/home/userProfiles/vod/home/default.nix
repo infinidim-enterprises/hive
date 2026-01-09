@@ -72,7 +72,7 @@ in
       gtk.gtk3.bookmarks = [
         "file:///home/vod/Documents/%D0%9A%D0%B0%D1%82%D1%8F"
         "file:///home/vod/Projects/insurance-agent/out IA out"
-        "smb://admin@damogran.njk.local/media media"
+        "smb://admin@asbleg.njk.local/media media"
       ];
     })
 

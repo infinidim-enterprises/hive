@@ -31,9 +31,9 @@ mkMerge [
     programs.bat.themes.solarized = readFile "${pkgs.sources.sublimeSolarized.src}/Solarized (dark).sublime-color-scheme";
   })
 
-  (mkIf config.programs.git.delta.enable {
-    programs.git.delta.options.features = "decorations";
-    programs.git.delta.options.syntax-theme = "Solarized (dark)";
+  (mkIf config.programs.delta.enable {
+    programs.delta.options.features = "decorations";
+    programs.delta.options.syntax-theme = "Solarized (dark)";
   })
 
   (mkIf config.programs.kitty.enable {

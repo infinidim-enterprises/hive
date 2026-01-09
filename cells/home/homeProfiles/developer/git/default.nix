@@ -23,8 +23,9 @@ mkMerge [
 
     programs.git.enable = true;
     programs.git.lfs.enable = true;
-    programs.git.delta.enable = true;
-    programs.git.delta.options = mkDefault {
+
+    programs.delta.enable = mkDefault true;
+    programs.delta.options = mkDefault {
       plus-style = "syntax #012800";
       minus-style = "syntax #340001";
       syntax-theme = "Monokai Extended"; # TODO: change theme!
@@ -32,7 +33,7 @@ mkMerge [
     };
 
     programs.git.signing.signByDefault = true;
-    programs.git.extraConfig = {
+    programs.git.settings = {
       init.defaultBranch = "master";
       branch.autoSetupRebase = "always";
       checkout.defaultRemote = "origin";
@@ -75,7 +76,6 @@ mkMerge [
 
   {
     home.packages = with pkgs; [
-      delta
       tea
       github-release # Commandline app to create and edit releases on Github (and upload artifacts)
       gist # Upload code to
@@ -85,12 +85,11 @@ mkMerge [
     ] ++ gat;
 
     programs.git.enable = mkDefault true;
-    programs.git.delta.enable = mkDefault true;
     programs.git.lfs.enable = mkDefault true;
-    programs.git.extraConfig.pull.rebase = mkDefault false;
-    programs.git.extraConfig.safe.directory = "*";
+    programs.git.settings.pull.rebase = mkDefault false;
+    programs.git.settings.safe.directory = "*";
 
-    programs.git.aliases = {
+    programs.git.settings.aliases = {
       a = "add -p";
       co = "checkout";
       cob = "checkout -b";

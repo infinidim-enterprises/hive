@@ -83,16 +83,9 @@ rec {
       })
     ];
 
-  llm = [
-    inputs.cells.llm.overlays.sources
-  ];
+  llm = [ inputs.cells.llm.overlays.sources ];
 
-  emacs = [
-    inputs.cells.emacs.overlays.sources
-    # inputs.cells.emacs.overlays.tools
-  ];
+  emacs = [ inputs.cells.emacs.overlays.sources ];
 
-  vscode = with inputs.cells.common.overlays; [
-    vscode-extensions
-  ];
+  vscode = with inputs.cells.common.overlays; [ vscode-extensions ];
 }

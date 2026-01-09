@@ -2,11 +2,10 @@
 , lib
 , sources
 , unzip
-, ...
 }:
 stdenvNoCC.mkDerivation rec {
   pname = "transmissionic-web";
-  inherit (sources.multimedia.transmissionic) version src;
+  inherit (sources.transmissionic) version src;
 
   nativeBuildInputs = [ unzip ];
 
@@ -29,4 +28,3 @@ stdenvNoCC.mkDerivation rec {
   };
 }
 #
-

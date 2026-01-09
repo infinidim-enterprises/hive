@@ -60,6 +60,15 @@
 
   ];
 
+
+  # The [Ctrl] key has been worn out
+  services.keyd.enable = true;
+  services.keyd.keyboards.default = {
+    ids = [ "*" ];
+    settings.main.capslock = "overload(control, capslock)";
+  };
+
+
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
   services.logind.powerKeyLongPress = "suspend";

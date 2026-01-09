@@ -53,6 +53,12 @@ rec {
                 "/var/log"
                 "/var/lib/nixos"
 
+                (mkIf services.nzbget.enable
+                  "/var/lib/nzbget")
+
+                # (mkIf services.jellyfin.enable
+                #   "/var/lib/jellyfin")
+
                 # (mkIf sound.enable
                 #   "/var/lib/alsa")
 

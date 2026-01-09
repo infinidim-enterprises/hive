@@ -1,0 +1,281 @@
+{
+    "autobrr": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "autobrr",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "autobrr",
+            "repo": "autobrr",
+            "rev": "v1.70.0",
+            "sha256": "sha256-znLkrnsmSnnBsSBJvK8m51T9R9O9nDLwWPDUOp9vlxE=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v1.70.0"
+    },
+    "jellyfin": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "jellyfin",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "jellyfin",
+            "repo": "jellyfin",
+            "rev": "v10.11.4",
+            "sha256": "sha256-Hs7G8igW7TJBTYuv83AhN/YhpLcO5pwuU5vYwDUEsUQ=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v10.11.4"
+    },
+    "jellyfin-media-player": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "jellyfin-media-player",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "jellyfin",
+            "repo": "jellyfin-media-player",
+            "rev": "v1.12.0",
+            "sha256": "sha256-IXinyenadnW+a+anQ9e61h+N8vG2r77JPboHm5dN4Iw=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v1.12.0"
+    },
+    "jellyfin-plugin-metatube": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "jellyfin-plugin-metatube",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "metatube-community",
+            "repo": "jellyfin-plugin-metatube",
+            "rev": "v2025.1102.2200.0",
+            "sha256": "sha256-OvTD+R7VQvXEK2COJSGC+fnEigH2bSVUBvYfFSF1CxM=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v2025.1102.2200.0"
+    },
+    "jellyfin-web": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "jellyfin-web",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "jellyfin",
+            "repo": "jellyfin-web",
+            "rev": "v10.11.4",
+            "sha256": "sha256-5MgU9Fw+uiDJLRE1pFHwwfVSnZ47WPeT0Sz4G01jaXs=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v10.11.4"
+    },
+    "kometa": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "kometa",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "Kometa-Team",
+            "repo": "Kometa",
+            "rev": "v2.2.2",
+            "sha256": "sha256-ZM4a0ip2EE67zJgBIeBoh4Ro1OFzZ93TlvS2ab9zi+4=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v2.2.2"
+    },
+    "lidarr": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "lidarr",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-IPF1rsK5CN4q4GtyVE2uUE79212yqX6k42hm3lO8L6U=",
+            "type": "url",
+            "url": "https://github.com/lidarr/Lidarr/releases/download/v3.1.0.4875/Lidarr.master.3.1.0.4875.linux-core-x64.tar.gz"
+        },
+        "version": "3.1.0.4875"
+    },
+    "navidrome": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "navidrome",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "navidrome",
+            "repo": "navidrome",
+            "rev": "v0.58.5",
+            "sha256": "sha256-bb6Ak8coEhN4ny79WgZ4DqzjqLbCr1FW/a3w2gfls2M=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v0.58.5"
+    },
+    "nzbget": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "nzbget",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "nzbgetcom",
+            "repo": "nzbget",
+            "rev": "v25.4",
+            "sha256": "sha256-BP2kNgEDLVpW4TvUW2dToa3rnvGANZw2alBO75Jd2hs=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v25.4"
+    },
+    "par2cmdline-turbo": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "par2cmdline-turbo",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "nzbgetcom",
+            "repo": "par2cmdline-turbo",
+            "rev": "v1.3.0-20250808",
+            "sha256": "sha256-ZP8AI5htmEcxQQtvgShcQ8qNoRL+jBR1BdKS6yyuB/E=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v1.3.0-20250808"
+    },
+    "prowlarr": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "prowlarr",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-UJAO0nS9dqut/vp4un7HB3++KGYqCGCmOGkqh5vBpvo=",
+            "type": "url",
+            "url": "https://github.com/Prowlarr/Prowlarr/releases/download/v2.3.0.5236/Prowlarr.master.2.3.0.5236.linux-core-x64.tar.gz"
+        },
+        "version": "2.3.0.5236"
+    },
+    "radarr": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "radarr",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-+pDdm/0GC5Z1ZznXgntR1n0EhJABqlczxOU8X5oIsCM=",
+            "type": "url",
+            "url": "https://github.com/Radarr/Radarr/releases/download/v6.0.4.10291/Radarr.master.6.0.4.10291.linux-core-x64.tar.gz"
+        },
+        "version": "6.0.4.10291"
+    },
+    "readarr": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "readarr",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-bVPUN500vTUdWCz6U1oP0uqLW+LChbCKZMhnYInQ54I=",
+            "type": "url",
+            "url": "https://github.com/Readarr/Readarr/releases/download/v0.4.13.2760/Readarr.develop.0.4.13.2760.linux-core-x64.tar.gz"
+        },
+        "version": "0.4.13.2760"
+    },
+    "sonarr": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "sonarr",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-HUp0x2PFojbA5utXdTTFseU1heXSzhiaPpAe+1sq38w=",
+            "type": "url",
+            "url": "https://github.com/Sonarr/Sonarr/releases/download/v4.0.16.2944/Sonarr.main.4.0.16.2944.linux-x64.tar.gz"
+        },
+        "version": "4.0.16.2944"
+    },
+    "transmissionic": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "transmissionic",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-IhbJCv9SWjLspJYv6dBKrooGk+vA7sq1N3WzMne6PEw=",
+            "type": "url",
+            "url": "https://github.com/6c65726f79/Transmissionic/releases/download/v1.8.0/Transmissionic-webui-v1.8.0.zip"
+        },
+        "version": "v1.8.0"
+    }
+}

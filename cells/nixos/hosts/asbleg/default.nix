@@ -23,7 +23,10 @@ rec {
         # CVE-2025-1244
       ];
 
-      overlays = cell.overlays.default_desktop;
+      overlays = cell.overlays.default_desktop ++ [
+        inputs.cells.common.overlays.minidlna
+        inputs.cells.common.overlays.arr
+      ];
     };
   };
 
@@ -34,6 +37,9 @@ rec {
     ++ cell.nixosSuites.virtualization
     ++ [ (cell.lib.mkHome "vod" "zsh") ]
     ++ [
+
+      cell.nixosProfiles.services.multimedia-downloads
+
       bee.home.nixosModules.home-manager
       { home-manager.sharedModules = [{ home.enableNixpkgsReleaseCheck = false; }]; }
       (import ./_hardwareProfile.nix { inherit inputs cell; })
@@ -49,8 +55,10 @@ rec {
         deploy.params.hidpi.enable = false;
         deploy.params.lan.mac = "16:07:77:ff:ba:ff";
         # deploy.params.lan.ipv4 = "10.11.1.122/24";
-        deploy.params.lan.ipv4 = "192.168.1.135/24";
+        deploy.params.lan.ipv4 = "192.168.0.135/24";
         deploy.params.lan.dhcpClient = false;
+
+        deploy.params.lan.dnsForwarder = true; # NOTE: expose adguardhome to local network
 
         networking.hostName = baseNameOf ./.;
         networking.hostId = "23d7e1ff";
@@ -61,10 +69,10 @@ rec {
           addresses = [
             (cell.lib.networkdSyntax {
               inherit pkgs;
-              Address = "192.168.1.135/24";
+              Address = "192.168.0.135/24";
             })
           ];
-          networkConfig.Gateway = "192.168.1.1";
+          networkConfig.Gateway = "192.168.0.1";
         };
       })
 

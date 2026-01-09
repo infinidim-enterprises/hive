@@ -620,6 +620,9 @@ the treemacs and neotree suck donkey balls.
 (after! org
   (add-to-list 'org-modules 'org-id)
 
+(after! org
+  (add-hook 'org-table-normalize-hook #'org-table-wrap-region))
+
   (defun local/org-add-ids-to-headlines-in-file ()
     "Add `:ID:` properties to all headlines in the current Org buffer."
     (org-map-entries #'org-id-get-create))

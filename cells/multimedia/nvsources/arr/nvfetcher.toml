@@ -1,0 +1,99 @@
+[transmissionic]
+# Remote for Transmission Daemon
+src.github = "6c65726f79/Transmissionic"
+fetch.url = "https://github.com/6c65726f79/Transmissionic/releases/download/$ver/Transmissionic-webui-$ver.zip"
+
+[radarr]
+# Movie organizer/manager for usenet and torrent users.
+src.github = "Radarr/Radarr"
+src.use_latest_release = true
+src.prefix = "v" # NOTE: remove "v" from $ver
+fetch.url = "https://github.com/Radarr/Radarr/releases/download/v$ver/Radarr.master.$ver.linux-core-x64.tar.gz"
+
+[readarr]
+# src.github_tag = "Readarr/Readarr"
+# src.branch = "develop"
+# src.include_regex = "releases/gcc-10.*"
+# src.github = "Readarr/Readarr"
+# src.use_latest_release = true
+# src.prefix = "v" # NOTE: remove "v" from $ver
+src.manual = "0.4.13.2760"
+fetch.url = "https://github.com/Readarr/Readarr/releases/download/v$ver/Readarr.develop.$ver.linux-core-x64.tar.gz"
+
+[sonarr]
+# Smart PVR for newsgroup and bittorrent users.
+src.github = "Sonarr/Sonarr"
+src.use_latest_release = true
+src.prefix = "v" # NOTE: remove "v" from $ver
+fetch.url = "https://github.com/Sonarr/Sonarr/releases/download/v$ver/Sonarr.main.$ver.linux-x64.tar.gz"
+
+[lidarr]
+# Looks and smells like Sonarr but made for music.
+src.github = "lidarr/Lidarr"
+src.use_latest_release = true
+src.prefix = "v" # NOTE: remove "v" from $ver
+fetch.url = "https://github.com/lidarr/Lidarr/releases/download/v$ver/Lidarr.master.$ver.linux-core-x64.tar.gz"
+
+[navidrome]
+# Personal Streaming Service
+src.github = "navidrome/navidrome"
+src.use_latest_release = true
+fetch.github = "navidrome/navidrome"
+
+[prowlarr]
+# indexer manager/proxy
+src.github = "Prowlarr/Prowlarr"
+src.use_latest_release = true
+src.prefix = "v" # NOTE: remove "v" from $ver
+fetch.url = "https://github.com/Prowlarr/Prowlarr/releases/download/v$ver/Prowlarr.master.$ver.linux-core-x64.tar.gz"
+
+# TODO: [whisparr]
+# src.github = "Whisparr/Whisparr"
+# fetch.github = "Whisparr/Whisparr"
+
+[autobrr]
+# Download automation for torrents and usenet.
+src.github = "autobrr/autobrr"
+src.use_latest_release = true
+fetch.github = "autobrr/autobrr"
+
+[nzbget]
+# Efficient usenet downloader
+src.github = "nzbgetcom/nzbget"
+src.use_latest_release = true
+fetch.github = "nzbgetcom/nzbget"
+
+[par2cmdline-turbo]
+# nzbget helper
+src.github_tag = "nzbgetcom/par2cmdline-turbo"
+fetch.github = "nzbgetcom/par2cmdline-turbo"
+
+[jellyfin]
+# The Free Software Media System - Server Backend & API
+src.github = "jellyfin/jellyfin"
+src.use_latest_release = true
+fetch.github = "jellyfin/jellyfin"
+
+[jellyfin-web]
+# The Free Software Media System - Official Web Client
+src.github = "jellyfin/jellyfin-web"
+src.use_latest_release = true
+fetch.github = "jellyfin/jellyfin-web"
+
+[jellyfin-media-player]
+# The Free Software Media System - Official Web Client
+src.github = "jellyfin/jellyfin-media-player"
+src.use_latest_release = true
+fetch.github = "jellyfin/jellyfin-media-player"
+
+[jellyfin-plugin-metatube]
+# The Free Software Media System - Official Web Client
+src.github = "metatube-community/jellyfin-plugin-metatube"
+src.use_latest_release = true
+fetch.github = "metatube-community/jellyfin-plugin-metatube"
+
+[kometa]
+# script to update metadata information for items
+src.github = "Kometa-Team/Kometa"
+src.use_latest_release = true
+fetch.github = "Kometa-Team/Kometa"

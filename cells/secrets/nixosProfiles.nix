@@ -73,6 +73,13 @@
 
         })
 
+        (mkIf config.services.nzbget.enable {
+          sops.secrets.nzbget_conf = {
+            sopsFile = ./sops/nzbget.conf;
+            format = "binary";
+          };
+        })
+
         {
           sops.age.sshKeyPaths = mkForce [ ]; # NOTE: Not using age!
           environment.systemPackages = [ pkgs.sops ];

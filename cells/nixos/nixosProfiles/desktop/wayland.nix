@@ -49,7 +49,7 @@ in
       # NOTE: caja will be able to use net usershare
       services.samba.enable = true;
       services.samba.usershares.enable = true;
-      services.samba.package = pkgs.sambaFull;
+      services.samba.package = lib.mkDefault pkgs.sambaFull;
       services.samba.openFirewall = true;
 
       systemd.services.samba-smbd.serviceConfig.ExecStartPre = "${pkgs.coreutils}/bin/mkdir -m +t -p /var/lib/samba/usershares";

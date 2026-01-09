@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, cell, ... }:
 
 { lib, pkgs, config, ... }:
 let
@@ -70,7 +70,18 @@ let
 
 in
 {
-  imports = [ "${inputs.nixpkgs-unstable}/nixos/modules/services/misc/servarr/whisparr.nix" ];
+
+  imports = [
+    {
+      disabledModules = [
+        "services/misc/servarr/whisparr.nix"
+        "services/misc/nzbget.nix"
+      ];
+    }
+    "${inputs.nixpkgs-unstable}/nixos/modules/services/misc/servarr/whisparr.nix"
+    cell.nixosModules.services.misc.nzbget
+  ];
+
   config = mkMerge [
     { boot.kernel.sysctl."fs.inotify.max_user_watches" = 524288; }
 
@@ -150,11 +161,19 @@ in
           proxyWebsockets = true;
         };
 
+        locations."~* ^/nzbget(/.*)?$" = {
+          proxyPass = "http://localhost:6789";
+          proxyWebsockets = true;
+        };
+
       };
     }
 
     {
       services.jellyfin.enable = true;
+      services.jellyfin.cacheDir = download-dir + "/jellyfin/cache";
+      services.jellyfin.dataDir = download-dir + "/jellyfin/state";
+
       services.jellyfin.openFirewall = false;
 
       # NOTE: zt-central hosted
@@ -257,6 +276,20 @@ in
     }
 
     {
+      services.nzbget.enable = true;
+      services.nzbget.user = config.services.jellyfin.user;
+      services.nzbget.group = config.services.jellyfin.group;
+
+      services.nzbget.settings.MainDir = download-dir + "/downloads/nzbget";
+
+      systemd.services.nzbget.after = [ "prowlarr.service" ];
+    }
+
+    {
+      # TODO: services.autobrr.enable = true;
+    }
+
+    {
       environment.systemPackages = with pkgs; [
         process_audio_download
 
@@ -286,7 +319,7 @@ in
         enableQt6 = false;
       };
 
-      services.transmission.webHome = inputs.cells.common.packages.transmissionic;
+      services.transmission.webHome = inputs.cells.multimedia.packages.transmissionic;
       services.transmission.openRPCPort = false;
       services.transmission.openFirewall = false;
       services.transmission.settings = {
@@ -322,7 +355,7 @@ in
     {
       services.samba.enable = true;
       services.samba.nmbd.enable = false;
-      services.samba.package = pkgs.sambaFull;
+      services.samba.package = lib.mkForce pkgs.sambaFull;
       services.samba.openFirewall = true;
       services.samba.settings = {
         global = {
@@ -350,6 +383,7 @@ in
     {
       systemd.services.jellyfin.after = [ "opt-media.mount" "httpd.service" ];
       systemd.services.transmission.after = [ "opt-media.mount" "httpd.service" ];
+      systemd.services.nzbget.after = [ "opt-media.mount" "httpd.service" ];
 
       systemd.mounts = [{
         what = "LABEL=torrents";
@@ -359,10 +393,12 @@ in
         before = [
           "jellyfin.service"
           "transmission.service"
+          "nzbget.service"
         ];
         requiredBy = [
           "jellyfin.service"
           "transmission.service"
+          "nzbget.service"
         ];
       }];
     }

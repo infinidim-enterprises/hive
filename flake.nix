@@ -106,6 +106,11 @@
     ###
     # system tools
     ###
+    flakelib.url = "github:njkli/flakelib";
+    flakelib.inputs.nixpkgs.follows = "nixpkgs";
+    flakelib.inputs.nixpkgs-master.follows = "nixpkgs-master";
+    flakelib.inputs.nixpkgs-unstable.follows = "nixpkgs-unstable";
+
     # TODO: inputs.nix-topology.url = "github:oddlama/nix-topology";
     # TODO: nix-super.url = "github:privatevoid-net/nix-super";
 
@@ -229,9 +234,9 @@
     nvfetcher.url = "github:berberman/nvfetcher/0.7.0";
 
     # go tools
-    # gomod2nix.url = "github:nix-community/gomod2nix";
-    # gomod2nix.inputs.nixpkgs.follows = "nixpkgs-master";
-    # gomod2nix.inputs.flake-utils.follows = "flake-utils";
+    gomod2nix.url = "github:nix-community/gomod2nix";
+    gomod2nix.inputs.nixpkgs.follows = "nixpkgs-master";
+    gomod2nix.inputs.flake-utils.follows = "flake-utils";
 
     # Just in case
     call-flake.url = "github:divnix/call-flake";
@@ -264,9 +269,20 @@
     { self
     , std
     , hive
+    , flakelib
     , ...
     }@inputs:
-    std.growOn
+
+    let
+      inherit (flakelib.lib.std)
+        grow
+        pick
+        growOn
+        harvest
+        blockTypes;
+    in
+
+    growOn
       {
         inherit inputs;
         systems = [ "aarch64-linux" "x86_64-linux" ];
@@ -274,8 +290,8 @@
         cellsFrom = ./cells;
 
         cellBlocks =
-          with std.blockTypes;
-          with hive.blockTypes; [
+          with blockTypes;
+          [
             (nixago "config")
 
             # Modules
@@ -308,6 +324,8 @@
             (pkgs "overrides")
             (functions "overlays")
 
+            (nvsources "nvsources")
+
             colmenaConfigurations
             homeConfigurations
             nixosConfigurations
@@ -321,10 +339,11 @@
         packages = hive.harvest inputs.self [
           [ "common" "packages" ]
           [ "containers" "packages" ]
+          # [ "multimedia" "packages" ]
         ];
 
         nixosModules = hive.pick inputs.self [
-          [ "k8s" "nixosModules" ]
+          # [ "k8s" "nixosModules" ]
           [ "nixos" "nixosModules" ]
         ];
 
