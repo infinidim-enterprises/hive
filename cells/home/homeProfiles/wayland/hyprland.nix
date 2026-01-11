@@ -292,7 +292,7 @@ in
 
     input.kb_layout = "us, ru";
     input.kb_variant = ",phonetic_YAZHERTY";
-    input.kb_options = "grp:shifts_toggle";
+    input.kb_options = "grp:alt_shift_toggle";
 
     input.follow_mouse = 0;
 

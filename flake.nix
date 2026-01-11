@@ -150,12 +150,19 @@
 
     # nixos.follows = "nixos-24-11";
     # nixpkgs.follows = "nixos-24-11";
+    #
+    # nixos.follows = "nixos-25-05";
+    # nixpkgs.follows = "nixos-25-05";
+    # nixpkgs-release.follows = "nixos-25-05";
+
     nixos.follows = "nixos-25-05";
     nixpkgs.follows = "nixos-25-05";
     nixpkgs-release.follows = "nixos-25-05";
+
     latest.follows = "nixpkgs-unstable";
 
-    home.url = "github:nix-community/home-manager/release-25.05";
+    # home.url = "github:nix-community/home-manager/release-25.05";
+    home.url = "github:nix-community/home-manager/release-25.11";
     home.inputs.nixpkgs.follows = "nixos";
 
     home-unstable.url = "github:nix-community/home-manager";
@@ -175,6 +182,7 @@
     # nixos-24-05.url = "github:nixos/nixpkgs/release-24.05";
     nixos-24-11.url = "github:nixos/nixpkgs/release-24.11";
     nixos-25-05.url = "github:nixos/nixpkgs/release-25.05";
+    nixos-25-11.url = "github:nixos/nixpkgs/release-25.11";
     # ISSUE: xdg.portal.enable is fucked on update (something to do with home-unstable)
     # nixos-24-11.url = "github:nixos/nixpkgs/785306ca6d78689fb32ab67843ac93ebd53be15e";
 
